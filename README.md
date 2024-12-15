@@ -24,7 +24,7 @@ Here we introduce the file structure of this repo:
   - **RQ4.ipynb**: Jupyter notebook used to reproduce the results of RQ4.
 - **/Data/**: The middle data of the experiments. Details of the data are described in the replication jupyter notebooks.
 
-# Environment
+# Getting Started
 
 We recommend use conda environment to run this replication package.
 
@@ -42,20 +42,14 @@ cd TrickCatcher
 pip install -r requirements
 ```
 
-
-# Getting Started
-
-We use jupyter notbook for experiments.
-
-1.Open the `Analysis` directory.
+3.Open the `Analysis` directory.
 ```bash
 cd TrickCatcher/Analysis
 jupyter notebook
 ```
-
 The Jupyter Notebook shuld open in the browser. 
 
-2.Select and open the following files, and reproduce experimental results according to the steps and tips provided within the files.
+4.Select and open the following files, and reproduce experimental results according to the steps and tips provided within the files.
 - `RQ1&RQ5.ipynb`: Reproduce the results of RQ1 and RQ5. Please first read this notebook before you use other notebooks.
 - `RQ2.ipynb`: Reproduce the results of RQ2.
 - `RQ3.ipynb`: Reproduce the results of RQ3.
