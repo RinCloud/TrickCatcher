@@ -1,0 +1,20 @@
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    int a, ss = 0;
+    cin >> a;
+    for (int i = 1; i <= a; i++)
+    {
+        // Check if i has an odd number of digits
+        if (to_string(i).size() % 2 == 1)
+        {
+            ss++;
+        }
+    }
+    cout << ss;
+    return 0;
+}
+```

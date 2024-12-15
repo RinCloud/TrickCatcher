@@ -1,0 +1,14 @@
+def count_distinct_characters(string: str) -> int:
+    """
+    Given a string, find out how many distinct characters (regardless of case) does it consist of
+    Args:
+    string (str): input string
+    Returns:
+    int: number of distinct characters in the string
+    """
+    # Convert string to lowercase and remove whitespace
+    string = string.lower().strip()
+    # Use set to get unique characters
+    unique_characters = set(string)
+    # Return the number of unique characters
+    return len(unique_characters)

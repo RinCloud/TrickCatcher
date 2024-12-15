@@ -1,0 +1,34 @@
+**REPAIRED CODE**:
+
+```
+#include <iostream>
+using namespace std;
+int main() {
+  int n, m;
+  cin >> n >> m;
+  int dp[n+1];
+  dp[0] = 1;
+  dp[1] = 1;
+  for (int i = 2; i <= n; ++i) {
+    dp[i] = (dp[i-1] + dp[i-2]) % 1000000007;
+  }
+  for (int i = 0; i < m; ++i) {
+    int a;
+    cin >> a;
+    dp[a] = 0;
+  }
+  cout << dp[n] << endl;
+
+  return 0;
+}
+```
+
+**Explanation**:
+
+1. The original code had a logical error in the loop `for (int i = 0; i < n+1; ++i)`. The last element (dp[n+1]) was set to 0, which caused an out-of-bounds access in the next loop. The bounds of the loop should be `i < n`, not `i < n+1`.
+
+2. In the repaired code, I removed the unnecessary initialization loop and set the initial values of `dp[0]` and `dp[1]` manually, as they are base cases for the recurrence relation.
+
+3. The last loop `for (int i = n-1; i >= 0; --i)` is not needed, because the values of `dp[i]` have already been calculated in the preceding loop. So, I removed this unnecessary loop from the repaired code.
+
+4. Finally, I changed the output from `dp[0]` to `dp[n]`, as the problem requests the number of ways to climb up to the N-th step, not the 0-th step.

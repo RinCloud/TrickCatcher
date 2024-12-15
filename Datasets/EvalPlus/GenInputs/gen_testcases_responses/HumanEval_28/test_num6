@@ -1,0 +1,10 @@
+{"input": [[""],], "output": ""}
+{"input": [["a", "b", "c"],], "output": "abc"}
+{"input": [["a", "", "c"],], "output": "ac"}
+{"input": [["Hello", " ", "World"],], "output": "Hello World"}
+{"input": [["Python", " ", "is", " ", "fun"],], "output": "Python is fun"}
+{"input": [["a", "b", "c", "d", "e", "f", "g", "h"],], "output": "abcdefgh"}
+{"input": [["Python"],], "output": "Python"}
+{"input": [["123", "456", "789"],], "output": "123456789"}
+{"input": [["1", "2", "3", "4", "5"],], "output": "12345"}
+{"input": [["ab", "cd", "ef", "gh"],], "output": "abcdefgh"}

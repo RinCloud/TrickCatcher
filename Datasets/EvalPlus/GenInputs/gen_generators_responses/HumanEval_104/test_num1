@@ -1,0 +1,8 @@
+```python
+from random import *
+def sample_one():
+    x_length = randint(0, 10)
+    x = [randint(1, 9999) for _ in range(x_length)]
+    generated_input = [x]
+    return generated_input
+```

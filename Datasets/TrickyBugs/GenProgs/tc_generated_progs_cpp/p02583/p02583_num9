@@ -1,0 +1,30 @@
+**REPAIRED CODE**:
+
+# first i will sort the given sticks in increasing order of stick lengths because triangle inequality formula which is a+b>c is only satisfies when sides are in non increasing order
+
+# now after sorting the sticks i will use a nested loop. both loops of the loop will start from 0, but i will place j at one after the position of i, and k to the one position after the j.
+
+# i will check the stick lengths of i,j and k for the condition that total length of any two side is greater then the third side, if this condition satisfies then i will add this as the required combination.
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+  int n, S = 0;
+  cin >> n;
+  vector<int> v(n);
+  for(int i = 0;i < n;i++) cin >> v[i];
+  
+  // sort the sticks in increasing order
+  sort(v.begin(), v.end());
+  
+  // calculate the number of required combinations
+  for(int i = 0;i < n-2;i++) {
+    for(int j = i+1;j < n-1;j++) {
+      for(int k = j+1;k < n;k++) {
+        if(v[i]+v[j]>v[k] && v[j]+v[k]>v[i] && v[k]+v[i]>v[j] ) S++;
+      }
+    }
+  }
+  cout << S << endl;
+}

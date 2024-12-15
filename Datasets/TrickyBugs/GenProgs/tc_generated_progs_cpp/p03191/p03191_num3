@@ -1,0 +1,90 @@
+'''
+**PROBLEM DESCRIPTION**:
+There is a sequence of length 2N: A_1, A_2, ..., A_{2N}. Each A_i is either -1 or an integer between 1 and 2N (inclusive). Any integer other than -1 appears at most once in {A_i}.
+For each i such that A_i = -1, Snuke replaces A_i with an integer between 1 and 2N (inclusive), so that {A_i} will be a permutation of 1, 2, ..., 2N. Then, he finds a sequence of length N, B_1, B_2, ..., B_N, as B_i = min(A_{2i-1}, A_{2i}).
+Find the number of different sequences that B_1, B_2, ..., B_N can be, modulo 10^9 + 7.
+
+CONSTRAINTS:
+* 1 \leq N \leq 300
+* A_i = -1 or 1 \leq A_i \leq 2N.
+* If A_i \neq -1, A_j \neq -1, then A_i \neq A_j. (i \neq j)
+
+INPUT:
+Input is given from Standard Input in the following format:
+N
+A_1 A_2 ... A_{2N}
+
+OUTPUT:
+Print the number of different sequences that B_1, B_2, ..., B_N can be, modulo 10^9 + 7.
+
+EXAMPLES:
+
+INPUT:
+3
+1 -1 -1 3 6 -1
+
+OUTPUT:
+5
+
+INPUT:
+4
+7 1 8 3 5 2 6 4
+
+OUTPUT:
+1
+
+INPUT:
+10
+7 -1 -1 -1 -1 -1 -1 6 14 12 13 -1 15 -1 -1 -1 -1 20 -1 -1
+
+OUTPUT:
+9540576
+
+INPUT:
+20
+-1 -1 -1 -1 -1 -1 -1 -1 -1 -1 6 -1 -1 -1 -1 -1 7 -1 -1 -1 -1 -1 -1 -1 -1 -1 34 -1 -1 -1 -1 31 -1 -1 -1 -1 -1 -1 -1 -1
+
+OUTPUT:
+374984201
+
+**CODE**:
+#include<bits/stdc++.h>
+using namespace std;
+const int mod=1e9+7;
+typedef long long ll;
+
+int n,a[305],ans,m,num,frc=1;
+int f[2][305][305],typ[605];
+
+inline void ad(int &x,int y){x+=y;if(x>=mod) x-=mod;}
+
+int main(){
+    int i,j,k,pr=0;
+    scanf("%d",&n);m=n+n;
+    for(i=1;i<=m;++i) scanf("%d",&a[i]);
+    for(i=1;i<=m;i+=2)
+    if((a[i]==-1)||(a[i+1]==-1)){
+        num+=(((~a[i])||(~a[i+1]))^1);
+        if(~a[i]) typ[a[i]]=1;if(~a[i+1]) typ[a[i+1]]=1;
+    }else typ[a[i]]=typ[a[i+1]]=2;
+    for(i=1;i<=num;++i) frc=(ll)frc*i%mod; 
+    f[0][0][0]=1;num=0;
+    
+    for(i=m;i;--i) if(typ[i]!=2){
+        pr^=1;memset(f[pr],0,sizeof(f[pr]));
+        for(j=0;j<=num;++j)
+        for(k=0;j+k<=num;++k) if(f[pr^1][j][k]){
+            
+            ad(f[pr][j][k+1],f[pr^1][j][k]);
+            if(j) ad(f[pr][j-1][k],(ll)f[pr^1][j][k]%mod);
+                
+            ad(f[pr][j+1][k],f[pr^1][j][k]); 
+            if(k) ad(f[pr][j][k-1],(ll)k*f[pr^1][j][k]%mod);
+            if(j) ad(f[pr][j-1][k],f[pr^1][j][k]);
+             
+        }
+        num=min(num+1,m>>1);
+    }
+    printf("%d",(ll)frc*f[pr][0][0]%mod);
+}
+'''''

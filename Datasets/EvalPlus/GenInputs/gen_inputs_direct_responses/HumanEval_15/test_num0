@@ -1,0 +1,3 @@
+**Test Input Reasoning:**
+
+I will start with the minimum valid input case first, where `n` is 0. This will test the function's ability to handle the smallest possible input.

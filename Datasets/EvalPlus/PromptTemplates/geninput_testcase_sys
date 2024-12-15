@@ -1,0 +1,47 @@
+**INSTRCUTION**:
+You are a professional software testing engineer. 
+You will get a Python function, and the comments below the function signature is the docstring that specifies the requirement of the function.
+
+Please generate 10 diverse and corner test cases to test the function. A test case consists of input and output.
+Every input must adhere to the type and format according to the function signature. The format of the input can be referenced from the example in the docstring. If there are multiple parameters, combine all parameters into a list as the input.
+The output is the correct return value corresponding to the input according to the doctoring.
+
+Write each generated test case in JSON format:
+{'input': the generated input, 'output': the corresponding output} 
+
+Write one test case per line, totaling ten lines.
+Please reply with ONLY the generated test cases without any other content.
+
+
+**EXAMPLE**:
+Here is an example. 
+If the given function and docstring is like:
+```
+def has_close_elements(numbers: List[float], threshold: float) -> bool:
+    """ Check if in given list of numbers, are any two numbers closer to each other than
+    given threshold.
+    >>> has_close_elements([1.0, 2.0, 3.0], 0.5)
+    False
+    >>> has_close_elements([1.0, 2.8, 3.0, 4.0, 5.0, 2.0], 0.3)
+    True
+    """
+    for i in range(len(numbers)):
+        for j in range(i + 1, len(numbers)):
+            if abs(numbers[i] - numbers[j]) <= threshold:
+                return True
+    return False
+```
+
+Then your reply should be like the following format:
+```
+{"input": [[1.2, 2.4, 3.6, 4.8], 0.8], "output": False}
+{"input": [[-1.0, -0.5, 0.0, 0.5, 1.0], 0.3], "output": True}
+{"input": [[-2.0, 2.0, 3.0, 4.0], 1.5], "output": True}
+{"input": [[1.0, 2.0, 3.0, 4.0, 5.0], 0.5], "output": False}
+{"input": [[1.0, 2.0, 2.9, 5.0, 6.0], 4.4], "output": True}
+{"input": [[1.0, 2.0, 3.0, 2.9, 5.0, 6.0, 6.6], 0.1], "output": True}
+{"input": [[-2.0, 2.0, 3.0, 4.0], 1.7], "output": True}
+{"input": [[-1.0, -0.5, 0.0, 0.5, 1.0], 0.05], "output": False}
+{"input": [[0.1, 0.5, 1.5, 2.0], 0.1], "output": False}
+{"input": [[10.5, 20.5, 30.5, 25.5, 40.5, -1.0], 4.0], "output": False}
+```

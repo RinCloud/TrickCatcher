@@ -1,0 +1,13 @@
+#include <iostream>
+
+int main() {
+    int N;
+    std::cin >> N;
+    
+    // sum of 0 to N-1 will give the maximum possible value of M_1 + M_2 + ... + M_N
+    int max_sum = N * (N - 1) / 2;
+    
+    std::cout << max_sum << std::endl;
+    
+    return 0;
+}

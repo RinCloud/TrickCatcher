@@ -1,0 +1,14 @@
+```python
+from random import randint
+
+def sample_one():
+    lst_length = randint(0, 10)
+    lst = []
+    for i in range(lst_length):
+        row_length = randint(0, 10)
+        row = [randint(1, 10) for _ in range(row_length)]
+        lst.append(row)
+    x = randint(1, 10)
+    generated_input = [lst, x]
+    return generated_input
+```

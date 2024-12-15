@@ -1,0 +1,29 @@
+#include <iostream>
+#include <vector>
+
+const int MOD = 1000000007;
+
+int main() {
+    int N, K;
+    std::cin >> N >> K;
+
+    std::vector<std::vector<int>> dp(N + 1, std::vector<int>(K + 1, 0));
+    dp[0][0] = 1;
+
+    for (int i = 1; i <= N; i++) {
+        dp[i][0] = 1;
+        for (int j = 1; j <= K; j++) {
+            dp[i][j] = (dp[i - 1][j] + dp[i - 1][j - 1]) % MOD;
+        }
+    }
+
+    for (int i = 1; i <= K; i++) {
+        int ans = 0;
+        for (int j = K - i + 1; j <= N - i + 1; j++) {
+            ans = (ans + dp[j - 1][i - 1] * dp[N - j][K - i]) % MOD;
+        }
+        std::cout << ans << std::endl;
+    }
+
+    return 0;
+}

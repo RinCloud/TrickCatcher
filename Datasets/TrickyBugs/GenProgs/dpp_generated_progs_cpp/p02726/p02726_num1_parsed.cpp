@@ -1,0 +1,22 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    int N, X, Y;
+    cin >> N >> X >> Y;
+
+    vector<int> distance(N, 0);
+
+    for (int i = 1; i <= N; i++) {
+        for (int j = i + 1; j <= N; j++) {
+            int d = min(j - i, abs(X - i) + 1 + abs(Y - j));
+            distance[d]++;
+        }
+    }
+
+    for (int k = 1; k < N; k++) {
+        cout << distance[k] << endl;
+    }
+
+    return 0;
+}

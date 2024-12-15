@@ -1,0 +1,9 @@
+```python
+from random import *
+from cyaron import *
+def sample_one():
+    length_of_list=randint(0,100)
+    l=[randint(-1000,1000) for _ in range(length_of_list)]
+    generated_input=[l]
+    return generated_input
+```

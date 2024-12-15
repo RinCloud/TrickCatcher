@@ -1,0 +1,30 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
+using namespace std;
+
+int main() {
+    int N;
+    cin >> N;
+
+    vector<int> bricks(N);
+    for (int i = 0; i < N; i++) {
+        cin >> bricks[i];
+    }
+
+    int count = 0;
+    for (int i = 0; i < N - 1; i++) {
+        if (bricks[i] > bricks[i + 1]) {
+            count++;
+        }
+    }
+
+    if (count == N - 1) {
+        cout << -1 << endl;
+    } else {
+        cout << count << endl;
+    }
+
+    return 0;
+}

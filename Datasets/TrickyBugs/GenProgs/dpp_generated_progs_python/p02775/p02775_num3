@@ -1,0 +1,36 @@
+# Program
+
+## Steps:
+
+1. Read the input value N
+2. Initialize a variable `count` to 0, which will keep track of the minimum number of banknotes used
+3. Repeat the following steps until N becomes 0:
+    - Find the maximum power of 10 that is less than or equal to N. Let's call it `power`.
+    - Increment the `count` by N // 10^power
+    - Subtract the value of the banknotes used from N. Update N as N - (N // 10^power) * 10^power
+
+4. Finally, print the value of `count`
+
+## Code:
+
+```python
+# Read the input value N
+N = int(input())
+
+# Initialize count
+count = 0
+
+# Calculate the minimum number of banknotes used
+while N > 0:
+    # Find the maximum power of 10 that is less than or equal to N
+    power = len(str(N)) - 1
+    # Increment count by N // 10^power
+    count += N // 10 ** power
+    # Subtract the value of banknotes used from N
+    N -= (N // 10 ** power) * 10 ** power
+
+# Print the minimum number of banknotes used
+print(count)
+```
+
+By running this program, you can calculate the minimum possible number of total banknotes used by you and the clerk.

@@ -1,0 +1,9 @@
+To fix the code, we need to modify the line `B = int(float(B)*1000)` to correctly truncate the fractional part of B.
+
+CODE:
+```python
+A,B = input().split()
+A = int(A)
+B = int(float(B)*100)
+print(A*B//100)
+```

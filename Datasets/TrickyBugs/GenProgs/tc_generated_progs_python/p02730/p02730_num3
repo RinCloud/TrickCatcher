@@ -1,0 +1,20 @@
+**CORRECTED CODE:**
+
+```python
+s = input()
+
+if s == s[::-1]:
+    first_half = s[:len(s)//2]
+    if first_half == first_half[::-1]:
+        second_half = s[(len(s)+3) // 2 - 1:]
+        if second_half == second_half[::-1]:
+            print("Yes")
+            exit()
+print("No")
+```
+
+Explanation:
+1. First, check if the given string is a palindrome by comparing it with its reverse.
+2. If it is a palindrome, then check if the first half of the string is also a palindrome.
+3. If the first half is a palindrome, then check if the second half of the string is also a palindrome.
+4. If all the conditions are satisfied, print "Yes". Otherwise, print "No".

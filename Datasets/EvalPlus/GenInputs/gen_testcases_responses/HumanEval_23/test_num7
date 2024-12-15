@@ -1,0 +1,10 @@
+{"input": [''], "output": 0}
+{"input": ['abc'], "output": 3}
+{"input": ['hello world'], "output": 11}
+{"input": ['1234567890'], "output": 10}
+{"input": ['abcd efgh'], "output": 9}
+{"input": ['üöä'], "output": 6}
+{"input": ['ɸфы'], "output": 6}
+{"input": ['I love Python'], "output": 14}
+{"input": [''], "output": 0}
+{"input": ['python'], "output": 6}

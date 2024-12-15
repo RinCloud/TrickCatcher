@@ -1,0 +1,22 @@
+def maximum(arr, k):
+    if k == 0:
+        return []
+    if k == 1:
+        return [max(arr)]
+    if k == len(arr):
+        return sorted(arr)
+
+    # sort the array
+    arr.sort()
+
+    # find the kth largest element
+    kth = arr[len(arr) - k]
+
+    # find the kth largest element in the array
+    return [x for x in arr if x >= kth]
+
+
+# Test the function with examples
+print(maximum([-3, -4, 5], 3))  # Output: [-4, -3, 5]
+print(maximum([4, -4, 4], 2))    # Output: [4, 4]
+print(maximum([-3, 2, 1, 2, -1, -2, 1], 1))  # Output: [2]

@@ -1,0 +1,31 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+const int N = 2e5 + 50;
+int n,k, a[N];
+
+int main() {
+    cin >> n >> k;
+    for(int i=0;i<n;i++) {
+        int x;
+        cin >> x;
+        a[x]++;
+    }
+
+    int ans = 0;
+    vector<int> freq;
+    for(int i=1;i<N;i++){
+        if(a[i] > 0) {
+            freq.push_back(a[i]);
+        }
+    }
+
+    sort(freq.begin(), freq.end(), greater<int>());
+
+    for(int i=k;i<freq.size();i++) {
+        ans += freq[i];
+    }
+    cout << ans;
+
+    return 0;
+}

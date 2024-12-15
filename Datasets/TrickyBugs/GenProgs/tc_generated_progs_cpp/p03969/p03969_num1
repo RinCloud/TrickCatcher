@@ -1,0 +1,112 @@
+**REPAIRED CODE**:
+
+```cpp
+#include <cstdio>
+#include <algorithm>
+#include <vector>
+using namespace std;
+
+#define File(s) freopen(s".in", "r", stdin), freopen(s".out", "w", stdout)
+const int N = 55, M = 105;
+
+const int mod = 1000000007;
+inline int add(int x, int y){return x+y>=mod ? x+y-mod : x+y;}
+inline int sub(int x, int y){return x-y<0 ? x-y+mod : x-y;}
+inline int mul(int x, int y){return 1LL * x * y % mod;}
+inline void inc(int &x, int y=1){x = x+y>=mod ? x+y-mod : x+y;}
+inline void dec(int &x, int y=1){x = x-y<0 ? x-y+mod : x-y;}
+inline int power(int x, int y){
+    int res = 1;
+    for(; y; y>>=1, x = mul(x, x)) if(y & 1) res = mul(res, x);
+    return res;
+}
+inline int inv(int x){return power(x, mod - 2);}
+
+vector<int> G[N];
+int dfn[N], low[N], idx = 0;
+int stke[M], tope = 0, eid = 0;
+int stkv[M], topv = 0;
+int n, m, k, res = 1;
+int ex[M], ey[M];
+bool vis[N][N];
+bool cyclePt[N];
+
+int C[M*2][M*2];
+void preC(int n){
+    C[0][0] = 1;
+    for(int i=1; i<=n; i++){
+        C[i][0] = 1;
+        for(int j=1; j<=i; j++)
+            C[i][j] = add(C[i-1][j], C[i-1][j-1]);
+    }
+}
+
+int gcd(int x, int y){
+    int t;
+    while(y) t = x, x = y, y = t % y;
+    return x;
+}
+
+void dfs(int x){
+    // printf("DFS %d\n", x);
+    dfn[x] = low[x] = ++idx;
+    stkv[++topv] = x;
+    for(int v : G[x]){
+        if(vis[x][v]) continue;
+        stke[++tope] = ++eid;
+        ex[eid] = x; ey[eid] = v;
+        vis[x][v] = vis[v][x] = true;
+        if(!dfn[v]){
+            int eidNow = eid;
+            dfs(v);
+            low[x] = min(low[x], low[v]);
+            if(low[v] >= dfn[x]){
+                int ce = 0, cv = 0;
+                bool cycle = true;
+                // printf("eidNow = %d\n", eidNow);
+                // printf("Stack : (from top) ");
+                // for(int i=tope; i>=1; i--) printf("%d ", stke[i]);
+                // puts("");
+                for(int i=tope; stke[i] != eidNow; --i){
+                    if(cyclePt[ey[stke[i]]]) cycle = false;
+                    cyclePt[ey[stke[i]]] = true;
+                    ++ce;
+                }
+                ++ce;
+                // printf("BCC of %d edges. (is cycle : %d)\n", ce, (int)cycle);
+                for(; stke[tope] != eidNow; --tope)
+                    cyclePt[ey[stke[tope]]] = false;
+                --tope;
+                while(stkv[topv] != x) --topv, ++cv;
+                ++cv;
+                if(cycle){
+                    int sum = 0;
+                    for(int i=0; i<ce; i++){
+                        int d = gcd(ce, i);
+                        inc(sum, power(k, d));
+                    }
+                    res = mul(res, mul(sum, inv(ce)));
+                }
+                else
+                    res = mul(res, C[ce+k-1][k-1]);
+            }
+        }
+        else low[x] = min(low[x], dfn[v]);
+    }
+}
+
+int main(){
+    // File("4131");
+    // setbuf(stdout, nullptr);
+    scanf("%d%d%d", &n, &m, &k);
+    preC(m + k);
+    for(int i=1; i<=m; i++){
+        int u, v; scanf("%d%d", &u, &v);
+        G[u].push_back(v); G[v].push_back(u);
+    }
+    for(int i=1; i<=n; i++)
+        if(!dfn[i]) dfs(i);
+    printf("%d\n", res);
+    return 0;
+}
+```

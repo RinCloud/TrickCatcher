@@ -1,0 +1,7 @@
+{"input": [""], "output": ""}
+{"input": ["abcdef\nghijklm"], "output": "bcdf\nghjklm"}
+{"input": ["abcdef"], "output": "bcdf"}
+{"input": ["aaaaa"], "output": ""}
+{"input": ["aaBAA"], "output": "B"}
+{"input": ["zbcd"], "output": "zbcd"}
+{"input": ["abc DEF"], "output": "bcDF"}

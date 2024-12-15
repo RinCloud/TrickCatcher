@@ -1,0 +1,25 @@
+#include <iostream>
+using namespace std;
+
+// Function to count the number of positive integers
+// less than or equal to N that have an odd number of digits
+int countIntegers(int N) {
+    int count = 0;
+    for (int i = 1; i <= N; i++) {
+        // Check if the number of digits is odd
+        if ((i >= 1 && i <= 9) || (i >= 100 && i <= 999) || (i >= 10000 && i <= 99999)) {
+            count++;
+        }
+    }
+    return count;
+}
+
+int main() {
+    int N;
+    cin >> N;
+
+    int result = countIntegers(N);
+    cout << result << endl;
+
+    return 0;
+}

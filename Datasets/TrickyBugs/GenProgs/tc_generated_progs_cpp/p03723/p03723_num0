@@ -1,0 +1,32 @@
+**REPAIRED CODE**:
+
+```
+#include <iostream>
+using namespace std;
+int a, b, c;
+int main() {
+	cin>>a>>b>>c;
+	if(a==b && b==c) {cout<<a%2-1; return 0;}
+	int s = 0;
+	while(!(a%2 || b%2 || c%2)) {
+		int x = (b+c)/2;
+		int y = (a+c)/2;
+		int z = (a+b)/2;
+		a=x, b=y, c=z;
+		s++;
+		if (a==b && b==c) {
+			cout<<-1; return 0;
+		}
+	}
+	cout<<s;
+	return 0;
+}
+```
+
+**CHANGES MADE:**
+There are a few mistakes in the code.
+1. The variables `x`, `y`, `z`, and `s` are not initialized. I have initialized them to 0.
+2. In the while loop, the division operation is performed incorrectly. The variables `x`, `y`, and `z` should be assigned the half values of `b+c`, `a+c`, and `a+b` respectively. I have corrected the assignment statements.
+3. The condition in the if statement after the while loop is incorrect. It should check if `a`, `b`, and `c` are all equal, not just `a` and `b`. I have corrected the condition.
+
+With these changes, the code should work correctly.

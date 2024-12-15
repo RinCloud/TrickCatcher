@@ -1,0 +1,29 @@
+def unique_digits(x):
+    """
+    Given a list of positive integers x, return a sorted list of all elements that have no even digit.
+    Args:
+    - x: list of positive integers
+    
+    Returns:
+    - List of all elements in x that have no even digit
+    
+    Example:
+    >>> unique_digits([15, 33, 1422, 1])
+    [1, 15, 33]
+    >>> unique_digits([152, 323, 1422, 10])
+    []
+    """
+    result = []
+    for num in x:
+        has_even_digit = False
+        # Check if the number has any even digit
+        for digit in str(num):
+            if int(digit) % 2 == 0:
+                has_even_digit = True
+                break
+        # If the number has no even digit, add it to the result list
+        if not has_even_digit:
+            result.append(num)
+    # Sort the result list in increasing order
+    result.sort()
+    return result

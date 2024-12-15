@@ -1,0 +1,32 @@
+```python
+from random import *
+from cyaron import *
+
+def sample_one():
+    # Define the range of sentence length based on constraints
+    sentence_len = randint(1, 100)
+    
+    # Prime lengths for words in a sentence
+    prime_lengths = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31]
+    
+    # Generate a random sequence of words based on prime_lengths and ensure the total length is sentence_len
+    words = []
+    total_length = 0
+
+    while total_length < sentence_len:
+        # Select a random length for the word ensuring sentence length constraint is met
+        word_length = choice(prime_lengths)
+        
+        # Check if adding this word exceeds total sentence length, adjust if necessary
+        if total_length + word_length > sentence_len - 1:  # accounting for spaces
+            break
+        
+        total_length += word_length + 1  # adding space for each word except the last one
+        words.append(String.random(word_length, charset='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'))
+        
+    # Assemble sentence from words
+    sentence = ' '.join(words)
+    
+    generated_input = [sentence]
+    return generated_input
+```

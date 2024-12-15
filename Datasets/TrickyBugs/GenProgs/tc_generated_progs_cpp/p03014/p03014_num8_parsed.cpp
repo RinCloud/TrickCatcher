@@ -1,0 +1,52 @@
+#include <bits/stdc++.h>
+#define rep(i,n) for (int i = 0; i < (n); ++i)
+using namespace std;
+typedef long long ll;
+
+int main() {
+	
+	int h, w;
+	cin >> h >> w;
+	vector<string> s(h);
+	rep(i, h){
+		cin >> s[i];
+	}
+	
+	vector<vector<int>> cnt(h, vector<int>(w));
+	
+	rep(i, h){
+		int l = 0;
+		rep(j, w){
+			if(s[i][j] == '.'){
+				l++;
+			}else{
+				for(int k=j-l; k<j; k++){
+					cnt[i][k] += l;
+				}
+				l = 0;
+			}
+		}
+	}
+	rep(j, w){
+		int l = 0;
+		rep(i, h){
+			if(s[i][j] == '.'){
+				l++;
+			}else{
+				for(int k=i-l; k<i; k++){
+					cnt[k][j] += l;
+				}
+				l = 0;
+			}
+		}
+	}
+	int max = 0;
+	rep(i, h){
+		rep(j, w){
+			int range = cnt[i][j] - 1;
+			if(max < range) max = range;
+		}
+	}
+	cout << max << endl;
+	return 0;
+}

@@ -1,0 +1,16 @@
+```python
+from random import randint, choice
+
+def sample_one():
+    # Define the dimensions of the 2D list
+    rows = randint(0, 10)
+    cols = [randint(0, 10) for _ in range(rows)]
+    
+    # Generate the 2D list with random integers
+    lst = [[randint(1, 10) for _ in range(c)] for c in cols]
+    
+    # Select a random integer x to find in the list
+    x = randint(1, 10)
+
+    return [lst, x]
+```

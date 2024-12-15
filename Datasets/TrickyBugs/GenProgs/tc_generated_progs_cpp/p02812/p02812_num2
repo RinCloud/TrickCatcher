@@ -1,0 +1,23 @@
+**Repaired Code:**
+
+```
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+  int N;
+  string S;
+  cin >> N >> S;
+  int count = 0;
+  for (int i = 0; i < N - 2; i++) {
+    if (S[i] == 'A' && S[i + 1] == 'B' && S[i + 2] == 'C') {
+      count++;
+    }
+  }
+  cout << count << "\n";
+}
+```
+
+Explanation:
+The original code uses `regex_replace` to replace all occurrences of "ABC" with "a" and then uses `count` function to count the occurrences of "a". However, this approach won't work because `count` function counts individual occurrences of "a" and does not consider the condition of having "ABC" as a contiguous subsequence.  
+The repaired code iterates through each character of the string and checks if the current character along with the next two characters form the sequence "ABC". If it does, it increments the count variable.

@@ -1,0 +1,46 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+#define for_neighbors(BLK) for(int d=0; d<4; d++){int ii=i+(d==0)-(d==1), jj=j+(d==2)-(d==3); BLK}
+
+int main(){
+    int N;
+    cin >> N;
+    
+    vector<vector<int>> table(N, vector<int>(N, 1e9));
+    vector<vector<bool>> seat(N, vector<bool>(N, false));
+    
+    for (int i=0; i<N; i++)
+        for (int j=0; j<N; j++)
+            table[i][j] = min(min(i, N-1-i), min(j, N-1-j));
+
+    vector<int> P(N*N);
+    for (int p=0; p<N*N; p++){
+        cin >> P[p];
+        P[p]--;
+        int i = P[p]/N, j = P[p]%N;
+        int ans = table[i][j];
+        
+        seat[i][j] = true;
+        
+        for_neighbors(
+            int ii = i + (d == 0) - (d == 1);
+            int jj = j + (d == 2) - (d == 3);
+            
+            if (ii >= 0 && ii < N && jj >= 0 && jj < N) {
+                ans = min(ans, table[ii][jj] + !seat[ii][jj]);
+            }
+        )
+        
+        table[i][j] = ans;
+    }
+    
+    int ans = 0;
+    for (int i=0; i<N; i++)
+        for (int j=0; j<N; j++)
+            ans += table[i][j];
+    
+    cout << ans << endl;
+}
+

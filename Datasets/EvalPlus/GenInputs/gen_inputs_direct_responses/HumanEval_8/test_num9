@@ -1,0 +1,3 @@
+**Test Input Reasoning:**
+
+I will start by testing an empty list. This is an important case to consider since the function should handle empty input correctly according to the docstring.

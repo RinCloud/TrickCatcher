@@ -1,0 +1,51 @@
+The solution to the problem can be achieved using a greedy approach.
+
+Here is the code:
+```cpp
+#include <iostream>
+#include <algorithm>
+#include <vector>
+#include <string>
+
+using namespace std;
+
+int main() {
+    string A;
+    cin >> A;
+
+    vector<int> cnt(26, 0);
+    for (char ch : A) {
+        cnt[ch - 'a']++;
+    }
+
+    string ans = "";
+    for (int i = 0; i < 26; i++) {
+        if (cnt[i] == 0) { // current character is not present in A
+            ans += (char)(i + 'a');
+            break;
+        }
+    }
+
+    if (ans == "") { // all characters are present in A, need to add one extra character
+        for (int i = 0; i < 26; i++) {
+            if (cnt[i] > 1) { // current character is present in A more than once
+                ans += (char)(i + 'a');
+                break;
+            }
+        }
+    }
+
+    cout << ans << endl;
+
+    return 0;
+}
+```
+This program reads the input string `A` from the user and finds the lexicographically smallest string that is not a subsequence of `A`. It uses a greedy approach to determine the smallest string.
+
+First, we iterate through the characters of `A` and count the occurrences of each character using a frequency array `cnt`. Then we check each character from 'a' to 'z' and find the first character that is not present in `A`. This character is added to the answer string `ans`.
+
+If all characters are present in `A`, we need to add an extra character to create a string that is not a subsequence of `A`. We iterate through the frequency array `cnt` again and find the first character that occurs more than once in `A`. This character is added to `ans`.
+
+Finally, we output the lexicographically smallest string `ans`.
+
+Please let me know if you need further assistance.

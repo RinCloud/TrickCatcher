@@ -1,0 +1,33 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int main() {
+    int N;
+    cin >> N;
+    
+    vector<int> A(N+1), B(N);
+    for(int i = 0; i <= N; i++) {
+        cin >> A[i];
+    }
+    for(int i = 0; i < N; i++) {
+        cin >> B[i];
+    }
+    
+    int maxMonsters = 0;
+    for(int i = 0; i < N; i++) {
+        int defeatedMonsters = min(A[i], B[i]);
+        maxMonsters += defeatedMonsters;
+        
+        A[i] -= defeatedMonsters;
+        B[i] -= defeatedMonsters;
+        
+        defeatedMonsters = min(A[i+1], B[i]);
+        maxMonsters += defeatedMonsters;
+        
+        A[i+1] -= defeatedMonsters;
+    }
+    
+    cout << maxMonsters << endl;
+    
+    return 0;
+}

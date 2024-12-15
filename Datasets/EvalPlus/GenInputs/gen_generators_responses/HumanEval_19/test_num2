@@ -1,0 +1,9 @@
+```python
+from random import *
+
+def sample_one():
+    num_words = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine']
+    length_of_numbers = randint(1, 10)
+    generated_input = [' '.join([choice(num_words) for _ in range(length_of_numbers)])]
+    return generated_input
+```

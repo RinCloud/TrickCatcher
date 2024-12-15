@@ -1,0 +1,48 @@
+Here is the complete repaired code:
+
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+const int MAX_N = 50;
+const int MAX_X = 50;
+const int MAX_SUM = 50 * MAX_N;
+
+int n, a;
+long long ans, dp[MAX_N + 1][MAX_SUM + 1];
+int x[MAX_N];
+
+int main() {
+    cin >> n >> a;
+    for (int i = 0; i < n; i++) {
+        cin >> x[i];
+    }
+
+    dp[0][0] = 1;
+    for (int i = 0; i < n; i++) {
+        for (int j = n - 1; j >= 0; j--) {
+            for (int k = MAX_SUM; k >= x[i]; k--) {
+                dp[j + 1][k] += dp[j][k - x[i]];
+            }
+        }
+    }
+
+    for (int i = 1; i <= n; i++) {
+        for (int j = 0; j < MAX_SUM + 1; j++) {
+            if (j * i == a * n) {
+                ans += dp[i][j];
+            }
+        }
+    }
+
+    cout << ans << endl;
+
+    return 0;
+}
+```
+
+The repaired code fixes the following issues:
+1. The array `w` was mistakenly declared with size `5000` for the first dimension, which should be `MAX_SUM + 1` as defined in the problem constraints.
+2. The loop condition of the inner `j` loop inside the second `for` loop was incorrect, which should be `j >= 1` instead of `j >= 100`.
+3. The first `for` loop was not necessary, as it updated `ans` inside the loop which would cause double-counting.
+4. The repaired code introduces a new 2D array `dp` to store the number of ways at each sum and each count. The array `dp[j][k]` represents the number of ways to select `j` cards such that their sum is `k`. This allows for a more efficient computation of the number of ways to select cards that sum up to `A`.

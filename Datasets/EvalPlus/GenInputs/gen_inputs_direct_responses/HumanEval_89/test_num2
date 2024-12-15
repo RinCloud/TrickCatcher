@@ -1,0 +1,14 @@
+Here are 10 diverse and corner test inputs for the `encrypt` function:
+
+1. 'hi'
+2. 'asdfghjkl'
+3. 'gf'
+4. 'et'
+5. 'xYz'  # includes upper-case letter
+6. '123'  # includes numbers
+7. '!@#'  # includes special characters
+8. ''  # empty string
+9. 'a'  # single character
+10. 'abcdefghijklmnopqrstuvwxyz'  # full alphabet
+
+Note: The inputs are formatted as a list with one input per line.

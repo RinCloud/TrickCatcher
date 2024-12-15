@@ -1,0 +1,9 @@
+```python
+from random import randint
+
+def sample_one():
+    lst_length = randint(0, 15) # setting a reasonable max length for the list to prevent it being too large
+    lst = [randint(-50, 50) for _ in range(lst_length)] # generating random integers between -50 and 50
+    generated_input = [lst]
+    return generated_input
+```

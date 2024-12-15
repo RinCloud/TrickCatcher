@@ -1,0 +1,29 @@
+## Introduction:
+1. We are given an array of N integers.
+   [arr[1], arr[2], ..., arr[N]].
+   
+2. The numbers in the array will be randomly ordered.
+3. The task is to determine if it is possible to get an array sorted in non-decreasing order by performing the right shift operation on the given array.
+
+## Approach:
+1. If the given array is empty, return True.
+2. Find the minimum element in the given array and its index.
+3. If the index is equal to 0, return True because the array is already sorted.
+4. Perform a right shift operation arr.length - index times.
+5. Check if the array is sorted after performing the right shift operation.
+6. If the array is sorted, return True. Otherwise, return False.
+
+## Pseudocode:
+1. n<-length(arr)
+2. If n == 0, return True
+3. min_element<-min(arr), min_index<-arr.index(min_element)
+4. If min_index == 0, return True
+5. After n - min_index right shift operations:
+   Shift arr[i] to arr[(i+n-min_index)%n] and return arr
+6. If arr is sorted, return True
+7. Otherwise, return False.
+
+## Complexity Analysis and Conclusion:
+* The time complexity is O(n^2) due to the loop of the right shift operation and checking the sorted condition for n times.
+* The space complexity is O(1) because we are not using any extra space.
+* The code passed all the test cases and is implemented successfully.

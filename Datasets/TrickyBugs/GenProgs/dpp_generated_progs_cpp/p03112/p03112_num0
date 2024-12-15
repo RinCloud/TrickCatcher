@@ -1,0 +1,68 @@
+```
+#include <iostream>
+#include <vector>
+#include <algorithm>
+using namespace std;
+
+int main() {
+    // Read input
+    int A, B, Q;
+    cin >> A >> B >> Q;
+    vector<long long> shrines(A), temples(B);
+    for (int i = 0; i < A; i++) {
+        cin >> shrines[i];
+    }
+    for (int i = 0; i < B; i++) {
+        cin >> temples[i];
+    }
+    vector<long long> queries(Q);
+    for (int i = 0; i < Q; i++) {
+        cin >> queries[i];
+    }
+    
+    // Process queries
+    for (int i = 0; i < Q; i++) {
+        long long x = queries[i];
+        
+        // Find the nearest shrine and temple on the left and right sides
+        long long leftShrine = -1, rightShrine = -1;
+        long long leftTemple = -1, rightTemple = -1;
+        for (int j = 0; j < A; j++) {
+            if (shrines[j] <= x) {
+                leftShrine = shrines[j];
+            } else {
+                rightShrine = shrines[j];
+                break;
+            }
+        }
+        for (int j = 0; j < B; j++) {
+            if (temples[j] <= x) {
+                leftTemple = temples[j];
+            } else {
+                rightTemple = temples[j];
+                break;
+            }
+        }
+        
+        // Calculate the minimum distance to travel
+        long long minDist = INT64_MAX;
+        if (leftShrine != -1 && leftTemple != -1) {
+            minDist = min(minDist, x - min(leftShrine, leftTemple));
+        }
+        if (rightShrine != -1 && rightTemple != -1) {
+            minDist = min(minDist, max(rightShrine, rightTemple) - x);
+        }
+        if (leftShrine != -1 && rightTemple != -1) {
+            minDist = min(minDist, (x - leftShrine) * 2 + (rightTemple - x));
+        }
+        if (rightShrine != -1 && leftTemple != -1) {
+            minDist = min(minDist, (x - leftTemple) + (rightShrine - x) * 2);
+        }
+        
+        // Output the result
+        cout << minDist << endl;
+    }
+    
+    return 0;
+}
+```

@@ -1,0 +1,10 @@
+{"input": ["Hello"], "output": "hELLO"}
+{"input": ["hELLO"], "output": "Hello"}
+{"input": ["h"], "output": "H"}
+{"input": ["H"], "output": "h"}
+{"input": [""], "output": ""}
+{"input": ["123"], "output": "123"}
+{"input": ["!@#"], "output": "!@#"}
+{"input": ["hElLo"], "output": "HeLlO"}
+{"input": ["123abc"], "output": "123ABC"}
+{"input": ["This is a Test"], "output": "tHIS IS A tEST"}

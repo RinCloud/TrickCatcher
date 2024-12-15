@@ -1,0 +1,11 @@
+```python
+from cyaron import *
+
+def sample_one():
+    # Random length from 0 to 100
+    length_of_text = randint(0, 100)
+    # Random string, charset includes lowercase, uppercase, special characters and digits
+    text = String.random(length_of_text, charset="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ \n1234567890!@#$%^&*()")
+    generated_input = [text]
+    return generated_input
+```

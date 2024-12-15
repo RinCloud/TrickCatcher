@@ -1,0 +1,34 @@
+**REPAIRED CODE**:
+
+```cpp
+#include <iostream>
+#include <string>
+#include <unordered_map>
+
+using namespace std;
+
+int main() {
+    string S;
+    cin >> S;
+
+    int N = S.size();
+
+    unordered_map<char, bool> E;
+    for (int i = 0; i < N; ++i) {
+        E[S[i]] = true;
+    }
+
+    bool NS = E.count('N') && E.count('S');
+    bool WE = E.count('W') && E.count('E');
+
+    cout << (NS && WE ? "Yes" : "No") << endl;
+
+    return 0;
+}
+```
+
+**Explanation**:
+
+1. Changed `E[1 << 8]` to `unordered_map<char, bool> E` because the original code tries to map each character in `S` to a boolean value indicating its presence. Using an `unordered_map` is a more appropriate data structure for this task.
+2. Created two Boolean variables `NS` and `WE` to separately check whether both `N` and `S` are present, and whether both `W` and `E` are present in the map `E`.
+3. Updated the output condition to `(NS && WE)` instead of using the bitwise XOR operator (`^`) as in the original code. This ensures that both `N` and `S` are present, and both `W` and `E` are present, which is the required condition for him to be back at home.

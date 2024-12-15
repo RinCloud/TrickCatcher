@@ -1,0 +1,10 @@
+{"input": "Hi, my name is John", "output": ["Hi", "my", "name", "is", "John"]}
+{"input": "One, two, three, four, five, six", "output": ["One", "two", "three", "four", "five", "six"]}
+{"input": "Lorem, ipsum, dolor, sit, amet", "output": ["Lorem", "ipsum", "dolor", "sit", "amet"]}
+{"input": "Python, is, a, versatile, programming, language", "output": ["Python", "is", "a", "versatile", "programming", "language"]}
+{"input": "Hello, World!", "output": ["Hello", "World!"]}
+{"input": "This is a long sentence with multiple words", "output": ["This", "is", "a", "long", "sentence", "with", "multiple", "words"]}
+{"input": "I, love, programming", "output": ["I", "love", "programming"]}
+{"input": "Let's, test, some, strings", "output": ["Let's", "test", "some", "strings"]}
+{"input": "I need, to go, to the store, and buy, groceries", "output": ["I", "need", "to", "go", "to", "the", "store", "and", "buy", "groceries"]}
+{"input": "This, string, has, no, spaces", "output": ["This", "string", "has", "no", "spaces"]}

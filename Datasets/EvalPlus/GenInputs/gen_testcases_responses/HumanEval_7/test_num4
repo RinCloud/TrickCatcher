@@ -1,0 +1,10 @@
+{"input": [["abc", "bacd", "cde", "array"], "a"], "output": ["abc", "bacd", "array"]}
+{"input": [["abc", "bacd", "cde", "array"], "e"], "output": ["cde"]}
+{"input": [["abc", "bacd", "cde", "array"], "x"], "output": []}
+{"input": [["abc", "bacd", "cde", "array"], "ARRAY"], "output": ["array"]}
+{"input": [["abc", "bacd", "cde", "array"], ""], "output": ["abc", "bacd", "cde", "array"]}
+{"input": [["123", "567", "890"], "9"], "output": ["890"]}
+{"input": [["abcd", "efgh", "ijkl", "mnop"], "jk"], "output": ["ijkl"]}
+{"input": [["abcd", "efgh", "ijkl", "mnop"], "efg"], "output": ["efgh"]}
+{"input": [["abcd", "efgh", "ijkl", "mnop"], "z"], "output": []}
+{"input": [["abcd", "efgh", "ijkl", "mnop"], "MNOP"], "output": ["mnop"]}

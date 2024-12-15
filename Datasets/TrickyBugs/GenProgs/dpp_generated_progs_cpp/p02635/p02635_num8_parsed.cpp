@@ -1,0 +1,35 @@
+#include <iostream>
+#include <vector>
+#define MOD 998244353
+
+using namespace std;
+
+int main() {
+    // Read input
+    string S;
+    int K;
+    cin >> S >> K;
+
+    int N = S.size();
+    vector<vector<int>> dp(N + 1, vector<int>(K + 1));
+    dp[0][0] = 1;
+
+    // Dynamic programming
+    for (int i = 1; i <= N; i++) {
+        dp[i][0] = dp[i - 1][0];
+        for (int j = 1; j <= K; j++) {
+            dp[i][j] = (dp[i - 1][j] + dp[i - 1][j - 1]) % MOD;
+        }
+    }
+  
+    // Count the number of strings
+    int ans = 0;
+    for (int i = 0; i <= K; i++) {
+        ans = (ans + dp[N][i]) % MOD;
+    }
+
+    // Print the result
+    cout << ans << endl;
+
+    return 0;
+}

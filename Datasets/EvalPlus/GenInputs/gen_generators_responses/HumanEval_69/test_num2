@@ -1,0 +1,11 @@
+```python
+from random import *
+
+def sample_one():
+    # Define the length of the list randomly between 1 and 100
+    length_of_list = randint(1, 100)
+    # Generate a list of positive integers (excluding 0) based on the defined length
+    lst = [randint(1, 100) for _ in range(length_of_list)]
+    generated_input = [lst]
+    return generated_input
+```

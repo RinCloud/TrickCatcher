@@ -1,0 +1,46 @@
+**Repaired Code**:
+
+```cpp
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main() {
+    int X, N;
+    cin >> X >> N;
+    
+    bool arr[101] = {false};
+    for (int i = 0; i < N; i++) {
+        int p;
+        cin >> p;
+        arr[p] = true;
+    }
+    
+    int answer = X;
+    for (int i = 0; i <= 100; i++) {
+        if (!arr[X - i]) {
+            answer = X - i;
+            break;
+        }
+        if (!arr[X + i]) {
+            answer = X + i;
+            break;
+        }
+    }
+    
+    cout << answer << endl;
+    
+    return 0;
+}
+```
+
+Explanation:
+- The original code had multiple issues:
+  - The array `arr` had a size of 105, whereas according to the problem constraints, it should have been 101.
+  - The loop condition in the while loop was incorrect. The code checks if `a - b >= 0 || a + b <= 105`, but since the range of `a` is from 1 to 100, the correct condition should be `a - b >= 0 && a + b <= 100`.
+  - The code did not consider the case where the integer nearest to `X` is `X` itself. To fix this, we initialize the `answer` variable to `X` and update it only if a nearer integer is found.
+- The repaired code initializes a boolean array `arr` of size 101, and sets `arr[p]` to `true` for each `p` in the input sequence.
+- Then, it iterates over all integers in the range from 0 to 100, and checks if `X - i` or `X + i` is not present in the sequence. If it finds such an integer, it updates the `answer` variable and breaks out of the loop.
+- Finally, it prints the `answer` variable as the output.
+
+This repaired code should correctly solve the given problem.

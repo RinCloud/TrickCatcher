@@ -1,0 +1,10 @@
+{"input": [["aa", "a", "aaa"]], "output": ["aa"]}
+{"input": [["ab", "a", "aaa", "cd"]], "output": ["ab", "cd"]}
+{"input": [["bcd", "ef", "ghi", "jklm"], "output": ["ef", "ghi"]}
+{"input": [["xyz", "abc", "opq", "lmn"], "output": ["abc", "lmn", "opq", "xyz"]}
+{"input": [["ab", "cd", "ef", "gh"]], "output": ["ab", "cd", "ef", "gh"]}
+{"input": [["aa", "aaa", "aaaa"], "output": []}
+{"input": [["ppp", "qqqq", "rrrrr"]], "output": ["qqqq"]}
+{"input": [["pot", "moon", "sun"], "output": ["moon", "sun"]}
+{"input": [["cat", "bat", "rat", "hat"]], "output": []}
+{"input": [["abc", "def", "ghi", "jkl"]], "output": ["def", "ghi", "jkl"]}

@@ -1,0 +1,10 @@
+{"input": [["aa", "a", "aaa"]], "output": ["aa"]}
+{"input": [["ab", "a", "aaa", "cd"]], "output": ["ab", "cd"]}
+{"input": [["a", "b", "c", "d"]], "output": []}
+{"input": [["abcd", "efgh", "ijkl", "mnop"]], "output": ["abcd", "efgh", "ijkl", "mnop"]}
+{"input": [["neuron", "network", "deep", "learning"]], "output": ["deep", "learning"]}
+{"input": [["alpha", "beta", "gamma", "delta", "epsilon"]], "output": ["alpha", "beta", "gamma", "delta", "epsilon"]}
+{"input": [["a", "aa", "aaa", "aaaa"]], "output": ["a", "aaaa"]}
+{"input": [["abc", "def", "ghi", "jkl", "mno", "pqr", "stu", "vwx", "yz"]], "output": ["abc", "def", "ghi", "jkl", "mno", "pqr", "stu", "vwx", "yz"]}
+{"input": [["hello", "world", "foo", "bar", "baz"]], "output": ["foo", "bar", "baz"]}
+{"input": [["apple", "banana", "cherry", "date", "elephant", "frog"]], "output": ["date", "frog"]}

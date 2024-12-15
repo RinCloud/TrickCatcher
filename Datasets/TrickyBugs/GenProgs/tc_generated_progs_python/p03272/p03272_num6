@@ -1,0 +1,8 @@
+**Repaired code:**
+```python
+N, i = [int(x) for x in input().split()]
+j = N - i + 1
+print(j)
+```
+
+The repaired code takes two integers N and i as input using `input()`. It calculates the value of j by subtracting i from N and adding 1. Finally, it prints the value of j using `print()`.

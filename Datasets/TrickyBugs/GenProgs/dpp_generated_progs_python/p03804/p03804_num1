@@ -1,0 +1,30 @@
+```python
+def is_template_contained(N, M, A, B):
+    for i in range(N - M + 1):
+        for j in range(N - M + 1):
+            matched = True
+            for k in range(M):
+                if A[i+k][j:j+M] != B[k]:
+                    matched = False
+                    break
+            if matched:
+                return True
+    return False
+
+
+N, M = map(int, input().split())
+
+A = []
+B = []
+
+for _ in range(N):
+    A.append(input())
+
+for _ in range(M):
+    B.append(input())
+
+if is_template_contained(N, M, A, B):
+    print("Yes")
+else:
+    print("No")
+```

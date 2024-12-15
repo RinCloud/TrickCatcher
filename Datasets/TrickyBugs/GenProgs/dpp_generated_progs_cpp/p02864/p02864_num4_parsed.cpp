@@ -1,0 +1,32 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
+using namespace std;
+
+int main() {
+    int N, K;
+    cin >> N >> K;
+
+    vector<int> H(N);
+    for (int i = 0; i < N; i++) {
+        cin >> H[i];
+    }
+
+    if (K >= N) {
+        cout << 0 << endl;
+        return 0;
+    }
+
+    vector<long long> dp(N, 1e18);
+    dp[0] = 0;
+    for (int i = 1; i < N; i++) {
+        for (int j = 1; j <= min(i, K); j++) {
+            dp[i] = min(dp[i], dp[i - j] + abs(H[i] - H[i - j]));
+        }
+    }
+
+    cout << dp[N - 1] << endl;
+
+    return 0;
+}

@@ -1,0 +1,58 @@
+#include <bits/stdc++.h>
+using namespace std;
+long long n, q, ans;
+struct V {
+    long long x, y;
+} A[100005];
+struct X {
+    long long an1, an2, f;
+} Q[200005];
+long long Find(long long i) {
+    if (Q[i].f == i)
+        return Q[i].f;
+    return Q[i].f = Find(Q[i].f);
+}
+void BU(long long a, long long b) {
+    a = Find(a), b = Find(b);
+    if (a ^ b) {
+        Q[a].an1 += Q[b].an1;
+        Q[a].an2 += Q[b].an2;
+        Q[b].f = a;
+    }
+}
+int main() {
+    scanf("%lld", &n);
+    for (long long i = 1; i <= n; i++) {
+        scanf("%lld %lld", &A[i].x, &A[i].y);
+        if (!X[A[i].x]) {
+            X[A[i].x] = ++q;
+            Q[q].an2 = 1;
+            Q[q].f = q;
+        }
+        if (!X[100000 + A[i].y]) {
+            X[100000 + A[i].y] = ++q;
+            Q[q].an1 = 1;
+            Q[q].f = q;
+        }
+    }
+    
+    for (long long i = 1; i <= n; i++)
+        BU(X[A[i].x], X[100000 + A[i].y]);
+    
+    for (long long i = 1; i <= n; i++) {
+        q = Find(X[A[i].x]);
+        if (!Q[q].f) {
+            Q[q].f = 1;
+            ans += Q[q].an1 * Q[q].an2;
+        }
+        q = Find(X[100000 + A[i].y]);
+        if (!Q[q].f) {
+            Q[q].f = 1;
+            ans += Q[q].an1 * Q[q].an2;
+        }
+    }
+    
+    ans -= n;
+    printf("%lld", ans);
+    return 0;
+}

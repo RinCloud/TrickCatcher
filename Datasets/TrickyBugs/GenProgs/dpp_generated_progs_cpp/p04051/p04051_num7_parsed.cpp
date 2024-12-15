@@ -1,0 +1,30 @@
+#include <iostream>
+#include <vector>
+#include <unordered_map>
+
+const int MOD = 1e9 + 7;
+
+int main() {
+    int N;
+    std::cin >> N;
+
+    std::vector<int> A(N), B(N);
+    for (int i = 0; i < N; ++i) {
+        std::cin >> A[i] >> B[i];
+    }
+
+    std::unordered_map<int, int> count;
+    for (int i = 0; i < N; ++i) {
+        int slope = static_cast<long long>(B[i] - A[i] + MOD) * (A[i] + B[i] + 1) % MOD; // Handle negative modulo
+        count[slope]++;
+    }
+
+    long long ans = 1;
+    for (const auto& p : count) {
+        ans = ans * (p.second + 1) % MOD;
+    }
+    ans = (ans - 1 + MOD) % MOD; // Subtract 1 because we cannot choose zero packs
+    std::cout << ans << std::endl;
+
+    return 0;
+}

@@ -1,0 +1,11 @@
+```python
+from random import *
+from cyaron import *
+def sample_one():
+    length_of_lst1 = randint(1, 10)
+    length_of_lst2 = randint(1, 10)
+    lst1 = [randint(1, 100) for _ in range(length_of_lst1)]
+    lst2 = [randint(1, 100) for _ in range(length_of_lst2)]
+    generated_input = [lst1, lst2]
+    return generated_input
+```

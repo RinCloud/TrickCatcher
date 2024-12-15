@@ -1,0 +1,30 @@
+**REPAIRED CODE:**
+```cpp
+#include <iostream>
+#include <vector>
+#include <unordered_map>
+
+using namespace std;
+
+int main() {
+  // N
+  int N;
+  cin >> N;
+
+  // A
+  vector<int> A(N);
+  unordered_map<int, int> count;
+  for (int i = 0; i < N; i++) {
+    cin >> A[i];
+    count[A[i]]++;
+  }
+
+  // output
+  for (int i = 0; i < N; i++) {
+    int result = (N - 1) - count[A[i]] + 1;
+    cout << result << endl;
+  }
+
+  return 0;
+}
+```

@@ -1,0 +1,11 @@
+#include"bits/stdc++.h"
+using namespace std;
+int main(){
+	long long a,b,c;
+	cin>>a>>b>>c;
+	if(b>c || c-b>a){
+		cout<<0;
+		return 0;
+	}
+	cout<<(a-1)*c+b-(c+(a-1)*b)+1;
+}

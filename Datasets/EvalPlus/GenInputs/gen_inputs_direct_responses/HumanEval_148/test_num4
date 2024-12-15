@@ -1,0 +1,14 @@
+Generated test inputs:
+
+```
+["Jupiter", "Neptune"]
+["Earth", "Mercury"]
+["Mercury", "Uranus"]
+["Mars", "Saturn"]
+["Venus", "Uranus"]
+["Neptune", "Mars"]
+["Uranus", "Jupiter"]
+["Mercury", "Saturn"]
+["Jupiter", "Earth"]
+["Saturn", "Venus"]
+```

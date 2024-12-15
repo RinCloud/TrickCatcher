@@ -1,0 +1,14 @@
+from typing import List, Tuple
+def sum_product(numbers: List[int]) -> Tuple[int, int]:
+    """
+    Returns a tuple consisting of a sum and product of all the integers in a list.
+    """
+    sum = 0
+    product = 1
+    
+    if numbers:
+        for num in numbers:
+            sum += num
+            product *= num
+    
+    return (sum, product)

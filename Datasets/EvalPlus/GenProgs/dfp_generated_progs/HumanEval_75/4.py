@@ -1,0 +1,32 @@
+def is_multiply_prime(a):
+    """
+    Return True if the given number is the multiplication of 3 prime numbers
+    and False otherwise.
+    Parameters:
+    a (int): The number to check.
+    Returns:
+    bool: True if the number is the multiplication of 3 prime numbers, False otherwise.
+    """
+    def is_prime(n):
+        """
+        Return True if the given number is prime and False otherwise.
+        Parameters:
+        n (int): The number to check.
+        Returns:
+        bool: True if the number is prime, False otherwise.
+        """
+        if n < 2:
+            return False
+        for i in range(2, int(n**0.5) + 1):
+            if n % i == 0:
+                return False
+        return True
+    count = 0
+    i = 2
+    while count < 3:
+        if is_prime(i) and a % i == 0:
+            count += 1
+            a //= i
+        else:
+            i += 1
+    return count == 3 and a == 1

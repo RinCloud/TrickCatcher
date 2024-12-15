@@ -1,0 +1,10 @@
+```python
+from random import *
+from cyaron import *
+
+def sample_one():
+    arr_length = randint(1, 15)
+    arr = sorted(sample(range(-100, 100), arr_length), reverse=bool(randint(0, 1)))  # to make sure there are no duplicates and sometimes reverse the list to increase chances of matches
+    generated_input = [arr]
+    return generated_input
+```

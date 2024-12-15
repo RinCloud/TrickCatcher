@@ -1,0 +1,15 @@
+```python
+from random import *
+from cyaron import *
+
+def sample_one():
+    operators = ['+', '-', '*', '//', '**']
+    length_of_operands = randint(2, 10)  # Ensure at least two operands
+    length_of_operators = length_of_operands - 1  # Ensure operators are one less than operands
+
+    operand = [randint(0, 100) for _ in range(length_of_operands)]
+    operator = [choice(operators) for _ in range(length_of_operators)]
+    
+    generated_input = [operator, operand]
+    return generated_input
+```

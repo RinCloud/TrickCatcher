@@ -1,0 +1,31 @@
+#include <bits/stdc++.h>
+using namespace std;
+using ll=long long;
+const ll mn=3007;
+const ll mod=1e9+7;
+ll dp[mn][mn][2];
+
+void modAdd(ll &a,ll b){
+	a+=b;
+	if(a>=mod)a%=mod;
+}
+
+int main(){
+	ll N,M;cin>>N>>M;
+	for(ll a=0;a<=N;++a)dp[0][a][a==0]=1;
+	for(ll a=0;a<M;++a){
+		for(ll b=0;b<=N;++b){
+			for(ll c=0;c<2;++c){
+				if(dp[a][b][c]<1)continue;
+				ll d=dp[a][b][c];
+				if(b>0)modAdd(dp[a+1][b][c|b==1],d);
+				if(b>0)modAdd(dp[a+1][b-1][c|b==1],d);
+				if(b<N)modAdd(dp[a+1][b][c],d);
+				if(b<N)modAdd(dp[a+1][b+1][c],d);
+			}
+		}
+	}
+	ll ret;
+	for(ll a=0;a<=N;++a)modAdd(ret,dp[M][a][1]);
+	cout<<ret<<endl;
+}

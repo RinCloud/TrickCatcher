@@ -1,0 +1,25 @@
+# Program
+
+```python
+def min_operations(s):
+    count = 0
+    while len(set(s)) > 1:
+        s_new = ""
+        for i in range(len(s)-1):
+            if s[i] == s[i+1]:
+                s_new += s[i]
+            else:
+                s_new += s[i+1]
+        s = s_new
+        count += 1
+        
+    return count
+
+s = input()
+result = min_operations(s)
+print(result)
+```
+
+The function `min_operations` takes a string `s` as input and returns the minimum necessary number of operations to achieve the objective. It iteratively applies the operation described in the problem to reduce the length of `s` until all characters in `s` are the same.
+
+In the main program, we read the input string `s`, then call the `min_operations` function with `s` as an argument and print the result.

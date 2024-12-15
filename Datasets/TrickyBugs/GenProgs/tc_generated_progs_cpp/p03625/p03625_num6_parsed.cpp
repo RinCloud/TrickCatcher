@@ -1,0 +1,46 @@
+#include <cstdio>
+#include <algorithm>
+using namespace std;
+
+bool cmp(int a, int b)
+{
+    return a > b;
+}
+
+int main()
+{
+    int n;
+    scanf("%d", &n);
+    int b[100005];
+    for (int i = 0; i < n; i++)
+    {
+        scanf("%d", &b[i]);
+    }
+    sort(b, b + n, cmp);
+    long long sum = 0;
+    for (int i = 0; i + 1 < n; i++)
+    {
+        if (b[i] == b[i + 1])
+        {
+            sum = b[i];
+            break;
+        }
+    }
+    if (sum == 0)
+    {
+        sum = 0;
+    }
+    else
+    {
+        for (int i = sum == b[0] ? 1 : 0; i + 1 < n; i++)
+        {
+            if (sum == b[i])
+            {
+                sum *= b[i + 1];
+                break;
+            }
+        }
+    }
+    printf("%lld\n", sum);
+    return 0;
+}

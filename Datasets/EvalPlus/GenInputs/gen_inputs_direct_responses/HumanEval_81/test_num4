@@ -1,0 +1,5 @@
+**Test Input Reasoning:**
+
+- The input list contains only one element.
+- The GPA in the input list is 4.0, which is the highest possible GPA.
+- This test case is interesting because it tests if the function can correctly assign the corresponding highest letter grade to the given GPA.

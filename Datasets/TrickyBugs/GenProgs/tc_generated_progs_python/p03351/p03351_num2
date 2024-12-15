@@ -1,0 +1,9 @@
+As given, A and C can indirectly communicate when A and B can directly communicate and also B and C can directly communicate. 
+The issue with the existing code is that it is checking the distance between A and C using a fixed value 16 instead of d.
+
+I am providing you the repaired code below.
+
+```python
+a,b,c,d=map(int,input().split())
+print('Yes' if (abs(a-b)<=d and abs(b-c)<=d) or abs(a-c)<=d else 'No')
+```

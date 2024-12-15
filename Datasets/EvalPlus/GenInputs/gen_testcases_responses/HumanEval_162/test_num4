@@ -1,0 +1,10 @@
+{"input": ['Hello world'], "output": '3e25960a79dbc69b674cd4ec67a72c62'}
+{"input": [''], "output": None}
+{"input": ['  Hello world  '], "output": '3e25960a79dbc69b674cd4ec67a72c62'}
+{"input": ['H'], "output": 'fd06bb189608d7324b7c7be48fe8df62'}
+{"input": ['Python'], "output": '81a93a9610aaebab9b79f7cda7e64fd0'}
+{"input": ['0987654321'], "output": 'a8bb88e064ee326e5f15632598474c2d'}
+{"input": ['abcdefghij'], "output": 'ab73616175b885e9d133f0ae64e99c79'}
+{"input": ['abcdefghijklmnopqrstuvwxyz'], "output": 'c3fcd3d76192e4007dfb496cca67e13b'}
+{"input": ['hello\tworld'], "output": 'c3998c0f2e60a8a1ef25ff16db1738ff'}
+{"input": ['  '], "output": None}

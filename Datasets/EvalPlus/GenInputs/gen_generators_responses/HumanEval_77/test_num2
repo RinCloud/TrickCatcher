@@ -1,0 +1,7 @@
+```python
+from random import randint
+def sample_one():
+    a = randint(-10000, 10000)
+    generated_input = [a]
+    return generated_input
+```

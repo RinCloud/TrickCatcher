@@ -1,0 +1,27 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+typedef long long ll;
+
+int main() {
+    int n;
+    ll a, b;
+    scanf("%d %lld %lld", &n, &a, &b);
+  
+    ll *x = (ll*) malloc(n * sizeof(ll));
+    for(int i = 0; i < n; i++)
+        scanf("%lld", &x[i]);
+  
+    ll ans = 0;
+    for(int i = 1; i < n; i++){
+        ll distance = x[i] - x[i-1];
+        ll teleport_cost = distance * a;
+        if(teleport_cost < b) ans += teleport_cost;
+        else ans += b;
+    }
+  
+    free(x);
+  
+    printf("%lld", ans);
+    return 0;
+}

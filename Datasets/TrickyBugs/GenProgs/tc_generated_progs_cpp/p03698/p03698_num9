@@ -1,0 +1,28 @@
+```
+#include <iostream>
+#include <cstring>
+using namespace std;
+
+int main(){
+    int sum = 0;
+    char s[27]; // Increase the size of the character array to cover the maximum possible length of S
+    cin >> s;
+
+    for(int i = 0; i < strlen(s) - 1; i++){ // Change loop boundary to strlen(s) - 1
+        for(int j = i + 1; j < strlen(s); j++){
+            if(s[i] == s[j]){
+                sum++;
+                break; // Added break statement to exit inner loop if a duplicate character is found
+            }
+        }
+    }
+
+    if(sum == 0){
+        cout << "yes";
+    } else {
+        cout << "no";
+    }
+    
+    return 0;
+}
+```

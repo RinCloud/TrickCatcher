@@ -1,0 +1,35 @@
+## Given Input
+```python
+"""
+5 3 2
+4 3 1 5 2
+"""
+```
+
+## Program
+```python
+import sys
+
+# Read input
+N, K, Q = map(int, input().split())
+A = list(map(int, input().split()))
+
+# Initialize X and Y with large and small number
+X, Y = sys.maxsize, -sys.maxsize
+
+# Helper function to find X-Y for a subsequence
+def find_X_minus_Y(sub):
+    global X, Y
+    x = max(sub)
+    y = min(sub)
+    X = min(X, x)
+    Y = max(Y, y)
+
+# Iterate over all possible subsequences
+for i in range(N - K + 1):
+    subseq = A[i:i+K]
+    find_X_minus_Y(subseq)
+
+# Print the smallest possible value of X-Y
+print(X - Y)
+```

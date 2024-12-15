@@ -1,0 +1,10 @@
+```python
+from random import randint
+
+def sample_one():
+    length_of_arr = randint(1, 1000)  # Length of array between 1 and 1000
+    k = randint(0, length_of_arr)  # k is between 0 and the length of the array
+    arr = [randint(-1000, 1000) for _ in range(length_of_arr)]  # Generating array elements in the range -1000 to 1000
+    generated_input = [arr, k]
+    return generated_input
+```

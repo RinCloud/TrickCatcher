@@ -1,0 +1,10 @@
+{"input": [[], []], "output": []}
+{"input": [['hi', 'admin'], ['hI', 'Hi']], "output": ['hI', 'Hi']}
+{"input": [['hi', 'admin'], ['hi', 'hi', 'admin', 'project']], "output": ['hi', 'admin']}
+{"input": [['hi', 'admin'], ['hI', 'hi', 'hi']], "output": ['hI', 'hi', 'hi']}
+{"input": [['4'], ['1', '2', '3', '4', '5']], "output": ['4']}
+{"input": [['a', 'b', 'c'], ['x', 'y', 'z']], "output": ['a', 'b', 'c']}
+{"input": [['x', 'y', 'z'], ['a', 'b', 'c']], "output": ['x', 'y', 'z']}
+{"input": [['a', 'b', 'c'], ['a', 'b', 'c']], "output": ['a', 'b', 'c']}
+{"input": [['a', 'b', 'c'], ['a', 'b', 'c', 'c']], "output": ['a', 'b', 'c']}
+{"input": [['hello', 'world'], ['goodbye', 'world']], "output": ['hello', 'world']}

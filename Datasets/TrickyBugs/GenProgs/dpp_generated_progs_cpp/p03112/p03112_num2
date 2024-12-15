@@ -1,0 +1,58 @@
+```cpp
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <limits>
+
+using namespace std;
+
+int main() {
+    int A, B, Q;
+    cin >> A >> B >> Q;
+
+    vector<long long> shrines(A);
+    for (int i = 0; i < A; ++i) {
+        cin >> shrines[i];
+    }
+
+    vector<long long> temples(B);
+    for (int i = 0; i < B; ++i) {
+        cin >> temples[i];
+    }
+
+    for (int i = 0; i < Q; ++i) {
+        long long x;
+        cin >> x;
+
+        long long minDist = numeric_limits<long long>::max();
+
+        auto shrineIt = lower_bound(shrines.begin(), shrines.end(), x);
+        auto templeIt = lower_bound(temples.begin(), temples.end(), x);
+
+        if (shrineIt != shrines.end() && templeIt != temples.end()) {
+            minDist = min(minDist, max(abs(*shrineIt - x), abs(*templeIt - x)));
+        }
+
+        if (shrineIt != shrines.begin() && templeIt != temples.end()) {
+            --shrineIt;
+            minDist = min(minDist, max(abs(*shrineIt - x), abs(*templeIt - x)));
+        }
+
+        if (shrineIt != shrines.end() && templeIt != temples.begin()) {
+            --templeIt;
+            minDist = min(minDist, max(abs(*shrineIt - x), abs(*templeIt - x)));
+        }
+
+        if (shrineIt != shrines.begin() && templeIt != temples.begin()) {
+            --shrineIt;
+            --templeIt;
+            minDist = min(minDist, max(abs(*shrineIt - x), abs(*templeIt - x)));
+        }
+
+        cout << minDist << endl;
+    }
+
+    return 0;
+}
+
+```

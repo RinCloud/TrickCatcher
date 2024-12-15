@@ -1,0 +1,47 @@
+#include <iostream>
+#include <vector>
+#define MOD 1000000007
+using namespace std;
+
+int main() {
+    int N, K;
+    cin >> N >> K;
+
+    vector<long long> A(N);
+    for (int i = 0; i < N; i++) {
+        cin >> A[i];
+    }
+
+    vector<long long> bitCount(60);
+    for (int i = 0; i < N; i++) {
+        for (int j = 0; j < 60; j++) {
+            if (A[i] >> j & 1) {
+                bitCount[j]++;
+            }
+        }
+    }
+
+    long long ans = 0;
+    long long pow2 = 1;
+    for (int i = 0; i < 60; i++) {
+        if (K >> i & 1) {
+            long long cnt = bitCount[i];
+            long long res = pow2;
+
+            for (int j = 0; j < 60; j++) {
+                if (K >> j & 1 && i != j) {
+                    cnt += bitCount[j];
+                    res = (res * (1LL << j % MOD)) % MOD;
+                }
+            }
+
+            res = (res * ((1LL << cnt) % MOD)) % MOD;
+            ans = (ans + res) % MOD;
+        }
+        pow2 = pow2 * 2 % MOD;
+    }
+
+    cout << ans << endl;
+
+    return 0;
+}

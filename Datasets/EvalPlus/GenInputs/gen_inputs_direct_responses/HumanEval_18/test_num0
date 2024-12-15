@@ -1,0 +1,12 @@
+```
+['', 'a']
+['aaa', 'a']
+['aaaa', 'aa']
+['Abcde', 'A'] 
+['How many times a python', 'o']
+['Python is a high-level programming language.', 'High-level']
+['Goodbye cruel world', 'OK']
+['Test case for find()', 'case']
+["You can use the 'find' method to locate a substring", 'use']
+['Python is very versatile.language', 'PYTHON']
+```

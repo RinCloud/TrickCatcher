@@ -1,0 +1,11 @@
+```python
+from random import randint
+
+def sample_one():
+    apple_count = randint(0, 150)
+    orange_count = randint(0, 150)
+    total_fruits = randint(apple_count + orange_count, 300)
+    fruit_string = f"{apple_count} apples and {orange_count} oranges"
+    generated_input = [fruit_string, total_fruits]
+    return generated_input
+```

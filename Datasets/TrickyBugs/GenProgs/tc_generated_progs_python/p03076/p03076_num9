@@ -1,0 +1,15 @@
+The given code has a logic flaw. The code checks if the lowest digit of `B` is greater than zero, `B%10>0`, but it should actually check if the lowest digit of `B` is not zero, `B%10!=0`, to adhere to the restaurant's rule of only allowing orders at a multiple of 10 time.
+
+Here is the complete repaired code:
+
+```
+A=int(input())
+ans=0
+
+for i in range(4):
+    B=int(input())
+    if A%10>B%10!=0: A,B=B,A
+    ans+=-(-B//10)*10
+
+print(A+ans)
+```

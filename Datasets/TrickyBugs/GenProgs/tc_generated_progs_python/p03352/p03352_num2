@@ -1,0 +1,16 @@
+I found a bug in the code.
+The code currently checks all possible combinations of powers from 2 to 5 for each base starting from 0 to 31. However, this is incorrect as it does not cover all possible perfect powers.
+To fix this, we need to iterate over all possible powers from 2 to the square root of X. For each power, we need to find the largest base that, when raised to the power, does not exceed X.
+I will now provide the repaired code.
+
+**REPAIRED CODE**:
+```
+x = int(input())
+result = 1
+for power in range(2, int(x**0.5)+1):
+    base = 2
+    while base**power <= x:
+        result = base**power
+        base += 1
+print(result)
+```

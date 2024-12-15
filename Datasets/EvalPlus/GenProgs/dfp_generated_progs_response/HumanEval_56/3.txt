@@ -1,0 +1,16 @@
+## Plan
+
+1. Define the function `correct_bracketing(brackets)`. Inside it, define the local variable `stack` initialized to be an empty list. 
+
+
+2. Use an if clause to check whether the length of `brackets` is odd. If it is, return False. 
+
+
+3. Iterate over the characters `ch` in `brackets`. 
+    - a. Append `ch` to `stack` if `ch` is "<". 
+    - b. If `ch` is ">", use an if clause to check whether `stack` is empty. If it is, return False. Otherwise, pop the last element from `stack` and continue iterating. 
+    
+    
+4. After the for loop, use an if clause to check whether `stack` is empty. If it is, return True. Otherwise, return False.
+
+**Remark**: In this algorithm, we use a stack to keep track of the opening brackets. When we encounter a closing bracket, we pop an opening bracket from the stack. If the stack is empty at the end, it means that every opening bracket has a corresponding closing bracket. Otherwise, there are extra opening brackets without closing brackets.

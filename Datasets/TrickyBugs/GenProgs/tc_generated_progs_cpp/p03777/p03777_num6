@@ -1,0 +1,9 @@
+Repaired Code:
+```cpp
+#include<cstdio>
+int main(){
+  char a,b; // change 'int' to 'char'
+  scanf("%c %c",&a,&b);
+  puts( (a=='H' && b=='H') || (a=='D' && b=='D') ? "H" : "D"); // add conditions to check if TopCoDeer is honest or dishonest
+}
+```

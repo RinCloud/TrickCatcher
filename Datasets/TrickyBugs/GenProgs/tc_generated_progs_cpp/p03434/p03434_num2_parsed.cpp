@@ -1,0 +1,16 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main() {
+  int N;
+  cin >> N;
+  vector<int> S(N);
+  for(int i=0;i<N;i++) cin >> S[i];
+  sort(S.begin(), S.end(), greater<int>());
+  int A = 0, B = 0; // initialize Alice's and Bob's scores to 0
+  for(int i=0;i<N;i+=2){
+    A+=S[i];
+    if(i+1 < N) // to make sure we don't go out of bounds
+        B+=S[i+1];
+  }
+  cout << A-B << endl;
+}

@@ -1,0 +1,43 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+vector<vector<int>> adj;
+vector<int> color;
+
+void dfs(int v, int p) {
+    for (auto u : adj[v]) {
+        if (u == p) continue;
+        color[u] = 1 - color[v];
+        dfs(u, v);
+    }
+}
+
+int main() {
+    int n;
+    cin >> n;
+
+    adj.resize(n + 1);
+    color.resize(n + 1, -1);
+    color[1] = 0;
+
+    for (int i = 0; i < n - 1; i++) {
+        int a, b;
+        cin >> a >> b;
+        adj[a].push_back(b);
+        adj[b].push_back(a);
+    }
+
+    dfs(1, 0);
+
+    int blackCnt = 0, whiteCnt = 0;
+
+    for (int i = 1; i <= n; i++) {
+        if (color[i] == 0) blackCnt++;
+        else whiteCnt++;
+    }
+
+    if (blackCnt > whiteCnt) cout << "Fennec";
+    else cout << "Snuke";
+
+    return 0;
+}

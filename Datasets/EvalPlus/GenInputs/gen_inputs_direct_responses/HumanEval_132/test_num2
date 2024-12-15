@@ -1,0 +1,5 @@
+**Test Input Reasoning:**
+
+I will create a test case with the minimum possible valid input, which is a string with a single pair of nested square brackets.
+
+This will test if the function can correctly identify a valid nested subsequence of brackets.

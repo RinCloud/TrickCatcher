@@ -1,0 +1,10 @@
+{"input": [""], "output": True}
+{"input": ["aba"], "output": True}
+{"input": ["aaaaa"], "output": True}
+{"input": ["zbcd"], "output": False}
+{"input": ["race car"], "output": True}
+{"input": ["madam"], "output": True}
+{"input": ["Able was I ere I saw Elba"], "output": True}
+{"input": ["hello world"], "output": False}
+{"input": ["12321"], "output": True}
+{"input": ["abcdefg"], "output": False}

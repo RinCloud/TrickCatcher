@@ -1,0 +1,11 @@
+```python
+from random import *
+
+def sample_one():
+    arr = []
+    length_of_arr = randint(0, 20)  # Generating a random length for the list
+    for _ in range(length_of_arr):
+        arr.append(randint(-10, 20))  # Generating random integers
+    generated_input = [arr]
+    return generated_input
+```

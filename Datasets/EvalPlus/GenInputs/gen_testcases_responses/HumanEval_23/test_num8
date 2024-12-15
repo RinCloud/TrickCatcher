@@ -1,0 +1,10 @@
+{"input": [''], "output": 0}
+{"input": ['abc'], "output": 3}
+{"input": ['hello world'], "output": 11}
+{"input": ['Python'], "output": 6}
+{"input": ['12345'], "output": 5}
+{"input": ['abc123'], "output": 6}
+{"input": ['!@#$%^&*()'], "output": 10}
+{"input": ['åäö'], "output": 6}
+{"input": [12345], "output": 0}
+{"input": [True], "output": 0}

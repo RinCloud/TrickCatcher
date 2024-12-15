@@ -1,0 +1,45 @@
+#include <iostream>
+#include <string>
+#include <algorithm>
+using namespace std;
+
+bool checkSubstring(string s, string t) {
+    int n = s.length();
+    int m = t.length();
+    for (int i = 0; i <= n - m; i++) {
+        if (s.substr(i, m) == t) {
+            return true;
+        }
+    }
+    return false;
+}
+
+string restoreString(string s, string t) {
+    int n = s.length();
+    int m = t.length();
+    for (int i = n - m; i >= 0; i--) {
+        string temp = s.substr(0, i) + t + s.substr(i + m);
+        for (int j = 0; j < n; j++) {
+            if (temp[j] == '?') {
+                temp[j] = 'a';
+            }
+        }
+        if (temp < s) {
+            return temp;
+        }
+    }
+    return "UNRESTORABLE";
+}
+
+int main() {
+    string s, t;
+    cin >> s >> t;
+    
+    if (!checkSubstring(s, t)) {
+        cout << "UNRESTORABLE" << endl;
+    } else {
+        cout << restoreString(s, t) << endl;
+    }
+    
+    return 0;
+}

@@ -1,0 +1,25 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long
+int main(){
+  ll n;
+  cin>>n;
+  int minSize = INT_MAX;
+  for(int i=1;i<=sqrt(n);i++){
+    if(n%i==0){
+      int cn=0,a=i,b=n/i;
+      while(a!=0){
+        a/=10;
+        cn++;
+      }
+      minSize = min(cn, minSize);
+      cn=0;
+      while(b!=0){
+        b/=10;
+        cn++;
+      }
+      minSize = min(cn, minSize);
+    }
+  }
+  cout<<minSize;
+}

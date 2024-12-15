@@ -1,0 +1,14 @@
+```python
+from random import randint
+
+def sample_one():
+    # Generating length of array between 0 to 20 for diversification
+    length_of_array = randint(0, 20)
+    # Initializing the array
+    array = []
+    for _ in range(length_of_array):
+        # Populating the array with non-negative integers, here the range is 0 to 99
+        array.append(randint(0, 99))
+    # Returning the generated array as input
+    return [array]
+```

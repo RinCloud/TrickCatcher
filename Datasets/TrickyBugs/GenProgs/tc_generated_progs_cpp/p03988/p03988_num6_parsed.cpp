@@ -1,0 +1,34 @@
+#include <cstdio>
+#include <iostream>
+using namespace std;
+
+int n, a[105], minn = 1e9, maxx, cnt[105];
+
+int main() {
+    scanf("%d", &n);
+    for (int i = 1; i <= n; ++i) {
+        scanf("%d", &a[i]);
+        maxx = max(maxx, a[i]);
+        minn = min(minn, a[i]);
+        ++cnt[a[i]];
+    }
+    if (minn < (maxx + 1) / 2 || cnt[maxx] <= 1) {
+        puts("Impossible");
+        return 0;
+    }
+    if (maxx & 1 && cnt[minn] != 2) {
+        puts("Impossible");
+        return 0;
+    }
+    if (!(maxx & 1) && cnt[minn] != 1) {
+        puts("Impossible");
+        return 0;
+    }
+    for (int i = minn + 1; i < maxx; ++i)
+        if (cnt[i] < 2) {
+            puts("Impossible");
+            return 0;
+        }
+    puts("Possible");
+    return 0;
+}

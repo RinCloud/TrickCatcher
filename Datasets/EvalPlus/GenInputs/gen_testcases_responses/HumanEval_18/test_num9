@@ -1,0 +1,10 @@
+{"input": ["", "a"], "output": 0}
+{"input": ["aaa", "a"], "output": 3}
+{"input": ["aaaa", "aa"], "output": 3}
+{"input": ["abcdefg", "cde"], "output": 1}
+{"input": ["abcdcba", "a"], "output": 2}
+{"input": ["aaaaaa", "aaa"], "output": 5}
+{"input": ["hello world", "world"], "output": 1}
+{"input": ["abcabcabc", "abc"], "output": 3}
+{"input": ["banana", "ana"], "output": 2}
+{"input": ["racecar", "ace"], "output": 1}

@@ -1,0 +1,25 @@
+The given code has a bug. It counts the number of occurences of string 'T' in the generated 'ans' using `ans.count(Tr)`, which gives the count of all occurences. But as per the problem statement, we need to check if it is a contiguous substring or not.
+
+Here is the repaired code:
+
+```python
+import re
+S_ = input()
+T = input()
+Tr = T[::-1]
+Sr = S_[::-1]
+reg = "".join(map(lambda x: "[{}?]".format(x), Tr))
+ans = re.sub(reg, Tr, Sr, count=1)
+if Tr not in ans:
+    print("UNRESTORABLE")
+else:
+    res = ans.replace("?", "a")[::-1]
+    start = ans.index(Tr) + len(Tr)
+    end = start + S_.index('?')
+    res = res[:end] + S_[end:].replace('?', 'a')[::-1]
+    print(res)
+```
+
+This code iterates through the generated reversed string `ans` and checks if `Tr` exists as a substring. If it does not exist, it prints "UNRESTORABLE". Otherwise, it replaces all the '?' characters in `ans` with 'a' and then replaces the remaining '?' characters in the original string `S_` with 'a'. It then prints the updated string `res`.
+
+This code should correctly solve the problem.

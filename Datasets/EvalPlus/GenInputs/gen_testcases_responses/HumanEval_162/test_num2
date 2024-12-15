@@ -1,0 +1,10 @@
+{"input": ["Hello world"], "output": "3e25960a79dbc69b674cd4ec67a72c62"}
+{"input": [""], "output": None}
+{"input": ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."], "output": "b7ec7276da2b376b931f1daf037e6607"}
+{"input": ["1234567890"], "output": "e807f1fcf82d132f9bb018ca6738a19f"}
+{"input": ["abcdefghijklmnopqrstuvwxyz"], "output": "c3fcd3d76192e4007dfb496cca67e13b"}
+{"input": ["ABCDEFGHIJKLMNOPQRSTUVWXYZ"], "output": "437bba8e0bf58337674f4539e75186ac"}
+{"input": [" !#$%&'()*+,-./:;<=>?@[\]^_`{|}~"], "output": "f2b03a6cb66e74334e4fa75b0807b827"}
+{"input": ["1234567890abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"], "output": "36636d4b222e2638f286dab9f699b456"}
+{"input": ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."], "output": "e35d855c7f0f0af0f247073ae14fb644"}
+{"input": ["This is a test"], "output": "ce114e4501d2f4e2dcea3e17b546f339"}

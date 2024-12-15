@@ -1,0 +1,31 @@
+```python
+import math
+
+def possible_length(cnt, logs):
+    left = 1
+    right = max(logs) + 1
+
+    while left < right:
+        mid = (left + right) // 2
+        
+        cuts = 0
+        for log in logs:
+            cuts += math.ceil(log / mid) - 1
+        
+        if cuts > cnt:
+            left = mid + 1
+        else:
+            right = mid
+
+    return left
+
+def main():
+    n, k = map(int, input().split())
+    logs = list(map(int, input().split()))
+
+    ans = possible_length(k, logs)
+    print(ans)
+
+if __name__ == "__main__":
+    main()
+```

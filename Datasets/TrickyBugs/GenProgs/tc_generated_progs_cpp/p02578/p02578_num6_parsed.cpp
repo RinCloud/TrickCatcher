@@ -1,0 +1,18 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+  long long int N, height, prev_height, ans=0;
+  cin >> N;
+  cin >> prev_height;
+  for(int i=1; i<N; i++){
+    cin >> height;
+    if(prev_height > height){
+      ans += prev_height - height;
+    }else{
+    prev_height = height;
+    }
+  }
+  cout << ans;
+  return 0;
+}

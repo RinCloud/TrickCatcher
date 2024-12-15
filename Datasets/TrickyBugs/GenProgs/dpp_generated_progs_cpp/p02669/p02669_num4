@@ -1,0 +1,41 @@
+```cpp
+#include <iostream>
+#include <vector>
+#include <climits>
+using namespace std;
+
+typedef long long ll;
+
+int main() {
+    int T;
+    cin >> T;
+
+    while (T--) {
+        ll N, A, B, C, D;
+        cin >> N >> A >> B >> C >> D;
+
+        vector<ll> dp(N + 1, LLONG_MAX);
+        dp[0] = 0;
+
+        for (int i = 1; i <= N; i++) {
+            dp[i] = min(dp[i], dp[i - 1] + D);
+
+            if (i % 2 == 0) {
+                dp[i] = min(dp[i], dp[i / 2] + A);
+            }
+
+            if (i % 3 == 0) {
+                dp[i] = min(dp[i], dp[i / 3] + B);
+            }
+
+            if (i % 5 == 0) {
+                dp[i] = min(dp[i], dp[i / 5] + C);
+            }
+        }
+
+        cout << dp[N] << endl;
+    }
+
+    return 0;
+}
+```

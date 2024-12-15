@@ -1,0 +1,29 @@
+#include <cstdio>
+#include <algorithm>
+#include <map>
+
+using namespace std;
+
+int main() {
+    int n;
+    scanf("%d", &n);
+    map<int, int> stick_lengths;
+    for (int i = 0; i < n; i++) {
+        int a;
+        scanf("%d", &a);
+        stick_lengths[a]++;
+    }
+    long long max_area = 0;
+    for (auto it1 = stick_lengths.rbegin(); it1 != stick_lengths.rend(); it1++) {
+        if (it1->second >= 4) {
+            max_area = max(max_area, (long long)it1->first * it1->first);
+        }
+        for (auto it2 = next(it1); it2 != stick_lengths.rend(); it2++) {
+            if (it2->second >= 2) {
+                max_area = max(max_area, (long long)it1->first * it2->first);
+            }
+        }
+    }
+    printf("%lld\n", max_area);
+    return 0;
+}

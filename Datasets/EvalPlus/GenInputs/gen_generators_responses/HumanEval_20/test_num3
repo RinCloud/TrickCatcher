@@ -1,0 +1,11 @@
+```python
+from random import *
+
+def sample_one():
+    numbers = []
+    length_of_numbers = randint(2, 10)  # Ensure at least 2 elements as per requirement
+    for i in range(length_of_numbers):
+        numbers.append(uniform(-100.0, 100.0))  # Generate random float between -100.0 and 100.0
+    generated_input = [numbers]
+    return generated_input
+```

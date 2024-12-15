@@ -1,0 +1,41 @@
+**Repaired code**:
+
+```cpp
+#include<bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+	string s; cin >> s;
+	reverse(begin(s), end(s));
+	int ok = 1;
+	for (int i = 0; i < s.size();)
+	{
+		if (s[i] == 'r')
+		{
+			if (s.substr(i, 7) == "remaerd")
+				i += 7;
+			else if (s.substr(i, 6) == "resare")
+				i += 6;
+			else {
+				ok = 0;
+				break;
+			}
+		}
+		else if (s[i] == 'e' && s.substr(i, 5) == "esare")
+			i += 5;
+		else if (s[i] == 'm' && s.substr(i, 5) == "maerd")
+			i += 5;
+		else {
+			ok = 0;
+			break;
+		}
+	}
+	cout << (ok ? "YES" : "NO") << endl;
+}
+```
+
+**Explanation**:
+
+- In the original code, the `for` loop had `++i` in the loop body, which is incorrect. Since the loop increments `i` in each iteration, there is no need to increment it inside the loop body.
+- Additionally, if none of the conditions in the loop is satisfied, the `ok` flag should be set to `0` and the loop should be broken, as the current character does not match any of the required substrings.

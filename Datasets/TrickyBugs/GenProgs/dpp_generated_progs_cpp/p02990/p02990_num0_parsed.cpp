@@ -1,0 +1,38 @@
+#include <iostream>
+#include <vector>
+
+const int MOD = 1000000007;
+
+int main() {
+    int N, K;
+    std::cin >> N >> K;
+
+    // Initialize 2D vector to store the number of ways to arrange the balls
+    std::vector<std::vector<int>> dp(K + 1, std::vector<int>(N + 1));
+
+    // Base case: If K = 0, there is only one way to arrange the balls
+    for (int i = 0; i <= N; i++) {
+        dp[0][i] = 1;
+    }
+
+    for (int i = 1; i <= K; i++) {
+        for (int j = 1; j <= N; j++) {
+            // If j < i, it is not possible to collect i blue balls in j moves
+            if (j < i) {
+                dp[i][j] = 0;
+            }
+            else {
+                // Number of ways to arrange blue balls in the first j-1 positions, in order to have i-1 moves to collect the blue balls
+                dp[i][j] = dp[i][j - 1];
+                // Number of ways to arrange the remaining red balls in order to have i moves to collect the blue balls
+                dp[i][j] = (dp[i][j] + dp[i - 1][j - 1]) % MOD;
+            }
+        }
+    }
+
+    for (int i = 1; i <= K; i++) {
+        std::cout << dp[i][N] << std::endl;
+    }
+
+    return 0;
+}

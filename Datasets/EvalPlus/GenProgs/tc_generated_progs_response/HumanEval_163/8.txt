@@ -1,0 +1,9 @@
+def generate_integers(a, b):
+    if a > b:
+        return generate_integers(b, a)
+    return [x for x in range(a, b + 1, 2) if set(int(digit) for digit in str(x)) <= {0, 2, 4, 6, 8}]
+
+# Testing the function
+print(generate_integers(2, 8))  # Output should be [2, 4, 6, 8]
+print(generate_integers(8, 2))  # Output should be [2, 4, 6, 8]
+print(generate_integers(10, 14))  # Output should be []

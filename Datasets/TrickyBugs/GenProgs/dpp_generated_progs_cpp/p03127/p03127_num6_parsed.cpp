@@ -1,0 +1,25 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
+using namespace std;
+
+int main() {
+    int N;
+    cin >> N;
+    vector<int> monsters(N);
+
+    for(int i = 0; i < N; i++) {
+        cin >> monsters[i];
+    }
+
+    int minHealth = monsters[0];
+
+    for(int i = 1; i < N; i++) {
+        minHealth = __gcd(minHealth, monsters[i]);
+    }
+
+    cout << minHealth << endl;
+
+    return 0;
+}

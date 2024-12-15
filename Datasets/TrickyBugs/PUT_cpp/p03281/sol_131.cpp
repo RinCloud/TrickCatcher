@@ -1,0 +1,9 @@
+#include"bits/stdc++.h"
+using namespace std;
+int main(){
+    int n,s,a[]={105,135,165,195,189};
+  	cin>>n;
+    for(int i=0;i-5;)if(n>=a[i++])++s;
+    cout<<s<<"\n";
+}
+

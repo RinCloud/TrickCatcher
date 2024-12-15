@@ -1,0 +1,10 @@
+{"input": ["Hello"], "output": True}
+{"input": ["abcdcba"], "output": True}
+{"input": ["kittens"], "output": True}
+{"input": ["orange"], "output": False}
+{"input": [""], "output": False}
+{"input": ["Python"], "output": False}
+{"input": ["abcdefghijklmnopqrstuvwxyz"], "output": False}
+{"input": ["0123456789"], "output": False}
+{"input": ["!@#$%^&*()"], "output": False}
+{"input": ["The quick brown fox jumps over the lazy dog"], "output": False}

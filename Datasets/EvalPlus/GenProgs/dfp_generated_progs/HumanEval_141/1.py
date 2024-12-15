@@ -1,0 +1,17 @@
+def file_name_check(file_name):
+    # Check condition 1: There should not be more than three digits in the file's name
+    digits_count = sum([1 for char in file_name if char.isdigit()])
+    if digits_count > 3:
+        return 'No'
+    # Check condition 2: The file's name contains exactly one dot
+    if file_name.count('.') != 1:
+        return 'No'
+    # Check condition 3: The substring before the dot should not be empty, and it starts with a letter from the latin alphapet
+    name, ext = file_name.split('.')
+    if not name or not name[0].isalpha():
+        return 'No'
+    # Check condition 4: The substring after the dot should be one of these: ['txt', 'exe', 'dll']
+    allowed_extensions = ['txt', 'exe', 'dll']
+    if ext not in allowed_extensions:
+        return 'No'
+    return 'Yes'

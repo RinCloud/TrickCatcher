@@ -1,0 +1,9 @@
+```python
+from random import randint
+
+def sample_one():
+    arr_length = randint(0, 10000)  # Generate array length within constraints
+    arr = [randint(0, 10000) for _ in range(arr_length)]  # Generate array with non-negative integers within constraints
+    generated_input = [arr]  # Wrap the generated array in a list to match the function's input signature
+    return generated_input
+```

@@ -1,0 +1,24 @@
+**Repaired code:**
+
+```
+#include <bits/stdc++.h>
+using namespace std;
+#define int long long
+
+signed main() {
+    int n, k; cin>>n>>k;
+    int a[n]; for(auto &i : a)  cin>>i;
+    int lo = 0, hi = 1e9 +1, mid;
+    
+    while(hi-lo > 1) {
+        int cnt = 0;
+        mid = (lo+hi)>>1;
+        for(int i = 0; i < n; i++)  if(a[i] > mid)  cnt += ceil((double)a[i]/mid) - 1;
+        if(cnt<=k)  hi = mid;
+        else    lo = mid;
+    }
+    cout<<hi;
+}
+```
+
+The repaired code is fixed by taking into account that we can cut a log at most K times in total. In the for loop, we use the ceil function to round up the division result of a[i]/mid. Since we start counting the number of cuts from zero, we need to subtract 1 from the result.

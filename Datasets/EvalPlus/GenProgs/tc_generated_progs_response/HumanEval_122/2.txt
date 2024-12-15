@@ -1,0 +1,7 @@
+def add_elements(arr, k):
+    return sum(x for x in arr[:k] if x < 100) # Corrected implementation to sum only elements with at most two digits
+
+# Testing the corrected implementation
+arr = [111, 21, 3, 4000, 5, 6, 7, 8, 9]
+k = 4
+print(add_elements(arr, k))  # Output: 24

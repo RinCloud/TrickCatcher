@@ -1,0 +1,10 @@
+```python
+from random import randint
+
+def sample_one():
+    n = randint(0, 100)  # Generate a random integer n between 0 to 100
+    x = randint(-50, 50)  # Generate a random integer x between -50 to 50
+    y = randint(-50, 50)  # Generate a random integer y between -50 to 50
+    generated_input = [n, x, y]
+    return generated_input
+```

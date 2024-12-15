@@ -1,0 +1,99 @@
+**Repaired Code**:
+
+```
+#include <iostream>
+#include <algorithm>
+#include <vector>
+using namespace std;
+
+const int N = 55, M = 105;
+const int mod = 1000000007;
+
+vector<int> G[N];
+int dfn[N], low[N], idx = 0;
+int stke[M], tope = 0, eid = 0;
+int stkv[M], topv = 0;
+int n, m, k, res = 1;
+int ex[M], ey[M];
+bool vis[N][N];
+bool cyclePt[N];
+
+int C[M*2][M*2];
+void preC(int n){
+	C[0][0] = 1;
+	for(int i=1; i<=n; i++){
+		C[i][0] = 1;
+		for(int j=1; j<=i; j++)
+			C[i][j] = (C[i-1][j] + C[i-1][j-1]) % mod;
+	}
+}
+
+int gcd(int x, int y){
+	int t;
+	while(y) t = x, x = y, y = t % y;
+	return x;
+}
+
+void dfs(int x){
+	dfn[x] = low[x] = ++idx;
+	stkv[++topv] = x;
+	for(int v : G[x]){
+		if(vis[x][v]) continue;
+		stke[++tope] = ++eid;
+		ex[eid] = x; ey[eid] = v;
+		vis[x][v] = vis[v][x] = true;
+		if(!dfn[v]){
+			int eidNow = eid;
+			dfs(v);
+			low[x] = min(low[x], low[v]);
+			if(low[v] >= dfn[x]){
+				int ce = 0, cv = 0;
+				bool cycle = true;
+				for(int i=tope; stke[i] != eidNow; --i){
+					if(cyclePt[ey[stke[i]]]) cycle = false;
+					cyclePt[ey[stke[i]]] = true;
+					++ce;
+				}
+				++ce;
+				for(; stke[tope] != eidNow; --tope)
+					cyclePt[ey[stke[tope]]] = false;
+				--tope;
+				while(stkv[topv] != x) --topv, ++cv;
+				++cv;
+				if(cycle){
+					int sum = 0;
+					for(int i=0; i<ce; i++){
+						int d = gcd(ce, i);
+						sum += power(k, d);
+						sum %= mod;
+					}
+					res = (res * ((sum * power(ce, mod-2))%mod))%mod;
+				}
+				else{
+					int c1=m-k, c2=k;
+					res = (res * C[ce+c1-1][ce])%mod;
+				}
+			}
+		}
+		else low[x] = min(low[x], dfn[v]);
+	}
+}
+
+int main(){
+	ios_base::sync_with_stdio(false);
+	cin.tie(NULL);
+	cout.tie(NULL);
+	
+	cin >> n >> m >> k;
+	preC(m + k);
+	for(int i=1; i<=m; i++){
+		int u, v; cin >> u >> v;
+		G[u].push_back(v); G[v].push_back(u);
+	}
+	for(int i=1; i<=n; i++)
+		if(!dfn[i]) dfs(i);
+	cout << res << endl;
+	return 0;
+}
+
+```

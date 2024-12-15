@@ -1,0 +1,25 @@
+**REPAIRED CODE:**
+
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+ 
+int main() {
+  int X;
+  cin >> X;
+  int ans=1;
+  for (int i=2;i<=sqrt(X);i++){
+    int x=i;
+    while (x*i<=X){
+      x*=i;
+    }
+    ans=max(ans,x);
+  }
+  cout << ans << endl;
+}
+```
+
+Explanation of the issue(s) with the original code:
+
+- The loop condition `for (int i=2;i<sqrt(X);i++)` is incorrect. It should be `for (int i=2;i<=sqrt(X);i++)` to ensure that the loop iterates over all possible values of `i` including the square root of `X`.
+- Also, the code should check if `x * i` is still less than or equal to `X` after the while loop, to prevent exceeding the given value of `X`.

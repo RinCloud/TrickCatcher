@@ -1,0 +1,69 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <queue>
+
+using namespace std;
+
+typedef long long ll;
+typedef pair<int, int> pii;
+
+bool comp(const pii &a, const pii &b) {
+    return a.first + a.second < b.first + b.second;
+}
+
+bool ok(const pii &a, const pii &b, int dist) {
+    return abs(a.first - b.first) <= dist && abs(a.second - b.second) <= dist;
+}
+
+int main() {
+    int n, a, b;
+    cin >> n >> a >> b;
+    --a; --b;
+    vector<pii> points(n);
+    for (int i = 0; i < n; ++i) {
+        cin >> points[i].first >> points[i].second;
+    }
+
+    // calculate the Manhattan distance from a and b
+    int dist = abs(points[a].first - points[b].first) + abs(points[a].second - points[b].second);
+
+    // sort the points based on the sum of their coordinates
+    sort(points.begin(), points.end(), comp);
+
+    // create a graph to represent the connections between points
+    vector<vector<int>> graph(n);
+    for (int i = 0; i < n; ++i) {
+        for (int j = i + 1; j < n; ++j) {
+            if (ok(points[i], points[j], dist)) {
+                graph[i].push_back(j);
+                graph[j].push_back(i);
+            }
+        }
+    }
+
+    // calculate the number of points reachable from a and b using BFS
+    vector<bool> visited(n, false);
+    queue<int> q;
+    q.push(a);
+    q.push(b);
+    visited[a] = true;
+    visited[b] = true;
+    int count = 0;
+    while (!q.empty()) {
+        int node = q.front();
+        q.pop();
+        ++count;
+        for (int next : graph[node]) {
+            if (!visited[next]) {
+                visited[next] = true;
+                q.push(next);
+            }
+        }
+    }
+
+    // subtract 2 from the count to exclude a and b themselves
+    cout << count - 2 << endl;
+
+    return 0;
+}

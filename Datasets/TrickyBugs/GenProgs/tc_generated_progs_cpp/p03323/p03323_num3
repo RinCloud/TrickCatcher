@@ -1,0 +1,15 @@
+**REPAIRED CODE**:
+
+```
+#include<bits/stdc++.h>
+
+using namespace std;
+
+int main(){
+  int A, B; cin>>A>>B;
+  if(abs(A-B) <= 1) cout<<"Yay!"<<endl;
+  else cout<<":("<<endl;
+  return 0;
+}
+```
+The only problem with the code was that there was no new line character being printed after the output.

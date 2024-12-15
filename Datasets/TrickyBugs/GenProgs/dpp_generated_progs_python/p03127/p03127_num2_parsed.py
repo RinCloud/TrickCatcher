@@ -1,0 +1,22 @@
+import random
+
+def get_min_final_health(n, a):
+    while n > 1:
+        attacking_monster = random.randint(0, n-1)
+        while a[attacking_monster] == 0:
+            attacking_monster = random.randint(0, n-1)
+        attacked_monster = random.randint(0, n-1)
+        while attacked_monster == attacking_monster or a[attacked_monster] == 0:
+            attacked_monster = random.randint(0, n-1)
+        a[attacked_monster] -= a[attacking_monster]
+        if a[attacked_monster] < 0:
+            a[attacked_monster] = 0
+        n = sum([1 for health in a if health > 0])
+    return a[0]
+
+# Read input
+n = int(input())
+a = list(map(int, input().split()))
+
+# Call function and print result
+print(get_min_final_health(n, a))

@@ -1,0 +1,23 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main(){
+  string s;
+  long long int k;
+  cin >> s >> k;
+  for(int i = 0; i < s.length(); ++i) {
+    long long int si = s[i] - '0';
+    if(si > 1) {
+      cout << si << endl;
+      return 0;
+    }
+    else if(k <= (i + 1) * si) {
+      cout << si << endl;
+      return 0;
+    }
+    else {
+      k -= (i + 1) * si;
+    }
+  }
+  return 0;
+}

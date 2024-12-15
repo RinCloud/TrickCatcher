@@ -1,0 +1,23 @@
+def minimum_time(N, E, T, bears):
+    # Calculate the minimum time Shik needs to collect all the coins and go to the exit
+    
+    # Initialize the time taken to reach each bear
+    time_to_bear = [bear - 1 for bear in bears]
+    
+    # Calculate the total time taken to reach each bear
+    total_time = sum(time_to_bear)
+    
+    # Calculate the time taken to reach the exit from the last bear
+    time_to_exit = E - bears[-1] + total_time
+    
+    # Calculate the minimum time by considering either giving a candy to each bear or not giving a candy
+    minimum_time = min(total_time + T * (N - 1), time_to_exit)
+    
+    return minimum_time
+
+# Read the input from standard input
+N, E, T = map(int, input().split())
+bears = list(map(int, input().split()))
+
+# Calculate and print the minimum time
+print(minimum_time(N, E, T, bears))

@@ -1,0 +1,12 @@
+The code contains a logic flaw. 
+
+The expression `(b==c)*a+(c==a)*b+(a==b)*c` is trying to find the integer that is different from the rest, but it is not correct. The expression will evaluate to `a` if `b` is equal to `c`, `b` if `c` is equal to `a`, and `c` if `a` is equal to `b`. 
+
+To find the integer that is different from the rest, we can use the XOR operation (`^`). XOR will return the number that appears an odd number of times in the input. 
+
+Here is the corrected code:
+
+```
+a, b, c = map(int, input().split())
+print(a^b^c)
+```

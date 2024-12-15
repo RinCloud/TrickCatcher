@@ -1,0 +1,28 @@
+```
+def solve(N, P):
+    def row_col(x):
+        row = (x - 1) // N
+        col = (x - 1) % N
+        return (row, col)
+
+    def dist(x, y):
+        rx, cx = row_col(x)
+        ry, cy = row_col(y)
+        return abs(rx - ry) + abs(cx - cy)
+
+    count = 0
+    for i in range(len(P) - 1):
+        if dist(P[i], P[i+1]) > 1:
+            count += 1
+    return count
+
+# Read inputs
+N = int(input())
+P = list(map(int, input().split()))
+
+# Solve problem
+ans = solve(N, P)
+
+# Print answer
+print(ans)
+```

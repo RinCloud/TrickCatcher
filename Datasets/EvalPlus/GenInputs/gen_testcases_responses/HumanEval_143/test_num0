@@ -1,0 +1,10 @@
+{"input": ["This is a test"], "output": "is"}
+{"input": ["lets go for swimming"], "output": "go for"}
+{"input": ["I am very happy"], "output": "am happy"}
+{"input": ["My dog is cute"], "output": "dog is cute"}
+{"input": ["Hello world"], "output": ""}
+{"input": ["Python is fun"], "output": ""}
+{"input": ["I love coding"], "output": "I"}
+{"input": ["Let's have a party"], "output": "Let's"}
+{"input": ["This sentence has many words"], "output": "This has many"}
+{"input": ["The quick brown fox jumps over the lazy dog"], "output": "quick over lazy"}

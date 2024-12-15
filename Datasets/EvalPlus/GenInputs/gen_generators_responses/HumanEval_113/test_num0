@@ -1,0 +1,14 @@
+```python
+from random import randint
+from cyaron import String
+
+def sample_one():
+    n = randint(1, 5)  # Generate random length for list of strings (between 1 and 5)
+    lst = []
+    for _ in range(n):
+        length_of_string = randint(1, 10)  # Length of each string (between 1 and 10)
+        # Generate a random string of digits
+        random_string = String.random(length_of_string, charset="0123456789")
+        lst.append(random_string)
+    return [lst]
+```

@@ -1,0 +1,24 @@
+# Solution
+
+A naive approach would be to iterate through all possible prices before tax starting from 1 and calculate the consumption tax for each price. If the calculated consumption tax matches A or B, we print that price and exit the loop. If no price satisfies the condition, we print -1.
+
+Here is the Python program that implements this approach:
+
+```python
+A, B = map(int, input().split())
+
+price = -1
+for p in range(1, 10001): # Assuming the maximum price before tax is 10000 yen
+    tax8 = p * 8 // 100
+    tax10 = p * 10 // 100
+    
+    if tax8 == A and tax10 == B:
+        price = p
+        break
+
+print(price)
+```
+
+This program takes input from the user in the specified format, splits the input into A and B variables, and then iterates through all possible prices from 1 to 10000. For each price, it calculates the consumption tax at 8 percent (rounded down) and at 10 percent (rounded down). If both calculated taxes match A and B respectively, it sets the current price as the desired price and breaks out of the loop. Finally, it prints the desired price.
+
+Note: We assume the maximum price before tax is 10000 yen, as mentioned in the problem statement.

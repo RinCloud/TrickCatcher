@@ -1,0 +1,10 @@
+{"input": [["aa", "a", "aaa"]], "output": ["aa"]}
+{"input": [["ab", "a", "aaa", "cd"]], "output": ["ab", "cd"]}
+{"input": [["ab", "a", "aaa", "cd", "az", "be", "bg"]], "output": ["ab", "az", "be", "cd", "bg"]}
+{"input": [["xy", "yx", "abcd", "abcdefgh", "kl", "mnopq", "qrst"]], "output": ["kl", "xy", "yx", "qrst", "abcd", "mnopq", "abcdefgh"]}
+{"input": [["a", "c", "e", "g", "i", "k", "m", "o", "q", "s", "u", "w", "y"]], "output": ["a", "c", "e", "g", "i", "k", "m", "o", "q", "s", "u", "w", "y"]}
+{"input": [["a"]], "output": []}
+{"input": [["a", "aaa", "aaaaa", "aaaaaaaa"]], "output": ["a", "aaa", "aaaaa", "aaaaaaaa"]}
+{"input": [["", "a", "aa"]], "output": ["", "aa"]}
+{"input": [["abcd", "efgh", "ijkl", "mnop"]], "output": ["efgh", "ijkl", "mnop", "abcd"]}
+{"input": [["abcde", "fghij", "klmno", "pqrst"]], "output": ["abcde", "klmno", "pqrst", "fghij"]}

@@ -1,0 +1,27 @@
+#include <cstdio>
+#include <cstring>
+#include <algorithm>
+using namespace std;
+
+int main()
+{
+    char a[100];
+    int ans;
+    scanf("%s", a);
+    int n = strlen(a);
+    if (n == 1) {
+        ans = a[0] - '0';
+    } else if (a[n - 1] == '9') {
+        ans = (n - 1) * 9;
+        for (int i = 0; i < n - 1; i++) {
+            ans += a[i] - '0';
+        }
+    } else {
+        ans = (n - 1) * 9 - 1;
+        for (int i = 0; i < n; i++) {
+            ans += a[i] - '0';
+        }
+    }
+    printf("%d\n", ans);
+    return 0;
+}

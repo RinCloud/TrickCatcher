@@ -1,0 +1,30 @@
+```python
+import math
+
+def can_cut(logs, max_length, num_cuts):
+    cuts_needed = 0
+    for log in logs:
+        cuts_needed += math.ceil(log / max_length) - 1
+    return cuts_needed <= num_cuts
+
+def find_shortest_length(logs, num_cuts):
+    left = 1
+    right = max(logs)
+    while left < right:
+        mid = (left + right) // 2
+        if can_cut(logs, mid, num_cuts):
+            right = mid
+        else:
+            left = mid + 1
+    return right
+
+def main():
+    n, k = map(int, input().split())
+    logs = list(map(int, input().split()))
+    result = find_shortest_length(logs, k)
+    print(result)
+
+if __name__ == '__main__':
+    main()
+```
+Note: The above program uses binary search to find the shortest possible length of the longest log after at most K cuts. The can_cut function checks if it's possible to achieve the given maximum length by making at most K cuts. The find_shortest_length function uses binary search to find the minimum possible maximum length that satisfies the condition. Finally, the main function reads the input and calls the find_shortest_length function to get the result.

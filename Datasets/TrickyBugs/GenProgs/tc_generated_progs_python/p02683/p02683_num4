@@ -1,0 +1,25 @@
+The given code has a bug. It is not taking into account the fact that at least one book from each class must be bought. The code is only checking if the total cost is greater than or equal to the target cost for all the books bought.
+
+To fix this bug, we need to modify the code to check if at least one book from each class is bought before checking the total cost.
+
+Here is the repaired code:
+
+```python
+n, m, x = map(int, input().split())
+
+Book = [[int(x) for x in input().split()] for j in range(n)]
+Cost = 10 ** 7
+for i in range(2**n):
+  bag = [0 for k in range(n+1)]
+
+  for j in range(n):
+    if ((i >> j) & 1):
+      bag = [x + y for (x, y) in zip(bag, Book[j])]
+  if all(b >= x for b in bag[1:]) and all(a > 0 for a in bag[1:]):
+    if Cost >= bag[0]:
+      Cost = bag[0]
+if Cost != 10 ** 7:
+  print(Cost)
+else:
+  print(-1)
+```

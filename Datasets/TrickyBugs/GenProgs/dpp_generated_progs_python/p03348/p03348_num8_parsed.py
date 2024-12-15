@@ -1,0 +1,27 @@
+from collections import defaultdict
+
+def dfs(v, p, graph, degree):
+    deg = degree[v] - (1 if p != -1 else 0)
+    count = 0
+    for u in graph[v]:
+        if u == p:
+            continue
+        dfs(u, v, graph, degree)
+        count += degree[u] == 1
+    degree[v] += count - deg // 2
+    
+n = int(input())
+graph = defaultdict(list)
+degree = [0] * (n + 1)
+
+for _ in range(n-1):
+    a, b = map(int, input().split())
+    graph[a].append(b)
+    graph[b].append(a)
+    degree[a] += 1
+    degree[b] += 1
+
+dfs(1, -1, graph, degree)
+colorfulness = max(degree)
+num_leaves = sum(degree[i] == 1 for i in range(1, n+1))
+print(colorfulness, num_leaves)

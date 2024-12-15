@@ -1,0 +1,8 @@
+```python
+from random import *
+def sample_one():
+    numbers_length = randint(1, 10)  # Choosing a reasonable length for the list
+    numbers = [randint(-10, 10) for _ in range(numbers_length)]
+    generated_input = [numbers]
+    return generated_input
+```

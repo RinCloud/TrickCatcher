@@ -1,0 +1,3 @@
+**Test Input Reasoning:**
+
+The input list `numbers` is empty. This is a corner case to test if the function can handle empty lists correctly.

@@ -1,0 +1,13 @@
+To solve this problem, we need to check if the concatenation of integers a and b is a square number. The given code is attempting to solve this problem but there is a bug in the code.
+
+The bug is in the line `x=eval(input().replace(" ",""))`. This line concatenates the values of a and b without any separation. So, if a=1 and b=21, the concatenation will be 121 instead of 121.
+
+To fix this bug, we need to add a space between the values of a and b while concatenating them. We can achieve this by modifying the line to `x=int(str(a)+ " " +str(b))`.
+
+Here is the complete repaired code:
+
+```
+a, b = map(int, input().split())
+x = int(str(a) + " " + str(b))
+print("Yes" if x % int(x**0.5) == 0 else "No")
+```

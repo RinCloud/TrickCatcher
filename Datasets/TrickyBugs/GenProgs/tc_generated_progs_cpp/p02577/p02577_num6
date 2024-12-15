@@ -1,0 +1,19 @@
+**REPAIRED CODE**:
+
+```
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+  string S;
+  cin >> S;
+  int ans = 0;
+  for (char a : S) ans += a - '0';
+  cout << ((ans % 9 == 0) ? "Yes" : "No") << "\n";
+}
+```
+
+**Explanation:**
+- In the original code, `% 3` is used to check whether the sum of digits is divisible by 9. This is incorrect, as checking `% 3` checks divisibility by 3 but not by 9.
+- I have replaced `% 3` with `% 9` to determine if the sum of digits is divisible by 9.
+- Additionally, I have changed the output strings to correctly indicate whether the number is divisible by 9.

@@ -1,0 +1,10 @@
+{"input": "example.txt", "output": "Yes"}
+{"input": "1example.dll", "output": "No"}
+{"input": "file_name", "output": "No"}
+{"input": "name1.txt", "output": "Yes"}
+{"input": "file.dll", "output": "Yes"}
+{"input": "name1txt", "output": "No"}
+{"input": "file_exe", "output": "No"}
+{"input": "name.dl", "output": "No"}
+{"input": "file.", "output": "No"}
+{"input": "filetxt", "output":"No"}

@@ -1,0 +1,31 @@
+from typing import List
+
+def separate_paren_groups(paren_string: str) -> List[str]:
+    """
+    Separates group of nested parentheses into separate strings
+    
+    Args:
+    paren_string: A string containing multiple groups of nested parentheses
+    
+    Returns:
+    A list of strings representing separate groups of nested parentheses
+    """
+    result = []
+    stack = []
+    group = ""
+    
+    for char in paren_string:
+        if char == ' ':
+            continue
+        
+        if char == '(':
+            stack.append(char)
+            group += char
+        elif char == ')':
+            stack.pop()
+            group += char
+            if len(stack) == 0:
+                result.append(group)
+                group = ""
+    
+    return result

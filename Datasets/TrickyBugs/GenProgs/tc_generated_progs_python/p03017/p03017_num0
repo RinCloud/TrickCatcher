@@ -1,0 +1,19 @@
+The code is almost correct, but there is a small bug in the condition when c<d. The code checks if '##' is in s[a-1:d], however, this condition will not give correct result if there is a `#` between a and b. In that case, it would be possible for Snuke to jump over rocks to reach square C. The correct condition should be that there is no `#` between a and c. 
+
+Here is the complete and corrected code:
+
+```python
+n, a, b, c, d = map(int, input().split())
+s = input()
+
+if c < d:
+    if '#' in s[a-1:c] or '#' in s[b-1:d]:
+        print('No')
+    else:
+        print('Yes')
+else:
+    if '#' in s[a-1:c] or '#' in s[b-1:d]:
+        print('No')
+    else:
+        print('Yes')
+```

@@ -1,0 +1,20 @@
+#include<iostream>
+#include<cmath>
+using namespace std;
+
+int main() {
+    string n;
+    cin >> n;
+    
+    int numDigits = n.size();
+    int answer = numDigits-1;
+    
+    int lastDigit = n[0] - '0';
+    if(lastDigit > 1) {
+        answer++;
+    }
+    
+    cout << answer << endl;
+    
+    return 0;
+}

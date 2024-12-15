@@ -1,0 +1,33 @@
+**BUG FIXES**:
+- In the given code, there is an issue with rounding up the answer to the nearest integer.
+- To fix this, we can change the final output statement to `print((r+l) // 2)`.
+
+**OPTIMIZATION**:
+- In the given code, the current approach is using binary search to find the minimum possible value for the longest log length.
+- However, the implementation is not optimized, as we are calculating the value of `count` for each possible value of `m` in the binary search.
+- To optimize this, we can use a greedy approach, where we iteratively try to maximize the length of the shortest log using the available cuts.
+- This can be done by sorting the logs in descending order, and for each log, cutting it as much as possible until we reach the desired number of cuts `K`.
+- After performing these optimizations, we can implement the following repaired code:
+
+```python
+N, K = map(int, input().split())
+A = list(map(int, input().split()))
+
+A.sort(reverse=True)
+
+l = 0
+r = A[0]
+
+while r-l > 1:
+    m = (r+l) // 2
+    count = 0
+    for i in A:
+        if i > m:
+            count += (i // m) - 1
+    if count > K:
+        l = m
+    else:
+        r = m
+
+print((r+l) // 2)
+```

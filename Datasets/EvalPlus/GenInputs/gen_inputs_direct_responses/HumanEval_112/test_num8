@@ -1,0 +1,12 @@
+```
+['abcde', 'ae']
+['abcdef', 'b']
+['abcdedcba', 'ab']
+['a', 'a']
+['abcde', '']
+['', '']
+['abcdedcdcba', 'ab']
+['abcdefgh', 'ihgfedcba']
+['abcdedcba', '']
+['abcdedcba', 'aec']
+```

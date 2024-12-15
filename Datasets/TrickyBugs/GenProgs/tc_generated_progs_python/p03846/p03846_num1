@@ -1,0 +1,29 @@
+**Repaired code**:
+
+```python
+from collections import Counter
+
+n = int(input())
+l = list(map(int, input().split()))
+mod = 10**9+7
+
+if n % 2 == 0:
+  counts = Counter(l)
+  if len(set(l)) == n//2 and counts.most_common()[0][1] == 2:
+    print(2**(n//2)%mod)
+  else:
+    print(0)
+else:
+  counts = Counter(l)
+  if l.count(0) == 1 and counts.most_common()[0][1] == 2:
+    print(2**((n-1)//2)%mod)
+  else:
+    print(0)
+```
+
+Explanation:
+
+- I added `from collections import Counter` to use the Counter class to count the occurrence of numbers in the list `l`.
+- In the original code, if `n` is odd and there is only one 0 in the list, then it checks if `n` is odd and the number of zeros is 1. However, this is incorrect. The number of zeros should not be more than 1. Therefore, I changed it to check if there is exactly one zero in the list.
+- I applied a similar logic for the case when `n` is even. I checked if the most common number in the list appears exactly twice and all other numbers appear only once.
+- If the conditions are satisfied, then the number of possible orders is calculated using the formula 2^(n//2) (for even `n`) or 2^((n-1)//2) (for odd `n`). Otherwise, the output is 0.

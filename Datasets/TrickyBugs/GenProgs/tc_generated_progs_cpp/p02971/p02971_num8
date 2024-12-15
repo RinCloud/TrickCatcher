@@ -1,0 +1,50 @@
+**Repaired Code:**
+
+```c++
+#include <stdio.h>
+
+int main(){
+  int N,i,max=0,min=0;
+  scanf("%d",&N);
+  int a[N];
+  for(i=0;i<N;i++){
+    scanf("%d",&a[i]);
+ 	if(a[i]>max){
+      min = max;
+      max=a[i];
+    }else if(a[i]>min){
+      min=a[i];
+    }
+  }
+  for(i=0;i<N;i++){
+    if(a[i]==max){
+      printf("%d\n",min);
+    }else{
+      printf("%d\n",max);
+    }
+  }
+}
+```
+
+Explanation:
+1. In the given code, there are two variables `max` and `min` which are being used to track the maximum and second maximum elements in the array respectively.
+2. But in the initial state, the value of `min` is not initialized. So, we have initialized it to 0.
+3. Inside the first for loop, when a[i] is greater than `max`, we update both `min` and `max`. This is done because when we update `max` with a[i], the previous value of `max` should be the second maximum element in the array. So, we assign it to `min`.
+4. In the second for loop, if the current element a[i] is equal to `max`, we print `min`. Otherwise, we print `max`.
+5. By performing the above steps, we can find the maximum value among the N-1 elements other than A[i] in the sequence for each i.
+
+Example:
+Consider the first example given in the problem description:
+```
+Input:
+3
+1
+4
+3
+
+Output:
+4
+3
+4
+```
+The initial values of `max` and `min` are 0. After executing the first for loop, `max` is updated to 4 and `min` is updated to 1. When we execute the second for loop, for i = 0, since `a[i]` is not equal to `max`, we print `max` i.e. 4. Similarly, for i = 1, we print `min` i.e. 1 and for i = 2, we print `max` i.e. 4. Hence the output is correct.

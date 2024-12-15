@@ -1,0 +1,18 @@
+```python
+from random import *
+from cyaron import *
+
+def sample_one():
+    string_length = randint(0, 10)
+    substring_length = randint(1, string_length + 1)
+
+    # Ensure that the substring length is not greater than string length
+    if substring_length > string_length:
+        substring_length = string_length
+
+    string = String.random(string_length, charset="abcdefghijklmnopqrstuvwxyz")
+    substring = String.random(substring_length, charset="abcdefghijklmnopqrstuvwxyz")
+
+    generated_input = [string, substring]
+    return generated_input
+```

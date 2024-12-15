@@ -1,0 +1,11 @@
+**REPAIRED CODE**:
+
+```python
+k, x = map(int, input().split())
+if k * 500 >= x:
+    print('Yes')
+else:
+    print('No')
+```
+
+The problem with the original code was that it used a regular expression to check if the number of coins is enough to add up to `X` yen. However, using regular expressions is unnecessary in this case, as we can simply multiply the number of coins (`k`) by 500 and check if it is greater than or equal to `X`. If it is, we print `Yes`, otherwise we print `No`.

@@ -1,0 +1,10 @@
+{"input": [8, 3], "output": "22"}
+{"input": [8, 2], "output": "1000"}
+{"input": [7, 2], "output": "111"}
+{"input": [11, 3], "output": "102"}
+{"input": [15, 4], "output": "33"}
+{"input": [27, 9], "output": "30"}
+{"input": [32, 5], "output": "112"}
+{"input": [9, 2], "output": "1001"}
+{"input": [18, 7], "output": "24"}
+{"input": [14, 6], "output": "22"}

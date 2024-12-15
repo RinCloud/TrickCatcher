@@ -1,0 +1,16 @@
+def max_sum(N, A):
+    neg_count = 0
+    min_abs = float('inf')
+    for num in A:
+        if num < 0:
+            neg_count += 1
+        if abs(num) < min_abs:
+            min_abs = abs(num)
+    if neg_count % 2 == 0:
+        return sum(A)
+    else:
+        return sum(A) - 2 * min_abs
+
+N = int(input())
+A = list(map(int, input().split()))
+print(max_sum(N, A))

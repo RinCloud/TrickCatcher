@@ -1,0 +1,10 @@
+{"input": [3, 5], "output": 3}
+{"input": [1101, 101], "output": 2}
+{"input": [0, 101], "output": 1}
+{"input": [3, 11], "output": 8}
+{"input": [100, 101], "output": 1}
+{"input": [1, 2], "output": 0}
+{"input": [3, 2], "output": 0}
+{"input": [6, 9], "output": 0}
+{"input": [5, 13], "output": 2}
+{"input": [7, 23], "output": 2}

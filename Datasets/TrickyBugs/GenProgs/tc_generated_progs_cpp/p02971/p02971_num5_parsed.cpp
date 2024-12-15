@@ -1,0 +1,28 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
+using namespace std;
+
+int main() {
+    int N;
+    cin >> N;
+
+    vector<int> sequence(N);
+    for (int i = 0; i < N; ++i) {
+        cin >> sequence[i];
+    }
+
+    vector<int> maxValues(N);
+    int maxIdx = max_element(sequence.begin(), sequence.end()) - sequence.begin();
+    for (int i = 0; i < N; ++i) {
+        if (i != maxIdx) {
+            maxValues[i] = sequence[maxIdx];
+        }
+    }
+
+    for (int i = 0; i < N; ++i) {
+        cout << maxValues[i] << endl;
+    }
+    return 0;
+}

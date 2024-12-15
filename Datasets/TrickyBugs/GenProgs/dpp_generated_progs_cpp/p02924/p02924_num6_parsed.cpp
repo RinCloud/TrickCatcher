@@ -1,0 +1,29 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
+using namespace std;
+
+int main() {
+  int N;
+  cin >> N;
+
+  vector<int> permutation(N);
+  for (int i = 0; i < N; i++) {
+    permutation[i] = i + 1;
+  }
+
+  int ans = 0;
+  do {
+    int max_rem = 0;
+    for (int i = 0; i < N; i++) {
+      int rem = (i + 1) % permutation[i];
+      max_rem = max(max_rem, rem);
+    }
+    ans += max_rem;
+  } while (next_permutation(permutation.begin(), permutation.end()));
+
+  cout << ans << endl;
+
+  return 0;
+}

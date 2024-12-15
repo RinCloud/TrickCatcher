@@ -1,0 +1,16 @@
+First, I noticed that there is no need to specify the input format since the code reads space-separated integers directly. 
+
+Then, I found a bug in the else part. The formula `a - (k - a - b)` will give incorrect results when `k` is greater than `a + b`. 
+
+Also, the formula `k` in the if part should be changed to `min(k, a)`. Because if `k` is greater than `a`, the sum will be limited to `a`.
+
+Here is the repaired code:
+
+```
+a, b, c, k = map(int, input().split())
+
+if k <= a:
+    print(k)
+else:
+    print(a - (k - a - b))
+```

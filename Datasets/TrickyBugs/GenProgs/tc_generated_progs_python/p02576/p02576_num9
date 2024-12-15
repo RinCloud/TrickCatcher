@@ -1,0 +1,10 @@
+```python
+N, X, T = map(int, input().split())
+
+print((N // X + (N % X != 0)) * T)
+```
+
+Explanation:
+1. Instead of using `int(N / X + 0.9)`, we will use `(N // X + (N % X != 0))` to calculate the minimum number of batches required to make N pieces of takoyaki.
+2. `(N % X != 0)` is used to check if there are any remaining pieces that can't fill a complete batch. If the condition is true, we add 1 to the number of batches.
+3. The result is then multiplied by T to get the minimum number of minutes needed to make N pieces of takoyaki.

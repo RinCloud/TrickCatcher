@@ -1,0 +1,10 @@
+{"input": ["Hello world"], "output": 0}
+{"input": ["The sky is blue. The sun is shining. I love this weather"], "output": 1}
+{"input": ["I am bored. How about you? I don't like this movie!"], "output": 2}
+{"input": ["I love coding. I just finished a project. I'm excited!"], "output": 3}
+{"input": ["I want to eat pizza. Do you want to join me?"], "output": 1}
+{"input": ["I am tired. I need some rest. I will take a nap!"], "output": 3}
+{"input": ["I am going for a run. It's a beautiful day outside. I love running."], "output": 1}
+{"input": ["I have a lot of work to do. I need to finish it by tomorrow."], "output": 1}
+{"input": ["I am feeling happy. I had a great day. I am grateful!"], "output": 3}
+{"input": ["I am a student. I am studying computer science."], "output": 2}

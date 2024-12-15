@@ -1,0 +1,10 @@
+{"input": "Hello world!", "output": ["Hello", "world!"]}
+{"input": "Hello,world!", "output": ["Hello", "world!"]}
+{"input": "abcdef", "output": 3}
+{"input": "This,is,a,test,case", "output": ["This", "is", "a", "test", "case"]}
+{"input": "NoSpaces,NoCommas", "output": 5}
+{"input": "", "output": 0}
+{"input": "a", "output": 0}
+{"input": "world!", "output": ["world!"]}
+{"input": "aaaa,Zzzz", "output": 1}
+{"input": "A longer sentence without spaces or commas.", "output": 5}

@@ -1,0 +1,15 @@
+The code has a bug. It is calculating the number of balls that need to be rewritten incorrectly. Instead of removing the integers with the most occurrences, the code should remove the integers with the fewest occurrences until the number of different integers is at most K.
+
+Here is the corrected code:
+
+```
+from collections import defaultdict
+
+n, k = map(int, input().split())
+d = defaultdict(int)
+for key in input().split():
+  d[key] += 1
+  
+l = len(d)
+print(sum(sorted(d.values())[:l-k]))
+```

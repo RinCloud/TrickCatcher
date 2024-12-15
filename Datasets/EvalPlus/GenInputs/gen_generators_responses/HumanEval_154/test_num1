@@ -1,0 +1,11 @@
+```python
+from random import *
+from cyaron import *
+def sample_one():
+    a_len = randint(5, 15) # length of string a
+    b_len = randint(2, a_len) # length of string b, not longer than a
+    a = String.random(a_len, charset="abcdefghijklmnopqrstuvwxyz")
+    b = String.random(b_len, charset="abcdefghijklmnopqrstuvwxyz")
+    generated_input = [a, b]
+    return generated_input
+```

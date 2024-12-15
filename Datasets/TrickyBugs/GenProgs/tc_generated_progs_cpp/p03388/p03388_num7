@@ -1,0 +1,45 @@
+**UPDATED CODE:**
+```cpp
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+	int i,n;
+	long long a,b,s,t;
+	scanf("%d",&n);
+	for(i=0;i<n;i++)
+	{
+		scanf("%lld %lld",&a,&b);     //Changing %d to %lld to accommodate long long integers
+		s=a*b;
+		t=(long long)sqrt(s);     //Changing int to long long
+		if(t*t==s)
+		{
+			if(a==b)
+			{
+				printf("%lld",(t-1)*2);
+			}
+			else
+			{
+				printf("%lld",(t-1)*2-1);     
+			}
+		}
+		else
+		{
+			if(s<=t*(t+1))
+			{
+				printf("%lld",t*2-1-1);     
+			}
+			else
+			{
+				printf("%lld",t*2-1);
+			}
+		}
+		printf("\n");
+	}
+	return 0;
+}
+```
+Explanation:
+1. Changed `%d` to `%lld` in `scanf` to accommodate `long long` integers.
+2. Changed `int` to `long long` in `t` as well to accommodate large integers.
+3. Update the if-else condition for printing the maximum possible number of participants.

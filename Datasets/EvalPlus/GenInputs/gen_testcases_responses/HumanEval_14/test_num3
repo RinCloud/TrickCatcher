@@ -1,0 +1,10 @@
+{"input": ["abc"], "output": ["a", "ab", "abc"]}
+{"input": ["abcdef"], "output": ["a", "ab", "abc", "abcd", "abcde", "abcdef"]}
+{"input": ["a"], "output": ["a"]}
+{"input": [""], "output": []}
+{"input": ["hello"], "output": ["h", "he", "hel", "hell", "hello"]}
+{"input": ["python"], "output": ["p", "py", "pyt", "pyth", "pytho", "python"]}
+{"input": ["testing"], "output": ["t", "te", "tes", "test", "testi", "testin", "testing"]}
+{"input": ["program"], "output": ["p", "pr", "pro", "prog", "progr", "progra", "program"]}
+{"input": ["12345"], "output": ["1", "12", "123", "1234", "12345"]}
+{"input": ["!@#$"], "output": ["!", "!@", "!@#", "!@#$"]}

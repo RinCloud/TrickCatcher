@@ -1,0 +1,18 @@
+```python
+from random import *
+def sample_one():
+    length_of_q = randint(1, 10)  # Length of the list q
+    max_element_value = 10  # Maximum value an element in q can take
+    
+    # Generate palindromic list q
+    first_half = [randint(1, max_element_value) for _ in range(length_of_q // 2)]
+    if length_of_q % 2 == 0:
+        q = first_half + first_half[::-1]
+    else:
+        q = first_half + [randint(1, max_element_value)] + first_half[::-1]
+    
+    # Decide the maximum weight w
+    w = randint(1, sum(q) + 5)  # To allow flexibility in True and False cases
+    
+    return [q, w]
+```

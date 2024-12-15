@@ -1,0 +1,62 @@
+The given code contains some bugs, which are as follows:
+
+1. Line 15 is calculating the `dic` values incorrectly. The correct `dic` values should be the first W Fibonacci numbers. Replace line 15 with the following code:
+```python
+dic = [1, 2]
+for i in range(2, W):
+    dic.append(dic[i - 1] + dic[i - 2])
+```
+
+2. The loop on line 20 should iterate from 1 to W instead of 1 to W-1. Replace line 20 with the following code:
+```python
+for j in range(1, W):
+```
+
+3. The modulo operation on line 25 should be performed after each calculation to avoid integer overflow. Replace line 25 with the following code:
+```python
+a[i][0] = (a[i - 1][0] * dic[W - 2] + a[i - 1][1] * dic[W - 3]) % 1000000007
+```
+
+4. The inner loop on line 28 should iterate from 1 to W instead of 1 to W-1. Replace line 28 with the following code:
+```python
+for j in range(1, W):
+```
+
+5. The calculations on lines 29, 30, and 31 are missing the modulo operation. Add the modulo operation `% 1000000007` at the end of each calculation:
+```python
+a[i][j] = (a[i - 1][j - 1] * dic[j - 2] * dic[W - j - 2] + a[i - 1][j] * dic[j - 1] * dic[W - j - 2] + a[i - 1][j + 1] * dic[j - 1] * dic[W - j - 3]) % 1000000007
+```
+
+6. The calculation on line 32 is missing the modulo operation. Add the modulo operation `% 1000000007` at the end of the calculation:
+```python
+a[i][W - 1] = (a[i - 1][W - 1] * dic[W - 2] + a[i - 1][W - 2] * dic[W - 3]) % 1000000007
+```
+
+Here is the complete repaired code:
+
+```python
+import sys
+
+H, W, K = map(int, input().split())
+if W == 1:
+    print(1)
+    sys.exit()
+elif W == 2:
+    print(2**(H - 1))
+    sys.exit()
+
+dic = [1, 2]
+for i in range(2, W):
+    dic.append(dic[i - 1] + dic[i - 2])
+
+a = [[0]*W for i in range(H + 1)]
+a[0][0] = 1
+
+for i in range(1, H + 1):
+    a[i][0] = (a[i - 1][0] * dic[W - 2] + a[i - 1][1] * dic[W - 3]) % 1000000007
+    for j in range(1, W):
+        a[i][j] = (a[i - 1][j - 1] * dic[j - 2] * dic[W - j - 2] + a[i - 1][j] * dic[j - 1] * dic[W - j - 2] + a[i - 1][j + 1] * dic[j - 1] * dic[W - j - 3]) % 1000000007
+    a[i][W - 1] = (a[i - 1][W - 1] * dic[W - 2] + a[i - 1][W - 2] * dic[W - 3]) % 1000000007
+
+print(a[H][K - 1])
+```

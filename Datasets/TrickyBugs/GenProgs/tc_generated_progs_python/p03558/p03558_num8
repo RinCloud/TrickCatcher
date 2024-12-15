@@ -1,0 +1,41 @@
+# Solution
+```python
+# -*- coding: utf-8 -*-
+
+def loop(i):
+    j = (10 * i) % K
+    # Check if dp[i] < dp[j-1] + 1 and dp[i] < dp[j]
+    # if true, update dp[j] with dp[i]
+    # if not true, check if dp[j-1] + 1 < dp[i] and dp[j-1] + 1 < dp[j]
+    # if true, update dp[j] with dp[j-1] + 1
+    if dp[i] < dp[j-1] + 1 and dp[i] < dp[j]:
+        dp[j] = dp[i]
+        return j, True
+    if dp[j-1] + 1 < dp[i] and dp[j-1] + 1 < dp[j]:
+        dp[j] = dp[j-1] + 1
+        return j, True
+    return j, False
+
+
+K = int(input())
+
+dp = [K + 1 for _ in range(K)]
+
+dp[1] = 1
+for i in range(1, K):
+    if i == 1:
+        pass
+    else:
+        dp[i] = min(dp[i-1] + 1, dp[i])
+    l = i
+    while True:
+        l, updated = loop(l)
+        if not updated:
+            break
+
+# Update dp[0] with the smallest possible sum of digits
+# by checking if dp[K - 1] + 1 < dp[0]
+dp[0] = min(dp[K - 1] + 1, dp[0])
+print(dp[0])
+```
+The code is using dynamic programming to solve the problem. We initialize a list `dp` with size `K` and set all elements to `K + 1`. In the loop, we update `dp[i]` with the minimum value from `dp[i-1] + 1` and `dp[i]`. Then we use the `loop` function to update `dp` based on the remainder of `10 * i / K`. Finally, we print the smallest possible sum of the digits by checking `dp[0]`. The code looks correct and I don't see any bugs or logic flaws.

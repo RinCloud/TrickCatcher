@@ -1,0 +1,25 @@
+# Program
+
+```python
+def count_permutations(N, K, P):
+    num_permutations = 0
+    
+    for i in range(N - K + 1):
+        sorted_subsequence = sorted(P[i:i+K])
+        
+        if i > 0 and sorted_subsequence[0] == i - 1:
+            num_permutations += 1
+        
+        if i + K < N and sorted_subsequence[K - 1] == i + K:
+            num_permutations += 1
+    
+    return num_permutations
+
+# Read input
+N, K = map(int, input().split())
+P = list(map(int, input().split()))
+
+# Call the function and print the result
+result = count_permutations(N, K, P)
+print(result)
+```

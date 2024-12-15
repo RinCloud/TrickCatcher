@@ -1,0 +1,3 @@
+**Test Input Reasoning:**
+
+I will start with the smallest possible list containing only one element. This will test if the function can handle the edge case of a single element list correctly.

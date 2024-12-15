@@ -1,0 +1,10 @@
+{"input": ["Hi"], "output": "Hi"}
+{"input": ["hello"], "output": "ehllo"}
+{"input": ["Hello World!!"], "output": "Hello !!Wdlor"}
+{"input": [""], "output": ""}
+{"input": ["abc def ghi"], "output": "abc def ghi"}
+{"input": ["123 456 789"], "output": "123 456 789"}
+{"input": ["apple banana cherry"], "output": "aelpp aaabnn cehrry"}
+{"input": ["This is a test"], "output": "Hist is a estt"}
+{"input": ["Python is fun"], "output": "Phnoty is fnu"}
+{"input": ["!!!Hello!"], "output": "!!!Hllo"}

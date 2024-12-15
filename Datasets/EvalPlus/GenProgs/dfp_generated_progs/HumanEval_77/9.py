@@ -1,0 +1,17 @@
+def iscube(a):
+    '''
+    This function takes an integer a and returns True if this integer is a cube of some integer number.
+    Parameters:
+    a (int): An integer number.
+    Returns:
+    bool: True if a is a cube of some integer number, False otherwise.
+    '''
+    # Take the absolute value of a
+    a = abs(a)
+    # Find the cube root of a
+    x = int(a ** (1 / 3))
+    # Check if x cubed equals a
+    if x ** 3 == a:
+        return True
+    else:
+        return False

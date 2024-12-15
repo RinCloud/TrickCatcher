@@ -1,0 +1,10 @@
+{"input": [[], []], "output": []}
+{"input": [['hi', 'admin'], ['hI', 'Hi']], "output": ['hI', 'Hi']}
+{"input": [['hi', 'admin'], ['hi', 'hi', 'admin', 'project']], "output": ['hi', 'admin']}
+{"input": [['hi', 'admin'], ['hI', 'hi', 'hi']], "output": ['hI', 'hi', 'hi']}
+{"input": [['4'], ['1', '2', '3', '4', '5']], "output": ['4']}
+{"input": [['The', 'quick', 'brown', 'fox'], ['jumps', 'over', 'the', 'lazy', 'dog']], "output": ['The', 'quick', 'brown', 'fox']}
+{"input": [['a', 'e', 'i', 'o', 'u'], ['a', 'a', 'e', 'e', 'i', 'i', 'o', 'o', 'u', 'u']], "output": ['a', 'e', 'i', 'o', 'u']}
+{"input": [['apple', 'banana', 'cherry'], ['apple', 'apple', 'banana', 'banana', 'cherry', 'cherry']], "output": ['apple', 'banana', 'cherry']}
+{"input": [['Hello'], ['World']], "output": ['Hello']}
+{"input": [['cat', 'dog', 'cat', 'dog'], ['cat', 'cat', 'cat']], "output": ['cat', 'cat', 'cat']}

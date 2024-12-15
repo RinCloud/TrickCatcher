@@ -1,0 +1,10 @@
+{"input": ['abcd', 'dddddddabce'], "output": False}
+{"input": ['eabcdzzzz', 'dddzzzzzzzddddabc'], "output": False}
+{"input": ['abdd', 'dddddddabc'], "output": True}
+{"input": ['abcd', 'dddddddab'], "output": False}
+{"input": ['a', 'b'], "output": False}
+{"input": ['acdx', 'aegf'], "output": False}
+{"input": ['', ''], "output": True}
+{"input": ['456', '123'], "output": False}
+{"input": ['ABCD', 'dcba'], "output": True}
+{"input": ['EFGH', 'ijkl'], "output": False}

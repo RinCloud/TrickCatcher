@@ -1,0 +1,132 @@
+#include<bits/stdc++.h>
+using namespace std;
+const int MAXN = 75;
+const int P = 1e9 + 7;
+typedef long long ll;
+typedef long double ld;
+typedef unsigned long long ull;
+template <typename T> void chkmax(T &x, T y) {x = max(x, y); }
+template <typename T> void chkmin(T &x, T y) {x = min(x, y); } 
+template <typename T> void read(T &x) {
+	x = 0; int f = 1;
+	char c = getchar();
+	for (; !isdigit(c); c = getchar()) if (c == '-') f = -f;
+	for (; isdigit(c); c = getchar()) x = x * 10 + c - '0';
+	x *= f;
+}
+template <typename T> void write(T x) {
+	if (x < 0) x = -x, putchar('-');
+	if (x > 9) write(x / 10);
+	putchar(x % 10 + '0');
+}
+template <typename T> void writeln(T x) {
+	write(x);
+	puts("");
+}
+int fac[MAXN], inv[MAXN], invn[MAXN];
+int power(int x, int y) {
+	if (y == 0) return 1;
+	int tmp = power(x, y / 2);
+	if (y % 2 == 0) return 1ll * tmp * tmp % P;
+	else return 1ll * tmp * tmp % P * x % P;
+}
+int binom(int x, int y) {
+	if (y > x) return 0;
+	else return 1ll * fac[x] * inv[y] % P * inv[x - y] % P;
+}
+void update(int &x, int y) {
+	x += y;
+	if (x >= P) x -= P;
+}
+char s[MAXN];
+int n, m, p[MAXN], q[MAXN], r[MAXN], sum[MAXN];
+unordered_map <int, int> dp[MAXN][MAXN][MAXN];
+int split(int x, int y) {
+	if (y > x) return 0;
+	else return binom(x - 1, y - 1);
+}
+inline int Hash(int x, int y) {
+	return x * MAXN + y;
+}
+int getdp(int lft, int pos, int opt, int last, int cnt) {
+	if (pos == 0) return lft <= 1;
+	if (last > opt + 1) return 0;
+	if ((last + 1) * pos > lft) return 0;
+	if (last * pos > opt + sum[pos]) return 0;
+	if (dp[lft][pos][opt].count(Hash(last, cnt))) {
+		return dp[lft][pos][opt][Hash(last, cnt)];
+	}
+	int &ans = dp[lft][pos][opt][Hash(last, cnt)];
+	ans = getdp(lft, pos, opt, last + 1, 0);
+	if (last == 0) {
+		if (lft >= 2) {
+			update(ans, 1ll * invn[cnt + 1] * 
+			                  getdp(lft - 2, pos - 1, opt + r[pos] + (q[pos] != 0), last, cnt + 1) % P);
+		}
+	} else if (q[pos] != 0) {
+		int base = 2 * last;
+		if (lft >= base) {
+			update(ans, 1ll * invn[cnt + 1] *
+			                  getdp(lft - base, pos - 1, opt + r[pos] + 1 - last, last, cnt + 1) % P);
+		}
+		if (lft >= base + 1) {
+			update(ans, 2ll * invn[cnt + 1] *
+			                  getdp(lft - base - 1, pos - 1, opt + r[pos] + 1 - last, last, cnt + 1) % P);
+		}
+		if (lft >= base + 2) {
+			update(ans, 1ll * invn[cnt + 1] *
+			                  getdp(lft - base - 2, pos - 1, opt + r[pos] + 1 - last, last, cnt + 1) % P);
+		}
+	}
+	return ans;
+}
+int func(int cnt) {
+	static bool vis[MAXN]; int lft = 0;
+	memset(vis, false, sizeof(vis));
+	for (int i = 1; i <= m; i++)
+		if (s[i] == 'r' && lft != cnt) {
+			p[++lft] = i, q[lft] = 0;
+			vis[i] = true;
+			for (int j = i; j <= m; j++)
+				if (!vis[j] && s[j] == 'b') {
+					vis[j] = true;
+					q[lft] = j;
+					break;
+				}
+		}
+	if (lft != cnt) return 0;
+	for (int i = 1; i <= m; i++) {
+		r[i] = 0;
+		for (int j = q[i - 1] + 1; j <= q[i] - 1; j++)
+			r[i] += !vis[j];
+		sum[i] = sum[i - 1] + r[i] + vis[p[i]] + vis[q[i]];
+	}
+	int cmt = 0;
+	for (int i = m; i >= 1; i--)
+		if (vis[i]) break;
+		else cmt++;
+	for (int i = 0; i < MAXN; i++)
+	for (int j = 0; j < MAXN; j++)
+	for (int k = 0; k < MAXN; k++)
+		dp[i][j][k].clear();
+	int ans = 0;
+	for (int i = 1; i <= n; i++)
+		update(ans, 1ll * (getdp(i, cnt, cmt, 0, 0) + getdp(i + 1, cnt, cmt, 0, 0)) * split(n, i) % P);
+	return 1ll * ans * fac[cnt] % P;
+}
+
+int main() {
+	read(n), read(m);
+	cin>>(s + 1);
+	int ans = 0;
+	fac[0] = inv[0] = 1;
+	for (int i = 1; i <= max(n, m); i++) {
+		fac[i] = 1ll * fac[i - 1] * i % P;
+		inv[i] = power(fac[i], P - 2);
+		invn[i] = power(i, P - 2);
+	}
+	for (int i = 0; i <= m; i++)
+		update(ans, func(i));
+	writeln(ans);
+	return 0;
+}

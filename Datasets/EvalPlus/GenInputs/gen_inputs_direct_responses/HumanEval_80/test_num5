@@ -1,0 +1,12 @@
+test_inputs = [
+    "abc",
+    "xyz",
+    "aabbcc",
+    "abcabc",
+    "defdef",
+    "aabbccdd",
+    "xyzxyz",
+    "abcdefg",
+    "aabbccddee",
+    "abcdefghi"
+]

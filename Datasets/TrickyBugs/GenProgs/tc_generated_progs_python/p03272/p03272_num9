@@ -1,0 +1,13 @@
+**CORRECTED CODE**:
+
+The code given in the problem statement is almost correct. However, we need to modify the code to compute j correctly. Currently, the code is computing `1+eval(input().replace(' ','-'))`. 
+
+To find the desired value of j, we can compute it by subtracting i from N+1. The correct way to compute j is `(N+1) - i`.
+
+Here is the corrected code:
+
+```
+N, i = map(int, input().split())
+j = (N+1) - i
+print(j)
+```

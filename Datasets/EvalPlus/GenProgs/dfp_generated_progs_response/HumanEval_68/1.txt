@@ -1,0 +1,5 @@
+# PLAN
+- First, I will iterate through the given array and store the even values in a separate list along with their indices.
+- Then, I will check if the even values list is empty. If it is empty, I will return an empty list.
+- If the even values list is not empty, I will find the smallest even value and its index by using the min() function.
+- Finally, I will return the smallest even value and its index in a list.

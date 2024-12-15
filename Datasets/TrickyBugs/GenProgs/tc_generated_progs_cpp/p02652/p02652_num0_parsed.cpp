@@ -1,0 +1,74 @@
+#include<bits/stdc++.h>
+using namespace std;
+typedef long long LL;
+const int N=1001001;
+char s[N];
+int n;
+int main(){
+    ios::sync_with_stdio(false);
+    cin>>s;
+    n=strlen(s);
+    int l=0,r=0;
+    int l0=0,r0=0,l1=-2,r1=2; // Initialize l1 and r1 properly
+    int ans = 0; // Initialize ans variable
+    for(int i=0;i<n;i++){
+        char c=s[i];
+        if(c=='1'){
+            l0++;
+            r0++;
+            l1 = max(l1, l);
+            r1 = max(r1, r);
+        }
+        else if(c=='0'){
+            l0--;
+            r0--;
+            l1 = min(l1, l);
+            r1 = min(r1, r);
+        }
+        else{
+            l0--;
+            r0++;
+            l1 = min(l1, l);
+            r1 = max(r1, r);
+        }
+        int d=(r0-l0)%2==0?2:1;
+        if(l0<l){
+            if(l1>=l){
+                l1 = l - 2;
+                l0 += d;
+            } else {
+                l1 = l;
+                l0 += d;
+            }
+        }
+        if(r0>r){
+            if(r1<=r){
+                r1 = r + 2;
+                r0 -= d;
+            } else {
+                r1 = r;
+                r0 -= d;
+            }
+        }
+        if(l0>r0){
+            l0 = l1;
+            r0 = r1;
+
+            if(l1 < l){
+                l--;
+                r0--;
+            }
+            else{
+                r++;
+                l0++;
+            }
+
+            l1 = l - 2;
+            r1 = r + 2;
+        }
+        
+        ans = max(ans, r-l);
+    }
+    cout<<ans<<endl;
+    return 0;
+}

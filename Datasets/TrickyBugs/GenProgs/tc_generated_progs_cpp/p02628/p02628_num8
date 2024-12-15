@@ -1,0 +1,52 @@
+**PROBLEM DESCRIPTION**:
+A shop sells N kinds of fruits, Fruit 1, \ldots, N, at prices of p_1, \ldots, p_N yen per item, respectively. (Yen is the currency of Japan.)
+Here, we will choose K kinds of fruits and buy one of each chosen kind. Find the minimum possible total price of those fruits.
+
+CONSTRAINTS:
+* 1 \leq K \leq N \leq 1000
+* 1 \leq p_i \leq 1000
+* All values in input are integers.
+
+INPUT:
+Input is given from Standard Input in the following format:
+N K
+p_1 p_2 \ldots p_N
+
+OUTPUT:
+Print an integer representing the minimum possible total price of fruits.
+
+EXAMPLES:
+
+INPUT:
+5 3
+50 100 80 120 80
+
+OUTPUT:
+210
+
+INPUT:
+1 1
+1000
+
+OUTPUT:
+1000
+
+**CODE**:
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+  int A[1002];
+  int n,k;
+  cin>>n>>k;
+  for(int i=1;i<=n;i++) cin>>A[i];
+  sort(A,A+n+1);
+  int sum = 0;
+  for (int num=1;num<=k;num++)
+  {
+    sum += A[num];
+  }
+  cout<<sum;
+}
+```

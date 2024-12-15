@@ -1,0 +1,30 @@
+```
+N = input()
+if len(N) > 1:
+    print(int(N[0]) - 1 + 9 * (len(N) - 1) + int(N[-1]) // 9)
+else:
+    print(int(N))
+```
+Bugs/Logic Flaws:
+1. The code does not handle the case when the input number has multiple digits and the most significant digit is not 1. In this case, the code subtracts 1 from the most significant digit and adds 9*(len(N)-1) to the result, which is incorrect.
+2. The code calculates the sum of digits for the number N, but does not consider numbers less than N if their sum of digits is greater.
+
+Repaired Code:
+```
+N = input()
+
+# Helper function to calculate the sum of digits of a number
+def digit_sum(n):
+    return sum(map(int, str(n)))
+
+# Get the maximum possible sum of digits for all numbers less than or equal to N
+max_digit_sum = digit_sum(N)
+
+# Check numbers less than N and update max_digit_sum if a greater sum is found
+for i in range(max_digit_sum+1, int(N)):
+    if digit_sum(i) > max_digit_sum:
+        max_digit_sum = digit_sum(i)
+
+print(max_digit_sum)
+
+```

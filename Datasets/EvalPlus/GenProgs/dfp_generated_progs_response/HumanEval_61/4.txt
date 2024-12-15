@@ -1,0 +1,20 @@
+def correct_bracketing(brackets: str):
+    """ 
+    Check if every opening bracket has a corresponding closing bracket.
+
+    Args:
+    brackets (str): A string of "(" and ")".
+    
+    Returns:
+    bool: True if every opening bracket has a corresponding closing bracket, False otherwise.
+    """
+    stack = [] # to keep track of opening brackets
+    for bracket in brackets:
+        if bracket == "(":
+            stack.append(bracket) # add opening bracket to stack
+        elif bracket == ")":
+            if len(stack) == 0: 
+                return False # closing bracket with no corresponding opening bracket
+            stack.pop() # remove opening bracket from stack
+        
+    return len(stack) == 0 # if stack is empty means every opening bracket has a corresponding closing bracket. Otherwise False.

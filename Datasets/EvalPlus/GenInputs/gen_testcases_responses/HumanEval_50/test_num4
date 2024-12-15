@@ -1,0 +1,10 @@
+{"input": ["abcde"], "output": "fghij"}
+{"input": ["xyz"], "output": "stu"}
+{"input": ["hello world"], "output": "mjqqt btwqi"}
+{"input": ["abcdefghijklmnopqrstuvwxyz"], "output": "fghijklmnopqrstuvwxyzabcde"}
+{"input": ["a b c d e"], "output": "f g h i j"}
+{"input": ["12345"], "output": "12345"}
+{"input": ["ABCDE"], "output": "FGHIJ"}
+{"input": ["Hello World"], "output": "Mjqqt Btwqi"}
+{"input": ["A B C D E"], "output": "F G H I J"}
+{"input": ["!@#$%"], "output": "!@#$%"}

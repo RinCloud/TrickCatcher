@@ -1,0 +1,66 @@
+# Solution
+
+First, let's define the modulo function to make sure our calculations stay within the given range.
+
+```python
+def modulo(n, p):
+    return ((n % p) + p) % p
+```
+
+Next, we need to calculate the factorial of a number. We'll use an iterative approach to calculate the factorial within the modulo function.
+
+```python
+def modulo(n, p):
+    result = 1
+    for i in range(2, n + 1):
+        result = (result * i) % p
+    return result
+```
+
+Now, let's implement the main function to count the number of directed graphs that satisfy the given conditions.
+
+```python
+def count_directed_graphs(N, K, P):
+    K_prime = min(K, N - 1 - K)  # We only need to consider K or N-1-K, whichever is smaller
+    result = 0
+
+    for i in range(K_prime + 1):
+        coef = modulo(K_prime, P) * modulo(N - 1 - K_prime, P - 1)
+        coef = modulo(coef, P)
+        result = modulo(result + coef, P)
+
+    return result
+```
+
+Finally, we need to read the input, call the function, and print the result.
+
+```python
+N, K, P = map(int, input().split())
+result = count_directed_graphs(N, K, P)
+print(result)
+```
+
+The complete program is as follows:
+
+```python
+def modulo(n, p):
+    result = 1
+    for i in range(2, n + 1):
+        result = (result * i) % p
+    return result
+
+def count_directed_graphs(N, K, P):
+    K_prime = min(K, N - 1 - K)  
+    result = 0
+
+    for i in range(K_prime + 1):
+        coef = modulo(K_prime, P) * modulo(N - 1 - K_prime, P - 1)
+        coef = modulo(coef, P)
+        result = modulo(result + coef, P)
+
+    return result
+
+N, K, P = map(int, input().split())
+result = count_directed_graphs(N, K, P)
+print(result)
+```

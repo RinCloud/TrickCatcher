@@ -1,0 +1,10 @@
+```python
+from random import *
+from cyaron import *
+def sample_one():
+    length_of_arrays=randint(1,10)
+    game=[randint(0,10) for _ in range(length_of_arrays)]
+    guess=[randint(0,10) for _ in range(length_of_arrays)]
+    generated_input=[game,guess]
+    return generated_input
+```

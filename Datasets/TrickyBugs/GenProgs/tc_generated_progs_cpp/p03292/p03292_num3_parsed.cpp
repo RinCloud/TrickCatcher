@@ -1,0 +1,10 @@
+#include<iostream>
+#include<cmath>
+using namespace std;
+
+int main() {
+    int A, B, C;
+    cin >> A >> B >> C;
+    
+    cout << min(abs(A-B) + abs(B-C), min(abs(A-C) + abs(C-B), abs(B-A) + abs(A-C)));
+}

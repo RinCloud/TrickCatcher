@@ -1,0 +1,20 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+	int n;
+	string s1,s2;
+	cin>>n>>s1>>s2;
+	int ans = 2 * n;
+	for(int i = 0; i < n; ++i)
+	{
+		int l = n;
+		for(int j = i; j < n; ++j)
+		{
+			if(s1[j] != s2[j-i]) break;
+			--l;
+		}
+		ans = min(ans, l + n);
+	}
+	cout<<ans<<endl;
+}

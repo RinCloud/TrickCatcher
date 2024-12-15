@@ -1,0 +1,3 @@
+**Test Input Reasoning:**
+
+I will start with the smallest possible input string, which is an empty string. This will test if the function can handle the case when there are no letters in the input.

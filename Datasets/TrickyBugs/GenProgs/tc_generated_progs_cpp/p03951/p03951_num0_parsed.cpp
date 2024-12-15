@@ -1,0 +1,20 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main()
+{
+    int n, ans = 0;
+    string s1, s2;
+    cin >> n >> s1 >> s2;
+
+    for (int i = 1; i <= n; ++i)
+    {
+        if (s1.substr(n - i) == s2.substr(0, i))
+        {
+            ans = i;
+        }
+    }
+
+    cout << 2 * n - ans << endl;
+}

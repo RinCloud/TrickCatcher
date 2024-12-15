@@ -1,0 +1,7 @@
+**Test Input Reasoning:**
+
+I will start with the minimum input values.
+
+- date: '01-01-1900'
+
+This date satisfies all the conditions and should return True.

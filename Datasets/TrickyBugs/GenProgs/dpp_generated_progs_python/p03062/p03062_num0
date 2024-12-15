@@ -1,0 +1,40 @@
+# Solution
+
+The maximum possible value of B_1 + B_2 + ... + B_N can be obtained by making all the negative numbers positive. If there are an even number of negative numbers, we can achieve this by multiplying all negative numbers by -1. If there are an odd number of negative numbers, we need to make all but one negative number positive. The optimal solution would be to make the negative number with the smallest absolute value positive.
+
+Thus, the steps to find the maximum possible value are as follows:
+1. Read the input values of N and the sequence A.
+2. Initialize the variables sum and min_abs as 0 and infinity, respectively.
+3. Iterate over each element, A_i, in the sequence A.
+   * Add A_i to the sum.
+   * Update min_abs if A_i is negative and has smaller absolute value.
+4. If the number of negative integers is odd, subtract 2 times min_abs from the sum. Otherwise, leave the sum unchanged.
+5. Print the value of the sum.
+
+# Program
+
+```python
+import sys
+
+def max_sum(n, arr):
+    sum_value = 0
+    min_abs = sys.maxsize
+
+    negative_count = 0
+    for num in arr:
+        sum_value += abs(num)
+        if num < 0:
+            negative_count += 1
+            min_abs = min(min_abs, abs(num))
+
+    if negative_count % 2 == 1:
+        sum_value -= 2 * min_abs
+
+    return sum_value
+
+if __name__ == "__main__":
+    n = int(input())
+    arr = list(map(int, input().split()))
+    print(max_sum(n, arr))
+```
+Note: The implementation may not be the most optimal one, but it should work for the given constraints.

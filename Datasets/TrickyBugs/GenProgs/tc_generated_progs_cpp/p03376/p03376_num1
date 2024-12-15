@@ -1,0 +1,119 @@
+**Repaired code**
+```cpp
+//Zory-2018
+#include<cmath>
+#include<cstdio>
+#include<cstring>
+#include<cstdlib>
+#include<map>
+#include<set>
+#include<queue>
+#include<deque>
+#include<bitset>
+#include<vector>
+#include<algorithm>
+#include<iostream>
+#include<stack>
+using namespace std;
+ 
+namespace mine
+{
+    const int MAX_N = 60;
+    const int INF = 0x3f3f3f3f;
+    typedef long long ll;
+ 
+    struct LJB
+    {
+        int hou[MAX_N];
+        struct Edge{int y,g;}e[MAX_N];
+        int ln;
+        void ins(int x,int y) {e[++ln]=(Edge){y,hou[x]};hou[x]=ln;}
+        LJB() {ln=0;memset(hou,0,sizeof hou);}
+    }E;
+ 
+    struct Nod
+    {
+        ll w,v;
+        ll num;
+    }p[MAX_N];
+    bool cmp(Nod a,Nod b) {return a.w*b.v>b.w*a.v;}
+    //规避除法，已知都是非负数
+ 
+    void dfs(int x,int fa)
+    {
+        p[x].w=1;
+        for(int k=E.hou[x];k>0;k=E.e[k].g)
+        {
+            int y=E.e[k].y;if(y==fa) continue;
+            dfs(y,x);
+            p[x].w+=p[y].w;p[x].v+=p[y].v;
+        }
+    }
+ 
+    ll f[50005];
+    void main()
+    {
+        int n;
+        ll mxV, D;
+        scanf("%d%lld%lld",&n,&mxV,&D);
+        scanf("%lld",&p[1].v);
+        for(int i=2;i<=n;i++)
+        {
+            int fa;
+            scanf("%lld%d",&p[i].v,&fa);
+            E.ins(fa,i);
+        }
+        dfs(1,0);
+ 
+        memset(f,63,sizeof f);
+        f[0]=0;
+        for(int i=1;i<=n;i++)
+        {
+            ll num=mxV/p[i].v;
+            if(i>1) num=min(num,D);
+ 
+            if(num>n)
+            {
+                p[i].num=num-n, num=n;
+            }
+            else
+            {
+                p[i].num=0;
+            }
+ 
+            ll now=1;
+            while(num>0)
+            {
+                ll w=now*p[i].w, v=now*p[i].v;
+                for(int ww=50000;ww>=w;ww--)
+                {
+                    f[ww]=min(f[ww],f[ww-w]+v);
+                }
+                num-=now;
+                now=min(now<<1,num);
+            }
+        }
+ 
+        sort(p+1,p+n+1,cmp);
+        ll ans=0;
+        for(int ww=0;ww<=50000;ww++)
+        {
+            if(f[ww]>mxV) continue;
+            ll ret=ww, left=mxV-f[ww];
+            for(int i=1;i<=n;i++)
+            {
+                ll num=min(left/p[i].v,p[i].num);
+                left-=num*p[i].v;
+                ret+=num*p[i].w;
+            }
+            ans=max(ans,ret);
+        }
+        printf("%lld",ans);
+    }
+};
+ 
+int main()
+{
+    mine::main();
+}
+```

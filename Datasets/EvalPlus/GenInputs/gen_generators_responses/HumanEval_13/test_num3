@@ -1,0 +1,9 @@
+```python
+from random import *
+
+def sample_one():
+    a = randint(1, 1000)
+    b = randint(1, 1000)
+    generated_input = [a, b]
+    return generated_input
+```

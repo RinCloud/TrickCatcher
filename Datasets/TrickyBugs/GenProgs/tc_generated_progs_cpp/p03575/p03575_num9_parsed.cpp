@@ -1,0 +1,41 @@
+#include <iostream>
+#include <cstdio>
+using namespace std;
+
+int n, m, ans, s[55];
+bool a[55][55];
+bool visited[55]; // Added
+
+void dfs(int p) { // Renamed f() to dfs()
+	int i;
+	visited[p] = true; // Added
+	if (s[p] == 1) {
+		ans++;
+		for (i =1; i <= n; i++) {
+			if (a[p][i] == 1) break;
+		}
+		a[p][i] = a[i][p] = 0;
+		s[p]--;
+		s[i]--;
+		dfs(i); // Changed f(i) to dfs(i)
+	}
+}
+
+int main()
+{
+	int i ,j, t1, t2;
+	cin >> n >> m;
+	while (m--) {
+		scanf ("%d %d", &t1, &t2);
+		a[t1][t2] = a[t2][t1] = 1;
+		s[t1]++;
+		s[t2]++;
+	}
+	for (i = 1; i <= n; i++) {
+		if (!visited[i]) { // Added
+			dfs(i);
+		}
+	}
+	cout << ans;
+    return 0;
+}

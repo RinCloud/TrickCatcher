@@ -1,0 +1,35 @@
+**BUG FIXES:**
+
+1. In the code, the variable `n` is used before it is initialized with the value from input. This should be fixed by changing `cin>>a>>n;` to `cin>>n>>a;`
+
+2. The condition `if(a>=n)` checks if the number of `S`-shaped pieces is greater than or equal to the total number of pieces. However, the problem statement states that we can combine two `c`-shaped pieces into one `S`-shaped piece. So, the condition should be `if(a>=2*n)` to check if we have enough `S`-shaped and `c`-shaped pieces to form `Scc` groups.
+
+3. The calculation of the variable `b` is incorrect. The calculation should be `b = (n - (2 * a)) / 2;` instead of `b = (n - (a * 2)) / 4;`
+
+4. The calculation of the variable `cnt` should be `cnt = a + b;`
+
+5. The `return` statement should be replaced with a `cout` statement to print the value of `cnt`.
+
+**CODE:**
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    long long n, a, cnt;
+    cin >> n >> a;
+    
+    if (a >= 2 * n)
+        cnt = n;
+    else
+    {
+        long long b = (n - (2 * a)) / 2;
+        cnt = a + b;
+    }
+
+    cout << cnt << endl;
+
+    return 0;
+}
+```

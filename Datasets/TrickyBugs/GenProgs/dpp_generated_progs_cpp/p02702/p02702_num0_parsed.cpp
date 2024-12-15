@@ -1,0 +1,26 @@
+#include <iostream>
+#include <string>
+#include <vector>
+
+using namespace std;
+
+int main() {
+    string S;
+    cin >> S;
+    
+    int n = S.length();
+    vector<int> count(2019, 0);
+    count[0] = 1;
+    
+    int num = 0, ans = 0, p = 1;
+    for (int i = n - 1; i >= 0; i--) {
+        num = (num + (S[i] - '0') * p) % 2019;
+        ans += count[num];
+        count[num]++;
+        p = (p * 10) % 2019;
+    }
+    
+    cout << ans << endl;
+
+    return 0;
+}

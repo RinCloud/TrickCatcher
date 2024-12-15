@@ -1,0 +1,14 @@
+Here is the repaired code:
+
+```
+N = input()
+if len(N) > 1:
+    if N[-1] == '9':
+        print(int(N[0])-1 + 9*(len(N)-1) + 9)
+    else:
+        print(int(N[0])-1 + 9*(len(N)-1) + int(N[-1]))
+else:
+    print(int(N))
+```
+
+The logic flaw in the original code is that when adding the digits of N, it incorrectly adds `int(N[-1]) // 9` instead of `int(N[-1])`. Additionally, if the last digit of N is '9', the code should add 9 to the sum instead of `int(N[-1])`.

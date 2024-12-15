@@ -1,0 +1,10 @@
+{"input": ["Hello world"], "output": 0}
+{"input": ["The sky is blue. The sun is shining. I love this weather"], "output": 1}
+{"input": ["I am bored. I want to go out."], "output": 2}
+{"input": ["I love coding. It is my passion. I am a software developer"], "output": 1}
+{"input": ["I am happy!", "I am sad? I am tired."], "output": 1}
+{"input": [""], "output": 0}
+{"input": ["I am alone."], "output": 1}
+{"input": ["Hey there! How are you?", "I am doing good.", "I hope you are well."], "output": 0}
+{"input": ["I am bored! I am bored! I am bored!"], "output": 3}
+{"input": ["I am excited. This is a great opportunity. I can't wait."], "output": 1}

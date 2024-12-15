@@ -1,0 +1,27 @@
+# Program
+
+**Explanation:**
+
+To find the lexicographically smallest possible string after K operations, we can perform the reverse and concatenation operation and then repeat the process.
+
+1. Initialize a variable `s` with the given string `S`.
+2. Repeat the following steps `K` times:
+   - Reverse the string and assign it to `t`.
+   - Concatenate `s` and `t` and assign it back to `s`.
+3. Finally, print the lexicographically smallest substring of `s` with length `N`.
+
+**Python code:**
+
+```python
+N, K = map(int, input().split())
+S = input()
+
+s = S
+
+for i in range(K):
+    t = s[::-1]
+    s = s + t
+
+lexicographically_smallest_substring = s[:N]
+print(lexicographically_smallest_substring)
+```

@@ -1,0 +1,10 @@
+{"input": ["Hi"], "output": "Hi"}
+{"input": ["hello"], "output": "ehllo"}
+{"input": ["Hello World!!!"], "output": "Hello !!!Wdlor"}
+{"input": [""], "output": ""}
+{"input": ["Python is awesome"], "output": "Phnoty is aeemosw"}
+{"input": ["12345 98765"], "output": "12345 56789"}
+{"input": ["I like cats and dogs"], "output": "I eilk acst adn dgos"}
+{"input": ["Testing 123 testing"], "output": "eginstT 123 eginstt"}
+{"input": ["Race car level"], "output": "aceR acr eellv"}
+{"input": ["This is a test"], "output": "His it a estt"}

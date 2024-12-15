@@ -1,0 +1,17 @@
+**Repaired code**:
+```cpp
+#include <stdio.h>
+int main(){
+    int n;
+    long a, b, xa, ans = 0;
+    scanf("%d%ld%ld", &n, &a, &b);
+    scanf("%ld", &xa);
+    for (int i = 1; i < n; i++) {
+        long xb = xa;
+        scanf("%ld", &xa);
+        ans += (xa - xb) * a < b ? (xa - xb) * a : b;
+    }
+    printf("%ld\n", ans);
+    return 0;
+}
+```

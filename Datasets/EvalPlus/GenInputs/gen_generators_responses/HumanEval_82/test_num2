@@ -1,0 +1,9 @@
+```python
+from cyaron import *
+
+def sample_one():
+    length_of_string = randint(1,30)  # Since the function checks for lengths up to 29
+    random_string = String.random(length_of_string)
+    generated_input = [random_string]
+    return generated_input
+```

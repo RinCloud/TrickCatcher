@@ -1,0 +1,29 @@
+```python
+from random import *
+from cyaron import *
+def sample_one():
+    values_length = randint(0, 10)
+    values = []
+    for _ in range(values_length):
+        value_type = randint(1, 6)
+        if value_type == 1:
+            # Generate an integer
+            values.append(randint(-100, 100))
+        elif value_type == 2:
+            # Generate a float
+            values.append(uniform(-100.0, 100.0))
+        elif value_type == 3:
+            # Generate a string
+            values.append(String.random(randint(1, 10)))
+        elif value_type == 4:
+            # Generate a dictionary
+            values.append({})
+        elif value_type == 5:
+            # Generate a list
+            values.append([])
+        elif value_type == 6:
+            # Generate a boolean
+            values.append(choice([True, False]))
+    generated_input = [values]
+    return generated_input
+```

@@ -1,0 +1,9 @@
+```python
+from random import *
+
+def sample_one():
+    length_of_list = randint(0, 10)  # Generate a random length for the list
+    lst = [randint(-100, 100) for _ in range(length_of_list)]  # Fill the list with random integers
+    generated_input = [lst]  # Wrap the list in another list to match the input format
+    return generated_input
+```

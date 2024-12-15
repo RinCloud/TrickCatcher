@@ -1,0 +1,18 @@
+There are two issues with the code:
+1. The last dish is not being inputted. The loop is running for only 4 iterations instead of 5.
+2. The condition in the if statement is incorrect. It should check if A%10 > B%10 instead of A%10 > B%10 > 0.
+
+Here is the corrected code:
+
+```
+A = int(input())
+ans = 0
+
+for i in range(5):
+    B = int(input())
+    if A % 10 > B % 10:
+        A, B = B, A
+    ans += -(-B // 10) * 10
+
+print(A + ans)
+```

@@ -1,0 +1,12 @@
+I have found some issues in the code which I have fixed. Please find the repaired code below.
+
+```python
+n = int(input())
+a = list(map(int, input().split()))
+result = [0] * n
+for i in range(n):
+  result[a[i]-1] = i+1
+print(' '.join(str(x) for x in result))
+```
+
+Please note that the original code was a one-liner, which is not recommended for readability and maintainability. I have rewritten it in a more readable and understandable way.

@@ -1,0 +1,8 @@
+```python
+from random import randint
+
+def sample_one():
+    n = randint(1, 9)  # Assuming reasonable n value for computational limits
+    generated_input = [n]
+    return generated_input
+```

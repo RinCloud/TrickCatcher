@@ -1,0 +1,20 @@
+```python
+from random import *
+from cyaron import *
+
+def sample_one():
+    sentences_count = randint(1, 10)
+    sentences = []
+    for _ in range(sentences_count):
+        # Decide if the sentence starts with "I" or not
+        if randint(0, 1) == 0:
+            sentences.append("I " + String.random(randint(3, 10), charset='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ '))
+        else:
+            sentences.append(String.random(randint(3, 10), charset='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz ') + " " + 
+                             String.random(randint(3, 10), charset='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ '))
+    # Join the sentences with random punctuation
+    punctuation = choice(['.', '?', '!'])
+    S = punctuation.join(sentences)
+    generated_input = [S]
+    return generated_input
+```

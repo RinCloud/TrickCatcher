@@ -1,0 +1,27 @@
+# Solution
+
+To find the number of different assignments of values to X, Y, and Z such that X + Y + Z = S, we can use a nested loop for X, Y, and Z with the range [0, K+1]. 
+
+Initialize a count variable to keep track of the number of valid assignments. For each combination of X, Y, and Z, check if their sum is equal to S. If it is, increment the count variable.
+
+Finally, print the value of the count variable as the output.
+
+```python
+# Read inputs
+K, S = map(int, input().split())
+
+# Initialize count variable
+count = 0
+
+# Loop through X, Y, and Z values
+for x in range(K+1):
+    for y in range(K+1):
+        for z in range(K+1):
+            # Check if sum is equal to S
+            if x + y + z == S:
+                # Increment count variable
+                count += 1
+
+# Print count variable
+print(count)
+```

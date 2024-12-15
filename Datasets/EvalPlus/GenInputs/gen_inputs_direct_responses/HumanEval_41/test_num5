@@ -1,0 +1,3 @@
+**Test Input Reasoning:**
+
+The minimum valid value for `n` would be 1, where there is only one car on each side and they are moving towards each other. This is an interesting case to test because it represents the smallest possible scenario.

@@ -1,0 +1,16 @@
+```python
+from random import *
+from cyaron import *
+def sample_one():
+    # Generate a random integer for the quantity of words to be generated in the string
+    num_of_words = randint(1, 10)
+    # Define a charset for generating words, including lowercase letters and ","
+    charset = "abcdefghijklmnopqrstuvwxyz, "
+    # Generate a random string of words separated by spaces or commas
+    random_str = String.random(randint(5, 15), charset=charset)  # Generating a base word
+    for _ in range(num_of_words - 1):
+        separator = choice([' ', ', '])  # On each iteration, choose either a space or a comma followed by a space
+        random_str += separator + String.random(randint(3, 10), charset="abcdefghijklmnopqrstuvwxyz")
+    generated_input = [str(random_str)]
+    return generated_input
+```

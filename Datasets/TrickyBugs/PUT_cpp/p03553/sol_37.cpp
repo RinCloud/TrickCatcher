@@ -1,0 +1,75 @@
+#include<iostream>
+#include<algorithm>
+#include<string>
+#include<vector>
+#include<set>
+#include<map>
+#include<queue>
+using namespace std;
+
+typedef long long ll;
+typedef pair<int,int> P;
+
+#define pb push_back
+#define fr first
+#define sc second
+
+const int p[22] = { 2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32,3,9,15,21,5,7 };
+//const int q[4] = { 13,14,15,16 };
+
+int main(){
+	int N;
+	ll a[102] = {};
+	scanf("%d",&N);
+	for(int i = 1 ; i <= N ; i ++){
+		scanf("%lld",&a[i]);
+	}
+	for(int i = N/2+1 ; i <= N ; i ++){
+		a[i] = max( a[i] , 0LL );
+	}
+	
+	ll ret = 0;
+	for(int s = 0 ; s < (1<<20) ; s ++){
+		ll A[102];
+		for(int i = 1 ; i <= N ; i ++){
+			A[i] = a[i];
+		}
+		for(int i = 0 ; i < 20 ; i ++){
+			if((s>>i)&1){
+				for(int j = p[i] ; j <= N ; j += p[i]){
+					A[j] = 0;
+				}
+			}
+		}
+		
+		for(int i = N/2 ; i >= 1 ; i --){
+			ll sum = 0;
+			for(int j = i ; j <= N ; j += i){
+				sum += A[j];
+			}
+			if(i == 1){
+				ret = max( ret , sum );
+				break;
+			}
+			if(sum < 0){
+				for(int j = i ; j <= N ; j += i){
+					A[j] = 0;
+				}
+			}
+			/*for(int j = 0 ; j < 2 ; j ++){
+				if(i == 2*q[j]){
+					sum = A[2*q[j]]+A[3*q[j]]+A[6*q[j]];
+					if(sum < 0){
+						A[2*q[j]] = 0;
+						A[3*q[j]] = 0;
+						A[6*q[j]] = 0;
+					}
+				}
+			}*/
+		}
+		
+		
+	}
+	cout << ret << endl;
+}
+

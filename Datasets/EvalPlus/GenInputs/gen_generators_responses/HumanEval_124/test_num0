@@ -1,0 +1,18 @@
+```python
+from random import randint
+
+def sample_one():
+    month = randint(1, 12)
+    year = randint(1900, 2020)
+    
+    if month == 2:  # February condition
+        day = randint(1, 29)
+    elif month in [4, 6, 9, 11]:  # 30 days months
+        day = randint(1, 30)
+    else:  # 31 days months
+        day = randint(1, 31)
+    
+    date = "{:02d}-{:02d}-{}".format(month, day, year)
+    generated_input = [date]
+    return generated_input
+```

@@ -1,0 +1,105 @@
+#include <bits/stdc++.h>
+using namespace std;
+typedef long long ll;
+const int M = 2e5+7;
+const int mod = 1e9+7;
+ll pz[M],pf[M];
+ll z[M],f[M];
+
+int main()
+{
+	ios::sync_with_stdio(false);
+	cin.tie(0);
+  	
+  	int n,k;
+  	cin>>n>>k;
+  	int nm=0;//0的数量 
+	int zm=0,fm=0;
+  	
+  	for(int i=1; i<=n; i++)
+  	{
+  		int x;
+  		cin>>x;
+  		
+  		if(x>0)
+                  z[++zm]=x;
+  		else if(x<0)
+                  f[++fm]=-x;
+  		else
+                  nm++;
+	}
+  	
+  	sort(z+1, z+1+zm);
+  	sort(f+1, f+1+fm);
+  	
+  	if(n-k < nm)
+  	{
+  		cout<<0<<endl;
+  		return 0;
+	}
+	
+  	ll ans=1;
+  	
+  	if(zm + fm == k)
+	{
+		for(int i=1; i <= zm; i++)
+                  ans = (ans * z[i]) % mod;
+		
+		for(int i=1; i <= fm; i++)
+                  ans = (ans * (-f[i])) % mod;
+		
+		if(fm & 1 && nm)
+                  ans = 0;
+		
+		ans = (ans + mod) % mod;
+		cout << ans <<endl;
+		return 0;
+	}
+	
+  	if(zm == 0 && k & 1)
+	{
+		for(int i=1; i <= k; i++)
+                  ans = (ans * (-f[i])) % mod;
+		
+		if(nm)
+                  ans = 0;
+		
+		ans = (ans + mod) % mod;
+		cout << ans << endl;
+		return 0;
+	}
+	
+  	int q=zm,w=fm;
+  	int nw=0;
+  	
+  	while(nw <= k)
+	{
+		if(k-nw >= 2)
+		{
+			if((q >= 2 && z[q]*z[q-1] > f[w]*f[w-1]) || w < 2)
+			{
+				ans = (ans * z[q]) % mod;
+				ans = (ans * z[q-1]) % mod;
+				q -= 2;
+			}
+			else
+			{
+				ans = (ans * f[w]) % mod;
+				ans = (ans * f[w-1]) % mod;
+				w -= 2;
+			}
+			nw += 2;
+		}
+		else if(k-nw == 1)
+		{
+			ans = (ans * z[q]) % mod;
+			q--;
+			nw++;
+		}
+		else
+                  break;
+	}
+  	
+  	cout << ans <<endl;
+	return 0;
+}

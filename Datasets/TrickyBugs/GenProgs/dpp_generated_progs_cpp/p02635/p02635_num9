@@ -1,0 +1,53 @@
+```cpp
+#include <iostream>
+#include <vector>
+#include <string>
+
+using namespace std;
+
+const int MOD = 998244353;
+
+int main() {
+    string S;
+    long long K;
+    cin >> S >> K;
+
+    int N = S.size();
+
+    // Count the number of 1s at each position
+    vector<int> cnt(N + 1, 0);
+    for (int i = 0; i < N; i++) {
+        cnt[i + 1] = cnt[i] + (S[i] == '1');
+    }
+
+    // Initialize the dynamic programming array
+    vector<vector<int>> dp(N + 1, vector<int>(K + 1, 0));
+    dp[0][0] = 1;
+
+    // Dynamic programming
+    for (int i = 1; i <= N; i++) {
+        for (int j = 0; j <= K; j++) {
+            // Case 1: j = 0, no operation performed, string remains the same
+            dp[i][j] = dp[i - 1][j];
+
+            // Case 2: j > 0, perform operation
+            if (j > 0) {
+                for (int k = 0; k < i; k++) {
+                    // Calculate the number of strings that can be formed by moving section [k+1, i] to the left of position k
+                    dp[i][j] = (dp[i][j] + 1LL * dp[k][j - 1] * (cnt[i] - cnt[k]) % MOD) % MOD;
+                }
+            }
+        }
+    }
+
+    // Sum up the number of strings for all K values
+    int ans = 0;
+    for (int j = 0; j <= K; j++) {
+        ans = (ans + dp[N][j]) % MOD;
+    }
+
+    cout << ans << endl;
+
+    return 0;
+}
+```

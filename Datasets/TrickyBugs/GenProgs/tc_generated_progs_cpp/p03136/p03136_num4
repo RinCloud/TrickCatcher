@@ -1,0 +1,24 @@
+**Repaired code**:
+
+```
+#include<iostream>
+using namespace std;
+int main(){
+	int n;
+	cin >> n;
+	int maxl = 0; // Initialize `maxl` to 0
+	int sum=0;
+	for(int i=0;i<n;i++){
+		int l;
+		cin >> l;
+		sum+=l;
+		maxl=max(maxl,l);
+	}
+	if(maxl<(sum-maxl)) cout << "Yes" << endl;
+	else cout << "No" << endl;
+	return 0;
+}
+```
+
+Explanation:
+In the original code, the variable `maxl` was not initialized. This can cause undefined behavior and potentially wrong results. Initializing `maxl` to 0 ensures that it starts with a valid value.

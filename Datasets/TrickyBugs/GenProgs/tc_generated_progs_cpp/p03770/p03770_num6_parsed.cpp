@@ -1,0 +1,100 @@
+#include<iostream>
+#include<cstdio>
+#include<cstring>
+#include <vector>
+#include<algorithm>
+#define N 200010
+#define ll long long
+#define mod 1000000007
+using namespace std;
+int n,x,y;
+vector<vector<pair<int,int>>> balls(N);
+vector<int> minw(N), num(N);
+vector<ll> fac(N), inv(N);
+ll ksm(ll a,ll b=mod-2)
+{
+    if(b==0) return 1;
+    if(b==1) return a;
+    ll q=ksm(a,b>>1);
+    if(b&1) return q*q%mod*a%mod;
+    return q*q%mod;
+}
+ll C(int a,int b){if(b>a || b<0) return 0;return fac[a]*inv[b]%mod*inv[a-b]%mod;}
+int main()
+{
+    scanf("%d%d%d",&n,&x,&y);
+    fac[0]=1;
+    for(int i=1;i<=n;i++)fac[i]=fac[i-1]*i%mod;
+    inv[n]=ksm(fac[n]);
+    for(int i=n-1;i>=0;i--) inv[i]=inv[i+1]*(i+1)%mod;
+    for(int i=0;i<=n;i++) minw[i]=100000000;
+    for(int i=1;i<=n;i++){
+        int color, weight;
+        scanf("%d%d",&color,&weight);
+        minw[color] = min(minw[color], weight);
+        balls[color].push_back({weight, i});
+    }
+    int cnt=0;
+    for(int i=1;i<=n;i++){
+        sort(balls[i].begin(), balls[i].end());
+    }
+    pair<int,int> smallest = {0,0}, smallest2 = {0,0};
+    for(int i=1;i<=n;i++)
+    {
+        int size = balls[i].size();
+        if(size > 0){
+            if(balls[i][0].second != smallest.first){
+                if(smallest.first == 0){
+                    if(smallest2.second == i){
+                        smallest = smallest2;
+                    }else{
+                        smallest = balls[i][0];
+                    }
+                }else{
+                    smallest2 = balls[i][0];
+                }
+            }
+        }
+    }
+    cnt = minw[smallest.second] <= x ? 1 : 0;
+    num[smallest.second]++;
+    for(int i=1;i<=n;i++)
+    {    
+        int size = balls[i].size();
+        if(size > 0){
+            cnt++;
+            if(balls[i][0].second != smallest.first){
+                if(minw[smallest.first] + balls[i][0].first <= y){
+                    num[smallest.first]++;
+                }else{
+                    smallest = balls[i][0];
+                    num[smallest.first]++;
+                }
+            }else{
+                if(smallest2.second != 0){
+                    if(minw[smallest2.first] + balls[i][0].first <= y){
+                        num[smallest2.first]++;
+                    }else{
+                        smallest2 = balls[i][0];
+                        num[smallest2.first]++;
+                    }
+                }else{
+                    if(smallest.second != 0){
+                         if(minw[smallest.first] + balls[i][0].first <= y){
+                            num[smallest.first]++;
+                       }else{
+                            smallest = balls[i][0];
+                            num[smallest.first]++;
+                        }
+                    }
+                }
+            }            
+        }
+    }
+    ll ans=1;
+    for(int i=1;i<=n;i++)
+        if(num[i]) ans=ans*C(cnt,num[i])%mod,cnt-=num[i];
+    printf("%lld",ans);
+    return 0;
+}
+

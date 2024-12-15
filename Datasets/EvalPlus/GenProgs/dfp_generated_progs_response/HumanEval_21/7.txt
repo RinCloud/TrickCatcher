@@ -1,0 +1,10 @@
+from typing import List
+
+def rescale_to_unit(numbers: List[float]) -> List[float]:
+    min_num = min(numbers)
+    max_num = max(numbers)
+    rescaled_numbers = []
+    for number in numbers:
+        rescaled_number = (number - min_num) / (max_num - min_num)
+        rescaled_numbers.append(rescaled_number)
+    return rescaled_numbers

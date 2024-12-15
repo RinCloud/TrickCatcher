@@ -1,0 +1,10 @@
+{"input": "Hello world!", "output": ["Hello", "world!"]}
+{"input": "Hello,world!", "output": ["Hello", "world!"]}
+{"input": "abcdef", "output": 3}
+{"input": "This is a test", "output": ["This", "is", "a", "test"]}
+{"input": "Python,is,awesome!", "output": ["Python", "is", "awesome!"]}
+{"input": "first,second,third", "output": ["first", "second", "third"]}
+{"input": "A,B,C,D,E", "output": ["A", "B", "C", "D", "E"]}
+{"input": "Thisisatest", "output": 8}
+{"input": "Hello,world,[],,", "output": ["Hello", "world", "[]", "", ""]}
+{"input": "12345", "output": 5}

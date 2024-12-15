@@ -1,0 +1,10 @@
+{"input": ["This is a test"], "output": "is"}
+{"input": ["lets go for swimming"], "output": "go for"}
+{"input": ["Hello world"], "output": ""}
+{"input": ["I love Python"], "output": "I"}
+{"input": ["Programming is fun"], "output": ""}
+{"input": ["The quick brown fox jumps over the lazy dog"], "output": "The fox the dog"}
+{"input": ["a e i o u"], "output": ""}
+{"input": ["One two three four five"], "output": "two"}
+{"input": ["Lorem ipsum dolor sit amet consectetur adipiscing elit"], "output": "sit adipiscing"}
+{"input": ["abcdefghijklmnopqrstuvwxyz"], "output": ""}

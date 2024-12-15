@@ -1,0 +1,12 @@
+def check_dict_case(dict):
+    if not dict:  # Check if dictionary is empty
+        return False
+    
+    keys = dict.keys()  # Get a list of keys in the dictionary
+
+    if all(key.islower() for key in keys):  # Check if all keys are lowercase
+        return True
+    elif all(key.isupper() for key in keys):  # Check if all keys are uppercase
+        return True
+    else:
+        return False

@@ -1,0 +1,28 @@
+Your code is mostly correct, but there are a couple of issues that need to be fixed.
+
+1. The condition to check if the integer has exactly N digits is incorrect. Instead of checking `if n==1`, you should check if `m == 0` (since `m` represents the number of conditions).
+
+2. When there are no conditions (`m == 0`), you need to print the smallest integer with N digits. Currently, you're printing 0, which is incorrect. You need to print `10**(n-1)`.
+
+Here is the corrected code:
+
+```python
+n, m = map(int, input().split())
+f = sorted([list(map(int, input().split())) for i in range(m)])
+
+if m == 0:
+    print(10 ** (n - 1))
+else:
+    for i in range(10 ** (n - 1), 10 ** n):
+        d = str(i)
+        for b, v in f:
+            if int(d[b - 1]) != v:
+                break
+        else:
+            print(i)
+            exit()
+
+    print(-1)
+```
+
+This code now correctly handles the cases where there are no conditions, and it properly prints the smallest integer with exactly N digits.

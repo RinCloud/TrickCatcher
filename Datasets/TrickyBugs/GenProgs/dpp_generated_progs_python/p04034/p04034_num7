@@ -1,0 +1,28 @@
+# Approach:
+* Initialize a list, `balls`, of size `N+1` where `balls[i]` represents the number of balls in box `i`.
+* Initialize a set, `red_boxes`, with the box number `1`.
+* For each operation, update the number of balls in the corresponding boxes and update the set `red_boxes` if a red ball has been moved.
+* After all operations, the number of boxes that may contain the red ball is the size of the set `red_boxes`.
+
+# Program:
+
+```python
+N, M = map(int, input().split())
+
+balls = [1] + [0] * N
+red_boxes = set([1])
+
+for _ in range(M):
+    x, y = map(int, input().split())
+    
+    balls[x] -= 1
+    balls[y] += 1
+    
+    if x in red_boxes and balls[x] == 0:
+        red_boxes.remove(x)
+    
+    if y not in red_boxes and balls[y] > 0:
+        red_boxes.add(y)
+        
+print(len(red_boxes))
+```

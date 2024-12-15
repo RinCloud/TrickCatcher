@@ -1,0 +1,57 @@
+```python
+MOD = 998244353
+
+class UnionFind:
+    def __init__(self, n):
+        self.parent = list(range(n))
+        self.rank = [0] * n
+        self.size = [1] * n
+
+    def find(self, x):
+        if x == self.parent[x]:
+            return x
+        self.parent[x] = self.find(self.parent[x])
+        return self.parent[x]
+
+    def union(self, x, y):
+        x = self.find(x)
+        y = self.find(y)
+        if x != y:
+            if self.rank[x] < self.rank[y]:
+                x, y = y, x
+            if self.rank[x] == self.rank[y]:
+                self.rank[x] += 1
+            self.parent[y] = x
+            self.size[x] += self.size[y]
+
+    def getSize(self, x):
+        return self.size[self.find(x)]
+
+def main():
+    N = int(input())
+    M1 = int(input())
+    edgesX = [tuple(map(int, input().split())) for _ in range(M1)]
+    M2 = int(input())
+    edgesY = [tuple(map(int, input().split())) for _ in range(M2)]
+    M3 = int(input())
+    edgesZ = [tuple(map(int, input().split())) for _ in range(M3)]
+    uf = UnionFind(N * N * N)
+    for u, v in edgesX:
+        for w in range(N):
+            uf.union(u * N * N + w * N + v, v * N * N + w * N + u)
+    for u, v in edgesY:
+        for w in range(N):
+            uf.union(w * N * N + u * N + v, w * N * N + v * N + u)
+    for u, v in edgesZ:
+        for w in range(N):
+            uf.union(w * N * N + u * N + v, w * N * N + u * N + v)
+    weights = [pow(10, 18 * (i // (N * N)) + 18 * (i % (N * N)) + 18 * (i % N), MOD) for i in range(N * N * N)]
+    ans = 0
+    for i in range(N * N * N):
+        if uf.find(i) == i:
+            ans = (ans + weights[i]) % MOD
+    print(ans)
+
+if __name__ == "__main__":
+    main()
+```

@@ -1,0 +1,61 @@
+# Approach:
+
+To find the shortest string that is not a subsequence of `A`, we can iterate through all possible strings with lengths from 1 to |A| + 1 (inclusive). For each length, we generate all possible strings using combinations of lowercase English letters and check if it is a subsequence of `A`. If a string is not a subsequence, we return it as the result.
+
+# Steps:
+
+1. Import the `combinations` function from the `itertools` module.
+2. Read the input string `A`.
+3. Iterate `i` over the range from 1 to |A| + 2.
+4. Generate all possible strings of length `i` using lowercase English letters and combinations.
+5. Check if any of the generated strings is not a subsequence of `A`.
+6. If found, print the lexicographically smallest string and break the loop.
+7. End the program.
+
+# Dry Run:
+
+Let's dry run the first example: 
+
+INPUT:
+A = atcoderregularcontest
+
+OUTPUT:
+b
+
+1. Iterate `i` over the range from 1 to 20 (|A| + 2).
+2. For i = 1: Generate all possible strings of length 1: ['a', 'b', 'c', ..., 'z'].
+   'a' is a subsequence of A, 'b' is not a subsequence of A, so print 'b' and break the loop.
+
+The output is 'b'.
+
+# Program:
+
+```python
+from itertools import combinations
+
+# Read the input string A
+A = input()
+
+# Iterate over possible lengths
+for i in range(1, len(A) + 2):
+    # Generate all possible strings of length i
+    for string in combinations('abcdefghijklmnopqrstuvwxyz', i):
+        # Check if string is a subsequence of A
+        is_subsequence = True
+        a_idx = 0
+        for char in string:
+            while a_idx < len(A) and A[a_idx] != char:
+                a_idx += 1
+            if a_idx >= len(A):
+                is_subsequence = False
+                break
+            a_idx += 1
+
+        # If string is not a subsequence of A
+        if not is_subsequence:
+            print(''.join(string))
+            break
+    else:
+        continue
+    break
+```

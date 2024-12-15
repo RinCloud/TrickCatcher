@@ -1,0 +1,21 @@
+**Repaired code:**
+
+```python
+n = int(input())
+a = list(map(int, input().split()))
+
+student_order = [0] * n
+for i in range(n):
+    student_order[a[i] - 1] = i + 1
+
+print(*student_order)
+```
+
+Explanation:
+
+- Read the size of the input `n`.
+- Read the list of `n` integers `a` which represents the number of students in the classroom when each student entered.
+- Create a list `student_order` filled with zeros, which will represent the order of the students who entered the classroom.
+- Iterate over each student `i` from 1 to `n`. 
+  - The index in `student_order` corresponding to the student number `a[i]` (subtract 1 from the student number to get the correct index) is assigned the value of student `i+1`.
+- Print the `student_order` list using the `*` operator to unpack each element of the list as separate arguments to the `print()` function.

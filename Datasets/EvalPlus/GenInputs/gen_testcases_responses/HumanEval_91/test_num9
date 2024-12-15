@@ -1,0 +1,10 @@
+{"input": ["Hello world"], "output": 0}
+{"input": ["The sky is blue. The sun is shining. I love this weather"], "output": 1}
+{"input": ["I am bored. Are you bored? We are all bored!"], "output": 3}
+{"input": ["I'm hungry. Let's eat! I can't wait!"], "output": 2}
+{"input": ["I am a student. I love learning. I want to be successful."], "output": 3}
+{"input": ["I'm tired. I need to rest. I want to sleep"], "output": 3}
+{"input": ["I am happy. I am sad. I am confused. I am excited."], "output": 4}
+{"input": ["I have a cat. I have a dog. I have a fish. I have a bird."], "output": 4}
+{"input": ["I'm going to the store. I need to buy some groceries."], "output": 1}
+{"input": ["I am walking. I am running. I am jumping. I am dancing."], "output": 4}

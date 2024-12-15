@@ -1,0 +1,9 @@
+```python
+from cyaron import *
+
+def sample_one():
+    random_str_length = randint(0, 50)  # Generate string of length between 0 and 50
+    random_str = String.random(random_str_length, charset="a-zA-Z")  # Generate random string consisting of lowercase and uppercase letters
+    generated_input = [random_str]
+    return generated_input
+```

@@ -1,0 +1,61 @@
+# Program
+
+## Define the main function
+
+```python
+def main():
+    # Read the input values
+    n, m = map(int, input().split())
+    s = input()
+    operations = []
+    for _ in range(m):
+        l, r = map(int, input().split())
+        operations.append((l, r))
+    
+    # Get the number of possible values
+    result = get_possible_values(n, m, s, operations)
+    
+    # Print the result modulo 1000000007
+    print(result % 1000000007)
+```
+
+## Define the get_possible_values function
+
+```python
+def get_possible_values(n, m, s, operations):
+    # Create a list to store the count of possible values for each character position
+    count = [0] * (n + 1)
+    count[0] = 1
+    
+    # Iterate through all the operations
+    for i in range(m):
+        l, r = operations[i]
+        
+        # Create a temporary list to store the count of possible values after the current operation
+        temp_count = [0] * (n + 1)
+        
+        # Iterate through all the character positions
+        for j in range(1, n + 1):
+            # If the character position is within the operation range
+            if l <= j <= r:
+                # Add the count of possible values at the previous character position to the current character position
+                temp_count[j] += count[j - 1]
+            
+            # Add the count of all possible values at the previous character positions to the current character position
+            temp_count[j] += count[j]
+        
+        # Update the count list with the temporary count list
+        count = temp_count
+    
+    # Get the count of possible values for the final string
+    result = count[n]
+    
+    return result
+```
+
+## Call the main function to execute the program
+
+```python
+if __name__ == "__main__":
+    main()
+```

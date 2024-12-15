@@ -1,0 +1,72 @@
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+int complexity(int H, int W, const vector<vector<char>>& grid) {
+    int complexity = 0;
+
+    // Check if all squares are black or all squares are white
+    bool allBlack = true;
+    bool allWhite = true;
+    for (int i = 0; i < H; i++) {
+        for (int j = 0; j < W; j++) {
+            if (grid[i][j] == '.') {
+                allBlack = false;
+            } else {
+                allWhite = false;
+            }
+        }
+    }
+
+    if (allBlack || allWhite) {
+        // If all squares are black or all squares are white, the complexity is 0
+        complexity = 0;
+    } else {
+        // Divide the grid into two subgrids by a line parallel to one of the sides
+        // and calculate the complexity of each subgrid
+        int maxComplexity = 0;
+        for (int i = 1; i < H; i++) {
+            vector<vector<char>> subgrid1(grid.begin(), grid.begin() + i);
+            vector<vector<char>> subgrid2(grid.begin() + i, grid.end());
+
+            int c1 = complexity(i, W, subgrid1);
+            int c2 = complexity(H - i, W, subgrid2);
+
+            int maxC = max(c1, c2);
+            maxComplexity = max(maxComplexity, maxC);
+        }
+        for (int j = 1; j < W; j++) {
+            vector<vector<char>> subgrid1(H, vector<char>(grid[0].begin(), grid[0].begin() + j));
+            vector<vector<char>> subgrid2(H, vector<char>(grid[0].begin() + j, grid[0].end()));
+
+            int c1 = complexity(H, j, subgrid1);
+            int c2 = complexity(H, W - j, subgrid2);
+
+            int maxC = max(c1, c2);
+            maxComplexity = max(maxComplexity, maxC);
+        }
+
+        // The complexity of the grid is the maximum complexity of the subgrids plus 1
+        complexity = maxComplexity + 1;
+    }
+
+    return complexity;
+}
+
+int main() {
+    int H, W;
+    cin >> H >> W;
+
+    vector<vector<char>> grid(H, vector<char>(W));
+    for (int i = 0; i < H; i++) {
+        for (int j = 0; j < W; j++) {
+            cin >> grid[i][j];
+        }
+    }
+
+    int result = complexity(H, W, grid);
+    cout << result << endl;
+
+    return 0;
+}

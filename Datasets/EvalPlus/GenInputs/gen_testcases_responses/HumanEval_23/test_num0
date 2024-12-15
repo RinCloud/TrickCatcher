@@ -1,0 +1,10 @@
+{"input": [''], "output": 0}
+{"input": ['abc'], "output": 3}
+{"input": ['1234567890'], "output": 10}
+{"input": ['hello world'], "output": 11}
+{"input": ['Python'], "output": 6}
+{"input": ['abcdefghijklmnopqrstuvwxyz'], "output": 26}
+{"input": ['1234567'], "output": 7}
+{"input": ['!@#$%^&*()'], "output": 11}
+{"input": [''], "output": 0}
+{"input": ['This is a sentence.'], "output": 20}

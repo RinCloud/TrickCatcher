@@ -1,0 +1,11 @@
+[[],
+ '',
+ 'abc',
+ '123',
+ 'Hello, World!',
+ '@#$%^&*()',
+ 'abcdefghijklmnopqrstuvwxyz',
+ 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
+ '!@#$%^&*(){}[]',
+ '   ',
+ '\n']

@@ -1,0 +1,27 @@
+**REPAIRED CODE**:
+
+```cpp
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+  int n,a[1000000]={},b,max=0;
+  cin>>n;
+  for(int i=0;i<n;i++){
+    cin>>b;
+    if(b!=0)a[b-1]++;
+    a[b]++;
+    a[b+1]++;
+    if(max<a[b-1])max=a[b-1];
+    if(max<a[b])max=a[b];
+    if(max<a[b+1])max=a[b+1];
+  }
+  cout<<max<<endl;
+  return 0;
+}
+```
+
+**Explanation**:
+
+In the original code, the order of operations inside the loop was not correct. The code incremented the count for a[b+1] and a[b-1] before checking if the current count is the maximum. 
+
+Hence, the order of operations has been corrected in the repaired code.

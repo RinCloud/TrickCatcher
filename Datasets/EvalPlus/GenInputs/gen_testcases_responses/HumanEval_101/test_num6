@@ -1,0 +1,10 @@
+{"input": ["Hi, my name is John"], "output": ["Hi", "my", "name", "is", "John"]}
+{"input": ["One, two, three, four, five, six"], "output": ["One", "two", "three", "four", "five", "six"]}
+{"input": ["Hello"], "output": ["Hello"]}
+{"input": ["Lorem ipsum dolor sit amet"], "output": ["Lorem", "ipsum", "dolor", "sit", "amet"]}
+{"input": [""], "output": []}
+{"input": ["This,is,a,test"], "output": ["This", "is", "a", "test"]}
+{"input": ["1,2,3,4,5"], "output": ["1", "2", "3", "4", "5"]}
+{"input": ["Hello, World!"], "output": ["Hello", "World!"]}
+{"input": ["The quick brown fox"], "output": ["The", "quick", "brown", "fox"]}
+{"input": ["python", "is", "fun"], "output": ["python", "is", "fun"]}

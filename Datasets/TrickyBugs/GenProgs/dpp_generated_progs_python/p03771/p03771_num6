@@ -1,0 +1,59 @@
+```python
+def solve(N, V, x):
+    def check(N, V, x):
+        l_dp = [0] * (N + 2)
+        r_dp = [0] * (N + 2)
+        dp = [[0] * (N + 2) for _ in range(2)]
+ 
+        p = n = 0
+        while n < N and x[n] - x[0] <= V:
+            if n + 1 < N and abs(x[n + 1] - x[n]) <= V:
+                p += abs(x[n + 1] - x[n]) <= V
+                n += 2
+            else:
+                p = n = n + 1
+        ans = [0] * N
+        for i in range(2):
+            d = 0
+            j = p
+            if p > 1:
+                dp[i][p - 2] = x[p - 1] - x[p - 2]
+            else:
+                dp[i][p - 1] = V * 2
+            while m := j > i:
+                while j > 0 and abs(x[j - 1] - x[j - 2]) <= V:
+                    dp[i][j - 2] = min(dp[i][j - 2], dp[i][j] + d * 2)
+                    r_dp[j - 2] = dp[i][j - 2]
+                    d += 1
+                    j -= 2
+                if j > 0:
+                    dp[i][j - 2] = min(dp[i][j - 2], dp[~i][j - 1] + d)
+                    j -= 1
+            r_dp[j - 2] = dp[i][j - 2]
+        for i in range(N - 2, p - 2, -1):
+            r_dp[i] = min(x[i + 1] - x[i] + r_dp[i + 1], r_dp[i])
+            r_dp[i] = min(x[i + 2] - x[i] + dp[1][i + 2], r_dp[i])
+        if N - p & 1 or abs(x[N - 1] - x[N - 2]) > V:
+            r_dp[N - 1] = 1e9
+        else:
+            r_dp[N - 1] = min(r_dp[N - 1], x[N - 1] - x[N - 2] + r_dp[N - 1])
+        l_dp[p - 2] = min(x[p] - x[p - 1] + dp[0][p], l_dp[p - 1])
+        for i in range(p, N - 2):
+            l_dp[i] = min(abs(x[i] - x[i - 1]) + l_dp[i - 1], x[i + 1] - x[i - 1] + dp[0][i + 1])
+            l_dp[i] = min(x[i + 2] - x[i] + dp[1][i + 2], l_dp[i])
+        for i in range(N - 1, p - 1, -1):
+            ans[i - 1] |= r_dp[i - 1] <= x[N - 1] - x[p - 1]
+            ans[i - 2] |= l_dp[i - 2] <= x[i - 1] - x[p - 1]
+        return ans
+ 
+    ans = check(N, V, x)
+    x = [-xx for xx in x[::-1]]
+    ans2 = check(N, V, x)
+    for i, a in enumerate(ans[::-1]):
+        print('Possible' if a or ans2[i] else 'Impossible')
+        
+
+N, V = map(int, input().split())
+x = list(map(int, input().split()))
+solve(N, V, x)
+```

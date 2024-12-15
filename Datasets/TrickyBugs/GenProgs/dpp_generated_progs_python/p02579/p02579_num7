@@ -1,0 +1,44 @@
+```python
+from collections import deque
+
+
+def bfs(start, end, maze):
+    h, w = len(maze), len(maze[0])
+    dist = [[float('inf')] * w for _ in range(h)]
+    dist[start[0]][start[1]] = 0
+
+    queue = deque([start])
+    while queue:
+        cy, cx = queue.popleft()
+        for dy, dx in [(-1, 0), (1, 0), (0, -1), (0, 1)]:
+            ny, nx = cy + dy, cx + dx
+            if 0 <= ny < h and 0 <= nx < w and maze[ny][nx] == '.' and dist[ny][nx] == float('inf'):
+                dist[ny][nx] = dist[cy][cx]
+                queue.appendleft((ny, nx))
+
+        for dy in range(-2, 3):
+            for dx in range(-2, 3):
+                ny, nx = cy + dy, cx + dx
+                if 0 <= ny < h and 0 <= nx < w and maze[ny][nx] == '.' and dist[ny][nx] > dist[cy][cx] + 1:
+                    dist[ny][nx] = dist[cy][cx] + 1
+                    queue.append((ny, nx))
+
+    return dist[end[0]][end[1]] if dist[end[0]][end[1]] < float('inf') else -1
+
+
+def main():
+    h, w = map(int, input().split())
+    ch, cw = map(int, input().split())
+    dh, dw = map(int, input().split())
+
+    maze = [input() for _ in range(h)]
+    start = (ch - 1, cw - 1)
+    end = (dh - 1, dw - 1)
+
+    result = bfs(start, end, maze)
+    print(result)
+
+
+if __name__ == "__main__":
+    main()
+```

@@ -1,0 +1,11 @@
+**BUG FIX**
+
+The code above has a bug due to the use of "|" operator instead of the desired "or" operator. Additionally, the code assigns `e=a-b|b-c` in such a way that it may result in a wrong value if `a-b` is negative.
+
+The corrected and optimized code should be:
+```python
+a, b, c = map(int, input().split())
+e = (a - b) | (b - c)
+result = -1 if e < 0 else bin(e).count('1')
+print(result)
+```

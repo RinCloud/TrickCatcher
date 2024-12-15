@@ -1,0 +1,15 @@
+**REPAIRED CODE**:
+
+```
+#include<iostream>
+using namespace std;
+long long A;
+double B;
+
+int main()
+{
+  cin>>A>>B;
+  long long T = (long long)(A * B);
+  cout<<T<<endl;
+}
+```

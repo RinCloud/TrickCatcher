@@ -1,0 +1,10 @@
+{"input": ["hello", "o"], "output": 1}
+{"input": ["hello", "l"], "output": 2}
+{"input": ["hello", "ll"], "output": 1}
+{"input": ["hello", "h"], "output": 1}
+{"input": ["hello", "a"], "output": 0}
+{"input": ["", ""], "output": 0}
+{"input": ["hello", ""], "output": 0}
+{"input": ["aaaaaa", "aa"], "output": 6}
+{"input": ["abcdefg", "cde"], "output": 1}
+{"input": ["abcabcabc", "abc"], "output": 3}

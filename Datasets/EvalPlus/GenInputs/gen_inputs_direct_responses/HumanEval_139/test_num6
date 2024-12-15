@@ -1,0 +1,3 @@
+**Test Input Reasoning:**
+
+Through this test case, I will verify if the given solution is able to handle and return correct output for the lower edgecase when the input n is minimum i.e. 1. This is interesting as the edgecases are usually expected to have different behavior than the other cases, here since the multiple operation is starting from 1 i.e. lowest possible, so the test case will help me ensure that the logic of starting from 1 is implemented correctly or not

@@ -1,0 +1,69 @@
+#include <iostream>
+#include <string>
+#include <vector>
+#include <algorithm>
+using namespace std;
+
+// Function to check if a string is subsequence of another string
+bool isSubsequence(string s, string t) {
+    int i = 0, j = 0;
+    while (i < s.length() && j < t.length()) {
+        if (s[i] == t[j]) {
+            i++;
+        }
+        j++;
+    }
+    return i == s.length();
+}
+
+// Function to generate all possible strings of length k
+vector<string> generateStrings(int k) {
+    vector<string> strings;
+    for (int i = 0; i < k; i++) {
+        string s = "";
+        for (int j = 0; j < k; j++) {
+            s += 'a' + j;
+        }
+        strings.push_back(s);
+        next_permutation(s.begin(), s.end());
+    }
+    return strings;
+}
+
+int main() {
+    string A;
+    cin >> A;
+    
+    int n = A.length();
+    
+    vector<int> cnt(26, 0);
+    for (char c : A) {
+        cnt[c - 'a']++;
+    }
+    
+    for (int k = 1; k <= n+1; k++) {
+        vector<string> strings = generateStrings(k);
+        for (string s : strings) {
+            bool isSub = false;
+            for (int i = 0; i < n; i++) {
+                if (A[i] == s[cnt[A[i] - 'a'] - 1]) {
+                    cnt[A[i] - 'a']--;
+                    if (cnt[A[i] - 'a'] == 0) {
+                        isSub = true;
+                        cnt[A[i] - 'a']++;
+                        break;
+                    }
+                }
+            }
+            for (int i = 0; i < 26; i++) {
+                cnt[i] = 0;
+            }
+            if (!isSub) {
+                cout << s << endl;
+                return 0;
+            }
+        }
+    }
+    
+    return 0;
+}

@@ -1,0 +1,12 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+int W,a,b;
+cin>>W>>a>>b;
+int R=0;
+if(b>=a&&b<=a+W) cout<<R;
+else if(b>a+W) cout<<b-(a+W);
+else cout<<a-b;
+
+return 0;
+}

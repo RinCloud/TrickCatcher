@@ -1,0 +1,10 @@
+{"input": ["abcdef\nghijklm"], "output": "bcdf\nghjklm"}
+{"input": ['abcdef'], "output": "bcdf"}
+{"input": ['aaaaa'], "output": ""}
+{"input": ['aaBAA'], "output": "B"}
+{"input": ['zbcd'], "output": "zbcd"}
+{"input": ['abcdefghijklmnopqrstuvwxyz'], "output": "bcdfghjklmnpqrstvwxyz"}
+{"input": ['AEIOUaeiou'], "output": ""}
+{"input": ['The quick brown fox jumps over the lazy dog'], "output": "Thqckbrwnfxjmpsvrthlzydg"}
+{"input": ['1234567890'], "output": "1234567890"}
+{"input": ['!@#$%^&*()_+'], "output": "!@#$%^&*()_+"}

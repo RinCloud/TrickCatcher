@@ -1,0 +1,28 @@
+# Solution:
+
+```
+# Read input values
+N, M = map(int, input().split())
+A = list(map(int, input().split()))
+
+# Initialize count variable
+count = 0
+
+# Iterate through integers from 1 to M (inclusive)
+for i in range(1, M + 1):
+    # Check if i is a semi-common multiple
+    is_semi_common = True
+    for j in range(N):
+        p = (i / A[j]) - 0.5
+        if p.is_integer() and p >= 0:
+            continue
+        else:
+            is_semi_common = False
+            break
+    # Increment count if i is a semi-common multiple
+    if is_semi_common:
+        count += 1
+
+# Print the result
+print(count)
+```

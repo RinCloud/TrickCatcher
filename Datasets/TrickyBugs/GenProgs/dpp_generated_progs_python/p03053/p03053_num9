@@ -1,0 +1,15 @@
+```python
+def count_operations(h, w, grid):
+    operations = 0
+    while True:
+        new_grid = [['#' if grid[i][j] == '#' else '.' for j in range(w)] for i in range(h)]
+        if new_grid == grid:
+            break
+        grid = new_grid
+        operations += 1
+    return operations
+
+h, w = map(int, input().split())
+grid = [list(input()) for _ in range(h)]
+print(count_operations(h, w, grid))
+```

@@ -1,0 +1,24 @@
+The given code has a logical flaw. 
+
+The current logic is checking if b == c, then returns a; if c == a, then returns b; if a == b, then returns c. However, this logic is incorrect.
+
+Let's consider an example: a = 5, b = 7, c = 5. According to the given problem statement, two numbers should be the same, and the third number should be different. In this case, a and c are the same, and b is different. But the given code will return 5 instead of 7.
+
+To fix this issue, we need to change the logic of the code.
+
+Repaired code:
+```python
+a, b, c = map(int, input().split())
+
+if a == b:
+    print(c)
+elif a == c:
+    print(b)
+else:
+    print(a)
+```
+
+In the repaired code, we check for two conditions:
+1. If a is equal to b, then the different number is c.
+2. If a is equal to c, then the different number is b.
+If neither of these conditions is true, then the different number is a.

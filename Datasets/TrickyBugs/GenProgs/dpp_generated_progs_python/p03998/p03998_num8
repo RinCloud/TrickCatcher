@@ -1,0 +1,27 @@
+```python
+def determine_winner(S_A, S_B, S_C):
+    turn = 'A'
+    while True:
+        if turn == 'A':
+            if len(S_A) == 0:
+                return 'A'
+            turn = S_A[0]
+            S_A = S_A[1:]
+        elif turn == 'B':
+            if len(S_B) == 0:
+                return 'B'
+            turn = S_B[0]
+            S_B = S_B[1:]
+        elif turn == 'C':
+            if len(S_C) == 0:
+                return 'C'
+            turn = S_C[0]
+            S_C = S_C[1:]
+
+S_A = input()
+S_B = input()
+S_C = input()
+
+winner = determine_winner(S_A, S_B, S_C)
+print(winner)
+```

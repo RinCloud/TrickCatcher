@@ -1,0 +1,29 @@
+- With positive integers:
+[1, 2, 3, 4, 5]
+
+- With negative integers:
+[-5, -4, -3, -2, -1]
+
+- With a mix of positive and negative integers:
+[-1, 2, -3, 4, -5]
+
+- With duplicate elements:
+[1, 2, 2, 3, 4]
+
+- With a single element:
+[0]
+
+- With an empty list:
+[]
+
+- With float numbers:
+[1.5, 2.5, 3.5, 4.5, 5.5]
+
+- With a large list of numbers:
+[1000000, 2000000, 3000000, 4000000, 5000000]
+
+- With all even numbers:
+[2, 4, 6, 8, 10]
+
+- With a zero element in the list:
+[1, 0, 2, 3, 4]

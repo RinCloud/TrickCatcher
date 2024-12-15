@@ -1,0 +1,10 @@
+```python
+from random import uniform
+def sample_one():
+    # Generate a random float between -100.0 and 100.0
+    random_float = uniform(-100.0, 100.0)
+    # Convert the random float to string representation
+    value = str(random_float)
+    generated_input = [value]
+    return generated_input
+```

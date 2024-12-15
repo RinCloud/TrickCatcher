@@ -1,0 +1,23 @@
+```
+import random
+
+def min_final_health_of_last_monster(n, monsters):
+    while n > 1:
+        attacker = random.randint(0, n-1)
+        target = random.randint(0, n-1)
+        while attacker == target:
+            target = random.randint(0, n-1)
+        attack_power = monsters[attacker]
+        monsters[target] -= attack_power
+        if monsters[target] <= 0:
+            # remove dead monster
+            monsters.pop(target)
+            n -= 1
+
+    return monsters[0]
+
+if __name__ == '__main__':
+    n = int(input())
+    monsters = list(map(int, input().split()))
+    print(min_final_health_of_last_monster(n, monsters))
+```

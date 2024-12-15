@@ -1,0 +1,10 @@
+{"input": ["Hello"], "output": "hELLO"}
+{"input": ["WORLD"], "output": "world"}
+{"input": ["HeLLo"], "output": "hEllO"}
+{"input": [""], "output": ""}
+{"input": ["hELLO"], "output": "Hello"}
+{"input": ["Hello, World!"], "output": "hELLO, wORLD!"}
+{"input": ["12345"], "output": "12345"}
+{"input": ["@#$%^"], "output": "@#$%^"}
+{"input": ["EveRYoNE"], "output": "eVEryOne"}
+{"input": ["12345@#$%"], "output": "12345@#$%"}

@@ -1,0 +1,24 @@
+**Repaired code**:
+
+```cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+  int a, b, c, mon, ans = 0;
+  cin >> a >> b >> c;
+  
+  for(int i = 0; i < a; i++) {
+    cin >> mon;
+    for(int m = 0; m < b; m += mon) {
+      ans += 1;
+    }
+  }
+  
+  cout << ans + c << endl;
+}
+```
+Explanation:
+1. Initialized `ans` variable to 0.
+2. Added braces {} for the outer and inner loops, for better code readability.
+3. Added spaces around the assignment, comparison and arithmetic operators to improve code readability.

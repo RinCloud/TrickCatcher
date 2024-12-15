@@ -1,0 +1,12 @@
+```python
+from cyaron import String
+from random import *
+
+def sample_one():
+    # Generate a random string length between 0 to 20
+    str_len = randint(0, 20)
+    # Generate a random string of the calculated length
+    text = String.random(str_len)
+    generated_input = [text]
+    return generated_input
+```

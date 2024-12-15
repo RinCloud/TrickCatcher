@@ -1,0 +1,8 @@
+**Test Input Reasoning:**
+
+I will start with the minimum input values.
+
+- I will take an alphanumeric string with 1 character.
+- I will include lowercase and uppercase letters in the string.
+
+This is interesting as the function should handle such a small and simple input correctly.

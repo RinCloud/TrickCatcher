@@ -1,0 +1,10 @@
+{"input": [["name", "of", "string"]], "output": "string"}
+{"input": [["name", "enam", "game"]], "output": "enam"}
+{"input": [["aaaaaaa", "bb" ,"cc"]], "output": "aaaaaaa"}
+{"input": [[]], "output": None}
+{"input": [["apple", "banana", "orange", "grape", "kiwi"]], "output": "orange"}
+{"input": [["john", "james", "joseph", "jacob", "jason"]], "output": "jacob"}
+{"input": [["word", "sentence", "paragraph", "chapter", "book"]], "output": "paragraph"}
+{"input": [["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]], "output": "a"}
+{"input": [["python", "java", "javascript", "ruby", "php"]], "output": "javascript"}
+{"input": [["elephant", "lion", "tiger", "giraffe", "leopard"]], "output": "giraffe"}

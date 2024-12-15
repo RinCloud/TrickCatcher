@@ -1,0 +1,12 @@
+```python
+from random import *
+from cyaron import *
+
+def sample_one():
+    length = randint(0, 20)  # generate length of string between 0 and 20
+    # Ensure an even length for a fair chance of correctly bracketed strings
+    length += length % 2
+    brackets = String.random(length, charset='()')
+    generated_input = [brackets]
+    return generated_input
+```

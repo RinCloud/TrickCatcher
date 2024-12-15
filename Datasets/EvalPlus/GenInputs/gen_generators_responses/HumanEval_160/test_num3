@@ -1,0 +1,12 @@
+```python
+from random import *
+from cyaron import *
+def sample_one():
+    operators = ['+', '-', '*', '//', '**']
+    length_of_operators = randint(1, 5)
+    length_of_operands = length_of_operators + 1
+    operator_list = [choice(operators) for _ in range(length_of_operators)]
+    operand_list = [randint(0, 10) for _ in range(length_of_operands)]
+    generated_input = [operator_list, operand_list]
+    return generated_input
+```

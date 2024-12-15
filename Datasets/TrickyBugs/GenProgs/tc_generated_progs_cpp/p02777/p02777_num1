@@ -1,0 +1,20 @@
+**REPAIRED CODE**:
+
+```cpp
+#include<bits/stdc++.h>
+using namespace std;
+int a,b;
+string s1,s2,s3; 
+int main() {
+	cin>>s1>>s2;
+	cin>>a>>b;
+	cin>>s3;
+	if(s1==s3) a--;
+	else b--;
+	cout<<a<<" "<<b;
+	return 0;
+}
+```
+
+**Explanation**:
+There is only one bug in the original code, which is in the if statement. The condition should be `s1==s3` instead of `s1[0]==s3[0]`. We need to compare the entire strings, not just the first characters, in order to check if the chosen ball has the same string as S.

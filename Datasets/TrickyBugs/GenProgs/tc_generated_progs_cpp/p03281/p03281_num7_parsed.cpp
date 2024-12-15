@@ -1,0 +1,15 @@
+#include"bits/stdc++.h"
+using namespace std;
+int main(){
+    int n,s;
+    cin>>n;
+    
+    vector<int> a = {105,135,165,195,189};
+    for(int i=0;i<5;i++){
+        if(n>=a[i]){
+            s++;
+        }
+    }
+    
+    cout<<s<<"\n";
+}

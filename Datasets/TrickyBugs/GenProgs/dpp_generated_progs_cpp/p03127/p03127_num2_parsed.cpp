@@ -1,0 +1,22 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
+int main() {
+    int n;
+    std::cin >> n;
+
+    std::vector<int> monsters(n);
+    for (int i = 0; i < n; ++i) {
+        std::cin >> monsters[i];
+    }
+
+    int minFinalHealth = monsters[0];
+    for (int i = 1; i < n; ++i) {
+        minFinalHealth = std::__gcd(minFinalHealth, monsters[i]);
+    }
+
+    std::cout << minFinalHealth << std::endl;
+
+    return 0;
+}

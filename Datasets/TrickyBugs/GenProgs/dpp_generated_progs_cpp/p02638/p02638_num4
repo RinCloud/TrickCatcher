@@ -1,0 +1,82 @@
+```cpp
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
+using namespace std;
+
+const int MOD = 998244353;
+
+// Function to calculate factorial modulo p
+int factorial(int n, int p) {
+    int result = 1;
+    for (int i = 1; i <= n; i++) {
+        result = (result * i) % p;
+    }
+    return result;
+}
+
+// Function to calculate factorial inverse modulo p
+int factorialInverse(int n, int p) {
+    int result = 1;
+    for (int i = 1; i <= n; i++) {
+        result = (result * i) % p;
+    }
+    return result;
+}
+
+// Function to calculate power modulo p
+int power(int x, int y, int p) {
+    int result = 1;
+    x = x % p;
+    while (y > 0) {
+        if (y & 1) {
+            result = (result * x) % p;
+        }
+        y = y >> 1;
+        x = (x * x) % p;
+    }
+    return result;
+}
+
+// Function to calculate number of directed graphs
+int calculateGraphs(int N, int K, int P) {
+    // Calculating (N-1)C(K-1)
+    int nCr = (factorial(N - 1, P) * power(factorial(N - K, P), P - 2, P) % P) * power(factorial(K - 1, P), P - 2, P) % P;
+    
+    // Calculating K^(N-K)
+    int kPower = power(K, N - K, P);
+    
+    // Calculating (K-1)^K
+    int kPowerMinusOne = power(K - 1, K, P);
+    
+    // Calculating (K-2)^{N-K}
+    int kPowerMinusTwo = power(K - 2, N - K, P);
+    
+    // Calculating (K-1)^(N-K-1)
+    int kPowerMinusOneInverse = power(kPowerMinusOne, P - 2, P);
+    
+    // Calculating (K-2)^(K-1)
+    int kPowerMinusTwoInverse = power(kPowerMinusTwo, P - 2, P);
+    
+    // Calculating (K-1)^(K-1)
+    int kPowerMinusOnePowerKMinusOneInverse = power(kPowerMinusOne, K - 1, P);
+    
+    // Calculating result using the above calculated values
+    int result = (nCr % P * kPower % P * kPowerMinusOne % P * kPowerMinusTwoInverse % P * kPowerMinusOnePowerKMinusOneInverse % P) % P;
+    
+    return result;
+}
+
+int main() {
+    // Read input values
+    int N, K, P;
+    cin >> N >> K >> P;
+
+    // Calculate and print the number of directed graphs modulo P
+    int result = calculateGraphs(N, K, P);
+    cout << result << endl;
+
+    return 0;
+}
+```

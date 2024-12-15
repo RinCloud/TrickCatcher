@@ -1,0 +1,25 @@
+**REPAIRED CODE**:
+
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() 
+{
+	int a,ss = 0;
+	cin>>a;
+	for(int i=1;i<=a;i++)
+	{
+		int digits = floor(log10(i)) + 1;
+		if(digits % 2 != 0) ss++;
+	}
+	cout<<ss;
+	return 0;
+}
+```
+
+I have fixed the following issues in the code:
+
+1. Initialized `ss` variable to 0 to avoid garbage value.
+2. Added code to count the number of digits for each `i` using `floor(log10(i)) + 1` and checked if the number of digits is odd using `digits % 2 != 0`.
+3. Removed the unnecessary conditions in the `if` statement inside the `for` loop.

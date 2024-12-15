@@ -1,0 +1,17 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int Q;
+    cin >> Q;
+
+    while (Q--) {
+        ll A, B;
+        cin >> A >> B;
+
+        ll ans = (A - 1) * (B - 1) / 2;
+        cout << ans << endl;
+    }
+
+    return 0;
+}

@@ -1,0 +1,10 @@
+```python
+from random import randint
+
+def sample_one():
+    list_length = randint(0, 10)
+    l = [randint(-50, 50) for _ in range(list_length)]
+    t = randint(-100, 100)
+    generated_input = [l, t]
+    return generated_input
+```

@@ -1,0 +1,20 @@
+**Repaired Code**:
+
+```cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    int a,b,tmp,tot = 0; // added initialization of `tot` variable
+    cin >> a >> b;
+    while(b--){
+        cin >> tmp;
+        tot+=tmp;
+    }
+    if(tot>=a) cout << "Yes" << endl; // changed "Yes\n" to "Yes"
+    else cout << "No" << endl; // changed "No\n" to "No"
+}
+```
+
+OUTPUT:
+If Raccoon can win without using the same move twice or more, print `Yes`; otherwise, print `No`.

@@ -1,0 +1,21 @@
+[[], []]
+
+[['a', 'b', 'c', 'd', 'e', 'f'], ['a', 'b']] 
+
+[['hello', 'hel', 'he', 'h', 'helo', 'ello'], ['world', 'wor', 'wo', 'w', 'word', 'ord']] 
+
+[['abcd', 'abd'], ['abdc', 'acdb', 'acbd']] 
+
+[['efghij', 'efghi', 'efgh', 'efg', 'ef', 'efghijk'], ['toijk', 'toki', 'tok']] 
+
+[['goodmorning', 'goodmornin', 'goodmorn', 'goodmor', 'goodmo', 'goodmornin'], ['afternoon', 'after', 'afe']] 
+
+[['sunshine', 'sunshin', 'sunshi', 'sunsh', 'suns', 'sunshi'], ['thunderstorm', 'thunderstor', 'thundersto', 'thunders', 'thunderst']] 
+
+[['weare', 'wear', 'wea', 'we', 'wea'], ['family', 'fami', 'fam']] 
+
+[['python', 'pytho', 'pyth', 'pyt', 'pythi', 'pytteon'], ['java', 'jav', 'j']] 
+
+[['apple', 'appl', 'app', 'ap', 'applo', 'pple'], ['banana', 'banan', 'bana', 'ban']] 
+
+[['japan', 'japa', 'jap', 'j', 'japn', 'apan'], ['korea', 'kor', 'koa']]

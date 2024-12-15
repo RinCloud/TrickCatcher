@@ -1,0 +1,17 @@
+The given code is difficult to understand and does not provide any logic to solve the problem. Below is the repaired code that solves the problem based on the given problem description.
+
+```python
+N = int(input())
+dice = [tuple(map(int, input().split())) for _ in range(N)]
+
+found = False
+for i in range(N-2):
+    if dice[i][0] == dice[i][1] and dice[i+1][0] == dice[i+1][1] and dice[i+2][0] == dice[i+2][1]:
+        found = True
+        break
+
+if found:
+    print('Yes')
+else:
+    print('No')
+```

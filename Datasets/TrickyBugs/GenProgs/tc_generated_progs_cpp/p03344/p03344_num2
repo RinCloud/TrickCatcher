@@ -1,0 +1,96 @@
+**Repaired code**:
+
+```cpp
+#include<iostream>
+#include<cstdio>
+#include<algorithm>
+#include<cstring>
+#include<vector>
+#define ll long long
+using namespace std;
+inline int read(){
+	int x=0,f=1;char ch;
+	do{ch=getchar();if(ch=='-')f=-1;}while(ch<'0'||ch>'9');
+	do{x=x*10+ch-'0';ch=getchar();}while(ch>='0'&&ch<='9');
+	return x*f;
+}
+const int N=100010;
+const ll INF=0x3f3f3f3f3f3f3f3f;
+struct node{
+	int v,next;
+}edge[N<<1];
+int last[N],le;
+void add(int u,int v){
+	edge[++le].v=v,edge[le].next=last[u],last[u]=le;
+	edge[++le].v=u,edge[le].next=last[v],last[v]=le;
+}
+ll a[N],b[N],dp[N],sum[N];
+int f[N],fa[N],pos[N],rt;
+inline int find(int x){
+	return f[x]==x?x:f[x]=find(f[x]);
+}
+inline bool cmp(int t1,int t2){
+	return a[t1]<a[t2];
+}
+vector<int> G[N];
+void dfs(int u){
+	sum[u]=b[u];
+	if (!G[u].size()){
+		dp[u]=a[u]+b[u];
+		return;
+	}
+	for (int i=G[u].size()-1;~i;--i){
+		int v=G[u][i];
+		dfs(v);
+		sum[u]+=sum[v];
+	}
+	dp[u]=INF;
+	for (int i=G[u].size()-1;~i;--i){
+		int v=G[u][i];
+		dp[u]=min(dp[u],max(dp[v],a[u])+sum[u]-sum[v]);
+	}
+}
+int main(){
+	int n=read(),m=read();
+	for (int i=1;i<=n;++i){
+		pos[i] = i;
+	}
+	int posSize = n;
+	while(posSize > 1){
+		sort(pos+1,pos+n+1,cmp);
+		
+		int x = pos[n];
+		int y = pos[n-1];
+		f[y] = x;
+		pos[n-1] = x;
+		a[x] = max(a[x]-b[y],0ll);
+		b[x] = b[y] + b[x];
+		posSize--;
+	}
+
+	le = 0;
+	memset(last, 0, sizeof(last));
+	for (int i=1;i<=m;++i){
+		int u=read(),v=read();
+		add(u,v);
+	}
+	
+	for(int u = 1; u <= n; ++u){
+		int fu = find(u);
+		for (int i=last[u];i;i=edge[i].next){
+			int v=edge[i].v;
+			if (find(v)!=fu) {f[find(v)] = fu;}
+		}
+		fa[fu]=0;
+	}
+	for (int i=1;i<=n;++i){
+		if (f[i] == i) {rt=i;}
+		else G[f[i]].push_back(i);
+	}
+	
+	dfs(rt);
+	
+	printf("%lld\n",dp[rt]);
+	return 0;
+}
+```

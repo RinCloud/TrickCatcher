@@ -1,0 +1,17 @@
+Here is the repaired code:
+
+```python
+n, k = map(int, input().split())
+
+# if k divides n, then the minimum difference is 0
+if n % k == 0:
+    print(0)
+else:
+    # if k does not divide n, then add 1 to the minimum difference
+    print(1)
+```
+
+Explanation:
+- We first split the input values and parse them as integers using `map(int, input().split())`.
+- If `n` is evenly divisible by `k` (i.e., `n % k == 0`), then the minimum difference between the largest and smallest number of crackers received by a user is 0. So we print 0.
+- Otherwise, if `n` is not evenly divisible by `k`, we add 1 to the minimum difference and print it as the output.

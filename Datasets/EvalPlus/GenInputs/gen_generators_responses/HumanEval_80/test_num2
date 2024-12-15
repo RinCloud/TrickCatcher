@@ -1,0 +1,11 @@
+```python
+from random import *
+from cyaron import *
+
+def sample_one():
+    length_of_string = randint(1, 20)  # generate length of string between 1 to 20
+    random_str = String.random(length_of_string, charset='abcdefghijklmnopqrstuvwxyz')  # generate a random lowercase string
+
+    generated_input = [random_str]  # wrap the generated string in a list
+    return generated_input
+```

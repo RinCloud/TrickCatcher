@@ -1,0 +1,37 @@
+```python
+from random import choice, randint
+from cyaron import String
+
+def sample_one():
+    # Choose randomly between generating a lower case, upper case, mixed case or empty dictionary
+    dict_type = randint(0, 3)
+    dict_length = randint(0, 5) # limiting the length of the dictionary for simplicity
+    
+    dict = {}
+    
+    if dict_type == 0: # Lower case dictionary
+        for _ in range(dict_length):
+            key = String.random(randint(1, 5)).lower()
+            value = String.random(randint(1, 10))
+            dict[key] = value
+        
+    elif dict_type == 1: # Upper case dictionary
+        for _ in range(dict_length):
+            key = String.random(randint(1, 5)).upper()
+            value = String.random(randint(1, 10))
+            dict[key] = value
+        
+    elif dict_type == 2: # Mixed case dictionary
+        for _ in range(dict_length):
+            if choice([True, False]): # Randomly decide the case for each key
+                key = String.random(randint(1, 5)).lower()
+            else:
+                key = String.random(randint(1, 5)).upper()
+            value = String.random(randint(1, 10))
+            dict[key] = value
+    
+    # For dict_type == 3, we deliberately leave the dictionary empty
+    
+    generated_input = [dict]
+    return generated_input
+```

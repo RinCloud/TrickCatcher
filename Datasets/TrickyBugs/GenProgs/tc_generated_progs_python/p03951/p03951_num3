@@ -1,0 +1,22 @@
+**Repaired code**:
+
+```python
+N=int(input())
+s=input()
+t=input()
+
+a=0
+b=0
+
+for i in range(N):
+    if s[i]==t[a]:
+        a+=1
+        b+=1
+    else:
+        b=0
+
+print(len(s)+len(t) - b)
+```
+There was a bug where we were not resetting `b` to 0 whenever there is a mismatch between characters at `s[i]` and `t[a]`. Thus, I added an `else` clause to reset `b` to 0.
+
+Additionally, the length of the shortest string is the sum of lengths of `s` and `t`, subtract the mismatch `b`. Hence, I modified the `print` statement accordingly.

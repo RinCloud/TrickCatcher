@@ -1,0 +1,12 @@
+Here is the repaired code:
+
+```python
+n = int(input())
+if n % 10 == 0:
+    print(1)
+else:
+    nums = [int(x) for x in str(n)]
+    print(sum(nums))
+```
+
+Note: In the original code, if a number ending in 0 was input, the output would always be 10. However, according to the problem description, the minimum possible value should be the sum of the digits, so I changed the output to 1 in that case. Additionally, I simplified the list comprehension for converting the number into a list of digits.

@@ -1,0 +1,44 @@
+Here is one possible solution in C++:
+
+```cpp
+#include <iostream>
+#include <unordered_set>
+#include <vector>
+
+int main() {
+    int N, K;
+    std::cin >> N >> K;
+
+    std::vector<int> A(N);
+    for (int i = 0; i < N; i++) {
+        std::cin >> A[i];
+    }
+
+    std::unordered_set<int> s;
+    for (int i = 0; i < N * K; i++) {
+        if (s.find(A[i % N]) != s.end()) {
+            while (*s.rbegin() != A[i % N]) {
+                s.erase(*s.rbegin());
+            }
+            s.erase(*s.rbegin());
+        } else {
+            s.insert(A[i % N]);
+        }
+    }
+
+    for (int elem : s) {
+        std::cout << elem << " ";
+    }
+    std::cout << std::endl;
+
+    return 0;
+}
+```
+
+This code first reads the values of N and K from the input. Then, it reads the sequence A. 
+
+Next, it initializes an unordered set, s, to store the elements of sequence s. 
+
+The code then iterates over the indices of X (from 0 to N * K - 1) and performs the operations described in the problem statement. If an element of X is not present in s, it is added to the set. If the element is already in s, it removes all elements from the end of s until the last element is equal to the element of X. 
+
+Finally, the code prints the elements of s in the order from beginning to end.

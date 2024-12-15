@@ -1,0 +1,8 @@
+```python
+from random import randint
+
+def sample_one():
+    # Generating n where n > 1 and is not a prime, considering practical function limits.
+    n = randint(4, 10000)  # choosing 4 as starting point because it's the first composite number.
+    return [n]
+```

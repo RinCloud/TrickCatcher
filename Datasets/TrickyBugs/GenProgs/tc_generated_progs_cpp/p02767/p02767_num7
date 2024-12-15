@@ -1,0 +1,32 @@
+**BUG FIX**
+
+1. The bug is in the array indexing. The array `a` is being accessed from index 1 to n, but in C++ arrays are 0-based, so it should be accessed from index 0 to n-1.
+
+2. In the loop to calculate `x` and `y`, the indexes are incorrect and should be corrected to start from 0 and end at n-1.
+
+3. In the loop to calculate `x` and `y`, the formula to calculate the minimum total stamina is incorrect. The correct formula is `(X_i - P)^2`, where P is the average of all X_i values.
+
+**REPAIRED CODE**
+
+#include<bits/stdc++.h>
+using namespace std;
+typedef long long ll;
+
+int main(){
+  ll n,b,x,y,i;
+  cin >> n;
+  ll a[n];
+  b=0;
+  for(i=0;i<n;i++){
+    cin >> a[i];
+    b+=a[i];
+  }
+  b=b/n;
+  x=0;
+  y=0;
+  for(i=0;i<n;i++){
+    x+=(a[i]-b)*(a[i]-b);
+    y+=(a[i]-b+1)*(a[i]-b+1);
+  }
+  cout << min(x,y);
+}

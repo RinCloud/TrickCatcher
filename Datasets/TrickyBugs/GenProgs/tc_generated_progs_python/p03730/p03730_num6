@@ -1,0 +1,13 @@
+The code has a logic flaw. The loop iterates from 1 to b-1. However, it is possible for the condition `(a*i)%b == c` to be true for a value of i greater than or equal to b. Hence, the loop should iterate from 1 to b+1 to cover all possible cases.
+The correct code is:
+
+```python
+a,b,c = map(int,input().split())
+
+ans = "NO"
+for i in range(1,b+1):
+    if (a*i)%b == c:
+        ans = "YES"
+
+print(ans)
+```

@@ -1,0 +1,10 @@
+{"input": "Hi, my name is John", "output": ["Hi", "my", "name", "is", "John"]}
+{"input": "One, two, three, four, five, six", "output": ["One", "two", "three", "four", "five", "six"]}
+{"input": "Hello World", "output": ["Hello", "World"]}
+{"input": "Testing the function", "output": ["Testing", "the", "function"]}
+{"input": "This is a test", "output": ["This", "is", "a", "test"]}
+{"input": "Splitting strings", "output": ["Splitting", "strings"]}
+{"input": "Check if it works", "output": ["Check", "if", "it", "works"]}
+{"input": "Hello, World!", "output": ["Hello", "World!"]}
+{"input": "Python is awesome", "output": ["Python", "is", "awesome"]}
+{"input": "Let's test some strings", "output": ["Let's", "test", "some", "strings"]}

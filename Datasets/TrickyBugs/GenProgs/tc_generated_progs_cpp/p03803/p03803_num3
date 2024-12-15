@@ -1,0 +1,14 @@
+**Repaired Code**:
+
+```
+#include<bits/stdc++.h>
+using namespace std;
+int n,m;
+int main()
+{
+	scanf("%d%d",&n,&m);
+	if((n==13&&m==1) || (n<m)||(n==1&&m==13)) printf("Bob");
+	else if(n>m) printf("Alice");
+	else printf("Draw");
+}
+```

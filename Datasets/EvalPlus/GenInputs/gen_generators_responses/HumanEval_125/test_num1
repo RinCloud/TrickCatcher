@@ -1,0 +1,24 @@
+```python
+from random import *
+from cyaron import *
+
+def sample_one():
+    # Randomly decide the pattern of the string to generate
+    pattern = randint(1, 3)
+    
+    if pattern == 1:
+        # Pattern 1: String with whitespaces
+        words_count = randint(1, 5)  # decide how many words
+        random_string = " ".join([String.random(randint(3, 10)) for _ in range(words_count)])
+    elif pattern == 2:
+        # Pattern 2: String with commas
+        words_count = randint(1, 5)  # decide how many words
+        random_string = ",".join([String.random(randint(3, 10)) for _ in range(words_count)])
+    else:
+        # Pattern 3: String without whitespaces or commas, can be decided to only include lowercase letters
+        length_of_string = randint(1, 10)
+        random_string = String.random(length_of_string, charset='abcdefghijklmnopqrstuvwxyz')
+
+    generated_input = [random_string]
+    return generated_input
+```

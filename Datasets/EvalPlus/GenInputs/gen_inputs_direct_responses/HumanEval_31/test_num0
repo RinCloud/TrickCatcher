@@ -1,0 +1,3 @@
+**Test Input Reasoning:**
+
+The number is 0. This is a corner case to check the program's behavior when the input is the lowest possible value.

@@ -1,0 +1,9 @@
+```python
+from random import *
+
+def sample_one():
+    arr_length = randint(0, 10)  # Randomly choose the length of the array
+    arr = sample(range(1, 100), arr_length)  # Generate a list of unique integers
+    generated_input = [arr]
+    return generated_input
+```

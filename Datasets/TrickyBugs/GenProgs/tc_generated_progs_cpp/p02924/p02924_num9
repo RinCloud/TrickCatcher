@@ -1,0 +1,47 @@
+**PROBLEM DESCRIPTION**:
+For an integer N, we will choose a permutation \\{P_1, P_2, ..., P_N\\} of \\{1, 2, ..., N\\}.
+Then, for each i=1,2,...,N, let M_i be the remainder when i is divided by P_i.
+Find the maximum possible value of M_1 + M_2 + \cdots + M_N.
+
+CONSTRAINTS:
+* N is an integer satisfying 1 \leq N \leq 10^9.
+
+INPUT:
+Input is given from Standard Input in the following format:
+N
+
+OUTPUT:
+Print the maximum possible value of M_1 + M_2 + \cdots + M_N.
+
+EXAMPLES:
+
+INPUT:
+2
+
+OUTPUT:
+1
+
+INPUT:
+13
+
+OUTPUT:
+78
+
+INPUT:
+1
+
+OUTPUT:
+0
+
+**CODE**:
+```cpp
+#include <cstdio>
+
+int main()
+{
+  long long N;
+  scanf("%lld", &N);
+  printf("%lld\n", (N - 1) * (N - 2) / 2);
+  return 0;
+}
+```

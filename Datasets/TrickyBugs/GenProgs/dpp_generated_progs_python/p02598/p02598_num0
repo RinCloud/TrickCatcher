@@ -1,0 +1,35 @@
+```python
+import math
+
+def can_cut(logs, length, k):
+    total_cuts = 0
+    for log in logs:
+        if log <= length:
+            continue
+        cuts_required = math.ceil(log / length) - 1
+        total_cuts += cuts_required
+
+        if total_cuts > k:
+            return False
+
+    return True
+
+def find_shortest_log_length(logs, k):
+    left = 0
+    right = max(logs)
+
+    while left < right:
+        mid = (left + right) // 2
+
+        if can_cut(logs, mid, k):
+            right = mid
+        else:
+            left = mid + 1
+
+    return left
+
+N, K = map(int, input().split())
+logs = list(map(int, input().split()))
+
+print(find_shortest_log_length(logs, K))
+```

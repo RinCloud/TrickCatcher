@@ -1,0 +1,18 @@
+```
+import sys
+
+def count_bounces(N, X, L):
+    count = 1
+    coordinate = 0
+    for i in range(N):
+        coordinate += L[i]
+        if coordinate <= X:
+            count += 1
+    return count
+
+if __name__ == "__main__":
+    N, X = map(int, sys.stdin.readline().split())
+    L = list(map(int, sys.stdin.readline().split()))
+    result = count_bounces(N, X, L)
+    print(result)
+```

@@ -1,0 +1,14 @@
+#include <iostream>
+using namespace std;
+
+int main(void) {
+  int i, j, k, a, ans = 0;
+  int min = 10; // change int to int and remove namespace
+  for(i = 0; i < 5; ++i) {
+    cin >> a; // realize n different type of dishes need to be ordered
+    ans += (a + 9) / 10 * 10;
+    if(a % 10 && min > a % 10) min = a % 10;
+  }
+  cout << ans - 10 + min; // change %lld to <<
+  return 0;
+}

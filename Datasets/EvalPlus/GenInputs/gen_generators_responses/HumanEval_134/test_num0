@@ -1,0 +1,15 @@
+```python
+from random import *
+from cyaron import *
+def sample_one():
+    # Generate a random string length
+    length_of_txt = randint(0, 20)
+    if length_of_txt > 0:
+        # Generate a random string with length of length_of_txt consisting of lowercase letters, spaces, and possibly terminating with a non-letter or space
+        txt = String.random(length_of_txt-1, charset='abcdefghijklmnopqrstuvwxyz ') + choice([' ', 'a', '.', '5'])
+    else:
+        # Empty string case
+        txt = ''
+    generated_input = [txt]
+    return generated_input
+```

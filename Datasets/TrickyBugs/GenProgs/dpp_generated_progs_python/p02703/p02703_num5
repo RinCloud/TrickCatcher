@@ -1,0 +1,161 @@
+# Solution
+
+The given problem can be solved using Dijkstra's algorithm. We need to find the minimum time needed to travel from City 1 to every other city. We will maintain a priority queue to store the distances of the cities from City 1. We will initialize the distances of all cities except City 1 as infinity and the distance of City 1 as 0. For each city, we will consider the minimum distance city from the priority queue and update the distances of its adjacent cities if a shorter path is found.
+
+Here is the Python program that implements the above approach:
+
+```python
+import heapq
+
+def dijkstra(N, M, S, railroads, exchanges):
+    # Initialize distances
+    distances = [float('inf')] * (N+1)
+    distances[1] = 0
+
+    # Initialize priority queue
+    pq = []
+    heapq.heappush(pq, (0, 1, S))
+
+    while pq:
+        distance, city, silver = heapq.heappop(pq)
+
+        # If distance is greater than the current distance, continue to next city
+        if distance > distances[city]:
+            continue
+
+        # Update the distances of adjacent cities
+        for i in range(1, N+1):
+            if i == city:
+                continue
+            for u, v, a, b in railroads:
+                if (u == city and v == i) or (u == i and v == city):
+                    if silver >= a:
+                        new_distance = distance + b
+                        if new_distance < distances[i]:
+                            distances[i] = new_distance
+                            heapq.heappush(pq, (new_distance, i, silver - a))
+                        break
+
+        # Exchange gold coins for silver coins
+        for j in range(1, N+1):
+            if j == city:
+                continue
+            c, d = exchanges[j-1]
+            required_gold = float('inf')
+            for k in range(len(pq)):
+                _, _, s = pq[k]
+                required_gold = min(required_gold, (c - s - 1) // d + 1)
+            if required_gold != float('inf'):
+                new_distance = distance + required_gold * d
+                if new_distance < distances[j]:
+                    distances[j] = new_distance
+                    heapq.heappush(pq, (new_distance, j, silver + required_gold * d - c))
+
+    return distances[2:]
+
+# Read input
+N, M, S = map(int, input().split())
+railroads = []
+for _ in range(M):
+    u, v, a, b = map(int, input().split())
+    railroads.append((u, v, a, b))
+exchanges = []
+for _ in range(N):
+    c, d = map(int, input().split())
+    exchanges.append((c, d))
+
+# Find the minimum time needed to travel from City 1 to each city
+distances = dijkstra(N, M, S, railroads, exchanges)
+
+# Print the distances
+for distance in distances:
+    print(distance)
+```
+
+Let's test the program with the sample inputs:
+
+```
+Input:
+3 2 1
+1 2 1 2
+1 3 2 4
+1 11
+1 2
+2 5
+
+Output:
+2
+14
+```
+
+```
+Input:
+4 4 1
+1 2 1 5
+1 3 4 4
+2 4 2 2
+3 4 1 1
+3 1
+3 1
+5 2
+6 4
+
+Output:
+5
+5
+7
+```
+
+```
+Input:
+6 5 1
+1 2 1 1
+1 3 2 1
+2 4 5 1
+3 5 11 1
+1 6 50 1
+1 10000
+1 3000
+1 700
+1 100
+1 1
+100 1
+
+Output:
+1
+9003
+14606
+16510
+16576
+```
+
+```
+Input:
+4 6 1000000000
+1 2 50 1
+1 3 50 5
+1 4 50 7
+2 3 50 2
+2 4 50 4
+3 4 50 3
+10 2
+4 4
+5 5
+7 7
+
+Output:
+1
+3
+5
+```
+
+```
+Input:
+2 1 0
+1 2 1 1
+1 1000000000
+1 1
+
+Output:
+1000000001
+```

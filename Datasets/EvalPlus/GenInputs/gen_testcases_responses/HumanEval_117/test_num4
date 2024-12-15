@@ -1,0 +1,10 @@
+{"input": ["Mary had a little lamb", 4], "output": ["little"]}
+{"input": ["Mary had a little lamb", 3], "output": ["Mary", "lamb"]}
+{"input": ["simple white space", 2], "output": []}
+{"input": ["Hello world", 4], "output": ["world"]}
+{"input": ["Uncle sam", 3], "output": ["Uncle"]}
+{"input": ["Mary had a little lamb", 0], "output": []}
+{"input": ["Hello world", 6], "output": []}
+{"input": ["Mary had a little lamb", 8], "output": []}
+{"input": ["Hello world", 0], "output": ["Hello", "world"]}
+{"input": ["", 2], "output": []}

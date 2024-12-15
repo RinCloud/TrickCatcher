@@ -1,0 +1,23 @@
+**FIXED CODE**:
+
+```cpp
+#include<bits/stdc++.h>
+using namespace std;
+int a,b;
+string s1,s2,s3; 
+int main() {
+	cin>>s1>>s2;
+	cin>>a>>b;
+	cin>>s3;
+	if(s1 == s3) 
+	  a--;
+	else 
+	  b--;
+	cout<<a<<" "<<b;
+	return 0;
+}
+```
+**Explanation:**
+
+There is only one issue with the given code. In the if condition, the code is comparing the first characters of strings `s1` and `s3` instead of comparing the entire strings. Hence the condition always fails, and `b` is decremented.
+Therefore, we only need to modify the if condition to `s1 == s3` for it to work correctly.

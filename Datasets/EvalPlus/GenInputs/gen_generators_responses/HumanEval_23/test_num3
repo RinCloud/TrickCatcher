@@ -1,0 +1,8 @@
+```python
+from cyaron import *
+def sample_one():
+    string_length = randint(0, 100)  # Random length for the string
+    string = String.random(string_length, charset='ascii')  # Generate a random string of specified length
+    generated_input = [str(string)]  # Convert cyaron String to Python string
+    return generated_input
+```

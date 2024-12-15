@@ -1,0 +1,28 @@
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+int main() {
+    int N, x;
+    cin >> N >> x;
+    
+    vector<int> a(N);
+    for (int i = 0; i < N; i++) {
+        cin >> a[i];
+    }
+    
+    long long operations = 0;
+    for (int i = 1; i < N; i++) {
+        // Calculate the difference between the current and previous box
+        int diff = max(0, a[i] + a[i-1] - x);
+        
+        // Eat candies from the current and previous box
+        operations += diff;
+        a[i] -= diff;
+    }
+    
+    cout << operations << endl;
+    
+    return 0;
+}

@@ -1,0 +1,10 @@
+{"input": [[2, 1, 1, 4, 5, 8, 2, 3]], "output": ["Eight", "Five", "Four", "Three", "Two", "Two", "One", "One"]}
+{"input": [[9, 3, 5, 1, 4, 6, 8, 2, 7]], "output": ["Nine", "Eight", "Seven", "Six", "Five", "Four", "Three", "Two", "One"]}
+{"input": [[]], "output": []}
+{"input": [[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]], "output": ["Nine", "Eight", "Seven", "Six", "Five", "Four", "Three", "Two", "One", "Zero"]}
+{"input": [[2, 1, 1, 10, 4, 5, 8, 2, 3]], "output": ["Two", "One", "One"]}
+{"input": [[-1, 0, 100, 7, 3, 2, 8, 5]], "output": ["Eight", "Seven", "Five", "Three", "Two"]}
+{"input": [[-5, -2, 0, 3, -8, 9, 7, -4, -1]], "output": ["Nine", "Seven", "Three"]}
+{"input": [[4, 3, 2, 1]], "output": ["Four", "Three", "Two", "One"]}
+{"input": [[5, 4, 3, 2, 1]], "output": ["Five", "Four", "Three", "Two", "One"]}
+{"input": [[9, 8, 7, 6, 5, 4, 3, 2, 1]], "output": ["Nine", "Eight", "Seven", "Six", "Five", "Four", "Three", "Two", "One"]}

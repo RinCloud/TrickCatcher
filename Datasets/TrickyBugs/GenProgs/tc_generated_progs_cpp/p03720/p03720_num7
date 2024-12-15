@@ -1,0 +1,29 @@
+**Repaired Code**:
+
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    int n, m;
+    cin >> n >> m;
+
+    vector<int> r(n, 0);
+    for (int i = 0; i < m; i++) {
+        int a, b;
+        cin >> a >> b;
+        r[a-1]++;
+        r[b-1]++;
+    }
+
+    for (int c : r) {
+        cout << c << endl;
+    }
+    return 0;
+}
+```
+
+The repaired code fixes the following issues:
+- The loop in line 7 should iterate `m` times, so the condition should be `i < m` instead of `i < m*2`.
+- In the loop in line 8, the code should read the values of `a` and `b` as two separate integers, instead of reading a single integer `t`. Then, it should increment `r[a-1]` and `r[b-1]` to count the number of roads connected to each city.
+- In line 13, we need to add a `return 0;` statement to indicate a successful termination of the program.

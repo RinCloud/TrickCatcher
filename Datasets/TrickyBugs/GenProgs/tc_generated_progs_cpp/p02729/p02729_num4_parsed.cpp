@@ -1,0 +1,11 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int n, m, a = 0;  // Initialize a with 0
+    cin >> n >> m;
+    a += (n * n - n) / 2;  // Add the number of ways to choose two even balls
+    a += (m * m - m) / 2;  // Add the number of ways to choose two odd balls
+    a += (n * m);  // Add the number of ways to choose an even and an odd ball
+    cout << a;
+}

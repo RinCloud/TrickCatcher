@@ -1,0 +1,3 @@
+**Test Input Reasoning:**
+
+One interesting case to consider is when the original string and the substring are both empty strings. This is an edge case where there are no characters to compare.

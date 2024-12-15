@@ -1,0 +1,114 @@
+#include <iostream>
+#include <vector>
+#include <queue>
+
+using namespace std;
+
+const int MAX = 100005;
+
+// Function to perform BFS on the graph starting from the given vertex
+void bfs(vector<vector<int>>& adj, vector<int>& colors, int v, int d, int c) {
+    int n = adj.size();
+    vector<bool> visited(n, false);
+
+    // Create a queue for BFS
+    queue<int> q;
+
+    // Mark the current node as visited
+    visited[v] = true;
+
+    // Set the color of the current node
+    colors[v] = c;
+
+    // Enqueue the current node
+    q.push(v);
+
+    // Iterate until the queue is empty
+    while (!q.empty()) {
+        // Dequeue a vertex from the queue
+        int u = q.front();
+        q.pop();
+
+        // Check for all adjacent vertices of the dequeued vertex u
+        for (int i = 0; i < adj[u].size(); i++) {
+            int v = adj[u][i];
+
+            // If the adjacent vertex is not visited and the distance is greater than 0
+            if (!visited[v] && d > 0) {
+                // Mark the adjacent vertex as visited
+                visited[v] = true;
+
+                // Set the color of the adjacent vertex
+                colors[v] = c;
+
+                // Enqueue the adjacent vertex
+                q.push(v);
+            }
+        }
+
+        // Decrement the distance
+        d--;
+    }
+}
+
+// Function to find the color of each vertex after Q operations
+vector<int> findColors(int N, int M, vector<pair<int, int>>& edges, int Q, vector<tuple<int, int, int>>& operations) {
+    // Create an adjacency list to represent the graph
+    vector<vector<int>> adj(N + 1);
+
+    // Add the edges to the adjacency list
+    for (int i = 0; i < M; i++) {
+        int u = edges[i].first;
+        int v = edges[i].second;
+
+        adj[u].push_back(v);
+        adj[v].push_back(u);
+    }
+
+    // Create a vector to store the color of each vertex
+    vector<int> colors(N + 1, 0);
+
+    // Perform the Q operations on the graph
+    for (int i = 0; i < Q; i++) {
+        int v = get<0>(operations[i]);
+        int d = get<1>(operations[i]);
+        int c = get<2>(operations[i]);
+
+        // Perform BFS starting from the vertex v and update the colors
+        bfs(adj, colors, v, d, c);
+    }
+
+    return colors;
+}
+
+int main() {
+    // Read the input values
+    int N, M;
+    cin >> N >> M;
+
+    // Read the edges of the graph
+    vector<pair<int, int>> edges(M);
+    for (int i = 0; i < M; i++) {
+        cin >> edges[i].first >> edges[i].second;
+    }
+
+    // Read the number of operations
+    int Q;
+    cin >> Q;
+
+    // Read the operations
+    vector<tuple<int, int, int>> operations(Q);
+    for (int i = 0; i < Q; i++) {
+        cin >> get<0>(operations[i]) >> get<1>(operations[i]) >> get<2>(operations[i]);
+    }
+
+    // Find the color of each vertex after Q operations
+    vector<int> colors = findColors(N, M, edges, Q, operations);
+
+    // Print the colors
+    for (int i = 1; i <= N; i++) {
+        cout << colors[i] << endl;
+    }
+
+    return 0;
+}

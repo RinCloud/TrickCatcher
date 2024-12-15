@@ -1,0 +1,13 @@
+Inputs:
+```
+'apple pie'
+'apple pi e'
+'apple pi e '
+''
+'hello world'
+'hello world '
+'hello world          '
+'12345'
+'12345a'
+'!@#$%'
+```

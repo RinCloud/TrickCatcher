@@ -1,0 +1,17 @@
+N = int(input())
+A = list(map(int, input().split()))
+
+neg_count = 0
+abs_sum = 0
+min_abs_value = float('inf')
+
+for i in range(N):
+    abs_sum += abs(A[i])
+    if A[i] < 0:
+        neg_count += 1
+    min_abs_value = min(min_abs_value, abs(A[i]))
+
+if neg_count % 2 == 0:
+    print(abs_sum)
+else:
+    print(abs_sum - 2 * min_abs_value)

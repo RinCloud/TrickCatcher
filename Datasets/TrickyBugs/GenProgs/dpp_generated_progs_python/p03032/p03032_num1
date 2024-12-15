@@ -1,0 +1,30 @@
+```python
+
+def max_sum_of_jewels(N, K, V):
+    # initialize variables
+    max_sum = 0
+    
+    # iterate over all possible numbers of jewels to take out
+    for i in range(min(N, K)+1):
+        # iterate over all possible combinations of taking out jewels from left and right ends
+        for j in range(i+1):
+            # create a sublist of jewels to take out
+            jewels_taken = V[:j] + V[N-i:]
+            
+            # calculate the sum of values of jewels taken out
+            sum_of_jewels = sum(jewels_taken)
+            
+            # update max_sum if the current sum is greater
+            max_sum = max(max_sum, sum_of_jewels)
+    
+    return max_sum
+
+
+# read input values
+N, K = map(int, input().split())
+V = list(map(int, input().split()))
+
+# call the function and print the result
+print(max_sum_of_jewels(N, K, V))
+
+```

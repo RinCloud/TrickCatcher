@@ -1,0 +1,8 @@
+```
+a = int(input())
+print("Yes" if (a // 1111) or (a // 111) % 10 == a % 10 else "No")
+```
+
+The original code has two main issues:
+1. `(a // 10) % 111` and `(a % 1000) % 111` are used to check if the number has three or more consecutive same digits. However, this logic is flawed because the remainder of these divisions could be 0 even if the number has consecutive same digits. To fix this, we need to check if `(a // 1111)` or `(a // 111) % 10` is equal to `a % 10`.
+2. The `print` statement uses slicing to select either "Yes" or "No" from the string "YNeos". However, this slicing is incorrect. We should instead use a conditional expression (`if ... else ...`) to print "Yes" if the condition is true and "No" otherwise.

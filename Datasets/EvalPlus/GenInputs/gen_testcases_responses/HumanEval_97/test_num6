@@ -1,0 +1,10 @@
+{"input": [148, 412], "output": 16}
+{"input": [19, 28], "output": 72}
+{"input": [2020, 1851], "output": 0}
+{"input": [14, -15], "output": 20}
+{"input": [10, 10], "output": 0}
+{"input": [100, 100], "output": 0}
+{"input": [123, 456], "output": 18}
+{"input": [9, 0], "output": 0}
+{"input": [-5, -5], "output": 25}
+{"input": [-3, 10], "output": 0}

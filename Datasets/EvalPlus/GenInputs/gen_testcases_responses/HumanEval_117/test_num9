@@ -1,0 +1,10 @@
+{"input": ["Mary had a little lamb", 4], "output": ["little"]}
+{"input": ["Mary had a little lamb", 3], "output": ["Mary", "lamb"]}
+{"input": ["simple white space", 2], "output": []}
+{"input": ["Hello world", 4], "output": ["world"]}
+{"input": ["Uncle sam", 3], "output": ["Uncle"]}
+{"input": ["", 0], "output": []}
+{"input": ["abc def ghi", 1], "output": ["abc", "def", "ghi"]}
+{"input": ["apple banana cat dog elephant", 6], "output": ["elephant"]}
+{"input": ["hello there how are you", 5], "output": ["there"]}
+{"input": ["this is a test", 0], "output": ["this", "is", "a"] }

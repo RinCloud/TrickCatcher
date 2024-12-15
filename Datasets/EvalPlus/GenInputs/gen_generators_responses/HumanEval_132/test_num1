@@ -1,0 +1,10 @@
+```python
+from random import *
+from cyaron import *
+
+def sample_one():
+    length_of_string = randint(1, 20) # Generate a string length between 1 and 20
+    random_string = String.random(length_of_string, charset='[]') # Generate a string consisting of '[' and ']'
+    generated_input = [random_string]
+    return generated_input
+```

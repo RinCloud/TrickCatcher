@@ -1,0 +1,29 @@
+**CORRECTED CODE**:
+
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() 
+{
+    int N;
+    cin >> N;
+
+    int count = 0;
+    for(int i = 1; i <= N; i++) 
+    {
+        if(to_string(i).length() % 2 != 0)
+        {
+            count++;
+        }
+    }
+
+    cout << count;
+
+    return 0;
+}
+```
+
+The issue with the given code is that `ss` variable is being used without initializing it. Additionally, the logic in the `if` statement to check for numbers with odd digits is flawed.
+
+I have corrected the code by initializing `count` variable and modified the condition in the `if` statement to check if the length of the number's string representation is odd.

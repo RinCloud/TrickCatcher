@@ -1,0 +1,10 @@
+{"a":"apple", "b":"banana"}
+{"a":"apple", "A":"banana", "B":"banana"}
+{"a":"apple", 8:"banana", "a":"apple"}
+{"Name":"John", "Age":"36", "City":"Houston"}
+{"STATE":"NC", "ZIP":"12345" }
+{"A":"apple", "B":"banana"}
+{"a":"apple", "1":"banana"}
+{"Uppercase":"string", "LOWERCASE":"string"}
+{}
+{"Key":"value"}

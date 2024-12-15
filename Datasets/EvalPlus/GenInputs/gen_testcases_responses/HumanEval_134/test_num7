@@ -1,0 +1,10 @@
+{"input": ["apple pie"], "output": False}
+{"input": ["apple pi e"], "output": True}
+{"input": ["apple pi e "], "output": False}
+{"input": [""], "output": False}
+{"input": ["apple p"], "output": True}
+{"input": ["apple_pie"], "output": False}
+{"input": ["apple"], "output": True}
+{"input": ["apple pie "], "output": False}
+{"input": ["apple p e"], "output": False}
+{"input": ["hello world"], "output": False}

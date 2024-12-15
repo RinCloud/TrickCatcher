@@ -1,0 +1,50 @@
+def find_shortest_not_subsequence(A):
+    n = len(A)
+    alphabet = 'abcdefghijklmnopqrstuvwxyz'
+    
+    # Initialize count array
+    dp = [[0 for _ in range(26)] for _ in range(n+1)]
+    
+    # Iterate over string A in reverse order
+    for i in range(n-1, -1, -1):
+        # Copy values from previous row
+        for j in range(26):
+            dp[i][j] = dp[i+1][j]
+        
+        # Update count of current character
+        dp[i][ord(A[i]) - ord('a')] = i+1
+    
+    # Initialize result variable
+    result = ""
+    
+    # For each character in the alphabet
+    for c in alphabet:
+        # Initialize current position and flag
+        pos = 0
+        flag = False
+        
+        # Iterate over each character in string A
+        for i in range(26):
+            # If the character is after the current position in A
+            if dp[pos][ord(c) - ord('a')]:
+                # Set flag to True
+                flag = True
+                # Update current position to the next position of the character
+                pos = dp[pos][ord(c) - ord('a')]
+        
+        # If no character found in string A
+        if not flag:
+            # Add character to the result string
+            result += c
+    
+    return result
+
+
+# Read input from STDIN
+A = input().strip()
+
+# Find the shortest string not subsequences of A
+result = find_shortest_not_subsequence(A)
+
+# Print the result
+print(result)

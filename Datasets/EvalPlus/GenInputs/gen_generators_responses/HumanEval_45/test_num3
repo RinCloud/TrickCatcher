@@ -1,0 +1,9 @@
+```python
+from random import *
+
+def sample_one():
+    a = uniform(0, 100)
+    h = uniform(0, 100)
+    generated_input = [a, h]
+    return generated_input
+```

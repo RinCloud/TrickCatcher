@@ -1,0 +1,20 @@
+```python
+import sys
+input = sys.stdin.readline
+
+x, y, z, k = map(int, input().split())
+a = sorted(map(int, input().split()), reverse=True)
+b = sorted(map(int, input().split()), reverse=True)
+c = sorted(map(int, input().split()), reverse=True)
+
+ab = sorted(i+j for i in a for j in b)[:-k-1:-1]
+abc = sorted(i+j for i in ab for j in c)[:-k-1:-1]
+
+print(*abc, sep="\n")
+```
+The fixes are as follows:
+1. The input statement should not be overwritten on line 3, so it should be renamed to `input_`.
+2. `a`, `b`, and `c` should be sorted in descending order (in line 8, 9, and 10, respectively) so that the largest deliciousness values are considered first.
+3. On line 12, `c` should also be sorted in descending order to ensure that the largest deliciousness values are considered first.
+4. The line `c = c[:k]` can be removed because `c` is already sorted in descending order.
+5. The printing statement on line 15 should be changed to `print(*abc[:k], sep="\n")` to only print the first `k` elements of `abc`.

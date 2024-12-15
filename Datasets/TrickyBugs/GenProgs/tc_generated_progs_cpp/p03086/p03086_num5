@@ -1,0 +1,35 @@
+**REPAIRED CODE**:
+
+```
+#include <stdio.h>
+
+int main(void) {
+  int a = 0;
+  int i;
+  int sum = 0;
+  char s[11];
+  
+  scanf("%s", s);
+  
+  for (i = 0; s[i] != '\0'; i++) {
+    if (s[i] == 'A' || s[i] == 'T' || s[i] == 'G' || s[i] == 'C') {
+      a++;
+    } else {
+      a = 0;
+    }
+    if (sum < a) {
+      sum = a;
+    }
+  }
+ 
+  printf("%d\n", sum);
+  
+  return 0;
+}
+```
+
+The repaired code includes the following changes:
+
+1. The for loop condition has been changed from `i < 10` to `s[i] != '\0'` to correctly handle strings of different lengths.
+2. The else statement has been added to reset the count `a` to 0 when a non-ACGT character is encountered.
+3. The if condition inside the for loop has been modified to compare `sum` with `a` and update `sum` if `a` is greater than `sum`.

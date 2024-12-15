@@ -1,0 +1,33 @@
+```c
+#include<stdio.h>
+int main()
+{
+	int N;
+	while(scanf("%d",&N)!=EOF)
+	{
+		int max=0;
+		int min=0;
+		int n;
+		int i;
+		int a[8]={0}; // corrected array size and initialized all elements to 0
+
+		for (i=0;i<N;i++)
+		{
+			scanf("%d",&n);
+			if(n/400<8)
+				a[n/400]++;
+			else
+				max++;
+		}
+		for(i=0;i<8;i++) // corrected loop condition to iterate over all possible colors
+		{
+			if(a[i]!=0)
+				min++;
+		}
+		max+=min; // corrected logic to calculate maximum number of different colors
+		if(min==0 && max>0) // added condition to handle case where all ratings are above 3200
+			min=1;
+		printf("%d %d\n",min, max);
+	}
+}
+```

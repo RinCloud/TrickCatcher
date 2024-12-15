@@ -1,0 +1,3 @@
+**TEST INPUT REASONING:**
+
+For this testcase, I will take smallest possible N, such that N=2. This is interesting as the edgecases are usually expected to have different behavior than the other cases, here since only two elements are there, the number of cards that Snuke and Raccoon can take is fixed, thus minimization will depend on the values written in these two and will help me ensure that there are no logical errors in handling the edgecases.

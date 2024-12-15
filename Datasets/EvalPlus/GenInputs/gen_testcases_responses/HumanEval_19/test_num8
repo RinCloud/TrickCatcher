@@ -1,0 +1,10 @@
+{"input": ["two zero three four one nine eight seven six five"], "output": "zero one two three four five six seven eight nine"}
+{"input": ["nine eight seven six five four three two one zero"], "output": "zero one two three four five six seven eight nine"}
+{"input": ["five one nine zero seven eight four two six three"], "output": "zero one two three four five six seven eight nine"}
+{"input": ["three six five zero seven nine eight four two one"], "output": "zero one two three four five six seven eight nine"}
+{"input": ["eight seven five six zero one nine four two three"], "output": "zero one two three four five six seven eight nine"}
+{"input": ["nine five zero one eight four two seven six three"], "output": "zero one two three four five six seven eight nine"}
+{"input": ["two three one eight zero four five nine six seven"], "output": "zero one two three four five six seven eight nine"}
+{"input": ["six zero two four five seven three eight one nine"], "output": "zero one two three four five six seven eight nine"}
+{"input": ["seven eight three nine two one six four zero five"], "output": "zero one two three four five six seven eight nine"}
+{"input": ["one six seven zero three four eight two five nine"], "output": "zero one two three four five six seven eight nine"}

@@ -1,0 +1,10 @@
+{"input": [1, 4], "output": True}
+{"input": [2, 2], "output": True}
+{"input": [8, 2], "output": True}
+{"input": [3, 2], "output": False}
+{"input": [3, 1], "output": False}
+{"input": [5, 3], "output": False}
+{"input": [16, 4], "output": True}
+{"input": [10, 5], "output": False}
+{"input": [27, 3], "output": True}
+{"input": [125, 5], "output": True}

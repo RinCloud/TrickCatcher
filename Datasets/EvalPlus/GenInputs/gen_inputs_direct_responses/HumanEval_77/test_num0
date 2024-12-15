@@ -1,0 +1,4 @@
+**Test Input Reasoning:**
+
+We test with the smallest input possible, a = 0, which is the minimum value.
+This is interesting as the value is at the edge of the input space.

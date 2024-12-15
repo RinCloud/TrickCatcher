@@ -1,0 +1,42 @@
+#include <bits/stdc++.h>
+using namespace std;
+typedef long long ll;
+int n,m,ans,u[20];
+int c[20],p[20];
+
+void dfs(int x, ll score, int solved) {
+    if (x > n) {
+        if (score >= m) {
+            ans = min(ans, solved);
+        }
+        return;
+    }
+    
+    // Solve current problem
+    for (int i = 0; i < c[x]; ++i) {
+        if (score + 100 * (x + 1) * i < m) {
+            dfs(x + 1, score + 100 * (x + 1) * i, solved + i);
+        } else {
+            int remaining = (m - score) / ((x + 1) * 100);
+            dfs(x + 1, score + (x + 1) * 100 * remaining, solved + remaining);
+            break;
+        }
+    }
+    
+    // Skip current problem
+    dfs(x + 1, score, solved);
+}
+
+int main() {
+    scanf("%d %d", &n, &m);
+    for (int i = 0; i < n; ++i) {
+        scanf("%d %d", &p[i], &c[i]);
+    }
+
+    ans = INT_MAX;
+    dfs(0, 0, 0);
+
+    printf("%d\n", ans);
+    
+    return 0;
+}

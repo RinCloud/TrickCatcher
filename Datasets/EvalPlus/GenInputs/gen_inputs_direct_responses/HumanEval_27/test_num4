@@ -1,0 +1,12 @@
+Here are 10 corner test inputs for the function `flip_case()`: 
+
+1. `'Hello'`
+2. `'WORLD'`
+3. `'123abc'`
+4. `''` (empty string)
+5. `'!@#$%^'`
+6. `'hElLo'`
+7. `'wOrLd'`
+8. `'AbCdEfG'`
+9. `'1234567890'`
+10. `'aBcDeFgH'`

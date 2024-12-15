@@ -1,0 +1,3 @@
+**Test Input Reasoning:**
+
+The simplest case is when the string is empty and the number of consonants `n` is 0. This will test the condition where the string `s` is empty, as specified in the docstring.

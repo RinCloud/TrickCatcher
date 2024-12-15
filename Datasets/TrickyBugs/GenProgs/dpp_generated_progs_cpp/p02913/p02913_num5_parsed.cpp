@@ -1,0 +1,22 @@
+#include <iostream>
+#include <string>
+#include <algorithm>
+
+int main() {
+    int N;
+    std::string S;
+    std::cin >> N >> S;
+
+    int maxLen = 0;
+    for (int len = 1; len <= N; len++) {
+        for (int i = 0; i <= N - len - len; i++) {
+            if (S.substr(i, len) == S.substr(i + len, len)) {
+                maxLen = std::max(maxLen, len);
+            }
+        }
+    }
+
+    std::cout << maxLen << std::endl;
+
+    return 0;
+}

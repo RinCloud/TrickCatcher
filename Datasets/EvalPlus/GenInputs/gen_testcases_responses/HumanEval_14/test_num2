@@ -1,0 +1,10 @@
+{"input": ['abc'], "output": ['a', 'ab', 'abc']}
+{"input": ['defg'], "output": ['d', 'de', 'def', 'defg']}
+{"input": ['hijk'], "output": ['h', 'hi', 'hij', 'hijk']}
+{"input": ['lmnop'], "output": ['l', 'lm', 'lmn', 'mnop']}
+{"input": ['qrstuv'], "output": ['q', 'qr', 'qrs', 'qrst', 'qrstu', 'qrstuv']}
+{"input": ['wxyz'], "output": ['w', 'wx', 'wxy', 'wxyz']}
+{"input": ['abcd'], "output": ['a', 'ab', 'abc', 'abcd']}
+{"input": ['efgh'], "output": ['e', 'ef', 'efg', 'efgh']}
+{"input": ['ijklm'], "output": ['i', 'ij', 'ijk', 'ijkl', 'ijklm']}
+{"input": ['nopqr'], "output": ['n', 'no', 'nop', 'nopq', 'nopqr']}

@@ -1,0 +1,39 @@
+# Approach
+
+To find the minimum total cost required to complete all the tasks, we can try all possible combinations of completing the tasks and calculate the cost for each combination. We will then select the combination with the minimum cost.
+
+We can use a nested loop to iterate through the tasks and calculate the cost for each pair of tasks. We will keep track of the minimum cost encountered so far and update it if we find a lower cost.
+
+# Plan
+
+1. Read the input values for A1, A2, and A3.
+2. Initialize a variable `min_cost` with a large value, such as infinity.
+3. Use nested loops to iterate through all possible pairs of tasks.
+    - Loop `i` from 1 to 2 (task 1 to task 2).
+        - Loop `j` from 2 to 3 (task 2 to task 3).
+            - Calculate the cost for the current pair of tasks as `abs(A_j - A_i)`.
+            - If the calculated cost is less than `min_cost`, update `min_cost` with the calculated cost.
+4. Print `min_cost` as the minimum total cost required to complete all the tasks.
+
+# Python program
+
+```python
+# Step 1: Read the input values for A1, A2, and A3
+A1, A2, A3 = map(int, input().split())
+
+# Step 2: Initialize min_cost with a large value
+min_cost = float('inf')
+
+# Step 3: Iterate through all possible pairs of tasks
+for i in range(1, 3):
+    for j in range(i + 1, 4):
+        # Step 3a: Calculate the cost for the current pair of tasks
+        cost = abs(eval(f"A{j}") - eval(f"A{i}"))
+
+        # Step 3b: Update min_cost if the calculated cost is less
+        if cost < min_cost:
+            min_cost = cost
+
+# Step 4: Print min_cost as the minimum total cost required to complete all the tasks
+print(min_cost)
+```

@@ -1,0 +1,12 @@
+**REPAIRED CODE**:
+
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+  string s;cin>>s;
+  int a = 0; // initialize 'a' variable as 0
+  for (int i=0;i<3;i++){
+    if(s.at(i)=='o') a++;
+  }
+  cout<<a*100+700<<endl;
+}

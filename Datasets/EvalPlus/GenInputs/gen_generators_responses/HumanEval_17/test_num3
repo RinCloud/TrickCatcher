@@ -1,0 +1,15 @@
+```python
+from cyaron import *
+from random import randint
+
+def sample_one():
+    music_str = ""
+    length_of_music = randint(1, 20)  # Randomly decide the number of notes
+    notes_choices = ['o', 'o|', '.|']
+    for _ in range(length_of_music):
+        note = choice(notes_choices)  # Randomly choose a note
+        music_str += note + " "
+    music_str = music_str.strip()  # Remove the trailing space
+    generated_input = [music_str]
+    return generated_input
+```

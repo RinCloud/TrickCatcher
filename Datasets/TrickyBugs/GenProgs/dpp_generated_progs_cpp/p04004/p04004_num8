@@ -1,0 +1,41 @@
+```cpp
+#include <iostream>
+#include <vector>
+
+const int MOD = 1000000007;
+
+int main() {
+    int N, M, K;
+    std::cin >> N >> M >> K;
+
+    std::vector<std::vector<long long>> dp(N + 1, std::vector<long long>(M + 1, 0));
+    dp[N][M] = 1;
+
+    for (int i = N; i >= 0; --i) {
+        for (int j = M; j >= 0; --j) {
+            if ((i != N || j != M) && (i != N || j != M - 1) && (i != N - 1 || j != M)) {
+                if (i != 0) {
+                    dp[i - 1][j] += dp[i][j] * (3 * j + 1);
+                    dp[i - 1][j] %= MOD;
+                }
+                if (j != 0) {
+                    dp[i][j - 1] += dp[i][j] * (3 * i + 1);
+                    dp[i][j - 1] %= MOD;
+                }
+            }
+        }
+    }
+
+    long long ans = 0;
+    for (int i = 0; i <= K; ++i) {
+        for (int j = 0; j <= K - i; ++j) {
+            ans += dp[i][j];
+            ans %= MOD;
+        }
+    }
+
+    std::cout << ans << std::endl;
+
+    return 0;
+}
+```

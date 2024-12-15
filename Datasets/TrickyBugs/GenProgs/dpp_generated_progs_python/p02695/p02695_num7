@@ -1,0 +1,55 @@
+# Approach
+
+We need to find the maximum possible score of sequence A. To find the maximum score, we can generate all possible sequences satisfying the conditions and calculate the score for each sequence. Finally, we select the sequence with the maximum score as the answer.
+
+To generate all possible sequences, we can use a recursive function that fills each position in the sequence one by one. We start with a blank sequence, and for each position, we try all possible values from 1 to M. While filling a position, we also check if the condition `A_{b_i} - A_{a_i} = c_i` is satisfied for any quadruple `(a_i, b_i, c_i, d_i)`. If the condition is satisfied, we add the corresponding `d_i` to the score.
+
+The recursive function will have two parameters:
+- `curr_index`: The current index being filled in the sequence.
+- `prev_value`: The value at the previous index in the sequence.
+
+We also need a helper function to calculate the score for a given sequence and quadruples.
+
+# Steps
+
+1. Parse the input values for N, M, Q, and the quadruples.
+2. Initialize the maximum score as 0.
+3. Define a recursive function `generate_sequence` with parameters `curr_index` and `prev_value`.
+4. Inside the `generate_sequence` function:
+   - Check the base case:
+     - If `curr_index` is equal to N, calculate the score for the current sequence and update the maximum score if necessary.
+     - Return from the function.
+   - For each possible value from 1 to M, fill the current index in the sequence and make a recursive call to fill the next index with this value.
+   - If the condition `A_{b_i} - A_{a_i} = c_i` is satisfied for any quadruple, add the corresponding `d_i` to the score.
+5. Call the `generate_sequence` function with initial values `curr_index = 0` and `prev_value = 0`.
+6. Print the maximum score.
+
+# Dry Run
+
+Let's do a dry run of the first example to see how the program progresses.
+
+Given input:
+```
+3 4 3
+1 3 3 100
+1 2 2 10
+2 3 2 10
+```
+
+Parsed values:
+```
+N = 3
+M = 4
+Q = 3
+Quadruples = [
+  (1, 3, 3, 100),
+  (1, 2, 2, 10),
+  (2, 3, 2, 10)
+]
+```
+
+After running the program, the maximum score calculated is 110, which is the expected output.
+
+# Plan
+
+Let's implement the code according to the above approach and the defined steps.

@@ -1,0 +1,33 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+const int MOD = 1000000007;
+
+int main() {
+    int N, M, K;
+    cin >> N >> M >> K;
+
+    vector<vector<long long>> dp(N+1, vector<long long>(M+1, 0));
+    dp[0][0] = 1;
+
+    for (int i = 0; i <= N; i++) {
+        for (int j = 0; j <= M; j++) {
+            for (char c = 'a'; c <= 'c'; c++) {
+                if (i < N && c == 'a') {
+                    dp[i+1][j] = (dp[i+1][j] + dp[i][j]) % MOD;
+                }
+                if (j < M && c == 'b') {
+                    dp[i][j+1] = (dp[i][j+1] + dp[i][j]) % MOD;
+                }
+                if (i+j < K && c == 'c') {
+                    dp[i][j] = (dp[i][j] * 3) % MOD;
+                }
+            }
+        }
+    }
+
+    cout << dp[N][M] << endl;
+
+    return 0;
+}

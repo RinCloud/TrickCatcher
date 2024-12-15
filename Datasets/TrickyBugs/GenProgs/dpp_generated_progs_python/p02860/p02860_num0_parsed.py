@@ -1,0 +1,11 @@
+def string_concatenation(N, S):
+    if N % 2 == 0 and S[:N // 2] == S[N // 2:]:
+        return "Yes"
+    else:
+        return "No"
+
+N = int(input())
+S = input()
+
+result = string_concatenation(N, S)
+print(result)

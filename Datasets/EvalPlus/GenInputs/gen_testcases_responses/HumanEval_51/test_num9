@@ -1,0 +1,10 @@
+{"input": ["abcdef\nghijklm"], "output": "bcdf\nghjklm"}
+{"input": [''], "output": ""}
+{"input": ['zbcd'], "output": "zbcd"}
+{"input": ['abc'], "output": "bc"}
+{"input": ['aaaaa'], "output": ""}
+{"input": ['zyxwv'], "output": "zyxwv"}
+{"input": ['abcdefghijklmnopqrstuvwxyz'], "output": "bcdfghjklmnpqrstvwxyz"}
+{"input": ['AAaEeIiOoUu'], "output": ""}
+{"input": ['AAaEe IiOoUu'], "output": ""}
+{"input": ['AaaAeE lIlOoUu'], "output": ""}

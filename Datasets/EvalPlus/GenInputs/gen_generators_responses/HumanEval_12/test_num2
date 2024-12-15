@@ -1,0 +1,10 @@
+```python
+from random import *
+from cyaron import String
+
+def sample_one():
+    length_of_list = randint(0, 10)
+    strings = [String.random(randint(1, 10), charset='a-zA-Z') for _ in range(length_of_list)]
+    generated_input = [strings]
+    return generated_input
+```

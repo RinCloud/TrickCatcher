@@ -1,0 +1,30 @@
+```cpp
+#include <iostream>
+
+int sumOfDigits(int num) {
+    int sum = 0;
+    while (num > 0) {
+        sum += num % 10;
+        num /= 10;
+    }
+    return sum;
+}
+
+int main() {
+    int N;
+    std::cin >> N;
+
+    int minSum = INT_MAX;
+    for (int A = 1; A <= N / 2; A++) {
+        int B = N - A;
+        int sum = sumOfDigits(A) + sumOfDigits(B);
+        if (sum < minSum) {
+            minSum = sum;
+        }
+    }
+
+    std::cout << minSum << std::endl;
+
+    return 0;
+}
+```

@@ -1,0 +1,38 @@
+import itertools
+
+def is_subsequence(string1, string2):
+    i = 0
+    for char in string2:
+        if i < len(string1) and char == string1[i]:
+            i += 1
+    return i == len(string1)
+
+def find_longest_subsequence(strings, K):
+    N = len(strings)
+    candidates = set()
+    for r in range(1, N+1):
+        for combination in itertools.combinations(range(N), r):
+            subsequence = ''
+            for i in range(N):
+                if i in combination:
+                    subsequence += strings[i]
+            count = 0
+            for string in strings:
+                if is_subsequence(subsequence, string):
+                    count += 1
+                    if count >= K:
+                        candidates.add(subsequence)
+                        break
+    return min(candidates)
+
+# Read input
+N, K = map(int, input().split())
+strings = []
+for _ in range(N+1):
+    strings.append(input())
+
+# Find longest subsequence
+result = find_longest_subsequence(strings, K)
+
+# Print result
+print(result)

@@ -1,0 +1,9 @@
+```python
+from random import *
+
+def sample_one():
+    length_of_grades = randint(1, 10)  # Assuming a minimum of 1 grade and a maximum of 10 grades
+    grades = [round(uniform(0, 4.0), 1) for _ in range(length_of_grades)]
+    generated_input = [grades]
+    return generated_input
+```

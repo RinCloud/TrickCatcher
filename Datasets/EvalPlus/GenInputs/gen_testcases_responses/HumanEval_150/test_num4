@@ -1,0 +1,10 @@
+{"input": [7,34,12] , "output": 34}
+{"input": [15, 8, 5], "output": 5}
+{"input": [1, 100, 200], "output": 200}
+{"input": [-5, 10, 20], "output": None}
+{"input": [0, 100, 200], "output": None}
+{"input": [113, 1, 2], "output": 1}
+{"input": [167, 2, 3] , "output": 2 }
+{"input": [15485863, 2, 3], "output": 2}
+{"input": [15485863, 3, 2], "output": 3}
+{"input": [7901, -10, -5], "output": -10}

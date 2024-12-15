@@ -1,0 +1,10 @@
+{"input": [5], "output": [2, 3]}
+{"input": [11], "output": [2, 3, 5, 7]}
+{"input": [0], "output": []}
+{"input": [20], "output": [2, 3, 5, 7, 11, 13, 17, 19]}
+{"input": [1], "output": []}
+{"input": [18], "output": [2, 3, 5, 7, 11, 13, 17]}
+{"input": [2], "output": []}
+{"input": [13], "output": [2, 3, 5, 7, 11]}
+{"input": [9], "output": [2, 3, 5, 7]}
+{"input": [25], "output": [2, 3, 5, 7, 11, 13, 17, 19, 23]}

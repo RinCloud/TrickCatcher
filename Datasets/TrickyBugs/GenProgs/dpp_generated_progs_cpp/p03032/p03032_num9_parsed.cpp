@@ -1,0 +1,61 @@
+#include <iostream>
+#include <deque>
+#include <algorithm>
+
+using namespace std;
+
+int main() {
+    int N, K;
+    cin >> N >> K;
+    deque<int> V(N);
+    for (int i = 0; i < N; i++) {
+        cin >> V[i];
+    }
+
+    int ans = 0;
+
+    for (int A = 0; A <= K; A++) {
+        for (int B = 0; B <= K - A; B++) {
+            for (int C = 0; C <= K - A - B; C++) {
+                for (int D = 0; D <= K - A - B - C; D++) {
+                    deque<int> jewels = V;
+                    
+                    for (int i = 0; i < A; i++) {
+                        if (!jewels.empty() && jewels.front() < 0) {
+                            jewels.pop_front();
+                        }
+                    }
+
+                    for (int i = 0; i < B; i++) {
+                        if (!jewels.empty() && jewels.back() < 0) {
+                            jewels.pop_back();
+                        }
+                    }
+
+                    for (int i = 0; i < C; i++) {
+                        if (!jewels.empty() && jewels.front() > 0) {
+                            jewels.pop_front();
+                        }
+                    }
+
+                    for (int i = 0; i < D; i++) {
+                        if (!jewels.empty() && jewels.back() > 0) {
+                            jewels.pop_back();
+                        }
+                    }
+
+                    int sum = 0;
+                    for (int jewel : jewels) {
+                        sum += jewel;
+                    }
+
+                    ans = max(ans, sum);
+                }
+            }
+        }
+    }
+
+    cout << ans << endl;
+
+    return 0;
+}

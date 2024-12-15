@@ -1,0 +1,1 @@
+The bug in the code is that the variable 'r' is not initialized.

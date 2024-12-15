@@ -1,0 +1,9 @@
+```python
+from random import uniform
+
+def sample_one():
+    a = uniform(1, 100)  # Generate a random length between 1 and 100
+    h = uniform(1, 100)  # Generate a random height between 1 and 100
+    generated_input = [a, h]
+    return generated_input
+```

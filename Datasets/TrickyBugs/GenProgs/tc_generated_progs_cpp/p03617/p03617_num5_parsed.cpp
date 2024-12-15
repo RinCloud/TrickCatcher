@@ -1,0 +1,14 @@
+#include<bits/stdc++.h>
+
+using namespace std;
+
+int main(){
+	long long Q,H,S,D,N; cin>>Q>>H>>S>>D>>N;
+	H=min(2*Q,H);
+  	S=min(2*H,S);//1L
+  	D=min(2*S,D);//2L
+  	long long d=0;
+  	if(N%2!=0) d=1;
+  	long long ans=(N/2)*D+d*S;
+  	printf("%lld",ans);
+}

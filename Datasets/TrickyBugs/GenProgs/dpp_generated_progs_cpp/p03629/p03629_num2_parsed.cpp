@@ -1,0 +1,43 @@
+#include <iostream>
+#include <algorithm>
+#include <vector>
+#include <string>
+
+using namespace std;
+
+int main() {
+    string A;
+    cin >> A;
+
+    vector<int> dp(26, 0);
+    int len = A.size();
+    for (int i = 0; i < len; i++) {
+        vector<int> temp_dp(dp);
+        temp_dp[A[i] - 'a'] = i + 1;
+        dp = temp_dp;
+    }
+
+    string ans;
+    int index = 0;
+    for (int i = 0; i < 26; i++) {
+        if (dp[i] == 0) {
+            ans += 'a' + i;
+            index++;
+        }
+    }
+
+    while (index < len) {
+        int curr_idx = 0;
+        for (int i = 0; i < 26; i++) {
+            if (dp[i] <= index + 1) {
+                curr_idx = max(curr_idx, dp[i]);
+            }
+        }
+        ans += A[curr_idx - 1];
+        index = curr_idx;
+    }
+
+    cout << ans << endl;
+
+    return 0;
+}

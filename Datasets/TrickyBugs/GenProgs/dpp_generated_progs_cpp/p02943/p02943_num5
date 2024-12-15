@@ -1,0 +1,23 @@
+```
+#include <iostream>
+#include <algorithm>
+ 
+using namespace std;
+ 
+int main() {
+    int N, K;
+    string S;
+    cin >> N >> K >> S;
+ 
+    for (int i = 0; i < K; i++) {
+        string T = S;
+        reverse(T.begin(), T.end());
+        string U = S + T;
+        S = U.substr(0, N);
+    }
+ 
+    cout << S << endl;
+ 
+    return 0;
+}
+```

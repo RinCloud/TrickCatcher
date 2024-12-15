@@ -1,0 +1,10 @@
+{"input": [["a", "bb", "cccc"], 0.5], "output": "cccc"}
+{"input": [["hello", "world"], 0.2], "output": "world"}
+{"input": [["a", "b", "c"], 0.1], "output": "c"}
+{"input": [["one", "two", "three"], 0.5], "output": "three"}
+{"input": [["", "", ""], 0.1], "output": ""}
+{"input": [["A", "BBB", "CCCCC"], 0.3], "output":"CCCCC"}
+{"input": [["a", "ab", "abc"], 0.5], "output": "abc"}
+{"input": [["cat", "dog", "mouse"], 0.2], "output": "mouse"}
+{"input": [[], 0.3], "output": None}
+{"input": [["H", "O", "Q"], 0.1], "output": "Q"}

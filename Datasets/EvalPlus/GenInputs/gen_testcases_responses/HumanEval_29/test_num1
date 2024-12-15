@@ -1,0 +1,10 @@
+{"input": [[], 'a'], "output": []}
+{"input": [['abc', 'bcd', 'cde', 'array'], 'a'], "output": ['abc', 'array']}
+{"input": [['hello', 'world', 'python'], 'p'], "output": ['python']}
+{"input": [['apple', 'banana', 'cherry'], 'c'], "output": ['cherry']}
+{"input": [['cat', 'dog', 'elephant'], 'e'], "output": ['elephant']}
+{"input": [['mouse', 'lion', 'giraffe'], 'm'], "output": []}
+{"input": [['tree', 'flower', 'grass', 'sun'], 's'], "output": ['sun']}
+{"input": [['blue', 'red', 'yellow'], 'r'], "output": ['red']}
+{"input": [['apple', 'banana', 'cherry'], ''], "output": ['apple', 'banana', 'cherry']}
+{"input": [['a', 'b', 'c', 'd', 'e'], 'a'], "output": ['a']}

@@ -1,0 +1,41 @@
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+typedef long long ll;
+int n,m,ans,u[20];
+int c[20],p[20];
+void dfs(int x, int solved, int points, int bonus) {
+	if (x > n + 1) {
+		if (points >= m) {
+			ans = min(ans, solved);
+		} else {
+			for (int i = n; i >= 1; i--) {
+				if (!u[i] && points < m) {
+					int problems_needed = min((m - points + i * 100 - 1) / (i * 100), p[i] - 1);
+					points += problems_needed * i * 100;
+					bonus += problems_needed;
+					solved += problems_needed;
+				}
+			}
+			if (points >= m) {
+				ans = min(ans, solved);
+			}
+		}
+		return;
+	}
+	u[x] = 1;
+	dfs(x + 1, solved + p[x], points + p[x] * 100 * x, bonus + c[x]);
+	u[x] = 0;
+	dfs(x + 1, solved, points, bonus);
+}
+int main() {
+	scanf("%d %d",&n,&m);
+	for (int i = 1; i <= n; i++) {
+		scanf("%d %d",&p[i],&c[i]);
+	}
+	ans = 1e9;
+	dfs(1, 0, 0, 0);
+	printf("%d\n",ans);
+	return 0;
+}
+```

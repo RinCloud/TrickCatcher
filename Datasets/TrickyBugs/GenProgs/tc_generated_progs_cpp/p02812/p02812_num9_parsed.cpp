@@ -1,0 +1,13 @@
+#include <iostream>
+#include <string>
+#include <algorithm>
+#include <regex>
+
+int main() {
+  int N;
+  std::string S;
+  std::cin >> N >> S;
+  S = std::regex_replace(S, std::regex("ABC"), "a");
+  std::cout << std::count(S.begin(), S.end(), 'a') << "\n";
+  return 0;
+}

@@ -1,0 +1,3 @@
+The function needs to check if it is possible to concatenate the two strings in some order such that the resulting string will have balanced parentheses. If it is possible, the function should return 'Yes', otherwise it should return 'No'.
+
+The approach to solve this problem is to keep a count of the number of open parentheses encountered while traversing the first string. For every close parenthesis encountered in the second string, decrement the count. If the count becomes negative at any point, it means the parentheses are not balanced and the function should return 'No'. If the count is positive after traversing both the strings, it means there are some extra open parentheses and the function should return 'No'. Otherwise, return 'Yes'.

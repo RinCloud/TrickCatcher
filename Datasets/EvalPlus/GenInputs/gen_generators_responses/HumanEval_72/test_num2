@@ -1,0 +1,11 @@
+```python
+from random import *
+def sample_one():
+    length_of_q = randint(1, 10)
+    q = [randint(1, 10) for _ in range(length_of_q)]
+    if randint(0, 1) == 0:  # To ensure a 50/50 chance of the list being a palindrome
+        q = q + q[::-1]
+    w = randint(1, 100)
+    generated_input = [q, w]
+    return generated_input
+```

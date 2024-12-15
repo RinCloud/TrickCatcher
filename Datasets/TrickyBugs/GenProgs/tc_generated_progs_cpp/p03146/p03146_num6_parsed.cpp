@@ -1,0 +1,19 @@
+#include <iostream>
+#include <unordered_map>
+using namespace std;
+
+int main(){
+  int s;
+  cin >> s;
+  unordered_map<int, int> mp;
+  int cnt = 1;
+  mp[s] = cnt;
+  while(true){
+    cnt++;
+    if(s%2 == 0) s /= 2;
+    else s = s * 3 + 1;
+    if(mp.find(s) != mp.end()) break;
+    mp[s] = cnt;
+  }
+  cout << cnt << endl;
+}

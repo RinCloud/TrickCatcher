@@ -1,0 +1,62 @@
+#include<iostream>
+#include<vector>
+#include<algorithm>
+
+using namespace std;
+
+int computeComplexity(vector<vector<char>>& grid, int top, int bottom, int left, int right) {
+    bool allBlack = true, allWhite = true;
+    
+    for(int i = top; i <= bottom; i++) {
+        for(int j = left; j <= right; j++) {
+            if(grid[i][j] == '.') {
+                allBlack = false;
+            } else {
+                allWhite = false;
+            }
+        }
+    }
+    
+    if(allBlack || allWhite) {
+        return 0;
+    }
+    
+    int maxComplexity = 0;
+    
+    // Divide the grid into two subgrids horizontally and compute their complexities
+    for(int i = top; i < bottom; i++) {
+        int complexity1 = computeComplexity(grid, top, i, left, right);
+        int complexity2 = computeComplexity(grid, i+1, bottom, left, right);
+        int maxSubgridComplexity = max(complexity1, complexity2);
+        maxComplexity = max(maxComplexity, maxSubgridComplexity);
+    }
+    
+    // Divide the grid into two subgrids vertically and compute their complexities
+    for(int j = left; j < right; j++) {
+        int complexity1 = computeComplexity(grid, top, bottom, left, j);
+        int complexity2 = computeComplexity(grid, top, bottom, j+1, right);
+        int maxSubgridComplexity = max(complexity1, complexity2);
+        maxComplexity = max(maxComplexity, maxSubgridComplexity);
+    }
+    
+    return maxComplexity + 1;
+}
+
+int main() {
+    // Read input
+    int H, W;
+    cin >> H >> W;
+    
+    vector<vector<char>> grid(H, vector<char>(W));
+    for(int i = 0; i < H; i++) {
+        for(int j = 0; j < W; j++) {
+            cin >> grid[i][j];
+        }
+    }
+    
+    // Compute and print the complexity of the grid
+    int complexity = computeComplexity(grid, 0, H-1, 0, W-1);
+    cout << complexity << endl;
+    
+    return 0;
+}

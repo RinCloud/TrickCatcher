@@ -1,0 +1,9 @@
+def multiply(a, b):
+    """Returns the product of the unit digits of two integers.
+    Args:
+    a: an integer
+    b: an integer
+    Returns:
+    The product of the unit digits of a and b.
+    """
+    return abs(a % 10) * abs(b % 10)

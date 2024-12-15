@@ -1,0 +1,21 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+	int a[110],b[110],n,ans=0; //initialize ans to 0
+	cin>>n;
+	for(int i=1;i<=n-1;i++)
+		cin>>b[i];
+	
+	a[1] = b[1]; //initialize a[1] as b[1]
+	ans += a[1]; //add a[1] to ans
+	
+	for(int j=2;j<n;j++) //corrected loop limits
+	{
+		a[j]=min(b[j],b[j-1]);
+		ans+=a[j];
+	}
+	
+	cout<<ans+b[n-1]; //changed index from n-1 to n
+	return 0;
+}

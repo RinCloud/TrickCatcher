@@ -1,0 +1,23 @@
+**Repaired code**:
+
+```
+#include<iostream>
+using namespace std;
+int main(){
+	int n;
+	cin >> n;
+	int maxl = 0;
+	int sum=0;
+	for(int i=0;i<n;i++){
+		int l;
+		cin >> l;
+		sum+=l;
+		maxl=max(maxl,l);
+	}
+	if(maxl<(sum-maxl)) cout << "Yes" << endl;
+	else cout << "No" << endl;
+	return 0;
+}
+```
+
+**Explanation**: The only issue with the original code is that the variable `maxl` was not initialized before it was used to store the maximum length. By initializing it to 0 before the loop, we can fix this issue.

@@ -1,0 +1,3 @@
+**Test Input Reasoning:**
+
+We test with the smallest possible input where the input list is empty. We test this case to verify if the function handles the empty list scenario correctly.

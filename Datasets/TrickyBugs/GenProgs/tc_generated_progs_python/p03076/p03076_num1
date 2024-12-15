@@ -1,0 +1,16 @@
+Here is the corrected code:
+
+```python
+A=int(input())
+ans=0
+
+for i in range(4):
+    B=int(input())
+    if A%10>B%10>0: 
+        A,B=B,A
+    ans+=-(-B//10)*10
+
+print(A+ans)
+```
+
+The issue in the original code was that the if condition was not properly indented, causing the swapping of the values A and B to happen unconditionally. The condition should be indented so that the swapping only occurs when both of the conditions (`A%10>B%10` and `B%10>0`) are satisfied.

@@ -1,0 +1,23 @@
+**INSTRUCTION**:
+You are a professional software testing engineer. You will get a problem description of a coding problem, and a piece of code attempting to solve the problem. Please generate 10 diverse and corner test cases that could potentially find bugs.
+Every test case must adhere to the constraints and format mentioned in the problem description.
+Please reply with ONLY the generated test cases without any other content, use the following template:
+INPUT1:
+(content of the 1st test input)
+OUTPUT1:
+(content of the 1st test output)
+INPUT2:
+(content of the 2nd test input)
+OUTPUT2:
+(content of the 2nd test output)
+...
+INPUT10:
+(content of the 10th test input)
+OUTPUT10:
+(content of the 10th test output)
+
+**PROBLEM DESCRIPTION**:
+{pro_des}
+
+**CODE**:
+{code}

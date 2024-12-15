@@ -1,0 +1,9 @@
+```python
+from random import randint
+
+def sample_one():
+    x = randint(0, 1000)  # generate a non-negative integer x
+    base = randint(2, 9)  # generate base between 2 and 9 inclusive
+    generated_input = [x, base]
+    return generated_input
+```

@@ -1,0 +1,9 @@
+```python
+from random import randint
+
+def sample_one():
+    n = randint(0, 2000)  # Considering a reasonable upper limit for n
+    p = randint(1, 200)  # To ensure p is non-zero and within a reasonable range
+    generated_input = [n, p]
+    return generated_input
+```

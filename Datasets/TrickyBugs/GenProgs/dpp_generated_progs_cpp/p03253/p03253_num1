@@ -1,0 +1,45 @@
+Here is a C++ program that solves the given problem:
+
+```cpp
+#include <iostream>
+#include <vector>
+
+const int MOD = 1000000007;
+
+int countSequences(int N, int M) {
+    std::vector<int> dp(M + 1, 0);
+    dp[1] = 1;
+
+    for (int i = 2; i <= M; i++) {
+        for (int j = i; j <= M; j += i) {
+            dp[j] = (dp[j] + dp[i - 1]) % MOD;
+        }
+    }
+
+    int result = 0;
+    for (int i = 1; i <= M; i++) {
+        result = (result + dp[i]) % MOD;
+    }
+
+    return result;
+}
+
+int main() {
+    int N, M;
+    std::cin >> N >> M;
+
+    int result = countSequences(N, M);
+    std::cout << result << std::endl;
+
+    return 0;
+}
+```
+
+To compile and run the program, you can use the following command:
+
+```
+g++ -o main program.cpp
+./main
+```
+
+Please note that the above program uses dynamic programming to solve the problem efficiently by counting the number of sequences that satisfy the condition. The program takes input from the user, calculates the result using the `countSequences` function, and then prints the output.

@@ -1,0 +1,36 @@
+**Observations:**
+- The given code has a bug in line 30, where it is using `n` instead of the correct value `N` in the loop condition.
+- There is another bug in line 28, where it is comparing `m[ str[i] ]` with the current maximum (`ma`) instead of checking if it is greater than zero.
+- There is an unnecessary line of code `using namespace std;`.
+
+**Repaired Code:**
+```cpp
+#include <bits/stdc++.h>
+
+int main() {
+    int N;
+    std::cin >> N;
+    std::map<std::string, int> m;
+    std::string str[120];
+    for (int i = 1; i <= N; i++) {
+        std::string s;
+        std::cin >> s;
+        str[i] = s;
+        m[str[i]]++;
+    }
+    int M;
+    std::cin >> M;
+    for (int i = 1; i <= M; i++) {
+        std::string s;
+        std::cin >> s;
+        m[s]--;
+    }
+    int ma = 0;
+    for (int i = 1; i <= N; i++) {
+        if (m[str[i]] > 0)
+            ma = std::max(ma, m[str[i]]);
+    }
+    std::cout << ma << std::endl;
+    return 0;
+}
+```

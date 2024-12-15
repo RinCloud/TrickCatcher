@@ -1,0 +1,10 @@
+{"input": [""], "output": True}
+{"input": ["aba"], "output": True}
+{"input": ["aaaaa"], "output": True}
+{"input": ["zbcd"], "output": False}
+{"input": ["racecar"], "output": True}
+{"input": ["A man a plan a canal Panama"], "output": True}
+{"input": ["hello"], "output": False}
+{"input": ["123321"], "output": True}
+{"input": ["never odd or even"], "output": True}
+{"input": ["this is not a palindrome"], "output": False}

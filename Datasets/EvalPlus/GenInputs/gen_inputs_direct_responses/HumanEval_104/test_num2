@@ -1,0 +1,3 @@
+**Test Input Reasoning:**
+
+Through this testcase, I will verify if the given solution is working when there is no number in the list having any even digit. This is interesting as the edgecases usually have a different behavior.

@@ -1,0 +1,16 @@
+```python
+from random import *
+
+def sample_one():
+    length_of_q = randint(1, 10)
+    if randint(0, 1):  # Decide if the object should be balanced (palindromic)
+        q = [randint(1, 20) for _ in range(length_of_q // 2)]
+        q += q[::-1] if length_of_q % 2 == 0 else q[:-1][::-1] + [randint(1, 20)]
+    else:
+        q = [randint(1, 20) for _ in range(length_of_q)]
+    
+    w = randint(sum(q) - 5, sum(q) + 10)  # Ensure to have a variety of True and False cases
+    
+    generated_input = [q, w]
+    return generated_input
+```

@@ -1,0 +1,10 @@
+{"input": ['Hi'], "output": 'Hi'}
+{"input": ['hello'], "output": 'ehllo'}
+{"input": ['Hello World!!!'], "output": 'Hello !!!Wdlor'}
+{"input": [''], "output": ''}
+{"input": ['a'], "output": 'a'}
+{"input": ['abc def ghi'], "output": 'abc def ghi'}
+{"input": ['This is a test'], "output": 'hiTs is a estt'}
+{"input": ['123'], "output": '123'}
+{"input": ['1 2 3 4 5'], "output": '1 2 3 4 5'}
+{"input": ['!!! ??? .,;'], "output": '!!! ??? ,.;'}

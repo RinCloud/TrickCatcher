@@ -1,0 +1,16 @@
+import math
+
+def prime_length(string):
+    # Get the length of the string
+    length = len(string)
+    
+    # Check if the length is a prime number
+    if length < 2:
+        return False
+    elif length == 2:
+        return True
+    else:
+        for i in range(2, int(math.sqrt(length)) + 1):
+            if length % i == 0:
+                return False
+        return True

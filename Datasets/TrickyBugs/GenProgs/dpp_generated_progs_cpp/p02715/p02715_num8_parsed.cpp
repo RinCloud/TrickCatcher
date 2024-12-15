@@ -1,0 +1,39 @@
+#include <iostream>
+
+const int MOD = 1000000007;
+
+int gcd(int a, int b) {
+    if (b == 0) {
+        return a;
+    }
+    return gcd(b, a % b);
+}
+
+int power(int x, int y) {
+    int result = 1;
+    while (y > 0) {
+        if (y & 1) {
+            result = (result * x) % MOD;
+        }
+        x = (x * x) % MOD;
+        y >>= 1;
+    }
+    return result;
+}
+
+int main() {
+    int N, K;
+    std::cin >> N >> K;
+
+    int result = 0;
+    for (int i = 1; i <= K; i++) {
+        result = (result + power(i, N)) % MOD;
+    }
+
+    int inverse_K = power(K, MOD - 2);
+    result = (result * inverse_K) % MOD;
+
+    std::cout << result << std::endl;
+
+    return 0;
+}

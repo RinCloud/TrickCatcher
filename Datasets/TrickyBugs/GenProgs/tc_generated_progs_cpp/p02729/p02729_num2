@@ -1,0 +1,20 @@
+**BUG FIX**
+
+The code has a bug in its initialization of the variable "a". The variable "a" is being used without being initialized, which leads to undefined behavior. To fix this, we need to initialize "a" to 0 before using it.
+
+The fixed code is as follows:
+
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+	int n,m,a = 0;  // Initialize a to 0
+	cin>>n>>m;
+	a+=(n*n-n)/2;
+	a+=(m*m-m)/2;
+	cout<<a; 
+}
+```
+
+Now the code correctly initializes the variable "a" to 0 before using it.

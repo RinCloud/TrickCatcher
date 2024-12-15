@@ -1,0 +1,26 @@
+```python
+from random import *
+from cyaron import *
+
+def sample_one():
+    # Generate a random string with 1 to 10 letters consisting of lowercase letters and upto three digits
+    prefix_len = randint(1, 10)
+    digit_count = randint(0, 3)
+    prefix = String.random(prefix_len - digit_count, charset="a-zA-Z") + String.random(digit_count, charset="0-9")
+    
+    # Shuffle the generated string to mix letters and digits
+    prefix = ''.join(sample(prefix, len(prefix)))
+    
+    # Ensure the string starts with a letter
+    if not prefix[0].isalpha():
+        prefix = choice("a-zA-Z") + prefix[1:]
+
+    # Randomly choose an extension
+    extension = choice(["txt", "exe", "dll"])
+    
+    # Ensure exactly one dot in the file name
+    file_name = prefix + "." + extension
+    
+    generated_input = [file_name]
+    return generated_input
+```

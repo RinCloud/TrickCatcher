@@ -1,0 +1,9 @@
+```python
+from random import *
+from string import ascii_letters, digits
+
+def sample_one():
+    text = ''.join([choice(ascii_letters + digits) for _ in range(randint(0, 50))])
+    generated_input = [text]
+    return generated_input
+```

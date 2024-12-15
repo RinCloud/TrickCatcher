@@ -1,0 +1,19 @@
+```python
+def min_chars_changed(S, T):
+    min_changes = float('inf')
+    t_len = len(T)
+    s_len = len(S)
+    
+    for i in range(s_len - t_len + 1):
+        cnt = 0
+        for j in range(t_len):
+            if S[i+j] != T[j]:
+                cnt += 1
+        min_changes = min(min_changes, cnt)
+    
+    return min_changes
+
+S = input()
+T = input()
+print(min_chars_changed(S, T))
+```

@@ -1,0 +1,40 @@
+import sys
+
+def minCoinsToReachN(N, A, B, C, D):
+    # List to store the minimum number of coins needed to reach each number from 0 to N
+    dp = [float('inf')] * (N + 1)
+    dp[0] = 0
+
+    # Iterate from 1 to N
+    for i in range(1, N + 1):
+        # Multiply the number by 2 and update the minimum number of coins needed
+        if i % 2 == 0:
+            dp[i] = min(dp[i], dp[i // 2] + A)
+        
+        # Multiply the number by 3 and update the minimum number of coins needed
+        if i % 3 == 0:
+            dp[i] = min(dp[i], dp[i // 3] + B)
+        
+        # Multiply the number by 5 and update the minimum number of coins needed
+        if i % 5 == 0:
+            dp[i] = min(dp[i], dp[i // 5] + C)
+        
+        # Increase or decrease the number by 1 and update the minimum number of coins needed
+        dp[i] = min(dp[i], dp[i - 1] + D)
+        dp[i] = min(dp[i], dp[i + 1] + D)
+
+    return dp[N]
+
+# Read the input
+T = int(input())
+testcases = []
+for _ in range(T):
+    N, A, B, C, D = map(int, input().split())
+    testcases.append((N, A, B, C, D))
+
+# Iterate over the testcases and print the minimum number of coins needed for each
+for testcase in testcases:
+    N, A, B, C, D = testcase
+    result = minCoinsToReachN(N, A, B, C, D)
+    print(result)
+

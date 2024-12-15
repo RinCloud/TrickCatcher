@@ -1,0 +1,10 @@
+N, K = map(int, input().split())
+A = list(map(int, input().split()))
+
+operations = 0
+while N > K:
+    N -= K
+    operations += 1
+
+operations += 1
+print(operations)

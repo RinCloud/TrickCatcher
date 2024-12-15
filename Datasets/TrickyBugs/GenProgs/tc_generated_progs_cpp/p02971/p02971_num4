@@ -1,0 +1,30 @@
+**FAULTS**
+1. Initializing `max` and `min` to 0 is incorrect because the given constraints say all values in the input are integers between 1 and 200000. So initializing them as 0 will cause incorrect results.
+2. In the second for loop, we should be printing the maximum value among the N-1 elements other than A_i, but the code is printing `min` when `a[i]` is equal to `max`. This logic is incorrect.
+3. The code fails to handle cases where there are multiple elements with the maximum value. The code should consider all elements except A_i and find the maximum from them.
+
+**SOLUTION**
+```
+#include <stdio.h>
+
+int main(){
+  int N, i;
+  scanf("%d", &N);
+  
+  int a[N];
+  for(i = 0; i < N; i++){
+    scanf("%d", &a[i]);
+  }
+  
+  for(i = 0; i < N; i++){
+    int max = -1;
+    for(int j = 0; j < N; j++) {
+      if(i != j && a[j] > max){
+        max = a[j];
+      }
+    }
+    printf("%d\n", max);
+  }
+  return 0;
+}
+```

@@ -1,0 +1,24 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main() {
+    int N;
+    cin >> N;
+    vector<int> B(N-1);
+    for (int i = 0; i < N-1; i++) {
+        cin >> B[i];
+    }
+
+    long long sum = B[0]; // initialize sum with B[0] since there is no A[0] value
+    
+    for (int i = 0; i < N-2; i++) {
+        sum += min(B[i], B[i+1]); // add the minimum value between B[i] and B[i+1] since it represents A[i+1]
+    }
+
+    sum += B[N-2]; // add the last B[N-2] value as it represents A[N-1]
+
+    cout << sum << endl;
+
+    return 0;
+}

@@ -1,0 +1,56 @@
+**REPAIRED CODE**:
+
+```
+#include <iostream>
+#include <cstdio>
+using namespace std;
+
+const int MAXN = 55;
+
+int n, m, ans;
+int s[MAXN];
+bool a[MAXN][MAXN];
+bool visited[MAXN];
+
+void dfs(int u, int parent) {
+	visited[u] = true;
+	for (int v = 1; v <= n; v++) {
+		if (a[u][v] && v != parent && !visited[v]) {
+			dfs(v, u);
+		}
+	}
+}
+
+int main() {
+	cin >> n >> m;
+	while (m--) {
+		int t1, t2;
+		scanf("%d %d", &t1, &t2);
+		a[t1][t2] = a[t2][t1] = true;
+		s[t1]++;
+		s[t2]++;
+	}
+    
+    for (int i = 1; i <= n; i++) {
+        visited[i] = false;
+    }
+    
+    for (int u = 1; u <= n; u++) {
+        if (!visited[u]) {
+            dfs(u, 0);
+        }
+    }
+    
+	ans = 0;
+	for (int u = 1; u <= n; u++) {
+		for (int v = u + 1; v <= n; v++) {
+			if (a[u][v] && !visited[u] && !visited[v]) {
+				ans++;
+			}
+		}
+	}
+    
+	cout << ans << endl;
+	return 0;
+}
+```

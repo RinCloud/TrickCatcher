@@ -1,0 +1,10 @@
+```python
+from random import *
+from cyaron import String
+
+def sample_one():
+    choices = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!@#$%^&*()'
+    length_of_string = randint(5, 15)
+    s = ''.join([choice(choices) for _ in range(length_of_string)])
+    return [s]
+```

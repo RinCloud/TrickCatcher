@@ -1,0 +1,36 @@
+// Solution using dynamic programming
+
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+int main() {
+  // Read input values
+  int N, X;
+  cin >> N >> X;
+
+  vector<int> L(N);
+  for (int i = 0; i < N; i++) {
+    cin >> L[i];
+  }
+
+  // Dynamic programming array to store the number of bounces at each coordinate
+  vector<int> dp(X + 1, 0);
+
+  // Base case: the ball makes the first bounce at coordinate 0
+  dp[0] = 1;
+
+  // Iterate over each bounce
+  for (int i = 0; i < N; i++) {
+    // Update the dynamic programming array
+    for (int j = X; j >= L[i]; j--) {
+      dp[j] += dp[j - L[i]];
+    }
+  }
+
+  // Print the result
+  cout << dp[X] << endl;
+
+  return 0;
+}

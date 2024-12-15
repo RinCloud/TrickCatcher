@@ -1,0 +1,17 @@
+```python
+from random import randint
+from cyaron import String
+
+def sample_one():
+    list_length1 = randint(0, 10)  # determines the lengths of the first list
+    list_length2 = randint(0, 10)  # determines the lengths of the second list
+    lst1 = []
+    lst2 = []
+    for _ in range(list_length1):
+        random_string = String.random(randint(1, 10))  # generate strings with length between 1 and 10
+        lst1.append(random_string)
+    for _ in range(list_length2):
+        random_string = String.random(randint(1, 10))  # generate strings with length between 1 and 10
+        lst2.append(random_string)
+    return [lst1, lst2]
+```

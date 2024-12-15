@@ -1,0 +1,43 @@
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+int n, m, ans;
+int u[20];
+int c[20], p[20];
+
+void dfs(int x, int solved, int bonus) {
+    if (x > n) {
+        if (solved >= m) {
+            ans = min(ans, bonus);
+        } else {
+            int remaining = m - solved;
+            for (int i = n; i >= 1; i--) {
+                if (!u[i]) {
+                    int problems_to_solve = min(remaining / (i * 100), c[i] - 1);
+                    dfs(x + 1, solved + problems_to_solve * i * 100, bonus + problems_to_solve);
+                    remaining -= problems_to_solve * i * 100;
+                }
+            }
+        }
+        return;
+    }
+    
+    u[x] = 1;
+    dfs(x + 1, solved + p[x] + c[x] * x * 100, bonus + c[x]);
+    u[x] = 0;
+    dfs(x + 1, solved, bonus);
+}
+
+int main() {
+    scanf("%d %d", &n, &m);
+    for (int i = 1; i <= n; i++) {
+        scanf("%d %d", &p[i], &c[i]);
+    }
+    ans = INT_MAX;
+    dfs(1, 0, 0);
+    printf("%d\n", ans);
+
+    return 0;
+}
+```

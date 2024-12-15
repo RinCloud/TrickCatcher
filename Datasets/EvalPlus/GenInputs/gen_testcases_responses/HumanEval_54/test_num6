@@ -1,0 +1,10 @@
+{"input": ["abcd", "dddddddabc"], "output": True}
+{"input": ["eabcd", "dddddddabc"], "output": False}
+{"input": ["eabcdzzzz", "dddzzzzzzzddddabc"], "output": False}
+{"input": ["eabcdzzzz", "dddzzzzzzzddeddabc"], "output": True}
+{"input": ["dddddddabc", "abcd"], "output": True}
+{"input": ["abcd", "dddddddabce"], "output": False}
+{"input": ["abcd", "bcda"], "output": True}
+{"input": ["abcd", "bcdd"], "output": True}
+{"input": ["abcd", "defg"], "output": False}
+{"input": ["abcd", ""], "output": False}

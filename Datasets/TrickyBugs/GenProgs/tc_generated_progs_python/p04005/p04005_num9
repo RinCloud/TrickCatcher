@@ -1,0 +1,12 @@
+**REPAIRED CODE**:
+
+```python
+l = list(map(int, input().split()))
+l.sort()
+if l[2] % 2 != 0:
+  print(l[0] * l[1])
+else:
+  print(0)
+```
+
+The repaired code seems to correctly calculate the minimum possible difference between the number of red blocks and the number of blue blocks.

@@ -1,0 +1,26 @@
+# Plan:
+
+1. Take input `N` which represents the number of strings.
+2. Take input `N` strings and store them in a list.
+3. Initialize a variable `count` as 0 to keep track of the number of pairs.
+4. Iterate over each string in the list.
+   - For each string, compare it with every other string in the list.
+   - If the first two characters of one string match the first two characters of another string, increment the `count` by 1.
+5. Print the value of `count`.
+
+```python
+N = int(input())
+strings = []
+for _ in range(N):
+    strings.append(input())
+
+count = 0
+for i in range(N):
+    for j in range(i + 1, N):
+        if strings[i][:2] == strings[j][:2] or strings[i][:2] == strings[j][1:]:
+            count += 1
+        if strings[i][1:] == strings[j][:2] or strings[i][1:] == strings[j][1:]:
+            count += 1
+
+print(count)
+```

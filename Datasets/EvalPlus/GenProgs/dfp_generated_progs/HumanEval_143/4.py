@@ -1,0 +1,19 @@
+def words_in_sentence(sentence):
+    # List to store the words with prime lengths
+    prime_words = []
+    # Split the sentence into words
+    words = sentence.split()
+    # Check if the length of each word is prime
+    for word in words:
+        # Length of the word
+        length = len(word)
+        # Check if the length is prime
+        if length > 1:
+            for i in range(2, int(length/2) + 1):
+                if length % i == 0:
+                    break
+            else:
+                prime_words.append(word)
+    # Join the prime words with a space
+    result = " ".join(prime_words)
+    return result

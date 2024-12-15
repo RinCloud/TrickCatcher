@@ -1,0 +1,16 @@
+```python
+from random import randint
+from cyaron import String
+
+def sample_one():
+    grid_length = randint(1, 100)
+    grid_width = randint(1, 100)
+    grid = []
+    for _ in range(grid_length):
+        row = String.random(grid_width, charset='01')
+        row = [int(char) for char in row]
+        grid.append(row)
+    capacity = randint(1, 10)
+    generated_input = [grid, capacity]
+    return generated_input
+```

@@ -1,0 +1,9 @@
+```python
+from cyaron import String
+from random import randint
+
+def sample_one():
+    sentence_length = randint(1, 100)
+    sentence = String.random(sentence_length, charset="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ ")
+    return [str(sentence)]
+```

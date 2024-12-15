@@ -1,0 +1,15 @@
+Your test inputs should adhere to the type and format specified in the function signature. The function `count_upper` takes a single parameter, a string `s`. The test inputs should be in a list format, with each test input on a separate line.
+Let's generate 10 test inputs for the `count_upper` function:
+
+```
+['aBCdEf']
+['a']
+['AB']
+['abAB']
+['']
+['AEIOU']
+['AbCdEfG']
+['AbC']
+['A']
+['aAeEiIoOuU']
+```

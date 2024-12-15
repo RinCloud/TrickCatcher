@@ -1,0 +1,10 @@
+```python
+from random import randint
+
+def sample_one():
+    number = randint(0, 1000)
+    need = randint(0, 1000)
+    remaining = randint(0, 1000)
+    generated_input = [number, need, remaining]
+    return generated_input
+```

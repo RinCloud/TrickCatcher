@@ -1,0 +1,10 @@
+{"input": ['Hi'], "output": 'Hi'}
+{"input": ['hello'], "output": 'ehllo'}
+{"input": ['Hello World!!!'], "output": 'Hello !!!Wdlor'}
+{"input": [''], "output": ''}
+{"input": ['This is a test'], "output": 'His ist a estt'}
+{"input": ['Python is awesome'], "output": 'Phnoty is aeemosw'}
+{"input": ['1234 567 89'], "output": '1234 567 89'}
+{"input": ['Abc Xyz'], "output": 'Abc Xyz'}
+{"input": ['!@#$ %^&*'], "output": '!@#$ %^&*'}
+{"input": ['ABC abc'], "output": 'ABC abc'}

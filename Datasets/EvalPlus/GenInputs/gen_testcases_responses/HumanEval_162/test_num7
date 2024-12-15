@@ -1,0 +1,10 @@
+{"input": ['Hello world'], "output": "3e25960a79dbc69b674cd4ec67a72c62"}
+{"input": [''], "output": None}
+{"input": ['Hello, World!'], "output": "6cd3556deb0da54bca060b4c39479839"}
+{"input": ['1234567890'], "output": "e807f1fcf82d132f9bb018ca6738a19f"}
+{"input": ['abcdefghijklmnopqrstuvwxyz'], "output": "c3fcd3d76192e4007dfb496cca67e13b"}
+{"input": ['ABCDEFGHIJKLMNOPQRSTUVWXYZ'], "output": "437bba8e0bf58337674f4539e75186ac"}
+{"input": ['Hello, World!!'], "output": "c22b5f9178342609428d6f51b2c5af4c"}
+{"input": ['12345'], "output": "827ccb0eea8a706c4c34a16891f84e7b"}
+{"input": ['hello world'], "output": "5eb63bbbe01eeed093cb22bb8f5acdc3"}
+{"input": ['abcdefg'], "output": "7ac66c0f148de9519b8bd264312c4d64"}

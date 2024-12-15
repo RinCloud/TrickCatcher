@@ -1,0 +1,23 @@
+**Repaired code**:
+
+```cpp
+#include <iostream>
+using namespace std;
+int main()
+{
+	long long int x, y, cnt = 0;
+	cin >> x >> y;
+	while (x <= y)
+	{
+		x = x * 2;
+		cnt++;
+	}
+	cout << cnt << endl;
+}
+```
+
+**Explanation**:
+
+The code has a bug. The `cnt` variable is not initialized before the while loop. As a result, its initial value is undefined and can lead to incorrect output. 
+
+To fix this bug, we need to initialize `cnt` to 0 before the while loop.

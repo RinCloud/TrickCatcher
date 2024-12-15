@@ -1,0 +1,14 @@
+Here are 10 diverse and corner test inputs:
+
+```
+"Example"
+"Example 1"
+" Example 2"
+" Example   3"
+"_"
+"     "
+"    Example"
+"Example 1 2 3 4 5"
+" Example_"
+"    Example    5    "
+```

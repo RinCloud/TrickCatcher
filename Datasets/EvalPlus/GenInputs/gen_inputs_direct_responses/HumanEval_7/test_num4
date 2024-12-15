@@ -1,0 +1,12 @@
+```
+["abcd", "efgh", "ijkl"], "a"
+["apple", "banana", "cherry", "date"], "e"
+[], ""
+["hello", "hi", "hey"], "o"
+["Python", "Java", "JavaScript", "C++"], "Script"
+["cat", "dog", "fish"], "e"
+["good", "bad", "ugly"], "d"
+["yes", "no", "maybe"], "m"
+["abcd", "efgh", "ijkl"], "z"
+["apple", "banana", "cherry", "date"], "z"
+```

@@ -1,0 +1,8 @@
+def next_smallest(lst):
+    if len(lst) < 2:
+        return None
+    # remove duplicates and sort the list
+    lst = sorted(list(set(lst)))
+    if len(lst) < 2:
+        return None
+    return lst[1]

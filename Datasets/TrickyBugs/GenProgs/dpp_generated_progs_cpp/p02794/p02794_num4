@@ -1,0 +1,176 @@
+// C++ program to count the number of ways to paint
+// the tree edges that satisfy the given condition
+
+#include<bits/stdc++.h>
+using namespace std;
+
+const int MAX = 55;
+
+// To represent a node of N-ary tree
+struct Node
+{
+    vector<Node *> child;
+};
+
+// Count of 2^N numbers
+int a[MAX];
+
+// Parent of the node
+int prt[MAX];
+
+// Number of children of node
+int countChild[MAX];
+
+// To keep track of visited vertices
+bool vis[MAX];
+
+// To store leaf nodes
+bool leaf[MAX];
+
+// A utility function to add an edge in an
+// undirected tree
+void addEdge(Node *root, int u, int v)
+{
+    (root[u].child).push_back(&root[v]);
+    (root[v].child).push_back(&root[u]);
+}
+
+// Function to count the number of ways to paint
+// the tree edges such that all the requirements
+// are satisfied
+void numberOfWays(Node *root, int *a, int *prt, int i,
+                      int N, int M, int *countM,
+                      vector<int> *allowedWay,
+                      vector<int> *restrictions,
+                      int *countLeaf, int *countNonLeaf)
+{
+    if (vis[i])
+        return ;
+
+    vis[i] = true;
+
+    // To maintain countLeaf[] and countNonLeaf[]
+    if(i != 1 && countChild[i] == 1)
+        (*countLeaf)++;
+    else
+        (*countNonLeaf)++;
+
+    // If vertex i lies on the path way
+    for (int j = 0; j < restrictions[i].size(); j++)
+    {
+        (*countM)++;
+        allowedWay[restrictions[i][j]]
+            .push_back(i);
+    }
+
+    // counting the number of ways
+    int tleaf = 0; // Number of children that are leaf
+    int tnonLeaf = 0; // Number of children that are non-leaf
+
+    // Traversing vertices.
+    for (int j = 0; j < (root[i].child).size(); j++)
+    {
+        int k = (root[i].child)[j] - root;
+        if (!vis[k])
+        {
+            prt[k] = i;
+
+            // Counting Number of children non-leaf and leaf
+            countChild[i]++;
+
+            numberOfWays(root,a,prt,k,N,M,countM,
+                             allowedWay,restrictions,
+                             countLeaf,countNonLeaf);
+            tnonLeaf += countNonLeaf[k];
+            tleaf += countLeaf[k];
+        }
+    }
+
+    if (i != 1)
+        a[i] = tnonLeaf + 1;
+
+    // If a leaf node appears on any of the M paths,
+    // then the count of all parents of that node
+    // will be decremented by one
+    for (int j = 0; j < (int)allowedWay[i].size(); j++)
+    {
+        int k = allowedWay[i][j];
+
+        for (int l = 0; l <  N; l++)
+        {
+            if (k == 0)
+                a[prt[l]]--;
+
+            if (k == 1)
+                a[prt[l]]++;
+        }
+    }
+
+    countNonLeaf[i] = tnonLeaf;
+    countLeaf[i] = tleaf;
+}
+
+void solveCase(int N, vector<pair<int, int> > v, int M,
+               vector<pair<int, int> > r)
+{
+    // To represent the tree
+    Node root[MAX];
+
+    // To store the children
+    vector<int> allowedWay[MAX];
+
+    // To store the visited vertices
+    memset(vis, 0, sizeof(vis));
+
+    int Mres = 0;
+
+    vector<int> restrictions[N + 1];
+    for (int i = 0; i < M; i++)
+    {
+        int p = r[i].first;
+        int q = r[i].second;
+        restrictions[p].push_back(i);
+        restrictions[q].push_back(i);
+    }
+
+    memset(countChild,0,sizeof(countChild));
+    memset(countNonLeaf,0,sizeof(countNonLeaf));
+    memset(countLeaf, 0, sizeof(countLeaf));
+    memset(prt, 0, sizeof(prt));
+
+    for (int i = 0; i < v.size(); i++)
+    {
+        int p = v[i].first;
+        int q = v[i].second;
+        addEdge(root,p,q);
+    }
+
+    numberOfWays(root, a, prt, 1, N, M, &Mres,
+                    allowedWay,restrictions,
+                    countLeaf,countNonLeaf);
+
+    cout << pow(2, N - 1) - a[1] << endl;
+}
+
+// Driver code
+int main()
+{
+    int N = 5;
+    vector<pair<int, int>> v;
+    v.push_back(make_pair(1, 2));
+    v.push_back(make_pair(2, 3));
+    v.push_back(make_pair(4, 3));
+    v.push_back(make_pair(2, 5));
+    v.push_back(make_pair(6, 3));
+    v.push_back(make_pair(6, 7));
+    v.push_back(make_pair(8, 6));
+
+    int M = 3;
+    vector<pair<int, int>> r;
+    r.push_back(make_pair(1, 3));
+    r.push_back(make_pair(2, 4));
+    r.push_back(make_pair(2, 5));
+
+    solveCase(N, v, M, r);
+    return 0;
+}

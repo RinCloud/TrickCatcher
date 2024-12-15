@@ -1,0 +1,1 @@
+# Implementation based on a greedy algorithm

@@ -1,0 +1,8 @@
+```python
+from cyaron import *
+def sample_one():
+    random_length = randint(1, 50)  # Generating length of string between 1 and 50
+    random_string = String.random(random_length, charset="a-zA-Z0-9 !@#$%^&*()_+-=[]{};:'\"\\|,<.>/?`~")  # Generating random string with ascii characters
+    generated_input = [str(random_string)]
+    return generated_input
+```

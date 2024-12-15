@@ -1,0 +1,22 @@
+```python
+from random import *
+from cyaron import *
+
+def sample_one():
+    type_choice = randint(1, 3)
+    if type_choice == 1:  # both parameters integers
+        a = randint(-100, 100)
+        b = randint(-100, 100)
+    elif type_choice == 2:  # both parameters floats or float strings with .
+        if random() > 0.5:
+            a = uniform(-100.0, 100.0)
+            b = uniform(-100.0, 100.0)
+        else:
+            a = str(uniform(-100.0, 100.0))
+            b = str(uniform(-100.0, 100.0))
+    else:  # both parameters float strings with ,
+        a = str(uniform(-100.0, 100.0)).replace('.', ',')
+        b = str(uniform(-100.0, 100.0)).replace('.', ',')
+    generated_input = [a, b]
+    return generated_input
+```

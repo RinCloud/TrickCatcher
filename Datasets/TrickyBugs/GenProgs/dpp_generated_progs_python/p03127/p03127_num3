@@ -1,0 +1,17 @@
+Please find the solution below:
+```python
+def find_min_final_health(N, A):
+    min_health = min(A)
+    gcd = 0
+    for i in range(N):
+        gcd = math.gcd(A[i], gcd)
+    if gcd != 1:
+        return gcd
+    else:
+        return min_health
+
+N = int(input())
+A = list(map(int, input().split()))
+
+print(find_min_final_health(N, A))
+```

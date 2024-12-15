@@ -1,0 +1,10 @@
+{"input": ["", ], "output": ""}
+{"input": ["cat", ], "output": "catac"}
+{"input": ["cata", ], "output": "catac"}
+{"input": ["civic", ], "output": "civic"}
+{"input": ["level", ], "output": "level"}
+{"input": ["madam", ], "output": "madam"}
+{"input": ["racecar", ], "output": "racecar"}
+{"input": ["deed", ], "output": "deed"}
+{"input": ["hello", ], "output": "helloolleh"}
+{"input": ["python", ], "output": "pythonohtyp"}

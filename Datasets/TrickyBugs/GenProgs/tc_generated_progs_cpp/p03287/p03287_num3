@@ -1,0 +1,15 @@
+**CORRECTED CODE**:
+```cpp
+#include<bits/stdc++.h>
+int main() {
+    long n, m, a, r = 0, s = 0;
+    std::cin >> n >> m;
+    std::map<int, int> v;
+    while (n--) {
+        std::cin >> a;
+        s += a;
+        r += v[s % m]++;
+    }
+    std::cout << r + v[0];
+}
+```

@@ -1,0 +1,24 @@
+**FIXED CODE**:
+
+```cpp
+#include <vector>
+#include <iostream>
+using namespace std;
+int main() {
+    int n, a, b; cin >> n >> a >> b;
+    if ((long long)a * b < n || a + b > n + 1) { cout << -1 << endl; return 0; }
+    vector<int> ans;
+    for (int i = 0; i < b; i++) ans.push_back(b-i);
+    int x = b;
+    for (int i = b; i < a; i++) {
+        int y = x + (n-b) / (a-1);
+        if ((n-b)%(a-1) > i-b) y++;
+        for (int z = y; z > x; z--) ans.push_back(z);
+        x = y;
+    }
+    for (int i : ans) cout << i << ' '; cout << endl;
+}
+```
+
+The issue in the original code was in the second for-loop where it should be `for (int i = b; i < a; i++)` instead of `for (int i = 0; i < a-1; i++)`. 
+Additionally, the condition in the line `if ((n-b)%(a-1) > i)` should be `if ((n-b)%(a-1) > i - b)` because `i` starts from `b` instead of `0`.

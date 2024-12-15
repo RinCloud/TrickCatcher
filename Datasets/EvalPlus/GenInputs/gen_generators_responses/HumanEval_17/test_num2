@@ -1,0 +1,10 @@
+```python
+from random import randint
+from cyaron import *
+
+def sample_one():
+    elements = ['o', 'o|', '.|']
+    music_string_length = randint(5, 20)  # Assuming a reasonable music string length range
+    music_string = ' '.join([String.random(1, charset=elements) for _ in range(music_string_length)])
+    return [music_string]
+```

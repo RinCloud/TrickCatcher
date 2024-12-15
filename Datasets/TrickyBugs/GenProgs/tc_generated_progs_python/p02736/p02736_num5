@@ -1,0 +1,26 @@
+```python
+import sys
+
+N = int(input())
+a = list(map(int, list(input())))
+ 
+while N != 0:
+	digit = 1
+	while digit < N // 2:
+		digit *= 2
+ 
+	x = []
+	for i in range(digit, N):
+		x.append(abs(a[i - digit] - a[i]))
+ 
+	a = x
+	N -= digit
+	if len(x) == 1:
+		break
+ 
+print(a[0])
+```
+
+This code seems to be correct. It takes an input `N` and a sequence of digits `a`. It then iteratively calculates the values of `x` according to the given formula until `N` becomes 0. Finally, it prints the first element of the resulting `a` array.
+
+There doesn't appear to be any bug or logic flaw in the code.

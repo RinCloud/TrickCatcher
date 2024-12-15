@@ -1,0 +1,13 @@
+```python
+from random import randint
+
+def sample_one():
+    length = randint(1, 10)
+    lst = [randint(0, 9) for _ in range(length)]
+    # Ensure list is potentially sorted by sorting and then randomly duplicating an element
+    lst.sort()
+    if len(lst) > 1:
+        duplicate_pos = randint(0, len(lst)-1)
+        lst[duplicate_pos] = lst[duplicate_pos - 1]
+    return [lst]
+```

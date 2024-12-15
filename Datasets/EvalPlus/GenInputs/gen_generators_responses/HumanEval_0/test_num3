@@ -1,0 +1,11 @@
+```python
+from random import *
+def sample_one():
+    numbers = []
+    length_of_numbers = randint(1, 10)
+    for i in range(length_of_numbers):
+        numbers.append(uniform(-10, 10))
+    threshold = uniform(0.1, 5)
+    generated_input = [numbers, threshold]
+    return generated_input
+```

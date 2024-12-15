@@ -1,0 +1,10 @@
+```python
+from random import *
+from cyaron import *
+
+def sample_one():
+    length_of_string = randint(0, 20)  # Generate a random length for the string, up to 20 characters.
+    random_str = String.random(length_of_string, charset="aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ")
+    generated_input = [str(random_str)]
+    return generated_input
+```

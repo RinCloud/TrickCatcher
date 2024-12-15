@@ -1,0 +1,10 @@
+{"input": ["Hi"], "output": "Hi"}
+{"input": ["hello"], "output": "ehllo"}
+{"input": ["Hello World!!"], "output": "Hello !!Wdlor"}
+{"input": ["Python is great"], "output": "Pnothy is aegrt"}
+{"input": ["It is sunny today"], "output": "It is nnsuy adoty"}
+{"input": ["I am coding"], "output": "I am cdgino"}
+{"input": ["Hello, how are you?"], "output": "Hello, how aer ?ouy"}
+{"input": ["123 456 789"], "output": "123 456 789"}
+{"input": ["A B C"], "output": "A B C"}
+{"input": ["This is a test"], "output": "Hist is a estt"}

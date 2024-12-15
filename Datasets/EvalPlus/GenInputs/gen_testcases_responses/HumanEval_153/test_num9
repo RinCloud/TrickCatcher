@@ -1,0 +1,10 @@
+{"input": ["my_class", ["AA", "Be", "CC"]], "output": "my_class.AA"}
+{"input": ["Slices", ["SErviNGSliCes", "Cheese", "StuFfed"]], "output": "Slices.SErviNGSliCes"}
+{"input": ["Numbers", ["One", "THRree", "Two"]], "output": "Numbers.THRree"}
+{"input": ["Hello", ["HI", "wORLD", "HeLLO"]], "output": "Hello.HI"}
+{"input": ["Test", ["TestCases", "Sample", "Code"]], "output": "Test.TestCases"}
+{"input": ["Class", ["Extension", "ADDON", "Extra"]], "output": "Class.ADDON"}
+{"input": ["Strong", ["WEAK", "Tough", "DebAtE"]], "output": "Strong.DebAtE"}
+{"input": ["Programming", ["FunCTIon", "laNGuaGe", "Code"]], "output": "Programming.FunCTIon"}
+{"input": ["Python", ["PythOn", "TyPE", "FUNCTION"]], "output": "Python.PythOn"}
+{"input": ["Soft", ["wArewolf", "CapTION", "LOWERCASE"]], "output": "Soft.wArewolf"}

@@ -1,0 +1,9 @@
+```python
+from random import *
+def sample_one():
+    length_of_lists = randint(1, 10)
+    lst1 = [randint(1, 100) for _ in range(length_of_lists)]
+    lst2 = [randint(1, 100) for _ in range(length_of_lists)]
+    generated_input = [lst1, lst2]
+    return generated_input
+```

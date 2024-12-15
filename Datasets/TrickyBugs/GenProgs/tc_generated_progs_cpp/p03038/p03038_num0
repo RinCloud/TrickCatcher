@@ -1,0 +1,32 @@
+**REPAIRED CODE**:
+```cpp
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main() {
+    long long N, M;
+    cin >> N >> M;
+    vector<pair<long long, int>> V;
+    long long ans = 0; // initialize answer variable
+    for (int i = 0; i < N; i++) {
+        long long A;
+        cin >> A;
+        V.push_back({A, 1});
+    }
+    for (int i = 0; i < M; i++) {
+        int B;
+        long long C;
+        cin >> B >> C;
+        V.push_back({C, B});
+    }
+    sort(V.rbegin(), V.rend());
+    for (int i = 0; i < V.size(); i++) {
+        int C = min(V[i].second, (int)N); // use int instead of long long
+        N -= C;
+        ans += C * V[i].first;
+    }
+    cout << ans << endl;
+    return 0;
+}
+```

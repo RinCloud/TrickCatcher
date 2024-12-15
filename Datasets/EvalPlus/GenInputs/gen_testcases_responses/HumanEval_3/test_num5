@@ -1,0 +1,10 @@
+{"input": [[1, 2, 3]], "output": False}
+{"input": [[1, 2, -4, 5]], "output": True}
+{"input": [[0]], "output": False}
+{"input": [[-10]], "output": True}
+{"input": [[-1, -2, -3]], "output": True}
+{"input": [[-1, 0, 1]], "output": False}
+{"input": [[100, -50, 75]], "output": False}
+{"input": [[-100, 200, -150]], "output": False}
+{"input": [[10, 20, -30, 40, -50]], "output": True}
+{"input": [[-1, -1, -1, -1, 1, 1, 1, 1]], "output": False}

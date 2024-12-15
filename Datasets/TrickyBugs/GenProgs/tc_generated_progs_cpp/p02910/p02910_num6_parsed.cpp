@@ -1,0 +1,17 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    string s, ans = "Yes"; 
+    cin >> s;
+    for (int i = 0; i < s.size(); i++) {
+        if ((i + 1) % 2 == 1 && s[i] == 'L') {
+            ans = "No";
+            break;
+        } else if ((i + 1) % 2 == 0 && s[i] == 'R') {
+            ans = "No";
+            break;
+        }
+    }
+    cout << ans << endl; 
+}

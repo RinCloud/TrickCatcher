@@ -1,0 +1,23 @@
+from typing import List
+
+def below_zero(operations: List[int]) -> bool:
+    """ 
+    Determine if at any point the balance of the account falls below zero.
+    
+    Parameters:
+    operations (List[int]): A list of deposit and withdrawal operations on a bank account
+    
+    Returns:
+    bool: True if the balance falls below zero at any point, False otherwise
+    """
+    balance = 0
+    
+    for operation in operations:
+        # subtract the operation from the balance
+        balance -= operation
+        
+        # if the balance falls below zero, return True
+        if balance < 0:
+            return True
+    
+    return False

@@ -1,0 +1,57 @@
+**UPDATED CODE**:
+
+```cpp
+#include <iostream>
+#include <cstdio>
+#include <vector>
+#include <algorithm>
+using namespace std;
+
+int n, m, ans;
+vector<int> s;
+vector<vector<int>> a;
+
+void dfs(int p, int parent) {
+    s[p] = 1;
+    for (int i = 1; i <= n; i++) {
+        if (a[p][i] && i != parent) {
+            if (s[i] == 0) {
+                dfs(i, p);
+            }
+            else if (s[i] == 1) {
+                ans++;
+                a[p][i] = a[i][p] = 0;
+            }
+        }
+    }
+    s[p] = 2;
+}
+
+int main()
+{
+    cin >> n >> m;
+    a = vector<vector<int>>(n+1, vector<int>(n+1));
+    s = vector<int>(n+1);
+    for (int i = 0; i < m; i++) {
+        int t1, t2;
+        scanf("%d %d", &t1, &t2);
+        a[t1][t2] = a[t2][t1] = 1;
+    }
+    for (int i = 1; i <= n; i++) {
+        if (s[i] == 0) {
+            dfs(i, 0);
+        }
+    }
+    cout << ans;
+    return 0;
+}
+```
+
+Explanation:
+- The original code had a recursive function named `f` to perform DFS traversal starting from a given vertex. But the implementation of this function was incorrect and didn't handle the case where an edge is a bridge correctly.
+- I changed the function name from `f` to `dfs` to make it more clear and understandable.
+- I replaced the `s` array with a vector named `s` to store the state of each vertex during the traversal. Initially, all states are set to 0. During the traversal, if a vertex is being visited (`s[i] = 1`), it means that it is part of an active path. If a vertex has been visited and all its neighbors have been visited (`s[i] = 2`), it means that it is not part of any active path anymore.
+- I replaced the 2D array `a` with a vector of vectors named `a` to represent the adjacency matrix of the graph. This allows us to easily access the neighbors of each vertex.
+- In the `dfs` function, I added an additional parameter `parent` to keep track of the parent vertex during the traversal. This is necessary to correctly identify bridges in the graph.
+- Inside the `dfs` function, I replaced the `for` loop that checks if an edge is a bridge with a condition that checks if the neighboring vertex is the parent vertex. If it is, we skip that edge as it is not possible to be a bridge. This avoids counting non-bridges as bridges.
+- After performing the DFS traversal on each vertex, I print the number of bridges (`ans`) as the output.

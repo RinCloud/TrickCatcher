@@ -1,0 +1,16 @@
+**REPAIRED CODE**:
+```
+#include <stdio.h>
+int main (){
+	int c;
+	scanf ("%d", &c);
+	if (c >= 30 && c <= 40) {
+		printf ("Yes");
+	} else {
+		printf ("No");
+	}
+	return 0;
+}
+```
+
+*Explanation*: The code was using the ternary conditional operator to check the condition and print the result, but the correct way is to use an if-else statement.

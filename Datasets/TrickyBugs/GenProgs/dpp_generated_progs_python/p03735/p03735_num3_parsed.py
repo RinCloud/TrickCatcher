@@ -1,0 +1,23 @@
+import sys
+
+def solve(N, balls):
+    red = []
+    blue = []
+    
+    for x, y in balls:
+        red.append(x)
+        blue.append(y)
+    
+    red.sort()
+    blue.sort()
+    
+    return (red[N-1] - red[0]) * (blue[N-1] - blue[0])
+
+if __name__ == "__main__":
+    N = int(sys.stdin.readline())
+    balls = []
+    for _ in range(N):
+        x, y = map(int, sys.stdin.readline().split())
+        balls.append((x, y))
+    
+    print(solve(N, balls))

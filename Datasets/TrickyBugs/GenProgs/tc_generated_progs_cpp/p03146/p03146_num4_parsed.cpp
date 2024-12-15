@@ -1,0 +1,22 @@
+#include <iostream>
+#include <unordered_set>
+using namespace std;
+
+int main(){
+  int s;
+  cin >> s;
+  int cnt = 0;
+  
+  unordered_set<int> visited;
+  visited.insert(s);
+  
+  while(true){
+    cnt++;
+    if(s%2 == 0) s /= 2;
+    else s = s * 3 + 1;
+    if(visited.count(s)) break;
+    visited.insert(s);
+  }
+  
+  cout << cnt+1 << endl;
+}

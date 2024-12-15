@@ -1,0 +1,10 @@
+{"input": ['hello'], "output": 'mjqqt'}
+{"input": ['python'], "output": 'udymts'}
+{"input": ['abcdefghijklmnopqrstuvwxyz'], "output": 'fghijklmnopqrstuvwxyzabcde'}
+{"input": ['abc xyz'], "output": 'fgh cde'}
+{"input": ['1234'], "output": '1234'}
+{"input": ['[]{}()'], "output": '[]{}()'}
+{"input": ['!@#$%'], "output": '!@#$%'}
+{"input": ['AaBbCc'], "output": 'FfGgHh'}
+{"input": ['Hello, World!'], "output": 'Mjqqt, Btwqi!'}
+{"input": ['encode_shift'], "output": 'jsifhi_xmntl'}

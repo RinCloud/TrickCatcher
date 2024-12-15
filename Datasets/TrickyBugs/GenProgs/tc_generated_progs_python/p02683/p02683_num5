@@ -1,0 +1,48 @@
+```python
+n, m, x = map(int, input().split())
+
+Book = [[int(x) for x in input().split()] for j in range(n)]
+Cost = 10 ** 7
+for i in range(2**n):
+  bag = [0 for k in range(m+1)]
+ 
+  for j in range(n):
+    if ((i >> j) &1):
+      bag = [ x + y for (x,y) in zip (bag,Book[j])]
+  if all(b >= x for b in bag[1:]):
+    if Cost >= bag[0]:
+      Cost = bag[0]
+if Cost != 10 ** 7:
+  print(Cost)
+else:
+  print(-1)
+```
+
+Notes:
+- The outer loop in line 8 is used to iterate through all possible combinations of books to buy. The `(i >> j) & 1` condition in line 11 checks if book `j` is included in the current combination. However, the range of the outer loop should be `range(2**n)` instead of `range(n)` to consider all possible combinations of books.
+- The `bag` list in line 9 should be initialized with length `m+1` instead of `n+1` to match the number of subjects.
+- The `zip(bag, Book[j])` operation in line 14 should combine the elements of the `bag` list and `Book[j]` list element-wise, but should exclude the first element (cost) of the `bag` list. Therefore, it should be `zip(bag[1:], Book[j][1:])`.
+- The condition `all(b >= x for b in bag[1:])` in line 16 checks if all subjects have a score greater than or equal to `x`. However, as specified in the problem statement, the condition should be `any(b < x for b in bag[1:])` to check if there is at least one subject with a score less than `x`.
+- Finally, the cost `10 ** 7` in line 18 represents an initial maximum cost value that is used to check if any valid combination of books is found. However, this cost value is too small compared to the maximum possible cost `10^5` specified in the problem statement. Therefore, a larger initial value such as `float('inf')` should be used instead.
+
+Repaired code:
+
+```python
+n, m, x = map(int, input().split())
+
+Book = [[int(x) for x in input().split()] for j in range(n)]
+Cost = float('inf')
+for i in range(2**n):
+  bag = [0 for k in range(m+1)]
+ 
+  for j in range(n):
+    if ((i >> j) & 1):
+      bag = [x + y for (x, y) in zip(bag[1:], Book[j][1:])]
+  if any(b < x for b in bag[1:]):
+    if Cost >= bag[0]:
+      Cost = bag[0]
+if Cost != float('inf'):
+  print(Cost)
+else:
+  print(-1)
+```

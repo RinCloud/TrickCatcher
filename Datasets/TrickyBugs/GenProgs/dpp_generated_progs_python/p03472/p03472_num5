@@ -1,0 +1,42 @@
+# Solution
+
+After analyzing the problem statement, we can see that the best strategy to minimize the number of attacks required to vanish the monster is to wield the katana with the highest damage until it becomes less effective than the next available katana, and then start throwing the remaining katanas.
+
+To achieve this, we need to sort the katanas in decreasing order of their damage (a_i), and then iterate through them. We will wield each katana until the total damage becomes at least H, and then move to the next katana.
+
+After that, if the total damage is still less than H, we will throw the remaining katanas in increasing order of their remaining damage (b_i).
+
+Here's the Python program that implements this strategy:
+
+```python
+def minimum_attacks(N, H, katanas):
+    katanas.sort(reverse=True)
+    total_damage = 0
+    i = 0
+
+    while i < N and total_damage < H:
+        total_damage += katanas[i][0]
+        i += 1
+
+    if total_damage < H:
+        remaining_damage = H - total_damage
+        throws_needed = (remaining_damage + katanas[i-1][1] - 1) // katanas[i-1][1]
+        total_damage += throws_needed * katanas[i-1][1]
+
+    return i + (total_damage + katanas[i-1][1] - 1) // katanas[i-1][1]
+
+# Read input values
+N, H = map(int, input().split())
+katanas = []
+
+for _ in range(N):
+    a, b = map(int, input().split())
+    katanas.append((a, b))
+
+# Print the minimum number of attacks required to vanish the monster
+print(minimum_attacks(N, H, katanas))
+```
+
+This program takes the number of katanas (N) and the total damage needed to vanish the monster (H) as inputs. It then reads the specifications of each katana from standard input and stores them in a list of tuples (a, b), where a is the wield damage and b is the throw damage.
+
+Finally, it calls the `minimum_attacks` function with the input values and prints the result.

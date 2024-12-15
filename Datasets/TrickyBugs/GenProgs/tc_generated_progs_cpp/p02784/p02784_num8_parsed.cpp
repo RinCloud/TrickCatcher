@@ -1,0 +1,14 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+	int a,b,tmp,tot = 0; // Initialize tot
+	cin >> a >> b;
+	while(b--){
+		cin >> tmp;
+		tot+=tmp;
+	}
+	if(tot>=a)cout << "Yes\n";
+	else cout << "No\n";
+}
+

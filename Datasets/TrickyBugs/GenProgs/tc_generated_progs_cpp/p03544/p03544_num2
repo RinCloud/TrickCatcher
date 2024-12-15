@@ -1,0 +1,16 @@
+**CORRECTED CODE**:
+
+```
+#include <bits/stdc++.h>
+using namespace std;
+long long l[87];
+int n;
+int main() {
+    l[0]=2; l[1]=1;
+    for (int i=2; i<=86; i++) l[i]=l[i-1]+l[i-2];
+    
+    cin >> n; cout << l[n]; 
+}
+```
+
+Explanation: In the initial code, the array `l` is declared with a size of 86. However, the loop to compute the Lucas numbers runs from `i=2` to `i<=86`, which means it is accessing `l[86]`, leading to a buffer overflow. To fix this, we need to declare the array `l` with a size of 87 to include the index `86`.

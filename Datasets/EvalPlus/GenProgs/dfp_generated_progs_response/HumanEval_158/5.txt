@@ -1,0 +1,30 @@
+def find_max(words):
+    """
+    This function accepts a list of strings and returns the word with the maximum number of unique characters. If multiple strings have the same maximum number of unique characters, it returns the one that comes first in lexicographical order.
+    
+    Parameters:
+    words (list): A list of strings
+    
+    Returns:
+    str: The word with the maximum number of unique characters
+    
+    Example:
+    find_max(["name", "of", "string"]) -> "string"
+    find_max(["name", "enam", "game"]) -> "enam"
+    find_max(["aaaaaaa", "bb", "cc"]) -> "aaaaaaa"
+    """
+
+    def count_unique_chars(word):
+        return len(set(word))
+
+    max_word = ""
+    max_unique_chars = 0
+
+    for word in words:
+        unique_chars = count_unique_chars(word)
+        
+        if unique_chars > max_unique_chars or (unique_chars == max_unique_chars and word < max_word):
+            max_word = word
+            max_unique_chars = unique_chars
+    
+    return max_word

@@ -1,0 +1,30 @@
+**REPAIRED CODE**:
+
+```cpp
+#include <iostream>
+
+int main() {
+    long N;
+    std::cin >> N;
+    
+    long ans = 0;
+    
+    if (N % 2 != 0) {
+        ans = 0;
+    } else {
+        for (long i = 10; i <= N; i *= 5) {
+            ans += N / i;
+        }
+    }
+    
+    std::cout << ans;
+    return 0;
+}
+```
+
+The original code had a few bugs and logic flaws:
+1. The `using namespace std;` statement should be placed before any other includes to avoid compilation errors.
+2. The `ans` variable should be initialized to 0.
+3. The statement `ans == 0;` should be `ans = 0;` to assign the value 0 to `ans`.
+4. The code should include the `<iostream>` header to use `std::cin`, `std::cout`, and `std::endl`.
+5. The repaired code adds a `return 0;` statement at the end of the `main` function.

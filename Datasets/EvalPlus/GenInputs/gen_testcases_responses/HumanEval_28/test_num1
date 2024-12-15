@@ -1,0 +1,10 @@
+{"input": [["a", "b", "c", "d", "e", "f", "g", "h", "i", "j"]], "output": "abcdefghij"}
+{"input": [[], [], [], [], []], "output": ""}
+{"input": [["Hello", " ", "World", "!"]], "output": "Hello World!"}
+{"input": [["This", " ", "is", " ", "a", " ", "test"]], "output": "This is a test"}
+{"input": [["123", "456", "789"]], "output": "123456789"}
+{"input": [["Python", " ", "is", " ", "fun"]], "output": "Python is fun"}
+{"input": [["I", " ", "love", " ", "coding"]], "output": "I love coding"}
+{"input": [["The", " ", "quick", " ", "brown", " ", "fox"]], "output": "The quick brown fox"}
+{"input": [["1", "2", "3", "4", "5"]], "output": "12345"}
+{"input": [["a", "b", "c", "d", "e"], ["f", "g", "h", "i", "j"]], "output": ""}

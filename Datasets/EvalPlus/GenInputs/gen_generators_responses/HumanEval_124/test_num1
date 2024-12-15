@@ -1,0 +1,17 @@
+```python
+from random import randint
+
+def sample_one():
+    month = randint(1, 12)
+    year = randint(1900, 2020)
+    
+    if month == 2:
+        day = randint(1, 29)
+    elif month in [4, 6, 9, 11]:
+        day = randint(1, 30)
+    else:
+        day = randint(1, 31)
+    
+    date = f"{month:02d}-{day:02d}-{year}"
+    return [date]
+```

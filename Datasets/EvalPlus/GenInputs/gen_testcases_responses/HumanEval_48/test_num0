@@ -1,0 +1,10 @@
+{"input": [''], "output": True}
+{"input": ['aba'], "output": True}
+{"input": ['aaaaa'], "output": True}
+{"input": ['zbcd'], "output": False}
+{"input": ['AbA'], "output": True}
+{"input": ['Rats live on no evil star'], "output": True}
+{"input": ['Madam, in Eden I\'m Adam'], "output": True}
+{"input": ['A man, a plan, a canal, Panama'], "output": True}
+{"input": ['Never odd or even'], "output": True}
+{"input": ['not a palindrome'], "output": False}

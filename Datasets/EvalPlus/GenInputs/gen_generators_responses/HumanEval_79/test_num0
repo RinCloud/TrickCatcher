@@ -1,0 +1,9 @@
+```python
+from random import randint
+
+def sample_one():
+    # Generate a random integer between 0 and 255 for decimal input
+    decimal = randint(0, 255)
+    generated_input = [decimal]
+    return generated_input
+```

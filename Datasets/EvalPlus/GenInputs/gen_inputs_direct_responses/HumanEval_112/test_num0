@@ -1,0 +1,3 @@
+**Test Input Reasoning:**
+
+We test the case where both strings `s` and `c` are empty. This is an edge case, as it represents the smallest input size.

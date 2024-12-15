@@ -1,0 +1,25 @@
+```python
+from random import choice, randint
+from cyaron import String
+
+def sample_one():
+    delimiter_choices = ['.', '?', '!']
+    sentence_starters = [
+        "I", "The", "In the beginning", "Once upon a time", "He", "She", "They",
+        "When", "On a dark night", "Under the sun", "Beyond the sea", "Far far away"
+    ]
+    
+    num_sentences = randint(1, 10)
+    sentences = []
+
+    for _ in range(num_sentences):
+        delimiter = choice(delimiter_choices)
+        starter = choice(sentence_starters)
+        content_length = randint(5, 20)
+        content = String.random(content_length, charset='abcdefghijklmnopqrstuvwxyz ')
+        sentence = f"{starter} {content}{delimiter}"
+        sentences.append(sentence)
+
+    generated_input = [" ".join(sentences)]
+    return generated_input
+```

@@ -1,0 +1,5 @@
+**Test Input Reasoning:**
+
+I will start with the smallest possible input where a = 2.
+Since 2 is a prime number, it cannot be expressed as the product of 3 prime numbers.
+Therefore, the function is expected to return False.

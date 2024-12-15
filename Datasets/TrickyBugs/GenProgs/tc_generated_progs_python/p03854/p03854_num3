@@ -1,0 +1,11 @@
+```python
+import re
+
+def obtain_string(S):
+    if re.match('(dreame*|erase|r)*$', S):
+        return 'YES'
+    else:
+        return 'NO'
+```
+
+The function `obtain_string` takes a string `S` as input and uses regular expression to check if it is possible to obtain `S` by appending any combination of `dream`, `dreamer`, `erase`, and `eraser`. If it is possible, it returns `'YES'`, otherwise it returns `'NO'`.

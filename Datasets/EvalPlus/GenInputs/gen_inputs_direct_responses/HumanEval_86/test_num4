@@ -1,0 +1,3 @@
+**Test Input Reasoning:**
+
+We test for a basic input where all the characters in the input string are the same. This is interesting because the function should be able to handle such inputs and return the ordered version of the string.

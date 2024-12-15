@@ -1,0 +1,10 @@
+{"input": ["abcde", "ae"], "output": ["bcd", False]}
+{"input": ["abcdef", "b"], "output": ["acdef", False]}
+{"input": ["abcdedcba", "ab"], "output": ["cdedc", True]}
+{"input": ["racecar", "ae"], "output": ["rcr", True]}
+{"input": ["abcdedcba", "cdedc"], "output": ["ab", Farls in the input s string varied between {}nan and {}nan", []}
+{"input": ["abcdedcba", "@"], "output": ["abcdedcba", True]}
+{"input": ["abcdefg", "gfedcab"], "output": ["", True]}
+{"input": ["aabbcc", "gg"], "output": ["aabbcc", True]}
+{"input": ["abcd", "dccba"], "output": ["ab", False]}
+{"input": ["abc", ""], "output": ["abc", False]}

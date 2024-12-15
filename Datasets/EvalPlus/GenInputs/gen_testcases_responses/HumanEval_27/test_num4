@@ -1,0 +1,10 @@
+{"input": "Hello", "output": "hELLO"}
+{"input": "apple", "output": "APPLE"}
+{"input": "PYTHON", "output": "python"}
+{"input": "12345", "output": "12345"}
+{"input": "Hello World", "output": "hELLO wORLD"}
+{"input": "", "output": ""}
+{"input": "UPPERCASE", "output": "uppercase"}
+{"input": "lowercase", "output": "LOWERCASE"}
+{"input": "Hello123", "output": "hELLO123"}
+{"input": "hElLoWoRLd", "output": "HeLlOwOrlD"}

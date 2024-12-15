@@ -1,0 +1,51 @@
+# Approach:
+
+To construct a sequence with the given conditions, we can start by creating a sequence of length `N` with integers from `1` to `N` in any order. Then, we can rearrange the sequence to meet the two conditions:
+
+1. The length of the longest increasing subsequence is `A`.
+2. The length of the longest decreasing subsequence is `B`.
+
+We will construct the sequence based on the following rules:
+
+1. If `A = 1` and `B = 1`, then any permutation of `1, 2, ..., N` satisfies the conditions.
+2. If `A = 1` and `B > 1`, there is no valid permutation since we need a decreasing subsequence with length `B`.
+3. If `A > 1` and `B = 1`, there is no valid permutation since we need an increasing subsequence with length `A`.
+4. If `A > 1` and `B > 1`, we can construct a valid permutation as follows:
+
+    - Start with an increasing sequence from `1` to `A`. This sequence will be the longest increasing subsequence.
+    - Append `A+1` (if possible) to form a decreasing subsequence of length `B`.
+    - Append the remaining numbers from `A+2` to `N` in any order.
+
+If the given `N`, `A`, and `B` do not satisfy the conditions for a valid permutation, we will output `-1`.
+
+# Program:
+
+```python
+def construct_sequence(N, A, B):
+    if A == 1 and B == 1:
+        return " ".join(map(str, range(1, N + 1)))
+    elif A == 1 or B == 1:
+        return "-1"
+    elif A + B - 1 > N:
+        return "-1"
+    else:
+        res = list(range(1, A + 1))
+        dec_seq = list(range(N, N - B, -1))
+        if A + 1 <= N:
+            res.append(A + 1)
+        res.extend(dec_seq)
+        remaining = set(range(1, N + 1)) - set(res)
+        res.extend(remaining)
+        return " ".join(map(str, res))
+
+# Read input
+N, A, B = map(int, input().split())
+
+# Construct and output the sequence
+sequence = construct_sequence(N, A, B)
+print(sequence)
+```
+
+# Complexity Analysis:
+
+The time complexity of this approach is O(N) because we perform a constant amount of operations for each input. The space complexity is also O(N) as we need to store the constructed sequence.

@@ -1,0 +1,26 @@
+def special_factorial(n: int) -> int:
+    """
+    Returns the special factorial of a given integer.
+
+    Parameters:
+    n (int): The integer for which to calculate the special factorial. Must be greater than 0.
+
+    Returns:
+    int: The special factorial of the given integer.
+
+    Examples:
+    >>> special_factorial(4)
+    288
+    """
+
+    def factorial(x):
+        if x == 0 or x == 1:
+            return 1
+        else:
+            return x * factorial(x - 1)
+
+    result = 1
+    for i in range(n, 0, -1):
+        result *= factorial(i)
+
+    return result

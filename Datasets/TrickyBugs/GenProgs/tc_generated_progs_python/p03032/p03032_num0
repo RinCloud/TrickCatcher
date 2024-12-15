@@ -1,0 +1,27 @@
+```
+R = lambda: map(int, input().split())
+n, k = R()
+v = list(R())
+a = sorted((x, i) for i, x in enumerate(v) if x < 0)
+ans = max(sum(v[:i - j] + v[n - j:]) -
+          sum([x for x, m in a if m < i - j or m >= n - j][:k - i])
+          for i in range(1, min(n, k) + 1) for j in range(i))
+print(ans)
+```
+
+The code is almost correct, but there is a bug in the line `ans = max(sum(v[:i - j] + v[n - j:]) - sum([x for x, m in a if m < i - j or m >= n - j][:k - i]) for i in range(1, min(n, k) + 1) for j in range(i))`. 
+
+The bug is that the part `sum([x for x, m in a if m < i - j or m >= n - j][:k - i])` is subtracting the sum of at most `k - i` negative valued jewels, based on their index. But the restriction is that we can perform at most `k` operations, and not only once per negative jewel. This means that if the loop is currently at `j` value (meaning that we've already performed `j` operations), if there are `k-j` negative valued jewels, we could still perform `k-j` operations on one of them, contrasting on how the code currently only permits a maximum of `k-i` negative valued jewels, which is not necessarily true.
+
+To fix this bug, we must modify the code to consider all negative valued jewels uniformly throughout the entire loop, without restriction on the number of times an operation can be performed on them. In other words, in the line mentioned above, replace `[x for x, m in a if m < i - j or m >= n - j][:k - i]` with `[x for x, m in a]`. This way, we consider all negative valued jewels, rather than restricting to only a subset of them.
+
+The repaired code is as follows:
+```python
+R = lambda: map(int, input().split())
+n, k = R()
+v = list(R())
+a = sorted((x, i) for i, x in enumerate(v) if x < 0)
+ans = max(sum(v[:i - j] + v[n - j:]) -
+          sum([x for x, m in a]) for i in range(1, min(n, k) + 1) for j in range(i))
+print(ans)
+```

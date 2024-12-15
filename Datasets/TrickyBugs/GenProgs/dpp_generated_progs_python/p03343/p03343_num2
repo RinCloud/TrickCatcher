@@ -1,0 +1,34 @@
+# Approach
+To find the smallest possible value of X-Y, we can perform the operations as follows:
+1. Sort the sequence A in non-decreasing order.
+2. For each subsequence of length K, calculate the difference between the maximum and minimum elements in the subsequence.
+3. Choose the minimum difference.
+
+# Steps
+1. Read the input values for N, K, and Q.
+2. Read the input sequence A.
+3. Sort the sequence A in non-decreasing order.
+4. Initialize the minimum difference to a large value.
+5. Iterate over every possible subsequence starting index i from 0 to N-K.
+   - Initialize a new subsequence list.
+   - Append the K elements starting from index i to the subsequence list.
+   - Calculate the difference between the maximum and minimum elements in the subsequence.
+   - Update the minimum difference if necessary.
+6. Print the minimum difference.
+
+# Solution
+
+```python
+N, K, Q = map(int, input().split())
+A = list(map(int, input().split()))
+
+A.sort()
+min_difference = float('inf')
+
+for i in range(N - K + 1):
+    subsequence = A[i:i + K]
+    difference = max(subsequence) - min(subsequence)
+    min_difference = min(min_difference, difference)
+
+print(min_difference)
+```

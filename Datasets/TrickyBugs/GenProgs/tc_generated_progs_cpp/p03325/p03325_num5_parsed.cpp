@@ -1,0 +1,10 @@
+#include<iostream>
+int main(){
+  int n,d,r = 0;
+  std::cin>>n;
+  for(int i=0;i<n;i++){
+    std::cin>>d;
+    while(d%2==0)++r,d/=2;
+  }
+  std::cout<<r;
+}

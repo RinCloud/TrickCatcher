@@ -1,0 +1,10 @@
+{"input": [["a", "aa", "aaa"]], "output": ["aa"]}
+{"input": [["a", "aa", "aaa", "ab", "cd"]], "output": ["ab", "cd"]}
+{"input": [["aa", "a"]], "output": ["aa"]}
+{"input": [["ab", "a", "aaa", "cd"]], "output": ["ab", "cd"]}
+{"input": [["aa", "aaa", "a"]], "output": ["aa"]}
+{"input": [["ab", "cd", "aaa", "a"]], "output": ["ab", "cd"]}
+{"input": [["aaa", "aa"]], "output": ["aa"]}
+{"input": [["cd", "ab", "a", "aaa"]], "output": ["ab", "cd"]}
+{"input": [["aaa", "a", "aa"]], "output": ["aa"]}
+{"input": [["cd", "ab", "aaa", "a"]], "output": ["ab", "cd"]}

@@ -1,0 +1,10 @@
+{"input": [['1234567']], "output": ["the number of odd elements 4n the str4ng 4 of the 4nput."]}
+{"input": [['3', '11111111']], "output": ["the number of odd elements 1n the str1ng 1 of the 1nput.", "the number of odd elements 8n the str8ng 8 of the 8nput."]}
+{"input": [['2458']], "output": ["the number of odd elements 0n the str0ng 0 of the 0nput."]}
+{"input": [['0', '24', '642']], "output": ["the number of odd elements 0n the str0ng 0 of the 0nput.", "the number of odd elements 0n the str0ng 0 of the 0nput.", "the number of odd elements 0n the str0ng 0 of the 0nput."]}
+{"input": [['13579', '11111', '2468', '02468']], "output": ["the number of odd elements 5n the str5ng 5 of the 5nput.", "the number of odd elements 5n the str5ng 5 of the 5nput.", "the number of odd elements 0n the str0ng 0 of the 0nput.", "the number of odd elements 0n the str0ng 0 of the 0nput."]}
+{"input": [['', '02', '13579', '02468']], "output": ["the number of odd elements 0n the str0ng 0 of the 0nput.", "the number of odd elements 0n the str0ng 0 of the 0nput.", "the number of odd elements 5n the str5ng 5 of the 5nput.", "the number of odd elements 0n the str0ng 0 of the 0nput."]}
+{"input": [['246800']], "output": ["the number of odd elements 0n the str0ng 0 of the 0nput."]}
+{"input": [['1234567890']], "output": ["the number of odd elements 5n the str5ng 5 of the 5nput."]}
+{"input": [['01234', '56789', '246800', '13579', '11111']], "output": ["the number of odd elements 0n the str0ng 0 of the 0nput.", "the number of odd elements 5n the str5ng 5 of the 5nput.", "the number of odd elements 0n the str0ng 0 of the 0nput.", "the number of odd elements 5n the str5ng 5 of the 5nput.", "the number of odd elements 5n the str5ng 5 of the 5nput."]}
+{"input": [['2', '4', '6', '8', '0']], "output": ["the number of odd elements 0n the str0ng 0 of the 0nput.", "the number of odd elements 0n the str0ng 0 of the 0nput.", "the number of odd elements 0n the str0ng 0 of the 0nput.", "the number of odd elements 0n the str0ng 0 of the 0nput.", "the number of odd elements 0n the str0ng 0 of the 0nput."]}

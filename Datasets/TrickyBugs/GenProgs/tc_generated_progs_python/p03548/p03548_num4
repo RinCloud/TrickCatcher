@@ -1,0 +1,20 @@
+```
+X,Y,Z=map(int,input().split())
+print((X-2*Z)//(Y+Z)+((X-2*Z)%(Y+Z))//Y)
+```
+
+The code has a logic flaw that results in incorrect output.
+
+Here is the corrected code:
+```python
+X, Y, Z = map(int, input().split())
+gap = Y + Z
+seat = X - Z
+people = seat // gap
+print(people)
+```
+
+Explanation:
+- We first calculate the gap size between two people, which is Y + Z.
+- Then we calculate the total available seat size, which is X - Z.
+- Finally, we divide the seat size by the gap size to get the maximum number of people that can be seated.

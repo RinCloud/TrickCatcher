@@ -1,0 +1,18 @@
+**Repaired Code**:
+
+```python
+import re
+
+S = input()
+
+pattern = '(dream(er)?|erase(r)?)+'
+if re.fullmatch(pattern, S):
+    print('YES')
+else:
+    print('NO')
+```
+
+**Explanation**:
+1. We use the `re.fullmatch()` function instead of `re.match()` to ensure that the entire string matches the provided pattern.
+2. The pattern is modified to `(dream(er)?|erase(r)?)+` to match all possible combinations of `dream`, `dreamer`, `erase`, and `eraser`. The `+` at the end allows for one or more repetitions of these combinations.
+3. We use an `if-else` statement to print `YES` if the string matches the pattern, and `NO` otherwise.

@@ -1,0 +1,18 @@
+**BUG FIX**
+
+The current code is giving incorrect output in some cases. The issue lies with the condition `(a<=b<=a+w)` which checks if the second rectangle is already connected to the first rectangle horizontally. This condition is incorrect because it only checks for the left side of the second rectangle being in the range of the first rectangle. However, the second rectangle can also have its right side in the range of the first rectangle.
+
+To fix this, we need to modify the condition to `(a<=b<=a+w) or (b<=a<=b+w)`. This new condition will account for both cases where the second rectangle is already connected to the first rectangle horizontally.
+
+**Repaired CODE**:
+
+```python
+w, a, b = map(int,input().split())
+
+if (a <= b <= a + w) or (b <= a <= b + w):
+    x = 0
+else:
+    x = min(abs(b - a - w), abs(a - b - w))
+
+print(x)
+```

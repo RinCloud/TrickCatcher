@@ -1,0 +1,10 @@
+{"input": "Example", "output": "Example"}
+{"input": "Example 1", "output": "Example_1"}
+{"input": " Example 2", "output": "_Example_2"}
+{"input": " Example   3", "output": "_Example-3"}
+{"input": "", "output": ""}
+{"input": " ", "output": "_"}
+{"input": "     ", "output": "-"}
+{"input": "  Example   3 4 ", "output": "_Example-3_4_"}
+{"input": "Example_2", "output": "Example_2"}
+{"input": "!_Example 2", "output": "!_Example_2"}

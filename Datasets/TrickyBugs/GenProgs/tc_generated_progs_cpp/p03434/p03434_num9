@@ -1,0 +1,20 @@
+The code has two bugs:
+1. The variables A and B are not initialized to 0, which will result in undefined behavior when trying to increment their values.
+2. The sort function is sorting the elements in descending order, but in order to maximize Alice's score, we want to sort the elements in ascending order.
+
+Here is the corrected code:
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+int main() {
+  int N, A = 0, B = 0;
+  cin >> N;
+  vector<int> S(N);
+  for(int i=0;i<N;i++) cin >> S[i];
+  sort(S.begin(), S.end());
+  for(int i=0;i<N;i+=2){
+    A+=S[i], B+=S[i+1];
+  }
+  cout << A-B << endl;
+}
+```

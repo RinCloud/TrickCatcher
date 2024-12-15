@@ -1,0 +1,10 @@
+{"input": [["abc", "bacd", "cde", "array"], "a"], "output": ["abc", "bacd", "array"]}
+{"input": [["anaconda", "banana", "cat", "data"], "na"], "output": ["anaconda", "banana"]}
+{"input": [["apple", "banana", "cat", "dog"], "at"], "output": []}
+{"input": [["sun", "star", "moon", "satellite"], "ar"], "output": ["star", "satellite"]}
+{"input": [["apple", "banana", "cat", "dog"], ""], "output": ["apple", "banana", "cat", "dog"]}
+{"input": [["apple", "banana", "cat", "dog"], "c"], "output": ["cat"]}
+{"input": [["This", "is", "a", "test"], "is"], "output": ["This", "is"]}
+{"input": [["This", "is", "a", "test"], "i"], "output": ["This", "is"]}
+{"input": [["banana", "apple", "cat", "dog"], "an"], "output": ["banana", "man"]}
+{"input": [["abcde", "fghij", "klmno", "pqrst"], "z"], "output": []}

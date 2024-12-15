@@ -1,0 +1,19 @@
+def find_smallest_string(A):
+    alphabet = "abcdefghijklmnopqrstuvwxyz"
+    result = ""
+    idx = 0
+    
+    for char in alphabet:
+        if char not in A[idx:]:
+            result += char
+            idx = A.find(char, idx) + 1
+            if idx == 0:
+                break
+    
+    return result
+
+# Read the input string
+A = input()
+
+# Find and print the lexicographically smallest string
+print(find_smallest_string(A))

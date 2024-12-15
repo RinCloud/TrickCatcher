@@ -1,0 +1,11 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+	int n,m;
+	cin>>n>>m;
+	int a = 0;
+	a += (n*(n-1))/2;
+	a += (m*(m-1))/2;
+	cout<<a; 
+}

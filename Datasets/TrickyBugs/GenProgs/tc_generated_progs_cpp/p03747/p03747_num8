@@ -1,0 +1,45 @@
+**Repaired code**:
+
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+int p[100010];
+int n,l,t,pos,to,delta=0;
+int main()
+{
+	scanf("%d%d%d",&n,&l,&t);
+	for(int i=1;i<=n;i++)
+	{
+		scanf("%d%d",&pos,&to);
+		if(to==1)
+		{
+			p[i]=(pos+t)%l;
+			delta+=(pos+t)/l;
+		}
+		else
+		{
+			p[i]=(pos-t)%l;
+			delta+=(pos-t)/l;
+			if(p[i]<0)
+			{
+				p[i]+=l;
+				delta--;
+			}
+		}
+		p[i]=(p[i]+l)%l;
+	}
+	sort(p+1,p+n+1);
+	delta%=n;
+	if(delta<0) delta+=n;
+
+	for(int i=delta+1;i<=n;i++) printf("%d\n",p[i]);
+    for(int i=1;i<=delta;i++) printf("%d\n",p[i]);
+}
+```
+
+Explanation:
+- Initialize `delta` with 0.
+- Add modulo operation for calculating `p[i]` after `if(to==1)`, `else` block and after the `for` loop.
+- Add modulo operation after calculating `delta`.
+- Add `delta` increment operation after the `for` loop.
+- If `delta` is negative after calculating `delta% = n`, add `n` to `delta` to get a positive delta.

@@ -1,0 +1,6 @@
+```python
+[['c', 'a', 't'], ['a', 'a', 'a'], ['c', 'c', 'c'], ['acataca', ''], ['catacac', '']]
+['', 'aaa', 'ccc', 'acatacac', 'catacac']
+['catac', '']
+['cataca', '']
+```

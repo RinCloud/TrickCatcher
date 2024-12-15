@@ -1,0 +1,27 @@
+***Repaired code***:
+
+```python
+N = int(input())
+a0 = list(map(int, input().split()))
+
+def smash_gems(a, x):
+    for i in range(1, N//x + 1):
+        a[(i * x) - 1] = 0 if a[(i * x) - 1] < 0 else a[(i * x) - 1]
+    return a
+
+max_earned_money = 0
+
+for i in range(1, N+1):
+    a = a0.copy()
+    a = smash_gems(a, i)
+    earned_money = sum(a)
+    if earned_money > max_earned_money:
+        max_earned_money = earned_money
+
+print(max_earned_money)
+```
+The code above creates a function `smash_gems` that takes an array `a` and a number `x`. This function loops through the numbers from 1 to N and smashes the gems by setting their value to 0 if they are multiples of `x`. It then returns the updated array `a`.
+The code then initializes a variable `max_earned_money` with 0. Then it iterates through the numbers from 1 to N, copies the original array `a0` to variable `a`, calls the `smash_gems` function to smash the gems for each iteration, sums the values of the array `a` after smashing the gems, and checks if the sum is greater than the current `max_earned_money`. If it is, it updates `max_earned_money` with the new sum.
+Finally, it prints the `max_earned_money`.
+
+The repaired code is more optimized and removes unnecessary deep copy operations and redundant loops.

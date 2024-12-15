@@ -1,0 +1,10 @@
+{"input": ["Jupiter", "Neptune"], "output": ("Saturn", "Uranus")}
+{"input": ["Earth", "Mercury"], "output": ("Venus")}
+{"input": ["Mercury", "Uranus"], "output": ("Venus", "Earth", "Mars", "Jupiter", "Saturn")}
+{"input": ["Venus", "Earth"], "output": ()}
+{"input": ["Jupiter", "Mars"], "output": ()}
+{"input": ["Venus", "Sun"], "output": ()}
+{"input": ["Mercury", "Earth"], "output": ("Venus")}
+{"input": ["Neptune", "Saturn"], "output": ()}
+{"input": ["Earth", "Neptune"], "output": ("Mars", "Jupiter", "Saturn", "Uranus")}
+{"input": ["Mars", "Uranus"], "output": ("Jupiter", "Saturn")}

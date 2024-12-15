@@ -1,0 +1,15 @@
+import math
+def skjkasdkd(lst):
+    def is_prime(n):
+        if n < 2:
+            return False
+        for i in range(2, int(math.sqrt(n)) + 1):
+            if n % i == 0:
+                return False
+        return True
+    max_prime = float('-inf')
+    for num in lst:
+        if is_prime(num) and num > max_prime:
+            max_prime = num
+    sum_digits = sum(int(digit) for digit in str(max_prime))
+    return sum_digits

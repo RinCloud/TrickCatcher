@@ -1,0 +1,26 @@
+**CODE FIX:**
+
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    int a, b;
+    cin >> a >> b;
+    cout << (a % b == 0 ? 0 : 1) << endl;
+    return 0;
+}
+```
+
+**EXPLANATION:**
+
+The code provided evaluates the expression `a%b%2` and prints the result. However, this expression does not correctly solve the problem.
+
+To find the minimum difference between the largest and smallest number of crackers received by users, we need to distribute the crackers as evenly as possible. We can do this by ensuring that each user receives `a/b` crackers, and then distributing the remaining `a%b` crackers among the users. 
+
+If `a % b` is zero, it means that the number of crackers (`a`) is evenly divisible by the number of users (`b`). In this case, each user will receive the same number of crackers and the minimum difference will be 0.
+
+If `a % b` is greater than zero, it means that there are some leftover crackers after distributing `a/b` crackers per user. In this case, we need to distribute these leftover crackers among the users. We can do this by giving one extra cracker to one user, which will result in a difference of 1 between the largest and smallest number of crackers received.
+
+So, the fixed code checks if `a % b` is zero and prints 0 in this case, otherwise it prints 1.

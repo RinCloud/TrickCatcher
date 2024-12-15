@@ -1,0 +1,36 @@
+# Solution
+To find the number of sequences `a` that can be obtained after the procedure, we need to consider two cases:
+
+Case 1: When `N` is even
+In this case, the number of sequences `a` will be `K` raised to the power of half of the length of `a`.
+So the number of sequences will be `pow(K, N/2, MOD)` where `MOD = 10^9+7`.
+
+Case 2: When `N` is odd
+In this case, the number of sequences `a` will be the product of `K` raised to the power of half of the length of `a` and `K` raised to the power of half of the length of `a` plus 1.
+So the number of sequences will be `(pow(K, N/2, MOD) * pow(K, N/2 + 1, MOD)) % MOD`.
+
+Finally, we need to return the number of sequences modulo `10^9+7`.
+
+Here's the complete Python program that solves the problem:
+
+```python
+MOD = int(1e9) + 7
+
+def count_sequences(N, K):
+    # Check if N is even or odd
+    if N % 2 == 0:
+        return pow(K, N // 2, MOD)
+    else:
+        return (pow(K, N // 2, MOD) * pow(K, N // 2 + 1, MOD)) % MOD
+
+# Read input
+N, K = map(int, input().split())
+
+# Count sequences
+result = count_sequences(N, K)
+
+# Print the result
+print(result)
+```
+
+Now you can run the program and test it with the provided examples.

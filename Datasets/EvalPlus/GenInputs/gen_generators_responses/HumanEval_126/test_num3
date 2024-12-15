@@ -1,0 +1,22 @@
+```python
+from random import *
+
+def sample_one():
+    # Generating a random list length between 1 and 20
+    length_of_list = randint(1, 20)
+    
+    # Generating a list of unique random numbers, then randomly duplicating some
+    lst = sorted(sample(range(1, 100), length_of_list))
+    for _ in range(randint(0, length_of_list // 2)):  # Randomly choose some elements to duplicate
+        element_to_duplicate = choice(lst)
+        if lst.count(element_to_duplicate) < 2:  # Ensuring no more than one duplicate exists initially
+            position_to_insert = randint(0, len(lst))  # Random position to insert a duplicate
+            lst.insert(position_to_insert, element_to_duplicate)
+    
+    # Sorting the list, but randomly messing up to simulate unsorted lists
+    if randint(0, 1):  # Random choice to sort or shuffle
+        shuffle(lst)  # Making the list unsorted
+    
+    generated_input = [lst]
+    return generated_input
+```

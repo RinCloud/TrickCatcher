@@ -1,0 +1,10 @@
+{"input": [5, 3], "output": 7.5}
+{"input": [10, 1], "output": 5.0}
+{"input": [2, 5], "output": 5.0}
+{"input": [7, 7], "output": 14.0}
+{"input": [1, 0], "output": 0.0}
+{"input": [0, 0], "output": 0.0}
+{"input": [15, 10], "output": 25.0}
+{"input": [4, 2], "output": 2.0}
+{"input": [6, 4], "output": 4.0}
+{"input": [8, 6], "output": 12.0}

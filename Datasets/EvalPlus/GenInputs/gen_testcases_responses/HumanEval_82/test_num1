@@ -1,0 +1,10 @@
+{"input": ["abcdcba"], "output": True}
+{"input": ["Hello"], "output": True}
+{"input": ["orange"], "output": False}
+{"input": ["kittens"], "output": True}
+{"input": ["abcdefghijklmnop"], "output": False}
+{"input": [""], "output": False}
+{"input": ["Lorem ipsum dolor sit amet"], "output": False}
+{"input": ["Lorem ipsum dolor sit amet, consectetur adipiscing elit"], "output": True}
+{"input": ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua"], "output": False}
+{"input": ["aaaaaaaaaaaaaaaaaaaa"], "output": False}

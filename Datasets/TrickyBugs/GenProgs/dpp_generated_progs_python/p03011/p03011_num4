@@ -1,0 +1,10 @@
+```python
+# Read input values
+P, Q, R = map(int, input().split())
+
+# Calculate the minimum possible sum of flight times
+min_sum = min(P + Q, Q + R, R + P)
+
+# Print the result
+print(min_sum)
+```

@@ -1,0 +1,3 @@
+**Test Input Reasoning:**
+
+I will start by testing the scenario where the input array is empty. The function should return an empty array.

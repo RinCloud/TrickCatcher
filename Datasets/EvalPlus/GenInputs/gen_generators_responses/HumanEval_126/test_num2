@@ -1,0 +1,17 @@
+```python
+from random import *
+def sample_one():
+    length_of_lst = randint(1, 20)  # generate list size between 1 and 20
+    lst = []
+    for _ in range(length_of_lst):
+        number = randint(0, 100)  # generate numbers between 0 and 100
+        lst.append(number)
+    lst.sort()  # sort the list to adhere to ascending order requirement
+    if choice([True, False]):  # randomly decide to insert a duplicate or not
+        duplicate_value = choice(lst)  # pick a random value from the list to duplicate
+        lst.insert(randint(0, len(lst)), duplicate_value)  # insert duplicate at random position
+        if choice([True, False]):  # randomly decide to insert another duplicate
+            lst.insert(randint(0, len(lst)), duplicate_value)  # insert second duplicate at random position
+    generated_input = [lst]
+    return generated_input
+```

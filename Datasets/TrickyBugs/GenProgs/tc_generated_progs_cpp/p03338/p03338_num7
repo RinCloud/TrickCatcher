@@ -1,0 +1,37 @@
+**Repaired Code:**
+
+```cpp
+#include<bits/stdc++.h>
+using namespace std;
+
+string s;
+int n, ans, bns, k1, k2;
+bool a[30], b[30];
+
+int main() {
+	cin >> n >> s;
+	for(int i = 1; i < n; i++) {
+		for(int j = 0; j < i; j++) {
+			a[s[j] - 'a'] = true;
+		}
+		for(int j = i; j < n; j++) {
+			b[s[j] - 'a'] = true;
+		}
+		for(int j = 0; j < 26; j++) {
+			if(a[j] && b[j]) {
+				bns++;
+			}
+		}
+		if(ans < bns) {
+			ans = bns;
+		}
+		bns = 0;
+		for(int j = 0; j < 26; j++) {
+			a[j] = false;
+			b[j] = false;
+		}
+	}
+	cout << ans;
+	return 0;
+}
+```

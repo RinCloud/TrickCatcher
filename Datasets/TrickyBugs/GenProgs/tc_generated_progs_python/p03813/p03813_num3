@@ -1,0 +1,11 @@
+***Repaired Code***:
+
+```python
+a = int(input())
+
+if a < 1200:
+    print("ABC")
+else:
+    print("ARC")
+```
+In the original code, the input was not converted to an integer (`int`) before comparing it with `1200`. As a result, the string comparison `<` was used for comparing a string to an integer, which would result in incorrect comparison. Therefore, the input needs to be converted to an integer using `int()` before performing the comparison.

@@ -1,0 +1,9 @@
+def max_element(l):
+    """
+    Return maximum element in the list.
+    Parameters:
+    l (list): A list of integers.
+    Returns:
+    int: The maximum element in the list.
+    """
+    return max(l)

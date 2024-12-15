@@ -1,0 +1,17 @@
+```cpp
+#include <iostream>
+using namespace std;
+int a, b, c, x, y, z, s;;
+int main() {
+	cin>>a>>b>>c;
+	if(a==b && b==c) {cout<<a%2-1; return 0;}
+	for(s=0; !(a%2 || b%2 || c%2); s++) {
+		x = (b+c)/2;
+		y = (a+c)/2;
+		z = (a+b)/2;  // FIX: Should be a+b, not b+c
+		a=x, b=y, c=z;
+	}
+	cout<<s;
+	return 0;
+}
+```

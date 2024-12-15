@@ -1,0 +1,21 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+  long long N;
+  cin >> N;
+  vector<long long>A(N+1);
+  for(int i=0;i<N+1;i++){
+    cin >> A.at(i);
+  }
+  long long sum = 0;
+  for(int i=0;i<N;i++){
+    long long B;
+    cin >> B;
+    sum+=min(A.at(i),B);
+    B-=min(A.at(i),B);
+    sum+=min(A.at(i+1), B);
+    A.at(i+1)-=min(A.at(i+1), B);
+  }
+  cout << sum;
+}

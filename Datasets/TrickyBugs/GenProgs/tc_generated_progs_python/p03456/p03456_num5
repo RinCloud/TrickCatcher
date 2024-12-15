@@ -1,0 +1,9 @@
+**REPAIRED CODE**:
+
+```python
+a, b = map(int, input().split())
+x = int(str(a) + str(b))
+print("Yes" if x % int(x**0.5) == 0 else "No")
+```
+
+The issue with the original code is that it uses `eval()` to evaluate the input as an expression, which can be dangerous. Instead, I have used `map(int, input().split())` to split the input and convert it to integers safely. Additionally, I have provided separate variables for `a` and `b` for better readability. The rest of the code remains the same.

@@ -1,0 +1,23 @@
+The code has two bugs:
+
+1. The variable `f` is not initialized to 0.
+2. The variable `f` is declared as an integer. Although it will work for most cases, if the number `N` has a large sum of digits, the integer `f` might overflow.
+
+Here is the repaired code:
+
+```cpp
+#include <iostream>
+using namespace std;
+int main() {
+    int N, x, f = 0;
+    cin >> N;
+    for (x = N; x > 0; x = x / 10) {
+        f += x % 10;
+    }
+    if (N % f == 0)
+        cout << "Yes" << endl;
+    else
+        cout << "No" << endl;
+    return 0;
+}
+```

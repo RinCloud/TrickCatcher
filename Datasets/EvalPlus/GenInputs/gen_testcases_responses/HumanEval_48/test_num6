@@ -1,0 +1,10 @@
+{"input": [''], "output": True}
+{"input": ['aba'], "output": True}
+{"input": ['aaaaa'], "output": True}
+{"input": ['zbcd'], "output": False}
+{"input": ['race car'], "output": True}
+{"input": ['A man a plan a canal Panama'], "output": True}
+{"input": ['hello'], "output": False}
+{"input": ['12321'], "output": True}
+{"input": ['radar'], "output": True}
+{"input": ['madam'], "output": True}

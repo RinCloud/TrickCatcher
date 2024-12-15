@@ -1,0 +1,10 @@
+{"input": [["abc", "bcd", "cde", "array"], "a"], "output": ["abc", "array"]}
+{"input": [["abc", "bcd", "cde", "array"], ""], "output": ["abc", "bcd", "cde", "array"]}
+{"input": [["apple", "banana", "cherry", "date"], "c"], "output": ["cherry"]}
+{"input": [["hello", "world"], "w"], "output": ["world"]}
+{"input": [["hello", "world"], "h"], "output": ["hello"]}
+{"input": [["hello", "world"], "x"], "output": []}
+{"input": [["a", "aa", "aaa", "aaaa"], "a"], "output": ["a", "aa", "aaa", "aaaa"]}
+{"input": [["a", "aa", "aaa", "aaaa"], "b"], "output": []}
+{"input": [["apple", "banana", "cherry"], "c"], "output": ["cherry"]}
+{"input": [["apple", "banana", "cherry"], "b"], "output": ["banana"]}

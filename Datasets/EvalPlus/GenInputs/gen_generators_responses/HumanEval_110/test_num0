@@ -1,0 +1,12 @@
+```python
+from random import randint
+
+def sample_one():
+    len_lst1 = randint(1, 10)
+    len_lst2 = randint(1, 10)
+    lst1 = [randint(1, 100) for _ in range(len_lst1)]
+    lst2 = [randint(1, 100) for _ in range(len_lst2)]
+    
+    generated_input = [lst1, lst2]
+    return generated_input
+```

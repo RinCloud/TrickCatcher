@@ -1,0 +1,4 @@
+{"input": ["aBCdEf"], "output": 1}
+{"input": ["abcdefg"], "output": 0}
+{"input": ["dBBE"], "output": 0}
+{"input": ["ABCD"], "output": 1}

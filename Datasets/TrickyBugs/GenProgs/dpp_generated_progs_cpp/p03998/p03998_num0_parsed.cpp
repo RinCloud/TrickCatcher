@@ -1,0 +1,51 @@
+#include <iostream>
+#include <string>
+
+// Function to determine the winner
+char determineWinner(std::string S_A, std::string S_B, std::string S_C) {
+    int turn = 0; // Current player's turn (0: Alice, 1: Bob, 2: Charlie)
+
+    while (true) {
+        // Check if the current player's deck is empty
+        if ((turn == 0 && S_A.empty()) || (turn == 1 && S_B.empty()) || (turn == 2 && S_C.empty())) {
+            return 'A' + turn; // Return the winner's initial
+        }
+
+        // Discard the top card and change the turn
+        char card;
+        
+        if (turn == 0) {
+            card = S_A.front();
+            S_A.erase(0, 1);
+        } else if (turn == 1) {
+            card = S_B.front();
+            S_B.erase(0, 1);
+        } else {
+            card = S_C.front();
+            S_C.erase(0, 1);
+        }
+        
+        // Change the turn based on the discarded card
+        if (card == 'a') {
+            turn = 0;
+        } else if (card == 'b') {
+            turn = 1;
+        } else {
+            turn = 2;
+        }
+    }
+}
+
+int main() {
+    // Read the initial decks of the players
+    std::string S_A, S_B, S_C;
+    std::cin >> S_A >> S_B >> S_C;
+
+    // Determine the winner
+    char winner = determineWinner(S_A, S_B, S_C);
+
+    // Print the winner
+    std::cout << winner << std::endl;
+
+    return 0;
+}

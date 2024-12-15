@@ -1,0 +1,39 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+string nextDiverseWord(const string& S) {
+    string nextWord = S;
+    int n = S.length();
+
+    // If S ends with 'z', no next diverse word exists
+    if (S[n-1] == 'z') {
+        return "-1";
+    }
+
+    // Find the rightmost character which can be incremented
+    int i = n - 1;
+    while (i > 0 && S[i] == S[i-1] + 1) {
+        i--;
+    }
+
+    // Increment the rightmost character
+    nextWord[i]++;
+
+    // Fill the remaining characters with the smallest possible values
+    for (int j = i+1; j < n; j++) {
+        nextWord[j] = nextWord[j-1] + 1;
+    }
+
+    return nextWord;
+}
+
+int main() {
+    string S;
+    cin >> S;
+
+    string nextWord = nextDiverseWord(S);
+    cout << nextWord << endl;
+
+    return 0;
+}

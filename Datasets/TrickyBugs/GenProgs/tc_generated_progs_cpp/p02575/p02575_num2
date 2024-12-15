@@ -1,0 +1,110 @@
+```
+**PROBLEM DESCRIPTION**:
+There is a grid of squares with H+1 horizontal rows and W vertical columns.
+You will start at one of the squares in the top row and repeat moving one square right or down. However, for each integer i from 1 through H, you cannot move down from the A_i-th, (A_i + 1)-th, \ldots, B_i-th squares from the left in the i-th row from the top.
+For each integer k from 1 through H, find the minimum number of moves needed to reach one of the squares in the (k+1)-th row from the top. (The starting square can be chosen individually for each case.) If, starting from any square in the top row, none of the squares in the (k+1)-th row can be reached, print `-1` instead.
+
+CONSTRAINTS:
+* 1 \leq H,W \leq 2\times 10^5
+* 1 \leq A_i \leq B_i \leq W
+
+INPUT:
+Input is given from Standard Input in the following format:
+H W
+A_1 B_1
+A_2 B_2
+:
+A_H B_H
+
+OUTPUT:
+Print H lines. The i-th line should contain the answer for the case k=i.
+Example
+
+INPUT:
+4 4
+2 4
+1 1
+2 3
+2 4
+
+OUTPUT:
+1
+3
+6
+-1
+
+**CODE**:
+#include <bits/stdc++.h>
+using namespace std;
+
+const int MAXN = 200005;
+const int MAX = 100000000;
+
+int tree[4 * MAXN], flag[4 * MAXN];
+
+void push(int i, int L, int R){
+	if(flag[i] == -1)return;
+	
+	if(L < R){
+		flag[2 * i] = flag[i];
+		flag[2 * i + 1] = flag[i];
+	}
+	
+	tree[i] = flag[i] + L;
+	flag[i] = -1;
+}
+void update(int i, int L, int R, int u, int v, int val){
+	push(i, L, R);
+	
+	if(v < L || R < u)return;
+	if(u <= L && R <= v){
+		flag[i] = val;
+		push(i, L, R);
+		
+		return;
+	}
+	
+	int mid = (L + R) / 2;
+	
+	update(2 * i, L, mid, u, v, val);
+	update(2 * i + 1, mid + 1, R, u, v, val);
+	
+	tree[i] = min(tree[2 * i], tree[2 * i + 1]);
+}
+int search(int i, int L, int R, int u){
+	push(i, L, R);
+	
+	if(L == R){
+		return tree[i];
+	}
+	
+	int mid = (L + R) / 2;
+	if(u <= mid)return search(2 * i, L, mid, u);
+	else return search(2 * i + 1, mid + 1, R, u);
+}
+
+int h, w, a[MAXN], b[MAXN];
+
+int main(){
+	scanf("%d %d", &h, &w);
+	
+	memset(flag, -1, sizeof flag);
+	
+	for(int i = 0; i < h; i++){
+		scanf("%d %d", &a[i], &b[i]);
+		a[i]--, b[i]--;
+		
+		if(a[i] == 0){
+			update(1, 0, w - 1, a[i], b[i], MAX);
+		}else{
+			int r = search(1, 0, w - 1, a[i] - 1);
+			update(1, 0, w - 1, a[i], b[i], r - (a[i] - 1));
+		}
+		
+		if(tree[1] >= MAX)printf("-1\n");
+		else printf("%d\n", tree[1] + i + 1);
+	}
+	
+	return 0;
+}
+```

@@ -1,0 +1,1 @@
+I found a bug in the code provided.The bug is at line 11.The code should collect input as integer type but taking as string type.I fixed the bug.Concatinating in map fucntion.

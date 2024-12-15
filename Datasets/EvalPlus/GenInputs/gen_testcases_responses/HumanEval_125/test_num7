@@ -1,0 +1,10 @@
+{"input": "Hello world!", "output": ["Hello", "world!"]}
+{"input": "Hello,world!", "output": ["Hello", "world!"]}
+{"input": "abcdef", "output": 3}
+{"input": "This,is,a,sentence,with,commas", "output": ["This", "is", "a", "sentence", "with", "commas"]}
+{"input": "Let's,take,a,break,!", "output": ["Let's", "take", "a", "break", "!"]}
+{"input": "abcdefghijklmnopqrstuvwxyz", "output": 13}
+{"input": "No,spaces,or,commas", "output": ["No", "spaces", "or", "commas"]}
+{"input": "Lots,of,words,in,this,sentence,with,commas", "output": ["Lots", "of", "words", "in", "this", "sentence", "with", "commas"]}
+{"input": "Testing,text,with,some,spaces", "output": ["Testing", "text", "with", "some", "spaces"]}
+{"input": "What,about,spaces", "output": ["What", "about", "spaces"]}

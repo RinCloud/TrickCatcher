@@ -1,0 +1,48 @@
+from collections import deque
+
+def bfs(grid, start, K):
+    H, W = len(grid), len(grid[0])
+    q = deque([(start, 0)])  # (position, number of casts)
+    visited = set([start])
+
+    while q:
+        (r, c), casts = q.popleft()
+
+        if grid[r][c] == 'E':  # reach a room with an exit
+            return casts
+
+        # possible moves: up, down, left, right
+        moves = [(-1, 0), (1, 0), (0, -1), (0, 1)]
+
+        for dr, dc in moves:
+            nr, nc = r + dr, c + dc
+
+            if nr >= 0 and nr < H and nc >= 0 and nc < W and grid[nr][nc] != '#' and (nr, nc) not in visited:
+                if grid[nr][nc] == '.':
+                    visited.add((nr, nc))
+                    q.appendleft(((nr, nc), casts))
+
+                elif grid[nr][nc] == '#':
+                    if casts < K:
+                        visited.add((nr, nc))
+                        q.append(((nr, nc), casts + 1))
+
+    return -1  # unable to reach a room with an exit
+
+
+def main():
+    H, W, K = map(int, input().split())  # input size of building and maximum moves
+    grid = [list(input()) for _ in range(H)]  # input building layout
+
+    start = None
+    for i in range(H):
+        for j in range(W):
+            if grid[i][j] == 'S':  # find the starting position
+                start = (i, j)
+
+    min_casts = bfs(grid, start, K)
+    print(min_casts)
+
+
+if __name__ == "__main__":
+    main()

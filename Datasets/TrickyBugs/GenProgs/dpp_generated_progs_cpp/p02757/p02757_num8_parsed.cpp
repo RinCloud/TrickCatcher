@@ -1,0 +1,42 @@
+#include <iostream>
+#include <vector>
+#include <cmath>
+
+using namespace std;
+
+int main() {
+    int N, P;
+    cin >> N >> P;
+    string S;
+    cin >> S;
+
+    // Store the count of substrings divisible by P
+    vector<int> counts(P, 0);
+
+    long long ten_pow = 1;
+    int remainder = 0;
+    long long ans = 0;
+
+    // Traverse the string from right to left
+    for (int i = N - 1; i >= 0; i--) {
+        remainder = (remainder + (S[i] - '0') * ten_pow) % P;
+
+        // If the remainder is 0, increase the answer by 1
+        ans += counts[remainder];
+
+        // If the current remainder is 0, increase the answer by 1 for the current substring
+        if (remainder == 0) {
+            ans++;
+        }
+
+        // Update the count of substrings with the current remainder
+        counts[remainder]++;
+
+        // Update the power of 10
+        ten_pow = (ten_pow * 10) % P;
+    }
+
+    cout << ans << endl;
+
+    return 0;
+}

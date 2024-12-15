@@ -1,0 +1,10 @@
+```python
+from random import choice
+
+def sample_one():
+    planet_list = ["Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune", "Pluto"]
+    planet1 = choice(planet_list)
+    planet2 = choice(planet_list)
+    generated_input = [planet1, planet2]
+    return generated_input
+```

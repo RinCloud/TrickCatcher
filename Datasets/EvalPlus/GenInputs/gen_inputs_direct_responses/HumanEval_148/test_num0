@@ -1,0 +1,12 @@
+Inputs:
+
+1. ["Jupiter", "Neptune"]
+2. ["Earth", "Mercury"]
+3. ["Mercury", "Uranus"]
+4. ["Pluto", "Mars"]
+5. ["Saturn", "Venus"]
+6. ["Earth", "Earth"]
+7. ["Mars", "Uranus"]
+8. ["Uranus", "Saturn"]
+9. ["Neptune", "Mercury"]
+10. ["Pluto", "Pluto"]

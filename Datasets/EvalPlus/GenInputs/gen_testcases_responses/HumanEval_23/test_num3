@@ -1,0 +1,10 @@
+{"input": [''], "output": 0}
+{"input": ['abc'], "output": 3}
+{"input": ['hello world!'], "output": 12}
+{"input": ['12345'], "output": 5}
+{"input": ['abcdefg1234567'], "output": 15}
+{"input": ['\n'], "output": 1}
+{"input": ['   '], "output": 3}
+{"input": ['abc def'], "output": 7}
+{"input": ['ABCDEFGHIJKLMNOPQRSTUVWXYZ'], "output": 26}
+{"input": [123], "output": 0}

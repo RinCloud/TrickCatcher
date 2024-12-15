@@ -1,0 +1,11 @@
+```python
+from cyaron import *
+
+def sample_one():
+    length_of_brackets = randint(0, 10)
+    if length_of_brackets % 2 != 0:
+        length_of_brackets += 1  # Ensure even number of brackets for correct formatting
+    brackets = String.random(length_of_brackets, charset='()')
+    generated_input = [brackets]
+    return generated_input
+```

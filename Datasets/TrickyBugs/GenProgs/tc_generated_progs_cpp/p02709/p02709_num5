@@ -1,0 +1,61 @@
+**BUG FIXES**:
+The code looks mostly correct. However, there are two bugs in the code that need to be fixed:
+
+**Bug 1**: The variable `d` is used to store the indices of the children in descending order of their activeness. However, the array indices start from 1, so we need to store the indices `(1, 2, ..., n)` instead of `(0, 1, ..., n-1)`. To fix this, change `int d[N]` to `int d[N+1]` and update the loop indices accordingly.
+
+**Bug 2**: The loops for calculating the maximum total happiness points are incorrect. The correct loops should be:
+```cpp
+for(int l = 0;l <= n;++l)
+{
+    for(int r = 0;l + r <= n;++r)
+    {
+        int k = l + r;
+        if(l)   f[l][r] = max(f[l][r],f[l - 1][r] + a[d[k]] * abs(d[k] - l + 1));
+        if(r)   f[l][r] = max(f[l][r],f[l][r - 1] + a[d[k]] * abs(d[k] - n + r));
+    }
+}
+```
+The indices in the `abs()` function are incorrect and need to be adjusted.
+
+**Repaired Code**
+```cpp
+#include <vector>
+#include <algorithm>
+#include <cstdio>
+#include <cstring>
+#include <cmath>
+#include <iostream>
+#include <queue>
+#include <set>
+#include <map>
+using namespace std;
+typedef long long ll;
+const int N = 2005;
+int a[N],d[N+1];
+ll f[N+1][N+1];
+bool cmp(int x,int y)
+{
+    return a[x] > a[y];
+}
+int main()
+{
+    int n;scanf("%d",&n);
+    for(int i = 1;i <= n;++i)   scanf("%d",&a[i]),d[i] = i;
+    sort(d+1,d+n+1,cmp);
+    
+    for(int l = 0;l <= n;++l)
+    {
+        for(int r = 0;l + r <= n;++r)
+        {
+            int k = l + r;
+            if(l)   f[l][r] = max(f[l][r],f[l - 1][r] + a[d[k]] * abs(d[k] - l + 1));
+            if(r)   f[l][r] = max(f[l][r],f[l][r - 1] + a[d[k]] * abs(d[k] - n + r));
+        }
+    }
+    ll res = 0;
+    for(int i = 0;i <= n;++i)
+        res = max(res,f[i][n - i]);
+    printf("%lld",res);
+    return 0;
+}
+```

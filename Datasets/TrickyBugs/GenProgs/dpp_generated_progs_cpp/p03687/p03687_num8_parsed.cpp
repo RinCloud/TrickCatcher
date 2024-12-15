@@ -1,0 +1,38 @@
+#include <iostream>
+#include <string>
+#include <algorithm>
+using namespace std;
+
+int main() {
+    string s;
+    cin >> s;
+
+    int n = s.length();
+    int ans = n - 1;
+    for (char c = 'a'; c <= 'z'; ++c) {
+        int count = 0;
+        string t = s;
+        while (true) {
+            bool changed = false;
+            string new_t;
+            for (int i = 0; i + 1 < t.length(); ++i) {
+                if (t[i] == c || t[i + 1] == c) {
+                    new_t += c;
+                    changed = true;
+                }
+                else {
+                    new_t += t[i];
+                }
+            }
+            if (!changed) {
+                break;
+            }
+            t = new_t;
+            count++;
+        }
+        ans = min(ans, count);
+    }
+    cout << ans << endl;
+
+    return 0;
+}

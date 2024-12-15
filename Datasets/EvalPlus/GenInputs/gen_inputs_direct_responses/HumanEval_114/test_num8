@@ -1,0 +1,5 @@
+**Test Input Reasoning:**
+
+We will start with the minimum possible input array of size 1 having all positive integers.
+
+This will help us ensure that the function can handle the smallest possible input correctly.

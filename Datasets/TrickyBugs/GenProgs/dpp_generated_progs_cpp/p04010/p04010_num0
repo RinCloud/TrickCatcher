@@ -1,0 +1,63 @@
+// Solution approach:
+// The key insight to solve this problem is to observe that for each connected component of the given graph, there are only two possible situations:
+// 1. All vertices in the connected component have the same color (either all white or all black).
+// 2. There exists at least one vertex of white color and at least one vertex of black color in the connected component.
+// If there exists at least one connected component of the first situation, then it is impossible to turn all the vertices black. This is because the color of the vertices in such a connected component cannot be changed (since all vertices have the same color) and hence, it is impossible to turn all of them black.
+// If all connected components are of the second situation, then the minimum number of operations required to turn all vertices black in each connected component can be found by counting the number of vertices of white color in each connected component and adding it to the total number of edges in the graph.
+// Hence, the problem reduces to counting the number of connected components and checking whether all components are of the second situation.
+
+#include <bits/stdc++.h>
+using namespace std;
+
+vector<int> adjList[100005];
+bool visited[100005]={false};
+int colors[100005];
+int blackCount=0, whiteCount=0, edges=0;
+
+void dfs(int node){
+    visited[node]=true;
+    colors[node]=1-colors[node];
+    if(colors[node]) blackCount++;
+    else whiteCount++;
+    
+    for(int i=0;i<adjList[node].size();i++){
+        int child = adjList[node][i];
+        if(!visited[child]){
+            edges++;
+            dfs(child);
+        }
+    }
+}
+
+int main(){
+    int n,m;
+    cin>>n>>m;
+
+    for(int i=0;i<m;i++){
+        int a,b;
+        cin>>a>>b;
+        adjList[a].push_back(b);
+        adjList[b].push_back(a);
+    }
+
+    int connectedComponents=0;
+    bool impossible=false;
+
+    for(int i=1;i<=n;i++){
+        if(!visited[i]){
+            blackCount=0, whiteCount=0, edges=0;
+            edges=0;
+            dfs(i);
+            connectedComponents++;
+            if(blackCount==0 || whiteCount==0) impossible=true; // checks if atleast one vertex of both colors is present in each connected component
+        }
+    }
+
+    if(impossible){
+        cout<<-1<<endl;
+    }else{
+        cout<<edges<<endl;
+    }
+
+    return 0;
+}

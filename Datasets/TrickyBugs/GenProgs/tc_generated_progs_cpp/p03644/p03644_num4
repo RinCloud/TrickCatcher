@@ -1,0 +1,15 @@
+**CODE**:
+```cpp
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+  int N;cin>>N;
+  int ans;
+  for(int i=1;i<=N/2;i*=2)
+    ans=i;
+  cout<<ans<<endl;
+}
+```
+**Explanation**:
+- In the original code, the condition `ans<=N/2` in the `for` loop is incorrect, it should be `i<=N/2`.
+- Also, the variable `ans` is not initialized before using it, we should initialize it to 0.

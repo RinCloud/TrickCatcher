@@ -1,0 +1,18 @@
+```python
+# Get the input
+A, B, C = map(int, input().split())
+K = int(input())
+
+# Find the maximum value among A, B, and C
+max_value = max(A, B, C)
+
+# Perform the operations K times
+for _ in range(K):
+    max_value *= 2
+
+# Calculate the sum of A, B, C and the maximum value
+sum_of_integers = A + B + C + max_value
+
+# Print the result
+print(sum_of_integers)
+```

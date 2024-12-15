@@ -1,0 +1,10 @@
+{"input": "Hello", "output": True}
+{"input": "abcdcba", "output": True}
+{"input": "kittens", "output": True}
+{"input": "orange", "output": False}
+{"input": "a", "output": False}
+{"input": "", "output": False}
+{"input": "123456789", "output": True}
+{"input": "abcdefghijklmnopqrstuvwxyz", "output": False}
+{"input": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "output": True}
+{"input": "Hello, World!", "output": False}

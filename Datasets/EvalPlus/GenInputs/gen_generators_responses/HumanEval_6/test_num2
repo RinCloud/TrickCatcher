@@ -1,0 +1,17 @@
+```python
+from random import randint
+from cyaron import String
+
+def sample_one():
+    number_of_groups = randint(1, 5)
+    groups = []
+    for _ in range(number_of_groups):
+        depth = randint(1, 5)
+        group = ""
+        for _ in range(depth):
+            group += '(' * randint(1, depth) + ')' * randint(1, depth)
+        groups.append(group)
+    paren_string = ' '.join(groups)
+    generated_input = [paren_string]
+    return generated_input
+```

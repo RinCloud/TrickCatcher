@@ -1,0 +1,9 @@
+```python
+from random import randint
+
+def sample_one():
+    length_of_arr = randint(1, 10000)  # Ensuring the array has at least one element
+    arr = [randint(0, 10000) for _ in range(length_of_arr)]
+    generated_input = [arr]
+    return generated_input
+```

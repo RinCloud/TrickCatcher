@@ -1,0 +1,8 @@
+```python
+from random import randint
+
+def sample_one():
+    length_of_list = randint(1, 20)  # Ensure the list is non-empty and of reasonable size
+    lst = [randint(1, 10) for _ in range(length_of_list)]  # Generate a list of positive integers
+    return [lst]
+```

@@ -1,0 +1,25 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+  int N;
+  cin>>N;
+  string S;
+  bool hasYellow = false;
+  
+  for(int i=0;i<N;i++){
+    cin >> S;
+    if (S == "Y") {
+      hasYellow = true;
+    }
+  }
+  
+  if(hasYellow){
+    cout<<"Four";
+  }
+  else{
+    cout<<"Three";
+  }
+  
+  cout << endl;
+}

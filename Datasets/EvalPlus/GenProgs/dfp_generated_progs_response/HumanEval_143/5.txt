@@ -1,0 +1,34 @@
+import math
+def is_prime(n: int) -> bool:
+    """
+    Helper function to check if a number is prime
+
+    Args:
+    n -- integer, number to check
+
+    Returns:
+    bool -- True if n is prime, False otherwise
+    """
+    if n <= 1:
+        return False
+    for i in range(2, int(math.sqrt(n)) + 1):
+        if n % i == 0:
+            return False
+    return True
+
+
+def words_in_sentence(sentence: str) -> str:
+    """
+    Returns a string that contains the words from the original sentence,
+    whose lengths are prime numbers, in the same order as the original sentence.
+
+    Args:
+    sentence -- string, sentence to process
+
+    Returns:
+    str -- string that contains the words from the original sentence,
+    whose lengths are prime numbers, in the same order as the original sentence.
+    """
+    words = sentence.split()
+    prime_words = [word for word in words if is_prime(len(word))]
+    return ' '.join(prime_words)

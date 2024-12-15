@@ -1,0 +1,10 @@
+[[],
+ ['abc'],
+ ['12345'],
+ ['Hello, World!'],
+ ['abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'],
+ ['1234567890'],
+ ["!@#$%^&*()-=_+[]{}|;':,.<>/?`~"],
+ ['中文字符测试'],
+ ['こんにちは'],
+ ['안녕하세요']]

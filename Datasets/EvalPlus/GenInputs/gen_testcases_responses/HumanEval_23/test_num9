@@ -1,0 +1,10 @@
+{"input": [""], "output": 0}
+{"input": ["abc"], "output": 3}
+{"input": ["123"], "output": 3}
+{"input": [" "], "output": 1}
+{"input": ["Hello, World!"], "output": 13}
+{"input": ["$%&"], "output": 3}
+{"input": ["\n"], "output": 1}
+{"input": [None], "output": 0}
+{"input": [123], "output": 0}
+{"input": [["a", "b", "c"]], "output": 0}

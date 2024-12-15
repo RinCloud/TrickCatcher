@@ -1,0 +1,10 @@
+{"input": [["aa", "a", "aaa"]], "output": ["aa"]} 
+{"input": [["ab", "a", "aaa", "cd"]], "output": ["ab", "cd"]} 
+{"input": [["a", "b", "c", "d"]], "output": ["a", "b", "c", "d"]}
+{"input": [["abc", "def", "ghi", "jkl"]], "output": ["abc", "def", "ghi", "jkl"]}
+{"input": [["hello", "world", "python", "java"]], "output": ["java","hello","world"]} 
+{"input": [["moon", "sun", "stars", "earth"]], "output": ["earth", "moon", "stars", "sun"]} 
+{"input": [["apple", "banana", "orange", "mango"]], "output": ["apple", "mango", "orange"]} 
+{"input": [["car", "bus", "train", "bike"]], "output": ["bike", "bus", "car", "train"]}
+{"input": [["python", "language", "programming", "is", "fun"]], "output": ["is", "fun"]}
+{"input": [["good", "better", "best", "great"]], "output": ["best", "better"]}

@@ -1,0 +1,19 @@
+**REPAIRED CODE**:
+
+```cpp
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+	long long n,d,x,y,ans=0;
+	scanf("%lld%lld",&n,&d);d*=d;
+	for(int i=0;i<n;i++){
+		scanf("%lld%lld",&x,&y);
+		ans+=(x*x+y*y<=d);
+	}
+	printf("%lld",ans);
+	return 0;
+}
+```
+**Explanation**:
+- In the original code, there is a bug in the `printf` statement. The variable `ans` is of type `long long`, but in the `printf` statement `%d` is used, which is used for `int` type. To fix this, we need to change `%d` to `%lld` to print the `long long` value correctly.
+- The repaired code has the `printf` statement fixed.

@@ -1,0 +1,51 @@
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+vector<int> constructSequence(int N, int A, int B) {
+    if (A + B > N + 1 || A * B < N) {
+        return vector<int>();
+    }
+    
+    vector<int> sequence(N);
+    
+    int idx = 0;
+    for (int i = B; i >= 1; i--) {
+        sequence[idx++] = i;
+    }
+    
+    int remaining = N - B;
+    for (int i = 1; i <= A; i++) {
+        int start = B + i;
+        int end = min(N, start + remaining - 1);
+        for (int j = start; j <= end; j++) {
+            sequence[idx++] = j;
+        }
+        remaining -= (end - start + 1);
+    }
+    
+    for (int i = idx; i < N; i++) {
+        sequence[i] = i + 2;
+    }
+    
+    return sequence;
+}
+
+int main() {
+    int N, A, B;
+    cin >> N >> A >> B;
+
+    vector<int> sequence = constructSequence(N, A, B);
+    
+    if (sequence.empty()) {
+        cout << "-1" << endl;
+    } else {
+        for (int i = 0; i < N; i++) {
+            cout << sequence[i] << " ";
+        }
+        cout << endl;
+    }
+    
+    return 0;
+}

@@ -1,0 +1,24 @@
+**CORRECTED CODE**:
+
+```
+#include <iostream>
+using namespace std;
+
+int main() {
+  int N;
+  cin >> N;
+  int sum =0;
+  
+  if(N % 10 !=0){
+    while(N>0) {
+      sum += N % 10;
+      N /= 10;
+    }
+  }
+  else sum = 1; // Changed from 10 to 1
+  cout << sum << endl;
+}
+```
+
+Explanation: 
+The bug in the original code is at line 17, where the sum is set to 10 when N is divisible by 10. The correct value should be 1, because the sum of the digits of A and B cannot be 10.

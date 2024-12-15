@@ -1,0 +1,62 @@
+**INSTRCUTION**:
+You are a professional software testing engineer. 
+You will get a Program Under Test (PUT), and the comments below the function signature is the docstring that specifies the requirement of the PUT.
+
+Please write an input generator in Python for generating test input for THE PUT (DO NOT generate outputs).
+The generator should be a single Python function named 'sample_one()' and return a list of input parameters for PUT.
+Each parameter of the generated inputs must adhere to the type and format according to the function signature of PUT. And the format of return value should be list of parameters and should NOT be dict.
+
+You can use the python library random to generate random float and int, for example:
+from random import *
+# Generate a random integer between 0 and 9
+random_number = randint(0, 9)
+# Generate a random floating-point number between -1.0 and 1.0
+random_float = uniform(-1.0, 1.0)
+
+You can use the python library cyaron to generate random string, for example:
+from cyaron import *
+ALPHABET_SMALL = string.ascii_lowercase
+ALPHABET_CAPITAL = string.ascii_uppercase
+ALPHABET = ALPHABET_SMALL + ALPHABET_CAPITAL
+NUMBERS = string.digits
+str = String.random(5) # Generate a random string with 5 letters consisting of lowercase letters
+str = String.random(10, charset=ALPHABET_SMALL) # Generate a random string with 10 letters consisting of lowercase letters
+str = String.random(10, charset=ALPHABET_CAPITAL) # Generate a random string with 10 letters consisting of uppercase letters
+str = String.random(10, charset=NUMBERS) # Generate a random string with 10 letters consisting of digits letters
+str = String.random(10, charset='#.') # Generate a random string with 10 letters consisting of '#' and '.'
+
+Please reply with ONLY the code of the input generator without any other content.
+
+**EXAMPLE**:
+Here is an example of how to write input generator:
+
+If the given function and docstring is like:
+```python
+def has_close_elements(numbers: List[float], threshold: float) -> bool:
+    """ Check if in given list of numbers, are any two numbers closer to each other than
+    given threshold.
+    >>> has_close_elements([1.0, 2.0, 3.0], 0.5)
+    False
+    >>> has_close_elements([1.0, 2.8, 3.0, 4.0, 5.0, 2.0], 0.3)
+    True
+    """
+    for i in range(len(numbers)):
+        for j in range(i + 1, len(numbers)):
+            if abs(numbers[i] - numbers[j]) <= threshold:
+                return True
+    return False
+```
+
+Then your reply should be like the following content:
+```python
+from random import *
+from cyaron import *
+def sample_one():
+    numbers=[]
+    length_of_numbers=randint(0,10)
+    for i in range(length_of_numbers):
+      numbers.append(uniform(-5,5))
+    threshold=uniform(-10,10)
+    generated_input=[numbers,threshold]
+    return generated_input
+```

@@ -1,0 +1,69 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+using namespace std;
+ 
+int n;
+vector<int> g[202020];
+bool fav[202020];
+int far[202020];
+int second_farthest[202020];
+int closest[202020];
+bool in_fav[202020];
+long long ans = 0;
+ 
+static const int INF = 0x3f3f3f3f;
+ 
+void dfs1(int v, int prev) {
+    if (fav[v]) in_fav[v] = true;
+    for (auto u : g[v]) if (u != prev) {
+        dfs1(u, v);
+        in_fav[v] |= in_fav[u];
+        far[v] = max(far[v], far[u] + 1);
+    }
+}
+ 
+void dfs2(int v, int ma, bool par_fav, int prev) {
+    vector<pair<pair<int, int>, bool>> children;
+    children.emplace_back(make_pair(0, -1), false);
+    for (auto u : g[v]) {
+        if (u == prev) children.emplace_back(make_pair(ma + 1, u), par_fav);
+        else children.emplace_back(make_pair(far[u] + 1, u), in_fav[u]);
+    }
+    vector<int> fav_children;
+    for (auto c : children) if (c.second) fav_children.emplace_back(c.first.first);
+    closest[v] = INF;
+    for (int i = 0; i < fav_children.size(); i ++) closest[v] = min(closest[v], fav_children[i]);
+    sort(children.begin(), children.end(), greater<pair<pair<int, int>, bool>>());
+    second_farthest[v] = children[1].first.first;
+    for (auto u : g[v]) if (u != prev) { 
+        int maa = children[u == children[0].first.second ? 1 : 0].first.first;
+        bool par_f = fav[v] || par_fav;
+        if (!in_fav[u]) par_f |= !fav_children.empty();
+        else par_f |= fav_children.size() > 1;
+        ans += (maa < far[u] && par_f) || (maa > far[u] && in_fav[u]) || (maa == far[u] && (par_f || in_fav[u]));
+        dfs2(u, maa, par_f, v);
+    }
+}
+ 
+int main() {
+    cin >> n;
+    for (int i = 0; i < n - 1; i ++) {
+        int a, b;
+        cin >> a >> b;
+        a --, b --;
+        g[a].emplace_back(b);
+        g[b].emplace_back(a);
+    }
+    string s;
+    cin >> s;                                            
+    for (int i = 0; i < n; i ++) fav[i] = s[i] == '1' ? true : false;
+    dfs1(0, -1);
+    dfs2(0, 0, fav[0], -1);
+    for (int i = 0; i < n; i ++) {
+        if (fav[i]) ans += 1 + second_farthest[i];
+        else ans += max(0, 1 + (second_farthest[i] - closest[i]));
+    }
+    cout << ans << endl;
+    return 0;
+}

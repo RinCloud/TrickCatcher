@@ -1,0 +1,10 @@
+{"input": [{"a":"apple", "b":"banana"}], "output": True}
+{"input": [{"a":"apple", "A":"banana", "B":"banana"}], "output": False}
+{"input": [{"a":"apple", 8:"banana", "a":"apple"}], "output": False}
+{"input": [{"Name":"John", "Age":"36", "City":"Houston"}], "output": False}
+{"input": [{"STATE":"NC", "ZIP":"12345" }], "output": True}
+{"input": [{"1":"one", "2":"two"}], "output": False}
+{"input": [{"A":"apple", "B":"banana", "C":"cherry"}], "output": True}
+{"input": [{}, "output": False}
+{"input": [{"a":"apple", "B":"banana", "C":"cherry"}], "output": False}
+{"input": [{"state":"NC", "zip":"12345" }], "output": True}

@@ -1,0 +1,54 @@
+# Program
+
+```python
+from collections import defaultdict, deque
+
+def calculate_length(edges, mod):
+    length = 0
+    for i, edge in enumerate(edges):
+        length += edge * pow(2, i, mod)
+    return length % mod
+
+def is_reachable(graph, start, end, mod):
+    visited = defaultdict(int)
+    queue = deque([(start, mod - 1)])
+    
+    while queue:
+        current_vertex, current_length = queue.popleft()
+        if current_vertex == end and current_length == 0:
+            return True
+        
+        if visited[(current_vertex, current_length)]:
+            continue
+        visited[(current_vertex, current_length)] = 1
+        
+        for neighbor, edge_length in graph[current_vertex]:
+            new_length = (current_length - edge_length) % mod
+            queue.append((neighbor, new_length))
+    
+    return False
+
+def main():
+    # Read input
+    N, M, Q, mod = map(int, input().split())
+    edges = []
+    graph = defaultdict(list)
+    
+    for _ in range(M):
+        A, B, C = map(int, input().split())
+        edges.append(C)
+        graph[A].append((B, C))
+        graph[B].append((A, C))
+    
+    for _ in range(Q):
+        S, T, R = map(int, input().split())
+        path_length = calculate_length(edges, mod)
+        if is_reachable(graph, S, T, R % mod):
+            print("YES")
+        else:
+            print("NO")
+
+if __name__ == "__main__":
+    main()
+```
+Note: This solution uses queue-based Breadth First Search (BFS) to find the shortest path from the start vertex to the end vertex with a specific length.

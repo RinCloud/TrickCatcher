@@ -1,0 +1,27 @@
+**BUG FIXES:**
+
+- Initialize the variables `r` and `s` to 0 before using them.
+- Include the `<iostream>` header for input/output operations.
+- Add a missing `std::` namespace qualifier for `std::cout`.
+- Use `std::map<long long, int>` instead of `std::map<int, int>` to handle large values of `s` and calculate the result.
+- Initialize `r` and `s` to 0 during declaration.
+
+**CORRECTED CODE:**
+```cpp
+#include <iostream>
+#include <map>
+
+int main() {
+    long long n, m, a, r = 0, s = 0;
+    std::map<long long, int> v;
+    std::cin >> n >> m;
+    
+    while (n--) {
+        std::cin >> a;
+        s += a;
+        r += v[s % m]++;
+    }
+    std::cout << r + v[0];
+    return 0;
+}
+```

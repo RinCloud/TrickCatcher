@@ -1,0 +1,27 @@
+# Parse the input
+N, K = map(int, input().split())
+X = [input().strip() for _ in range(N+1)]
+
+# Generate all subsequences of each string
+subsequences = [[] for _ in range(N+1)]
+subsequences[0] = [""]
+for i in range(1, N+1):
+    for j in range(2**i):
+        subsequences[i].append(subsequences[i-1][j//2] + X[i][j])
+
+# Count the number of times each subsequence appears
+count = {}
+for i in range(N+1):
+    for subseq in subsequences[i]:
+        if subseq not in count:
+            count[subseq] = 0
+        count[subseq] += 1
+
+# Find the longest string that appears at least K times
+longest = ""
+for subseq in count:
+    if count[subseq] >= K and (longest == "" or len(subseq) > len(longest) or (len(subseq) == len(longest) and subseq < longest)):
+        longest = subseq
+
+# Print the result
+print(longest)

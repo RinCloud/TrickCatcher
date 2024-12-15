@@ -1,0 +1,31 @@
+**BUG FIX**:
+
+The code has two bugs:
+
+1. The variable `ans` is not initialized with a value, so using it in the loop without initializing will result in undefined behavior. Initialize `ans` to 0 before using it.
+
+2. The variable `ans` should be of type `long long` instead of `long`, as the product of `h[i]` and `n-k` can exceed the range of `int`.
+
+Here is the fixed code:
+
+```cpp
+#include<bits/stdc++.h>
+using namespace std;
+
+int main(){
+
+  int n,k;
+  long long ans = 0;
+  cin >> n >> k;
+  vector<long long> h(n);
+  for(int i=0;i<n;i++){
+    cin >> h[i];
+  }
+  sort(h.begin(),h.end());
+  for(int i=0;i<n-k;i++){
+    ans+=h[i];
+  }
+  cout << ans;
+  return 0;
+}
+```

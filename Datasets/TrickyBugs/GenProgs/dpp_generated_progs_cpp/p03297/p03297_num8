@@ -1,0 +1,24 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int T;
+    cin >> T;
+    
+    for (int i = 0; i < T; i++) {
+        long long A, B, C, D;
+        cin >> A >> B >> C >> D;
+        
+        if (B > A) {
+            cout << "No" << endl;
+            continue;
+        }
+        
+        if (B + C * D >= A)
+            cout << "Yes" << endl;
+        else
+            cout << "No" << endl;
+    }
+    
+    return 0;
+}

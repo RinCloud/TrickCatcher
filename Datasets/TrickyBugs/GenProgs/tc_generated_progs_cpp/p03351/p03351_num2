@@ -1,0 +1,27 @@
+**REPAIRED CODE**:
+
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    int a, b, c, d;
+    cin >> a >> b >> c >> d;
+    
+    // Check if A and C can directly communicate
+    if (abs(c-a) <= d) {
+        cout << "Yes" ;
+    }
+    else {
+        // Check if A and B, and B and C can both directly communicate
+        if ((abs(b-a) <= d) && (abs(c-b) <= d)) {
+            cout << "Yes" ;
+        }
+        else {
+            cout << "No";
+        }
+    }
+    
+    return 0;
+}
+```

@@ -1,0 +1,32 @@
+**Repaired code**:
+
+```cpp
+#include<bits/stdc++.h>
+using namespace std;
+
+int main(){
+	int a,b,c,k;	cin>>a>>b>>c>>k;
+
+	if(k<=a){
+	  cout<<k<<endl;
+	}
+	else if(k<=a+b){
+	  cout<<a<<endl;
+	}
+	else{
+	  cout<<a-(k-(a+b))<<endl;
+	}
+
+	return 0;
+}
+```
+
+**Explanation**:
+
+The original code wrongly assumes that if `k <= a`, then the maximum possible sum of the numbers written on the cards chosen is `k`. But that is not correct. If `k <= a`, we can pick all the `k` cards from the cards with the number `1`. So the maximum sum in this case is `k`.
+
+The repaired code checks three cases:
+
+1. If `k <= a`, we can pick all the `k` cards from the cards with the number `1`. So the maximum sum is `k`.
+2. If `k > a` and `k <= a + b`, we can pick all the `a` cards (cards with the number `1`) and some of the `k - a` cards from the cards with the number `0`. So the maximum sum is `a`.
+3. If `k > a + b`, we can pick all the `a` cards (cards with the number `1`), all the `b` cards (cards with the number `0`), and some of the `k - a - b` cards from the cards with the number `-1`. So the maximum sum is `a - (k - (a + b))`.

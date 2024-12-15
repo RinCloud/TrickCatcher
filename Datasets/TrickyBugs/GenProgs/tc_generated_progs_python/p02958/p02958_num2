@@ -1,0 +1,28 @@
+```
+def is_possible_to_sort(n, a):
+    c = 0
+    for i in range(n-1):
+        if a[i] != i+1:
+            c += 1
+    return 'YES' if c < 3 else 'NO'
+
+n = int(input())
+a = [int(x) for x in input().split()]
+print(is_possible_to_sort(n, a))
+```
+
+# Problem Analysis
+We need to check if we can sort the given permutation in ascending order by performing at most one swap operation.
+
+# Plan
+To solve the problem, we can calculate the number of misplaced elements, i.e. the elements that are not in their correct position in the sorted permutation.
+
+1. Initialize a variable `c` to 0 to keep track of the number of misplaced elements.
+2. Iterate over the elements of the given permutation `a` from the first index to the second-to-last index.
+3. If the current element `a[i]` is not equal to the expected value `i + 1` (1-based indexing), increment `c` by 1.
+4. Finally, check if `c` is less than 3. If it is, print 'YES'; otherwise, print 'NO'.
+
+# Time Complexity Analysis
+The time complexity for this approach is O(N), where N is the size of the permutation.
+
+# Let's implement the code

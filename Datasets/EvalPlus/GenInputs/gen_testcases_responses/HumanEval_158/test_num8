@@ -1,0 +1,10 @@
+{"input": [["name", "of", "string"]], "output": "string"}
+{"input": [["name", "enam", "game"]], "output": "enam"}
+{"input": [["aaaaaaa", "bb", "cc"]], "output": "aaaaaaa"}
+{"input": [["hello", "world", "python", "java"]], "output": "python"}
+{"input": [["abc", "def", "ghi"]], "output": "abc"}
+{"input": [["apple", "banana", "cherry"]], "output": "banana"}
+{"input": [["aaaa", "aaa", "aa"]], "output": "aaaa"}
+{"input": [["abcde", "fgh", "ijk", "lmn"]], "output": "abcde"}
+{"input": [["a", "b", "c", "d", "e", "f", "g"]], "output": "abcdefg"}
+{"input": [["a", "aa", "aaa", "aaaa", "aaaaa"]], "output": "aaaaa"}

@@ -1,0 +1,12 @@
+```python
+from random import *
+from cyaron import *
+
+def sample_one():
+    words_count = randint(1, 10)  # Number of words to generate.
+    random_words = [String.random(randint(3, 8), charset="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ") for _ in range(words_count)]
+    separators = [' ', ', ']
+    final_string = separators[randint(0, 1)].join(random_words)
+    generated_input = [final_string]
+    return generated_input
+```

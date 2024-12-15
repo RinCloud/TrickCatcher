@@ -1,0 +1,50 @@
+Repaired code:
+
+```cpp
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
+using namespace std;
+
+typedef long long ll;
+
+int main()
+{
+    cin.tie(0);
+    ios::sync_with_stdio(false);
+
+    int X, Y, Z, K;
+    cin >> X >> Y >> Z >> K;
+
+    vector<ll> A(X);
+    for(int i = 0; i < X; i++) cin >> A[i];
+
+    vector<ll> B(Y);
+    for(int i = 0; i < Y; i++) cin >> B[i];
+
+    vector<ll> C(Z);
+    for(int i = 0; i < Z; i++) cin >> C[i];
+
+    vector<ll> v;
+    for(int i = 0; i < X; i++){
+        for(int j = 0; j < Y; j++){
+            v.push_back(A[i] + B[j]);
+        }
+    }
+
+    sort(v.begin(), v.end(), greater<ll>());
+
+    vector<ll> w;
+    for(int i = 0; i < min(K, (int)v.size()); i++){
+        for(int j = 0; j < Z; j++){
+            w.push_back(v[i] + C[j]);
+        }
+    }
+
+    sort(w.begin(), w.end(), greater<ll>());
+    for(int i = 0; i < K; i++) cout << w[i] << "\n";
+
+    return 0;
+}
+```

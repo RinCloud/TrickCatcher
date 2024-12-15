@@ -1,0 +1,21 @@
+**REPAIRED CODE**:
+
+```cpp
+#include<iostream>
+using namespace std;
+int main(){
+    int n,l,r,m = 0; // initialize m to 0
+    cin>>n;
+    for(int i=1;i<=n;i++){
+    	cin>>l>>r;
+    	m += r - l + 1;
+	}
+	cout<<m<<endl;
+	return 0;
+}
+```
+
+Explanation:
+- The main issue in the code is that the variable `m` is not initialized. Therefore, we need to initialize it to 0 before using it.
+- Additionally, the code missing an indentation, which makes it harder to read. 
+- After applying these fixes, the code should work correctly.

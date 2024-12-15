@@ -1,0 +1,17 @@
+def longest_acgt_string(s):
+    max_length = 0
+    current_length = 0
+    
+    for char in s:
+        if char in ['A', 'C', 'G', 'T']:
+            current_length += 1
+            max_length = max(current_length, max_length)
+        else:
+            current_length = 0
+    
+    return max_length
+
+
+if __name__ == "__main__":
+    s = input().strip()
+    print(longest_acgt_string(s))

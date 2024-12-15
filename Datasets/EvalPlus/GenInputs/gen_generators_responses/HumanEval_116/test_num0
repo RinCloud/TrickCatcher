@@ -1,0 +1,9 @@
+```python
+from random import randint
+
+def sample_one():
+    length = randint(1, 10)  # Random length of the array
+    arr = [randint(-10, 10) for _ in range(length)]  # Generating random integers including negative
+    generated_input = [arr]
+    return generated_input
+```

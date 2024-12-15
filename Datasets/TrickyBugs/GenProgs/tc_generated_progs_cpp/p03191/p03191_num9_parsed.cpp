@@ -1,0 +1,41 @@
+#include<bits/stdc++.h>
+using namespace std;
+const int mod=1e9+7;
+typedef long long ll;
+
+int n,a[305],num,frc=1;
+int f[2][305][305],typ[605];
+
+inline void ad(int &x,int y){x+=y;if(x>=mod) x-=mod;}
+
+int main(){
+    int m ;
+    cin >> n;
+    m=n+n;
+	for(int i=1;i<=m;++i) cin >> a[i];
+	for(int i=1;i<=m;i+=2) {
+        if((a[i]==-1)||(a[i+1]==-1)){
+            num+=(((~a[i])||(~a[i+1]))^1);
+            if(~a[i]) typ[a[i]]=1;if(~a[i+1]) typ[a[i+1]]=1;
+        }else typ[a[i]]=typ[a[i+1]]=2;
+    }
+	for(int i=1;i<=num;++i) frc=(ll)frc*i%mod; 
+	f[0][0][0]=1;num=0;
+
+	for(int i=m;i;--i) if(typ[i]!=2){
+		int pr=i&1;memset(f[pr],0,sizeof(f[pr]));
+		for(int j=0;j<=num;++j)
+		  for(int k=0;j+k<=num;++k) if(f[pr^1][j][k]){
+			 if(typ[i]){
+			 	ad(f[pr][j][k+1],f[pr^1][j][k]);
+			 	if(j) ad(f[pr][j-1][k],(ll)f[pr^1][j][k]%mod);
+			 }else{
+			 	ad(f[pr][j+1][k],f[pr^1][j][k]); 
+			 	if(k) ad(f[pr][j][k-1],(ll)k*f[pr^1][j][k]%mod);
+			 	if(j) ad(f[pr][j-1][k],f[pr^1][j][k]);
+			 }
+		  }
+		num=min(num+1,m>>1);
+	}
+	cout << (ll)frc*f[num][0][0]%mod;
+}

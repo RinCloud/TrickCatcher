@@ -1,0 +1,34 @@
+The code has the following bug:
+
+1. The variable `a` is not initialized before it is used to store the sum of `v[j]` values. This will result in undefined behavior.
+2. In the second loop, the calculation of `sum` is incorrect. It needs to multiply `v[j+1]` with `a`, not add it.
+
+Here is the repaired code:
+
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+const long long MOD = 1000000007;
+
+int main() {
+    long long n, sum = 0;
+    cin >> n;
+    vector<long long> v(n);
+    
+    for (long long i = 0; i < n; i++) {
+        cin >> v[i];
+    }
+    
+    long long a = 0;
+    for (long long j = 0; j < n - 1; j++) {
+        a += v[j];
+        a %= MOD;
+        sum += (v[j + 1] * a) % MOD;
+        sum %= MOD;
+    }
+    
+    cout << sum;
+    return 0;
+}
+```

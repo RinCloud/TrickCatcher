@@ -1,0 +1,18 @@
+def calculate_minimum_distance(N,K,coordinates):
+    total_distance = 0
+    for i in range(N):
+        distance_1 = abs(coordinates[i] - 0) + abs(coordinates[i] - 0)
+        distance_2 = abs(coordinates[i] - K) + abs(coordinates[i] - K)
+        total_distance += min(distance_1, distance_2)
+    return total_distance
+
+# Reading the inputs
+N = int(input())
+K = int(input())
+coordinates = list(map(int, input().split()))
+
+# Calculating the minimum distance
+result = calculate_minimum_distance(N,K,coordinates)
+
+# Printing the result
+print(result)

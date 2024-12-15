@@ -1,0 +1,10 @@
+{"input": ["abc"], "output": ['a', 'ab', 'abc']}
+{"input": [""], "output": []}
+{"input": ["a"], "output": ['a']}
+{"input": ["testing"], "output": ['t', 'te', 'tes', 'test', 'testi', 'testin', 'testing']}
+{"input": ["abcdefgh"], "output": ['a', 'ab', 'abc', 'abcd', 'abcde', 'abcdef', 'abcdefg', 'abcdefgh']}
+{"input": ["1234567890"], "output": ['1', '12', '123', '1234', '12345', '123456', '1234567', '12345678', '123456789', '1234567890']}
+{"input": ["hello world"], "output": ['h', 'he', 'hel', 'hell', 'hello', 'hello ', 'hello w', 'hello wo', 'hello wor', 'hello worl', 'hello world']}
+{"input": ["abcdefghijklmnopqrstuvwxyz"], "output": ['a', 'ab', 'abc', 'abcd', 'abcde', 'abcdef', 'abcdefg', 'abcdefgh', 'abcdefghi', 'abcdefghij', 'abcdefghijk', 'abcdefghijkl', 'abcdefghijklm', 'abcdefghijklmn', 'abcdefghijklmno', 'abcdefghijklmnop', 'abcdefghijklmnopq', 'abcdefghijklmnopqr', 'abcdefghijklmnopqrs', 'abcdefghijklmnopqrst', 'abcdefghijklmnopqrstu', 'abcdefghijklmnopqrstuv', 'abcdefghijklmnopqrstuvw', 'abcdefghijklmnopqrstuvwx', 'abcdefghijklmnopqrstuvwxy', 'abcdefghijklmnopqrstuvwxyz']}
+{"input": ["abba"], "output": ['a', 'ab', 'abb', 'abba']}
+{"input": ["aaaab"], "output": ['a', 'aa', 'aaa', 'aaaa', 'aaaa', 'aaaab']}

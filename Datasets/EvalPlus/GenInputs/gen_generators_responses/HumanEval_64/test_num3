@@ -1,0 +1,12 @@
+```python
+from random import *
+from cyaron import *
+
+def sample_one():
+    str_len = randint(1, 20)  # Length of the string
+    vowels = 'aeiouAEIOU'
+    last_char_options = vowels + 'yY' + ''.join([chr(i) for i in range(97,123) if chr(i) not in vowels+'y'])  # include vowels, y, and other characters
+    s = String.random(str_len-1, charset='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ') + choice(last_char_options)
+    generated_input = [str(s)]
+    return generated_input
+```

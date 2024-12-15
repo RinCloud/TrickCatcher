@@ -1,0 +1,25 @@
+**Repaired Code**:
+
+```cpp
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+int main()
+{
+    long long int n, m, i, s = 0, ans, c = 0;
+    cin >> n >> m;
+    long long int a[n];
+    for (i = 0; i < n; i++)
+    {
+        cin >> a[i];
+        s = s + a[i];
+    }
+    sort(a, a + n);
+    if (a[n - m] < double(s) / (4 * m))
+        cout << "No" << endl;
+    else
+        cout << "Yes" << endl;
+    return 0;
+}
+```

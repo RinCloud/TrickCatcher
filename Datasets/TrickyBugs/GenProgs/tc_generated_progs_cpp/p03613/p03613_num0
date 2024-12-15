@@ -1,0 +1,44 @@
+**ADDITIONAL INFORMATION**:
+The code is attempting to solve the problem by iterating over the given sequence, and for each element, incrementing the count of the element itself, the next element, and the previous element in an array. At the same time, it keeps track of the maximum count seen so far. Finally, it prints the maximum count.
+
+**ISSUE**:
+There is a bug in the code that prevents it from correctly counting the number of elements equal to X. The bug is that for each element, it increments the count of all three indices: b, b+1, and b-1. But it is incorrect to increment the count of b+1 and b-1. This is because those indices do not correspond to the elements in the given sequence. Increments should only be performed on the indices that are within the valid range of the input sequence.
+
+**EXAMPLE:**
+To illustrate the bug, consider the example where the input is:
+7
+3 1 4 1 5 9 2
+
+The code would encounter each element in the sequence as follows:
+- For a[3], it increments a[3], a[4], and a[2].
+- For a[1], it increments a[1], a[2], and a[0].
+- For a[4], it increments a[4], a[5], and a[3].
+- For a[1], it increments a[1], a[2], and a[0].
+- For a[5], it increments a[5], a[6], and a[4].
+- For a[9], it increments a[9], a[10], and a[8].
+- For a[2], it increments a[2], a[3], and a[1].
+
+As a result, the counts at each index become: a[0]=2, a[1]=5, a[2]=7, a[3]=6, a[4]=5, a[5]=4, a[6]=2, a[8]=2, a[9]=2, a[10]=1. The maximum count is 7, but the correct answer is 4, as there are 4 occurrences of the element 1 in the sequence.
+
+**SOLUTION**:
+The bug can be fixed by only incrementing the correct indices. Specifically, when encountering an element b, only increment a[b] and a[b+1]. Additionally, update the maximum count after each increment.
+
+Here is the corrected code:
+
+```cpp
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+  int n,a[1000000]={},b,max=0;
+  cin>>n;
+  for(int i=0;i<n;i++){
+    cin>>b;
+    a[b]++;
+    a[b+1]++;
+    if(max<a[b])max=a[b];
+    if(max<a[b+1])max=a[b+1];
+  }
+  cout<<max<<endl;
+  return 0;
+}
+```

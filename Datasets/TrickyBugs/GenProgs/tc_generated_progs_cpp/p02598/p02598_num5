@@ -1,0 +1,27 @@
+**UPDATED CODE**:
+
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+#define int long long
+
+signed main() {
+    int n, k; cin>>n>>k;
+    int a[n]; for(auto &i : a)  cin>>i;
+    int lo = 0, hi = 1e9 +1, mid;
+    
+    while(hi-lo > 1) {
+        int cnt = 0;
+        mid = (lo+hi)>>1;
+        for(int i = 0; i < n; i++)  cnt += (a[i] + mid - 1)/mid - 1;
+        if(cnt<=k)  hi = mid;
+        else    lo = mid;
+    }
+    cout<<hi;
+}
+```
+
+**Explanation:**
+In the original code, the line `if(a[i] > mid)  cnt += a[i]/mid;` counts the number of cuts required for the `i`-th log. However, this is incorrect. We need to consider the ceiling value when dividing the log length by `mid` to get the number of cuts required. The reason for this is that if there is a remainder, we need to make one more cut. For example, if `a[i] = 9` and `mid = 4`, without using the ceiling value, the code would calculate `9/4 = 2` cuts. But in reality, it would require 3 cuts (`4 + 4 + 1 = 9`). Therefore, the correct calculation is `(a[i] + mid - 1)/mid - 1` to account for the possibility of a remainder.
+
+This updated code now correctly calculates the number of cuts required for each log and finds the shortest possible length of the longest log after at most K cuts.

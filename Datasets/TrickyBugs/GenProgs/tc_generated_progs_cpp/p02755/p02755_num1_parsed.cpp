@@ -1,0 +1,14 @@
+#include<bits/stdc++.h>
+int main() {
+    int A, B, i = 0;
+    std::cin >> A >> B;
+    while (i < 9999) {
+        if (i * 8 / 100 == A && i * 10 / 100 == B) {
+            std::cout << i;
+            return 0;
+        }
+        i++;
+    }
+    std::cout << -1;
+    return 0;
+}

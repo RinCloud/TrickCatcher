@@ -1,0 +1,12 @@
+Here is the repaired code:
+
+```python
+a, b, c = map(int, input().split())
+e = (a - b) | (b - c)
+if e == 0:
+    print(-1)
+else:
+    print(len(bin(e & -e)) - 3)
+```
+
+The issue with the original code is that the bitwise OR operator `|` should be replaced with the subtraction operator `-` in the calculation of `e`. Additionally, the condition `e == b & 1` should be replaced with `e == 0` in the `print` statement to correctly handle the case where the answer is infinite.

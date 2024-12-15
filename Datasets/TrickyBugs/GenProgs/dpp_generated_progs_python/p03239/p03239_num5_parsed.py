@@ -1,0 +1,27 @@
+import sys
+
+def find_smallest_cost(N, T, routes):
+  smallest_cost = sys.maxsize
+
+  for cost, time in routes:
+    if time <= T and cost < smallest_cost:
+      smallest_cost = cost
+
+  if smallest_cost == sys.maxsize:
+    return "TLE"
+
+  return smallest_cost
+
+
+# parse input
+N, T = map(int, input().split())
+routes = []
+for _ in range(N):
+  c, t = map(int, input().split())
+  routes.append((c, t))
+
+# find smallest cost
+result = find_smallest_cost(N, T, routes)
+
+# print result
+print(result)

@@ -1,0 +1,10 @@
+{'input': ["Mary had a little lamb", 4], 'output': ["little"]}
+{'input': ["Mary had a little lamb", 3], 'output': ["Mary", "lamb"]}
+{'input': ["simple white space", 2], 'output': []}
+{'input': ["Hello world", 4], 'output': ["world"]}
+{'input': ["Uncle sam", 3], 'output': ["Uncle"]}
+{'input': ["", 4], 'output': []}
+{'input': ["Hello world of Python", 5], 'output': ['Hello', 'world']}
+{'input': ["Hello world", 0], 'output': ['Hello', 'world']}
+{'input': ["Python is fun", 3], 'output': ["fun"]}
+{'input': ["The quick brown fox jumps over the lazy dog", 6], 'output': []}

@@ -1,0 +1,30 @@
+def special_factorial(n):
+    """
+    This function calculates the special factorial of a given number.
+    Args:
+    n (int): The input number.
+    Returns:
+    int: The special factorial of the input number.
+    Example:
+    >>> special_factorial(4)
+    288
+    """
+    def factorial(n):
+        """
+        This function calculates the factorial of a given number.
+        Args:
+        n (int): The input number.
+        Returns:
+        int: The factorial of the input number.
+        Example:
+        >>> factorial(4)
+        24
+        """
+        if n == 1:
+            return 1
+        else:
+            return n * factorial(n-1)
+    result = 1
+    for i in range(n, 0, -1):
+        result *= factorial(i)
+    return result

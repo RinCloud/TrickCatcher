@@ -1,0 +1,10 @@
+{"input": [1234, 1], "output": "4123"}
+{"input": [1234, 2], "output": "3412"}
+{"input": [1234, 3], "output": "2341"}
+{"input": [12, 1], "output": "21"}
+{"input": [12, 2], "output": "12"}
+{"input": [12, 3], "output": "21"}
+{"input": [1234, 0], "output": "1234"}
+{"input": [1234, 5], "output": "4321"}
+{"input": [0, 1], "output": "0"}
+{"input": [9876543210, 5], "output": "3210987654"}

@@ -1,0 +1,115 @@
+```cpp
+#include<bits/stdc++.h>
+using namespace std;
+
+#define S second
+#define F first
+#define pb push_back
+
+const int mod = 1e9 + 7;
+
+int f[5050][2];
+int g[5050][2];
+int dp[5050][2];
+
+int _2[5050];
+
+int main(){
+	int N, A, B;
+	cin >> N >> A >> B;
+	if(A > B)
+		swap(A, B);
+	
+	_2[0] = 1;
+	for(int i = 1; i <= 5000; i++)
+		_2[i] = _2[i - 1] * 2 % mod;
+	
+	f[0][0] = 1;	
+	for(int i = 1; i < A + B && i <= N; i++)
+	{
+		for(int j = A; j <= ((i <= B) ? i : A); j++)
+		{
+			f[i][0] += f[i - j][1];
+			if(f[i][0] >= mod)
+				f[i][0] -= mod;
+		}
+		if(i <= B)
+		{
+			for(int j = 1; j <= B; j++)
+			{
+				f[i][1] += f[i-j][0];
+				if(f[i][1] >= mod)
+					f[i][1] -= mod;
+			}
+		}
+	}
+	
+	g[0][1] = 1;	
+	for(int i = 1; i < A + B && i <= N; i++)
+	{
+		for(int j = A; j <= ((i <= B) ? i : A); j++)
+		{
+			g[i][0] += g[i - j][1];
+			if(g[i][0] >= mod)
+				g[i][0] -= mod;
+		}
+		if(i <= B)
+		{
+			for(int j = 1; j <= B; j++)
+			{
+				g[i][1] += g[i - j][0];
+				if(g[i][1] >= mod)
+					g[i][1] -= mod;
+			}
+		}
+	}
+	
+	dp[0][0] = dp[0][1] = 1;
+	for(int i = 1; i <= N; i++)
+	{
+		if(i < B)
+		{
+			dp[i][1] += g[i][1];
+			if(dp[i][1] >= mod)
+				dp[i][1] -= mod;
+		}
+		for(int j = 1; j < min(i + 1, B); j++)
+		{
+			dp[i][1] += 1ll * f[j][1] * dp[i - j][0] % mod;
+			if(dp[i][1] >= mod)
+				dp[i][1] -= mod;
+		}
+		for(int j = 1; j < min(i + 1, A); j++)
+		{
+			dp[i][0] += dp[i - j][1];
+			if(dp[i][0] >= mod)
+				dp[i][0] -= mod;
+		}
+	}
+	
+	int ans = 0;
+	for(int i = 0; i <= N; i++)
+	{
+		if(i == 0)
+		{
+			for(int j = B; j < A + B; j++)
+				if(i + j <= N)
+				{
+					ans += 1ll * dp[i][1] * (g[j][0] + g[j][1]) % mod * _2[N - i - j] % mod;
+					if(ans >= mod)
+						ans -= mod;
+				}
+		}
+		
+		for(int j = B; j < A + B; j++)
+			if(i + j <= N)
+			{
+				ans += 1ll * dp[i][0] * (f[j][0] + f[j][1]) % mod * _2[N - i - j] % mod;
+				if(ans >= mod)
+					ans -= mod; 
+			}
+	}
+	cout << ans;
+	return 0;
+}
+```

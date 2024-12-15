@@ -1,0 +1,11 @@
+**Repaired code**:
+```cpp
+#include <iostream>
+#include <cmath>    // Added this line to include the cmath library for absolute value function
+int main() {
+  int A, B, C;
+  std::cin >> A >> B >> C;
+  std::cout << (A < B ? C < A ? B - C : C < B ? C - A : B - A : C < B ? A - C : C < A ? C - B : A - C);
+  return 0;
+}
+```

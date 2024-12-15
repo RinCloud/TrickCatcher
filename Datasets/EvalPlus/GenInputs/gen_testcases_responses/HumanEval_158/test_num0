@@ -1,0 +1,10 @@
+{"input": [["name", "of", "string"]], "output": "string"}
+{"input": [["name", "enam", "game"]], "output": "enam"}
+{"input": [["aaaaaaa", "bb" ,"cc"]], "output": "aaaaaaa"}
+{"input": [["abcde", "fg", "hijklmnopq"]], "output": "hijklmnopq"}
+{"input": [["abcdef", "ghijkl", "mnopqrs", "tuv"]], "output": "ghijkl"}
+{"input": [["apple", "banana", "cherry", "date", "elderberry"]], "output": "apple"}
+{"input": [["a", "b", "c", "d", "e"]], "output": "a"}
+{"input": [["aaaaaaa", "a" ,"c"]], "output": "aaaaaaa"}
+{"input": [["x", "y", "z"]], "output": "x"}
+{"input": [["abcde", "fghijklmno", "pqr", "stuv", "wxy"]], "output": "fghijklmno"}

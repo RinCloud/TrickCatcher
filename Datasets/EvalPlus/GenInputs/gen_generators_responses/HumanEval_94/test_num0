@@ -1,0 +1,11 @@
+```python
+from random import randint, shuffle
+from cyaron import *
+
+def sample_one():
+    length_of_lst = randint(0, 30)  # Define the length of the list, can be between 0 to 30
+    lst = [randint(0, 5000) for _ in range(length_of_lst)]  # Generate list with integers from 0 to 5000
+    shuffle(lst)  # Shuffle the list to add randomness
+    generated_input = [lst]
+    return generated_input
+```

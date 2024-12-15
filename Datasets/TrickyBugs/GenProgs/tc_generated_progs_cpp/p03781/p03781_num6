@@ -1,0 +1,13 @@
+**REPAIRED CODE**:
+
+```cpp
+#include <iostream>
+int main() {
+    int X, b = 1;
+    std::cin >> X;
+    while (X > b * (b + 1) / 2) {
+        b++;
+    }
+    std::cout << b << std::endl;
+}
+```

@@ -1,0 +1,24 @@
+# Approach:
+* We need to determine if Raccoon can win without using the same move twice or more.
+* To do this, we need to check if the sum of all special moves is greater than or equal to the health of the monster.
+* If the sum is greater, raccoon can win without using the same move twice or more, so print 'Yes'.
+* Otherwise, print 'No'.
+
+# Program:
+
+```python
+def can_raccoon_win(health, moves):
+    total_moves = sum(moves)
+    
+    if total_moves >= health:
+        return 'Yes'
+    else:
+        return 'No'
+
+
+if __name__ == '__main__':
+    h, n = map(int, input().split())
+    moves = list(map(int, input().split()))
+    
+    print(can_raccoon_win(h, moves))
+```

@@ -1,0 +1,26 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main(){
+    int n;
+    cin >> n;
+    priority_queue<pair<int,int>, vector<pair<int,int>>, greater<pair<int,int>>> p; // Corrected the priority_queue to use greater comparison for minimum of end time
+    for(int i=0;i<n;i++){
+        int a,b;
+        cin >> a >> b;
+        p.emplace(b,a);
+    }
+    int t=0; // Corrected the initial time to 0
+    while(!p.empty()){
+        pair<int,int> s=p.top();
+        p.pop();
+        t+=s.second; // Corrected the time calculation to increment by job completion time
+        if(t > s.first){ // Added a check to see if current time exceeds deadline
+            cout << "No" << endl;
+            return 0;
+        }
+    }
+    cout << "Yes" << endl;
+    return 0;
+}

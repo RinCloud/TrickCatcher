@@ -1,0 +1,16 @@
+# Approach:
+To minimize the number of Attacks, we need to prioritize using the Special Move on monsters with the highest health. 
+Therefore, we sort the list of monster healths in descending order.
+We then iterate through the sorted list of monster healths and perform the Special Move on the first K monsters.
+Finally, we sum up the remaining healths of the monsters to get the minimum number of times Fennec needs to do Attack.
+
+# Code:
+```python
+N, K = map(int, input().split())
+H = list(map(int, input().split()))
+
+H.sort(reverse=True)
+
+counter = sum(H[K:])
+print(counter)
+```

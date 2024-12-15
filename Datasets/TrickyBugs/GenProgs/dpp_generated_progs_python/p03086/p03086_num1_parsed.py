@@ -1,0 +1,20 @@
+def longest_acgt_substring(s):
+    max_length = 0
+    current_length = 0
+    for char in s:
+        if char in ['A', 'C', 'G', 'T']:
+            current_length += 1
+            if current_length > max_length:
+                max_length = current_length
+        else:
+            current_length = 0
+    return max_length
+
+# Read the input
+s = input()
+
+# Find the longest ACGT substring
+result = longest_acgt_substring(s)
+
+# Print the result
+print(result)

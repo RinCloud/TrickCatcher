@@ -1,0 +1,19 @@
+**Repaired Code**:
+
+```cpp
+#include<iostream>
+using namespace std;
+int main(){
+    int n, l, r, m = 0;
+    cin >> n;
+    for(int i=1; i <= n; i++){
+    	cin >> l >> r;
+        m += r - l + 1;
+	}
+	cout << m << endl;
+	return 0;
+}
+```
+Explanation: 
+
+The code had a bug in the initialization of the variable `m`, which is used to count the number of people sitting at the theater. It should have been initialized to `0` before the for loop.

@@ -1,0 +1,22 @@
+```python
+N, M, K = map(int, input().split())
+A = list(map(int, input().split()))
+B = list(map(int, input().split()))
+
+time = 0
+books_read = 0
+a_index = 0
+b_index = 0
+
+while a_index < N and time + A[a_index] <= K:
+    time += A[a_index]
+    a_index += 1
+    books_read += 1
+
+while b_index < M and time + B[b_index] <= K:
+    time += B[b_index]
+    b_index += 1
+    books_read += 1
+
+print(books_read)
+```

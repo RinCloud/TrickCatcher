@@ -1,0 +1,51 @@
+Here are 10 diverse and corner test inputs for the function `is_bored`:
+
+1. One sentence starting with "I":
+```
+"I am tired."
+```
+
+2. Multiple sentences starting with "I":
+```
+"I am excited. I am happy. I am ready."
+```
+
+3. No sentence starting with "I":
+```
+"The weather is beautiful."
+```
+
+4. Empty string:
+```
+
+```
+
+5. Multiple sentences starting with "I" and different delimiters:
+```
+"I am feeling great! I am enjoying the sunshine. I am living my best life?"
+```
+
+6. Multiple sentences starting with different words:
+```
+"He is smart. She is talented. I am strong."
+```
+
+7. Multiple sentences starting with "I" and whitespace characters:
+```
+" I am here.   I am ready.   I am confident.  "
+```
+
+8. Multiple sentences starting with "I" and mixed case:
+```
+"I am excited. i am happy. I am ready. i am confident."
+```
+
+9. Multiple sentences starting with "I" and varying word lengths:
+```
+"I am happy. I am very happy. I am extremely happy. I am beyond happy."
+```
+
+10. One sentence starting with "I" and a different delimiter:
+```
+"I am tired!"
+```

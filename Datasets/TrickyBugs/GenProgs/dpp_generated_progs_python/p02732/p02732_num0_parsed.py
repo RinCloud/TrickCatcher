@@ -1,0 +1,16 @@
+from collections import Counter
+
+def count_ways(N, balls):
+    freq = Counter(balls)
+    ans = []
+    for i in range(N):
+        cnt = freq[balls[i]] - 1
+        ans.append(cnt)
+    return ans
+
+N = int(input())
+balls = list(map(int, input().split()))
+
+ans = count_ways(N, balls)
+for cnt in ans:
+    print(cnt)

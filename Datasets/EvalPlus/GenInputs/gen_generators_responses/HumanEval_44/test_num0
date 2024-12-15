@@ -1,0 +1,9 @@
+```python
+from random import randint
+
+def sample_one():
+    x = randint(0, 1000)  # Generate a random integer x between 0 and 1000
+    base = randint(2, 9)  # Generate a random integer base between 2 and 9
+    generated_input = [x, base]
+    return generated_input
+```

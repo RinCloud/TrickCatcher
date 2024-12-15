@@ -1,0 +1,41 @@
+```cpp
+#include<iostream>
+#include<string>
+#include<math.h>
+#include<cmath>
+using namespace std;
+long long int a[300001]={0};
+long long int n;
+int main()
+{
+    cin>>n;
+    for(int i=1;i<=n;i++)
+    {
+        long long int k;
+        cin>>k;
+        int j=0;
+        while(k!=0)
+        {
+            a[j]=a[j]+k%2;
+            j++;
+            k/=2;
+        }
+    }
+    long long int result = 0;
+    long long int mod = 1000000007;
+    for (int i=0; i<=60; i++)
+    {
+        long long int ones = a[i];
+        long long int zeros = n - ones;
+
+        long long int ones_contribution = (ones * zeros) % mod;
+        long long int power_of_two = 1;
+        for(int j=0; j<i; j++) {
+            power_of_two = (power_of_two * 2) % mod;
+        }
+
+        result = (result + (power_of_two * ones_contribution) % mod) % mod;
+    }
+    cout<<result;
+}
+```

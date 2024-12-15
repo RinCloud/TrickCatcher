@@ -1,0 +1,43 @@
+H, W = map(int, input().split())
+C_h, C_w = map(int, input().split())
+D_h, D_w = map(int, input().split())
+S = [input() for _ in range(H)]
+
+from collections import deque
+INF = 10**9
+dist = [[INF] * W for _ in range(H)]
+
+def bfs():
+    queue = deque()
+    queue.append((C_h-1, C_w-1))
+    dist[C_h-1][C_w-1] = 0
+
+    while queue:
+        i, j = queue.popleft()
+        if i == D_h-1 and j == D_w-1:
+            return dist[D_h-1][D_w-1]
+
+        for dx, dy in [(1, 0), (-1, 0), (0, 1), (0, -1)]:
+            ni, nj = i + dx, j + dy
+            if not (0 <= ni < H and 0 <= nj < W):
+                continue
+            if S[ni][nj] == "#":
+                continue
+            if dist[ni][nj] > dist[i][j]:
+                dist[ni][nj] = dist[i][j]
+                queue.appendleft((ni, nj))
+
+        for dx in range(-2, 3):
+            for dy in range(-2, 3):
+                ni, nj = i + dx, j + dy
+                if not (0 <= ni < H and 0 <= nj < W):
+                    continue
+                if S[ni][nj] == "#":
+                    continue
+                if dist[ni][nj] > dist[i][j] + 1:
+                    dist[ni][nj] = dist[i][j] + 1
+                    queue.append((ni, nj))
+    
+    return -1
+
+print(bfs())

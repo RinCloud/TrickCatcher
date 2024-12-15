@@ -1,0 +1,32 @@
+The code has a bug in the line `tb = [(0, 0, 0)] * len(A)`. This creates a list of tuples, where each tuple is a reference to the same tuple `(0,0,0)`. When we later update the values of these tuples in the loop, all the tuples in the `tb` list will be updated with the same values.
+
+To fix this bug, we need to create a list of unique tuples. We can achieve this by using a list comprehension instead of the multiplication operator.
+
+Here is the corrected code:
+
+```python
+import string
+
+if __name__ == '__main__':
+    A = input()
+
+    p = {}
+    for x in string.ascii_lowercase:
+        p[x] = len(A)
+
+    tb = [(0, 0, 0) for _ in range(len(A))]  # Use list comprehension
+
+    for i, x in reversed(list(enumerate(A))):
+        p[x] = i
+        tb[i] = min([(tb[p[c] + 1][0] + 1, c, p[c] + 1) for c in string.ascii_lowercase])
+
+    i = 0
+    ans = []
+    while i < len(A):
+        ans.append(tb[i][1])
+        i = tb[i][2]
+
+    print("".join(ans))
+```
+
+Now, the code will correctly compute and print the lexicographically smallest string among the shortest strings that are not subsequences of string A.

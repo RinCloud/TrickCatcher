@@ -1,0 +1,14 @@
+```python
+from random import randint
+from cyaron import *
+
+def sample_one():
+    numerator1 = randint(1, 20)
+    denominator1 = randint(1, 20)
+    x = f"{numerator1}/{denominator1}"
+    numerator2 = randint(1, 20)
+    denominator2 = randint(1, 20)
+    n = f"{numerator2}/{denominator2}"
+    generated_input = [x, n]
+    return generated_input
+```

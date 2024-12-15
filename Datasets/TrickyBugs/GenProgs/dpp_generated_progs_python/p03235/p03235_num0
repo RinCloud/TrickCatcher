@@ -1,0 +1,32 @@
+```python
+def good_string(n, p):
+    freq = [0] * (n + 1)
+    for i in range(n):
+        freq[p[i]] = i + 1
+    
+    x = [0] * n
+    y = [0] * n
+    
+    max_val = 0
+    for i in range(1, n + 1):
+        max_val = max(max_val, freq[i])
+        if max_val == i:
+            x[i - 1] = 1
+        else:
+            y[i - 1] = 1
+    
+    count_x = sum(x)
+    count_y = sum(y)
+    
+    if count_x == count_y:
+        return ''.join(map(str, x))
+    else:
+        return -1
+
+
+n = int(input())
+p = list(map(int, input().split()))
+
+result = good_string(n, p)
+print(result)
+```

@@ -1,0 +1,34 @@
+#include <iostream>
+#include <cstdio>
+#include <algorithm>
+#include <cstring>
+#include <cmath>
+using namespace std;
+char s[30],w[30];
+int main() {
+    cin>>s;
+    int n=strlen(s);
+    for(int i=0;i<26;i++) w[i]=0;
+    for(int i=0;i<n;i++) w[s[i]-'a']=1;
+    for(int i=n-1; ~i; i--) {
+        for(int j=max(0, s[i]-'a'+1); j<26; j++) {
+            if(!w[j]) {
+                s[i] = j + 'a';
+                for(int k=i+1; k<n; k++) {
+                    for(int l=0; l<26; l++) {
+                        if(!w[l]) {
+                            s[k] = l + 'a';
+                            w[l] = 1;
+                            break;
+                        }
+                    }
+                }
+                puts(s);
+                return 0;
+            }
+        }
+        w[s[i] - 'a'] = 0;
+    }
+    puts("-1");
+    return 0;
+}

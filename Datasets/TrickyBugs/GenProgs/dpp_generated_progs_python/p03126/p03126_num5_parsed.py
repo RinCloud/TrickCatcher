@@ -1,0 +1,17 @@
+# Parse the input
+N, M = map(int, input().split())
+
+# Create a set to store the liked foods for each person
+liked_foods = []
+
+# Loop through each person
+for i in range(N):
+    # Parse the liked foods for this person
+    K, *A = map(int, input().split())
+    liked_foods.append(set(A))
+
+# Find the intersection of all the liked foods
+common_foods = set.intersection(*liked_foods)
+
+# Print the number of common foods
+print(len(common_foods))

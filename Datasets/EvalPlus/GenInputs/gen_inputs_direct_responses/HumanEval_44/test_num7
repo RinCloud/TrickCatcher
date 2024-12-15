@@ -1,0 +1,3 @@
+**Test Input Reasoning:**
+
+The input number is 0, and the base is 2. This is the minimum valid input for `x` and `base`.

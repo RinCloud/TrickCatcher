@@ -1,0 +1,26 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    long long N, A, B;
+    cin >> N >> A >> B;
+
+    long long blue_balls = 0;
+
+    if (A + B != 0) {
+        long long cycles = N / (A + B);
+        long long remainder = N % (A + B);
+
+        blue_balls += cycles * A;
+
+        if (remainder >= A) {
+            blue_balls += A;
+        } else {
+            blue_balls += remainder;
+        }
+    }
+
+    cout << blue_balls << endl;
+
+    return 0;
+}

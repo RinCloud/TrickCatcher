@@ -1,0 +1,31 @@
+# Program
+
+```python
+def check_sorting(n, p):
+    for i in range(n):
+        if p[i] != i + 1:
+            break
+    else:
+        return "YES"
+    
+    for i in range(n):
+        if p[i] == i + 1:
+            for j in range(i+1, n):
+                if p[j] == i + 1:
+                    if (j - i) % 2 != 0:
+                        return "NO"
+                    else:
+                        return "YES"
+    
+    return "NO"
+
+# Read input
+n = int(input())
+p = list(map(int, input().split()))
+
+# Check sorting
+result = check_sorting(n, p)
+
+# Print result
+print(result)
+```

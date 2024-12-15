@@ -1,0 +1,12 @@
+def min_amount(n, k, disliked):
+    money = n
+    while True:
+        if all(d not in str(money) for d in disliked):
+            return money
+        money += 1
+
+
+n, k = map(int, input().split())
+disliked = list(map(int, input().split()))
+
+print(min_amount(n, k, disliked))

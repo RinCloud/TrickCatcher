@@ -1,0 +1,9 @@
+```python
+from random import uniform
+
+def sample_one():
+    a = uniform(0.5, 100.5)  # Ensuring the side length is not zero or negative
+    h = uniform(0.5, 100.5)  # Ensuring the height is not zero or negative
+    generated_input = [a, h]
+    return generated_input
+```

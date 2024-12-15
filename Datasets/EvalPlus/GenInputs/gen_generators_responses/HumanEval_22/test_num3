@@ -1,0 +1,24 @@
+```python
+from random import *
+from cyaron import *
+
+def sample_one():
+    values = []
+    length_of_values = randint(1, 10)
+    for _ in range(length_of_values):
+        random_choice = randint(1, 6)
+        if random_choice == 1:
+            values.append(randint(-100, 100))  # integer
+        elif random_choice == 2:
+            values.append(uniform(-100.0, 100.0))  # float
+        elif random_choice == 3:
+            values.append(String.random(randint(1, 5)))  # string
+        elif random_choice == 4:
+            values.append([])  # list
+        elif random_choice == 5:
+            values.append({})  # dictionary
+        elif random_choice == 6:
+            values.append(randint(-100, 100) > 50)  # boolean
+    generated_input = [values]
+    return generated_input
+```

@@ -1,0 +1,22 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
+int main() {
+    int N, X;
+    std::cin >> N >> X;
+    
+    std::vector<int> cities(N);
+    for (int i = 0; i < N; i++) {
+        std::cin >> cities[i];
+    }
+    
+    int maxD = std::abs(X - cities[0]);
+    for (int i = 1; i < N; i++) {
+        maxD = std::max(maxD, std::abs(cities[i] - cities[i-1]));
+    }
+    
+    std::cout << maxD << std::endl;
+    
+    return 0;
+}

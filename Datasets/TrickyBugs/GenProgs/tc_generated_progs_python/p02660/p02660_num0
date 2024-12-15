@@ -1,0 +1,25 @@
+**REPAIRED CODE**:
+
+```python
+import math
+
+n = int(input())
+m = n
+
+answer = 0
+i = 2
+while i ** 2 <= m:
+    t = 0
+    while n % i == 0:
+        n //= i
+        t += 1
+    answer += int((-1+math.sqrt(1+8*t)) / 2)
+    i += 1
+
+if n > 1:
+    answer += 1
+
+print(answer)
+```
+
+The only issue with the given code is in the last if condition. The condition should be `if n > 1` instead of `if n > 1000000` because any number greater than 1 is a valid prime number, not just numbers greater than 1000000.

@@ -1,0 +1,20 @@
+```python
+from random import randint
+from cyaron import String
+
+def sample_one():
+    # Determine the total groups of parentheses
+    total_groups = randint(1, 5)
+    paren_string = ""
+    for _ in range(total_groups):
+        # Randomly decide the complexity of each group (1 to 3 nested levels)
+        complexity = randint(1, 3)
+        group = ""
+        for _ in range(complexity):
+            # Add opening parentheses
+            group = '(' * complexity + group + ')' * complexity
+        # Add spaces randomly around the group
+        group = String.random(randint(0, 2), charset=' ') + group + String.random(randint(0, 2), charset=' ')
+        paren_string += group
+    return [paren_string]
+```

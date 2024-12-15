@@ -1,0 +1,12 @@
+```python
+from random import randint
+from cyaron import String
+
+def sample_one():
+    apples = randint(0, 150)
+    oranges = randint(0, 150)
+    total_fruits = randint(apples + oranges, 300)
+    fruit_str = str(apples) + " apples and " + str(oranges) + " oranges"
+    generated_input = [fruit_str, total_fruits]
+    return generated_input
+```

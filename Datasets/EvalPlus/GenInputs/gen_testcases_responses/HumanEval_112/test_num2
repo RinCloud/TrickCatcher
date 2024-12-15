@@ -1,0 +1,10 @@
+{"input": ["abcde", "ae"], "output": ["bcd", False]}
+{"input": ["abcdef", "b"], "output": ["acdef", False]}
+{"input": ["abcdedcba", "ab"], "output": ["cdedc", True]}
+{"input": ["hello", "o"], "output": ["hell", False]}
+{"input": ["python", ""], "output": ["python", True]}
+{"input": ["racecar", "r"], "output": ["aceca", True]}
+{"input": ["abcdcba", "ab"], "output": ["cdc", True]}
+{"input": ["abcdefg", "h"], "output": ["abcdefg", False]}
+{"input": ["abcd", "c"], "output": ["abd", True]}
+{"input": ["12321", "2"], "output": ["1231", False]}

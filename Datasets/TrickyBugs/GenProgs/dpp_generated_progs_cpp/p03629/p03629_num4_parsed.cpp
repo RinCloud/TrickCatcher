@@ -1,0 +1,71 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
+using namespace std;
+
+string findShortestString(const string& A) {
+    int n = A.length();
+    vector<vector<int>> dp(n+1, vector<int>(26, n+1));
+    
+    for(int i = n-1; i >= 0; i--) {
+        dp[i] = dp[i+1];
+        dp[i][A[i]-'a'] = i+1;
+    }
+    
+    string ans = "";
+    int cur = 0;
+    
+    for(int k = 1; k <= 26; k++) {
+        ans += 'a';
+        bool found = false;
+        
+        for(int i = cur; i < n; i++) {
+            bool valid = true;
+            for(int j = 0; j < k; j++) {
+                if(dp[i][ans[j]-'a'] == n+1) {
+                    valid = false;
+                    break;
+                }
+            }
+            if(valid) {
+                found = true;
+                break;
+            }
+        }
+        
+        if(!found) {
+            break;
+        }
+        
+        while(ans.back() < 'z') {
+            ans.back()++;
+            
+            bool valid = true;
+            
+            for(int j = 0; j < k-1; j++) {
+                if(dp[cur][ans[j]-'a'] == n+1) {
+                    valid = false;
+                    break;
+                }
+            }
+            
+            if(valid) break;
+        }
+        
+        if(ans.length() == k) {
+            cur = dp[cur][ans.back() - 'a'];
+        }
+    }
+    
+    return ans;
+}
+
+int main() {
+    string A;
+    cin >> A;
+    
+    cout << findShortestString(A) << endl;
+    
+    return 0;
+}

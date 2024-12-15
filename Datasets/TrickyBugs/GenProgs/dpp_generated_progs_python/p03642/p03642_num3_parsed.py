@@ -1,0 +1,29 @@
+import math
+
+def is_prime(n):
+    if n == 2:
+        return True
+    if n % 2 == 0 or n == 1:
+        return False
+    for i in range(3, int(math.sqrt(n)) + 1, 2):
+        if n % i == 0:
+            return False
+    return True
+
+def flip_cards(n, cards):
+    operations = 0
+    flipped_cards = []
+    for x in cards:
+        if x in flipped_cards:
+            continue
+        if is_prime(x):
+            operations += 1
+            for i in range(x, x + 2 * n, x):
+                if i not in flipped_cards:
+                    flipped_cards.append(i)
+    return operations
+
+N = int(input())
+cards = list(map(int, input().split()))
+
+print(flip_cards(N, cards))

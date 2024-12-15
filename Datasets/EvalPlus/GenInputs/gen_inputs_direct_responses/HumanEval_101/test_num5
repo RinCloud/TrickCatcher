@@ -1,0 +1,9 @@
+[[], {}]
+[[], []]
+["Hi, my name is John"]
+["Hi, ", "my", " name ", "is ", "John"]
+["One, two, three, four, five, six"] 
+["One,", " two,", " three,", " four,", " five,", " six"]
+["one  two  three  four  five  Six"] # Space between words are two spaces
+["one , -two , -Three , -Four , -Five , -six"] # Special characters between words 
+["[One, two, three, four, five, six]"] # Words separated by square brackets (special characters)

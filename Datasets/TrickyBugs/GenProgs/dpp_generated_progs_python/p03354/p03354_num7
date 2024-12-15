@@ -1,0 +1,48 @@
+# Approach
+
+To solve the problem, we need to count the number of elements in the permutation `p` that are equal to their indexes. We can achieve this by simulating the swapping operations as mentioned in the problem.
+
+We will modify the given permutation `p` by performing the swapping operations. However, we will only swap the elements if both `p[x]` and `p[y]` are not equal to `x` and `y` respectively. This is because if either `p[x]` or `p[y]` is already equal to its index, swapping them will not increase the count of elements that are equal to their indexes.
+
+Initially, we will count the number of elements in the permutation `p` that are equal to their indexes. Then, we will iterate over the pairs `(x, y)` and check if `p[x]` and `p[y]` are not equal to `x` and `y` respectively. If they are not equal, we will swap them and increment the count if `p[x]` and `p[y]` become equal to `x` and `y` respectively.
+
+Finally, we will print the maximum count of elements in `p` that are equal to their indexes.
+
+# Steps
+1. Read the integers `N` and `M` from input.
+2. Read the list `p` from input.
+3. Initialize a variable `count` to 0.
+4. Count the number of elements in `p` that are equal to their indexes and store it in the variable `count`.
+5. Initialize a variable `max_count` to the value of `count`.
+6. Iterate `M` times and do the following:
+   a. Read the integers `x` and `y` from input.
+   b. If `p[x]` is not equal to `x` and `p[y]` is not equal to `y`, do the following:
+      i. Swap `p[x]` and `p[y]`.
+      ii. If `p[x]` is equal to `x` and `p[y]` is equal to `y`, increment `count` by 2, otherwise increment `count` by 1.
+   c. Update `max_count` to the maximum of `max_count` and `count`.
+7. Print `max_count` as the result.
+
+# Pseudocode
+```
+N, M = read integers from input
+p = read list of integers from input
+
+count = 0
+for i in range(N):
+    if p[i] == i+1:
+        count += 1
+
+max_count = count
+for _ in range(M):
+    x, y = read integers from input
+    if p[x-1] != x and p[y-1] != y:
+        if p[x-1] == y and p[y-1] == x:
+            count += 2
+        else:
+            count += 1
+        max_count = max(max_count, count)
+
+print(max_count)
+```
+
+Now let's write the code to solve the problem.

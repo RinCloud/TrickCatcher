@@ -1,0 +1,30 @@
+```python
+from random import *
+from cyaron import *
+
+def sample_one():
+    type_selector = randint(1, 3)
+    
+    if type_selector == 1:  # both integers
+        a = randint(-100, 100)
+        b = randint(-100, 100)
+    elif type_selector == 2:  # one integer and one float/string
+        if random() > 0.5:
+            a = randint(-100, 100)
+            b = uniform(-100.0, 100.0)
+            if random() > 0.5:
+                b = str(b).replace('.', choice([',', '.']))
+        else:
+            b = randint(-100, 100)
+            a = uniform(-100.0, 100.0)
+            if random() > 0.5:
+                a = str(a).replace('.', choice([',', '.']))
+    else:  # both strings
+        a = uniform(-100.0, 100.0)
+        b = uniform(-100.0, 100.0)
+        a = str(a).replace('.', choice([',', '.']))
+        b = str(b).replace('.', choice([',', '.']))
+        
+    generated_input = [a, b]
+    return generated_input
+```

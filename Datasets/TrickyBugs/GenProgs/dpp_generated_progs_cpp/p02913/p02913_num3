@@ -1,0 +1,44 @@
+Here is a complete and executable C++ program to solve the given problem:
+
+```cpp
+#include <iostream>
+#include <string>
+#include <vector>
+
+using namespace std;
+
+int main() {
+    // Read input
+    int N;
+    string S;
+    cin >> N >> S;
+    
+    // Initialize variables
+    int maxLen = 0;
+    vector<int> prefixes(N, 0);
+    
+    // Compute prefixes array
+    for (int i = 1; i < N; i++) {
+        int j = prefixes[i - 1];
+        while (j > 0 && S[i] != S[j]) {
+            j = prefixes[j - 1];
+        }
+        if (S[i] == S[j]) {
+            j++;
+        }
+        prefixes[i] = j;
+        
+        // Check if a non-empty string occurs twice or more as contiguous substrings
+        if (j > maxLen && i != N - 1 && prefixes[i + 1] >= j) {
+            maxLen = j;
+        }
+    }
+    
+    // Print the maximum length
+    cout << maxLen << endl;
+
+    return 0;
+}
+```
+
+Note: This program uses the Knuth-Morris-Pratt (KMP) algorithm to efficiently compute the prefixes array for string `S`. The maximum length of a non-empty string that occurs twice or more without overlapping can be determined using this prefixes array.

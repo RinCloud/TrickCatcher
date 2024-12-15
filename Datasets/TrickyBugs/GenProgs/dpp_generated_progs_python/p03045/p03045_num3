@@ -1,0 +1,42 @@
+# Solution
+- Create a graph with N nodes and M edges.
+- Each node represents a card and each edge represents a constraint A_{X_i} + A_{Y_i} + Z_i is an even number.
+- Use Depth First Search (DFS) to color the nodes with two colors: 1 and 2, representing the possible values for the cards.
+- Count the number of cards colored with each color, take the minimum and return the value.
+
+```python
+
+import sys
+sys.setrecursionlimit(100000)
+
+
+def dfs(node, color):
+    visited[node] = True
+    colors[node] = color
+
+    for child in graph[node]:
+        if not visited[child]:
+            dfs(child, color ^ 1)
+
+
+N, M = map(int, input().split())
+
+graph = [[] for _ in range(N + 1)]
+
+for _ in range(M):
+    X, Y, Z = map(int, input().split())
+    graph[X].append(Y)
+    graph[Y].append(X)
+
+visited = [False] * (N + 1)
+colors = [0] * (N + 1)
+
+cost = 0
+for i in range(1, N + 1):
+    if not visited[i]:
+        dfs(i, 1)
+        cost += min(colors.count(1), colors.count(2))
+
+print(cost)
+
+```

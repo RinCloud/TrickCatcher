@@ -1,0 +1,32 @@
+```python
+from random import *
+from cyaron import *
+
+def sample_one():
+    # Define the charset excluding spaces to ensure the last char isn't a space
+    charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    
+    # Randomly decide if the last character should be a letter or not
+    last_char_is_letter = choice([True, False])
+    
+    # Generate the main part of the string with a random length
+    length_of_main_str = randint(0, 20)
+    main_str = String.random(length_of_main_str, charset=charset + " ")
+    
+    # If the last character should be a letter, ensure it by appending a letter
+    if last_char_is_letter:
+        last_char = choice(charset)
+        # Append a space before the letter if the main string isn't empty and doesn't already end with a space
+        if len(main_str) > 0 and main_str[-1] != " ":
+            txt = f"{main_str} {last_char}"
+        else:
+            txt = f"{main_str}{last_char}"
+    else:
+        # Ensure the last character is not a letter; it could be a space or a punctuation mark
+        non_letter_charset = " .,;:!?"
+        last_char = choice(non_letter_charset)
+        txt = f"{main_str}{last_char}"
+    
+    generated_input = [str(txt)]
+    return generated_input
+```

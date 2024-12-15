@@ -1,0 +1,10 @@
+{"input": ["Hello world"], "output": 0}
+{"input": ["The sky is blue. The sun is shining. I love this weather"], "output": 1}
+{"input": ["I am bored. I am bored again. I am bored!"], "output": 3}
+{"input": ["I", "am", "happy"], "output": 1}
+{"input": ["Hello. I am bored. I", "am", "bored", "again"], "output": 2}
+{"input": [""], "output": 0}
+{"input": ["I.", "am.", "bored."], "output": 1}
+{"input": ["I", ".", "am", ".", "bored", "."], "output": 1}
+{"input": ["I", "am", "not", "bored"], "output": 0}
+{"input": ["I", "am", "I"], "output": 1}

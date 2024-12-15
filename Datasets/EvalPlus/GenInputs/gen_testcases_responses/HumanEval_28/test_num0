@@ -1,0 +1,10 @@
+{"input": [["a", "b", "c"]], "output": "abc"}
+{"input": [[]], "output": ""}
+{"input": [["hello", "world"]], "output": "helloworld"}
+{"input": [["", "", ""]], "output": ""}
+{"input": [["123", "456", "789"]], "output": "123456789"}
+{"input": [[1, 2, 3]], "output": ""}
+{"input": [["a", 2, "c"]], "output": ""}
+{"input": [["abc", "def", "ghi"]], "output": "abcdefghi"}
+{"input": [[], [], []], "output": ""}
+{"input": [["hello", " ", "world"]], "output": "hello world"}

@@ -1,0 +1,27 @@
+# Program
+
+```python
+import re
+
+# Read input
+S = input()
+
+# Find all ACGT substrings
+acgt_substrings = re.findall(r'[ACGT]+', S)
+
+# Find the length of the longest ACGT substring
+max_length = max([len(s) for s in acgt_substrings])
+
+# Print the result
+print(max_length)
+```
+
+# Explanation
+
+The program starts by reading the input string `S` from the standard input.
+
+We use the `re.findall()` function from the `re` module to find all the ACGT substrings in `S`. The regular expression `[ACGT]+` matches one or more occurrences of the characters A, C, G, or T.
+
+Next, we find the length of the longest ACGT substring by using a list comprehension and the `len()` function. The list comprehension maps each substring to its length and creates a list of lengths. Finally, we use the `max()` function to find the maximum length in the list.
+
+Finally, we print the result using the `print()` function.

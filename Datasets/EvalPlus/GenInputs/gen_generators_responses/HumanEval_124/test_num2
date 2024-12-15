@@ -1,0 +1,16 @@
+```python
+from random import *
+
+def sample_one():
+    year = str(randint(1900, 2020))
+    month = str(randint(1, 12)).zfill(2)
+    if month in ['04', '06', '09', '11']:
+        day = str(randint(1, 30)).zfill(2)
+    elif month == '02':
+        day = str(randint(1, 29)).zfill(2)
+    else:
+        day = str(randint(1, 31)).zfill(2)
+    date = f"{month}-{day}-{year}"
+    generated_input = [date]
+    return generated_input
+```

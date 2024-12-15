@@ -1,0 +1,9 @@
+```python
+from random import *
+from cyaron import *
+
+def sample_one():
+    arr_len = randint(1, 10)
+    arr = sorted(set([randint(-10, 10) for _ in range(arr_len)]))
+    return [arr]
+```

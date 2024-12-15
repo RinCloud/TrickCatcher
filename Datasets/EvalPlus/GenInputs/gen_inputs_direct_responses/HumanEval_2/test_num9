@@ -1,0 +1,3 @@
+**Test Input Reasoning:**
+
+We will start with the minimum input first where given floating point number is 0. This is an important edge case to consider since the input is at the minimum limit.

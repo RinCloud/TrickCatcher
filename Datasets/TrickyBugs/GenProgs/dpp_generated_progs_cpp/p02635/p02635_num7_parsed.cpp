@@ -1,0 +1,35 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+const int MOD = 998244353;
+
+int main() {
+    string S;
+    int K;
+    cin >> S >> K;
+
+    int N = S.size();
+    vector<vector<int>> dp(K + 1, vector<int>(N + 1));
+    for (int i = 0; i <= N; i++) {
+        dp[0][i] = 1;
+    }
+
+    for (int k = 1; k <= K; k++) {
+        for (int i = 1; i <= N; i++) {
+            for (int j = 1; j < i; j++) {
+                if (S[j - 1] == '0' && S[i - 1] == '1') {
+                    dp[k][i] = (dp[k][i] + dp[k - 1][j]) % MOD;
+                }
+            }
+        }
+
+        for (int i = 1; i <= N; i++) {
+            dp[k][i] = (dp[k][i] + dp[k][i - 1]) % MOD;
+        }
+    }
+
+    cout << dp[K][N] << endl;
+
+    return 0;
+}

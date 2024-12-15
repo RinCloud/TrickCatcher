@@ -1,0 +1,10 @@
+{"input": ["apple pie"], "output": False}
+{"input": ["apple pi e"], "output": True}
+{"input": ["apple pi e "], "output": False}
+{"input": [""], "output": False}
+{"input": ["1234"], "output": False}
+{"input": ["hello world"], "output": False}
+{"input": ["hello world "], "output": True}
+{"input": ["goodbye "], "output": False}
+{"input": ["!@#$%^&*()"], "output": False}
+{"input": ["testing 123"], "output": False}

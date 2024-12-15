@@ -1,0 +1,55 @@
+// C++ program to find the number of sequences
+// of length K consisting of positive integers
+// such that the product of any two adjacent 
+// elements is at most N
+
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+const int MOD = 1e9 + 7;
+
+// Function to find the number of sequences
+int findNumberOfSequences(int N, int K) {
+    // Create a dp 2D array
+    vector<vector<int>> dp(N+1, vector<int>(K+1, 0));
+
+    // Initialize base cases
+    for (int i = 1; i <= N; i++) {
+        dp[i][1] = 1;
+    }
+
+    // Fill the dp array
+    for (int k = 2; k <= K; k++) {
+        for (int i = 1; i <= N; i++) {
+            for (int j = 1; j <= N; j++) {
+                if (i * j <= N) {
+                    dp[i * j][k] = (dp[i * j][k] + dp[i][k - 1]) % MOD;
+                }
+            }
+        }
+    }
+
+    // Calculate the total number of sequences
+    int totalSequences = 0;
+    for (int i = 1; i <= N; i++) {
+        totalSequences = (totalSequences + dp[i][K]) % MOD;
+    }
+
+    return totalSequences;
+}
+
+// Driver code
+int main() {
+    int N, K;
+    cin >> N >> K;
+
+    // Find the number of sequences
+    int numberOfSequences = findNumberOfSequences(N, K);
+
+    // Print the result
+    cout << numberOfSequences << endl;
+
+    return 0;
+}

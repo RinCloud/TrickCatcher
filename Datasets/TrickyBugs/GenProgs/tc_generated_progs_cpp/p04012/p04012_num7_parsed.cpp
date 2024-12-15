@@ -1,0 +1,28 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    string w;
+    cin >> w;
+    
+    int count[26] = {0};
+    for(char c : w ) {
+        count[c-'a']++;
+    }
+  
+    bool beautiful = true;
+    for(int i=0; i<26; i++) {
+        if(count[i] % 2 != 0) {
+            beautiful = false;
+            break;
+        }
+    }
+  
+    if (beautiful)
+        cout << "Yes";
+    else
+        cout << "No";
+  
+    return 0;
+}

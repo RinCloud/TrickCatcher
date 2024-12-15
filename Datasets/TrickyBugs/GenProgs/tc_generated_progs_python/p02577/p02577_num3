@@ -1,0 +1,18 @@
+**Repaired Code:**
+
+```python
+num_str = input()
+digit_sum = sum([int(x) for x in num_str])
+ans = digit_sum % 9 == 0
+
+if ans:
+  print('Yes')
+else:
+  print('No')
+```
+
+Explanation:
+1. First, we read the integer as a string using `input()` and save it in the variable `num_str`.
+2. We use a list comprehension to convert each character in `num_str` into an integer, and then calculate the sum of these integers using the `sum()` function. This sum gives us the sum of the digits in the decimal representation of `num_str`.
+3. We check if this digit sum is divisible by 9 using the `%` operator. If it is divisible by 9, we set `ans` to `True`; otherwise, we set it to `False`.
+4. Finally, we use an `if-else` statement to check the value of `ans` and print the appropriate output.

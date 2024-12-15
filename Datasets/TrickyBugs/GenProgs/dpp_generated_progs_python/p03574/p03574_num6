@@ -1,0 +1,46 @@
+# Solution
+
+The problem can be solved using nested loops to iterate through each character of the grid. For each empty square, we count the number of adjacent bomb squares by checking the characters in the neighboring positions. 
+
+Here's the complete code to solve the problem:
+
+```python
+H, W = map(int, input().split())
+
+grid = []
+for _ in range(H):
+    grid.append(input())
+
+# Function to check if a given position is within the grid boundaries
+def is_valid_position(i, j):
+    return i >= 0 and j >= 0 and i < H and j < W
+
+# Function to count the number of bomb squares adjacent to an empty square
+def count_adjacent_bombs(i, j):
+    count = 0
+    for di in [-1, 0, 1]:
+        for dj in [-1, 0, 1]:
+            if di == 0 and dj == 0:
+                continue
+            ni = i + di
+            nj = j + dj
+            if is_valid_position(ni, nj) and grid[ni][nj] == "#":
+                count += 1
+    return count
+
+result = []
+for i in range(H):
+    row = ""
+    for j in range(W):
+        if grid[i][j] == ".":
+            row += str(count_adjacent_bombs(i, j))
+        else:
+            row += "#"
+    result.append(row)
+
+print("\n".join(result))
+```
+
+This program takes input from the standard input and prints the resulting grid according to the problem's requirements. It defines two helper functions: `is_valid_position` checks if a given position is within the grid boundaries, and `count_adjacent_bombs` counts the number of bomb squares adjacent to an empty square. The main logic is implemented using nested loops to iterate through each character of the grid and replace empty squares with the count of adjacent bombs.
+
+Note: The program assumes that the input grid is valid and within the given constraints. It does not include any input validation or error handling.

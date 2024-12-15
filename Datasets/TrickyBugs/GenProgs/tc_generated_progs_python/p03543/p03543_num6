@@ -1,0 +1,25 @@
+**BUG FIX**
+The given code works fine, however, it is quite hard to read and understand. I would rewrite the code for better readability and understanding.
+
+The problem requires us to check if a given 4-digit integer N is good or not.
+
+A 4-digit integer is considered good if it has three or more consecutive same digits.
+
+I will provide you with a modified version of the code that is more readable and understandable.
+
+Here's the modified code to solve the problem:
+
+```python
+N = int(input())
+
+digits = [int(digit) for digit in str(N)]
+
+if digits[0] == digits[1] == digits[2] or digits[1] == digits[2] == digits[3]:
+    print("Yes")
+else:
+    print("No")
+```
+
+Explanation:
+- We convert the input integer N into a list of digits using the `str()` and `int()` functions.
+- We then check if either the first three digits or the last three digits are equal. If any of these conditions are met, we print "Yes". Otherwise, we print "No".

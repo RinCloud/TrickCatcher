@@ -1,0 +1,10 @@
+```python
+from random import randint
+from cyaron import *
+
+def sample_one():
+    s = String.random(randint(1, 20))
+    c = String.random(randint(1, 10), charset=s)  # ensure c contains some characters from s
+    generated_input = [s, c]
+    return generated_input
+```

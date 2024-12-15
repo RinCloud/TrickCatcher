@@ -1,0 +1,10 @@
+```python
+from random import randint
+
+def sample_one():
+    length_of_arr = randint(1, 100)
+    arr = [randint(1, 9999) for _ in range(length_of_arr)]
+    k = randint(1, length_of_arr)
+    generated_input = [arr, k]
+    return generated_input
+```

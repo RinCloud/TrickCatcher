@@ -1,0 +1,28 @@
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+int main() {
+    string S;
+    cin >> S;
+
+    vector<int> count(2019, 0);
+    count[0] = 1;
+
+    int n = S.length();
+    int result = 0;
+    int num = 0;
+    int pow10 = 1;
+
+    for (int i = n - 1; i >= 0; i--) {
+        num = (num + (S[i] - '0') * pow10) % 2019;
+        pow10 = (pow10 * 10) % 2019;
+        result += count[num];
+        count[num]++;
+    }
+
+    cout << result << endl;
+
+    return 0;
+}

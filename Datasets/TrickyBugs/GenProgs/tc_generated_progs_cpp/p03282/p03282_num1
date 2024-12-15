@@ -1,0 +1,27 @@
+**Repaired Code**:
+
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+int main(){
+  string s;
+  long long n;
+  cin >> s >> n;
+  for(long long i=0; i<n; ++i){
+    int si = s[i] - '0';
+    if(si>1){
+        cout << si << endl;
+        return 0;
+    } else {
+        n += si - 1;
+    }
+  }
+  cout << 1 << endl;
+}
+```
+
+**Explanation**:
+
+1. Updated the data type of `n` from `int` to `long long` as the constraint mentioned that `n` can be as high as 10^18.
+2. Added an `else` statement to handle the case when `si` is equal to 1. In this case, we need to decrement `n` by `1` to account for the replacement of `1` with `11`.

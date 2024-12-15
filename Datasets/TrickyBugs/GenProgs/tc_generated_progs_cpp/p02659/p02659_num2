@@ -1,0 +1,17 @@
+**REPAIRED CODE**:
+
+```
+#include<iostream>
+using namespace std;
+long A;
+double B;
+int main()
+{
+  cin>>A>>B;
+  int T = B * 100;
+  cout<<A*T/100<<endl;
+}
+```
+
+**NOTE**:
+In the original code, the variable `B` is declared as a string. However, the given constraints specify that `B` should be a number with two digits after the decimal point. Therefore, it makes more sense to declare `B` as a `double` instead. Additionally, to compute the value of `T`, we can simply multiply `B` by 100 to convert it into an integer with two digits after the decimal point.

@@ -1,0 +1,10 @@
+[[],
+["ab"],
+["ab", "cd"],
+["ab", "cd", "ef"],
+["abc", "def"],
+["def", "abc"],
+["abcd", "efgh"],
+["abcd", "efgh", "ijkl"],
+["abcd", "efgh", "ijkl", "mnop"],
+["abcd", "efgh", "ijkl", "mnop", "qrst"]]

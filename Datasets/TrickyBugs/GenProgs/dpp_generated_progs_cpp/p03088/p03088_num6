@@ -1,0 +1,64 @@
+```cpp
+#include <iostream>
+#include <vector>
+
+const int MOD = 1000000007;
+const std::vector<char> bases{'A', 'C', 'G', 'T'};
+const std::string ban{"AGC"};
+
+int main() {
+    int N;
+    std::cin >> N;
+    
+    std::vector<std::vector<std::vector<long long>>> dp(
+        N+1, std::vector<std::vector<long long>>(
+                4, std::vector<long long>(
+                        4, std::vector<long long>(4, 0))));
+    
+    for (int i = 0; i < 4; i++) {
+        for (int j = 0; j < 4; j++) {
+            for (int k = 0; k < 4; k++) {
+                if (j == 0 && k == 2) continue;
+                if (j == 1 && k == 0) continue;
+                if (j == 2 && k == 0) continue;
+                if (i == 0 && j == 2 && k == 1) continue;
+                if (i == 0 && j == 1 && k == 2) continue;
+                dp[3][i][j][k] = 1;
+            }
+        }
+    }
+    
+    for (int n = 4; n <= N; n++) {
+        for (int i = 0; i < 4; i++) {
+            for (int j = 0; j < 4; j++) {
+                for (int k = 0; k < 4; k++) {
+                    for (int x = 0; x < 4; x++) {
+                        if (j == 0 && k == 2 && x == 1) continue;
+                        if (j == 0 && k == 1 && x == 2) continue;
+                        if (i == 0 && j == 2 && k == 1 && x == 0) continue;
+                        if (i == 0 && j == 1 && k == 2 && x == 0) continue;
+                        if (i == 0 && j == 2 && x == 1 && ban.find(bases[k] + bases[x]) != std::string::npos) continue;
+                        if (i == 0 && k == 2 && x == 1 && ban.find(bases[j] + bases[x]) != std::string::npos) continue;
+                        dp[n][j][k][x] += dp[n-1][i][j][k];
+                        dp[n][j][k][x] %= MOD;
+                    }
+                }
+            }
+        }
+    }
+    
+    long long ans = 0;
+    for (int i = 0; i < 4; i++) {
+        for (int j = 0; j < 4; j++) {
+            for (int k = 0; k < 4; k++) {
+                ans += dp[N][i][j][k];
+                ans %= MOD;
+            }
+        }
+    }
+    
+    std::cout << ans << std::endl;
+    
+    return 0;
+}
+```

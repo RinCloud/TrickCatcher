@@ -1,0 +1,45 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main() {
+    int N, K;
+    string S;
+    cin >> N >> K >> S;
+    
+    vector<int> consecutive_counts;
+    int count = 0;
+    for (int i = 0; i < N; i++) {
+        if (S[i] == '1') {
+            count++;
+        } else {
+            consecutive_counts.push_back(count);
+            count = 0;
+        }
+    }
+    consecutive_counts.push_back(count);
+    
+    int num_segments = consecutive_counts.size();
+    int max_consecutive = 0;
+    
+    int left = 0, right = 0;
+    int num_flips = 0;
+    int on_hands = 0;
+    
+    while (right < num_segments) {
+        while (num_flips >= K && left < num_segments) {
+            num_flips -= consecutive_counts[left];
+            on_hands -= consecutive_counts[left];
+            left++;
+        }
+        
+        max_consecutive = max(max_consecutive, on_hands + min(K - num_flips, consecutive_counts[right]));
+        num_flips += consecutive_counts[right];
+        on_hands += consecutive_counts[right];
+        right++;
+    }
+    
+    cout << max_consecutive << endl;
+    
+    return 0;
+}

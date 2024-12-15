@@ -1,0 +1,27 @@
+```python
+def find_complexity(grid):
+    def dfs(i, j, color):
+        if i < 0 or i >= H or j < 0 or j >= W:
+            return 0
+        if visited[i][j] or grid[i][j] != color:
+            return 0
+        visited[i][j] = True
+        return 1 + dfs(i - 1, j, color) + dfs(i + 1, j, color) + dfs(i, j - 1, color) + dfs(i, j + 1, color)
+    
+    H, W = len(grid), len(grid[0])
+    visited = [[False] * W for _ in range(H)]
+    complexity = 0
+    for i in range(H):
+        for j in range(W):
+            if not visited[i][j]:
+                black_count = dfs(i, j, '#')
+                white_count = dfs(i, j, '.')
+                if black_count > 0 and white_count > 0:
+                    complexity = max(complexity, max(black_count, white_count))
+    return complexity
+
+
+H, W = map(int, input().split())
+grid = [list(input()) for _ in range(H)]
+print(find_complexity(grid))
+```

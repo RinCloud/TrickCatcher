@@ -1,0 +1,28 @@
+```cpp
+#include <iostream>
+#include <algorithm>
+#include <vector>
+
+int main() {
+    int N;
+    std::cin >> N;
+    
+    std::vector<int> permutation(N);
+    for (int i = 0; i < N; i++) {
+        permutation[i] = i + 1;
+    }
+    
+    long long sum = 0;
+    do {
+        long long partialSum = 0;
+        for (int i = 0; i < N; i++) {
+            partialSum += (i + 1) % permutation[i];
+        }
+        sum = std::max(sum, partialSum);
+    } while (std::next_permutation(permutation.begin(), permutation.end()));
+    
+    std::cout << sum << std::endl;
+    
+    return 0;
+}
+```

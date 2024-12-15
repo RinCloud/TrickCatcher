@@ -1,0 +1,10 @@
+```python
+from random import *
+def sample_one():
+    x = []
+    length_of_x = randint(1, 10)
+    for _ in range(length_of_x):
+        x.append(randint(1, 10000))
+    generated_input = [x]
+    return generated_input
+```

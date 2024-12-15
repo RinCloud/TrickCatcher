@@ -1,0 +1,38 @@
+**REPAIRED CODE**:
+
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+map <string,int> m;
+string str[120];
+int main() {
+    int ma = 0, n, i;
+    string st;
+    cin >> n;
+    for(i = 1; i <= n; i++) {
+        string s;
+        cin >> s;
+        str[i] = s;
+        m[str[i]]++;
+    }
+    cin >> n;
+    for(i = 1; i <= n; i++){
+        string s;
+        cin >> s;
+        st = s;
+        m[st]--;
+    }
+    for(i = 1; i <= n; i++){
+        if(m[str[i]] > ma) ma = m[str[i]];
+    }
+    cout << ma << endl;
+    return 0;
+}
+```
+
+The bugs in the original code are as follows:
+- `scanf("%s", s)` reads only one word, not a string with spaces. Changing this to `cin >> s` fixed the bug.
+- The condition in the last loop should be `i <= n`, not `i <= n`.
+- The last loop checks `m[str[i]]`, which should be `m[str[i]][0]` to obtain the count for each string.
+- Changed all IO functions from `scanf` and `printf` to `cin` and `cout` for consistency and better readability.

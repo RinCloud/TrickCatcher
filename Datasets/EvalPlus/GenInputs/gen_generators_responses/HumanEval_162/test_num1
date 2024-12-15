@@ -1,0 +1,13 @@
+```python
+from random import *
+from cyaron import *
+
+def sample_one():
+    length_of_text = randint(0, 20)
+    if length_of_text == 0:
+        text = ""
+    else:
+        text = String.random(length_of_text)
+    generated_input = [text]
+    return generated_input
+```

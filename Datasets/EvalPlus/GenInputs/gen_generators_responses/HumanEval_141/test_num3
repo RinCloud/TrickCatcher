@@ -1,0 +1,27 @@
+```python
+from random import *
+from cyaron import *
+
+def sample_one():
+    # Number of characters before the dot (excluding digits and the initial letter)
+    pre_dot_len = randint(0, 5)
+    # Characters allowed before the dot (lowercase and uppercase letters)
+    charset_pre_dot = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    pre_dot_additional_chars = String.random(pre_dot_len, charset=charset_pre_dot)
+
+    # Initial character before the dot (must be a letter)
+    initial_char = choice(charset_pre_dot)
+
+    # Number of digits (0-3) to include in the name
+    num_digits = randint(0, 3)
+    digits = String.random(num_digits, charset="0123456789")
+
+    # Decide on the extension
+    extension = choice(['txt', 'exe', 'dll'])
+
+    # Assemble parts of the file name
+    file_name = initial_char + pre_dot_additional_chars + digits + "." + extension
+
+    generated_input = [file_name]
+    return generated_input
+```

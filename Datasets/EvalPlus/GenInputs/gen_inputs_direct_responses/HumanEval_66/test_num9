@@ -1,0 +1,5 @@
+**Test Input Reasoning:**
+
+- The input string is empty.
+- This is the base case where there are no uppercase characters in the string.
+- The expected output is 0.

@@ -1,0 +1,10 @@
+```python
+from random import *
+from cyaron import *
+
+def sample_one():
+    length_of_txt = randint(0, 20)
+    txt = String.random(length_of_txt, charset='abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ')
+    generated_input = [txt]
+    return generated_input
+```

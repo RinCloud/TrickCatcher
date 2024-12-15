@@ -1,0 +1,32 @@
+```
+c = [list(map(int, input().split())) for i in range(3)]
+
+if c[0][0]+c[1][0]-2*c[2][0]+c[0][1]+c[1][1]-2*c[2][1]-2*c[0][2]-2*c[1][2]+4*c[2][2] == 0:
+  print("Yes")
+else:
+  print("No")
+```
+The given code checks if the given 3x3 grid satisfies the equation c[0][0]+c[1][0]-2*c[2][0]+c[0][1]+c[1][1]-2*c[2][1]-2*c[0][2]-2*c[1][2]+4*c[2][2] == 0. If it is satisfied, it prints "Yes", otherwise, it prints "No".
+
+To repair the code, we need to analyze the problem and come up with a correct equation.
+
+We have a 3x3 grid and we are given the integers a_1, a_2, a_3, b_1, b_2, b_3, and we know that the number written in the square (i, j) is equal to a_i + b_j. So, the number in the top-left square (1, 1) is a_1 + b_1, the number in the top-right square (1, 3) is a_1 + b_3, and so on.
+
+If we expand the given equation:
+a_1 + b_1 + a_2 + b_1 - 2 * a_3 - 2 * b_1 + a_1 + b_2 + a_2 + b_2 - 2 * a_3 - 2 * b_2 - 2 * a_1 - 2 * b_3 - 2 * a_2 - 2 * b_3 + 4 * a_3 + 4 * b_3 == 0
+
+We can simplify it:
+2 * a_1 + 2 * a_2 - 4 * a_3 - 2 * a_1 - 2 * a_3 - 2 * a_2 - 2 * b_1 - 2 * b_1 - 2 * b_3 - 2 * b_2 - 2 * b_2 - 2 * b_3 + 4 * a_3 + 4 * b_3 == 0
+
+2 * (a_1 + a_2 - 2 * a_3) - 2 * (b_1 + b_2 - 2 * b_3) == 0
+
+Now, we can rewrite the code to correctly solve the problem:
+
+```
+c = [list(map(int, input().split())) for i in range(3)]
+
+if 2 * (c[0][0] + c[1][0] - 2 * c[2][0]) - 2 * (c[0][1] + c[0][2] - 2 * c[2][1]) == 0:
+  print("Yes")
+else:
+  print("No")
+```

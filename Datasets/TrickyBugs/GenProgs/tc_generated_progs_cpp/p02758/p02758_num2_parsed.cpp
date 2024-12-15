@@ -1,0 +1,40 @@
+#include<iostream>
+#include<cstdio>
+#include<algorithm>
+using namespace std;
+const int mod=998244353,INF=1e9+7;
+const int N=1002020;
+int n,gr[N],f[N],x1[N],suf[N];
+struct Robot{int x,d;}rb[N];
+bool cmp(const Robot &x,const Robot &y){return x.x<y.x;}
+struct Fenwick_Tree{
+	int c[N];
+	int lowbit(int x){return x & (-x);}
+	void add(int x,int y){for(;x<=n;x+=lowbit(x))c[x]=max(c[x],y);}
+	int ask(int x){int r=0;for(;x;x-=lowbit(x))r=max(r,c[x]);return r;}
+}tr;
+int read(){
+	int x=0,f=1; char ch=getchar();
+	while(ch<'0' || ch>'9'){if(ch=='-')f=-1;ch=getchar();}
+	while(ch>='0' && ch<='9'){x=x*10+ch-'0';ch=getchar();}
+	return x*f;
+}
+int main()
+{
+	n=read();
+	for(int i=1;i<=n;i++)
+		rb[i].x=read(),rb[i].d=read();
+	sort(rb+1,rb+n+1,cmp);
+//	for(int i=1;i<=n;i++)cout<<rb[i].x<<"("<<rb[i].d<<") ";cout<<endl;
+	for(int i=1;i<=n;i++)x1[i]=rb[i].x;
+	x1[n+1]=INF;
+	for(int i=n;i>=1;i--){
+		int th=lower_bound(x1+1,x1+n+2,rb[i].x+rb[i].d)-x1; --th;
+		gr[i]=max(i,tr.ask(th)); tr.add(i,gr[i]);
+	}
+	f[n+1]=1;
+	for(int i=n;i>=1;i--)
+		f[i]=(f[i+1]+f[gr[i]+1])%mod;
+	cout<<f[1]<<endl;
+	return 0;
+}

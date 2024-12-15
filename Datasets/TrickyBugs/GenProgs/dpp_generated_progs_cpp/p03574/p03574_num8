@@ -1,0 +1,54 @@
+Here is a possible solution:
+
+```cpp
+#include <iostream>
+#include <vector>
+#include <string>
+
+using namespace std;
+
+int main() {
+    int H, W;
+    cin >> H >> W;
+    
+    vector<string> grid(H);
+    for (int i = 0; i < H; i++) {
+        cin >> grid[i];
+    }
+    
+    vector<vector<int>> bombsAdj(H, vector<int>(W, 0));
+    vector<vector<int>> directions = {{-1, 0}, {1, 0}, {0, -1}, {0, 1}, {-1, -1}, {-1, 1}, {1, -1}, {1, 1}};
+    
+    for (int i = 0; i < H; i++) {
+        for (int j = 0; j < W; j++) {
+            if (grid[i][j] == '#') {
+                continue;
+            }
+            
+            for (auto direction : directions) {
+                int ni = i + direction[0];
+                int nj = j + direction[1];
+                
+                if (ni >= 0 && ni < H && nj >= 0 && nj < W && grid[ni][nj] == '#') {
+                    bombsAdj[i][j]++;
+                }
+            }
+        }
+    }
+    
+    for (int i = 0; i < H; i++) {
+        for (int j = 0; j < W; j++) {
+            if (grid[i][j] == '#') {
+                cout << '#';
+            } else {
+                cout << bombsAdj[i][j];
+            }
+        }
+        cout << endl;
+    }
+    
+    return 0;
+}
+```
+
+This program reads the input values, stores the grid in a vector of strings, calculates the number of adjacent bombs for each empty square and then prints the modified grid. It uses a vector of vectors to store the number of adjacent bombs for each square. The directions vector stores the relative coordinates of the adjacent squares. The program then iterates over each square, checks if it is empty or a bomb, and counts the number of adjacent bombs. Finally, it prints the modified grid by replacing empty squares with the number of adjacent bombs and leaving bomb squares unchanged.

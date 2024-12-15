@@ -1,0 +1,22 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long
+int main(){
+  ll n;
+  cin>>n;
+  int min_value = INT_MAX;
+  for(int i=1;i<=(int)sqrt(n);i++){
+    if(n%i==0){
+      int cn=0,j=n/i;
+      while(j!=0){
+        j/=10;
+        cn++;
+      }
+      if(cn < min_value) {
+          min_value = cn;
+      }
+    }
+  }
+  cout<<min_value;
+  return 0;
+}

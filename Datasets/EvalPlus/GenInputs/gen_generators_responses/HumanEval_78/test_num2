@@ -1,0 +1,10 @@
+```python
+from random import *
+
+def sample_one():
+    hex_chars = '0123456789ABCDEF'
+    length_of_hex_str = randint(1, 15)  # limit the string length to 15 for simplicity
+    hex_str = ''.join(choice(hex_chars) for _ in range(length_of_hex_str))
+    generated_input = [hex_str]
+    return generated_input
+```

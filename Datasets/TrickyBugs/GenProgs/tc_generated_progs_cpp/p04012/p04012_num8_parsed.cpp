@@ -1,0 +1,15 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main() {
+  string w; cin >> w;
+  vector<int> freq(26, 0);
+  for (char c : w) freq[c - 'a']++;
+  bool isBeautiful = true;
+  for (int i = 0; i < 26; i++) {
+    if (freq[i] % 2 != 0) {
+      isBeautiful = false;
+      break;
+    }
+  }
+  cout << (isBeautiful ? "Yes" : "No") << endl;
+}

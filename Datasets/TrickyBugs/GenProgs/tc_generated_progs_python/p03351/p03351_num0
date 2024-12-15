@@ -1,0 +1,9 @@
+I noticed a bug in the code:
+- In the second condition of the if statement, it is using `16` as the distance instead of `d`.
+
+Here is the repaired code:
+
+```python
+a, b, c, d = map(int, input().split())
+print('Yes' if (abs(a - b) <= d and abs(b - c) <= d) or abs(a - c) <= d else 'No')
+```

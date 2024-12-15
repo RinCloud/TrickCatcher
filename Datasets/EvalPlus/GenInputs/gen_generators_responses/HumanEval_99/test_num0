@@ -1,0 +1,8 @@
+```python
+from random import uniform
+
+def sample_one():
+    value = str(uniform(-100.5, 100.5))
+    generated_input = [value]
+    return generated_input
+```

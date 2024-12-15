@@ -1,0 +1,10 @@
+{"input": [[1, 2, 3, 4, 5], ], "output": [1, 2, 3, 4, 5]}
+{"input": [[], ], "output": []}
+{"input": [[1, 2, 'a', 'b', 3, 'c'], ], "output": [1, 2, 3]}
+{"input": [['a', 'b', 'c', 'd'], ], "output": []}
+{"input": [[-1, -5, 0, 3], ], "output": [-1, -5, 0, 3]}
+{"input": [[True, False, 1, 0], ], "output": [1, 0]}
+{"input": [['apple', 'banana', 'carrot'], ], "output": []}
+{"input": [[1, 2, 3, 'a', 'b', 'c', 4], ], "output": [1, 2, 3, 4]}
+{"input": [[1.2, 3.4, 5.6], ], "output": []}
+{"input": [[1, 2, 3, 4, 5, 'apple', 'banana', 'carrot'], ], "output": [1, 2, 3, 4, 5]}

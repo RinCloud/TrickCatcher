@@ -1,0 +1,36 @@
+```cpp
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <cmath>
+
+int main() {
+    int X, N;
+    std::cin >> X >> N;
+
+    std::vector<int> p(N);
+    for (int i = 0; i < N; i++) {
+        std::cin >> p[i];
+    }
+
+    // Sort the sequence in ascending order
+    std::sort(p.begin(), p.end());
+
+    int nearest = X;
+    int minDiff = INT_MAX;
+
+    // Search for the nearest integer not in the sequence
+    for (int i = 0; i <= 100; i++) {
+        if (std::find(p.begin(), p.end(), i) == p.end()) {
+            if (std::abs(i - X) < minDiff) {
+                minDiff = std::abs(i - X);
+                nearest = i;
+            }
+        }
+    }
+
+    std::cout << nearest << std::endl;
+
+    return 0;
+}
+```

@@ -1,0 +1,9 @@
+```python
+from random import randint
+
+def sample_one():
+    length_of_nums = randint(1, 20)  # Define the length of the array
+    nums = [randint(-10, 10) for _ in range(length_of_nums)]  # Generate array with integers from -10 to 10
+    generated_input = [nums]  # Wrap the nums in a list to match the expected input format
+    return generated_input
+```

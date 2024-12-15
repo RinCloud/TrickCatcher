@@ -1,0 +1,9 @@
+```python
+from cyaron import *
+def sample_one():
+    length_of_num = randint(0, 20)
+    hexadecimal_chars = '0123456789ABCDEF'
+    num = String.random(length_of_num, charset=hexadecimal_chars)
+    generated_input = [num,]
+    return generated_input
+```

@@ -1,0 +1,10 @@
+{"input": ["hello"], "output": "mjqqt"}
+{"input": ["abcxyz"], "output": "fghcde"}
+{"input": ["xyzabc"], "output": "cdefgh"}
+{"input": [""], "output": ""}
+{"input": ["abcdefghijklmnopqrstuvwxyz"], "output": "fghijklmnopqrstuvwxyzabcde"}
+{"input": ["!@#$%^&*()"], "output": "!@#$%^&*()"}
+{"input": ["12345"], "output": "12345"}
+{"input": ["Hello World!"], "output": "Mjqqt Btwqi!"}
+{"input": ["abcd efgh"], "output": "fghi jklm"}
+{"input": ["Encode Decode"], "output": "Jssinf Itfijt"}

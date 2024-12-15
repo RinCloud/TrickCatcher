@@ -1,0 +1,35 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <cmath>
+
+int main() {
+    int X, N;
+    std::cin >> X >> N;
+
+    std::vector<int> p(N);
+    for (int i = 0; i < N; i++) {
+        std::cin >> p[i];
+    }
+
+    // Sort the sequence in ascending order
+    std::sort(p.begin(), p.end());
+
+    int nearest = -1;
+    int minDifference = std::abs(X - p[0]);
+
+    // Iterate through the integers not contained in the sequence
+    for (int i = 1; i < 101; i++) {
+        if (std::find(p.begin(), p.end(), i) == p.end()) {
+            int difference = std::abs(X - i);
+            if (difference < minDifference) {
+                nearest = i;
+                minDifference = difference;
+            }
+        }
+    }
+
+    std::cout << nearest << std::endl;
+
+    return 0;
+}

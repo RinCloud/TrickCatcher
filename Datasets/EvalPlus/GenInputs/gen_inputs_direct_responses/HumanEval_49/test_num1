@@ -1,0 +1,5 @@
+**Test Input Reasoning:**
+
+Consider the case where `n` is a positive number and `p` is a prime number.
+
+I chose this test case because it covers the scenario where the input values are the minimum possible values for the function parameters.

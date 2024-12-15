@@ -1,0 +1,22 @@
+#include <iostream>
+#include <string>
+
+int minimumTilesToRepaint(const std::string& s) {
+    int count = 0;
+    for (int i = 1; i < s.length(); i++) {
+        if (s[i] == s[i-1]) {
+            count++;
+        }
+    }
+    return count;
+}
+
+int main() {
+    std::string s;
+    std::cin >> s;
+
+    int result = minimumTilesToRepaint(s);
+    std::cout << result << std::endl;
+
+    return 0;
+}

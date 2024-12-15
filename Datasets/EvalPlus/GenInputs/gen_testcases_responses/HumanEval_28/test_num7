@@ -1,0 +1,10 @@
+{"input": [["hello", "world"], ["python"]], "output": "helloworldpython"}
+{"input": [["a", "b", "c"], ["d", "e", "f"]], "output": "abcdef"}
+{"input": [[""], [""]], "output": ""}
+{"input": [["hello", " ", "world"], ["i", "am", "here"]], "output": "hello worldi am here"}
+{"input": [["a", "b", "c"], []], "output": "abc"}
+{"input": [[], []], "output": ""}
+{"input": [["h", "e", "l", "l", "o"], ["w", "o", "r", "l", "d"]], "output": "helloworld"}
+{"input": [["a", "b", "c"], [" "]], "output": "abc "}
+{"input": [["a", "b", "c"], [1, 2, 3]], "output": ""}
+{"input": [[1, 2, 3], ["a", "b", "c"]], "output": ""}

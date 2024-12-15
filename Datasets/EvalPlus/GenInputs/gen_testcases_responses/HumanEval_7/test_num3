@@ -1,0 +1,10 @@
+{"input": [["abc", "bacd", "cde", "array"], "a"], "output": ["abc", "bacd", "array"]}
+{"input": [[], "a"], "output": []}
+{"input": [["abcd", "bacd", "cde", "array"], ""], "output": ["abcd", "bacd", "cde", "array"]}
+{"input": [["abc", "bacd", "cde", "array"], "e"], "output": ["cde", "array"]}
+{"input": [["abc", "bacd", "cde", "array"], "B"], "output": ["bacd"]}
+{"input": [["abc", "bacd", "cde", "array"], "z"], "output": []}
+{"input": [["abc", "bacd", "cde", "array"], "ABC"], "output": []}
+{"input": [["a", "b", "c", "d", "e"], "b"], "output": ["b"]}
+{"input": [["ab", "ba", "ca", "da"], "a"], "output": ["ab", "ba", "ca", "da"]}
+{"input": [["ab", "ba", "ca", "da"], "A"], "output": ["ab", "ba", "ca", "da"]}

@@ -1,0 +1,10 @@
+{"input": [[], 'a'], "output": []}
+{"input": [['abc', 'bcd', 'cde', 'array'], 'a'], "output": ['abc', 'array']}
+{"input": [['abc', 'bcd', 'cde', 'array'], 'b'], "output": ['bcd']}
+{"input": [['abc', 'bcd', 'cde', 'array'], 'c'], "output": ['cde']}
+{"input": [['abc', 'bcd', 'cde', 'array'], 'd'], "output": []}
+{"input": [['abc', 'bcd', 'cde', 'array'], ''], "output": ['abc', 'bcd', 'cde', 'array']}
+{"input": [['123', 'abc', 'bcd', 'cde', 'array'], '1'], "output": ['123']}
+{"input": [['123', 'abc', 'bcd', 'cde', 'array'], '2'], "output": []}
+{"input": [['123', 'abc', 'bcd', 'cde', 'array'], '3'], "output": ['123']}
+{"input": [['123', 'abc', 'bcd', 'cde', 'array'], '123'], "output": ['123']}

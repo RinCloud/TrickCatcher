@@ -1,0 +1,10 @@
+['one', 'two', 'three', 'four']
+{'one': 1, 'TWO': 2, 'Three': 3, 'four': 4}
+{}
+{'Apple': 'red', 'Banana': 'yellow', 'Cherry': 'red'}
+{'name': 'John', 'age': 36, 'city': 'Houston'}
+{'State': 'NC', 'zip': '12345'}
+{'Country': 'USA', 'Population': 328200000}
+{'a': 'apple', 'B': 'banana', 'C': 'cherry'}
+{'1': 'one', '2': 'two', '3': 'three'}
+{'name': 'John Doe'}

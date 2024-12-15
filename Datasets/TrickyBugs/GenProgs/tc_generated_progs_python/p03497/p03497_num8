@@ -1,0 +1,10 @@
+```python
+from collections import Counter   
+n, k = map(int, input().split())  
+d = Counter()
+for key in input().split():
+  d[key] += 1
+l = len(d)
+print(sum(sorted(d.values())[:l-k]))
+```
+There is a bug in the code provided to solve this problem. You need to change the import statement from `from collections import defaultdict` to `from collections import Counter`.

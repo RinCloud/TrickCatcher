@@ -1,0 +1,22 @@
+# Program
+
+```
+def gemstones(N, gems):
+    max_earnings = 0
+    for x in range(1, N+1):
+        earnings = 0
+        for i in range(1, N+1):
+            if i % x != 0:
+                earnings += gems[i-1]
+        max_earnings = max(max_earnings, earnings)
+    return max_earnings
+
+N = int(input())
+gems = list(map(int, input().split()))
+
+print(gemstones(N, gems))
+```
+
+The `gemstones` function takes the number of gemstones `N` and a list of earnings `gems` as input. It iterates over all possible values of `x` from 1 to `N` and calculates the earnings when smashing all the gems that are not multiples of `x`. It keeps track of the maximum earnings obtained and returns the maximum earnings.
+
+In the main part of the program, it reads the input values for `N` and `gems`. Then, it calls the `gemstones` function with the input values and prints the result.

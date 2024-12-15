@@ -1,0 +1,28 @@
+```cpp
+#include <iostream>
+#include <vector>
+
+const int P = 200003;
+
+int main() {
+    int N;
+    std::cin >> N;
+
+    std::vector<int> A(N);
+    for (int i = 0; i < N; i++) {
+        std::cin >> A[i];
+    }
+
+    long long int totalSum = 0;
+
+    for (int i = 0; i < N; i++) {
+        for (int j = i + 1; j < N; j++) {
+            totalSum += (1LL * A[i] * A[j]) % P;
+        }
+    }
+
+    std::cout << totalSum << std::endl;
+
+    return 0;
+}
+```

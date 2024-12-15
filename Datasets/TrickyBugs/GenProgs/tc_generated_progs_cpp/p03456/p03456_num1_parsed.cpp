@@ -1,0 +1,18 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+bool isSquare(int n) {
+  int root = sqrt(n);
+  return (root * root == n);
+}
+
+int main(){
+  int a, b;
+  cin >> a >> b;
+  string n = to_string(a);
+  string m = to_string(b);
+  string tmp = n + m;
+  int q = stoi(tmp);
+  if(isSquare(q)) cout << "Yes" << endl;
+  else cout << "No" << endl;
+}

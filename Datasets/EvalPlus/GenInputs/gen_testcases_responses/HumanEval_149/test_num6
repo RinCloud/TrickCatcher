@@ -1,0 +1,10 @@
+{"input": [["aa", "a", "aaa"]], "output": ["aa"]}
+{"input": [["ab", "a", "aaa", "cd"]], "output": ["ab", "cd"]}
+{"input": [["a", "cc", "dddd", "eeee"], ["aa", "b", "ccccc", "dddddd"], ["aaa", "bbbb", "ccccc", "dddddd"]], "output": ["aaaaa", "bbbbb", "ccccc", "dddddd"]}
+{"input": [["apple", "banana", "grape", "melon"], ["orange", "kiwi", "pear"], ["cherry", "pineapple", "cranberry", "pomegranate"]], "output": ["apple", "grape", "melon", "pear"]}
+{"input": [["cat", "dog", "fish", "snake"], ["elephant", "lion", "tiger"], ["monkey", "gorilla", "chimpanzee", "orangutan"]], "output": ["cat", "dog", "fish", "snake"]}
+{"input": [["bird", "eagle", "hawk", "owl"], ["penguin", "ostrich", "peacock"], ["parrot", "sparrow", "dove", "robin"]], "output": ["hawk", "eagle", "parrot", "sparrow"]}
+{"input": [["apple", "banana", "orange"], ["pineapple", "kiwi", "grapefruit"], ["melon", "plum", "peach", "mango"]], "output": ["apple", "orange", "melon", "peach"]}
+{"input": [["carrot", "radish", "broccoli"], ["cucumber", "celery", "spinach"], ["potato", "onion", "garlic", "chili"]], "output": ["celery", "carrot", "onion", "potato"]}
+{"input": [["blue", "red", "green"], ["yellow", "orange", "purple"], ["pink", "gray", "black", "white"]], "output": ["red", "green", "black", "pink"]}
+{"input": [["one", "two", "three"], ["four", "five", "six"], ["seven", "eight", "nine", "ten"]], "output": ["two", "one", "five", "six"]}

@@ -1,0 +1,30 @@
+**BUG FIXES & CODE REPAIR**:
+
+- In the given code, there is no need to use the `def` variable.
+- The calculation of `def` is incorrect, it should be `(r-l)%2019` rather than `(r-l)%2020`.
+- The calculation of `r` is incorrect, it should be `r=l+def` % 2019 rather than `r=l+def`.
+- The outer loop should start from 0 rather than `l`.
+- The inner loop should start from `i+1` rather than `1`.
+- After making the above changes, the output should be `ans%2019`, rather than `ans`.
+
+The repairs are as follows:
+
+**REPAIRED CODE**:
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+int main(){
+  long long l,r,ans=2019;
+  cin>>l>>r;
+  l %= 2019;
+  r %= 2019;
+  
+  for(long long i=0;i<=r-1;i++){
+    for(long long j=i+1;j<=r;j++){
+      ans=min(ans,(i*j)%2019);
+    }
+  }
+  cout<<ans%2019;
+}
+```

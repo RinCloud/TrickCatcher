@@ -1,0 +1,10 @@
+```python
+from random import *
+from cyaron import *
+def sample_one():
+    class_name = String.random(randint(3,10))
+    extensions_length = randint(1, 5)
+    extensions = [String.random(randint(3, 15)) for _ in range(extensions_length)]
+    generated_input = [class_name, extensions]
+    return generated_input
+```

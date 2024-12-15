@@ -1,0 +1,20 @@
+**REPAIRED CODE**:
+
+```cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+ char c[55][55]; int h,w,cnt;
+ cin >> h >> w;
+ for(int i= 0;i<h;i++)for(int j=0;j<w;j++)cin >> c[i][j];
+ for(int i =1;i<h-1;i++){
+ 	for(int j =1;j<w-1;j++){
+ 		if(c[i][j] == '#' && c[i][j-1] !='#'&& c[i-1][j] !='#' && c[i][j+1] !='#' && c[i+1][j] !='#' )cnt++;
+ 	}
+ }
+if(cnt == 0) cout <<"Yes" << endl;
+else cout <<"No" << endl;
+}
+```
+Note: I modified the conditions in the first nested for loop. Previously, the loop iterated from `i = 1` to `i <= h` and `j = 1` to `j <= w`. However, the code was accessing `c[i+1][j]` and `c[i][j+1]`, which would result in undefined behavior when `i = h-1` or `j = w-1`. To fix this, I modified the loop limits to `i = 1` to `i < h-1` and `j = 1` to `j < w-1`.

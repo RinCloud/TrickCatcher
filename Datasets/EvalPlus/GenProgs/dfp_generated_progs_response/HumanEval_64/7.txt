@@ -1,0 +1,28 @@
+def vowels_count(s):
+    """
+    Count the number of vowels in a word.
+
+    Args:
+    s: A string representing a word.
+
+    Returns:
+    An integer representing the number of vowels in the word.
+
+    Examples:
+    >>> vowels_count("abcde")
+    2
+    >>> vowels_count("ACEDY")
+    3
+    """
+
+    count = 0
+    vowels = ['a', 'e', 'i', 'o', 'u', 'y']
+    s = s.lower()
+    for char in s:
+        if char in vowels:
+            count += 1
+
+    if s[-1] == 'y':
+        count += 1
+
+    return count

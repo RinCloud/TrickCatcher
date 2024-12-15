@@ -1,0 +1,10 @@
+{"input": ["Hello"], "output": "hELLO"}
+{"input": ["Python"], "output": "pYTHON"}
+{"input": ["TeStIng"], "output": "tEsTiNG"}
+{"input": ["12345"], "output": "12345"}
+{"input": ["HeLlO"], "output": "hElLo"}
+{"input": ["hElLO wOrLD"], "output": "HeLlo WoRld"}
+{"input": ["AbCdEfG"], "output": "aBcDeFg"}
+{"input": ["HELLO"], "output": "hello"}
+{"input": ["12345ABCDE"], "output": "12345abcde"}
+{"input": ["eVErYTHinG"], "output": "EverythING"}

@@ -1,0 +1,21 @@
+The given code seems to have a bug. It incorrectly checks if the count of T in S is equal to 1 instead of checking if it is greater than or equal to 1. 
+
+Here's the repaired code:
+
+```python
+import re
+
+S_ = input()
+T = input()
+Tr = T[::-1]
+Sr = S_[::-1]
+reg = "".join(map(lambda x: "[{}?]".format(x), Tr))
+ans = re.sub(reg, Tr, Sr, count=1)
+
+if ans.count(Tr) >= 1:
+    print(ans.replace("?", "a")[::-1])
+else:
+    print("UNRESTORABLE")
+```
+
+The issue is fixed on line 10 where it checks if `ans.count(Tr) >= 1` instead of `ans.count(Tr) == 1`.

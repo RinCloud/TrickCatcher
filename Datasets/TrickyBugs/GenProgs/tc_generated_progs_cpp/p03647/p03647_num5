@@ -1,0 +1,46 @@
+**REPAIRED CODE:**
+
+```cpp
+#include <cstdio>
+#include <algorithm>
+
+int N, M;
+int a[200001], b[200001];
+
+bool con_to_N[200001];
+
+void solve() {
+    std::fill(con_to_N, con_to_N+N+1, false);
+	for (int i = 1; i <= M; i++) {
+		con_to_N[a[i]] = (b[i] == N);
+	}
+
+	bool possible = false;
+	for (int i = 1; i <= M; i++) {
+		if (a[i] == 1 && con_to_N[b[i]]) {
+			possible = true;
+			break;
+		}
+	}
+
+	printf("%s\n", possible ? "POSSIBLE" : "IMPOSSIBLE");
+}
+
+int main() {
+	scanf("%d%d", &N, &M);
+	for (int i = 1; i <= M; i++) {
+		scanf("%d%d", &a[i], &b[i]);
+	}
+
+	solve();
+	return 0;
+}
+```
+
+The issue with the original code is that the `con_to_N` array is not properly initialized. The array is used to store whether there is a connection from a particular island to Island N. In the original code, the array is not initialized, so it contains garbage values. This can cause incorrect results.
+
+To fix this issue, I have added `std::fill(con_to_N, con_to_N+N+1, false);` to initialize the `con_to_N` array with false values before using it.
+
+Additionally, I have added the `break` statement in the second loop. This is because once we find a boat service that connects Island 1 to Island N, there is no need to continue checking the remaining services. The `break` statement will exit the loop early in this case.
+
+Now the code should work correctly.

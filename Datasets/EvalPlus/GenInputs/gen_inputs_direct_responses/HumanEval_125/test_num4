@@ -1,0 +1,10 @@
+[[],
+ ['Hello', 'world!'],
+ [',Hello', 'world!'],
+ 'Strange case when the string is empty.',
+ [''],
+ [','],
+ [''],
+ [', Hello', 'world!'],
+ [', '],
+ [',']]

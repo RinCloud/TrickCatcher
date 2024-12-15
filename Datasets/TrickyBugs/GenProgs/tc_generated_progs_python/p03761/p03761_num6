@@ -1,0 +1,34 @@
+# Plan
+
+To solve this problem, we need to find the characters that appear in all of the input strings and construct the lexicographically smallest string using these characters.
+
+To do this, we can iterate over all the lowercase English letters (`a` - `z`), count the number of occurrences of each letter in each string, and keep track of the minimum count for each letter.
+
+Then, we can construct the lexicographically smallest string by appending the current letter to the result string the minimum count number of times.
+
+Finally, we can print the result string.
+
+# Revised code
+
+```python
+n = int(input())
+s = []
+for _ in range(n):
+    s.append(input())
+
+l = ''
+for i in range(26):
+    t = float('inf')
+    for j in range(n):
+        t = min(t, s[j].count(chr(97 + i)))
+    l += chr(97 + i) * t
+
+print(l)
+```
+
+The main changes in the code are:
+- Removed the unnecessary conversion of input strings to lists of characters.
+- Fixed the initialization of `t` from `n + 2` to `float('inf')` to ensure it is initialized to a larger value than any count.
+- Concatenated the current letter `chr(97 + i)` to the result string `l` t times, instead of using a loop to append the letter t times.
+
+This revised code should correctly solve the problem.

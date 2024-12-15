@@ -1,0 +1,11 @@
+{"input": [''], "output": ''}
+{"input": ['abcdef\nghijklm'], "output": 'bcdf\nghjklm'}
+{"input": ['abcdef'], "output": 'bcdf'}
+{"input": ['aaaaa'], "output": ''}
+{"input": ['aaBAA'], "output": 'B'}
+{"input": ['zbcd'], "output": 'zbcd'}
+{"input": ['Hi, my name is John'], "output": 'H, my nm s Jhn'}
+{"input": ['Hello World!'], "output": 'Hll Wrld!'}
+{"input": ['QTuyen'], "output": 'QTy'}
+{"input": ['I am a student'], "output": ' m stdnt'}
+{"input": ['Python'], "output": 'Pythn'}

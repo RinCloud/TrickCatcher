@@ -1,0 +1,10 @@
+{"input": [["a", "b", "c"], "ccc"], "output": "a"}
+{"input": [["a", "b", "ccc"], "ccc"], "output": "ccc"}
+{"input": [["a", "b", "abc"], "bbb"], "output": "a"}
+{"input": [["a", "b", "abc"], "abc"], "output": "abc"}
+{"input": [["a", "abb", "abc"], "abc"], "output": "abb"}
+{"input": [["aa", "abb", "abc"], "abc"], "output": "abc"}
+{"input": [["aa", "abb", "abc"], None], "output": "aa"}
+{"input": [["aa", None, "abc"], None], "output": "abc"}
+{"input": [[None, None, None], "abc"], "output": None}
+{"input": [[], None], "output": None}

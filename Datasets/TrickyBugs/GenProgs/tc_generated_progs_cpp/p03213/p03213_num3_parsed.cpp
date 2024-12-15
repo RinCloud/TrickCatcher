@@ -1,0 +1,39 @@
+#include <iostream>
+#include <string>
+#include <vector>
+#include <algorithm>
+#include <stdio.h>
+#include <sstream>
+using namespace std;
+
+int main(){
+  int N;
+  cin>>N;
+  int tmp,ans;
+  int v[N+1]; // Fixed size of array v to N+1
+  for(int k=0;k<=N;++k){
+    v[k]=0;
+  }
+  for(int i=1;i<=N;++i){
+    tmp=i;
+    for(int j=2;j<=N;++j){
+        while(tmp%j==0&&tmp!=1){ // Changed bitwise AND operator & to logical AND operator &&
+            tmp=tmp/j;
+            v[j]+=1;
+        }
+    }
+  }
+  int ans_v[75]; // Changed size of array ans_v to 75
+  for(int i=2;i<75;++i){
+    tmp=0;
+    for(int k=2;k<=N;++k){ // Start from k=2 instead of k=0
+        if(v[k]>=i){
+            tmp+=1;
+        }
+    }
+    ans_v[i]=tmp; // Fixed index of ans_v to i
+  }
+  ans=ans_v[74]+ans_v[24]*(ans_v[2]-1)+ans_v[14]*(ans_v[4]-1)+ans_v[4]*(ans_v[4]-1)*(ans_v[2]-2)/2;
+  cout<<ans;
+  return 0;
+}

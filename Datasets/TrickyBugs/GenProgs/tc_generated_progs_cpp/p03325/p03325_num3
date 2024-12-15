@@ -1,0 +1,17 @@
+**FIXED CODE:**
+```
+#include<iostream>
+int main(){
+  int n,d,r;
+  std::cin>>n;
+  r = 0; // initialize r to zero
+  for(int i=0;i<n;i++){
+    std::cin>>d;
+    while(d%2==0) { // add brackets to include the whole block
+      ++r; // increment r
+      d/=2; // divide d by 2
+    }
+  }
+  std::cout<<r;
+}
+```

@@ -1,0 +1,25 @@
+def minSubArraySum(nums):
+    """
+    Given an array of integers nums, find the minimum sum of any non-empty sub-array
+    of nums.
+    """
+
+    # Initialize variables for current sum and minimum sum
+    curr_sum = 0
+    min_sum = float('inf')
+
+    # Iterate over each element in the array
+    for num in nums:
+        # Update the current sum by adding the current element
+        curr_sum += num
+        
+        # If the current sum is smaller than the minimum sum, update the minimum sum
+        if curr_sum < min_sum:
+            min_sum = curr_sum
+        
+        # If the current sum becomes negative, reset the current sum to 0
+        if curr_sum < 0:
+            curr_sum = 0
+
+    # Return the minimum sum
+    return min_sum

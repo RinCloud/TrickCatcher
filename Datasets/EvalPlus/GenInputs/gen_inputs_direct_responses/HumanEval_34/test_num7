@@ -1,0 +1,3 @@
+**Test Input Reasoning:**
+
+This test case considers an empty list as the input. It tests the function behavior when the input list is empty.

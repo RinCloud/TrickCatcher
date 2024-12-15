@@ -1,0 +1,20 @@
+The given code has a logic flaw. 
+
+The formula used to calculate the number of ways to choose a pair of an even number and an odd number is incorrect.
+
+The correct formula to calculate the number of ways to choose a pair of an even number and an odd number is:
+`number of ways = (number of even numbers)*(number of odd numbers)`
+
+The number of even numbers between 1 and `K` (inclusive) can be calculated as `K // 2`.
+
+The number of odd numbers between 1 and `K` (inclusive) can be calculated as `(K + 1) // 2`.
+
+The corrected code is as follows:
+
+```
+K = int(input())
+even_numbers = K // 2
+odd_numbers = (K + 1) // 2
+number_of_ways = even_numbers * odd_numbers
+print(number_of_ways)
+```

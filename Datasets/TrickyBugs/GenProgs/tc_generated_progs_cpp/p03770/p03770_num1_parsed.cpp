@@ -1,0 +1,55 @@
+#include<iostream>
+#include<cstdio>
+#include<cstring>
+#define N 400010
+#define ll long long
+#define mod 1000000007
+using namespace std;
+int n,x,y;
+int c[N],w[N],num[N],minw[N];
+ll fac[N],inv[N];
+ll ksm(ll a,ll b=mod-2)
+{
+	if(b==0) return 1;
+	if(b==1) return a;
+	ll q=ksm(a,b>>1);
+	if(b&1) return q*q%mod*a%mod;
+	return q*q%mod;
+}
+ll C(int a,int b){if(b>a || b<0) return 0;return fac[a]*inv[b]%mod*inv[a-b]%mod;}
+
+int main()
+{
+	scanf("%d%d%d",&n,&x,&y);;
+	fac[0]=1;
+	for(int i=1;i<=n;i++)fac[i]=fac[i-1]*i%mod;
+	inv[n]=ksm(fac[n]);
+	for(int i=n-1;i>=0;i--) inv[i]=inv[i+1]*(i+1)%mod;
+	for(int i=0;i<=n;i++) minw[i]=100000000;
+	for(int i=1;i<=n;i++) 
+		scanf("%d%d",&c[i],&w[i]),minw[c[i]]=min(minw[c[i]],w[i]);
+	int minid=0,sminid=0;
+	for(int i=1;i<=n;i++)
+	{
+		if(minw[i]<=minw[minid])
+		{
+			sminid=minid;
+			minid=i;
+		}
+		else if(minw[i]<=minw[sminid]) sminid=i;
+	}
+	int cnt=0;
+	for(int i=1;i<=n;i++)
+	{
+		if(w[i]+minw[c[i]]<=x) w[i]=minw[c[i]];
+		int omin=c[i]==minid?sminid:minid;
+		if(minw[omin]+w[i]>y) continue;
+		num[c[i]]++;
+		cnt++;
+	}
+	ll ans=1;
+	for(int i=1;i<=n;i++)
+	if(num[i]) ans=ans*C(cnt,num[i])%mod,cnt-=num[i];
+	printf("%lld",ans);
+	return 0;
+}

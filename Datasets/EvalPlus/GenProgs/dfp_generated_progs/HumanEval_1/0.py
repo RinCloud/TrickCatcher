@@ -1,0 +1,38 @@
+from typing import List
+def separate_paren_groups(paren_string: str) -> List[str]:
+    """Separate groups of nested parentheses into separate strings and return the list of those."""
+    
+    # Remove spaces from the input string
+    paren_string = paren_string.replace(" ", "")
+    
+    # Initialize an empty list to store separated groups
+    groups = []
+    
+    # Initialize variables to keep track of the number of open and close parentheses
+    open_paren_count = 0
+    close_paren_count = 0
+    
+    # Initialize a variable to store the starting index of a new group
+    start_index = 0
+    
+    # Iterate through each character in the string
+    for i in range(len(paren_string)):
+        # Increment the count of open parentheses if the current character is an open parenthesis
+        if paren_string[i] == "(":
+            open_paren_count += 1
+        # Increment the count of close parentheses if the current character is a close parenthesis
+        elif paren_string[i] == ")":
+            close_paren_count += 1
+        
+        # Check if the count of open and close parentheses is equal
+        if open_paren_count == close_paren_count:
+            # Extract the current group and append it to the list
+            group = paren_string[start_index:i+1]
+            groups.append(group)
+            
+            # Reset the counts and update the starting index for the next group
+            open_paren_count = 0
+            close_paren_count = 0
+            start_index = i+1
+            
+    return groups

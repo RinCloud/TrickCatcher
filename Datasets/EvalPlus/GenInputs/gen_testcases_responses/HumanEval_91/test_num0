@@ -1,0 +1,12 @@
+{"input": ["Hello world"], "output": 0}
+{"input": ["The sky is blue. The sun is shining. I love this weather"], "output": 1}
+{"input": ["I am bored. I need to find something to do"], "output": 2}
+{"input": ["I like turtles. I like pizza. I like ice cream"], "output": 3}
+{"input": ["I am", ""], "output": 1}
+{"input": ["I", "."], "output": 1}
+{"input": ["""I am bored.
+               I need to do something interesting.
+               I want to go on a vacation"""], "output": 3}
+{"input": [""], "output": 0}
+{"input": ["I. am. bored"], "output": 1}
+{"input": ["I! want! to! have! fun!"], "output": 1}

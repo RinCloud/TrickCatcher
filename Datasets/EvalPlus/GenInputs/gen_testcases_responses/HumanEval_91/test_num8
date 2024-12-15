@@ -1,0 +1,10 @@
+{"input": ["Hello world"], "output": 0}
+{"input": ["The sky is blue. The sun is shining. I love this weather"], "output": 1}
+{"input": ["I am bored. How about you?"], "output": 1}
+{"input": ["I am happy. How about you? I hope you are fine!"], "output": 2}
+{"input": ["I like pizza. What about you?"], "output": 1}
+{"input": ["I am tired. I need some rest."], "output": 2}
+{"input": ["I feel great. The day is beautiful. I am going for a walk."], "output": 2}
+{"input": ["Do you like chocolate? I do."], "output": 1}
+{"input": ["The movie was amazing. I loved it so much!"], "output": 1}
+{"input": ["This place is amazing. I want to come back here again."], "output": 1}

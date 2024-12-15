@@ -1,0 +1,3 @@
+**Test Input Reasoning:**
+
+I will start by testing the base case where n=0. This will test if the function can correctly handle the smallest possible input.

@@ -1,0 +1,8 @@
+```python
+from random import *
+
+def sample_one():
+    arr_length = randint(0, 20)
+    arr = [randint(-10, 20) for _ in range(arr_length)]
+    return [arr]
+```

@@ -1,0 +1,10 @@
+{"input": [[]], "output": None} 
+{"input": [["a", "b", "c"]], "output": "a"}
+{"input": [["a", "bb", "ccc"]], "output": "ccc"}
+{"input": [["", "b", "ccc"]], "output": "ccc"}
+{"input": [["aaa", "bbb", "ccc"]], "output": "ccc"}
+{"input": [["a", "ab", "abc"]], "output": "abc"}
+{"input": [["ABC", "XYZ", "abc", "xyz"]], "output": "XYZ"}
+{"input": [["ABC", "xyz", "", ""]], "output": "xyz"}
+{"input": [["longest", "string", "is", "here"]], "output": "longest"}
+{"input": [["one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten"]], "output": "three"}

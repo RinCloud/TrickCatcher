@@ -1,0 +1,9 @@
+```python
+from random import *
+from cyaron import *
+def sample_one():
+    length_of_words = randint(1, 10)  # generating length of list between 1 to 10
+    words = [String.random(randint(1, 10), charset='abcdefghijklmnopqrstuvwxyz') for _ in range(length_of_words)]  # generating each word with 1 to 10 lowercase characters
+    generated_input = [words]
+    return generated_input
+```

@@ -1,0 +1,47 @@
+```python
+from random import *
+from cyaron import *
+
+def sample_one():
+    # It randomly decides whether a and b are int, float, or str
+    types = ['int', 'float', 'str']
+    
+    # Generate types for a and b
+    type_a = choice(types)
+    type_b = choice(types)
+    
+    # Generate values for a and b according to their type
+    if type_a == 'int':
+        a = randint(-100, 100)
+    elif type_a == 'float':
+        a = uniform(-100.0, 100.0)
+    else:  # type_a is 'str'
+        # Randomly choose to generate string representation of ints or floats
+        if randint(0, 1):
+            a = String.random(randint(1, 3), charset='0123456789')
+            if randint(0, 1):  # Random decision to add floating point
+                a += choice([',', '.']) + String.random(randint(1, 2), charset='0123456789')
+        else:
+            a = str(uniform(-100.0, 100.0)).replace('.', choice([',', '.']))
+    
+    # Similar generation for b
+    if type_b == 'int':
+        b = randint(-100, 100)
+    elif type_b == 'float':
+        b = uniform(-100.0, 100.0)
+    else:  # type_b is 'str'
+        if randint(0, 1):
+            b = String.random(randint(1, 3), charset='0123456789')
+            if randint(0, 1):  # Random choice for decimal part
+                b += choice([',', '.']) + String.random(randint(1, 2), charset='0123456789')
+        else:
+            b = str(uniform(-100.0, 100.0)).replace('.', choice([',', '.']))
+            
+    # Make sure string type is explicitly a string if it’s originally from float for consistency.
+    if isinstance(a, float):
+        a = str(a).replace('.', choice([',', '.']))
+    if isinstance(b, float):
+        b = str(b).replace('.', choice([',', '.']))
+        
+    return [a, b]
+```

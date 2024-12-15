@@ -1,0 +1,50 @@
+**REPAIRED CODE**:
+
+```cpp
+/*input
+10 2
+bbaabbbaab
+*/
+
+#include <iostream>
+#include <algorithm>
+
+using namespace std;
+
+int main()
+{
+	ios_base::sync_with_stdio(0); cin.tie(0);
+	int N, K;
+	string S;
+	cin >> N >> K >> S;
+	S += S;
+	reverse(S.begin() + N, S.begin() + 2 * N);
+
+	int idx = 0;
+	for (int i = 1; i <= N; ++i) {
+		bool isFound = false;
+		for (int j = 0; j < N; ++j) {
+			if (S[idx + j] < S[i + j]) {
+				break;
+			}
+			if (S[idx + j] > S[i + j]) {
+				idx = i;
+				isFound = true;
+				break;
+			}
+		}
+		if (isFound) {
+			break;
+		}
+	}
+
+	int idx2 = idx;
+	for (; idx2 < idx + N && S[idx] == S[idx2]; ++idx2);
+
+	--K;
+	int part1 = ((N / (idx2 - idx)) >> K) ? ((idx2 - idx) << K) : N;
+	for (int i = 0; i < part1; ++i) putchar(S[idx]);
+	for (int i = part1; i < N; ++i) putchar(S[idx2 + (i - part1)]);
+	putchar('\n');
+}
+```

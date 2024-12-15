@@ -1,0 +1,3 @@
+**Test Input Reasoning:**
+
+We test for the minimum possible input where a case for the multiplication of 3 prime numbers is formed. i.e. `a=2*3*5=30`.

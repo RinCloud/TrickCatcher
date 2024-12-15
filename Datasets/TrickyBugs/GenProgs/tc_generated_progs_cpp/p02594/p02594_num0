@@ -1,0 +1,18 @@
+**CORRECTED CODE**:
+
+```python
+#include <stdio.h>
+int main (){
+    int c;
+    scanf ("%d", &c);
+    if (c >= 30 && c <= 40) {
+        printf ("Yes");
+    } else {
+        printf ("No");
+    }
+    return 0;
+}
+```
+
+Explanation:
+The original code is using the ternary operator `? :` to check the condition `c >= 30 && c <= 40`. However, the outcome of the ternary operator is not being used in any way. So we need to change it to `if ... else` statement to correctly handle the condition and print the output accordingly.

@@ -1,0 +1,16 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+	int a[110],b[110],n,ans;
+	cin>>n;
+	for(int i=1;i<=n-1;i++)
+		cin>>b[i];
+	for(int j=2;j<=n-1;j++)
+	{
+		a[j]=min(b[j-1],b[j]);
+		ans+=a[j];
+	}
+	cout<<ans+b[1]+b[n-1];
+	return 0;
+}

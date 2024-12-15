@@ -1,0 +1,3 @@
+**Test Input Reasoning:**
+
+The input is an integer, which is already the closest integer to itself. This will test the case where the input is already an integer.

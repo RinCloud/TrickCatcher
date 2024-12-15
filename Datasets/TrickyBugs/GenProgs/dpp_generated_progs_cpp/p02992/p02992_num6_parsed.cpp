@@ -1,0 +1,42 @@
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+const int MOD = 1000000007;
+
+long long countSequences(int N, int K) {
+    vector<vector<long long>> dp(N + 1, vector<long long>(K + 1, 0));
+    
+    // base case
+    for (int i = 1; i <= N; i++) {
+        dp[i][1] = 1;
+    }
+    
+    for (int i = 1; i <= N; i++) {
+        for (int j = 2; j <= K; j++) {
+            for (int k = 1; k <= N; k++) {
+                if (k * i > N) break;
+                dp[k * i][j] = (dp[k * i][j] + dp[i][j - 1]) % MOD;
+            }
+        }
+    }
+    
+    long long res = 0;
+    for (int i = 1; i <= N; i++) {
+        res = (res + dp[i][K]) % MOD;
+    }
+    
+    return res;
+}
+
+int main() {
+    int N, K;
+    cin >> N >> K;
+    
+    long long result = countSequences(N, K);
+    
+    cout << result << endl;
+    
+    return 0;
+}

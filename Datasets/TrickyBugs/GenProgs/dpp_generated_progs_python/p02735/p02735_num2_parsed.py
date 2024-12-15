@@ -1,0 +1,34 @@
+
+def main():
+    # Read input from Standard Input
+    H, W = map(int, input().split())
+    grid = [list(input()) for _ in range(H)]
+    
+    # Initialize count and flag variable
+    count = 0
+    flag = 0
+    
+    # Check if (1,1) and (H, W) are already white
+    if grid[0][0] == "." and grid[H-1][W-1] == ".":
+        flag = 1 # Set flag to 1
+    
+    # Check if last row and last column have any black squares
+    for i in range(H):
+        if grid[i][W-1] == "#":
+            count += 1 # Increment count for each black square in last column
+
+    for j in range(W):
+        if grid[H-1][j] == "#":
+            count += 1 # Increment count for each black square in last row
+    
+    # Check if any white square can be converted to black
+    if flag == 0 and count == 0:
+        count = 1 # Increment count by 1 to ensure at least one operation is needed
+    
+    # Print the minimum number of operations needed
+    print(count)
+    
+# Call the main function
+if __name__ == "__main__":
+    main()
+    

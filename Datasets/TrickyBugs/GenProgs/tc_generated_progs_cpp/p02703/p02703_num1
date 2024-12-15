@@ -1,0 +1,74 @@
+```cpp
+#include<bits/stdc++.h>
+using namespace std;
+typedef pair<int, int> PII;
+typedef long long LL;
+
+const LL inf = 0x3f3f3f3f3f3f3f3f;
+const int N = 55;
+int n, m, s;
+LL dis[N][2510];
+struct Edge {
+    int from, to, next;
+    LL w, cost;
+}e[N * 2];
+int cnt, head[N];
+LL c[N], d[N];
+
+void add(int u, int v, int a, int b) {
+    e[++cnt].to = v;
+    e[cnt].from = u;
+    e[cnt].w = b;
+    e[cnt].cost = a;
+    e[cnt].next = head[u];
+    head[u] = cnt;
+}
+
+void spfa() {
+    queue<PII> q;
+    for(int i = 1; i <= n; i++) {
+        for(int j = 0; j <= 2500; j++) {
+            dis[i][j] = inf;
+        }
+    }
+    dis[1][s] = 0;
+    q.push({1, s});
+    while(!q.empty()) {
+        int u = q.front().first, w = q.front().second; q.pop();
+        for(int i = head[u]; i; i = e[i].next) {
+            LL v = e[i].to, a = e[i].cost, b = e[i].w;
+            if(w >= a && dis[v][w - a] > dis[u][w] + b) {
+                dis[v][w - a] = dis[u][w] + b;
+                q.push({v, w - a});
+            }
+        }
+        if(dis[u][min(w + c[u], (LL)2500)] > dis[u][w] + d[u]) {
+            dis[u][min(w + c[u], (LL)2500)] = dis[u][w] + d[u];
+            q.push({u, min(w + c[u], (LL)2500)});
+        }
+    }
+}
+
+void solve() {
+    scanf("%d %d %d", &n, &m, &s);
+    s = min(s, 2500);
+    while(m--) {
+        int u, v, a, b;
+        scanf("%d%d%d%d", &u, &v, &a, &b);
+        add(u, v, a, b);
+        add(v, u, a, b);
+    }
+    for(int i = 1; i <= n; i++) scanf("%lld %lld", &c[i], &d[i]);
+    spfa();
+    for(int i = 2; i <= n; i++) {
+        LL res = inf;
+        for(int j = 0; j <= 2500; j++) res = min(res, dis[i][j]);
+        printf("%lld\n", res);
+    }
+}
+
+int main() {
+    solve();
+    return 0;
+}
+```

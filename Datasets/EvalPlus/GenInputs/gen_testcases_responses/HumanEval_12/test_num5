@@ -1,0 +1,10 @@
+{"input": [["a", "b", "c"]], "output": "a"}
+{"input": [["a", "bb", "ccc", "dddd", "eeeee"]], "output": "eeeee"}
+{"input": [["hello", "world", "foo", "bar"]], "output": "world"}
+{"input": [["", "a", "bb", "ccc"]], "output": "ccc"}
+{"input": [["a", "", "bb", "ccc"]], "output": "ccc"}
+{"input": [["a", "b", "c", "d"]], "output": "a"}
+{"input": [["abc", "def", "ghi", "jklm"]], "output": "jklm"}
+{"input": [["", "", "", "", ""]], "output": ""}
+{"input": [["", "", "", "", "a"]], "output": "a"}
+{"input": [["hello", "hello", "hello"]], "output": "hello"}

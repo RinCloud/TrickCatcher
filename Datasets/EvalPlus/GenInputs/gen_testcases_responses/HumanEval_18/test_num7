@@ -1,0 +1,10 @@
+{"input": ["", "a"], "output": 0}
+{"input": ["aaa", "a"], "output": 3}
+{"input": ["aaaa", "aa"], "output": 3}
+{"input": ["hello", "o"], "output": 1}
+{"input": ["hello", "l"], "output": 2}
+{"input": ["programming", "gram"], "output": 1}
+{"input": ["python", "py"], "output": 1}
+{"input": ["hello world", " "], "output": 1}
+{"input": ["abcdabcdabcd", "abcd"], "output": 3}
+{"input": ["banana", "an"], "output": 2}

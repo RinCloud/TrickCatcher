@@ -1,0 +1,18 @@
+from typing import List
+def rolling_max(numbers: List[int]) -> List[int]:
+    """
+    From a given list of integers, generate a list of rolling maximum element found until given moment
+    in the sequence.
+    """
+    max_list = [] # List to store the rolling maximum elements
+    
+    # Iterate through the given list
+    for i in range(len(numbers)):
+        if i == 0:
+            # For the first element, add it to the max_list as is
+            max_list.append(numbers[i])
+        else:
+            # For the rest of the elements, find the maximum between the current element and the previous maximum
+            max_list.append(max(numbers[i], max_list[-1]))
+    
+    return max_list

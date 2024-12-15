@@ -1,0 +1,3 @@
+**Test Input Reasoning:**
+
+I will start with the smallest possible inputs for this function, where `x`, `y`, and `z` are all equal to 0 and integers. This will test if the function can handle small integers as inputs.

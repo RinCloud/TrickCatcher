@@ -1,0 +1,41 @@
+**REPAIRED CODE**:
+
+```
+#include <bits/stdc++.h>
+#define rep(i,n) for (int i = 0; i < (n); i++)
+using namespace std;
+using ll = long long;
+using P = pair<int,int>;
+
+int main() {
+  int n, k, r, s, p;
+  cin >> n >> k >> r >> s >> p;
+  char t[n];
+  rep(i,n) cin >> t[i];
+  int ans=0;
+  for(int i=0; i<k; i++){
+    char last = 'x';
+    for (int j=i; j<n; j+=k){
+      if(t[j]!=last){
+        if(t[j]=='r') ans+=p;
+        else if(t[j]=='s') ans+=r;
+        else if(t[j]=='p') ans+=s;
+        last = t[j];
+      } else {
+        last = 'x';
+      }
+    }
+  }
+  
+  cout << ans << endl;
+}
+```
+
+EXPLANATION:
+
+* In the original code, the loop `for(int i=0; t[i+k]!='\0'; i++)` is used to check whether we can use the same hand as the (i-K)th round. However, this condition does not cover the last round, where `t[n]` might be out of bounds. 
+* Additionally, the original code directly replaces the same hands with 'x' in `t[i+k]='x'`, which is not necessary.
+* To fix the issue, we can split the logic into two loops. 
+* In the first loop, we iterate from index 0 to K-1, and for each index, check whether we can use the same hand as the (i-K)th round in the remaining rounds. We keep track of the last hand used and only count the score if it is different from the last hand used, otherwise we ignore it.
+* In the second loop, we iterate from index K to N-1, and for each index, we consider only the rounds that are K steps apart and count the score if the hand is different from the last hand used in the same sequence.
+* By doing this, we guarantee that we do not use the same hand in consecutive rounds except for the first K rounds.

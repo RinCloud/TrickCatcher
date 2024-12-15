@@ -1,0 +1,17 @@
+def add(lst):
+    """Given a non-empty list of integers lst, add the even elements that are at odd indices.
+    Args:
+    lst (list): A non-empty list of integers.
+    Returns:
+    int: The sum of the even elements at odd indices.
+    Examples:
+    >>> add([4, 2, 6, 7])
+    2
+    >>> add([1, 3, 5, 7, 9])
+    0
+    >>> add([1, 2, 3, 4, 5])
+    4
+    >>> add([2, 4, 6, 8, 10])
+    0
+    """
+    return sum([lst[i] for i in range(1, len(lst), 2) if lst[i] % 2 == 0])

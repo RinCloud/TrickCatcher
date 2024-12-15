@@ -1,0 +1,3 @@
+**Test Input Reasoning:**
+
+One interesting case to consider is when both integers `a` and `b` are positive and not equal. This will test the function's ability to find the greatest common divisor of two different positive integers.

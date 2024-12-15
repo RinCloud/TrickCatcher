@@ -1,0 +1,12 @@
+
+A, B, C = map(int, input().split())
+
+if A == B and B != C:
+    print('Yes')
+elif A == C and B != C:
+    print('Yes')
+elif B == C and B != A:
+    print('Yes')
+else:
+    print('No')
+    

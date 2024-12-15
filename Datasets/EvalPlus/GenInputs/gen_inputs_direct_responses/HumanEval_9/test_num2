@@ -1,0 +1,3 @@
+**Test Input Reasoning:**
+
+I will start by testing the simplest case where the input list contains only one element. This will help ensure that the function can handle the minimum possible input size.

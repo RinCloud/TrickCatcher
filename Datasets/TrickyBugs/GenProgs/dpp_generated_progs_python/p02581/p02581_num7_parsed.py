@@ -1,0 +1,45 @@
+# Step 1: Read the input value for N
+N = int(input())
+
+# Step 2: Read the array A containing the values of the cards
+A = list(map(int, input().split()))
+
+# Step 3: Create a dictionary count to keep track of the frequency of each number in the A array
+count = {}
+
+# Step 4: Initialize the variables points and multiplier
+points = 0
+multiplier = 0
+
+# Step 5: Iterate i over the range from 1 to N+1
+for i in range(1, N+1):
+    # Set the initial value of max_points to 0
+    max_points = 0
+    
+    # Iterate j over the range from 1 to i
+    for j in range(1, i):
+        # Calculate the score for the current iteration
+        score = 0
+        
+        # Temporary array to store the modified A array
+        tempA = A[:]
+        
+        # Remove the three leftmost cards from the A array
+        del tempA[:3]
+        
+        # If the integers written on those three cards are all equal, increment max_points by 1
+        if tempA[0] == tempA[1] == tempA[2]:
+            max_points += 1
+        
+        # Restore the original A array for the next iteration
+        A = A[3:] + A[:3]
+    
+    # Update the maximum points if the current max_points is greater than the maximum points so far
+    points += max_points
+    
+    # Update the multiplier points if the current max_points is equal to i-1
+    if max_points == i-1:
+        multiplier = max_points
+
+# Step 6: Print the total points obtained by adding the maximum points and the multiplier points
+print(points + multiplier)

@@ -1,0 +1,16 @@
+**REPAIRED CODE**:
+
+```python
+def is_multiple_of_9(N):
+  sum_of_digits = sum(int(digit) for digit in str(N))
+  return sum_of_digits % 9 == 0
+
+N = int(input())
+if is_multiple_of_9(N):
+  print('Yes')
+else:
+  print('No')
+```
+
+Explanation:
+The original code has logic flaw as it checks `int(input()) % 3 == 0` to determine whether N is a multiple of 9. However, it should actually calculate the sum of digits and check whether it is a multiple of 9. I have defined a function `is_multiple_of_9` which takes an integer `N` as input, calculates the sum of digits of `N` and returns `True` if the sum is a multiple of 9, otherwise returns `False`. Then, I have modified the code to call this function with the input value `N` and print the appropriate message based on the result.

@@ -1,0 +1,54 @@
+#include<bits/stdc++.h>
+#define LL long long
+using namespace std;
+int a,b,n;
+const LL INF=1e16;
+set <LL> s,t;
+set <LL>::iterator it,it1,it2;
+int main() {
+    LL x;
+    scanf("%d%d%d",&a,&b,&n);
+    for (int i=0;i<a;i++) {
+        scanf("%lld",&x);
+        s.insert(x);
+    }
+    for (int i=0;i<b;i++) {
+        scanf("%lld",&x);
+        t.insert(x);
+    }
+    for (int i=0;i<n;i++)
+    {
+        scanf("%lld",&x);
+        s.insert(x);
+        it=s.find(x);
+        it1=it,it2=it;
+        LL bs=-INF,bt=-INF;
+        LL ns=INF,nt=INF;
+        if (it1!=s.begin()) {
+            it1--;
+            bs=*it1;
+        }
+        if (it2!=(--s.end())) {
+            it2++;
+            ns=*it2;
+        }
+        s.erase(it);
+        t.insert(x);
+        it=t.find(x);
+        it1=it,it2=it;
+        if (it1!=t.begin()) {
+            it1--;
+            bt=*it1;
+        }
+        if (it2!=(--t.end())) {
+            it2++;
+            nt=*it2;
+        }
+        t.erase(it);
+        LL drr=max(nt,ns)-x,dll=x-min(bs,bt),dlr=2*(nt-x)+x-bs,drl=2*(ns-x)+x-bt,dlr1=nt-x+2*(x-bs),drl1=ns-x+2*(x-bt);
+        LL ans=min(drr,min(min(dll,dlr),drl));
+        ans=min(min(ans,dlr1),drl1);
+        printf("%lld\n",ans);
+    }
+    return 0;
+}

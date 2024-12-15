@@ -1,0 +1,10 @@
+{"input": [["()(", ")"]], "output": "Yes"}
+{"input": [[")", ")"]], "output": "No"}
+{"input": [["()(", """)"""]], "output": "Yes"}
+{"input": [["(", ")"]], "output": "Yes"}
+{"input": [["))", "("]], "output": "No"}
+{"input": [["((((", ")))))"]], "output": "No"}
+{"input": [["(()", ")("]], "output": "Yes"}
+{"input": [["(", "((((("]], "output": "No"}
+{"input": [["((((((", ")((("]], "output": "No"}
+{"input": [["(((", ")("]], "output": "Yes"}

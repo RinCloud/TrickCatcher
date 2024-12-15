@@ -1,0 +1,31 @@
+#include <iostream>
+#include <vector>
+
+const int MOD = 1000000007;
+
+int countPermutations(int n, int k) {
+    std::vector<std::vector<int>> dp(n + 1, std::vector<int>(n * n + 1));
+    dp[0][0] = 1;
+
+    for (int i = 1; i <= n; ++i) {
+        for (int j = 0; j <= n * n; ++j) {
+            dp[i][j] = (dp[i][j] + dp[i - 1][j]) % MOD;
+            if (j >= i) {
+                dp[i][j] = (dp[i][j] + dp[i - 1][j - i]) % MOD;
+            }
+        }
+    }
+
+    int result = dp[n][k];
+    return result;
+}
+
+int main() {
+    int n, k;
+    std::cin >> n >> k;
+
+    int result = countPermutations(n, k);
+    std::cout << result << std::endl;
+
+    return 0;
+}

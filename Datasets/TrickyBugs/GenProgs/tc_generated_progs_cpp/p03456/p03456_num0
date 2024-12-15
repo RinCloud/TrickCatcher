@@ -1,0 +1,29 @@
+**REPAIRED CODE**:
+
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+int main(){
+  int a, b;
+  cin >> a >> b;
+  string n = to_string(a);
+  string m = to_string(b);
+  string tmp = n + m;
+  int q = stoi(tmp);
+  int sqrt_q = sqrt(q);
+  if(sqrt_q * sqrt_q == q){
+    cout << "Yes" << endl;
+  }
+  else{
+    cout << "No" << endl;
+  }
+}
+```
+
+Here are the changes I made to the code:
+- Changed the variables `n` and `m` from type `string` to type `int` to store the input integers directly.
+- Used `to_string` function to convert `a` and `b` from `int` to `string`.
+- Calculated the square root of `q` and stored it in the variable `sqrt_q`.
+- Replaced the condition `q%(int)(sqrt(q))==0` with the condition `sqrt_q * sqrt_q == q`.
+- Added braces `{}` for clearer readability.

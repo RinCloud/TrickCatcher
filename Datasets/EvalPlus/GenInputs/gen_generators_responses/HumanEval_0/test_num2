@@ -1,0 +1,11 @@
+```python
+from random import *
+def sample_one():
+    numbers=[]
+    length_of_numbers=randint(1,10)  # Ensure at least one number is generated
+    for i in range(length_of_numbers):
+        numbers.append(uniform(-10.0, 10.0))  # Generate numbers within a wider range
+    threshold=uniform(0.01, 5.0)  # Ensure threshold is positive and reasonable
+    generated_input=[numbers, threshold]
+    return generated_input
+```

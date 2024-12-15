@@ -1,0 +1,20 @@
+Repaired code:
+
+```python
+n = int(input())
+
+if n < 4:
+    print("No")
+elif n % 4 == 0 or n % 7 == 0 or n % 11 == 0:
+    print("Yes")
+elif ((n - 4) % 7 == 0 or (n - 4) % 11 == 0) or ((n - 7) % 4 == 0 or (n - 7) % 11 == 0) or ((n - 11) % 4 == 0 or (n - 11) % 7 == 0):
+    print("Yes")
+else:
+    print("No")
+```
+
+Explanation:
+- First, we check if the given integer is less than 4. In that case, we can't buy any cakes or doughnuts, so we print "No".
+- Then, we check if the given integer can be divided evenly by 4, 7, or 11. This means that we can buy the exact number of cakes or doughnuts to reach the given integer, so we print "Yes".
+- If the above conditions fail, we check if we can reach the given integer by subtracting 4, 7, or 11 from it. If this is possible, we can buy some cakes and/or doughnuts along with these subtracted values to reach the given integer, so we print "Yes".
+- If none of the above conditions are satisfied, it means that there is no way to buy cakes and doughnuts for the exact given integer, so we print "No".

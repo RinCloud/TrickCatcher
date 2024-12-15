@@ -1,0 +1,9 @@
+```python
+from random import randint
+
+def sample_one():
+    length_of_xs = randint(1, 10)  # length of the polynomial coefficients list, at least 1
+    xs = [randint(-10, 10) for _ in range(length_of_xs)]  # generating random coefficients for the polynomial
+    generated_input = [xs]  # wrapping it into a list to match the expected function input format
+    return generated_input
+```

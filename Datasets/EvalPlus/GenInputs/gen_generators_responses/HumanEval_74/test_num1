@@ -1,0 +1,12 @@
+```python
+from random import randint
+from cyaron import String
+
+def sample_one():
+    len_lst1 = randint(0, 10)
+    len_lst2 = randint(0, 10)
+    lst1 = [String.random(randint(1, 5)) for _ in range(len_lst1)]
+    lst2 = [String.random(randint(1, 5)) for _ in range(len_lst2)]
+    generated_input = [lst1, lst2]
+    return generated_input
+```

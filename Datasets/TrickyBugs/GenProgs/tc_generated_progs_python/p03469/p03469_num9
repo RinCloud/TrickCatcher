@@ -1,0 +1,12 @@
+```python
+s = input()
+print("2018/01/" + s[8:])
+```
+In the given code, the correct year `2018` is appended to the string instead of replacing the incorrect year.
+To fix this, we should replace the first four characters in `s` with `2018`, instead of appending it at the end of the string.
+The corrected code is as follows:
+
+```python
+s = input()
+print("2018" + s[4:])
+```

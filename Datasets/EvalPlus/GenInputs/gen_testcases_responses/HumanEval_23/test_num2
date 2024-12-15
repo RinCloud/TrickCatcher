@@ -1,0 +1,10 @@
+{"input": [''], "output": 0}
+{"input": ['abc'], "output": 3}
+{"input": ['123'], "output": 3}
+{"input": ['This is a sentence.'], "output": 19}
+{"input": ['Hello, world!'], "output": 13}
+{"input": ['こんにちは'], "output": 15}
+{"input": ['😀😀😀'], "output": 8}
+{"input": [123], "output": 0}
+{"input": [None], "output": 0}
+{"input": [['a', 'b', 'c']], "output": 0}

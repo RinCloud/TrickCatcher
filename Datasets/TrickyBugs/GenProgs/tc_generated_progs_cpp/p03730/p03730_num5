@@ -1,0 +1,13 @@
+```
+#include <bits/stdc++.h>
+using namespace std;
+int main(){
+    int A,B,C;
+    cin>>A>>B>>C;
+    for(int i=0;i<B;i++){
+        if(A*i%B==C){cout<<"YES"<<endl;exit(0);}
+    }
+    cout<<"NO"<<endl;
+}
+```
+ Explanation: The original code had a mistake in the loop condition. It should iterate B times instead of B-1 times. Instead of checking `(A%B*(i+1)%B==C)`, we should check `(A*i%B==C)`.

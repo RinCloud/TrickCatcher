@@ -1,0 +1,16 @@
+#include <iostream> 
+using namespace std;
+int main()
+{
+	int a; cin>>a;
+	int b=a%100;
+	a/=100;
+	if(a>0 and a<13 and b>0 and b<13) cout<<"AMBIGUOUS";
+	else if((a==0 and b==0) or (b==0 and b>12) or (a>12 and b==0) or (a>12 and b>12)) cout<<"NA";
+	else if(a>0 and a<13) cout<<"MMYY";
+	else cout<<"YYMM";
+}
+
+
+
+

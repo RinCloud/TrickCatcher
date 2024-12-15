@@ -1,0 +1,21 @@
+**Repaired code:**
+
+```python
+n, a, b, k = map(int, input().split())
+MOD = 998244353
+
+maxA = min(n, k // a)
+result = 0
+
+for i in range(maxA + 1):
+    if (k - a * i) % b == 0:
+        j = (k - a * i) // b
+        if j <= n:
+            result += 1
+
+print(result % MOD)
+```
+
+Explanations:
+- The initial code had a few lines of unnecessary calculations using inv[] and nCr[] which was not required for solving this problem. So, I removed those parts from the code and simplified it accordingly.
+- I directly calculated the number of ways to paint the tower by iterating over the possible values of the number of red layers, i.e. `i` from `0` to `maxA`. For each `i`, I checked if the remaining value of `k` after coloring `i` red layers can be divided evenly by `b`. If it can, then I found the number of blue layers, `j`, by dividing the remaining value of `k` by `b`. If `j` is less than or equal to `n`, then increment the count of ways to paint the tower by `1`.

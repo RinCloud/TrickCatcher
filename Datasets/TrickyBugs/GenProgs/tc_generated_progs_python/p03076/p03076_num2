@@ -1,0 +1,18 @@
+**FIXED CODE**:
+
+```python
+A = int(input())
+ans = 0
+
+for i in range(4):
+    B = int(input())
+    if A % 10 > B % 10 > 0:
+        A, B = B, A
+    ans += -(-B // 10) * 10
+
+print(A + ans)
+```
+
+**Explanation:**
+
+The code appears to have the correct logic and seems to be appropriately solving the problem as described. There aren't any obvious bugs or flaws in the code. I have only formatted the code to adhere to the PEP 8 style guide.

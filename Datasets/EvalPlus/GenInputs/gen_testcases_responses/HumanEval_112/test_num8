@@ -1,0 +1,10 @@
+{"input": ["abcde", "ae"], "output": ("bcd", False)}
+{"input": ["abcdef", "b"], "output": ("acdef", False)}
+{"input": ["abcdedcba", "ab"], "output": ("cdedc", True)}
+{"input": ["racecar", "ae"], "output": ("rcr", True)}
+{"input": ["abc", "c"], "output": ("ab", False)}
+{"input": ["abcd", "d"], "output": ("abc", False)}
+{"input": ["abcdcba", "a"], "output": ("bcdc", True)}
+{"input": ["madam", "z"], "output": ("madam", True)}
+{"input": ["hello", "h"], "output": ("ello", False)}
+{"input": ["abcd", ""], "output": ("abcd", True)}

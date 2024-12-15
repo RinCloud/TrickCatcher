@@ -1,0 +1,9 @@
+```python
+from random import *
+from cyaron import String
+
+def sample_one():
+    length_of_word = randint(1, 10)  # Generate length of the word between 1 to 10
+    word = String.random(length_of_word, charset="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz")
+    return [word]
+```

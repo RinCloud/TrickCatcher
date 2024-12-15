@@ -1,0 +1,110 @@
+```python
+T = int(input())
+
+ABCD = []
+for i in range(T):
+    a,b,c,d = map(int,input().split())
+    ABCD.append((a,b,c,d))
+
+for abcd in ABCD:
+    a,b,c,d = abcd
+    # 初日にダメになる
+    if a < b:
+        print("No")
+    # 在庫補充が追いつかない
+    elif d < b:
+        print("No")
+    # 補充タイミングが十分に早い
+    elif c >= b:
+        print("Yes")
+    else:
+        e = a%b
+        f = d%b
+        list = [a]
+        if f==0:
+            if c<e<b:
+                print("No")
+            else:
+                print("Yes") 
+        else:
+            cnt = 0
+            while cnt < 100:
+                g = ((c-e)//f+1)*f+e
+                if g < b:
+                    print("No")
+                    cnt += 10000
+                else:
+                    if g in list:
+                        print("Yes")
+                        cnt += 10000
+                    else:
+                        list.append(g)
+                        a = g
+                        e = a%b
+                        f = d%b
+                        cnt += 1
+```
+
+Explanation:
+
+Algorithm:
+- If Snuke can buy at least `B` cans of juice initially, then he can always buy juice indefinitely.
+- If the amount of juice removed from stock every day (`B`) is less than the amount of juice added to stock every night (`D`), then the stock will eventually run out and Snuke will not be able to buy juice indefinitely.
+- If the amount of juice added to stock every night (`D`) is greater than or equal to the amount of juice removed from stock every day (`B`), then the stock will eventually reach a level where Snuke can always buy juice indefinitely.
+- If the amount of juice added to stock every night (`D`) is less than the amount of juice removed from stock every day (`B`), then the stock will eventually reach a level where Snuke cannot buy juice anymore, and then it will increase back to a level where Snuke can buy juice indefinitely.
+- We need to find the point at which Snuke can always buy juice indefinitely, or determine if it is not possible.
+
+Bugs/Flaws:
+- Currently, the code is not correct and there are several issues:
+    - The condition `c < e < b` in the if statement at line 35 is incorrect and should be `c < e <= b`. This is because if `c < e`, then Snuke will not be able to buy juice indefinitely.
+    - The condition `f == 0` in the if statement at line 36 is incorrect and should be `f == 1`. This is because if `f == 0`, then the stock will never reach a level where Snuke can always buy juice indefinitely.
+    - The condition `g in list` in the if statement at line 41 is incorrect and should be `g == b` or `g % b == 0`. This is because we want to find the point at which Snuke can always buy juice indefinitely, which is when the stock reaches a multiple of `b`.
+    - The condition `cnt < 100` in the while loop at line 43 is incorrect and should be `cnt < 10000`. This is because the variable `cnt` is used to break out of the loop if it exceeds a certain value, and the value should be larger than 100 to ensure that the loop is executed enough times to find the point at which Snuke can always buy juice indefinitely.
+
+Corrected Code:
+```python
+T = int(input())
+
+ABCD = []
+for i in range(T):
+    a,b,c,d = map(int,input().split())
+    ABCD.append((a,b,c,d))
+
+for abcd in ABCD:
+    a,b,c,d = abcd
+    # 初日にダメになる
+    if a < b:
+        print("No")
+    # 在庫補充が追いつかない
+    elif d < b:
+        print("No")
+    # 補充タイミングが十分に早い
+    elif c >= b:
+        print("Yes")
+    else:
+        e = a%b
+        f = d%b
+        lst = [a]
+        if f == 1:
+            if c < e <= b:
+                print("No")
+            else:
+                print("Yes") 
+        else:
+            cnt = 0
+            while cnt < 10000:
+                g = ((c-e)//f+1)*f+e
+                if g < b:
+                    print("No")
+                    cnt += 10000
+                else:
+                    if g == b or g % b == 0:
+                        print("Yes")
+                        cnt += 10000
+                    else:
+                        lst.append(g)
+                        a = g
+                        e = a%b
+                        f = d%b
+                        cnt += 1
+```

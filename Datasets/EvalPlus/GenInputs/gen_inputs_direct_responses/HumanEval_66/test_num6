@@ -1,0 +1,3 @@
+**Test Input Reasoning:**
+
+I will start with the simplest case where the input string is empty. This will test if the code correctly handles the base case.

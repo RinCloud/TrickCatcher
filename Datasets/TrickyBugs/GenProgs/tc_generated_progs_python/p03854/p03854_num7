@@ -1,0 +1,13 @@
+**CORRECTED CODE:**
+
+```python
+import re
+
+S = input()
+
+if re.fullmatch('(dream|dreamer|erase|eraser)*', S):
+    print("YES")
+else:
+    print("NO")
+```
+The `re.match()` function only checks whether the regular expression matches at the beginning of the string. In this case, we need to check the entire string, so we use `re.fullmatch()` instead. Additionally, we need to use the `|` character instead of `|` to match any of the options in the regular expression.

@@ -1,0 +1,21 @@
+```python
+from random import *
+from cyaron import *
+
+def sample_one():
+    # Randomly decide the number of sentences
+    num_sentences = randint(1, 10)
+    sentences = []
+    for _ in range(num_sentences):
+        # Decide if the sentence starts with 'I' or not
+        start_with_I = choice([True, False])
+        if start_with_I:
+            sentences.append("I " + String.random(randint(1, 10), charset='abcdefghijklmnopqrstuvwxyz '))
+        else:
+            sentences.append(String.random(randint(1, 10), charset='abcdefghijklmnopqrstuvwxyz '))
+    # Randomly choose the sentence delimiter
+    delimiter = choice(['. ', '? ', '! '])
+    S = delimiter.join(sentences).strip() + choice(['.', '?', '!'])
+    generated_input = [S]
+    return generated_input
+```

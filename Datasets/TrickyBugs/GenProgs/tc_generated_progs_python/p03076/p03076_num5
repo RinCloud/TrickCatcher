@@ -1,0 +1,21 @@
+The given code has a logical error in line 12. The intention of the if statement is to check if the remainder of A divided by 10 is greater than the remainder of B divided by 10 and if the remainder of B divided by 10 is greater than 0. However, the condition is incorrect. It should be modified as follows:
+```python
+if A % 10 > B % 10 > 0: A, B = B, A
+```
+Additionally, there is a missing input statement for variable E.
+
+Here is the corrected code:
+```python
+A = int(input())
+ans = 0
+
+for i in range(4):
+    B = int(input())
+    if A % 10 > B % 10 > 0:
+        A, B = B, A
+    ans += -(-B//10)*10
+
+E = int(input())
+
+print(A+ans)
+```

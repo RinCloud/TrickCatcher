@@ -1,0 +1,28 @@
+```cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    int N;
+    cin >> N;
+
+    int minSum = INT32_MAX;
+    for (int A = 1; A < N; A++) {
+        int B = N - A;
+        int sum = 0;
+        while (A > 0) {
+            sum += A % 10;
+            A /= 10;
+        }
+        while (B > 0) {
+            sum += B % 10;
+            B /= 10;
+        }
+        minSum = min(minSum, sum);
+    }
+
+    cout << minSum << endl;
+
+    return 0;
+}
+```

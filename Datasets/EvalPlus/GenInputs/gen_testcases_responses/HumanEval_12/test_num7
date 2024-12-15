@@ -1,0 +1,10 @@
+{"input": [["a", "bb", "ccc"], ["aa", "bbb", "cc"], ["abc", "defg", "hijklm"]], "output": "ccc"}
+{"input": [["aaa", "bb", "ccc"], ["aa", "bbbb", "c"], []], "output": "aaa"}
+{"input": [["a", "b", "c"], ["a", "b", "c", "d", "e"], ["abcdefg", "hijklm"]], "output": "abcdefg"}
+{"input": [["", "bb", "ccc"], ["aa", "bbb", "c"], ["", "defg", "hijklm"]], "output": "ccc"}
+{"input": [[], [], []], "output": None}
+{"input": [["a", "bb", "ccc", "dddd"], ["a", "b", "c", "d", "e"], ["abcdefg", "hijklm"]], "output": "abcdefg"}
+{"input": [["aa", "b", "ccc"], ["aa", "bbb", "c"], ["abcdefg", "hijklm"]], "output": "abcdefg"}
+{"input": [["aa", "bbb", ""], ["aa", "bbb", "c"], ["abcdefg", "hijklm"]], "output": "abcdefg"}
+{"input": [["a", "bb", "ccc"], ["aa", "bbb", "c"], [""], ["a"], ["abcdefg", "hijklm"]], "output": "abcdefg"}
+{"input": [["a", "bb", "ccc"], ["aa", "bbb", "c"], [], [], ["abcdefg", "hijklm"]], "output": "abcdefg"}

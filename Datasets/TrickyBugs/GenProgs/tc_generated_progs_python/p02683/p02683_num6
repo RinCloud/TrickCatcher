@@ -1,0 +1,44 @@
+```python
+n, m, x = map(int, input().split())
+
+Book = [[int(x) for x in input().split()] for j in range(n)]
+Cost = 10 ** 7
+for i in range(2**n):
+  bag = [0 for k in range(n+1)]
+ 
+  for j in range(n):
+    if ((i >> j) &1):
+      bag = [ x + y for (x,y) in zip (bag,Book[j])]
+  if all(b >= x for b in bag[1:]):
+    if Cost >= bag[0]:
+      Cost = bag[0]
+if Cost != 10 ** 7:
+  print(Cost)
+else:
+  print(-1)
+```
+I found two bugs in the code:
+1. There is an index error in the `for j in range(n)` loop. The loop should iterate from `range(m)` instead of `range(n)` as there are `m` items in each book.
+2. The condition `if Cost >= bag[0]:` is incorrect. This condition should check if the current cost is less than or equal to `Cost`. If it is, then update `Cost` with the current cost. Otherwise, `Cost` should remain unchanged.
+
+Here is the fixed code:
+
+```python
+n, m, x = map(int, input().split())
+
+Book = [[int(x) for x in input().split()] for j in range(n)]
+Cost = 10 ** 7
+for i in range(2**n):
+    bag = [0 for k in range(m+1)]
+  
+    for j in range(n):
+        if ((i >> j) &1):
+            bag = [ x + y for (x,y) in zip (bag, Book[j])]
+    if all(b >= x for b in bag[1:]):
+        if bag[0] <= Cost:
+            Cost = bag[0]
+if Cost != 10 ** 7:
+    print(Cost)
+else:
+    print(-1)
+```

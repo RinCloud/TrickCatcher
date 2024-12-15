@@ -1,0 +1,46 @@
+# Program
+
+```python
+def find_longest_subsequence(N, K, strings):
+    # Generate all possible subsequences
+    subsequences = set()
+    for i in range(1, (2 ** N) - 1):
+        subsequence = ""
+        binary = bin(i)[2:].zfill(N)
+        for j in range(N):
+            if binary[j] == "1":
+                subsequence += strings[j][int(binary[j:], 2)]
+        subsequences.add(subsequence)
+
+    # Count occurrences of each subsequence
+    sequence_counts = {}
+    for subsequence in subsequences:
+        count = 0
+        for string in strings:
+            if subsequence in string:
+                count += 1
+                if count >= K:
+                    sequence_counts[subsequence] = count
+                    break
+
+    # Find longest subsequence with K or more occurrences
+    longest_subsequence = ""
+    for subsequence, count in sequence_counts.items():
+        if len(subsequence) > len(longest_subsequence):
+            longest_subsequence = subsequence
+        elif len(subsequence) == len(longest_subsequence) and subsequence < longest_subsequence:
+            longest_subsequence = subsequence
+
+    return longest_subsequence
+
+
+# Read input
+N, K = map(int, input().split())
+strings = []
+for _ in range(N + 1):
+    strings.append(input())
+
+# Find and print the lexicographically smallest longest subsequence
+result = find_longest_subsequence(N, K, strings)
+print(result)
+```

@@ -1,0 +1,10 @@
+- Input 1: List contains all integers
+- Input 2: List contains all non-integer values
+- Input 3: List contains a mix of integers and non-integer values
+- Input 4: List is empty
+- Input 5: List contains a single integer value
+- Input 6: List contains a single non-integer value
+- Input 7: List contains string representations of integers
+- Input 8: List contains nested lists with integers
+- Input 9: List contains nested dictionaries with integers
+- Input 10: List contains mixed types of values with integers

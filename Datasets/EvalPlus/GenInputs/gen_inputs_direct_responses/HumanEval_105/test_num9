@@ -1,0 +1,3 @@
+**Test Input Reasoning:**
+
+I will start by testing an empty array, which is the base case of the function. When the input array is empty, the function should return an empty array.

@@ -1,0 +1,28 @@
+```
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
+using namespace std;
+
+int main() {
+    int N;
+    cin >> N;
+
+    vector<int> height(N);
+    for (int i = 0; i < N; i++) {
+        cin >> height[i];
+    }
+
+    int stool = 0;
+    int min_total_height = 0;
+    for (int i = 0; i < N; i++) {
+        min_total_height += max(0, height[i] - stool);
+        stool = max(stool, height[i]);
+    }
+
+    cout << min_total_height << endl;
+
+    return 0;
+}
+```

@@ -1,0 +1,16 @@
+```python
+from cyaron import *
+from random import randint
+
+def sample_one():
+    numerator_1 = str(randint(1, 10))
+    denominator_1 = str(randint(1, 10))
+    fraction_1 = '{}/{}'.format(numerator_1, denominator_1)
+    
+    numerator_2 = str(randint(1, 10))
+    denominator_2 = str(randint(1, 10))
+    fraction_2 = '{}/{}'.format(numerator_2, denominator_2)
+    
+    generated_input = [fraction_1, fraction_2]
+    return generated_input
+```

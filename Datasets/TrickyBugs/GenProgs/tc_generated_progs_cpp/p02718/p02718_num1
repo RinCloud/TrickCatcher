@@ -1,0 +1,26 @@
+**REPAIRED CODE**:
+
+```cpp
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+	long long int n,m,i,s=0,ans,c=0;
+	cin>>n>>m;
+	long long int a[n+1];
+	for(i=1;i<=n;i++)
+	{
+		cin>>a[i];
+		s=s+a[i];
+	}
+	sort(a+1,a+n+1);
+	if(a[n-m+1]<double(s)/(4*m))
+		cout<<"No"<<endl;
+	else 
+		cout<<"Yes"<<endl;
+	return 0;
+}
+```
+
+Explanations: 
+* Index of array begins with 1, so in "long long int a[n+1];" we need to extend to `n+1` rather than `n`.

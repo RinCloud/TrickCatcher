@@ -1,0 +1,19 @@
+```python
+from random import randint
+from cyaron import String
+
+def sample_one():
+    rows = randint(1, 5)
+    max_cols = randint(1, 5)
+    x = randint(0, 9)
+    
+    lst = []
+    for _ in range(rows):
+        col_length = randint(0, max_cols)
+        row = []
+        for _ in range(col_length):
+            row.append(randint(0, 9))
+        lst.append(row)
+    generated_input = [lst, x]
+    return generated_input
+```

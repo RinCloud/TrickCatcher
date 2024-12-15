@@ -1,0 +1,10 @@
+{"input": [["hello", "world"]], "output": "helloworld"}
+{"input": [["foo", "bar"]], "output": "foobar"}
+{"input": [["hello", " ", "world"]], "output": "hello world"}
+{"input": [["123", "456", "789"]], "output": "123456789"}
+{"input": [["hello", "world", "!"]], "output": "helloworld!"}
+{"input": [["a", "b", "c"]], "output": "abc"}
+{"input": [[], "output": ""}
+{"input": [["this", "is", "a", "test"]], "output": "thisisatest"}
+{"input": [["hello"]], "output": "hello"}
+{"input": [["a", "b", "c", "d", "e"]], "output": "abcde"}

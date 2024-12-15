@@ -1,0 +1,13 @@
+```python
+from random import randint
+from cyaron import String
+
+def sample_one():
+    length_of_list = randint(1, 15)  # Generating the length of the list between 1 and 15
+    l = []
+    for _ in range(length_of_list):
+        # Append random integer between -20 and 20
+        l.append(randint(-20, 20))
+    generated_input = [l]
+    return generated_input
+```

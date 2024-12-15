@@ -1,0 +1,17 @@
+Here are the repaired code.
+
+```python
+a, b, c, d = map(int, input().split())
+distAB = abs(a - b)
+distBC = abs(b - c)
+distAC = abs(a - c)
+
+if distAB <= d and distBC <= d:
+    print('Yes')
+elif distAC <= d:
+    print('Yes')
+else:
+    print('No')
+```
+
+The original code has a logical error in the condition for indirect communication. The condition should check if both the distances `distAB` and `distBC` are less than or equal to `d`, rather than sum the two distances. Additionally, the condition `abs(a-c) <= 16` is incorrect and should be `distAC <= d`.

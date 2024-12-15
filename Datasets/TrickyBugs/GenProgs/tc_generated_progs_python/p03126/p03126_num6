@@ -1,0 +1,25 @@
+Repaired code:
+
+```python
+n,m=map(int,input().split())
+foods=[]
+for _ in range(n):
+  *b,=map(int,input().split())
+  b=b[1:]
+  foods.append(set(b))
+
+s = set(range(1, m+1))
+for food in foods:
+  s = s & food
+print(len(s))
+```
+
+Explanations:
+
+- I added a list called "foods" to store the sets of foods liked by each person.
+- I also created a set called "s" to store the intersection of all sets of foods liked by each person.
+- The line "s = set(range(1, m+1))" is used to initialize the set "s" with all possible foods (from 1 to m).
+- In the loop, I iterate over each set of foods liked by each person and update the set "s" by taking the intersection with the current set. This is done with the line "s = s & food".
+- Finally, I print the length of the set "s" to get the number of foods liked by all people.
+
+This repaired code should correctly solve the problem.

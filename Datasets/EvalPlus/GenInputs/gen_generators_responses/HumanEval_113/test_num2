@@ -1,0 +1,10 @@
+```python
+from random import randint
+from cyaron import String
+
+def sample_one():
+    num_strings = randint(1, 10)  # Generate between 1 and 10 strings
+    input_list = [String.random(randint(1, 20), charset='0123456789') for _ in range(num_strings)]
+
+    return [input_list]
+```

@@ -1,0 +1,10 @@
+{"input": ["Hello"], "output": "hELLO"}
+{"input": ["python"], "output": "PYTHON"}
+{"input": ["AbcDef"], "output": "aBCdEF"}
+{"input": ["12345"], "output": "12345"}
+{"input": ["Hello, World!"], "output": "hELLO, wORLD!"}
+{"input": ["Hello123"], "output": "hELLO123"}
+{"input": ["hello_WORLD"], "output": "HELLO_world"}
+{"input": ["123Hello"], "output": "123hELLO"}
+{"input": ["!@#$"], "output": "!@#$"}
+{"input": [""], "output": ""}

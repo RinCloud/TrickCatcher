@@ -1,0 +1,22 @@
+The code has two issues:
+1. The variable `Xor` is not initialized before being used in the XOR operation. It should be initialized to 0.
+2. The XOR operation is being performed on the parity of the numbers, but the problem requires the XOR operation to be performed on the numbers themselves.
+
+Here is the corrected code:
+
+```cpp
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main() {
+    int N, Xor = 0, A;
+    scanf("%d", &N);
+    while(N--) {
+        scanf("%d", &A);
+        Xor ^= A;
+    }
+    puts(Xor ? "NO" : "YES");
+    return 0;
+}
+```

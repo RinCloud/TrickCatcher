@@ -1,0 +1,75 @@
+#include <iostream>
+#include <vector>
+#include <string>
+using namespace std;
+
+int n;
+vector<int> g[202020];
+bool fav[202020];
+bool visited[202020];
+bool in_fav[202020];
+int far[202020];
+int second_farthest[202020];
+int closest[202020];
+long long ans = 0;
+
+void dfs1(int v, int prev) {
+    visited[v] = true;
+    in_fav[v] = fav[v];
+    for (auto u : g[v]) {
+        if (!visited[u]) {
+            dfs1(u, v);
+            in_fav[v] = in_fav[v] || in_fav[u];
+            far[v] = max(far[v], far[u] + 1);
+        }
+    }
+}
+
+void dfs2(int v, int prev) {
+    visited[v] = true;
+    vector<int> dists;
+    dists.push_back(0);
+    for (auto u : g[v]) {
+        if (!visited[u]) {
+            dists.push_back(far[u] + 1);
+        }
+    }
+    sort(dists.begin(), dists.end(), greater<int>());
+    closest[v] = dists[0];
+    second_farthest[v] = dists.size() > 1 ? dists[1] : 0;
+    for (auto u : g[v]) {
+        if (!visited[u]) {
+            ans += (second_farthest[v] < far[u] && in_fav[v]) ||
+                (second_farthest[v] > far[u] && in_fav[u]) ||
+                (second_farthest[v] == far[u] && (in_fav[v] || in_fav[u]));
+            dfs2(u, v);
+        }
+    }
+}
+
+int main() {
+    cin >> n;
+    for (int i = 0; i < n - 1; i++) {
+        int a, b;
+        cin >> a >> b;
+        g[a].push_back(b);
+        g[b].push_back(a);
+    }
+    string s;
+    cin >> s;
+    for (int i = 0; i < n; i++) {
+        fav[i] = (s[i] == '1');
+    }
+    dfs1(0, -1);
+    memset(visited, 0, sizeof(visited));
+    dfs2(0, -1);
+    for (int i = 0; i < n; i++) {
+        if (fav[i]) {
+            ans += 1 + second_farthest[i];
+        } else {
+            ans += max(0, 1 + (second_farthest[i] - closest[i]));
+        }
+    }
+    cout << ans << endl;
+    return 0;
+}

@@ -1,0 +1,28 @@
+**REPAIRED CODE**:
+
+```cpp
+#include<bits/stdc++.h>
+using namespace std;
+int ans;
+
+
+int main(){
+	int n,x;
+	cin>>n>>x;
+	ans=n;
+	int a[n];
+	for(int i=0;i<n;i++){  // fix the bug here, should initialize i to 0 
+		cin>>a[i];
+		x-=a[i];
+	}
+	sort(a,a+n);
+	for(int i = 0; i < n; i++){ // fix the bug here, loop should iterate over the array
+	  if(x >= a[i]){
+	    ans += 1;
+	    x -= a[i];
+	  }
+	}
+	cout<<ans<<endl;
+	return 0;
+}
+```

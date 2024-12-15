@@ -1,0 +1,31 @@
+# Solution
+
+We can solve this problem by iterating over the given input word `S` in a reverse order from the last character. 
+
+Let's initialize an empty set `distinct_chars` which will keep track of the distinct characters encountered.
+
+Starting from the last character of `S`, we will iterate in reverse order and check if the current character is already present in the `distinct_chars` set. If it is not present, we have found the character that needs to be increased to generate the next diverse word. We will append this character to `S` and print the updated word as the output. 
+
+If all characters in `S` are already distinct, then it is not possible to generate the next diverse word and we will print `-1` as the output.
+
+# Program
+
+```python
+def find_next_diverse_word(S):
+    distinct_chars = set()
+    for i in range(len(S)-1, -1, -1):
+        if S[i] not in distinct_chars:
+            distinct_chars.add(S[i])
+            S = S[:i] + chr(ord(S[i]) + 1) + S[i+1:]
+            return S
+    return -1
+
+# Taking input from standard input
+S = input()
+
+# Finding the next diverse word
+next_diverse_word = find_next_diverse_word(S)
+
+# Printing the output
+print(next_diverse_word)
+```

@@ -1,0 +1,13 @@
+```python
+from random import randint
+from cyaron import *
+def sample_one():
+    length_of_list = randint(1, 10)  # Number of strings in the list
+    words = []
+    for _ in range(length_of_list):
+        word_length = randint(1, 15)  # Length of each string
+        word = String.random(word_length, charset=ALPHABET_SMALL)
+        words.append(str(word))
+    generated_input = [words]
+    return generated_input
+```

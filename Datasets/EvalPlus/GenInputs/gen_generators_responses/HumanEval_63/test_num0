@@ -1,0 +1,8 @@
+```python
+from random import *
+
+def sample_one():
+    n = randint(0, 20)
+    generated_input = [n]
+    return generated_input
+```

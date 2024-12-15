@@ -1,0 +1,10 @@
+{"input": ["abc"], "output": "fgh"}
+{"input": ["xyz"], "output": "stu"}
+{"input": ["hello"], "output": "mjqqt"}
+{"input": ["world"], "output": "btwqi"}
+{"input": ["a b c"], "output": "f g h"}
+{"input": ["12345"], "output": "12345"}
+{"input": ["!@#$%"], "output": "!@#$%"}
+{"input": ["encode"], "output": "jsihij"}
+{"input": ["decode"], "output": "yv`zaj"}
+{"input": ["abcdefghijklmnopqrstuvwxyz"], "output": "fghijklmnopqrstuvwxyzabcde"}

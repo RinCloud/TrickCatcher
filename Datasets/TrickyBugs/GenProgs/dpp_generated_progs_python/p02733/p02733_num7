@@ -1,0 +1,38 @@
+# Solution
+
+To solve this problem, we will iterate over the chocolate bar row by row, keeping a track of the number of white squares encountered so far. Whenever the number of white squares exceeds K, we will increment the number of cuts and reset the counter.
+
+Here is the Python code that implements this approach:
+
+```python
+# Read input values
+H, W, K = map(int, input().split())
+
+# Read the chocolate bar grid
+chocolate_bar = [list(map(int, input())) for _ in range(H)]
+
+# Initialize variables
+cuts = 0
+white_squares = 0
+
+# Iterate over the chocolate bar
+for i in range(H):
+    for j in range(W):
+        # Add the number of white squares in the current block
+        white_squares += chocolate_bar[i][j]
+        
+        # Check if the number of white squares exceeds K
+        if white_squares > K:
+            # Increment the number of cuts and reset the counter
+            cuts += 1
+            white_squares = chocolate_bar[i][j]
+
+# Print the number of cuts
+print(cuts)
+```
+
+This program reads the input values from standard input, then iterates over the chocolate bar grid to count the number of white squares in each block. Whenever the number of white squares exceeds K, the program increments the number of cuts and resets the counter. Finally, the program prints the number of cuts required.
+
+To run this program, you can simply input the values in the specified format and press enter. The program will then output the result.
+
+Note that the program assumes that the input is valid and follows the given constraints. It does not include any error handling or input validation code.

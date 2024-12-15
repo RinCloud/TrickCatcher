@@ -1,0 +1,8 @@
+```python
+from random import randint
+
+def sample_one():
+    n = randint(1, 10)  # Generate a random integer between 1 and 10 for n
+    generated_input = [n]
+    return generated_input
+```

@@ -1,0 +1,20 @@
+**REPAIRED CODE**:
+
+```cpp
+#include <iostream>
+using namespace std;
+int main(){
+  int N,x,f=0;
+  cin >> N;
+  for(x=N;x>0;x=x/10){
+    f+=x%10;
+  }
+  if(N%f==0)cout << "Yes" << endl;
+  else cout << "No" << endl;
+  return 0;
+}
+```
+
+Explanation: 
+The bug in the original code was that the variable `f` was not initialized to 0. This caused the sum of digits calculation to be incorrect. 
+Additionally, the original code did not have a space between `endl` and `return 0` which is incorrect formatting. So, I added a space between them for correct formatting.

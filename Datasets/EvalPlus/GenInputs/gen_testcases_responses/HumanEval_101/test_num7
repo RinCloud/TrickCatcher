@@ -1,0 +1,10 @@
+{"input": ["Hi, my name is John"], "output": ["Hi", "my", "name", "is", "John"]}
+{"input": ["One, two, three, four, five, six"], "output": ["One", "two", "three", "four", "five", "six"]}
+{"input": [""], "output": []}
+{"input": ["Hello World"], "output": ["Hello", "World"]}
+{"input": ["Python is awesome"], "output": ["Python", "is", "awesome"]}
+{"input": ["Testing the function"], "output": ["Testing", "the", "function"]}
+{"input": ["Splitting string into words"], "output": ["Splitting", "string", "into", "words"]}
+{"input": ["Spaces should not cause issue "], "output": ["Spaces", "should", "not", "cause", "issue"]}
+{"input": ["One,two,three,four,five,six"], "output": ["One", "two", "three", "four", "five", "six"]}
+{"input": ["Multiple,,,commas"], "output": ["Multiple", "commas"]}

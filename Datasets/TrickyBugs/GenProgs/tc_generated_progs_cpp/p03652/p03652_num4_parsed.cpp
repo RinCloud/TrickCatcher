@@ -1,0 +1,36 @@
+#include <bits/stdc++.h>
+using namespace std;
+const int MaxN = 303;
+int n,m,a[MaxN][MaxN];
+int p[MaxN],cnt[MaxN];
+bool f[MaxN];
+
+int main() {
+    scanf("%d%d",&n,&m);
+    for (int i=1;i<=n;++i) for (int j=1;j<=m;++j) scanf("%d",&(a[i][j]));
+
+    int ans=INT_MAX;
+    for (int startSport=1; startSport<=m; ++startSport) {
+        memset(f,0,sizeof(f));
+        memset(cnt,0,sizeof(cnt)); cnt[startSport]=1;
+        
+        int k=startSport;
+        for (int i=1;i<=n;++i) {
+            while (!f[a[i][k]] && k<=m) {
+                f[a[i][k]]=true;
+                cnt[a[i][k]]++;   
+                k++;
+            }
+        }
+        // no sport should have more participants than the number of participants of the sport with less number of participants
+        for (int i=1;i<m;++i) {
+            if (cnt[i+1]<cnt[i]) cnt[i+1]=cnt[i];
+        }
+
+        // minimum possible number of the participants in the sport with the largest number of participants.
+        ans=min(ans,cnt[m]);
+    }
+
+    printf("%d\n",ans);
+    return 0;
+}

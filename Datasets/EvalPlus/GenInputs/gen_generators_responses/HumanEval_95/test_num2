@@ -1,0 +1,27 @@
+```python
+from random import randint, choice
+from cyaron import String
+
+def sample_one():
+    dict_keys_count = randint(0, 10)
+    is_upper = choice([True, False])
+    generated_dict = {}
+    
+    for _ in range(dict_keys_count):
+        if randint(0, 1) == 0 and len(generated_dict) > 0:  # Chance to introduce a counter-case key
+            if is_upper:
+                key = String.random(randint(1, 5)).lower()
+            else:
+                key = String.random(randint(1, 5)).upper()
+        else:
+            if is_upper:
+                key = String.random(randint(1, 5)).upper()
+            else:
+                key = String.random(randint(1, 5)).lower()
+        
+        value = String.random(randint(5, 10))  # Value doesn't impact the decision, so any string
+        generated_dict[key] = value
+    
+    generated_input = [generated_dict]
+    return generated_input
+```

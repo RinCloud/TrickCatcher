@@ -1,0 +1,13 @@
+**COMMENTS**:
+The code is using `scanf` to read the characters `a` and `b` from input, and then using `puts` function to print the result. The code looks generally correct, but there is a bug in the code that the program reads only a single character instead of a string containing a single character.
+
+**BUG FIX CODE**:
+```cpp
+#include <iostream>
+#include <string>
+int main() {
+    std::string a, b;
+    std::cin >> a >> b;
+    std::cout << (a == b ? "H" : "D") << std::endl;
+}
+```

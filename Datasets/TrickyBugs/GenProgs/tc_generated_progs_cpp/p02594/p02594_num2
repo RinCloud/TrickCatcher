@@ -1,0 +1,17 @@
+**Repaired code**:
+
+```cpp
+#include <stdio.h>
+int main (){
+    int c;
+    scanf ("%d", &c);
+    if (c >= 30 && c <= 40) {
+        printf ("Yes");
+    } else {
+        printf ("No");
+    }
+    return 0;
+}
+```
+
+Explanation: I replaced the conditional operator (`?:`) with an if-else statement to make the code more readable and easier to understand.

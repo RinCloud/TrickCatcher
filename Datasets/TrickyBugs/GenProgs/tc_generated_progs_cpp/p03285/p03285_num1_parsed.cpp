@@ -1,0 +1,23 @@
+#include <iostream>
+
+int main() {
+  int n;
+  std::cin >> n;
+
+  bool isPossible = false;
+  for (int cakes = 0; cakes <= n / 4; cakes++) {
+    for (int doughnuts = 0; doughnuts <= n / 7; doughnuts++) {
+      if (cakes * 4 + doughnuts * 7 == n) {
+        isPossible = true;
+        break;
+      }
+    }
+    if (isPossible) {
+      break;
+    }
+  }
+
+  std::cout << (isPossible ? "Yes" : "No");
+
+  return 0;
+}

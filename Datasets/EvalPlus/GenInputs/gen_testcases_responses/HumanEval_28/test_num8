@@ -1,0 +1,9 @@
+{"input": [["hello", "world", "!"]], "output": "helloworld!"}
+{"input": [["This", "is", "a", "test."]], "output": "Thisisatest."}
+{"input": [["1", "2", "3"]], "output": "123"}
+{"input": [["", "", ""]], "output": ""}
+{"input": [["a", "b", "c", "d", "e"]], "output": "abcde"}
+{"input": [[True, False, True]], "output": ""}
+{"input": [[], "output": ""}
+{"input": [["Hello", " ", "world!"]], "output": "Hello world!"}
+{"input": [[1, 2, 3]], "output": ""}

@@ -1,0 +1,15 @@
+**REPAIRED CODE**:
+
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+	int n, m, a = 0; //Initialize a = 0
+	cin >> n >> m;
+	a += (n * (n - 1)) / 2; //Change n to n - 1
+	a += (m * (m - 1)) / 2; //Change m to m - 1
+	cout << a;
+}
+```
+The bug in the original code was that the variables `a` was not initialized at the beginning, causing undefined behavior. Also, the formula to calculate the number of ways to choose two even numbers or two odd numbers has a typo. It should be `(n * (n - 1)) / 2` instead of `(n * n - n) / 2`, and `(m * (m - 1)) / 2` instead of `(m * m - m) / 2`.

@@ -1,0 +1,26 @@
+#include<iostream>
+#include<vector>
+using namespace std;
+
+int main() {
+    int N, Q;
+    cin >> N >> Q;
+    string S;
+    cin >> S;
+
+    vector<int> acCount(N+1);
+    for(int i=0;i<N;i++) {
+        acCount[i+1] = acCount[i];
+        if(S[i]=='A' && S[i+1]=='C') {
+            acCount[i+1]++;
+        }
+    }
+
+    for(int i=0;i<Q;i++) {
+        int l, r;
+        cin >> l >> r;
+        cout << acCount[r-1] - acCount[l-1] << endl;
+    }
+
+    return 0;
+}

@@ -1,0 +1,9 @@
+Here is the repaired code:
+
+```python
+n, k = map(int, input().split())
+print(n % k if n >= k else 0)
+```
+
+Explanation:
+The original code was incorrect because it used the bitwise AND operator (&) instead of the modulo operator (%) to calculate the minimum possible difference. Additionally, the original code did not handle the case when n < k correctly, so it has been fixed to return 0 in that case.

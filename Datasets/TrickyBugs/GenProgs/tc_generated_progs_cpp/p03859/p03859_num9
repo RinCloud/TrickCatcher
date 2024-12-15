@@ -1,0 +1,107 @@
+// PROBLEM DESCRIPTION:
+// There is a string S of length N consisting of characters `0` and `1`. You will perform the following operation for each i = 1, 2, ..., m:
+// * Arbitrarily permute the characters within the substring of S starting at the l_i-th character from the left and extending through the r_i-th character.
+// Here, the sequence l_i is non-decreasing.
+// How many values are possible for S after the M operations, modulo 1000000007(= 10^9+7)?
+
+// CONSTRAINTS:
+// * 2≦N≦3000
+// * 1≦M≦3000
+// * S consists of characters `0` and `1`.
+// * The length of S equals N.
+// * 1≦l_i < r_i≦N
+// * l_i ≦ l_{i+1}
+
+// INPUT:
+// The input is given from Standard Input in the following format:
+// N M
+// S
+// l_1 r_1
+// :
+// l_M r_M
+
+// OUTPUT:
+// Print the number of the possible values for S after the M operations, modulo 1000000007.
+
+// EXAMPLES:
+
+// INPUT:
+// 5 2
+// 01001
+// 2 4
+// 3 5
+
+// OUTPUT:
+// 6
+
+// INPUT:
+// 9 3
+// 110111110
+// 1 4
+// 4 6
+// 6 9
+
+// OUTPUT:
+// 26
+
+// INPUT:
+// 11 6
+// 00101000110
+// 2 4
+// 2 3
+// 4 7
+// 5 6
+// 6 10
+// 10 11
+
+// OUTPUT:
+// 143
+
+// **CODE**:
+
+// Shuffling
+// * frank_c1
+// * 2017 / 09 / 30
+
+#include <bits/stdc++.h>
+using namespace std;
+typedef pair<int, int> pii;
+
+const int maxn = 3005;
+const int mo = (int)(1e9) + 7;
+char s[maxn];
+pii b[maxn];
+int a[maxn], f[maxn], g[maxn];
+int n, m, tot, cnt;
+
+inline void addX(int p) {
+	if (s[p] == '1') {
+		for (int j = n; j; --j) f[j] = f[j - 1]; f[0] = 0; ++cnt;
+	} ++tot;
+}
+
+inline void add(int& x, int v) {
+	x += v; if (x >= mo) x -= mo;
+}
+
+int main() {
+	scanf("%d%d", &n, &m);
+	scanf("%s", s + 1);
+	for (int i = 1; i <= m; ++i) scanf("%d%d", &b[i].first, &b[i].second);
+	int ps = 1, mx = 1; f[0] = 1;
+	for (int i = 1; i <= n; ++i) {
+		while (mx <= i) addX(mx++);
+		for (; ps <= n && b[ps].first == i; ++ps) {
+			while (mx <= b[ps].second) addX(mx++);
+		}
+		memset(g, 0, sizeof(g));
+		for (int j = 0; j <= cnt; ++j) {
+			if (j) add(g[j - 1], f[j]); 
+			if (j < tot) add(g[j], f[j]);
+		}
+		memcpy(f, g, sizeof(g)); --tot;
+	} printf("%d\n", f[0]);
+	return 0;
+}
+
+**Repaired code**:

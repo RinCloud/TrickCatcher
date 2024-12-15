@@ -1,0 +1,7 @@
+```python
+from random import randint
+
+def sample_one():
+    decimal = randint(0, 255)
+    return [decimal]
+```

@@ -1,0 +1,10 @@
+{"input": ["Example"], "output": "Example"}
+{"input": ["Example 1"], "output": "Example_1"}
+{"input": [" Example 2"], "output": "_Example_2"}
+{"input": [" Example   3"], "output": "_Example-3"}
+{"input": [""], "output": ""}
+{"input": [" "], "output": "_"}
+{"input": ["  "], "output": "-"}
+{"input": ["   "], "output": "---"}
+{"input": ["A B C D"], "output": "A_B_C_D"}
+{"input": ["A  B  C  D"], "output": "A-B-C-D"}

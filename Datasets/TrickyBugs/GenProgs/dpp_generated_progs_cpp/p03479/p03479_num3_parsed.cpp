@@ -1,0 +1,16 @@
+#include <iostream>
+
+int main() {
+    long long X, Y;
+    std::cin >> X >> Y;
+
+    int count = 0;
+    while (X <= Y) {
+        X *= 2;
+        count++;
+    }
+
+    std::cout << count << std::endl;
+
+    return 0;
+}

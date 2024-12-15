@@ -1,0 +1,40 @@
+```python
+MOD = 10**9+7
+
+def count_ways(N, K):
+    factorials = [1] * (N+1)
+    inv_factorials = [1] * (N+1)
+    inv_factorials[N] = pow(factorials[N], MOD-2, MOD)
+    
+    for i in range(N-1, 0, -1):
+        factorials[i] = (i * factorials[i+1]) % MOD
+        inv_factorials[i] = pow(factorials[i], MOD-2, MOD)
+    
+    def nCr(n, r):
+        return (factorials[n] * inv_factorials[n-r] * inv_factorials[r]) % MOD
+    
+    dp = [[0] * (K+1) for _ in range(N+1)]
+    dp[0][0] = 1
+    
+    for i in range(1, N+1):
+        for j in range(K+1):
+            dp[i][j] = dp[i-1][j] + (dp[i-1][j-1] * (i-j+1)) % MOD
+            dp[i][j] %= MOD
+    
+    result = []
+    for i in range(1, K+1):
+        ways = (dp[N-1][i] * nCr(K-1, i-1)) % MOD
+        result.append(ways)
+    
+    return result
+
+# Read input
+N, K = map(int, input().split())
+
+# Count ways
+ways = count_ways(N, K)
+
+# Print output
+for w in ways:
+    print(w)
+```

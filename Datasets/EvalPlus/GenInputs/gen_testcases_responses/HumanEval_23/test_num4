@@ -1,0 +1,10 @@
+{"input": [''], "output": 0}
+{"input": ['abc'], "output": 3}
+{"input": ['abcABC123'], "output": 10}
+{"input": ['12345'], "output": 5}
+{"input": ['abcdefg'], "output": 7}
+{"input": ['!@#$%^&*()'], "output": 12}
+{"input": [' '], "output": 1}
+{"input": ['\n'], "output": 1}
+{"input": ['\t'], "output": 1}
+{"input": ['A B C'], "output": 5}

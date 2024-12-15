@@ -1,0 +1,10 @@
+{"input": ['Hello world'], "output": '3e25960a79dbc69b674cd4ec67a72c62'}
+{"input": [''], "output": None}
+{"input": ['Hello'], "output": '8b1a9953c4611296a827abf8c47804d7'}
+{"input": ['   Hello   '], "output": '8b1a9953c4611296a827abf8c47804d7'}
+{"input": ['12345'], "output": '827ccb0eea8a706c4c34a16891f84e7b'}
+{"input": ['Lorem ipsum dolor sit amet, consectetur adipiscing elit.'], "output": 'd7446a14b22ebb3dcd2b8ebcaa5eb21b'}
+{"input": ['hello123'], "output": 'e99a18c428cb38d5f260853678922e03'}
+{"input": ['hello world'], "output": '5eb63bbbe01eeed093cb22bb8f5acdc3'}
+{"input": ['password123'], "output": '482c811da5d5b4bc6d497ffa98491e38'}
+{"input": ['abc123'], "output": 'e99a18c428cb38d5f260853678922e03'}

@@ -1,0 +1,15 @@
+```python
+N, A, B = map(int, input().split())
+if A > B or (B - A) > N:
+    print(0)
+else:
+    if N == 1:
+        if A == B:
+            print(1)
+        else:
+            print(0)
+    else:
+        print(B - A + (N - 2) * (B - A + 1))
+```
+Explanation:
+I added an additional condition to handle the case where N is equal to 1. In this case, the only possible sum is A or B, depending on if they are equal or not.

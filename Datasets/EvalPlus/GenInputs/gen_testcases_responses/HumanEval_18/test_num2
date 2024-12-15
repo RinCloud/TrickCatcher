@@ -1,0 +1,10 @@
+{"input": ["", "a"], "output": 0}
+{"input": ["aaa", "a"], "output": 3}
+{"input": ["aaaa", "aa"], "output": 3}
+{"input": ["This is a test", "test"], "output": 1}
+{"input": ["racecar", "race"], "output": 1}
+{"input": ["hello world", "l"], "output": 3}
+{"input": ["Python programming is fun", "ing"], "output": 2}
+{"input": ["banana", "ana"], "output": 2}
+{"input": ["apple", "pineapple"], "output": 0}
+{"input": ["abcdabcdabcd", "abcd"], "output": 3}

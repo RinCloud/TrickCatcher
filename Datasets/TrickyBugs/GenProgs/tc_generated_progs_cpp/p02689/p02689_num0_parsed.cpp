@@ -1,0 +1,35 @@
+#include <bits/stdc++.h>
+#define rep(i, n) for (int i = 0; i < (n); i++)
+using namespace std;
+
+int main() {
+  int N, M;
+  cin >> N >> M;
+  int h[N], ma[N];
+  rep(i, N) {
+    cin >> h[i];
+    ma[i] = 0;
+  }
+
+  // Create a set to store the observatory indices that are connected to any other observatory
+  set<int> connectedObservatories;
+
+  int a, b;
+  rep(i, M) {
+    cin >> a >> b;
+    connectedObservatories.insert(a-1);
+    connectedObservatories.insert(b-1);
+
+    ma[a-1] = max(ma[a-1], h[b-1]);
+    ma[b-1] = max(ma[b-1], h[a-1]);
+  }
+
+  int ans = 0;
+  rep(i, N) {
+    // An observatory is good if it is not connected to any other observatory
+    if (connectedObservatories.count(i) == 0 && h[i] > ma[i]) {
+      ans++;
+    }
+  }
+  cout << ans << endl;
+}

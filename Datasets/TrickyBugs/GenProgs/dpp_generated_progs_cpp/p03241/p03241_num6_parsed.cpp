@@ -1,0 +1,25 @@
+#include <iostream>
+#include <algorithm>
+
+int main() {
+    int N, M;
+    std::cin >> N >> M;
+
+    // Find the maximum possible value of the greatest common divisor
+    // by checking all possible divisors from 1 to M/N.
+    // The largest possible divisor is M/N as the sum of the sequence
+    // needs to be M.
+
+    int maxDivisor = M / N;
+    int gcd = 1;
+
+    for (int i = 1; i <= maxDivisor; i++) {
+        if (M % i == 0) {
+            gcd = std::max(gcd, i);
+        }
+    }
+
+    std::cout << gcd << std::endl;
+
+    return 0;
+}

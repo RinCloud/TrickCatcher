@@ -1,0 +1,42 @@
+```python
+import sys
+stdin = sys.stdin
+
+# Helper function to read an integer from input
+def ni(): return int(stdin.readline())
+
+# Helper function to read a list of integers from input
+def na(): return list(map(int, stdin.readline().split()))
+
+# Helper function to read a list of lists of integers from input
+def naa(N): return [na() for _ in range(N)]
+
+# Helper function to read a string from input
+def ns(): return stdin.readline().rstrip()  # ignore trailing spaces
+
+N, W = na()
+INF = float('inf')
+w1,v1 = na()
+dp = [[-INF] * (3*N+1) for _ in range(N+1)]
+dp[0][0] = 0
+for i in range(1, N+1):
+    w, v = na()
+    for j in range(1, i+1):
+        for k in range(v, 3*N+1):
+            dp[j][k] = max(dp[j][k], dp[j-1][k-v] + w)
+    
+ans = 0
+for i in range(1, N+1):
+    wmax = W - w1 * i
+    if wmax < 0:
+        break
+    ans = max(ans, max(dp[i][:wmax+1]))
+
+print(ans)
+```
+Explanation:
+
+1. The initial code starts with `dp[0][0] = 0` which means that 0 items with 0 weight have 0 value (base case). However, when selecting items, we need to consider the initial weight `w1` as well.
+2. In the original code, the input for `w` and `v` in the inner loop starts from the second item (i.e. `for i in range(1, N):`) and the first item is handled separately. However, this approach is not correct as it does not consider the case where the first item is not selected. Therefore, we need to modify the inner loop to start from `1` and consider all items in each iteration.
+
+Fixed code:

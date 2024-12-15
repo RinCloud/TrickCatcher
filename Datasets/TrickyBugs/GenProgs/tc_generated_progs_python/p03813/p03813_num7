@@ -1,0 +1,13 @@
+**REPAIRED CODE**:
+
+```python
+a = int(input())
+if a < 1200:
+    print("ABC")
+else:
+    print("ARC")
+```
+
+CHANGES MADE:
+- The input is converted to an integer using the `int()` function to match the constraint of x being an integer.
+- The comparison operator `<` is used instead of the string comparison operator `<` to compare the integer value of `a` with the integer value `1200`.

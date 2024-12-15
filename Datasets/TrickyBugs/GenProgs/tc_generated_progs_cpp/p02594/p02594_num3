@@ -1,0 +1,19 @@
+**Repaired code**:
+
+```c
+#include <stdio.h>
+
+int main() {
+    int c;
+    scanf("%d", &c);
+    if (c >= 30)
+        printf("Yes");
+    else
+        printf("No");
+    return 0;
+}
+```
+
+Explanation: 
+- The original code uses a ternary operator to print "Yes" or "No" based on the condition `c >= 30 && c <= 40`. However, the problem statement specifies that the air conditioner should be turned on if the temperature is **30 degrees Celsius or above**, which means the condition should be `c >= 30` without the upper limit of 40.
+- The repaired code uses an if-else statement to correctly check if the temperature is greater than or equal to 30 and prints "Yes" or "No" accordingly.

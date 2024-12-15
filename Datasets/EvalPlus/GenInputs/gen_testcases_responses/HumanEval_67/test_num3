@@ -1,0 +1,10 @@
+{"input": ["5 apples and 6 oranges", 19], "output": 8}
+{"input": ["0 apples and 1 oranges", 3], "output": 2}
+{"input": ["2 apples and 3 oranges", 100], "output": 95}
+{"input": ["100 apples and 1 oranges", 120], "output": 19}
+{"input": ["10 apples and 8 oranges", 30], "output": 12}
+{"input": ["4 apples and 0 oranges", 8], "output": 4}
+{"input": ["3 apples and 10 oranges", 25], "output": 12}
+{"input": ["7 apples and 2 oranges", 15], "output": 6}
+{"input": ["1 apples and 1 oranges", 10], "output": 8}
+{"input": ["0 apples and 0 oranges", 5], "output": 5}

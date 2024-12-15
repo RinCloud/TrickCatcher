@@ -1,0 +1,48 @@
+**Repaired code**:
+```cpp
+#include <cstdio>
+
+const int MAXN = 200001;
+int N, M;
+int a[MAXN], b[MAXN];
+
+bool con_to_N[MAXN];
+
+void solve() {
+    for (int i = 1; i <= M; i++) {
+        con_to_N[a[i]] = (b[i] == N);
+    }
+
+    bool possible = false;
+    for (int i = 1; i <= M; i++) {
+        if (a[i] == 1 && con_to_N[b[i]]) {
+            possible = true;
+            break; // Stop the loop if a path is found
+        }
+    }
+
+    printf("%s\n", possible ? "POSSIBLE" : "IMPOSSIBLE");
+}
+
+int main() {
+    scanf("%d%d", &N, &M);
+    for (int i = 1; i <= M; i++) {
+        scanf("%d%d", &a[i], &b[i]);
+    }
+
+    solve();
+    return 0;
+}
+```
+
+**Explanation:**
+
+1. The code is using an array `con_to_N` to keep track of whether a given island can be connected to Island N using a boat service.
+2. Within `solve()`, the code iterates through the input and for each boat service, it checks if the service connects Island `a[i]` to Island N. If it does, it sets `con_to_N[a[i]] = true`.
+3. After that, the code checks if there is any boat service that connects Island 1 to an island `b[i]` that can be reached from Island 1. If such a service exists, it sets `possible = true`.
+4. The code then prints "POSSIBLE" if `possible` is true, and "IMPOSSIBLE" otherwise.
+
+The repaired code fixes the following issues:
+1. The definition of `a` and `b` arrays does not match the constraints in the problem description. The maximum size for the arrays is given as 200,000, so the correct definition should be `a[MAXN]` and `b[MAXN]`.
+2. The loop conditions inside `solve()` for iterating over the boat services should be `i <= M` instead of `i <= N`, since `M` is the number of boat services, not `N`.
+3. Adding a `break` statement inside the loop that checks for a valid path from Island 1 to Island N. Once a valid path is found, there is no need to continue checking the remaining boat services.

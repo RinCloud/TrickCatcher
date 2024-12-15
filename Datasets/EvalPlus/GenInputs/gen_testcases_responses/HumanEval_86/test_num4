@@ -1,0 +1,10 @@
+{"input": ['Hi'], "output": 'Hi'}
+{"input": ['hello'], "output": 'ehllo'}
+{"input": ['Hello World!!!'], "output": 'Hello !!!Wdlor'}
+{"input": ['abc'], "output": 'abc'}
+{"input": [''], "output": ''}
+{"input": ['A sentence with words'], "output": 'A ceeennstt wih dorsw'}
+{"input": ['12345'], "output": '12345'}
+{"input": ['Abc Def Ghi'], "output": 'Abc Def Ghi'}
+{"input": ['This is a test'], "output": 'His is a estt'}
+{"input": ['Python is awesome'], "output": 'Phnopy is aeemosw'}

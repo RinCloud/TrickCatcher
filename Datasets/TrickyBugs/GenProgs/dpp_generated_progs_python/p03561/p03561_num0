@@ -1,0 +1,48 @@
+# Approach:
+
+Let's consider a sequence of length N. The first element can be any integer between 1 and K. Similarly, each subsequent element can be any integer between 1 and K.
+
+Since we need to find the lexicographically smallest sequence, we will start by choosing the smallest possible element at each position. This means we will start with 1 at each position.
+
+After the first element, we will see if we can increase the second element to 2 while keeping the sequence lexicographically smallest. If the remaining length of the sequence is still greater than half of the total number of sequences, we can increase the second element to 2.
+
+We will repeat this process for each subsequent element until we can't increase the element or we reach the end of the sequence.
+
+# Steps:
+- Read the values of K and N from standard input.
+- Calculate the total number of sequences, X, using the formula K^N.
+- Initialize an empty list, sequence, to store the generated sequence.
+- Set the current element value to 1.
+- Append the current element to the sequence.
+- For each remaining position in the sequence, do the following:
+    - If the remaining length of the sequence is greater than or equal to half of X, increase the current element by 1.
+    - Append the current element to the sequence.
+- Print the sequence.
+
+# Implementation:
+
+```python
+import math
+
+# Read input values
+K, N = map(int, input().split())
+
+# Calculate the total number of sequences
+X = K**N
+
+# Initialize sequence
+sequence = []
+
+# Initialize current element
+current_element = 1
+
+# Generate sequence
+sequence.append(current_element)
+for _ in range(N - 1):
+    if math.ceil(X / 2) <= X - (K - current_element)**(N - len(sequence)):
+        current_element += 1
+    sequence.append(current_element)
+
+# Print the sequence
+print(*sequence)
+```

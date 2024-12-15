@@ -1,0 +1,1 @@
+[print(i,end=' ')for i in{m:i+1for i,m in zip(range(int(input())),list(map(int,input().split())))}.values()]

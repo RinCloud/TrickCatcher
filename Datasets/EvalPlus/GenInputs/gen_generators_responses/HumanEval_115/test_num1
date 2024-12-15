@@ -1,0 +1,11 @@
+```python
+from random import randint
+
+def sample_one():
+    grid_length = randint(1, 100)
+    grid_width = randint(1, 100)
+    grid = [[randint(0, 1) for _ in range(grid_width)] for _ in range(grid_length)]
+    capacity = randint(1, 10)
+    generated_input = [grid, capacity]
+    return generated_input
+```

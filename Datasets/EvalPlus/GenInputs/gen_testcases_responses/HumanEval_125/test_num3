@@ -1,0 +1,10 @@
+{"input": "Hello world!", "output": ["Hello", "world!"]}
+{"input": "Hello,world!", "output": ["Hello", "world!"]}
+{"input": "abcdef", "output": 3}
+{"input": "Hello", "output": ["Hello"]}
+{"input": "Hello, world!", "output": ["Hello", " world!"]}
+{"input": "abcdefg", "output": 4}
+{"input": "split,words!!!", "output": ["split", "words!!!"]}
+{"input": "abcdefg,hijklmnop", "output": ["abcdefg", "hijklmnop"]}
+{"input": "a,z,c,y", "output": ["a", "z", "c", "y"]}
+{"input": "abcdefg,hijklmnop,qrstuvwxyz", "output": ["abcdefg", "hijklmnop", "qrstuvwxyz"]}

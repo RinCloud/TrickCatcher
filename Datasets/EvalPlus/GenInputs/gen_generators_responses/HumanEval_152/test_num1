@@ -1,0 +1,10 @@
+```python
+from random import randint
+
+def sample_one():
+    length = randint(1, 10)
+    game = [randint(-10, 10) for _ in range(length)]
+    guess = [randint(-10, 10) for _ in range(length)]
+    generated_input = [game, guess]
+    return generated_input
+```

@@ -1,0 +1,14 @@
+Here are 10 diverse and corner test inputs for the `vowels_count` function:
+
+1. ["abcde"]
+2. ["ACEDY"]
+3. ["hello"]
+4. ["WORLD"]
+5. ["Y"]
+6. ["aeiou"]
+7. [""]
+8. ["xyz"]
+9. ["Yy"]
+10. ["AEIOU"]
+
+Please note that each input should be in a separate list, as shown above.

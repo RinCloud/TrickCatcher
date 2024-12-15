@@ -1,0 +1,40 @@
+# Program
+
+```python
+H, W = map(int, input().split())
+S = [input() for _ in range(H)]
+
+def count_lighted_squares(x, y):
+    count = 1
+    # count up
+    for i in range(x-1, -1, -1):
+        if S[i][y] == '#':
+            break
+        count += 1
+    # count down
+    for i in range(x+1, H):
+        if S[i][y] == '#':
+            break
+        count += 1
+    # count left
+    for j in range(y-1, -1, -1):
+        if S[x][j] == '#':
+            break
+        count += 1
+    # count right
+    for j in range(y+1, W):
+        if S[x][j] == '#':
+            break
+        count += 1
+    return count
+
+max_lighted_squares = 0
+for i in range(H):
+    for j in range(W):
+        if S[i][j] == '#':
+            continue
+        max_lighted_squares = max(max_lighted_squares, count_lighted_squares(i, j))
+
+print(max_lighted_squares)
+```
+Note: I have assumed that you would take input from standard input and print the output to standard output.

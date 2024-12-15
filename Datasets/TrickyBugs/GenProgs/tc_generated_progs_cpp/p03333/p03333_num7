@@ -1,0 +1,30 @@
+```cpp
+#include <stdio.h>
+#include <algorithm>
+int main(){
+    long long n;
+    scanf("%lld",&n);
+    long long l[n],r[n];
+    for(int i=0;i<n;i++){
+        scanf("%lld%lld",&l[i],&r[i]);
+    }
+    std::sort(l,l+n);
+    std::sort(r,r+n);
+    int y=0;
+    while(r[y]<l[n-y-1])y++;
+    long long ans=0;
+    for(int i=0;i<y;i++){
+        ans+=l[n-i-1]-r[i];
+    }
+    long long g=0;
+    if(y!=0) {
+        if(l[n-1]<0) g = 0 - l[n-1];
+        if(r[0]>0) g = std::max(g, r[0]);
+        int lower_bound = std::max(0LL, r[y-1]);
+        int upper_bound = std::min(0LL, l[n-y]);
+        g = std::max(g, upper_bound - lower_bound);
+    }
+    ans += g;
+    printf("%lld\n",ans);
+}
+```  

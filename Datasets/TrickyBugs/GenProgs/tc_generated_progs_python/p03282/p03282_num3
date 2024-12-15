@@ -1,0 +1,44 @@
+```python
+def replace_digits(s):
+    new_s = ''
+    for digit in s:
+        if digit == '2':
+            new_s += '22'
+        elif digit == '3':
+            new_s += '333'
+        elif digit == '4':
+            new_s += '4444'
+        elif digit == '5':
+            new_s += '55555'
+        elif digit == '6':
+            new_s += '666666'
+        elif digit == '7':
+            new_s += '7777777'
+        elif digit == '8':
+            new_s += '88888888'
+        elif digit == '9':
+            new_s += '999999999'
+        else:
+            new_s += digit
+    return new_s
+
+s = input()
+k = int(input())
+
+s_new = s
+for _ in range(5 * (10 ** 15)):
+    s_new = replace_digits(s_new)
+
+print(s_new[k-1])
+```
+
+**Explanation:**
+There are several issues in the given code. Here are the main issues and their fixes:
+
+1. The given code uses `map(int, input())` to read the string `S`. However, this will actually convert each character to its ASCII integer value instead of treating the string as a sequence of digits. So we need to replace `map(int, input())` with just `input()` to read the string correctly.
+
+2. The given code checks if the current index + 1 is equal to `K`, or if the current value `v` is greater than `1`, in order to determine the K-th character from the left. However, this logic is incorrect. According to the problem statement, we need to apply the digit replacement rules to the string `S` repeatedly for 5 * 10^15 days. So the final string `S` after applying the rules for the given number of days should be used to find the K-th character. Additionally, we want the K-th character from the left, so we need to access `s[k-1]` instead of `v` in the loop.
+
+3. To apply the digit replacement rules repeatedly, we can define a separate function `replace_digits` that replaces each digit according to the rules. This function takes a string `s` as input and returns a new string with the replaced digits. The given code does not have this function, so we need to define it.
+
+By implementing these fixes, we can obtain the correct output for the given problem.

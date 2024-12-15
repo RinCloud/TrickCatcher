@@ -1,0 +1,12 @@
+```python
+from random import *
+from cyaron import *
+
+def sample_one():
+    notes = ['o', 'o|', '.|']
+    length_of_music_string = randint(5, 20)  # generate a length for the music string
+    music_string_list = [choices(notes, k=1)[0] for _ in range(length_of_music_string)]
+    music_string = ' '.join(music_string_list)  # combine the notes into a single string
+    generated_input = [music_string]
+    return generated_input
+```

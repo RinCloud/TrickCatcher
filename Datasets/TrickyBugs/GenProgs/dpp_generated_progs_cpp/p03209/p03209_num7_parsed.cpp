@@ -1,0 +1,46 @@
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+
+// Function to calculate the total number of layers in a level-N burger
+long long getTotalLayers(int N) {
+    if(N == 0) {
+        return 1;
+    }
+    return 2 * getTotalLayers(N - 1) + 3;
+}
+
+// Function to calculate the number of patties in the bottom-most X layers from the bottom of a level-N burger
+long long calculatePatties(int N, long long X) {
+    if(N == 0) {
+        if(X == 0) {
+            return 0;
+        } else {
+            return 1;
+        }
+    }
+    
+    long long totalLayers = getTotalLayers(N);
+    
+    if(X >= totalLayers - 1) {
+        return pow(2, N);
+    } else if(X == 1) {
+        return 0;
+    } else if(X <= 1 + (totalLayers - 1) / 2) {
+        return calculatePatties(N - 1, X - 1);
+    } else {
+        return pow(2, N - 1) + calculatePatties(N - 1, X - 2 - (totalLayers - 1) / 2);
+    }
+}
+
+int main() {
+    int N;
+    long long X;
+    cin >> N >> X;
+
+    long long patties = calculatePatties(N, X);
+    cout << patties << endl;
+
+    return 0;
+}

@@ -1,0 +1,19 @@
+\{"input": \["Hello world"\], "output": 0\}
+
+\{"input": \["The sky is blue. The sun is shining. I love this weather"\], "output": 1\}
+
+\{"input": \["I am bored"\], "output": 1\}
+
+\{"input": \["I love programming! I am learning Python."\], "output": 2\}
+
+\{"input": \["This is a test. I hope it works."\], "output": 1\}
+
+\{"input": \["I really like chocolate."\], "output": 1\}
+
+\{"input": \["The cat is black. The dog is brown. I want ice cream."\], "output": 1\}
+
+\{"input": \["I am happy. I am sad. I need a break."\], "output": 2\}
+
+\{"input": \["I am tired."\], "output": 1\}
+
+\{"input": \["There are many trees. I love nature."\], "output": 1\}

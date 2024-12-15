@@ -1,0 +1,23 @@
+```python
+from random import choice, randint
+from cyaron import String
+
+def sample_one():
+    # Basic algebra operations
+    operations = ['+', '-', '*', '//', '**']
+
+    # Generate a random length for operand list which is at least two
+    length_of_operand = randint(2, 10)
+    
+    # Length of operator list is equal to the length of operand list minus one
+    length_of_operator = length_of_operand - 1
+
+    # Generate operand list with non-negative integers
+    operand = [randint(0, 100) for _ in range(length_of_operand)]
+    
+    # Generate operator list
+    operator = [choice(operations) for _ in range(length_of_operator)]
+
+    generated_input = [operator, operand]
+    return generated_input
+```

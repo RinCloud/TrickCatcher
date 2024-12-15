@@ -1,0 +1,27 @@
+#include<iostream>
+using namespace std;
+int main(){
+    long long n, x, m = 0, z, y;
+    cin >> n >> x;
+    int a[n+1]; // Change array size to n+1
+    a[n] = 0; // Change a[n+1] to a[n]
+    for(int i = 1; i <= n; i++) {
+        cin >> a[i];
+    }
+    for(int i = 1; i < n; i++) { // Change to "<" operator
+        z = a[i] + a[i+1] - x;
+        if(z > 0) {
+            m += z;
+            if(a[i+1] < z) {
+                a[i+1] = 0;
+            } else {
+                a[i+1] = a[i+1] - z; // Add else block
+            }
+        }
+    }
+    if(a[n] + a[n-1] - x > 0) { // Change a[n+1] to a[n]
+        m += a[n] + a[n-1] - x; // Change a[n+1] to a[n]
+    }
+    cout << m << endl;
+    return 0;
+}

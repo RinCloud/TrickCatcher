@@ -1,0 +1,10 @@
+{"input": ["1/5", "5/1"], "output": True}
+{"input": ["1/6", "2/1"], "output": False}
+{"input": ["7/10", "10/2"], "output": False}
+{"input": ["1/8", "8/1"], "output": True}
+{"input": ["3/4", "2/1"], "output": False}
+{"input": ["5/6", "6/5"], "output": True}
+{"input": ["2/3", "9/2"], "output": False}
+{"input": ["7/8", "8/7"], "output": True}
+{"input": ["1/2", "2/1"], "output": False}
+{"input": ["4/5", "5/4"], "output": True}

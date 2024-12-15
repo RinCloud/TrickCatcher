@@ -1,0 +1,17 @@
+#include <bits/stdc++.h>
+
+int a[210], n;  // Increase the size of array a, as we can have up to 200 skewers
+
+int main() {
+    scanf("%d", &n); n *= 2;
+    for (int i = 1; i <= n; i++) scanf("%d", a + i);
+
+    std::sort(a + 1, a + n + 1);
+    int ans = 0;
+    
+    // Change the iteration condition from i > 0 to i >= 1
+    for (int i = n; i >= 1; i -= 2) ans += a[i];
+    
+    printf("%d", ans);
+    return 0;
+}

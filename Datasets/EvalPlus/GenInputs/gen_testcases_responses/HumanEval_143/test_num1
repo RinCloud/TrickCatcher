@@ -1,0 +1,10 @@
+{"input": ["This is a test"], "output": "is"}
+{"input": ["lets go for swimming"], "output": "go for"}
+{"input": ["Hello world, how are you today?"], "output": "are you"}
+{"input": ["Python is fun and easy"], "output": "is and easy"}
+{"input": ["I love coding in Python"], "output": "love in Python"}
+{"input": ["It's a beautiful day outside"], "output": "a day"}
+{"input": ["Winter is coming"], "output": "is"}
+{"input": ["This sentence has no prime words"], "output": ""}
+{"input": ["Coding is my passion"], "output": "is my"}
+{"input": ["The quick brown fox jumps"], "output": "quick fox"}

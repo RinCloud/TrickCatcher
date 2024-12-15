@@ -1,0 +1,20 @@
+```python
+from random import randint
+from cyaron import String
+
+def sample_one():
+    num_groups = randint(1, 5)  # number of paren groups
+    paren_string = ''
+
+    for _ in range(num_groups):
+        depth = randint(1, 3)  # depth of a single group
+        group = ''
+        for d in range(depth):
+            group = '(' * (d + 1) + ')' * (d + 1) + group
+        # Optionally adding spaces between groups
+        paren_string += group + ' ' * randint(0, 3)
+    
+    paren_string = paren_string.strip()  # Remove trailing spaces
+
+    return [paren_string]
+```

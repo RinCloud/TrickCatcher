@@ -1,0 +1,22 @@
+The given code has a logic flaw.
+
+This is because if we have more `c`-shaped pieces than `S`-shaped pieces (i.e., n < m), then there will not always be sufficient `c`-shaped pieces to combine with all `S`-shaped pieces.
+
+To fix this, we need to check if there are enough `c`-shaped pieces available for each `S`-shaped piece.
+
+Here is the repaired code:
+
+```python
+n, m = map(int, input().split())
+
+if n < m//2:
+    print(n)
+else:
+    print((n*2+m)//4)
+```
+
+This code first checks if the number of `S`-shaped pieces is less than half of the `c`-shaped pieces (`n < m//2`). If it is, then we can create `n` Scc groups since each `S`-shaped piece requires 2 `c`-shaped pieces.
+
+If `n >= m//2`, then we do not have enough `c`-shaped pieces to create an Scc group for each `S`-shaped piece. In this case, we can only create (m//2) Scc groups using the available `c`-shaped pieces. The remaining `S`-shaped pieces can be paired with the remaining `c`-shaped pieces.
+
+Note: The use of integer division (//) ensures that the result is rounded down to the nearest whole number.

@@ -1,0 +1,25 @@
+**Repaired code:**
+
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+  int N;
+  cin >> N;
+  int a,b,s=0;
+  cin >> b;
+  for ( int i=0; i<N-1; ++i) {
+    cin >> a;
+    s += a*b;
+    b +=a;
+  }
+ 
+  cout << s;
+}
+```
+
+Explanation:
+1. Initialized `s` variable to 0 because it is used as a counter for sum of health points.
+2. Removed `c` variable because it was not used in the code.
+3. Added `s=0;` in the beginning because `s` was used without initialization, which is causing unexpected behavior.

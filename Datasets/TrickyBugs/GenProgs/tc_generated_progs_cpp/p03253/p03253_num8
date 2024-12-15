@@ -1,0 +1,50 @@
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+using ll=long long;
+#define rep(i,a,b) for(ll i=a;i<b;i++)
+#define rrep(i,a,b) for(ll i=b-1;i>=a;i--)
+#define each(i,a) for(auto&& i:a)
+const ll p=1000000007;
+ll modpow(ll a,ll b){
+    if(b==0)return 1;
+    ll ans=modpow(a,b/2);
+    ans=ans*ans%p;
+    if(b&1)ans=ans*a%p;
+    return ans;
+}
+vector<ll>fac,inv;
+void init(ll n){
+    fac.resize(n+1);inv.resize(n+1);
+    fac[0]=1;
+    rep(i,1,n+1)fac[i]=fac[i-1]*i%p;
+    inv[n]=modpow(fac[n],p-2);
+    rrep(i,1,n+1)inv[i-1]=inv[i]*i%p;
+}
+ll comb(ll a,ll b){
+    return fac[a]*inv[b]%p*inv[a-b]%p;
+}
+ll mcomb(ll n,ll r){
+	return comb(n+r-1,r);
+}
+int main(){
+	ll n,m;
+	cin>>n>>m;
+	init(110000);
+	map<ll,ll> f;
+	for(ll i=2;i*i<=m;i++){ //fixing this line to check conditions upto i*i
+		while(m%i==0){
+			f[i]++;
+			m/=i;
+		}
+	}
+	if(m!=1) {
+		f[m]++;
+	}
+	ll ans=1;
+	each(i,f){
+		ans=ans*mcomb(n,i.second)%p;
+	}
+	cout<<ans;
+}
+```

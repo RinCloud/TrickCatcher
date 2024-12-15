@@ -1,0 +1,15 @@
+using namespace std;
+#include<iostream>
+int main(){
+  long N,ans;
+  cin>>N;
+  ans = 0; // initialize ans before using it
+  if(N%2!=0){
+    ans=0; // use assignment operator instead of comparison operator
+  }else{
+    for(long i=10;i<=N;i*=5){
+      ans+=N/i;
+    }
+  }
+  cout<<ans; 
+}

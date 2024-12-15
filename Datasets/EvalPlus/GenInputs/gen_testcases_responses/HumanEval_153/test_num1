@@ -1,0 +1,10 @@
+{"input": ["my_class", ["AA", "Be", "CC"]], "output": "my_class.AA"}
+{"input": ["Slices", ["SErviNGSliCes", "Cheese", "StuFfed"]], "output": "Slices.SErviNGSliCes"}
+{"input": ["class1", ["aAabbCC", "bBbAcCa", "CCbbCC"]], "output": "class1.aAabbCC"}
+{"input": ["MyClass", ["AbCdEfG", "HIJKLM", "nopqr", "stuvWXY"]], "output": "MyClass.HIJKLM"}
+{"input": ["Test", ["FGHIJ", "fghijkl", "MnoPQR"]], "output": "Test.MnoPQR"}
+{"input": ["myClass", ["x", "y", "z"]], "output": "myClass.x"}
+{"input": ["class", []], "output": "class."}
+{"input": ["example", ["ABCDEF", "cdefgh", "IJKLMN"]], "output": "example.ABCDEF"}
+{"input": ["MyClass", ["aaaBBBcccDDD", "EEEfffGGG"]], "output": "MyClass.EEEfffGGG"}
+{"input": ["MyClass", ["abcdEFGHIJKLMN", "oPqRStUvW"]], "output": "MyClass.abcdEFGHIJKLMN"}

@@ -1,0 +1,34 @@
+UPDATED CODE:
+```python
+N, K = map(int, input().split())
+D = set(map(int, input().split()))
+
+def is_disliked(num):
+
+    while num > 0:
+        digit = num % 10
+        if digit in D:
+            return True
+        num //= 10
+
+    return False
+
+def find_minimum_amount(N, D):
+
+    while is_disliked(N):
+        N += 1
+
+    return N
+
+min_amount = find_minimum_amount(N, D)
+print(min_amount)
+```
+Explanation:
+The initial code tries to solve the problem, but there are multiple bugs and logic flaws that need to be fixed.
+
+Here are the changes made to fix the bugs:
+1. Instead of using a list to store disliked digits, a set is used. This allows for faster membership checking.
+2. The algorithm is split into a function `is_disliked` which checks if a given number contains any disliked digits, and a `find_minimum_amount` function which iteratively searches for the minimum amount of money that Iroha can hand to the cashier.
+3. The `is_disliked` function loops through the digits of a given number and checks if any of them are disliked digits. If a disliked digit is found, the function returns True, indicating that the number should be avoided. Otherwise, it returns False.
+4. The `find_minimum_amount` function uses the `is_disliked` function to check if the current amount is disliked. If so, it increments the amount and checks again. This process continues until a non-disliked amount is found.
+5. The main part of the code is modified to call the `find_minimum_amount` function with the given inputs and print the result.

@@ -1,0 +1,10 @@
+{"input": ["hi"], "output": "lm"}
+{"input": ["asdfghjkl"], "output": "ewhjklnop"}
+{"input": ["gf"], "output": "kj"}
+{"input": ["et"], "output": "ix"}
+{"input": ["abcdefghijklmnopqrstuvwxyz"], "output": "efghijklmnopqrstuvwxyzabcd"}
+{"input": ["zyxwvutsrqponmlkjihgfedcba"], "output": "abcde"} 
+{"input": ["aaa"], "output": "eee"}
+{"input": ["bbb"], "output": "fff"} 
+{"input": ["zzz"], "output": "ddd"} 
+{"input": ["abc def"], "output": "efg ehi"}

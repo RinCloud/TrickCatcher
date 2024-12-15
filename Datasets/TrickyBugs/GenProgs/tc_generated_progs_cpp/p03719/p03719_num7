@@ -1,0 +1,25 @@
+**REPAIRED CODE**:
+
+```cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    int a, b, c;
+    cin >> a >> b >> c;
+
+    if (c >= a && c <= b) {
+        cout << "Yes";
+    } else {
+        cout << "No";
+    }
+
+    return 0;
+}
+```
+
+Explanations:
+
+- The original code had some incorrect logic. To determine whether `C` is not less than `A` and not greater than `B`, we need to use the comparison operators `>=` and `<=` instead of `>` and `<`.
+- The original code also included unnecessary conditions (`c == a` and `c == b`) in the `if` statement.
+- The original code used unnecessary headers (`<bits/stdc++.h>`), which are not needed for this problem.

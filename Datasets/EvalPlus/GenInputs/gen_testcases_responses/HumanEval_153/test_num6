@@ -1,0 +1,10 @@
+{"input": ["my_class", ["AA", "Be", "CC"]], "output": "my_class.AA"}
+{"input": ["Slices", ["SErviNGSliCes", "Cheese", "StuFfed"]], "output": "Slices.SErviNGSliCes"}
+{"input": ["Example", ["EXAMPLE", "ExAmPlE", "example"]], "output": "Example.EXAMPLE"}
+{"input": ["Test", ["teSt", "TEST", "TESTING"]], "output": "Test.TEST"}
+{"input": ["Class", ["clAss", "CLASS", "cL"]], "output": "Class.CLASS"}
+{"input": ["Strong", ["stRONG", "sTrONG", "Strongest"]], "output": "Strong.Strongest"}
+{"input": ["Hello", ["hello", "Hi", "HEllo"]], "output": "Hello.HEllo"}
+{"input": ["World", ["WORLD", "worLD", "W"]], "output": "World.WORLD"}
+{"input": ["Code", ["CoDe", "CODE", "CodeMentor"]], "output": "Code.CODE"}
+{"input": ["Function", ["fuNCTION", "ruN", "test"]], "output": "Function.fuNCTION"}

@@ -1,0 +1,16 @@
+**BUGS FIXED CODE**:
+
+#include"bits/stdc++.h"
+using namespace std;
+
+int main(){
+    long long n,a,b;
+    cin>>n>>a>>b;
+    if(b > a || (b-a)*n > a) {
+        cout<<0;
+        return 0;
+    }
+    cout<<(b-a)*(n-2)+1;
+}
+
+NOTE: I assume that n should be the number of integers between A and B (inclusive) rather than the N mentioned in the problem description.

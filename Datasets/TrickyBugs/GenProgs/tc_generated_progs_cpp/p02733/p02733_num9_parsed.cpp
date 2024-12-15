@@ -1,0 +1,47 @@
+#include <bits/stdc++.h>
+using namespace std;
+using i64 = long long;
+#define endl "\n"
+
+int main()
+{
+  i64 H, W, K;
+  cin >> H >> W >> K;
+  vector<string> S(H);
+  for (i64 i = 0; i < H; i++)
+    cin >> S[i];
+  i64 ans = H*W; // Initialize ans to maximum possible number of cuts
+  // Iterate through all possible combinations of horizontal cuts
+  for (i64 i = 0; i < (1 << (H - 1)); i++)
+  {
+    i64 cuts = 0; // Track the number of cuts needed for this combination
+    vector<i64> cnt(H);
+    for (i64 j = 0; j < W; j++)
+    {
+      i64 t = 0;
+      bool valid = true;
+      for (i64 k = 0; k < H; k++)
+      {
+        if (S[k][j] == '1')
+          cnt[t]++;
+        if (i & (1 << k))
+        {
+          if (cnt[t] > K)
+          {
+            valid = false;
+            break;
+          }
+          t++;
+        }
+      }
+      if (!valid) {
+        cuts++;
+        fill(cnt.begin(), cnt.end(), 0); // Reset counts for next block
+        j--; // Re-check the same column
+      }
+    }
+    ans = min(ans, cuts + __builtin_popcount(i)); // Calculate total cuts needed for this combination
+  }
+  cout << ans << endl;
+  return 0;
+}

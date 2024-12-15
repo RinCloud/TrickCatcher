@@ -1,0 +1,13 @@
+def is_palindrome(n):
+    return str(n) == str(n)[::-1]
+
+def count_palindromic_numbers(A, B):
+    count = 0
+    for i in range(A, B+1):
+        if is_palindrome(i):
+            count += 1
+    return count
+
+A, B = map(int, input().split())
+result = count_palindromic_numbers(A, B)
+print(result)

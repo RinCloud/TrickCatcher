@@ -1,0 +1,7 @@
+**Test Input Reasoning:**
+
+- The minimum value for the number of cars, `n`, is 1.
+- In this case, there is only one car moving left to right and one car moving right to left.
+- This represents the smallest possible input.
+
+I chose this test case to verify if the function can handle the smallest input correctly.

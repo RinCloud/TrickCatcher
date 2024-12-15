@@ -1,0 +1,32 @@
+Here is one possible Python program that achieves the given intention:
+
+```python
+from collections import deque
+
+N, K = map(int, input().split())
+V = list(map(int, input().split()))
+
+ans = 0
+
+for A in range(K + 1):
+    for B in range(K + 1 - A):
+        left = deque(V[:A])
+        right = deque(V[N - B:])
+        jewels = left + right
+
+        for _ in range(K - (A + B)):
+            if not jewels:
+                break
+            if jewels[0] < 0:
+                jewels.popleft()
+            else:
+                break
+
+        ans = max(ans, sum(jewels))
+
+print(ans)
+```
+
+This program uses a nested loop to iterate through all possible counts of operations A and B. For each combination of A and B, it creates two deques `left` and `right` to represent the subsequence of jewels that can be obtained by performing A and B operations, respectively. Then, it combines the two deques and removes any negative-valued jewels until it reaches the maximum number of operations (K). Finally, it computes the sum of the remaining jewels and updates the answer if it is greater than the current maximum.
+
+Note that the program uses the `deque` class from the `collections` module to efficiently perform the operations on the deques.

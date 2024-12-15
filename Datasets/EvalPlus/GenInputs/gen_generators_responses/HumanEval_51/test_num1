@@ -1,0 +1,11 @@
+```python
+from random import randint
+from cyaron import String
+
+def sample_one():
+    length_of_text = randint(0, 100)  # Arbitrary upper limit for text length
+    # Generate a random string which may contain lowercase, uppercase letters and newline characters
+    text = String.random(length_of_text, charset="a-zA-Z\n")
+    generated_input = [text]
+    return generated_input
+```

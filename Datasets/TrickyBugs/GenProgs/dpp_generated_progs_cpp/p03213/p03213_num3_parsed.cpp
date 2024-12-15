@@ -1,0 +1,66 @@
+#include <iostream>
+#include <vector>
+#include <cmath>
+
+using namespace std;
+
+int main()
+{
+    int N;
+    cin >> N;
+
+    vector<int> primes;
+    vector<int> counts;
+    vector<bool> isPrime(N + 1, true);
+
+    for (int i = 2; i <= N; i++)
+    {
+        if (isPrime[i])
+        {
+            primes.push_back(i);
+            counts.push_back(1);
+        }
+
+        for (int j = 0; j < primes.size(); j++)
+        {
+            if (i * primes[j] > N)
+                break;
+
+            isPrime[i * primes[j]] = false;
+
+            if (i % primes[j] == 0)
+            {
+                counts[j]++;
+                break;
+            }
+            else
+            {
+                counts.push_back(1);
+            }
+        }
+    }
+
+    int ans = 0;
+    for (int i = 0; i < counts.size(); i++)
+    {
+        if (counts[i] >= 74)
+            ans++;
+        for (int j = i + 1; j < counts.size(); j++)
+        {
+            if (counts[j] >= 24 && counts[i] >= 2)
+                ans++;
+            if (counts[j] >= 14 && counts[i] >= 4)
+                ans++;
+            if (counts[j] >= 4 && counts[i] >= 14)
+                ans++;
+            if (counts[j] >= 2 && counts[i] >= 24)
+                ans++;
+            if (counts[j] >= 74 && counts[i] >= 1)
+                ans++;
+        }
+    }
+
+    cout << ans << endl;
+
+    return 0;
+}

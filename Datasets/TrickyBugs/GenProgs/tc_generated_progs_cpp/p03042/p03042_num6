@@ -1,0 +1,31 @@
+```cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    string S;
+    cin >> S;
+
+    int a = stoi(S.substr(0, 2));
+    int b = stoi(S.substr(2, 2));
+
+    if (a > 0 && a < 13 && b > 0 && b < 13) {
+        cout << "AMBIGUOUS";
+    } else if ((a == 0 || a > 12) && (b == 0 || b > 12)) {
+        cout << "NA";
+    } else if (a == 0 || a > 12) {
+        cout << "YYMM";
+    } else {
+        cout << "MMYY";
+    }
+
+    return 0;
+}
+```
+The original code has the following errors:
+1. The input is assumed to be an integer, but it should be a string.
+2. The condition for checking if `b` is greater than 12 is incorrect. The correct condition is `b > 12`.
+3. The condition for checking if `b` is equal to 0 should include `||` instead of `and`.
+4. The condition for checking if `a` and `b` are both equal to 0 should use `||` instead of `or` and the condition for `b` should include `||` instead of `and`.
+
+These errors have been fixed in the repaired code.

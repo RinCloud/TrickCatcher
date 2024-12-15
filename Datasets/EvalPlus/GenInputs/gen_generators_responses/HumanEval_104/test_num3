@@ -1,0 +1,9 @@
+```python
+from random import randint
+
+def sample_one():
+    length_of_list = randint(1, 10)  # Decide the length of the list
+    x = [randint(1, 9999) for _ in range(length_of_list)]  # Generate positive integers between 1 and 9999
+    generated_input = [x]
+    return generated_input
+```

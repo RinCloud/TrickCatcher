@@ -1,0 +1,21 @@
+**Repaired Code:**
+
+```
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+  int A,B,sum = 0;
+  cin >> A >> B;
+  
+  for(int i=A; i<=B; i++){
+  	if((i/10000==i%10)&&(i/1000%10==i/10%10))
+      sum++;
+  }
+    
+    cout << sum << endl;
+  
+}
+```
+
+In the original code, `sum` variable is not initialized, which leads to undefined behavior. I have initialized the `sum` variable to 0 to fix this bug.

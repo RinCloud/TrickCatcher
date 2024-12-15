@@ -1,0 +1,18 @@
+```
+def gcd(a, b):
+    if b == 0:
+        return a
+    return gcd(b, a%b)
+
+def count_divisors(a, b):
+    gcd_value = gcd(a, b)
+    count = 1
+    for i in range(2, int(gcd_value**0.5)+1):
+        if gcd_value % i == 0:
+            if gcd(i, gcd_value//i) == 1:
+                count += 1
+    return count
+
+A, B = map(int, input().split())
+print(count_divisors(A, B))
+```

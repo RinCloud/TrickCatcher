@@ -1,0 +1,9 @@
+**REPAIRED CODE**:
+
+```python
+N, i = map(int, input().split())
+j = N - i + 1
+print(j)
+```
+
+The code is repaired by using `map()` function to convert the inputs to integers and splitting them by `split()` function instead of using `eval()`. The formula to find the value of j is `N - i + 1`, which is used to calculate `j`. Finally, the value of `j` is printed.

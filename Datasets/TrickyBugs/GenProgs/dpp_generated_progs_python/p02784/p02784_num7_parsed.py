@@ -1,0 +1,19 @@
+def can_win(H, N, A):
+    visited = set()
+    stack = [(H, i) for i in range(N)]
+    while stack:
+        health, index = stack.pop()
+        if health <= 0:
+            return "Yes"
+        for i in range(index, N):
+            if health - A[i] in visited:
+                continue
+            visited.add(health - A[i])
+            stack.append((health - A[i], i + 1))
+    return "No"
+
+H, N = map(int, input().split())
+A = list(map(int, input().split()))
+
+result = can_win(H, N, A)
+print(result)

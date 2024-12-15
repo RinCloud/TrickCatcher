@@ -1,0 +1,44 @@
+```cpp
+#include <iostream>
+#include <vector>
+
+#define MOD 1000000007
+
+using namespace std;
+
+typedef long long ll;
+
+ll calculate_xor_sum(vector<ll>& nums) {
+    ll n = nums.size();
+    ll xor_sum = 0;
+
+    for (ll i = 0; i < 60; i++) {
+        ll count_ones = 0;
+        for (ll j = 0; j < n; j++) {
+            if ((nums[j] >> i) & 1) {
+                count_ones++;
+            }
+        }
+        ll count_zeros = n - count_ones;
+        ll contributing_bits = ((count_ones % MOD) * (count_zeros % MOD)) % MOD;
+        xor_sum = (xor_sum + (contributing_bits * (1LL << i)) % MOD) % MOD;
+    }
+
+    return xor_sum;
+}
+
+int main() {
+    ll n;
+    cin >> n;
+
+    vector<ll> nums(n);
+    for (ll i = 0; i < n; i++) {
+        cin >> nums[i];
+    }
+
+    ll xor_sum = calculate_xor_sum(nums);
+    cout << xor_sum << endl;
+
+    return 0;
+}
+```

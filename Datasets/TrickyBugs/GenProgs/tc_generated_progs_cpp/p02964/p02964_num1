@@ -1,0 +1,65 @@
+**BUGS FIX**:
+```cpp
+```
+```cpp
+#include "bits/stdc++.h"
+using namespace std;
+typedef long long ll;
+const int INF = (1<<30);
+const ll INFLL = (1ll<<60);
+const ll MOD = (ll)(1e9+7);
+
+#define l_ength size
+
+void mul_mod(ll& a, ll b){
+    a *= b;
+    a %= MOD;
+}
+
+void add_mod(ll& a, ll b){
+    a = (a<MOD)?a:(a-MOD);
+    b = (b<MOD)?b:(b-MOD);
+    a += b;
+    a = (a<MOD)?a:(a-MOD);
+}
+
+int a[225816],p[410410],f[410410],s[410410]={0};
+vector<int> ans;
+
+int main(void){
+    int n,i,t=0,d=0;
+    ll k;
+    cin >> n >> k;
+    fill(f,f+n*2,n*2);
+    fill(p,p+n*2,-1);
+    for(i=0; i<n*k; ++i){
+        cin >> a[i]; --a[i];
+        if(p[a[i]]>=0){
+            f[p[a[i]]] = i;
+        }
+        p[a[i]] = i;
+    }
+    for(i=0; i<n; ++i){
+        if(p[a[i]]>=0){
+            f[p[a[i]]] = i+n*k;
+        }
+        p[a[i]] = i+n*k;
+    }
+    int flag = 0;
+    while(flag < 2) {
+        if(f[t] < (n*k))
+        ans.push_back(a[t]+1);
+        if(f[t]<(n*k)){
+            t=f[t]+1;
+        } else {
+            t=f[t]-n*k+1;
+            flag++;
+        }
+    }
+    for(i=0; i<ans.l_ength(); ++i){
+        cout << ((i)?" ":"") << ans[i];
+    }
+    cout << endl;
+    return 0;
+}
+```

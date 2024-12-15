@@ -1,0 +1,40 @@
+```cpp
+#include <iostream>
+#include <map>
+#include <vector>
+#include <algorithm>
+
+using namespace std;
+
+int main() {
+    int N;
+    cin >> N;
+
+    map<string, int> freq;
+
+    for (int i = 0; i < N; i++) {
+        string s;
+        cin >> s;
+
+        // Remove the first two characters
+        s = s.substr(2);
+
+        // Sort the string
+        sort(s.begin(), s.end());
+
+        // Increment the frequency count
+        freq[s]++;
+    }
+
+    long long pairs = 0;
+
+    for (auto p : freq) {
+        long long count = p.second;
+        pairs += (count * (count - 1)) / 2;
+    }
+
+    cout << pairs << endl;
+
+    return 0;
+}
+```

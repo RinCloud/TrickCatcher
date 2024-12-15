@@ -1,0 +1,48 @@
+from collections import deque
+
+def minimum_casts(H, W, K, building):
+    # Create a visited array to keep track of visited rooms
+    visited = [[False] * W for _ in range(H)]
+    
+    # Initialize the queue with the starting room
+    queue = deque([(0, 0, 0)])
+    
+    while queue:
+        # Retrieve the current room from the queue
+        i, j, casts = queue.popleft()
+        
+        # Mark the current room as visited
+        visited[i][j] = True
+        
+        # Check if the current room is an exit room
+        if i == 0 or i == H - 1 or j == 0 or j == W - 1:
+            return casts
+        
+        # Check the adjacent rooms
+        for dx, dy in [(0, 1), (0, -1), (1, 0), (-1, 0)]:
+            ni, nj = i + dx, j + dy
+            
+            # Skip if the adjacent room is out of bounds or already visited
+            if ni < 0 or ni >= H or nj < 0 or nj >= W or visited[ni][nj]:
+                continue
+            
+            # Skip if the adjacent room is a locked room
+            if building[ni][nj] == '#':
+                # Check if there are enough casts left to unlock the room
+                if casts < K:
+                    # Add the adjacent room to the queue with increased casts
+                    queue.append((ni, nj, casts + 1))
+            else:
+                # Add the adjacent room to the queue with the same number of casts
+                queue.append((ni, nj, casts))
+    
+    # If no exit room is found, return -1
+    return -1
+
+
+# Read the input
+H, W, K = map(int, input().split())
+building = [input() for _ in range(H)]
+
+# Print the minimum necessary number of casts
+print(minimum_casts(H, W, K, building))

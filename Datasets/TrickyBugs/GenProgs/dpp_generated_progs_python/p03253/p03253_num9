@@ -1,0 +1,43 @@
+# Algorithm:
+The problem can be solved using dynamic programming.
+Let's create a 2D array dp of size N+1 x M+1, where dp[i][j] represents the number of sequences of length i which have their product equal to j.
+
+To calculate dp[i][j], we can consider two possibilities:
+1. If we do not include the number i in the sequence, then dp[i][j] = dp[i-1][j]. This means we are not using i in the sequence and the product remains the same as the product of the previous i-1 numbers.
+
+2. If we include the number i in the sequence, then dp[i][j] = dp[i][j//i]. This means the product becomes j//i (integer division) and we still have to find the remaining i-1 numbers with the product j//i.
+
+The final result will be the sum of dp[N][1] to dp[N][M].
+
+# Time Complexity Analysis:
+Creating the dp array takes O(N*M) time.
+Calculating the final result by summing up the elements of dp[N][1] to dp[N][M] takes O(M) time.
+Therefore, the overall time complexity of the solution is O(N*M).
+
+# Program:
+
+```python
+# Constants
+MOD = int(1e9) + 7
+
+# Read input
+N, M = map(int, input().split())
+
+# Initialize dp array
+dp = [[0] * (M + 1) for _ in range(N + 1)]
+
+# Base case: dp[i][1] = 1 for all i
+for i in range(N + 1):
+    dp[i][1] = 1
+
+# Fill dp array using dynamic programming
+for i in range(2, N + 1):
+    for j in range(2, M + 1):
+        dp[i][j] = (dp[i][j // i] + dp[i - 1][j]) % MOD
+
+# Calculate the final result
+result = sum(dp[N][1:M+1]) % MOD
+
+# Print the result
+print(result)
+```

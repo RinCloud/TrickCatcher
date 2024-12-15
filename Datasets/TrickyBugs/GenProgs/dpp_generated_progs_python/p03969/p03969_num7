@@ -1,0 +1,47 @@
+# Approach:
+1. Create an adjacency list to represent the graph.
+2. Create an array called 'visited', initialized with False, to keep track of visited vertices.
+3. Initialize a variable called 'result' with 1, which will store the final answer.
+4. Iterate over each vertex from 1 to N and check if it has been visited.
+5. If a vertex has not been visited, perform a depth-first search (DFS) starting from that vertex.
+6. In the DFS, count the number of edges in the cycle.
+7. Calculate the number of ways to color the edges in that cycle by multiplying K by itself n-1 times (where n is the number of edges in the cycle).
+8. Multiply the result by the number of ways to color the cycle.
+9. Finally, print the result modulo 10^9+7.
+
+```python
+MOD = 10**9 + 7
+
+def dfs(v, parent, visited, adj_list):
+    visited[v] = True
+    cycle_edges = 0
+
+    for u in adj_list[v]:
+        if not visited[u]:
+            cycle_edges += 1
+            dfs(u, v, visited, adj_list)
+
+    return cycle_edges
+
+def count_ways(N, M, K, edges):
+    adj_list = [[] for _ in range(N + 1)]
+    visited = [False] * (N + 1)
+    result = 1
+
+    for u, v in edges:
+        adj_list[u].append(v)
+        adj_list[v].append(u)
+
+    for v in range(1, N + 1):
+        if not visited[v]:
+            cycle_edges = dfs(v, -1, visited, adj_list)
+            result = (result * pow(K, cycle_edges, MOD)) % MOD
+
+    return result
+
+N, M, K = map(int, input().split())
+edges = [list(map(int, input().split())) for _ in range(M)]
+
+ways = count_ways(N, M, K, edges)
+print(ways)
+```

@@ -1,0 +1,39 @@
+```python
+H, W = map(int, input().split())
+S = [list(input()) for i in range(H)]
+
+N = [[10**9] * W] * H
+l = 0
+u = 0
+if S[0][0] == '#':
+    N[0][0] = 1
+else:
+    N[0][0] = 0
+
+for i in range(H):
+    for j in range(W):
+        if i == 0 and j == 0:
+            continue
+        
+        if j > 0 and S[i][j - 1] == '.' and S[i][j] == '#':
+            l += 1
+        if i > 0 and S[i - 1][j] == '.' and S[i][j] == '#':
+            u += 1
+        
+        if j > 0:
+            l = min(l, N[i][j - 1])
+        if i > 0:
+            u = min(u, N[i - 1][j])
+
+        N[i][j] = min(l, u)
+
+print(N[-1][-1])
+```
+The issue with the original code is that it incorrectly updates the values of `l` and `u`. The correct update logic is:
+
+* If `j > 0` (i.e., we are not in the leftmost column), update `l` by taking the minimum of its current value and `N[i][j - 1]`.
+* If `i > 0` (i.e., we are not in the top row), update `u` by taking the minimum of its current value and `N[i - 1][j]`.
+
+After updating `l` and `u`, we can then use their updated values to calculate `N[i][j]` as the minimum of `l` and `u`.
+
+I have also added an additional condition to check whether `j > 0` and `i > 0` when updating `l` and `u`, respectively, to avoid index out of range errors.

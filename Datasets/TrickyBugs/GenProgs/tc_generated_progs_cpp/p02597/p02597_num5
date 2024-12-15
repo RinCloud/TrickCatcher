@@ -1,0 +1,29 @@
+**FIXED CODE**:
+
+```cpp
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    int n;
+    string s;
+    cin>>n>>s;
+    int r = 0;
+    int cnt = 0;
+    for(int i=0;i<s.size();i++){
+        if(s[i]=='R'){
+            r++;
+        }
+    }
+    for(int i=0;i<s.size();i++){
+        if(s[i]=='W' && i<r){
+            cnt++;
+        }
+    }
+    cout<<cnt<<endl;
+    return 0;
+}
+```
+
+I have fixed the following issues in the code:
+1. Declared and initialized the variable `r` before using it in the loop.
+2. Changed the condition in the second loop to check if `s[i]` is equal to `'W'` and if `i` is less than `r`.

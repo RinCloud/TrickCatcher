@@ -1,0 +1,26 @@
+#include <stdio.h>
+
+int N,T,c,t,C,Flag;
+
+int main(void){
+	scanf("%d %d",&N,&T);
+	scanf("%d %d",&C,&t);
+	if(t<=T){
+	    Flag=1;
+	    C = C;
+	}
+	else
+	    Flag = 0;
+	for(;N>1;N--){
+		scanf("%d %d",&c,&t);
+		if(t<=T && c < C){
+			Flag=1;
+			C = c;
+		}
+	}
+	if(Flag)
+	    printf("%d",C);
+	else 
+	    printf("TLE");
+	return 0;
+}

@@ -1,0 +1,10 @@
+```python
+from random import *
+from cyaron import *
+
+def sample_one():
+    random_length = randint(5, 15)  # Choose a random length from 5 to 15
+    random_str = String.random(random_length, charset='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890@#&*')
+    generated_input = [random_str, ]
+    return generated_input
+```

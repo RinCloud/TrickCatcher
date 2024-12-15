@@ -1,0 +1,9 @@
+```python
+from random import *
+
+def sample_one():
+    length_of_list = randint(1, 10)  # generate a list length between 1 and 10
+    l = [randint(-100, 100) for _ in range(length_of_list)]  # generate random integers between -100 and 100
+    generated_input = [l]
+    return generated_input
+```

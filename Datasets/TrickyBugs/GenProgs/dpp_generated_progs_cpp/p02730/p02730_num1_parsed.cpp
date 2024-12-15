@@ -1,0 +1,33 @@
+#include <iostream>
+#include <string>
+#include <algorithm>
+
+// Function to check if a given string is a palindrome
+bool isPalindrome(const std::string& str) {
+    std::string rev = str;
+    std::reverse(rev.begin(), rev.end());
+    return str == rev;
+}
+
+// Function to check if the string is a strong palindrome
+bool isStrongPalindrome(const std::string& str) {
+    int N = str.length();
+    int mid = (N + 1) / 2;
+    std::string firstPart = str.substr(0, mid - 1);
+    std::string secondPart = str.substr(mid + 1, N - mid);
+    
+    return isPalindrome(str) && isPalindrome(firstPart) && isPalindrome(secondPart);
+}
+
+int main() {
+    std::string S;
+    std::cin >> S;
+
+    if (isStrongPalindrome(S)) {
+        std::cout << "Yes";
+    } else {
+        std::cout << "No";
+    }
+    
+    return 0;
+}

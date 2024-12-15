@@ -1,0 +1,36 @@
+**REPAIRED CODE**:
+
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+  int N;
+  cin >> N;
+  
+  // flag to check if yellow color is present
+  bool hasYellow = false;
+  
+  for(int i=0; i<N; i++){
+    string S;
+    cin >> S;
+    
+    // check if yellow color is present
+    if(S == "Y"){
+      hasYellow = true;
+    }
+  }
+  
+  // check if yellow color is present
+  if(hasYellow){
+    cout << "Four" << endl;
+  }
+  else{
+    cout << "Three" << endl;
+  }
+}
+```
+
+Explanation:
+The original code has a bug in the `while` loop condition. The `--N` will decrement the value of `N` before the loop condition is checked, which leads to reading only `N-1` values of `S`. To fix this, I changed the `while` loop to a `for` loop which starts from 0 and ends at `N-1`. 
+Additionally, I added a boolean variable `hasYellow` to keep track of whether the yellow color is present in the input. If at any point, the input string `S` is "Y", then `hasYellow` is set to true. After iterating through all the input strings, I check whether `hasYellow` is true or false to determine the output.

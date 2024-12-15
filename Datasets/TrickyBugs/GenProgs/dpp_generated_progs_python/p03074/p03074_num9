@@ -1,0 +1,35 @@
+```python
+def max_consecutive_hands(N, K, S):
+    max_consecutive = 0
+    current_consecutive = 0
+    flip_count = 0
+
+    # Count consecutive hands in the initial arrangement
+    for char in S:
+        if char == '1':
+            current_consecutive += 1
+            max_consecutive = max(max_consecutive, current_consecutive)
+        else:
+            current_consecutive = 0
+
+    # Calculate the number of flips needed to maximize consecutive hands
+    for i in range(N - 1):
+        if S[i] == '1':
+            flip_count += 1
+            if K >= flip_count:
+                max_consecutive = max(max_consecutive, current_consecutive - 1)
+
+        if S[i] == '0' and S[i+1] == '1':
+            max_consecutive = max(max_consecutive, current_consecutive)
+            if K >= flip_count + 1:
+                max_consecutive = max(max_consecutive, current_consecutive + 1)
+
+    return max_consecutive
+
+# Read input
+N, K = map(int, input().split())
+S = input().strip()
+
+# Print the maximum possible number of consecutive people standing on hands
+print(max_consecutive_hands(N, K, S))
+```

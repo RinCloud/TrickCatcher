@@ -1,0 +1,16 @@
+```python
+from random import *
+from cyaron import String
+
+def sample_one():
+    class_name_length = randint(5, 10)
+    class_name = String.random(class_name_length, charset='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ')
+    extensions = []
+    number_of_extensions = randint(2, 6)
+    for _ in range(number_of_extensions):
+        extension_length = randint(5, 15)
+        extension = String.random(extension_length, charset='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ')
+        extensions.append(extension)
+    generated_input = [str(class_name), extensions]
+    return generated_input
+```

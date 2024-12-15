@@ -1,0 +1,3 @@
+**Test Input Reasoning:**
+
+I will start with the minimum input, where both s and c will be empty strings. This will test if the function can handle empty strings and return the expected result.

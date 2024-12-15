@@ -1,0 +1,22 @@
+```python
+def count_integers(N, X, A):
+    mod = 998244353
+    dp = [[0] * (X + 1) for _ in range(N + 1)]
+    dp[0][0] = 1
+
+    for i in range(1, N + 1):
+        for j in range(X + 1):
+            dp[i][j] = (dp[i][j] + (2 * dp[i - 1][j]) % mod) % mod
+
+            y = j ^ A[i - 1]
+            if y <= X:
+                dp[i][y] = (dp[i][y] + dp[i - 1][j]) % mod
+
+    return dp[N][X]
+
+N, X = map(int, input().split())
+A = []
+for _ in range(N):
+    A.append(int(input(), 2))
+print(count_integers(N, X, A))
+```

@@ -1,0 +1,42 @@
+# Read input values
+N, K = map(int, input().split())
+S = input()
+
+# Define variables
+hands = []  # List to store the indices of people standing on hands
+
+# Find the initial indices of people standing on hands
+for i in range(N):
+    if S[i] == '1':
+        hands.append(i)
+
+# Initialize variables for maximum consecutive people standing on hands
+max_consecutive_hands = 0
+consecutive_hands = 0
+
+# Iterate through all possible directions
+for l in range(N):
+    for r in range(l, N):
+        # Flip the people between indices l and r
+        flipped_hands = hands.copy()  # Create a copy of hands list
+        for i in range(l, r+1):
+            if i in hands:
+                flipped_hands.remove(i)
+            else:
+                flipped_hands.append(i)
+
+        # Count the consecutive people standing on hands after flipping
+        count = 0
+        max_count = 0
+        for i in range(N):
+            if i in flipped_hands:
+                count += 1
+                max_count = max(max_count, count)
+            else:
+                count = 0
+
+        # Update the maximum consecutive people standing on hands
+        max_consecutive_hands = max(max_consecutive_hands, max_count)
+
+# Print the maximum possible number of consecutive people standing on hands
+print(max_consecutive_hands)

@@ -1,0 +1,26 @@
+#include <bits/stdc++.h>
+ 
+using namespace std;
+ 
+const int MOD = 998244353;
+ 
+int main() {
+    string s;
+    cin >> s;
+    int n = s.size();
+ 
+    vector<int> cnt(n + 1, 0);
+    vector<int> dp(n + 1, 0);
+    dp[0] = 1;
+    for (int i = 1; i <= n; i++) {
+        cnt[i] = cnt[i - 1] + (s[i - 1] == '1');
+        dp[i] = (dp[i] + dp[i - 1] + dp[i - 1]) % MOD;
+        if (cnt[i] > 0) {
+            dp[i] = (dp[i] + dp[cnt[i] - 1]) % MOD;
+        }
+    }
+ 
+    cout << dp[n] << endl;
+ 
+    return 0;
+}

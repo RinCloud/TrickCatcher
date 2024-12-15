@@ -1,0 +1,16 @@
+FIXED CODE:
+This code has a logic flaw. It checks the distance between A and C directly, if it is less than or equal to 16. 
+But the correct logic should be:
+* If A and B can directly communicate and B and C can directly communicate, then A and C can indirectly communicate.
+* If that is not the case, we should check if A and C can directly communicate.
+* The code is also assuming that d = 16, but that is not mentioned in the problem statement.
+
+Here is the fixed code:
+
+```python
+a, b, c, d = map(int, input().split())
+if (abs(a - b) <= d and abs(b - c) <= d) or abs(a - c) <= d:
+    print('Yes')
+else:
+    print('No')
+```

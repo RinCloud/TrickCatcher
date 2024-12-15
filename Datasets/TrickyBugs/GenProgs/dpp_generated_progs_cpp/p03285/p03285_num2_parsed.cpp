@@ -1,0 +1,27 @@
+#include <iostream>
+
+int main() {
+    int N;
+    std::cin >> N;
+
+    // Check if N is divisible by 4 or 7
+    if (N % 4 == 0 || N % 7 == 0) {
+        std::cout << "Yes" << std::endl;
+        return 0;
+    }
+    
+    // Check all possible combinations
+    for (int i = 1; i <= N / 4; i++) {
+        for (int j = 2; j <= N / 7; j++) {
+            if (i * 4 + j * 7 == N) {
+                std::cout << "Yes" << std::endl;
+                return 0;
+            }
+        }
+    }
+
+    // No possible combination found
+    std::cout << "No" << std::endl;
+
+    return 0;
+}

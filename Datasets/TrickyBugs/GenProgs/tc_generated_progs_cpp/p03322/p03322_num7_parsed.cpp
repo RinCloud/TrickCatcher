@@ -1,0 +1,103 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+typedef long long lint;
+typedef long double louble;
+
+template<typename T1,typename T2> inline T1 max(T1 a,T2 b){return a<b?b:a;}
+template<typename T1,typename T2> inline T1 min(T1 a,T2 b){return a<b?a:b;}
+
+const char lf = '\n';
+
+namespace ae86
+{
+    const int bufl = 1<<15;
+
+    char buf[bufl],*s=buf,*t=buf;
+
+    inline int fetch()
+    {
+        if(s==t){t=(s=buf)+fread(buf,1,bufl,stdin);if(s==t)return EOF;}
+        return *s++;
+    }
+
+    inline int ty()
+    {
+        int a=0,b=1,c=fetch();
+        while(!isdigit(c))b^=c=='-',c=fetch();
+        while(isdigit(c))a=a*10+c-48,c=fetch();
+        return b?a:-a;
+    }
+
+    template<typename T> inline int ts(T *s)
+    {
+        int a=0,c=fetch();
+        while(c<=32 && c!=EOF)c=fetch();
+        while(c>32 && c!=EOF)s[a++]=c,c=fetch();
+        s[a]=0;
+        return a;
+    }
+}
+using ae86::ty;
+using ae86::ts;
+
+const int _ = 250007;
+const lint bas = 250007 , mo = 2059392230891;
+
+inline lint sfx(lint a,lint b)
+{
+    a%=mo,b%=mo;
+    return (a*b-(lint)((louble)a/mo*b+0.5)*mo+mo)%mo;
+}
+
+inline lint powa(lint a,lint t)
+{
+    lint b=1;
+    while(t){if(t&1)b=sfx(a,b);a=sfx(a,a),t>>=1;}
+    return b;
+}
+
+inline lint inva(lint a)
+{
+    return powa(a,mo-2);
+}
+
+const lint ibas = inva(bas);
+
+int n;char s[_];
+lint loc[_];
+unordered_map<lint,int> cnt;
+
+inline lint trans(lint h,char op)
+{
+    if(op=='<')return sfx(h,ibas);
+    if(op=='>')return sfx(h,bas);
+    if(op=='+')return (h+1)%mo;
+    if(op=='-')return (h-1+mo)%mo;
+    throw "fuck me";
+}
+
+int main()
+{
+    ios::sync_with_stdio(0),cout.tie(nullptr);
+    
+    n=ty(),ts(s+1);
+
+    loc[0]=1;
+    for(int i=1;i<=n;i++)
+    {
+        loc[i]=loc[i-1];
+        if(s[i]=='<')loc[i]=sfx(loc[i],ibas);
+        if(s[i]=='>')loc[i]=sfx(loc[i],bas);
+    }
+
+    lint tar=0;
+    for(int i=n;i>=1;i--)tar=trans(tar,s[i]);
+    cnt[0]=1;
+    lint ans=0,now=0;
+    for(int i=n;i>=1;i--)
+        now=trans(now,s[i]),ans+=cnt[sfx(now-tar+mo,loc[i-1])],cnt[sfx(now,loc[i-1])]++;
+    cout<<ans<<lf;
+    
+    return 0;
+}

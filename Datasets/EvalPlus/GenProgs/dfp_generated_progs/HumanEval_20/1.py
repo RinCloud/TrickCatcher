@@ -1,0 +1,14 @@
+from typing import List, Tuple
+def find_closest_elements(numbers: List[float]) -> Tuple[float, float]:
+    numbers.sort()  # sort the numbers in increasing order
+    min_difference = float('inf')  # initialize the minimum difference with infinity
+    closest_elements = None  # initialize the closest elements as None
+    
+    for i in range(len(numbers) - 1):  # loop through all adjacent pairs of numbers
+        difference = numbers[i+1] - numbers[i]  # calculate the difference between the current pair of numbers
+        
+        if difference < min_difference:  # if the difference is smaller than the previously found minimum difference
+            min_difference = difference  # update the minimum difference
+            closest_elements = (numbers[i], numbers[i+1])  # update the closest elements
+            
+    return closest_elements

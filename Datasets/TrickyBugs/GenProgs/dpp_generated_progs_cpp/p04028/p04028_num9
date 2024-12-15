@@ -1,0 +1,33 @@
+```cpp
+#include<iostream>
+#include<vector>
+#define MOD 1000000007
+using namespace std;
+
+int main() {
+    int n;
+    cin>>n;
+
+    string s;
+    cin>>s;
+
+    vector<vector<long long int>> dp(n+1, vector<long long int>(s.length()+1));
+
+    dp[0][0]=1;
+    for(int i=1;i<=n;i++){
+        for(int j=0;j<=s.length();j++){
+            dp[i][j] = dp[i-1][j];
+            if(j>0 && s[j-1]=='0'){
+                dp[i][j] = (dp[i][j]+dp[i-1][j-1])%MOD;
+            }
+            if(j<s.length() && s[j]=='1'){
+                dp[i][j] = (dp[i][j]+dp[i-1][j+1])%MOD;
+            }
+        }
+    }
+    
+    cout<<dp[n][0]<<endl;
+
+    return 0;
+}
+```

@@ -1,0 +1,23 @@
+**BUG FIX**
+
+The issue with the code is in the loop where `p` is calculated. Currently, it is calculating the GCD of `a[0]` with each `a[i]` and updating `p`, but it should actually calculate the GCD of `p` with each `a[i]` after the first iteration.
+
+Additionally, we need to break out of the loop as soon as we find `p = 1`.
+
+Here's the fixed code:
+
+```python
+from fractions import gcd
+
+n, k = map(int, input().split())
+a = list(map(int, input().split()))
+c = max(a)
+p = a[0]
+
+for i in range(1, n):
+    p = gcd(p, a[i])
+    if p == 1:
+        break
+
+print("POSSIBLE" if k % p == 0 and k <= c else "IMPOSSIBLE")
+```

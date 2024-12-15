@@ -1,0 +1,24 @@
+#include<iostream>
+#include<cmath>
+using namespace std;
+int main(){
+	int X, N;
+	int arr[105] = {0};
+	cin >> X >> N;
+	for(int i = 0; i < N; i++){
+		int p;
+		cin >> p;
+		arr[p] = 1;
+	}
+	int ans;
+	int min_diff = 1000;
+	for(int i = 0; i <= 100; i++){
+		if(arr[i] != 1){
+			if(abs(X - i) < min_diff){
+				ans = i;
+				min_diff = abs(X - i);
+			}
+		}
+	}
+	cout << ans;
+}

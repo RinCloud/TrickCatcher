@@ -1,0 +1,10 @@
+**FIXED CODE**:
+
+The original code contains a logic flaw that leads to incorrect output in some cases. The calculation of `abs(a-c)` is incorrect, it should be `abs(a-c)<=d`. Also, the condition `(abs(a-b)<=d and abs(b-c)<=d) or abs(a-c)<=16` should be changed to `(abs(a-b)<=d and abs(b-c)<=d) or abs(a-c)<=d` to fix the logic flaw.
+
+Here's the repaired code:
+
+```python
+a, b, c, d = map(int, input().split())
+print('Yes' if (abs(a - b) <= d and abs(b - c) <= d) or abs(a - c) <= d else 'No')
+```

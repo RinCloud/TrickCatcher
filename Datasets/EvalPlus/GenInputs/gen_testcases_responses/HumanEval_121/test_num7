@@ -1,0 +1,10 @@
+{"input": [[5, 8, 7, 1]], "output": 12}
+{"input": [[3, 3, 3, 3, 3]], "output": 9}
+{"input": [[30, 13, 24, 321]], "output": 0}
+{"input": [[1, 2, 3, 4]], "output": 4}
+{"input": [[-1, -2, -3, -4]], "output": -4}
+{"input": [[2, 4, 6, 8]], "output": 0}
+{"input": [[1]], "output": 0}
+{"input": [[1, 1, 1, 1]], "output": 2}
+{"input": [[-1, -1, -1, -1]], "output": -2}
+{"input": [[2, 2, 2, 2]], "output": 0}

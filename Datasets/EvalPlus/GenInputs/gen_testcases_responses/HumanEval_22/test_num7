@@ -1,0 +1,10 @@
+{"input": [[1, 2, 3, 4, 5, 'a', 'b', 'c', 6.7, 2.0], False], "output": [1, 2, 3, 4, 5]}
+{"input": [[], True], "output": []}
+{"input": [[1, 2, 3, 4, 5], True], "output": [1, 2, 3, 4, 5]}
+{"input": [[1.1, 2.2, 3.3, 4.4, 5.5], True], "output": []}
+{"input": [[1, 2, 3, 4, 5, 'a', 'b', 'c', 6.7, 2.0], True], "output": [1, 2, 3, 4, 5, 2]}
+{"input": [['a', 'b', 'c'], True], "output": []}
+{"input": [['a', 'b', 'c'], False], "output": []}
+{"input": [[1, 2, 3, 4, 5], False], "output": [1, 2, 3, 4, 5]}
+{"input": [[1.1, 2.2, 3.3, 4.4, 5.5], False], "output": []}
+{"input": [['a', 1, 2, 'b', 3, 'c'], True], "output": [1, 2, 3]}

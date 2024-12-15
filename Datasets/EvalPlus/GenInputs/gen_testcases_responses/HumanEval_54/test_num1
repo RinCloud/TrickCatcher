@@ -1,0 +1,10 @@
+{"input": ["eabcdzzzz", "dddzzzzzzzddeddabc"], "output": True}
+{"input": ["abcd", "dddddddabc"], "output": True}
+{"input": ["dddddddabc", "abcd"], "output": True}
+{"input": ["eabcd", "dddddddabc"], "output": False}
+{"input": ["abcd", "dddddddabce"], "output": False}
+{"input": ["eabcdzzzz", "dddzzzzzzzddddabc"], "output": False}
+{"input": ["aaaaa", "aaaaaa"], "output": True}
+{"input": ["", ""], "output": True}
+{"input": ["abcd", "efgh"], "output": False}
+{"input": ["abcd", "abcdabcd"], "output": False}

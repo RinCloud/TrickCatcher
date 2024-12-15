@@ -1,0 +1,28 @@
+```python
+from random import *
+from cyaron import *
+
+def sample_one():
+    # Random decision to choose lowercase or uppercase or mixed case or non-string keys
+    case_choice = randint(0, 3)
+    
+    generated_dict = {}
+    length_of_dict = randint(0, 10)
+
+    for i in range(length_of_dict):
+        if case_choice == 0:  # Lowercase keys
+            key = String.random(randint(1, 5), charset="abcdefghijklmnopqrstuvwxyz")
+        elif case_choice == 1:  # Uppercase keys
+            key = String.random(randint(1, 5), charset="ABCDEFGHIJKLMNOPQRSTUVWXYZ")
+        elif case_choice == 2:  # Mixed case keys or non-string keys
+            if randint(0,1) == 0:  # Non-string keys
+                key = randint(0, 100)  # Integers as keys
+            else:  # Mixed case string keys
+                key = String.random(randint(1, 5))  # Default charset includes both upper and lower case
+            
+        value = String.random(randint(1, 5))
+        generated_dict[key] = value
+        
+    generated_input = [generated_dict]
+    return generated_input
+```

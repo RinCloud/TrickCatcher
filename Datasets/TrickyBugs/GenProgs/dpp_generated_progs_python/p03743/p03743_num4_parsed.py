@@ -1,0 +1,44 @@
+def is_feasible(N, D, distances, Q, rewrite_positions):
+    # Compute the maximum distance Alice can reach in both directions
+    max_distance = D
+    max_left = D
+    max_right = D
+
+    # Create a prefix sum array to store the running sum of distances
+    prefix_sum = [0] * (N + 1)
+    for i in range(1, N + 1):
+        prefix_sum[i] = prefix_sum[i - 1] + distances[i - 1]
+
+    # Compute the maximum distance Alice can reach after each rewrite
+    max_distances = [0] * (N + 1)
+    for i in range(1, N + 1):
+        # Alice can at most reach max_distance or the current distance + max_distance
+        max_distances[i] = min(max_distance, prefix_sum[i] + max_distance)
+
+        # Update the maximum distance
+        max_distance = max(max_distance, prefix_sum[i] - max_distance)
+
+        # Update the maximum distance on the left and right side of the current position
+        max_left = min(max_left, prefix_sum[i] - max_distance)
+        max_right = max(max_right, prefix_sum[i] + max_distance)
+
+    # Check the feasibility of each rewrite
+    results = []
+    for position in rewrite_positions:
+        # Check if rewriting the position is feasible
+        if max_left <= prefix_sum[position] - max_distance <= max_right:
+            results.append("YES")
+        else:
+            results.append("NO")
+
+    return results
+
+
+N, D = map(int, input().split())
+distances = list(map(int, input().split()))
+Q = int(input())
+rewrite_positions = list(map(int, input().split()))
+
+results = is_feasible(N, D, distances, Q, rewrite_positions)
+for result in results:
+    print(result)

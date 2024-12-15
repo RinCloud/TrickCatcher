@@ -1,0 +1,17 @@
+import math
+def find_zero(xs: list):
+    """
+    Evaluates polynomial with coefficients xs at point x.
+    return xs[0] + xs[1] * x + xs[1] * x^2 + .... xs[n] * x^n
+    """
+    def poly(xs: list, x: float) -> float:
+        return sum([coeff * math.pow(x, i) for i, coeff in enumerate(xs)])
+    
+    if len(xs) % 2 != 0:
+        raise ValueError("xs must have an even number of coefficients")
+    
+    max_coeff = max(xs)
+    x = 1
+    while poly(xs, x) != 0:
+        x += 1
+    return x

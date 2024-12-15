@@ -1,0 +1,10 @@
+{"input": [['name', 'of', 'string']], "output": 'string'}
+{"input": [['name', 'enam', 'game']], "output": 'enam'}
+{"input": [['aaaaaaa', 'bb' ,'cc']], "output": 'aaaaaaa'}
+{"input": [[''], ['', '', '']], "output": ''}
+{"input": [['a', 'ab', 'abc']], "output": 'abc'}
+{"input": [['aaa', 'bbb', 'ccc']], "output": 'aaa'}
+{"input": [['word', 'words', 'wording']], "output": 'wording'}
+{"input": [['book', 'bookstore', 'bookshelf']], "output": 'bookshelf'}
+{"input": [['racecar', 'radar', 'level']], "output": 'level'}
+{"input": [['apple', 'banana', 'cherry']], "output": 'cherry'}

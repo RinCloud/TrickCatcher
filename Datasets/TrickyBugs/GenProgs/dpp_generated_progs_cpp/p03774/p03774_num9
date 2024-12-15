@@ -1,0 +1,41 @@
+#include <iostream>
+#include <vector>
+#include <cmath>
+
+using namespace std;
+
+int main() {
+    int N, M;
+    cin >> N >> M;
+
+    vector<pair<int, int>> students(N);
+    vector<pair<int, int>> checkpoints(M);
+    vector<int> closestCheckpoint(N);
+
+    for (int i = 0; i < N; i++) {
+        cin >> students[i].first >> students[i].second;
+    }
+
+    for (int i = 0; i < M; i++) {
+        cin >> checkpoints[i].first >> checkpoints[i].second;
+    }
+
+    for (int i = 0; i < N; i++) {
+        int minDist = abs(students[i].first - checkpoints[0].first) + abs(students[i].second - checkpoints[0].second);
+        closestCheckpoint[i] = 1;
+
+        for (int j = 1; j < M; j++) {
+            int dist = abs(students[i].first - checkpoints[j].first) + abs(students[i].second - checkpoints[j].second);
+            if (dist < minDist) {
+                minDist = dist;
+                closestCheckpoint[i] = j + 1;
+            }
+        }
+    }
+
+    for (int i = 0; i < N; i++) {
+        cout << closestCheckpoint[i] << endl;
+    }
+
+    return 0;
+}

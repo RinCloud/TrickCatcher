@@ -1,0 +1,10 @@
+{"input": ["Hello world"], "output": "3e25960a79dbc69b674cd4ec67a72c62"}
+{"input": [""], "output": None}
+{"input": ["   Hello"], "output": "8b1a9953c4611296a827abf8c47804d7"}
+{"input": ["World   "], "output": "e4d7f1b4ed2e42d15898f4b27b019da4"}
+{"input": ["12345"], "output": "827ccb0eea8a706c4c34a16891f84e7b"}
+{"input": ["ABCDEFGHIJKLMNOPQRSTUVWXYZ"], "output": "7be9be226964a9a9ecbf8f7ac4fa2244"}
+{"input": ["abcdefghijklmnopqrstuvwxyz"], "output": "befc5a9c4edebf41b242c08c02c314f0"}
+{"input": ["Hello, hello, hello"], "output": "f7b1d209ed230ef9b6f0674f8a0064ec"}
+{"input": ["   "], "output": "d41d8cd98f00b204e9800998ecf8427e"}
+{"input": ["中文"], "output": "38bdb083ce7b02637f7f920b5d1ffc17"}

@@ -1,0 +1,10 @@
+{"input": ["hello"], "output": ["h", "he", "hel", "hell", "hello"]}
+{"input": ["world"], "output": ["w", "wo", "wor", "worl", "world"]}
+{"input": ["test"], "output": ["t", "te", "tes", "test"]}
+{"input": ["python"], "output": ["p", "py", "pyt", "pyth", "pytho", "python"]}
+{"input": ["h"], "output": ["h"]}
+{"input": [""], "output": []}
+{"input": ["hi"], "output": ["h", "hi"]}
+{"input": ["goodbye"], "output": ["g", "go", "goo", "good", "goodb", "goodby", "goodbye"]}
+{"input": ["testing"], "output": ["t", "te", "tes", "test", "testi", "testin", "testing"]}
+{"input": ["a"], "output": ["a"]}

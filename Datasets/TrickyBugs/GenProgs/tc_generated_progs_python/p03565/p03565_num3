@@ -1,0 +1,24 @@
+**Repaired code**:
+
+```python
+import re
+
+S_ = input()
+T = input()
+
+Tr = T[::-1]
+Sr = S_[::-1]
+
+reg = "".join(map(lambda x: "[{}{}]".format(x, '?'), Tr))
+ans = re.sub(reg, Tr, Sr, count=1)
+
+if Tr in ans:
+    ans = ans.replace("?", "a")[::-1]
+    print(ans)
+else:
+    print("UNRESTORABLE")
+```
+
+I have repaired the code as follows:
+1. Added '?' to the regular expression construction of `reg` so that it matches any occurrence of '?' in `S_`.
+2. Changed the condition from `ans.count(Tr)==1` to `Tr in ans`. This checks if `Tr` is a substring of `ans`.

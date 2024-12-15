@@ -1,0 +1,35 @@
+```cpp
+#include <iostream>
+#include <vector>
+
+using namespace std;
+ 
+int main() {
+  long long N;
+  cin >> N;
+  vector<long long> A(N+1);
+  for(int i=0; i<N+1; i++){
+    cin >> A[i];
+  }
+  long long sum = 0;
+  for(int i=0; i<N; i++){
+    long long B;
+    cin >> B;
+    sum += min(A[i], B);
+    B -= A[i];
+    if(B > 0){
+      sum += min(B, A[i+1]);
+      A[i+1] -= B;
+      if(A[i+1] < 0){
+        A[i+1] = 0;
+      }
+    }
+  }
+  cout << sum;
+}
+```
+Explanation for the changes:
+1. Added missing `#include` statements for standard library components `iostream` and `vector`.
+2. Added missing `using namespace std;` to avoid having to use the `std::` prefix for standard library components.
+3. Changed `A.at(i)` to `A[i]` and `A.at(i+1)` to `A[i+1]`. The `at()` function performs bounds checking and throws an exception if the index is out of range. However, since the input constraints guarantee that the index is always within range, we can use the subscript operator `[]` for faster and simpler access to vector elements.
+4. Initialized `sum` to 0 to avoid using uninitialized variables.

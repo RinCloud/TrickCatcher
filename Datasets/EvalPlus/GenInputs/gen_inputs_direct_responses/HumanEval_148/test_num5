@@ -1,0 +1,10 @@
+[[],
+ ['Jupiter', 'Saturn', 'Uranus', 'Neptune'],
+ ['Earth', 'Mars'],
+ ['Mercury', 'Venus', 'Earth', 'Mars', 'Jupiter', 'Saturn'],
+ ['Mercury', 'Venus', 'Earth', 'Mars'],
+ ['Saturn', 'Uranus', 'Neptune'],
+ ['Earth', 'Mars', 'Jupiter'],
+ ['Venus', 'Earth'],
+ ['Neptune'],
+ []]

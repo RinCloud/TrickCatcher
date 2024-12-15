@@ -1,0 +1,38 @@
+#include <iostream>
+
+const int MOD = 1000000007;
+
+int factorial(int n) {
+    int result = 1;
+    for (int i = 2; i <= n; ++i) {
+        result = (result * i) % MOD;
+    }
+    return result;
+}
+
+int countDivisors(int n) {
+    int result = 1;
+    for (int i = 2; i <= n; ++i) {
+        if (n % i == 0) {
+            int count = 0;
+            while (n % i == 0) {
+                ++count;
+                n /= i;
+            }
+            result = (result * (count + 1)) % MOD;
+        }
+    }
+    return result;
+}
+
+int main() {
+    int n;
+    std::cin >> n;
+    
+    int fact = factorial(n);
+    int divisors = countDivisors(fact);
+    
+    std::cout << divisors << std::endl;
+    
+    return 0;
+}

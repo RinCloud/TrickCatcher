@@ -1,0 +1,14 @@
+def concatenate(strings):
+    """
+    Concatenate list of strings into a single string
+    Args:
+    strings: List of strings
+    Returns:
+    Concatenated string
+    Examples:
+    >>> concatenate([])
+    ''
+    >>> concatenate(['a', 'b', 'c'])
+    'abc'
+    """
+    return ''.join(strings)

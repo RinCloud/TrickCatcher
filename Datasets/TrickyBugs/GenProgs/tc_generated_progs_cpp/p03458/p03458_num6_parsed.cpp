@@ -1,0 +1,48 @@
+#include<cstdio>
+#include<algorithm>
+#define MAXN 100000
+#define MAXK 1000
+using namespace std;
+struct node
+{
+	int x,y,opt;
+}poi[MAXN+5];
+int dp[MAXK+5][MAXK+5],ctr[MAXK+5][MAXK+5];
+int n,k;
+int main()
+{
+    //Taking input
+	scanf("%d %d",&n,&k);
+	for(int i=1;i<=n;i++)
+	{
+		int a,b,tot=0,optnum;
+		char opt;
+		scanf("%d %d %c",&a,&b,&opt);
+		if(opt=='B')		optnum=1;
+		else if(opt=='W')	optnum=0;
+		tot+=a/k; a%=k;
+		tot+=b/k; b%=k;
+		poi[i].x=a; poi[i].y=b;
+		if(tot%2==1)		poi[i].opt=(optnum+1)%2;
+		else				poi[i].opt=optnum;
+	}
+    //filling ctr[][] array with totals
+	for(int i=1;i<=n;i++)
+	{
+		int x=poi[i].x,y=poi[i].y,opt=poi[i].opt;
+		if(poi[i].opt==1)
+			ctr[k][k]++,ctr[x][k]--,ctr[k][y]--,ctr[x][y]+=2;
+		else
+			ctr[x][k]++,ctr[k][y]++,ctr[x][y]-=2;
+	}
+	int ans=0;
+    //Calculating dp[][] array using bottom-up approach
+	for(int y=k;y>=0;y--)
+		for(int x=k;x>=0;x--)
+		{
+			dp[x][y]=dp[x][y+1]+dp[x+1][y]-dp[x+1][y+1]+ctr[x][y];
+			ans=max(ans,max(dp[x][y],n-dp[x][y]));
+		}
+	printf("%d\n",ans);
+	return 0;
+}

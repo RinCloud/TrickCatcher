@@ -1,0 +1,12 @@
+```python
+from random import randint
+
+def sample_one():
+    x = randint(-100, 100)
+    y = randint(-100, 100)
+    # Ensure z is either the sum of x, y or a random integer to diversify test cases
+    z_options = [x + y, randint(-100, 100)]
+    z = z_options[randint(0, 1)]
+    generated_input = [x, y, z]
+    return generated_input
+```

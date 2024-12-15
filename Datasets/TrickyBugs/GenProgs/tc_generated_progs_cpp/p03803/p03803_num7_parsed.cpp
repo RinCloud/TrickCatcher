@@ -1,0 +1,22 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+	int n, m;
+
+	scanf("%d%d", &n, &m);
+
+	if (n > m || (n == 1 && m == 13))
+	{
+		printf("Alice\n");
+	}
+	else if (m > n || (m == 1 && n == 13))
+	{
+		printf("Bob\n");
+	}
+	else
+	{
+		printf("Draw\n");
+	}
+}

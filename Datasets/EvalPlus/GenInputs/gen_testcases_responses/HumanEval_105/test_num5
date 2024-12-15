@@ -1,0 +1,10 @@
+{"input": [2, 1, 1, 4, 5, 8, 2, 3], "output": ["Eight", "Five", "Four", "Three", "Two", "Two", "One", "One"]}
+{"input": [], "output": []}
+{"input": [1, -1, 55], "output": ["One"]}
+{"input": [9, 8, 7, 6, 5, 4, 3, 2, 1], "output": ["One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine"]}
+{"input": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9], "output": ["Nine", "Eight", "Seven", "Six", "Five", "Four", "Three", "Two", "One"]}
+{"input": [5, 5, 5, 5, 5, 4, 4, 4, 4, 4], "output": ["Four", "Four", "Four", "Four", "Four", "Five", "Five", "Five", "Five", "Five"]}
+{"input": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], "output": []}
+{"input": [1, 3, 5, 7, 9], "output": ["Nine", "Seven", "Five", "Three", "One"]}
+{"input": [2, 4, 6, 8], "output": ["Eight", "Six", "Four", "Two"]}
+{"input": [9, 0, -1, -2, -3, -5, -8, -9], "output": ["Nine"]}

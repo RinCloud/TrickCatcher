@@ -1,0 +1,10 @@
+{"input": ["my_class", ["AA", "Be", "CC"]], "output": "my_class.AA"}
+{"input": ["ClassName", ["class", "ExtEnsIon", "Ext"]] , "output": "ClassName.ExtEnsIon"}
+{"input": ["Test", ["ThiS", "is", "a", "tESt"]] , "output": "Test.ThiS"}
+{"input": ["Data", ["daTA", "manIPuLATiOn", "funCtIoNs"]] , "output": "Data.manIPuLATiOn"}
+{"input": ["Example", ["extENSion", "STRONG", "eXTenSIONS"]] , "output": "Example.eXTenSIONS"}
+{"input": ["String", ["StR", "iN", "g"]] , "output": "String.StR"}
+{"input": ["Program", ["progrAm", "stronG", "exteNSions"]] , "output": "Program.progrAm"}
+{"input": ["Strongest", ["CANdiDates", "ComPuter", "sciencE"]] , "output": "Strongest.CANdiDates"}
+{"input": ["Test", ["LOW", "UP", "DOWN"]] , "output": "Test.UP"}
+{"input": ["Extension", ["EXTeNsion", "extENsIOn", "Math"]] , "output": "Extension.exeTensIon"}

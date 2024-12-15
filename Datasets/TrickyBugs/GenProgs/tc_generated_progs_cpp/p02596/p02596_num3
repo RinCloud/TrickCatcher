@@ -1,0 +1,28 @@
+**BUGS/LOGIC FLAWS**:
+1. The variable `left` is not initialized to 0 before its first use.
+2. The loop condition `for(i=1;i<=n;i++)` should be `for(i=1;i<=n;i++)` as the indices of the sequence start from 1.
+3. The loop should only run `n` times at most. So, the condition of the loop should be changed to `for(i=1;i<=n;i++)` instead of `for(i=1;i<=n;i++)`.
+4. The line `left=(7+left*10)%n;` is causing integer overflow because `left` can become very large when `n` is large. To avoid this, we should be calculating the modulus at every step inside the loop.
+
+**REPAIRED CODE**:
+#include<bits/stdc++.h>
+#define int long long
+using namespace std;
+signed main() {
+	int n;
+	cin>>n;
+	int i, left = 0;
+	for(i=1;i<=n;i++){
+		left=(7+left*10)%n;
+		if(left==0){
+			break;
+		}
+	}
+	if(!left){
+		cout<<i;
+	}
+	else{
+		cout<<-1;
+	}
+	return 0;
+}

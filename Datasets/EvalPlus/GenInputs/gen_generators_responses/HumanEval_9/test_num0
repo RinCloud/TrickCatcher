@@ -1,0 +1,9 @@
+```python
+from random import randint
+
+def sample_one():
+    length_of_numbers = randint(1, 10)  # ensuring at least one number
+    numbers = [randint(-100, 100) for _ in range(length_of_numbers)]
+    generated_input = [numbers]
+    return generated_input
+```

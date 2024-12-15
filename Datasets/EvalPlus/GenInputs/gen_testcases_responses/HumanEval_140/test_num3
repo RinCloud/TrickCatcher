@@ -1,0 +1,9 @@
+{"input": ["Example"], "output": "Example"}
+{"input": ["Example 1"], "output": "Example_1"}
+{"input": [" Example 2"], "output": "_Example_2"}
+{"input": [" Example   3"], "output": "_Example-3"}
+{"input": [""], "output": ""}
+{"input": ["     "], "output": "-----"}
+{"input": ["Test   Case   1"], "output": "Test-Case-1"}
+{"input": ["Test_Case___2"], "output": "Test-Case-2"}
+{"input": ["    Multiple  Spaces     In  This  Text"], "output": "-----Multiple-Spaces-In-This-Text"}

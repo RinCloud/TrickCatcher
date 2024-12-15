@@ -1,0 +1,11 @@
+**REPAIRED CODE**:
+
+```python
+K, X = map(int, input().split())
+if K * 500 >= X:
+    print('Yes')
+else:
+    print('No')
+```
+
+The input is split and converted into `K` and `X` variables using `map(int, input().split())`. The code then checks if the product of `K` and 500 is greater than or equal to `X`. If so, it prints "Yes", otherwise it prints "No". This code is a much simpler and straightforward approach to solving the problem.

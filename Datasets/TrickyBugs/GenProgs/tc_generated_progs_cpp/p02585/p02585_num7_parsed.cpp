@@ -1,0 +1,51 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    ios::sync_with_stdio(0);
+    cin.tie(0);
+    cout.tie(0);
+
+    long long N, K;
+    cin >> N >> K;
+    vector<long long> P(N + 1), C(N + 1);
+    for (int i = 1; i <= N; i++)
+    {
+        cin >> P[i];
+    }
+    for (int i = 1; i <= N; i++)
+    {
+        cin >> C[i];
+    }
+
+    long long ans = -1e18;
+    for (int i = 1; i <= N; i++)
+    {
+        long long s = P[i], sum = 0;
+        vector<long long> sums;
+        sums.push_back(sum);
+        while (s != i)
+        {
+            sum += C[s];
+            sums.push_back(sum);
+            s = P[s];
+        }
+        int M = sums.size();
+        for (int j = 0; j < M; j++)
+        {
+            ans = max(ans, sums[j]);
+            if (K >= M)
+            {
+                ans = max(ans, sums[j] + C[i] * ((K - M) / M));
+            }
+            for (int k = 0; k < (K - M) % M; k++)
+            {
+                ans = max(ans, sums[j] + C[i] * ((K - M) / M) + sums[k]);
+            }
+        }
+    }
+
+    cout << ans << "\n";
+    return 0;
+}

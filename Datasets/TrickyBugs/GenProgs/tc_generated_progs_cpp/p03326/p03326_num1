@@ -1,0 +1,38 @@
+**REPAIRED CODE**:
+
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+typedef long long ll;
+typedef pair<ll,ll> P;
+ll x[1010],y[1010],z[1010];
+int main(){
+	ll n,m;
+	cin>>n>>m;
+	for(int i=0;i<n;i++){
+		cin>>x[i]>>y[i]>>z[i];
+	}
+	ll ans=0;
+	for(int i=0;i<8;i++){ // changed the loop constraint from 7 to 8
+		ll num[3]={1,1,1};
+		for(int j=0;j<3;j++){
+			if(i&(1<<j)){
+				num[j]*=-1;
+			}
+		}
+		vector<P>v;
+		for(int j=0;j<n;j++) // changed the loop variable from i to j
+			v.push_back({-(num[0]*x[j]+num[1]*y[j]+num[2]*z[j]),j}); // changed the loop variable from i to j
+		sort(v.begin(),v.end());
+		ll sum[3]={};
+		for(int j=0;j<m;j++){ // changed the loop variable from i to j
+			sum[0]+=x[v[j].second];
+			sum[1]+=y[v[j].second];
+			sum[2]+=z[v[j].second];
+		}
+		ans=max(ans,abs(sum[0])+abs(sum[1])+abs(sum[2]));
+	}
+	cout<<ans<<endl;
+	return 0;
+}
+```

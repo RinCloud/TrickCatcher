@@ -1,0 +1,17 @@
+The code provided is incorrect because it does not handle the case of an even number of cards properly. For an even number of cards, the code should only subtract Alice's score minus Bob's score, but currently it calculates both Alice's and Bob's scores and then subtracts them, which results in an incorrect answer.
+
+Additionally, the sorting logic is also incorrect. The code sorts the cards but does not consider that Bob will also be taking alternating cards. Therefore, to find the optimal strategy for both players, the cards should be sorted in descending order instead of ascending order.
+
+To fix these issues, the code needs to be updated as follows:
+
+```python
+n = int(input())
+a = [int(x) for x in input().split()]
+
+a.sort(reverse=True)
+alice_sum = sum(a[0:n:2])
+bob_sum = sum(a[1:n:2])
+print(alice_sum - bob_sum)
+```
+
+This code properly handles the case of both even and odd number of cards, and also correctly calculates Alice's score minus Bob's score.

@@ -1,0 +1,12 @@
+```python
+from random import randint
+from cyaron import String
+
+def sample_one():
+    length_of_list = randint(0, 10)
+    l = []
+    for i in range(length_of_list):
+        l.append(randint(-100, 100))
+    generated_input = [l]
+    return generated_input
+```

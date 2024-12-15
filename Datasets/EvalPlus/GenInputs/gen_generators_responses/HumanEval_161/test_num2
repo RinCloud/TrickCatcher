@@ -1,0 +1,10 @@
+```python
+from random import *
+from cyaron import *
+def sample_one():
+    charset = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+-=[]{}|;:,.<>/?'
+    length_of_s = randint(1, 100)
+    s = String.random(length_of_s, charset=charset)
+    generated_input = [str(s)]
+    return generated_input
+```

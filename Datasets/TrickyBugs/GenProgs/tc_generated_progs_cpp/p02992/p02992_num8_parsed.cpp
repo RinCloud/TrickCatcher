@@ -1,0 +1,30 @@
+#include <iostream>
+
+const int MOD = 1000000007;
+const int MAXN = 32768;
+
+int a[MAXN], b[MAXN], c[MAXN] = {};
+
+int main() {
+    int n, k;
+    std::cin >> n >> k;
+
+    for (int i = MAXN - 1; i >= 0; i--) {
+        a[i] = (i < n ? i : n);
+        b[i] = n / i;
+    }
+
+    while (--k) {
+        for (int i = 1; i < MAXN; i++) {
+            c[i] = (c[i - 1] + b[i]) % MOD;
+        }
+
+        for (int i = MAXN - 1; i >= 0; i--) {
+            b[i] = (c[n / i] - c[i - 1] + MOD) % MOD;
+        }
+    }
+
+    std::cout << b[1] << std::endl;
+
+    return 0;
+}

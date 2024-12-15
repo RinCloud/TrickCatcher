@@ -1,0 +1,10 @@
+{"input": "Hello world!", "output": ["Hello", "world!"]}
+{"input": "Hello,world!", "output": ["Hello", "world!"]}
+{"input": "abcdef", "output": 3}
+{"input": "The quick brown fox", "output": ["The", "quick", "brown", "fox"]}
+{"input": "Hello", "output": 5}
+{"input": "apple,banana,cherry", "output": ["apple", "banana", "cherry"]}
+{"input": "LMNOPQRS", "output": 4}
+{"input": "1234", "output": 4}
+{"input": "John Doe", "output": ["John", "Doe"]}
+{"input": "Hello@World", "output": 6}

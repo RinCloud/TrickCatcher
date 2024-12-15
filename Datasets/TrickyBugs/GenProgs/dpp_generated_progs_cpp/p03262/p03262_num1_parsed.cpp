@@ -1,0 +1,25 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
+using namespace std;
+
+int main() {
+    int N, X;
+    cin >> N >> X;
+    
+    vector<int> cities(N);
+    for (int i = 0; i < N; i++) {
+        cin >> cities[i];
+    }
+    
+    int maxD = 0;
+    for (int i = 0; i < N; i++) {
+        int distance = abs(cities[i] - X);
+        maxD = max(maxD, distance);
+    }
+    
+    cout << maxD << endl;
+    
+    return 0;
+}

@@ -1,0 +1,10 @@
+{"input": ["my_class", ["AA", "Be", "CC"]], "output": "my_class.AA"}
+{"input": ["my_class", ["SErviNGSliCes", "Cheese", "StuFfed"]], "output": "my_class.SErviNGSliCes"}
+{"input": ["my_class", ["Extension1", "Extension2", "Extension3"]], "output": "my_class.Extension1"}
+{"input": ["class_name", ["Extension0", "Extension1", "Extension2"]], "output": "class_name.Extension0"}
+{"input": ["class", ["Extension1", "EXTENSION2", "EXTENSION3"]], "output": "class.EXTENSION2"}
+{"input": ["class", ["Test1", "Test2", "Test3"]], "output": "class.Test1"}
+{"input": ["classname", ["Extension1", "Extension2", "Extension3"]], "output": "classname.Extension1"}
+{"input": ["class_name", ["extension1", "extension2", "extension3"]], "output": "class_name.extension1"}
+{"input": ["name", ["EXTENSION1", "EXTENSION2", "EXTENSION3"]], "output": "name.EXTENSION1"}
+{"input": ["classname", ["extension_1", "extension_2", "extension_3"]], "output": "classname.extension_1"}

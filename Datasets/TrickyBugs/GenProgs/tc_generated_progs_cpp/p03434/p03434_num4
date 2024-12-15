@@ -1,0 +1,1 @@
+The code is missing the initialization of the variables A and B. Additionally, the variables A and B should be initialized with the value 0 to avoid undefined behavior.

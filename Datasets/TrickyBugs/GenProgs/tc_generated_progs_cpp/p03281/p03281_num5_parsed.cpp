@@ -1,0 +1,25 @@
+#include <iostream>
+using namespace std;
+
+int countNumbersWith8Divisors(int n) {
+    int count = 0;
+    for (int num = 1; num <= n; num += 2) {
+        int divisors = 0;
+        for (int i = 1; i * i <= num; i++) {
+            if (num % i == 0) {
+                divisors += (num / i == i) ? 1 : 2;
+            }
+        }
+        if (divisors == 8) {
+            count++;
+        }
+    }
+    return count;
+}
+
+int main() {
+    int n;
+    cin >> n;
+    cout << countNumbersWith8Divisors(n) << "\n";
+    return 0;
+}

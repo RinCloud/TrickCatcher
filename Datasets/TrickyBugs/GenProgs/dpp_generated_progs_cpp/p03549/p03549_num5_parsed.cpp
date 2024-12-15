@@ -1,0 +1,16 @@
+#include <iostream>
+#include <cmath>
+
+int main() {
+    int N, M;
+    std::cin >> N >> M;
+    
+    long long total_time = 0;
+    for(int i = 0; i < M; i++) {
+        total_time += 1900 * std::pow(2, M) + 100 * (N - M);
+    }
+    
+    std::cout << total_time << std::endl;
+    
+    return 0;
+}

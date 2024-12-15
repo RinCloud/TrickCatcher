@@ -1,0 +1,37 @@
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+int main() {
+    int N, A, B;
+    cin >> N >> A >> B;
+    
+    if (A + B - 1 > N || A * B < N) {
+        cout << -1 << endl;
+        return 0;
+    }
+    
+    vector<int> sequence(N);
+    for (int i = 0; i < B; i++) {
+        sequence[i] = i + 1;
+    }
+    for (int i = A - 1; i < N; i++) {
+        sequence[i] = N - i + A - 1;
+    }
+    
+    int start = B;
+    int end = N - A;
+    for (int i = start; i < end; i += A) {
+        for (int j = 0; j < A; j++) {
+            sequence[i + j] = i + A - j;
+        }
+    }
+    
+    for (int i = 0; i < N; i++) {
+        cout << sequence[i] << " ";
+    }
+    cout << endl;
+    
+    return 0;
+}

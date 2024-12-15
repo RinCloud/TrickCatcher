@@ -1,0 +1,3 @@
+**Test Input Reasoning:**
+
+I will start by testing a simple case where the list of numbers has only one element. This test will help verify if the function can handle small lists.

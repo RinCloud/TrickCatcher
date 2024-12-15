@@ -1,0 +1,28 @@
+def separate_paren_groups(paren_string: str) -> List[str]:
+    """
+    Input: a string containing multiple groups of nested parentheses
+    Output: list of strings representing separate groups of parentheses
+    
+    This function separates the groups of nested parentheses into separate strings and returns the list of those.
+    
+    Separate groups are balanced (each open brace is properly closed) and not nested within each other.
+    
+    The function ignores any spaces in the input string.
+    """
+    stack = []
+    result = []
+
+    for char in paren_string:
+        if char == '(':
+            stack.append(char)
+        elif char == ')':
+            if stack:
+                stack.pop()
+                if not stack:
+                    result.append(''.join(stack))
+            else:
+                continue
+        else:
+            continue
+
+    return result

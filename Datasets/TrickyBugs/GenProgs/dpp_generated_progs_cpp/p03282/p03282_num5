@@ -1,0 +1,31 @@
+```
+#include <iostream>
+#include <string>
+
+int main() {
+    std::string S;
+    std::cin >> S;
+    
+    long long K;
+    std::cin >> K;
+    
+    long long length = 0;
+    for (char digit : S) {
+        length += (digit - '0');
+    }
+    
+    char result;
+    for (int i = 0; i < S.size(); i++) {
+        if (length >= K) {
+            result = S[i];
+            break;
+        }
+        length -= (S[i] - '0');
+        length += (S[i] - '0') * ((S[i] - '0') - 1);
+    }
+    
+    std::cout << result << std::endl;
+    
+    return 0;
+}
+```

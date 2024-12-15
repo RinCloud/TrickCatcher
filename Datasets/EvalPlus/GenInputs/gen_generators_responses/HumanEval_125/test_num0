@@ -1,0 +1,26 @@
+```python
+from random import *
+from cyaron import *
+
+def sample_one():
+    # Randomly decide one of the three scenarios
+    scenario = randint(1, 3)
+    if scenario == 1:
+        # Scenario with spaces
+        words_count = randint(1, 5)
+        words = [String.random(randint(3, 8)) for _ in range(words_count)]
+        txt = ' '.join(words)
+    elif scenario == 2:
+        # Scenario with commas
+        words_count = randint(1, 5)
+        words = [String.random(randint(3, 8)) for _ in range(words_count)]
+        txt = ','.join(words)
+    else:
+        # Scenario without spaces or commas
+        # Generating a string of random length
+        length = randint(1, 10)
+        txt = String.random(length)
+        
+    generated_input = [txt]
+    return generated_input
+```

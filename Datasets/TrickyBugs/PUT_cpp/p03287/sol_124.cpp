@@ -1,0 +1,2 @@
+#include<bits/stdc++.h>
+int main(){long n,m,a,r,s;std::map<int,int>v;std::cin>>n>>m;while(n--){std::cin>>a;s+=a;r+=v[s%m]++;}std::cout<<r+v[0];}

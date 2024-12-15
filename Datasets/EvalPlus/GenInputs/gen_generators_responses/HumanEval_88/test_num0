@@ -1,0 +1,9 @@
+```python
+from random import randint
+
+def sample_one():
+    length_of_array = randint(0, 20)
+    array = [randint(0, 100) for _ in range(length_of_array)]
+    generated_input = [array]
+    return generated_input
+```

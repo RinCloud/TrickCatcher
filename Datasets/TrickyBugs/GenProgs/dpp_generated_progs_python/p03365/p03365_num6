@@ -1,0 +1,20 @@
+# Solution
+To find the sum of scores over all possible permutations, we need to consider all the possible orders in which the machines can be operated. We will iterate through all possible permutations of the machines and calculate the score for each permutation. Finally, we will sum up the scores modulo 10^9+7.
+
+To calculate the score for a specific permutation, we can observe that for each machine i, it will be operated before all the squares are painted black only if all the machines before it (i.e., 1 to i-1) have been operated in decreasing order of their positions. Therefore, the score for a specific permutation can be calculated as the sum of all integers from 1 to N-1.
+
+Here's the Python code that solves the problem:
+
+```python
+N = int(input())
+
+# Calculate sum of scores over all possible permutations
+score_sum = 0
+for i in range(1, N):
+    score_sum += i
+
+# Print the sum modulo 10^9+7
+print(score_sum % (10**9 + 7))
+```
+
+This solution has a time complexity of O(N) as we iterate through all the machines once.

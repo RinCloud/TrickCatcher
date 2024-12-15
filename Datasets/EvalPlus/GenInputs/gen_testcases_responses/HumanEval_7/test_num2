@@ -1,0 +1,10 @@
+{"input": [["abc", "bacd", "cde", "array"], "a"], "output": ["abc", "bacd", "array"]}
+{"input": [["dog", "cat", "bird", "fish"], "i"], "output": ["bird", "fish"]}
+{"input": [["apple", "banana", "cherry", "date"], "e"], "output": ["apple", "cherry"]}
+{"input": [["hello", "world", "how", "are", "you"], "o"], "output": ["hello", "world", "how", "you"]}
+{"input": [["python", "java", "c++", "javascript"], "a"], "output": ["java", "javascript"]}
+{"input": [["car", "train", "bus", "bike"], "t"], "output": ["train"]}
+{"input": [["sun", "moon", "stars"], "s"], "output": ["sun", "stars"]}
+{"input": [["one", "two", "three", "four"], "e"], "output": ["one", "three"]}
+{"input": [["red", "blue", "green", "yellow"], "g"], "output": ["green"]}
+{"input": [["apple", "banana", "cherry", "date"], "x"], "output": []}

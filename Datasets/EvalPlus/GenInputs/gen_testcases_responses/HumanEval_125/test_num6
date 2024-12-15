@@ -1,0 +1,10 @@
+{"input": ["Hello world!"], "output": ["Hello", "world!"]}
+{"input": ["Hello,world!"], "output": ["Hello", "world!"]}
+{"input": ["abcdef"], "output": 3}
+{"input": ["alphabet"], "output": ["alphabet"]}
+{"input": ["a,b,c,d,e"], "output": ["a", "b", "c", "d", "e"]}
+{"input": ["This is a sentence."], "output": ["This", "is", "a", "sentence."]}
+{"input": ["No spaces,split with commas."], "output": ["No spaces", "split with commas."]}
+{"input": ["ABCDEFGHIJKLMNOPQRSTUVWXYZ"], "output": 13}
+{"input": ["a," * 100], "output": ["a," * 100]}
+{"input": ["This has!exclamation,multiple!punctuations?"], "output": ["This has!exclamation", "multiple!punctuations?"]}

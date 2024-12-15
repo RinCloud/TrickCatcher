@@ -1,0 +1,10 @@
+```python
+from random import randint
+
+def sample_one():
+    length_of_numbers = randint(0, 10)
+    numbers = [randint(-10, 10) for _ in range(length_of_numbers)]
+    delimiter = randint(-10, 10)
+    generated_input = [numbers, delimiter]
+    return generated_input
+```

@@ -1,0 +1,19 @@
+```python
+from cyaron import *
+
+def sample_one():
+    # Maximum length might be 100 but let's keep it realistic for a sentence's length
+    max_length = 100
+    # Generate a random string with up to 100 characters, consisting of lowercase letters and spaces.
+    # Ensuring there's at least one space to simulate a sentence
+    sentence = String.random(randint(2, max_length), charset="abcdefghijklmnopqrstuvwxyz ")
+    sentence = sentence.replace("  ", " ").strip()  # Ensure no consecutive spaces and trim if spaces at ends
+
+    # Ensuring the sentence ends up having at least a space (hence at least two words)
+    if ' ' not in sentence:
+        split_pos = randint(1, len(sentence) - 1)
+        sentence = sentence[:split_pos] + ' ' + sentence[split_pos:]
+
+    generated_input = [sentence]
+    return generated_input
+```

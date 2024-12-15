@@ -1,0 +1,11 @@
+```python
+from random import *
+from cyaron import *
+
+def sample_one():
+    letters_count = randint(0, 10)  # Declaring random count for letters
+    letters = [String.random(1, charset='abcdefghijklmnopqrstuvwxyz') for _ in range(letters_count)]
+    test = ' '.join(letters)
+    generated_input = [test]
+    return generated_input
+```

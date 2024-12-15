@@ -1,0 +1,43 @@
+# Program
+
+```python
+def max_consecutive_hands(N, K, S):
+    max_hands = 0
+    consecutive_hands = 0
+    
+    for i in range(N):
+        if S[i] == '1':
+            consecutive_hands += 1
+        else:
+            max_hands = max(max_hands, consecutive_hands)
+            consecutive_hands = 0
+    
+    max_hands = max(max_hands, consecutive_hands)
+    
+    flip_count = min(K, max_hands)
+    
+    for i in range(N):
+        if S[i] == '1':
+            consecutive_hands -= 1
+        else:
+            max_hands = max(max_hands, consecutive_hands + flip_count)
+            flip_count = min(K, consecutive_hands + flip_count + 1)
+            consecutive_hands = 0
+    
+    max_hands = max(max_hands, consecutive_hands + flip_count)
+    
+    return max_hands
+
+N, K = map(int, input().split())
+S = input().strip()
+print(max_consecutive_hands(N, K, S))
+```
+This program defines a function `max_consecutive_hands` which takes input values N, K, S and returns the maximum possible number of consecutive people standing on hands after at most K directions.
+
+The program first initializes `max_hands` and `consecutive_hands` as 0. 
+Then, it loops through each person in the given string S and counts the consecutive hands if the person is standing on hands('1'), and resets it to 0 when the person is standing on feet ('0'). 
+After counting the maximum number of consecutive hands before any flipping, it initializes `flip_count` as the minimum of K and `max_hands` obtained.
+After that, it loops through each person again to simulate flipping. For each person standing on feet, it increments `consecutive_hands` and updates max_hands if the current count of `consecutive_hands` + `flip_count` is greater than the previous max.
+Finally, it returns the `max_hands`.
+
+In the end, the program takes inputs for N, K and S from standard input, calls `max_consecutive_hands` function and prints the result.

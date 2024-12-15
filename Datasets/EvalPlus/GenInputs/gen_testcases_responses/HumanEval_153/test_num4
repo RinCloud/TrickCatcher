@@ -1,0 +1,10 @@
+{"input": ["my_class", ["AA", "Be", "CC"]], "output": "my_class.AA"}
+{"input": ["Slices", ["SErviNGSliCes", "Cheese", "StuFfed"]], "output": "Slices.SErviNGSliCes"}
+{"input": ["my_class", ["AA", "Be", "CC", "aA"]], "output": "my_class.aA"}
+{"input": ["my_class", []], "output": "my_class."}
+{"input": ["my_class", ["AA", "BbE", "Cc", "aA"]], "output": "my_class.BbE"}
+{"input": ["class1", ["xyz", "class2", "Class3"]], "output": "class1.Class3"}
+{"input": ["class1", ["xyz", "class2", "Xyz"]], "output": "class1.Xyz"}
+{"input": ["abc", ["ABC"]], "output": "abc.ABC"}
+{"input": ["class", ["ABCD", "abcgwee"]], "output": "class.ABCD"}
+{"input": ["ABC", ["ab", "cbAA"]], "output": "ABC.cbAA"}

@@ -1,0 +1,10 @@
+{"input": [["aa", "a", "aaa"]], "output": ["aa"]}
+{"input": [["ab", "a", "aaa", "cd"]], "output": ["ab", "cd"]}
+{"input": [["hello", "world", "python", "is", "great"]], "output": ["is", "python", "world"]}
+{"input": [["apple", "banana", "cherry", "date"]], "output": ["banana", "cherry", "date"]}
+{"input": [["cat", "dog", "bee", "lion", "rat"]], "output": ["bee", "lion"]}
+{"input": [["book", "pen", "paper", "pencil", "eraser"]], "output": ["book", "eraser", "paper"]}
+{"input": [["hello", "hi", "goodbye", "bye"]], "output": ["bye", "goodbye"]}
+{"input": [["", "", "", ""]], "output": ["", "", "", ""]}
+{"input": [["this", "is", "a", "sentence", "with", "same", "length"]], "output": ["a", "is", "with"]}
+{"input": [["aaa", "bbb", "ccc", "ddd", "eee"]], "output": ["ddd", "eee"]}

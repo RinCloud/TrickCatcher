@@ -1,0 +1,33 @@
+```python
+def count_strings(S, K):
+    MOD = 998244353
+    n = len(S)
+    
+    # Count the number of 0s and 1s in the original string
+    cnt_0 = S.count('0')
+    cnt_1 = n - cnt_0
+    
+    # Initialize the dynamic programming table
+    dp = [[0] * (cnt_0 + 1) for _ in range(cnt_1 + 1)]
+    dp[0][0] = 1
+    
+    # Fill the dynamic programming table using recurrence formula
+    for i in range(1, cnt_1 + 1):
+        for j in range(cnt_0 + 1):
+            dp[i][j] = (dp[i][j] + dp[i - 1][j]) % MOD
+            if j >= i:
+                dp[i][j] = (dp[i][j] + dp[i][j - i]) % MOD
+    
+    # Compute the final result by summing up the values in the last row of the table
+    res = 0
+    for j in range(K + 1):
+        res = (res + dp[cnt_1][cnt_0 - j]) % MOD
+    
+    return res
+
+# Read the input from standard input
+S, K = input().split()
+
+# Call the count_strings function and print the result
+print(count_strings(S, int(K)))
+```

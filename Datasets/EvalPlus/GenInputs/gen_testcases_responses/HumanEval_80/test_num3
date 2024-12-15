@@ -1,0 +1,10 @@
+{"input": ["a"], "output": false}
+{"input": ["aa"], "output": false}
+{"input": ["abcd"], "output": true}
+{"input": ["aabb"], "output": false}
+{"input": ["adb"], "output": true}
+{"input": ["xyy"], "output": false}
+{"input": ["a"*1000], "output": false}
+{"input": ["ab"*500], "output": true}
+{"input": ["a"*999 + "b"], "output": false}
+{"input": [], "output": false}

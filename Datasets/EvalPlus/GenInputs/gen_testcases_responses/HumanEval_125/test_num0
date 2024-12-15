@@ -1,0 +1,10 @@
+{"input": "Hello world!", "output": ["Hello", "world!"]}
+{"input": "Hello,world!", "output": ["Hello", "world!"]}
+{"input": "abcdef", "output": 3}
+{"input": "Howareyou", "output": 6}
+{"input": "One,two,three", "output": ["One", "two", "three"]}
+{"input": "ABCDEFGHIJKLMNOPQRSTUVWXYZ", "output": 13}
+{"input": "a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z", "output": ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]}
+{"input": "How are you today?", "output": ["How", "are", "you", "today?"]}
+{"input": "Testing,1,2,3", "output": ["Testing", "1", "2", "3"]}
+{"input": "banana", "output": 6}

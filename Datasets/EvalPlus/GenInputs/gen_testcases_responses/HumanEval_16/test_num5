@@ -1,0 +1,10 @@
+{"input": ["xyzXYZ"], "output": 3}
+{"input": ["Jerry"], "output": 4}
+{"input": [""], "output": 0}
+{"input": ["abc123"], "output": 6}
+{"input": ["abcdefg"], "output": 7}
+{"input": ["AAABBBCCC"], "output": 3}
+{"input": ["abcdefghijklmnopqrstuvwxyz"], "output": 26}
+{"input": ["Hello World"], "output": 9}
+{"input": ["1234567890"], "output": 10}
+{"input": ["@@@###$$$"], "output": 3}

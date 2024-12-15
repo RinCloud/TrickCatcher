@@ -1,0 +1,22 @@
+# Program
+
+```
+def max_remaining_cards(n, cards):
+    count = {}
+    for card in cards:
+        count[card] = count.get(card, 0) + 1
+    
+    max_remaining = n // 2
+    if n % 2 == 0:
+        max_remaining -= 1
+    
+    for card in count:
+        max_remaining -= min(count[card], 2)
+    
+    return max_remaining
+
+n = int(input())
+cards = list(map(int, input().split()))
+
+print(max_remaining_cards(n, cards))
+```

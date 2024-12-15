@@ -1,0 +1,23 @@
+There is a bug in the code.
+
+The variable "ans" is not initialized to 0 before performing the calculations. 
+
+The correction can be made by initializing the variable "ans" to 0 before performing the calculations.
+
+Here is the corrected code:
+
+```cpp
+#include<bits/stdc++.h>
+using namespace std;
+
+int main(){
+  long n,a,b,ans=0;
+  cin >> n >> a >> b;
+  
+  ans+=n/(a+b)*a;
+  
+  ans+=min(n%(a+b),a);
+  cout << ans;
+  return 0;
+}
+```

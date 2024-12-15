@@ -1,0 +1,29 @@
+# Solution
+
+## Plan
+1. Read the input values for N and S.
+2. Check if S is a concatenation of two copies of some string.
+3. If S is a concatenation of two copies of some string, print `Yes`; otherwise, print `No`.
+
+## Pseudocode
+```
+N = int(input())
+S = input()
+
+if N % 2 == 0 and S[:N//2] == S[N//2:]:
+    print("Yes")
+else:
+    print("No")
+```
+
+# Complete program
+
+```python
+N = int(input())
+S = input()
+
+if N % 2 == 0 and S[:N//2] == S[N//2:]:
+    print("Yes")
+else:
+    print("No")
+```

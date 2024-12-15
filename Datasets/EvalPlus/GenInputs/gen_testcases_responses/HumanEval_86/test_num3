@@ -1,0 +1,10 @@
+{"input": ["Hi"], "output": "Hi"}
+{"input": ["hello"], "output": "ehllo"}
+{"input": ["Hello World!!!"], "output": "Hello !!!Wdlor"}
+{"input": [""], "output": ""}
+{"input": ["Python is awesome"], "output": "Pnopty is aeemosw"}
+{"input": ["Lorem ipsum dolor sit amet"], "output": "Lemor ipsmu dlor sit aemt"}
+{"input": ["12345 67890"], "output": "12345 67890"}
+{"input": ["This is a test"], "output": "Hist is a estt"}
+{"input": ["!@#$%^&*()"], "output": "!@#$%^&*()"}
+{"input": ["abcdefghijklmnopqrstuvwxyz"], "output": "abcdefghijklmnopqrstuvwxyz"}

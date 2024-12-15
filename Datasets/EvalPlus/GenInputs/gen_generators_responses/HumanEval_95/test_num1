@@ -1,0 +1,29 @@
+```python
+from random import *
+from cyaron import *
+
+def sample_one():
+    dict_keys_types = ['lower', 'upper', 'mixed', 'non_string']
+    key_type = choice(dict_keys_types)
+    dict_length = randint(0, 10)
+    generated_dict = {}
+    
+    for _ in range(dict_length):
+        if key_type == 'lower':
+            key = String.random(randint(1, 5), charset="abcdefghijklmnopqrstuvwxyz")
+        elif key_type == 'upper':
+            key = String.random(randint(1, 5), charset="ABCDEFGHIJKLMNOPQRSTUVWXYZ")
+        elif key_type == 'mixed':
+            if randint(0, 1) == 0:
+                key = String.random(randint(1, 5), charset="abcdefghijklmnopqrstuvwxyz").upper()
+            else:
+                key = String.random(randint(1, 5), charset="ABCDEFGHIJKLMNOPQRSTUVWXYZ").lower()
+        else:  # non_string
+            key = str(randint(1, 100))
+        
+        value = String.random(randint(1, 10), charset="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ")
+        generated_dict[key] = value
+    
+    generated_input = [generated_dict]
+    return generated_input
+```

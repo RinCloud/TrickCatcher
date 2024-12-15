@@ -1,0 +1,10 @@
+{"input": ["xyzXYZ"], "output": 3}
+{"input": ["Jerry"], "output": 4}
+{"input": [""], "output": 0}
+{"input": ["abracadabra"], "output": 5}
+{"input": ["Hello, World!"], "output": 11}
+{"input": ["12345"], "output": 5}
+{"input": ["AaBbCc"], "output": 6}
+{"input": ["aaaaa"], "output": 1}
+{"input": ["!@#$%^&*()"], "output": 8}
+{"input": ["12121212"], "output": 3}

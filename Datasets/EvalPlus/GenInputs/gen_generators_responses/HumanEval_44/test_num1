@@ -1,0 +1,9 @@
+```python
+from random import randint
+
+def sample_one():
+    x = randint(0, 1000)
+    base = randint(2, 9)
+    generated_input = [x, base]
+    return generated_input
+```

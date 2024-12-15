@@ -1,0 +1,31 @@
+**Repaired code:**
+
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+long long n, a, ans, x[100], w[5000][100];
+int main(){
+	cin >> n >> a;
+	w[0][0] = 1;
+	for(int i = 0; i < n; i++){
+		cin >> x[i];
+		for(int j = 1; j <= n; j++){
+			for(int k = 3000; k >= x[i]; k--){
+				w[k][j] += w[k-x[i]][j-1];
+			}
+		}
+	}
+	for(int i = 1; i <= n; i++){
+		if(a*i <= 3000) ans += w[a*i][i];
+	}
+	cout << ans;
+}
+```
+**Explanation:** <br>
+- The code fails on some cases because we are calculating `a*j-x[i]` and comparing it with `3000` but we have values on `w[][]` upto `3000` only so some values are nothing but garbage values.
+- Hence I changed it to calculate for each value of `k` simultaneously and since `3000 = 50*60` so we can use this new bound. I am looping through available cards in descending order of values `k` and taking care of the indexing also.
+- Finally we are supposed to print `w[a][1] + w[a][2] + .... + w[a][n]` (as given in formula in the (b) part) so added one more loop to count using a loop from `1 to n`.
+- Hence replaced first cycle with `1 <= j <= n` and second cycle `3000 >= x[i]` to get `1 <= i <= n`. Also replaced redudant `if(j*a-x[i] >= 0)` statement with a separate loop.
+- Add space upfront to include library header
+- Cleanup some of the code organization issues.

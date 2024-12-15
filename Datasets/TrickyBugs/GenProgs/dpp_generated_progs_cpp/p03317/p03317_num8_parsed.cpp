@@ -1,0 +1,27 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
+int main() {
+    int N, K;
+    std::cin >> N >> K;
+
+    std::vector<int> A(N);
+    for (int i = 0; i < N; i++) {
+        std::cin >> A[i];
+    }
+
+    int min_ops = 0;
+    for (int i = 0; i < N - K; i++) {
+        min_ops++;
+    }
+    int remaining = N - min_ops * K;
+
+    if (remaining > 0) {
+        min_ops++;
+    }
+
+    std::cout << min_ops << std::endl;
+
+    return 0;
+}

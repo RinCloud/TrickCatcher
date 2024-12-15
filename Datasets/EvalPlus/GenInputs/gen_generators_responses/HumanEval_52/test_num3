@@ -1,0 +1,9 @@
+```python
+from random import *
+def sample_one():
+    length_of_list = randint(1, 10)  # Ensure at least one element in the list
+    l = [randint(-100, 100) for _ in range(length_of_list)]
+    t = randint(-100, 100)
+    generated_input = [l, t]
+    return generated_input
+```

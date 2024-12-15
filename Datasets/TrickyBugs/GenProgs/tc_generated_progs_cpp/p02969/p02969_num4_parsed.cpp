@@ -1,0 +1,13 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main() {
+    int r;
+    cin >> r;
+    
+    double area = 3 * pow(r, 2);
+    cout << (int)area << endl;
+    
+    return 0;
+}

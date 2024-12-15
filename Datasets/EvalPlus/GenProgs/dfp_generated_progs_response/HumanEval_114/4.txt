@@ -1,0 +1,9 @@
+def minSubArraySum(nums):
+    min_sum = float('inf') # initialize min_sum to positive infinity
+    current_sum = 0
+    for num in nums:
+        current_sum += num
+        min_sum = min(min_sum, current_sum) # update min_sum if necessary
+        if current_sum > 0:
+            current_sum = 0 # reset current_sum if it becomes positive
+    return min_sum

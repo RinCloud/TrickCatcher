@@ -1,0 +1,21 @@
+```python
+from random import *
+
+def sample_one():
+    # 12 months including leap year consideration
+    months = [(1, 31), (2, 29), (3, 31), (4, 30), (5, 31), (6, 30), 
+              (7, 31), (8, 31), (9, 30), (10, 31), (11, 30), (12, 31)]
+
+    # Randomly choose one month and its maximum day
+    month, max_day = choice(months)
+    # Generating day considering the max_day of the chosen month
+    day = randint(1, max_day)
+    # Randomly generating year between 1900 and 2020
+    year = randint(1900, 2020)
+
+    # Formatting date based on mm-dd-yyyy
+    date = f'{month:02d}-{day:02d}-{year}'
+
+    generated_input = [date]
+    return generated_input
+```

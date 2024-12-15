@@ -1,0 +1,13 @@
+**Repaired code**:
+
+```python
+K, X = map(int, input().split())
+if K * 500 >= X:
+    print("Yes")
+else:
+    print("No")
+```
+Explanation:
+1. The original code uses regular expression to match the input, but this is not required for this problem.
+2. The repaired code reads the input values for K and X using `input().split()` and assigns them to K and X respectively.
+3. It then checks if K * 500 is greater than or equal to X. If it is, it prints "Yes". Otherwise, it prints "No".

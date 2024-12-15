@@ -1,0 +1,10 @@
+{"input": [[""], ["a", "b", "c"], ["apple", "banana", "cherry"], ["1", "2", "3"], ["hello", "world", "!"]], "output": ""}
+{"input": [["a", "b", "c", "d"], [""], ["apple", "banana", "cherry"], ["123"], ["hello", "world", "!"]], "output": "abcd"}
+{"input": [["apple", "banana", "cherry"], ["a", "b", "c"], [""], ["apple", "banana", "cherry"], ["1", "2", "3"]], "output": "applebananacherry"}
+{"input": [["1", "2", "3"], ["a", "b", "c"], ["apple", "banana", "cherry"], [""], ["hello", "world", "!"]], "output": "123"}
+{"input": [["hello", "world", "!"], ["a", "b", "c"], ["apple", "banana", "cherry"], ["1", "2", "3"], [""], "output": "helloworld!"}
+{"input": [[""], ["apple", "banana", "cherry"], [""], ["123"], ["hello", "world", "!"]], "output": ""}
+{"input": [["a", "b", "c"], [""], ["apple", "banana", "cherry"], ["1", "2", "3"], ["hello", "world", "!"]], "output": "abc"}
+{"input": [["apple", "banana", "cherry"], [""], [""], [""], ["hello", "world", "!"]], "output": "applebananacherry"}
+{"input": [["1", "2", "3"], ["a", "b", "c"], ["apple", "banana", "cherry"], ["empty"], ["hello", "world", "!"]], "output": "123"}
+{"input": [["hello", "world", "!"], ["a", "b", "c"], ["apple", "banana", "cherry"], ["1", "2", "3"], [""]], "output": "helloworld!"}

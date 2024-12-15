@@ -1,0 +1,36 @@
+```python
+from random import *
+from cyaron import *
+
+def sample_one():
+    # Random choice for sentence end characters
+    sentence_end_characters = ['.', '?', '!']
+
+    # Number of sentences
+    num_sentences = randint(1, 10)
+    
+    sentences = []
+    for _ in range(num_sentences):
+        # Randomly determine if this sentence will start with "I"
+        starts_with_I = choice([True, False])
+
+        if starts_with_I:
+            # Generate a random sentence starting with "I"
+            sentence_length = randint(1, 5)
+            sentence = "I " + String.random(sentence_length, charset='abcdefghijklmnopqrstuvwxyz ')
+        else:
+            # Generate a random sentence not starting with "I"
+            sentence_length = randint(1, 5)
+            starting_letter = choice([chr(i) for i in range(ord('a'), ord('z')+1) if i != ord('i')])
+            sentence = starting_letter.upper() + String.random(sentence_length, charset='abcdefghijklmnopqrstuvwxyz ')
+
+        # Append the random end character
+        sentence += choice(sentence_end_characters)
+        sentences.append(sentence)
+
+    # Join the sentences to form the input string
+    S = ' '.join(sentences)
+    
+    generated_input = [S]
+    return generated_input
+```

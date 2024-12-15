@@ -1,0 +1,20 @@
+**NEW CODE**:
+
+```cpp
+#include <iostream>
+using namespace std;
+int main()
+{
+    long long int x, y, cnt = 0;
+    cin >> x >> y;
+    while (x <= y)
+    {
+        x = x * 2;
+        cnt++;
+    }
+    cout << cnt << endl;
+    return 0;
+}
+```
+
+There was a bug in the original code where the variable `cnt` was not initialized before its first use. I fixed it by initializing `cnt` to 0.

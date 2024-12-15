@@ -1,0 +1,10 @@
+{"input": [[1, 2], 5], "output": False}
+{"input": [[3, 2, 3], 1], "output": False}
+{"input": [[3, 2, 3], 9], "output": True}
+{"input": [[3], 5], "output": True}
+{"input": [[], 0], "output": True}
+{"input": [[1, 2, 1], 10], "output": False}
+{"input": [[4, 5, 4], 13], "output": True}
+{"input": [[2, 4, 6, 4, 2], 20], "output": False}
+{"input": [[1, 1, 1, 1, 2], 5], "output": True}
+{"input": [[9, 8, 4, 6, 4, 8, 9], 50], "output": True}

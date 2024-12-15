@@ -1,0 +1,33 @@
+**REPAIRED CODE**:
+
+```python
+w = input()
+letter_counts = [0] * 26
+
+for i in w:
+    index = ord(i) - ord('a') # convert letter to index from 0 to 25
+    letter_counts[index] += 1
+
+beautiful = True
+for count in letter_counts:
+    if count % 2 != 0:
+        beautiful = False
+        break
+
+if beautiful:
+    print('Yes')
+else:
+    print('No')
+```
+
+**Explanation:**
+
+The bug in the original code is that it only checks whether the XOR of the ASCII values of the characters is 0 or not. This approach does not guarantee that each lowercase letter occurs even number of times in the string. 
+
+To solve the problem, we need to count the occurrences of each lowercase letter in the string. We can create a list `letter_counts` of size 26 (since there are 26 lowercase letters) and initialize all elements to 0.
+
+Then, we iterate over each character `i` in the string `w` and increment the count of the corresponding letter by 1. To do this, we convert the character `i` to an index from 0 to 25 by subtracting the ASCII value of `'a'` from the ASCII value of the character `i`. We can use this index to access and update the count in the `letter_counts` list.
+
+After counting the occurrences of each letter, we check if any count is odd. If we find any odd count, we set the `beautiful` flag to False and break out of the loop. Otherwise, if all counts are even, the string is beautiful.
+
+Finally, we check the value of the `beautiful` flag. If it is True, we print 'Yes', indicating that the string is beautiful. Otherwise, if it is False, we print 'No'.

@@ -1,0 +1,11 @@
+```python
+from random import *
+
+def sample_one():
+    numbers = []
+    length_of_numbers = randint(2, 10)  # Ensure at least two numbers
+    for _ in range(length_of_numbers):
+        numbers.append(uniform(-100, 100))
+    generated_input = [numbers]
+    return generated_input
+```

@@ -1,0 +1,12 @@
+def search(lst):
+    counts = {}
+    for num in lst:
+        if num in counts:
+            counts[num] += 1
+        else:
+            counts[num] = 1
+    result = -1
+    for num in counts:
+        if counts[num] >= num and num > result:
+            result = num
+    return result

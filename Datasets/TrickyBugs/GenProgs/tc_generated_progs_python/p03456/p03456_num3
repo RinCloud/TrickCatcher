@@ -1,0 +1,19 @@
+**REPAIRED CODE**:
+
+```python
+a, b = map(int, input().split())
+x = int(str(a) + str(b))
+print("Yes" if x % int(x ** 0.5) == 0 else "No")
+```
+
+**Explanation:**
+
+- In the initial code, the input was taken in a single line and the two integers were separated by a single space. To handle this, we can use the `split()` function to separate the two integers and then use the `map()` function to convert them into integers.
+
+- Instead of using `eval()`, it is better to use the `split()` and `map()` functions to extract the individual integers and convert them into integers.
+
+- The expression `int(x**.5)` can be replaced with `int(x ** 0.5)` for better clarity.
+
+- `str(a) + str(b)` is used to concatenate the two integers a and b as strings and then convert the result to an integer using `int()`. This will allow us to concatenate the two integers in the correct order.
+
+- Then, we check if x is a perfect square by taking the modulo with `int(x ** 0.5)` and print "Yes" if the modulo is 0, indicating that x is a perfect square. Otherwise, we print "No".

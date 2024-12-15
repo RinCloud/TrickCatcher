@@ -1,0 +1,44 @@
+```cpp
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+bool canObtain(string S) {
+    int n = S.length();
+    string T = "";
+
+    while (n > 0) {
+        if (n >= 5 && S.substr(n-5, 5) == "dream") {
+            T += "dream";
+            n -= 5;
+        } else if (n >= 7 && S.substr(n-7, 7) == "dreamer") {
+            T += "dreamer";
+            n -= 7;
+        } else if (n >= 5 && S.substr(n-5, 5) == "erase") {
+            T += "erase";
+            n -= 5;
+        } else if (n >= 6 && S.substr(n-6, 6) == "eraser") {
+            T += "eraser";
+            n -= 6;
+        } else {
+            return false;
+        }
+    }
+
+    return T == S;
+}
+
+int main() {
+    string S;
+    cin >> S;
+
+    if (canObtain(S)) {
+        cout << "YES" << endl;
+    } else {
+        cout << "NO" << endl;
+    }
+
+    return 0;
+}
+```

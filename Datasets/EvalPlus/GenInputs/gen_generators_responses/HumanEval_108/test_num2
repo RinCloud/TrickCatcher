@@ -1,0 +1,9 @@
+```python
+from random import *
+
+def sample_one():
+    arr_length = randint(0, 15) # Generating array length between 0 to 15
+    arr = [randint(-100, 100) for _ in range(arr_length)] # Generating integers between -100 and 100
+    generated_input = [arr]
+    return generated_input
+```

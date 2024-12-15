@@ -1,0 +1,45 @@
+**FIXED CODE**:
+
+```
+#include <bits/stdc++.h>
+#define rep(i, n) for (int i = 0; i < n; i++)
+typedef long long ll;
+using namespace std;
+
+int main() {
+    int n;
+    cin >> n;
+    vector<bitset<10>> f(n);
+    vector<vector<int>> p(n,vector<int>(11));
+
+    rep(i, n) {
+        string s = "";
+        rep(j, 10) {
+            char c;
+            cin >> c;
+            s += c;
+        }
+        f[i] = bitset<10>(s);
+    }
+
+    rep(i, n) {
+        rep(j, 11) {
+            cin >> p[i][j];
+        }
+    }
+
+    ll ans = -1e9;
+    for (int bit = 1; bit < (1 << 10); bit++) {
+        bitset<10> b(bit);
+        ll now = 0;
+        rep(i, n) {
+            now += p[i][(b & f[i]).count()];
+        }
+        ans = max(ans, now);
+    }
+
+    cout << ans << endl;
+    return 0;
+}
+
+```

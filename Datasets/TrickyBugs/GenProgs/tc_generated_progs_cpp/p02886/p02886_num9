@@ -1,0 +1,21 @@
+**REPAIRED CODE**:
+
+```
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+  int N;
+  cin >> N;
+  int a,b,c,s;
+  cin >> b;
+  s = 0; //initialize s to 0
+  for (int i = 0; i < N-1; ++i) {
+    cin >> a;
+    s += a*b;
+    b += a;
+  }
+ 
+  cout << s;
+}
+```

@@ -1,0 +1,10 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+  string S;
+  cin >> S;
+  int ans = 0;
+  for (auto a : S) ans += a - '0';
+  cout << ((ans % 9 == 0) ? "Yes" : "No") << "\n";
+}

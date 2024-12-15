@@ -1,0 +1,7 @@
+```python
+from random import *
+def sample_one():
+    numbers = [uniform(-10, 10) for _ in range(randint(2, 10))]
+    generated_input = [numbers]
+    return generated_input
+```

@@ -1,0 +1,51 @@
+**REPAIRED CODE**:
+
+#include <iostream>
+#include <vector>
+#include <algorithm>
+using namespace std;
+typedef long long ll;
+typedef pair<ll, ll> pll;
+
+const int MaxN = 303;
+int n, m;
+vector<vector<int> > a(MaxN);
+
+int main() {
+	cin >> n >> m;
+	a.resize(n + 1, vector<int>(m + 1));
+	for (int i = 1; i <= n; ++i) {
+		for (int j = 1; j <= m; ++j) {
+			cin >> a[i][j];
+		}
+	}
+
+	vector<int> cnt(m + 1, 0);
+	vector<bool> f(m + 1, false);
+
+	for (int i = 1; i <= n; ++i) {
+		cnt[a[i][1]]++;
+	}
+
+	int ans = *max_element(cnt.begin(), cnt.end());
+
+	for (int i = 2; i <= m; ++i) {
+		fill(cnt.begin(), cnt.end(), 0);
+		fill(f.begin(), f.end(), false);
+
+		for (int j = 1; j <= n; ++j) {
+			int p = 1;
+			while (p <= m && (f[a[j][p]] || a[j][p] != i)) p++;
+			cnt[a[j][p]]++;
+			if (a[j][p] == i) {
+				f[a[j][p]] = true;
+			}
+		}
+
+		int maxCnt = *max_element(cnt.begin()+1, cnt.end());
+		ans = min(ans, maxCnt);
+	}
+
+	cout << ans << endl;
+	return 0;
+}

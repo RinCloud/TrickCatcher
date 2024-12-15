@@ -1,0 +1,60 @@
+```cpp
+#include<bits/stdc++.h>
+#define rep(i, l, r) for(int i = (l), i##end = (r);i <= i##end;++i)
+#define pb push_back
+using std::cin; using std::cout;
+const int maxn = 100200;
+typedef std::pair<int, int> pr;
+int n, m, q;
+int a[maxn], b[maxn], c[maxn];
+int tg[maxn];
+std::vector<int> v, vc0[maxn];
+std::multiset<int> vc1[maxn];
+inline int find(int x){ return std::lower_bound(v.begin(), v.end(), x) - v.begin() + 1; }
+int pre[maxn], tag[maxn], add[maxn];
+int main() {
+	std::ios::sync_with_stdio(false), cin.tie(0), cout.tie(0);
+	cin >> n;
+	rep(i, 1, n) cin >> a[i] >> b[i];
+	rep(i, 1, n + 1) cin >> c[i], v.pb(c[i]);
+	std::sort(v.begin(), v.end()), v.erase(std::unique(v.begin(), v.end()), v.end()), m = v.size();
+	rep(i, 1, n) {
+		a[i] = find(a[i]), b[i] = find(b[i]);
+		++ tag[m], -- tag[a[i] - 1];
+		if(b[i] < a[i]) {
+			vc0[a[i] - 1].pb(b[i]);
+			vc1[b[i]].insert(a[i] - 1);
+		}
+	}
+	rep(i, 1, n + 1) ++ tag[find(c[i]) - 1], --tag[m];
+	std::priority_queue<pr, std::vector<pr>, std::greater<pr>> hp0;
+	std::priority_queue<int> hp1;
+	int ans = n;
+	for(int i = m;i >= 1;--i) {
+		for(int x : vc0[i]) hp0.push(pr(x, i));
+		for(;tag[i] + tag[i + 1] < -1 && hp0.size();hp0.pop()) {
+			int x = hp0.top().first;
+			++ tag[i], -- tag[x - 1], -- ans;
+			++ add[i + 1], -- add[hp0.top().second + 1];
+			vc1[x].erase(vc1[x].find(hp0.top().second));
+		}
+		if((tag[i] += tag[i + 1]) < -1)
+			ans = -1e9;
+	}
+	*pre = ans;
+	for(int i = 1;i <= m;++i) {
+		add[i] += add[i - 1];
+		for(int x : vc1[i]) hp1.push(x);
+		for(;tag[i] + add[i] < 0 && hp1.size();hp1.pop()) ++ add[i], --add[hp1.top() + 1], -- ans;
+		if(tag[i] + add[i] < 0) ans = -1e9;
+		pre[i] = ans;
+	}
+	cin >> q;
+	rep(i, 1, q) {
+		int x, y, ans;
+		cin >> x >> y;
+		ans = std::max(pre[find(x)] + 1, pre[find(y)]);
+		cout << (ans < 0 ? -1 : ans) << '\n';
+	}
+}
+```

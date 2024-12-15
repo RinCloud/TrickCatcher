@@ -1,0 +1,14 @@
+**Test Inputs**:
+
+```
+[['hi', 'admin'], ['hI', 'Hi', 'Hello']]
+[['4'], []]
+[['1', '2', '3'], ['4', '5', '6']]
+[['hello'], ['world', 'foo', 'bar']]
+[['A', 'B', 'C'], ['D', 'E']]
+[['apple', 'banana'], ['orange', 'pear', 'grape']]
+[['a', 'b', 'c'], ['d', 'e', 'f', 'g']]
+[[], []]
+[['hello', 'world'], ['HELLO', 'WORLD']]
+[['a', 'a', 'b'], ['a', 'b', 'b', 'c']]
+```

@@ -1,0 +1,10 @@
+{"input": [[1, 4, 3, 34, 653, 2, 5], [5, 7, 1, 5, 9, 653, 121]], "output": [1, 5, 653]}
+{"input": [[5, 3, 2, 8], [3, 2]], "output": [2, 3]}
+{"input": [[1, 4, 3, 34, 653, 2, 5], [5, 7, 9, 653, 121]], "output": [5, 653]}
+{"input": [[2], [1]], "output": []}
+{"input": [[], []], "output": []}
+{"input": [[-1, -2, -3], [-2, -3]], "output": [-3, -2]}
+{"input": [[-1.5, -4.3, 3.2], [3.2, -4.3]], "output": [-4.3, 3.2]}
+{"input": [["apple", "banana", "cherry"], ["banana", "apple", "cherry"]], "output": ["apple", "banana", "cherry"]}
+{"input": [["apple"], []], "output": []}
+{"input": [["apple", "banana"], ["banana"]], "output": ["banana"]}

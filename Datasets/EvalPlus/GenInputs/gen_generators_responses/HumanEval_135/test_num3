@@ -1,0 +1,13 @@
+```python
+from random import *
+from cyaron import *
+
+def sample_one():
+    arr_length = randint(1, 10)
+    arr = sorted(sample(range(1, 100), arr_length))
+    if randint(0, 1) == 1:  # Randomly decide if to introduce an element that violates the condition
+        violate_index = randint(1, arr_length - 1)
+        arr[violate_index] = arr[violate_index - 1] - 1  # Ensure the element violates the condition
+    generated_input = [arr]
+    return generated_input
+```

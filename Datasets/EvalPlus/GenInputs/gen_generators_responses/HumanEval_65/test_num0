@@ -1,0 +1,9 @@
+```python
+from random import randint
+
+def sample_one():
+    x = randint(0, 99999)  # Generate a random integer between 0 and 99999
+    shift = randint(0, 20)  # Generate a random integer between 0 and 20 for shift
+    generated_input = [x, shift]
+    return generated_input
+```

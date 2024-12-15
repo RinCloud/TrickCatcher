@@ -1,0 +1,10 @@
+{"input": [[""], ""], "output": ""}
+{"input": [["a", "b", "c"], ""], "output": "abc"}
+{"input": [["", "b", "c"], ""], "output": ""}
+{"input": [["a", "", "c"], ""], "output": ""}
+{"input": [[1, 2, 3], ""], "output": ""}
+{"input": [["a", "b", "c"], " "], "output": "a b c"}
+{"input": [["a", "b", "c"], "123"], "output": "a123b123c"}
+{"input": [["a b", "c"], " "], "output": "a b c"}
+{"input": [["a", "b", "c"], "xyz"], "output": "axyzbxyzc"}
+{"input": [["a", "b", "c"], 123], "output": ""}

@@ -1,0 +1,78 @@
+**CODE**:
+```
+#include <bits/stdc++.h>
+#define rep(i,n) for ((i)=1;(i)<=(n);(i)++)
+#define repd(i,n) for ((i)=(n);(i)>=1;(i)--)
+using namespace std;
+
+int n,m;
+int i,j;
+int a[200005],d[200005],lim[25];
+int tor[200005][25],tol[200005][25];
+int dppre[1<<19],dpsuf[1<<19];
+
+void calc(int x){
+	int i;
+	rep(i,n){
+		tor[i][x]=tor[i-1][x];
+		if(tor[i][x]<i-1){	// FIXED
+			tor[i][x]=i;
+			while(tor[i][x]<n&&d[tor[i][x]]<=lim[x]){
+				tor[i][x]++;
+			}
+		}
+	}
+	tol[n+1][x]=n+1;
+	repd(i,n){
+		tol[i][x]=tol[i+1][x];
+		if(tol[i][x]>i+1){	// FIXED
+			tol[i][x]=i;
+			while(tol[i][x]>1&&d[tol[i][x]-1]<=lim[x]){
+				tol[i][x]--;
+			}
+		}
+	}
+}
+
+int main(){
+	cin>>n>>lim[m=1];
+	rep(i,n) cin>>a[i];
+	rep(i,n-1) d[i]=a[i+1]-a[i];
+	while(lim[m]>0){
+		m++;
+		lim[m]=lim[m-1]/2;
+	}
+	rep(i,m){
+		calc(i+1); // FIXED
+	}
+	int c=0;
+	for(i=1;i<=n;i=tor[i][1]+1)c++;
+	if(c>m+1){
+		rep(i,n){
+			puts("Impossible");
+			return 0;
+		}
+	}
+	for(i=0;i<(1<<(m-1));i++){
+		dppre[i]=0;dpsuf[i]=n+1;
+		for(j=0;j<(m-1);j++)if((i>>j)&1){
+			dppre[i]=max(dppre[i],tor[dppre[i^(1<<j)]+1][j+2]);
+			dpsuf[i]=min(dpsuf[i],tol[dpsuf[i^(1<<j)]-1][j+2]);
+		}
+	}
+	
+	for(i=1;i<=n;i=tor[i][1]+1){
+		int f=0;
+		for(j=0;j<(1<<(m-1));j++){
+			f|=(dppre[j]>=i-1&&dpsuf[((1<<m-1)-1)^j]<=tor[i][1]+1);
+		}
+		if(f){
+			rep(j,tor[i][1]-i+1) puts("Possible");
+		}
+		else{
+			rep(j,tor[i][1]-i+1) puts("Impossible");
+		}
+	}
+	return 0;
+}
+```

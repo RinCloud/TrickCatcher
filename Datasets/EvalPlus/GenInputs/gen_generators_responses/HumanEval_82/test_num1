@@ -1,0 +1,9 @@
+```python
+from cyaron import *
+
+def sample_one():
+    length = randint(1, 30)  # Assuming a realistic max length of 30 to keep it within given prime checks
+    random_string = String.random(length)
+    generated_input = [random_string]
+    return generated_input
+```

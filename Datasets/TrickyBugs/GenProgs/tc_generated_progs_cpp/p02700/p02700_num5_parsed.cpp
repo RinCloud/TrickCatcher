@@ -1,0 +1,13 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main() {
+  int A,B,C,D;
+  cin >> A >> B >> C >> D;
+
+  if ((A + D - 1) / D >= (C + B - 1) / B) {
+    cout << "Yes" << endl;
+  }
+  else {
+    cout << "No" << endl;
+  }
+}

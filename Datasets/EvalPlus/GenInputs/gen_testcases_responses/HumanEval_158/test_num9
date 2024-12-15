@@ -1,0 +1,10 @@
+{"input": [["name", "of", "string"]], "output": "string"}
+{"input": [["name", "enam", "game"]], "output": "enam"}
+{"input": [["aaaaaaa", "bb" ,"cc"]], "output": "aaaaaaa"}
+{"input": [["name", "animal", "a"]], "output": "name"}
+{"input": [["cat", "hat", "bat"]], "output": "hat"}
+{"input": [["one", "two", "three"]], "output": "three"}
+{"input": [["apple", "banana", "cherry"]], "output": "cherry"}
+{"input": [["banana", "blueberry", "cherry"]] "output": "blueberry"}
+{"input": [[]], "output": None}
+{"input": [["a", "aa", "aaa", "aaaa"]], "output": "aaa"}

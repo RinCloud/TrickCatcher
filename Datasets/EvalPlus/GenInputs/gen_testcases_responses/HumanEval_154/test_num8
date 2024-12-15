@@ -1,0 +1,10 @@
+{"input": ["abcd", "abd"], "output": False}
+{"input": ["hello", "ell"], "output": True}
+{"input": ["whassup", "psus"], "output": False}
+{"input": ["abab", "baa"], "output": True}
+{"input": ["efef", "eeff"], "output": False}
+{"input": ["himenss", "simen"], "output": True}
+{"input": ["abcde", "abcd"], "output": True}
+{"input": ["xyzxyz", "zxy"], "output": True}
+{"input": ["aaaaa", "aaaa"], "output": True}
+{"input": ["apple", "pple"], "output": False}

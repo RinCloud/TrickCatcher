@@ -1,0 +1,40 @@
+# Program
+
+```python
+def shortest_non_subsequence(s):
+    n = len(s)
+    ans = ""
+
+    # Check for each character from 'a' to 'z'
+    for c in range(ord('a'), ord('z')+1):
+        target = chr(c)
+        idx = 0
+
+        # Find the first occurrence of target character in s
+        # starting from idx
+        while idx < n and s[idx] != target:
+            idx += 1
+
+        # If target character is not found in s, then
+        # it is the shortest non-subsequence
+        if idx == n:
+            ans = target
+            break
+    
+    # If no non-subsequence is found, then empty string
+    # is the shortest non-subsequence
+    if ans == "":
+        ans = ""
+
+    return ans
+
+# Read the input string
+s = input()
+
+# Find the shortest non-subsequence string
+result = shortest_non_subsequence(s)
+
+# Print the result
+print(result)
+```
+Note: Your code should read input from standard input (e.g. using `input()` function) and write output to standard output (e.g. using `print()` function).

@@ -1,0 +1,10 @@
+{"input": ["Hello world"], "output": "3e25960a79dbc69b674cd4ec67a72c62"}
+{"input": [""], "output": None}
+{"input": ["Python is awesome"], "output": "c736778b3fd88ef4d707f21585d1cb62"}
+{"input": ["MD5 Hash"], "output": "eb920c2d6ae603f9adc4373b0cdc4861"}
+{"input": ["abcdefghijklmnopqrstuvwxyz"], "output": "c3fcd3d76192e4007dfb496cca67e13b"}
+{"input": ["123456789"], "output": "25f9e794323b453885f5181f1b624d0b"}
+{"input": ["     Spaces     "], "output": "6abaf8744b4af897ad1949b32a87c3f7"}
+{"input": ["  Leading and trailing spaces  "], "output": "c4472121f8bfb1ad9496088f17c2d982"}
+{"input": ["!@#$%^&*()"], "output": "d41d8cd98f00b204e9800998ecf8427e"}
+{"input": ["\nMultiple\n\nLines\n"], "output": "07acdc305fcb4c561b0afb6b3aee6fa8"}

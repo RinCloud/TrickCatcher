@@ -1,0 +1,30 @@
+# Solution
+
+### Approach
+
+Let's start by counting the number of occurrences of each integer using a dictionary. We'll iterate through the list of balls and keep a count of the occurrences of each integer. Then, we can use this count to calculate the number of ways to choose two distinct balls with the same integer.
+
+For each ball, we can calculate the number of ways by subtracting the count of that integer by 1. Since we are disregarding order, dividing the result by 2 will give us the number of ways to choose two distinct balls.
+
+### Plan
+
+1. Read the integer N from input.
+2. Read the list of integers A from input.
+3. Create an empty dictionary called `count` to store the count of occurrences for each integer.
+4. Iterate through the list of balls, `A`, and update the count for each integer in `count`.
+5. For each ball, print the number of ways to choose two distinct balls with the same integer, which is `(count[A[i]] - 1) // 2`.
+
+Let's write the code now.
+
+```python
+N = int(input())
+A = list(map(int, input().split()))
+
+count = {}
+
+for ball in A:
+    count[ball] = count.get(ball, 0) + 1
+
+for i in range(N):
+    print((count[A[i]] - 1) // 2)
+```

@@ -1,0 +1,45 @@
+# Solution
+
+First, we need to sort the logs in decreasing order of length.
+Then, we will iterate over the sorted logs and perform the following steps:
+
+1. Initialize the maximum length to the length of the longest log.
+2. Calculate the number of cuts needed to reduce the length of the current log to the maximum length. This can be done by subtracting the maximum length from the current log's length and dividing by 2 (rounding up).
+3. Subtract the number of cuts from the total number of available cuts.
+4. If the total number of available cuts becomes negative, break the loop.
+5. Update the maximum length to the current log's length.
+6. Continue to the next log.
+
+Finally, print the maximum length rounded up to the nearest integer.
+
+```python
+import math
+
+# Input
+N, K = map(int, input().split())
+logs = list(map(int, input().split()))
+
+# Sort logs in decreasing order
+logs.sort(reverse=True)
+
+# Initialize maximum length to length of longest log
+max_length = logs[0]
+
+# Iterate over sorted logs
+for i in range(N):
+    # Calculate number of cuts needed
+    cuts = math.ceil((logs[i] - max_length) / 2)
+    
+    # Subtract number of cuts from available cuts
+    K -= cuts
+    
+    # If total cuts become negative, break
+    if K < 0:
+        break
+    
+    # Update maximum length
+    max_length = logs[i]
+
+# Output
+print(math.ceil(max_length))
+```

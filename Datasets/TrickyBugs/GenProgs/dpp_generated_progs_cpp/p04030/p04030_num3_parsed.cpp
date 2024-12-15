@@ -1,0 +1,25 @@
+#include <iostream>
+#include <string>
+
+int main() {
+    std::string s;
+    std::cin >> s;
+
+    std::string editorString;
+
+    for (char c : s) {
+        if (c == '0') {
+            editorString += '0';
+        } else if (c == '1') {
+            editorString += '1';
+        } else if (c == 'B') {
+            if (!editorString.empty()) {
+                editorString.pop_back();
+            }
+        }
+    }
+
+    std::cout << editorString << std::endl;
+
+    return 0;
+}

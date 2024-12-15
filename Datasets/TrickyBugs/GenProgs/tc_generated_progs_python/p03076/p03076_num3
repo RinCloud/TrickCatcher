@@ -1,0 +1,18 @@
+**REPAIRED CODE**:
+
+```python
+A=int(input())
+ans=0
+
+for i in range(4):
+    B=int(input())
+    if A%10 > B%10 > 0:
+        A,B=B,A
+    ans += -(-B//10) * 10
+
+print(A + ans)
+```
+
+**Explanation**:
+ - The code has a bug where it orders the dishes in the wrong order if the time required to serve the current dish is greater than the remaining time. The dishes should be ordered such that the smallest dish is served first to minimize the delivery time.
+ - I have fixed the bug by rearranging the order of dishes if required in the `if` statement.

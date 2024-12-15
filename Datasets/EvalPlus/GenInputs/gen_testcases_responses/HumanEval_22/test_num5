@@ -1,0 +1,10 @@
+{"input": [['a', 3.14, 5]], "output": [5]}
+{"input": [[1, 2, 3, 'abc', {}, []]], "output": [1, 2, 3]}
+{"input": [['a', 'b', 'c']], "output": []}
+{"input": [[1.0, 2.0, 3.0]], "output": [1, 2, 3]}
+{"input": [[True, False, True]], "output": []}
+{"input": [[1, '2', 3.5]], "output": [1]}
+{"input": [[None, True, False]], "output": []}
+{"input": [[1, 2, 3]] ,  "output": [1, 2, 3]}
+{"input": [['hello', 'world']], "output": []}
+{"input": [[1, '2', 3, '4', 5]], "output": [1, 3, 5]}

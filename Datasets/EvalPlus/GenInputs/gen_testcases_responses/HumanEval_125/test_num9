@@ -1,0 +1,10 @@
+{"input": "Hello world!", "output": ["Hello", "world!"]}
+{"input": "Hello,world!", "output": ["Hello", "world!"]}
+{"input": "abcdef", "output": 3}
+{"input": "Programming", "output": ["Programming"]}
+{"input": "1234", "output": 0}
+{"input": "x,y,z", "output": ["x", "y", "z"]}
+{"input": "I-like-coding", "output": ["I-like-coding"]}
+{"input": "Ａｐｐｌｅ Ｐｅｎ", "output": ["Ａｐｐｌｅ", "Ｐｅｎ"]}
+{"input": "Short", "output": ["Short"]}
+{"input": "Long,long,long,long", "output": ["Long", "long", "long", "long"]}

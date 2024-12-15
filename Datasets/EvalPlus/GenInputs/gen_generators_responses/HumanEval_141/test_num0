@@ -1,0 +1,38 @@
+```python
+from random import *
+from cyaron import *
+
+def sample_one():
+    # Generate a prefix with random starting character and random length
+    valid_start_char = String.random(1, charset="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz")
+    prefix_length = randint(0, 5)
+    prefix_middle = String.random(prefix_length, charset="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789")
+
+    # Ensure the total prefix meets the digits requirement
+    digits_in_prefix = sum(c.isdigit() for c in prefix_middle)
+    if digits_in_prefix > 3:
+        prefix_middle = ''.join(filter(str.isalpha, prefix_middle))  # Remove digits if more than allowed
+
+    # Decide whether to generate a valid file name or not
+    is_valid = choice([True, False])
+    if is_valid:
+        # Generate a valid extension
+        extension = choice(['txt', 'exe', 'dll'])
+    else:
+        # Generate an invalid extension; either empty, starts with a number, or wrong string
+        bad_extensions = ['', '123', 'unsupported']
+        extension = choice(['txt', 'exe', 'dll'] + bad_extensions) if randint(0, 1) else String.random(3, charset='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789')
+    
+    # Decide the position of the dot and additional invalid characters if not a valid case
+    if is_valid or prefix_middle:
+        file_name = f"{valid_start_char}{prefix_middle}.{extension}"
+    else:
+        file_name = f".{extension}"  # Invalid because there's no prefix
+
+    # Inject more than one dot for an invalid case occasionally
+    if not is_valid and randint(0, 1):
+        file_name = file_name.replace('.', '..', 1)
+    
+    generated_input = [file_name]
+    return generated_input
+```

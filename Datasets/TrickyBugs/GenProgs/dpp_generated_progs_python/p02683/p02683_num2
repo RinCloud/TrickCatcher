@@ -1,0 +1,47 @@
+```python
+import sys
+
+def main():
+    # Read input
+    N, M, X = map(int, sys.stdin.readline().split())
+
+    # Initialize variables
+    min_cost = float('inf')
+
+    # Read cost and skills of each book
+    books = []
+    for _ in range(N):
+        c, *skills = map(int, sys.stdin.readline().split())
+        books.append((c, skills))
+
+    # Iterate through all possible combinations of books
+    for i in range(1, 2**N):
+        # Keep track of the current combination cost and skills
+        cost = 0
+        skills = [0] * M
+
+        # Iterate through each book in the combination
+        for j in range(N):
+            # Check if the book is included in the combination
+            if (i >> j) & 1:
+                # Add the cost of the book
+                cost += books[j][0]
+
+                # Update the skills
+                for k in range(M):
+                    skills[k] += books[j][1][k]
+
+        # Check if the combination meets the objective
+        if all(skill >= X for skill in skills):
+            min_cost = min(min_cost, cost)
+
+    # Print the result
+    if min_cost == float('inf'):
+        print(-1)
+    else:
+        print(min_cost)
+
+
+if __name__ == '__main__':
+    main()
+```

@@ -1,0 +1,8 @@
+The code provided does not check if the number of syllables in each phrase matches the required Haiku pattern (5-7-5).
+
+Here is the correct and repaired code:
+
+```python
+a, b, c = map(int, input().split())
+print('YES' if a == 5 and b == 7 and c == 5 else 'NO')
+```

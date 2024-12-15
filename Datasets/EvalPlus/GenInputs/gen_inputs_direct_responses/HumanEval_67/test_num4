@@ -1,0 +1,12 @@
+Possible inputs to test the function:
+
+1. ["5 apples and 6 oranges", 19]
+2. ["0 apples and 1 oranges", 3]
+3. ["2 apples and 3 oranges", 100]
+4. ["100 apples and 1 oranges", 120]
+5. ["10 apples and 0 oranges", 50]
+6. ["1 apple and 1 orange", 2]
+7. ["3 apples and 5 oranges", 30]
+8. ["7 apples and 2 oranges", 50]
+9. ["15 apples and 12 oranges", 150]
+10. ["8 apples and 9 oranges", 100]

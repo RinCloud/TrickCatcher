@@ -1,0 +1,45 @@
+#include <iostream>
+#define M 998244353
+
+using namespace std;
+
+long long v[400005];
+long long putere(long long n,long long p)
+{
+    long long power=1;
+    while(p)
+    {
+        if(p%2==1)
+            power=(power*n)%M;
+        n=(n*n)%M;
+        p/=2;
+    }
+    return power;
+}
+long long C(int n,int nr)
+{
+    return v[n]*putere(v[nr],M-2)%M*putere(v[n-nr],M-2)%M;
+}
+int main()
+{
+    int n,A,B;
+    long long k;
+    cin>>n>>A>>B>>k;
+    long long sol=0;
+    v[0]=1;
+    for(int i=1;i<=n;i++)
+        v[i]=v[i-1]*i%M;
+    for(int a=0;a<=n;a++)
+    {
+        if(k-A*a>=0 && (k-A*a)%B==0)
+        {
+            if((k-A*a)/B<=n)
+            {
+                int b=(k-A*a)/B;
+                sol=(sol+C(n,a)*C(n,b))%M;
+            }
+        }
+    }
+    cout<<sol;
+    return 0;
+}

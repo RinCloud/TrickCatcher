@@ -1,0 +1,10 @@
+{"input": ["I am bored. Let's play a game."], "output": 1}
+{"input": ["Hello world. I love Python. I am excited."], "output": 1}
+{"input": ["I am feeling great today."], "output": 1}
+{"input": ["The weather is nice today. I am going for a walk."], "output": 1}
+{"input": ["I", "am", "bored."], "output": 1}
+{"input": ["I am not bored at all."], "output": 1}
+{"input": ["I am bored. I need some new activities."], "output": 2}
+{"input": ["Let's have some fun today. I am excited."], "output": 0}
+{"input": ["This is an interesting book. I can't put it down."], "output": 1}
+{"input": ["I", "love", "to", "explore", "new", "places."], "output": 1}

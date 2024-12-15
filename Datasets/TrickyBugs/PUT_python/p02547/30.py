@@ -1,0 +1,1 @@
+print('NYoe s'['000'in''.join(str(eval(t.replace(*' -')))for t in open(0))::2])

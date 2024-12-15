@@ -1,0 +1,11 @@
+```python
+from random import *
+from cyaron import *
+
+def sample_one():
+    words = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine']
+    length_of_numbers = randint(1, 10)  # generate a random length for the string between 1 and 10
+    numbers = ' '.join(choices(words, k=length_of_numbers))  # randomly pick words and join them with space
+    generated_input = [numbers]
+    return generated_input
+```

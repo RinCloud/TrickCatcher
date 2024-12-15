@@ -1,0 +1,3 @@
+**Test Input Reasoning:**
+
+I will start with the simplest scenario where the input array `nums` has only one element. This will test the function's capability to handle the smallest possible input.

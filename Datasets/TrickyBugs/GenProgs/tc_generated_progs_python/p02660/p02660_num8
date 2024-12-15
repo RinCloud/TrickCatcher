@@ -1,0 +1,29 @@
+**BUG FIX**:
+There is a bug in the above code. It does not handle the case when the remaining number `n` after all the divided operations is greater than 1. In such cases, the code incorrectly increment the `answer` variable by 1. 
+
+To fix this bug, we need to add an additional condition to check if `n` is greater than 1 after the inner while loop ends. If it is, we increment `answer` by 1.
+
+Here is the complete code with the bug fix:
+
+```python
+import math
+
+n = int(input())
+m = n
+
+answer = 0
+i = 2
+while i ** 2 <= m:
+    t = 0
+    while n % i == 0:
+        n //= i
+        t += 1
+    answer += int((-1+math.sqrt(1+8*t)) / 2)
+    i += 1
+
+if n > 1:
+    answer += 1
+
+print(answer)
+```
+With this fix, the code should now handle the case correctly and return the maximum number of times the operation can be applied.

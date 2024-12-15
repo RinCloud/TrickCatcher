@@ -1,0 +1,11 @@
+```python
+from cyaron import *
+
+def sample_one():
+    random_length = randint(0, 20) # Generate a random length for the test string
+    random_test_string = String.random(random_length, charset=ALPHABET_SMALL) # Generate a random string of lowercase letters
+    # Formatting the generated string to follow the function's required input format
+    formatted_test_string = ' '.join(random_test_string)
+    generated_input = [formatted_test_string]
+    return generated_input
+```

@@ -1,0 +1,42 @@
+**FIXED CODE**:
+
+```cpp
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    string w;
+    cin >> w;
+    
+    int count[26] = {0};
+    for(char c : w ) {
+        count[c-'a']++;
+    }
+  
+    bool beautiful = true;
+    for(int i=0; i<26; i++) {
+        if(count[i] % 2 != 0) {
+            beautiful = false;
+            break;
+        }
+    }
+  
+    if (beautiful)
+        cout << "Yes";
+    else
+        cout << "No";
+  
+    return 0;
+}
+```
+
+**EXPLANATION**:
+
+The original code used a bitwise XOR operator (`^`) to determine whether the string is beautiful or not, which is incorrect. The XOR operator is not suitable for this problem because it only checks if the number of set bits is odd or even, while we need to check if the count of each character is even or odd.
+
+The fixed code uses an array `count[26]` to count the occurrences of each lowercase letter in the string `w`. The array is initialized with all elements set to 0. Then, we iterate over each character in `w` and increment the corresponding count in the `count` array.
+
+After counting the occurrences of each letter, we iterate over the `count` array and check if any count is odd. If we find any odd count, we set the `beautiful` flag to false and break out of the loop.
+
+Finally, we check the value of the `beautiful` flag and output "Yes" if it is true, and "No" otherwise.

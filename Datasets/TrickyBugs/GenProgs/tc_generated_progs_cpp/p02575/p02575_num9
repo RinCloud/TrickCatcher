@@ -1,0 +1,56 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+const int MAXN = 200005;
+const int MAX = 100000000;
+
+int tree[4 * MAXN], flag[4 * MAXN];
+
+void push(int i, int L, int R){
+	if(flag[i] == -1)return;
+	
+	if(L < R){
+		flag[2 * i] = flag[i];
+		flag[2 * i + 1] = flag[i];
+	}
+	
+	tree[i] = flag[i] + L;
+	flag[i] = -1;
+}
+
+int search(int i, int L, int R, int u){
+	push(i, L, R);
+	
+	if(L == R){
+		return tree[i];
+	}
+	
+	int mid = (L + R) / 2;
+	if(u <= mid)return search(2 * i, L, mid, u);
+	else return search(2 * i + 1, mid + 1, R, u);
+}
+
+int h, w, a[MAXN], b[MAXN];
+
+int main(){
+	scanf("%d %d", &h, &w);
+	
+	memset(flag, -1, sizeof flag);
+	
+	for(int i = 0; i < h; i++){
+		scanf("%d %d", &a[i], &b[i]);
+		a[i]--, b[i]--;
+		
+		if(a[i] == 0){
+			update(1, 0, w - 1, a[i], b[i], MAX);
+		}else{
+			int r = search(1, 0, w - 1, a[i] - 1);
+			update(1, 0, w - 1, a[i], b[i], r - (a[i] - 1));
+		}
+		
+		if(tree[1] >= MAX)printf("-1\n");
+		else printf("%d\n", tree[1] + i + 1);
+	}
+	
+	return 0;
+}

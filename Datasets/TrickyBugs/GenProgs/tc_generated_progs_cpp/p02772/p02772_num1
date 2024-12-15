@@ -1,0 +1,26 @@
+**Repaired Code**:
+
+```cpp
+#include<bits/stdc++.h>
+using namespace std;
+ 
+int main(){ 
+    int n, s = 0;
+    cin >> n; 
+    for(int i = 0; i < n; i++){
+        int a;
+        cin >> a;
+        if(a % 2 == 0 && (a % 3 != 0 && a % 5 != 0)){
+            s++;
+        }
+    }
+    if(s > 0){
+        cout << "DENIED" << endl;
+    }
+    else{
+        cout << "APPROVED" << endl;
+    }
+}
+```
+
+Note: The bug in the original code was in the condition for whether the number `a` was divisible by 3 or 5. In the original code, if `a` was not divisible by 3 and 5, `s` was incremented, which is incorrect. The repaired code fixes this by modifying the condition to check if `a` is not divisible by both 3 and 5.

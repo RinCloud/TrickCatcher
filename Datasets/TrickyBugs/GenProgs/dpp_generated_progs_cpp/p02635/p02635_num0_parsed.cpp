@@ -1,0 +1,43 @@
+#include <iostream>
+#include <vector>
+#define MOD 998244353
+
+using namespace std;
+
+int main() {
+    string S;
+    int K;
+    cin >> S >> K;
+    int N = S.length();
+    
+    // Stores the positions of '1's in S
+    vector<int> ones;
+    for(int i=0; i<N; i++) {
+        if(S[i] == '1')
+            ones.push_back(i);
+    }
+    
+    // Calculate the number of strings
+    long long ans = 0;
+    int M = ones.size();
+    int maxLen = K + 1;
+    vector<vector<long long>> dp(M+1, vector<long long>(maxLen+1, 0));
+
+    dp[0][0] = 1;
+    for(int i=0; i<M; i++) {
+        for(int j=0; j<=min(K, i); j++) {
+            dp[i+1][j+1] += dp[i][j];
+            dp[i+1][j+1] %= MOD;
+            dp[i+1][j] += (dp[i][j] * (ones[i] - j) % MOD);
+            dp[i+1][j] %= MOD;
+        }
+    }
+    
+    for(int j=0; j<=min(K, M); j++) {
+        ans += dp[M][j];
+        ans %= MOD;
+    }
+    
+    cout << ans << endl;
+    return 0;
+}

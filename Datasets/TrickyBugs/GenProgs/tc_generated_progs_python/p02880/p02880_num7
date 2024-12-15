@@ -1,0 +1,14 @@
+The given code has a logic flaw. The condition `int(input()) in [a//9*(a%10) for a in range(90)]` checks if the input integer is present in the list `[a//9*(a%10) for a in range(90)]`, which contains all possible products of two integers between 1 and 9. However, the list comprehension is incorrect. It calculates `a//9*(a%10)` for each value of `a` from 0 to 89, instead of calculating the product of two integers between 1 and 9.
+
+Here is the corrected code:
+
+```
+N = int(input())
+products = [i * j for i in range(1, 10) for j in range(1, 10)]
+if N in products:
+    print("Yes")
+else:
+    print("No")
+```
+
+In the corrected code, we first store all possible products of two integers between 1 and 9 in the `products` list. Then, we check if the input integer `N` is present in the `products` list. If it is, we print "Yes"; otherwise, we print "No".

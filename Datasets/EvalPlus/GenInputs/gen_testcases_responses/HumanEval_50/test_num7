@@ -1,0 +1,10 @@
+{"input": ["abc"], "output": "fgh"}
+{"input": ["xyz"], "output": "stu"}
+{"input": ["hello world"], "output": "mjqqt btwqi"}
+{"input": ["the quick brown fox"], "output": "ymj vznhp gwtbs ktc"}
+{"input": ["python programming"], "output": "udymts uwtrrjnynts"}
+{"input": ["12345"], "output": "67890"}
+{"input": ["!@#$%"], "output": "!@#$%"}
+{"input": ["encode_decode"], "output": "jsijih_jihijnj"}
+{"input": ["aAbBcC"], "output": "fFgGhH"}
+{"input": ["    "], "output": "    "}

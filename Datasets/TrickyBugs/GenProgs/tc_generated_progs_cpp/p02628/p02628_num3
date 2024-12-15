@@ -1,0 +1,22 @@
+**BUG FIXES**
+1. Change the line 'sort(A, A+n+1);' to 'sort(A, A+n);'. The last element A[n] is not required to be included in the sort operation.
+2. Change the line 'for (int num=1;num<=k;num++)' to 'for (int num=1;num<k;num++)'. The number of fruits to choose is K, not K+1.
+3. Inside the for loop, change 'A[0]+=A[num];' to 'A[0]+=A[num];'. The goal is to add separate fruits, so it should be 'A[0]+=A[num];' instead of 'A[0]+=A[num];'.
+
+**REPAIRED CODE**:
+
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+  int A[1002];
+  int n,k;
+  cin>>n>>k;
+  for(int i=1;i<=n;i++) cin>>A[i];
+  sort(A,A+n);
+  for (int num=1;num<k;num++)
+  {
+    A[0]+=A[num];
+  }
+  cout<<A[0];
+}

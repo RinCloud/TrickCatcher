@@ -1,0 +1,12 @@
+def derivative(xs: list):
+    """Return the derivative of a polynomial represented by xs.
+
+    Args:
+    - xs: list of coefficients of the polynomial
+
+    Returns:
+    - derivative: list of coefficients of the derivative polynomial
+    """
+
+    derivative = [xs[i] * i for i in range(1, len(xs))]
+    return derivative

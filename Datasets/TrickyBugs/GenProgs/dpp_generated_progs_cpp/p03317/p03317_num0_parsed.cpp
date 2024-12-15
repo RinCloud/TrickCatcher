@@ -1,0 +1,22 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
+int main() {
+    int N, K;
+    std::cin >> N >> K;
+
+    std::vector<int> A(N);
+    for (int i = 0; i < N; ++i) {
+        std::cin >> A[i];
+    }
+
+    int min_operations = 0;
+    for (int i = 0; i < N - 1; i += K - 1) {
+        min_operations++;
+    }
+
+    std::cout << min_operations << std::endl;
+
+    return 0;
+}

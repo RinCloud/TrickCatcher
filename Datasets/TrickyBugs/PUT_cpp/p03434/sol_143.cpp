@@ -1,0 +1,13 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main() {
+  int N,A,B;
+  cin >> N;
+  vector<int> S(N);
+  for(int i=0;i<N;i++) cin >> S[i];
+  sort(S.begin(), S.end(), greater<int>());
+  for(int i=0;i<N;i+=2){
+    A+=S[i], B+=S[i+1];
+  }
+  cout << A-B << endl;
+}

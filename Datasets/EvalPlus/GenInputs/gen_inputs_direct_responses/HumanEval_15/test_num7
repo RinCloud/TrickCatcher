@@ -1,0 +1,3 @@
+**Test Input Reasoning:**
+
+This test case considers the smallest possible value for the input `n`, which is 0. This will test if the function can handle the base case correctly.

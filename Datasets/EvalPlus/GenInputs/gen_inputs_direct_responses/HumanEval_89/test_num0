@@ -1,0 +1,6 @@
+[[], '', 'encrypt('')']
+[['h', 'i'], 'lm', "encrypt('hi')"]
+[['a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l'], 'ewhjklnop', "encrypt('asdfghjkl')"]
+[['g', 'f'], 'kj', "encrypt('gf')"]
+[['e', 't'], 'ix', "encrypt('et')"]
+[['abcdefghijklmnopqrstuvwxyz']*10, 'efghijklmnopqrstuvwxyzabcd', "encrypt('abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ')"]

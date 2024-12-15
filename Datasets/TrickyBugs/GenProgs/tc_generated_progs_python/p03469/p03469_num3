@@ -1,0 +1,12 @@
+**Repaired Code**:
+
+```python
+s = input()
+print("2018" + s[4:])
+```
+
+**Explanation**:
+
+The given code will replace only the last two digits of the year in the string, instead of replacing the first four characters of the year.
+To correctly solve the problem, we need to replace the first four characters of the string with '2018'.
+The corrected code takes the substring from index 4 (inclusive) till the end of the string and concatenates it with the '2018' string. This way it replaces the first four characters ('2017') with '2018' and prints the modified string.

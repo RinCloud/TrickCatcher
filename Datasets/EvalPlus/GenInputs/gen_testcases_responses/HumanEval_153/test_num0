@@ -1,0 +1,6 @@
+{"input": ["my_class", ["AA", "Be", "CC"]], "output": "my_class.AA"}
+{"input": ["Slices", ["SErviNGSliCes", "Cheese", "StuFfed"]], "output": "Slices.SErviNGSliCes"}
+{"input": ["food", ["PIZZA", "Burger", "salAD"]], "output": "food.salAD"}
+{"input": ["Shapes", ["circle", "Rectangle", "CIrcles"]], "output": "Shapes.Rectangle"}
+{"input": ["Numbers", ["ONE", "Two", "Three"]], "output": "Numbers.Three"}
+{"input": ["fruits", ["APPLE", "bANANA", "orANGES"]], "output": "fruits.bANAN

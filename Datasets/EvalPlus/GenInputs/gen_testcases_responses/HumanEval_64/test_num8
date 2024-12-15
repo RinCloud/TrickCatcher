@@ -1,0 +1,10 @@
+{"input": ["abcde"], "output": 2}
+{"input": ["ACEDY"], "output": 3}
+{"input": ["hello"], "output": 2}
+{"input": ["hello world"], "output": 3}
+{"input": ["aeiou"], "output": 5}
+{"input": ["AEIOU"], "output": 5}
+{"input": ["y"], "output": 1}
+{"input": ["a"], "output": 1}
+{"input": ["AYA"], "output": 1}
+{"input": ["XYZY"], "output": 1}

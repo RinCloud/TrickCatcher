@@ -1,0 +1,7 @@
+```python
+from random import *
+def sample_one():
+    arr_length = randint(1, 10)
+    arr = [randint(0, 100) for _ in range(arr_length)]
+    return [arr]
+```

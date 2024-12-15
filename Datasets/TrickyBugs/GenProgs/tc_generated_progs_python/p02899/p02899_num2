@@ -1,0 +1,17 @@
+**Repaired Code:**
+```python
+N = int(input())
+A = list(map(int, input().split()))
+
+order = [0] * N
+for i, a in enumerate(A):
+    order[a - 1] = i + 1
+
+print(' '.join(map(str, order)))
+```
+**Explanation:**
+- First, we input N, the number of students.
+- Then we input the list A containing the number of students in the classroom when each student entered.
+- We initialize a list `order` of size N to store the order in which students entered.
+- For each student number i and the corresponding count a, we set `order[a - 1]` to i + 1. This means that student i entered the classroom at position a.
+- Finally, we print `order` as the output, after converting each element to a string and joining them with a space.

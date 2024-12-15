@@ -1,0 +1,17 @@
+```python
+from random import *
+from cyaron import *
+
+def sample_one():
+    operators = ['+', '-', '*', '//', '**']
+    op_length = randint(1, 5)  # Define length of operator array. It will be at least 1
+    operand_length = op_length + 1  # operand list should be one element longer than operator list
+
+    # Generate operator list
+    operator_list = [choice(operators) for _ in range(op_length)]
+    # Generate operand list with non-negative integers
+    operand_list = [randint(0, 10) for _ in range(operand_length)]
+    
+    generated_input = [operator_list, operand_list]
+    return generated_input
+```

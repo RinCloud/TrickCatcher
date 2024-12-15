@@ -1,0 +1,10 @@
+{"input": ["1234"], "output": "4321"}
+{"input": ["ab"], "output": "AB"}
+{"input": ["#a@C"], "output": "#A@c"}
+{"input": ["#$%"], "output": "%$#"}
+{"input": ["aBcDeF"], "output": "AbCdEf"}
+{"input": [""], "output": ""}
+{"input": ["123!@#"], "output": "#@!321"}
+{"input": ["Hello World"], "output": "hELLO wORLD"}
+{"input": ["abcdefg"], "output": "ABCDEFG"}
+{"input": ["1234567890"], "output": "0987654321"}

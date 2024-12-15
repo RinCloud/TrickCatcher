@@ -1,0 +1,13 @@
+```python
+from random import *
+from cyaron import *
+def sample_one():
+    length_of_string = randint(0, 20)
+    if length_of_string == 0:
+        test = ""
+    else:
+        test = String.random(length_of_string, charset='abcdefghijklmnopqrstuvwxyz')
+        test = ' '.join(list(test))
+    generated_input = [test]
+    return generated_input
+```

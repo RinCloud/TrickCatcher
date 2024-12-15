@@ -1,0 +1,14 @@
+# Solution
+
+```python
+N = int(input())
+arare = input().split()
+
+colors = set(arare)
+
+if len(colors) == 3:
+    print("Three")
+else:
+    print("Four")
+```
+Note: This code assumes that the input is always valid, i.e., it always satisfies the given constraints.

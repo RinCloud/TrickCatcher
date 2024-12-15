@@ -1,0 +1,17 @@
+**Repaired Code**:
+
+```python
+import re
+
+s = input()
+
+if re.fullmatch('(dream(er)?|erase(r)?)*', s):
+    print('YES')
+else:
+    print('NO')
+```
+Explanations:
+1. Remove the unnecessary semicolons.
+2. Use `re.fullmatch` instead of `re.match` to ensure that the entire string matches the pattern.
+3. Use proper grouping and optional patterns for the repetition of `er` and `dream` sequences in the regular expression.
+4. Use more readable condition for printing `YES` or `NO`.

@@ -1,0 +1,10 @@
+{"input":  [1, 2, 2, -4], "output": -9} 
+{"input":  [0, 1], "output": 0} 
+{"input": [], "output":  None} 
+{"input": [-1, -2, 2, -4], "output":  9} 
+{"input": [0, 0, 0], "output":  0} 
+{"input": [-1, -2, -2, -4], "output":  -9} 
+{"input": [0, -1], "output": 0} 
+{"input": [10, 20, 30, 40], "output":  100} 
+{"input": [-10, -20, -30, -40], "output":  -100} 
+{"input": [5, -5], "output": 0}

@@ -1,0 +1,17 @@
+def order_by_points(nums):
+    """
+    Sorts the given list of integers in ascending order according to the sum of their digits.
+    
+    Parameters:
+    nums (list): A list of integers
+    
+    Returns:
+    list: The sorted list of integers
+    
+    Examples:
+    >>> order_by_points([1, 11, -1, -11, -12])
+    [-1, -11, 1, -12, 11]
+    >>> order_by_points([])
+    []
+    """
+    pass

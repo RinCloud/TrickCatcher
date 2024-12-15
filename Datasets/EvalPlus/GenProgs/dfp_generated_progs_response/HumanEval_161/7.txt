@@ -1,0 +1,33 @@
+def solve(s):
+    """
+    Reverse the case of letters in a string or reverse the whole string if it contains no letters.
+
+    Parameters:
+    s (str): The input string.
+
+    Returns:
+    str: The resulting string.
+
+    Examples:
+    >>> solve("1234")
+    '4321'
+    >>> solve("ab")
+    'AB'
+    >>> solve("#a@C")
+    '#A@c'
+    """
+
+    output = ""
+    has_letters = False
+
+    for char in s:
+        if char.isalpha():
+            output += char.swapcase()
+            has_letters = True
+        else:
+            output += char
+    
+    if not has_letters:
+        output = output[::-1]
+    
+    return output

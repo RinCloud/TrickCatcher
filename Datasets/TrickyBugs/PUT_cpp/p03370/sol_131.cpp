@@ -1,0 +1,19 @@
+#include<bits/stdc++.h>
+using namespace std;
+int ans;
+
+
+int main(){
+	int n,x;
+	cin>>n>>x;
+	ans=n;
+	int a[n];
+	for(int i;i<n;i++){
+		cin>>a[i];
+		x-=a[i];
+	}
+	sort(a,a+n);
+	ans+=x/a[0];
+	cout<<ans<<endl;
+	return 0;
+}

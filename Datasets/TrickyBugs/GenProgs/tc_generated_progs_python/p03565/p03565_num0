@@ -1,0 +1,27 @@
+**REPAIRED CODE**:
+
+Please note that the original code has a few bugs. Here are the steps to fix them:
+1. The input `S'` should be named `S_`
+2. The input `T'` should be named `T`
+3. The regular expression should be modified to consider any character instead of `?`
+4. The condition for checking if the string exists should be modified. Instead of checking for count == 1, we should check if the index is -1.
+
+You can review the code below that incorporates these fixes.
+
+```python
+import re
+
+S_ = input()
+T = input()
+
+Tr = T[::-1]
+Sr = S_[::-1]
+reg = "".join(map(lambda x: "[{}]".format(x), Tr))
+ans = re.sub(reg, Tr, Sr, count=1)
+
+if ans.find(Tr) != -1:
+    print(ans.replace("?", "a")[::-1])
+else:
+    print("UNRESTORABLE")
+```
+The updated code above should fix the issues and work correctly for the given problem.

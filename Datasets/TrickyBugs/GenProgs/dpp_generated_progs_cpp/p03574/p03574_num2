@@ -1,0 +1,50 @@
+```
+#include <iostream>
+#include <vector>
+#include <string>
+
+using namespace std;
+
+int main() {
+    int H, W;
+    cin >> H >> W;
+
+    vector<string> grid(H);
+    for (int i = 0; i < H; i++) {
+        cin >> grid[i];
+    }
+
+    vector<vector<int>> dir = {{-1,-1},{-1,0},{-1,1},{0,-1},
+                               {0,1},{1,-1},{1,0},{1,1}};
+
+    vector<string> result(H, string(W, '0'));
+
+    for (int i = 0; i < H; i++) {
+        for (int j = 0; j < W; j++) {
+            if (grid[i][j] == '#') {
+                result[i][j] = '#';
+                continue;
+            }
+
+            int count = 0;
+
+            for (auto d : dir) {
+                int ni = i + d[0];
+                int nj = j + d[1];
+
+                if (ni >= 0 && ni < H && nj >= 0 && nj < W && grid[ni][nj] == '#') {
+                    count++;
+                }
+            }
+
+            result[i][j] = count + '0';
+        }
+    }
+
+    for (int i = 0; i < H; i++) {
+        cout << result[i] << endl;
+    }
+
+    return 0;
+}
+```

@@ -1,0 +1,27 @@
+Here is the code that achieves the given intention:
+
+```cpp
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
+int main() {
+    int N;
+    std::cin >> N;
+    
+    std::vector<int> monsters(N);
+    for (int i = 0; i < N; i++) {
+        std::cin >> monsters[i];
+    }
+    
+    int min_health = monsters[0];
+    for (int i = 1; i < N; i++) {
+        min_health = std::min(min_health, monsters[i]);
+    }
+    
+    std::cout << min_health << std::endl;
+    
+    return 0;
+}
+```
+The code reads the input values and stores them in a vector. It then finds the minimum value in the vector which represents the minimum possible final health of the last monster alive. Finally, it prints the minimum value as output.

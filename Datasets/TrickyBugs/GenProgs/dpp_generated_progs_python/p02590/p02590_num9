@@ -1,0 +1,38 @@
+# Program
+
+```
+def sum_of_products(N, A):
+    P = 200003
+    sum = 0
+    for i in range(N-1):
+        for j in range(i+1, N):
+            sum += (A[i] * A[j]) % P
+    return sum
+
+# Get the input
+N = int(input())
+A = list(map(int, input().split()))
+
+# Calculate the sum of products modulo P
+result = sum_of_products(N, A)
+
+# Print the result
+print(result)
+```
+
+# Explanation
+
+1. Define a function `sum_of_products` that takes two arguments: `N` as the number of integers and `A` as the list of integers.
+2. Inside the function, define a variable `P` with a value of 200003.
+3. Define a variable `sum` with an initial value of 0 to store the sum of products.
+4. Use nested loops to iterate over all possible pairs of integers in the list `A`.
+   - The outer loop iterates from the first index `i` to the second-to-last index `N-1`.
+   - The inner loop iterates from the next index `j` to the last index `N`.
+   - This ensures that each pair of integers is considered exactly once, without repetition or ordering.
+5. Inside the inner loop, calculate the product of the integers at indices `i` and `j`, and take the modulo of this product with `P`.
+6. Add the calculated value to the variable `sum`.
+7. After the loops, return the value of `sum`.
+8. Get the input value of `N` from standard input and convert it to an integer using the `int()` function.
+9. Get the input values of `A` from standard input as a space-separated string of integers, and convert it to a list of integers using the `split()` and `map()` functions.
+10. Calculate the sum of products modulo `P` by calling the `sum_of_products` function with arguments `N` and `A`, and store the result in a variable `result`.
+11. Print the value of `result` to standard output using the `print()` function.

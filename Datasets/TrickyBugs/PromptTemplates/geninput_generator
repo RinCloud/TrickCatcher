@@ -1,0 +1,52 @@
+**INSTRUCTION**:
+The following is a description of a coding problem, please write an input generator for this problem (DO NOT generate outputs), use the generator to generate 100 inputs, write the i-th input into the single file '../chat_generated_inputs/{pid}/chatGenInput_i.in' for every input.
+The inputs should meet the given constraints of the problem description.
+Please reply with ONLY the code without any other content.
+
+You can use the python library cyaron if necessary, here are some examples of how to use cyaron, which may be helpful:
+```python
+# Use IO() to write generated inputs into files
+# example:
+from cyaron import *
+for i in range(100):
+    io=IO(file_prefix=f'../chat_generated_inputs/{pid}/chatGenInput_', data_id=i, disable_output=True) # write the generated contents into ../chat_generated_inputs/{pid}/chatGenInput_i.in
+    io.input_write(4, 5, 6) # write 4 5 6 into the file chatGenInput_i.in
+    io.input_writeln(4, 5, 6) # write 4 5 6 and and add a newline into the file chatGenInput_i.in
+    io.input_writeln([1, 2, 3]) # write 1 2 3 and and add a newline into the file chatGenInput_i.in
+
+# Use Vector.random(num=5, position_range=[10], mode=0) to generate vectors
+# Parameter 'num': The number of vectors to generate.
+# Parameter 'position_range': A list containing elements that determine the dimensions of the output vectors. Each element can be a two-dimensional tuple of integers (or real numbers) (min, max), representing the range of each dimension as [min, max]. Alternatively, it can be a single integer (or real number) 'k', indicating the range of each dimension is [0, k]. If this parameter has only one element, it generates a sequence of numbers rather than a vector.
+# Parameter 'mode': Mode selection. 0 for generating non-repeating integer vectors, 1 for allowing repeating integer vectors (each dimension is independently randomized), 2 for real number vectors.
+# examples:
+from cyaron import *
+vector_array = Vector.random(10, [(10,50)]) # Generate 10 sequences of non-repeating numbers within the range [10, 50].
+vector_matrix = Vector.random(30, [(10,50), 20]) # Generate 30 non-repeating two-dimensional vectors, where the first dimension ranges from 10 to 50, and the second dimension ranges from 0 to 20.
+vector_float = Vector.random(30, [(1,10), (1,10), (1,10)], 2) # Generate 30 three-dimensional real number vectors, with each dimension ranging from 1 to 10.
+
+# Use String.random() to generate random strings
+# examples:
+from cyaron import *
+ALPHABET_SMALL = string.ascii_lowercase
+ALPHABET_CAPITAL = string.ascii_uppercase
+ALPHABET = ALPHABET_SMALL + ALPHABET_CAPITAL
+NUMBERS = string.digits
+str = String.random(5) # Generate a random string with 5 letters consisting of lowercase letters
+str = String.random(10, charset=ALPHABET_SMALL) # Generate a random string with 10 letters consisting of lowercase letters
+str = String.random(10, charset=ALPHABET_CAPITAL) # Generate a random string with 10 letters consisting of uppercase letters
+str = String.random(10, charset='#.') # Generate a random string with 10 letters consisting of '#' and '.'
+
+# Use Graph.graph() to generate graphs
+# examples:
+from cyaron import *
+graph = Graph.graph(n, m, self_loop=False, repeated_edges=False,weight_limit=(5, 300)) # Generate an undirected graph with n vertices and m edges, avoiding duplicate edges and self-loops, the edge weights range from 5 to 300.
+tree = Graph.tree(n,weight_limit=(1, 10)) # Generate a tree with n vertices, the edge weights range from 1 to 10.
+DAG = Graph.DAG(n, m) # Generate a DAG (Directed Acyclic Graph) with n vertices and m edges.
+UDAG = Graph.UDAG(n, m) # Generate an undirected connected graph with n vertices and m edges.
+io=IO(file_prefix=f'../chat_generated_inputs/{pid}/chatGenInput_', data_id=1, disable_output=True) # chatGenInput_1.in
+io.input_writeln(graph) # Output the graph in the format of lines 'u v w' for each edge, where u and v are the vertices of the edge, and w is the weight of the edge.
+io.input_writeln(tree.to_str(output=Edge.unweighted_edge)) # Output the unweighted graph in the format of lines 'u v' for each edge
+```
+
+**PROBLEM DESCRIPTION**:
+{pro_des}

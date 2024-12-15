@@ -1,0 +1,23 @@
+```python
+from random import randint
+from cyaron import String
+
+def sample_one():
+    parens_groups_count = randint(1, 10)  # Determine number of paren groups
+    paren_string = ""
+    for _ in range(parens_groups_count):
+        depth = randint(1, 5)  # Random depth of parentheses nesting
+
+        # Creating a random nested parentheses group
+        group = ""
+        for _ in range(depth):
+            group = "(" + group + ")"
+
+        # Adding randomly generated group to the overall string
+        if paren_string:
+            paren_string += " "
+        paren_string += String.random(randint(0, 3), charset=' ') + group + String.random(randint(0, 3), charset=' ')
+        
+    generated_input = [paren_string]
+    return generated_input
+```

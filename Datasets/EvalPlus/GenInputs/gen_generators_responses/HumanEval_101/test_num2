@@ -1,0 +1,25 @@
+```python
+from random import *
+from cyaron import *
+
+def sample_one():
+    length_of_sentence = randint(5, 15)
+    charset_words = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
+    charset_separators = [', ', ' ']
+    
+    words = []
+    for i in range(length_of_sentence):
+        word_length = randint(1, 8)
+        word = String.random(word_length, charset=charset_words)
+        words.append(str(word))
+    
+    sentence = ""
+    for i in range(len(words)-1):
+        separator = choice(charset_separators)
+        sentence += words[i] + separator
+
+    sentence += words[-1]  # Add the last word without a trailing separator
+    
+    generated_input = [sentence]
+    return generated_input
+```

@@ -1,0 +1,10 @@
+{"input": ["<>, >, <<>><>, ><<>"], "output": [True, False, True, False]} 
+{"input": ["###"], "output": [False]} 
+{"input": ["<,<>, >, <<>><>, >, <<>>>, >, <<>><>, <, >, <, >, <, >, <<>>, <, >, <<>><>, <, >", "output": [True, False, False, True, True, False, False, True, False, False]} 
+{"input": ["<<>><>>>>>>>>>, <<>><>>>>>>>>>>>>>>>>>>>, <<>><>>>>>>>>>>>>>>>>>>, <<>><>>>>>>>>>>>>>>>, <"], "output": [True, True, True, False]} 
+{"input": ["<<>><><>>>", "output": [False]}
+{"input": ["<>, >, <<>><>, >, <<>>>, >, <<>><>"], "output": [True, False, False, True, True, False, True]} 
+{"input": ["<<>><>>>>>>>>>, <<>><>>>>>>>>>>>>>>>>>>>, <<>><>>>>>>>>>>>>>>>>>>, <<>><>>>>>>>>>>>>>>>, <<>><>>>>>>>>>>>>>>>>>>>>>>>"], "output": [True, True, False, False]} 
+{"input": [">>, <, <<>>, <, <<>>, >"], "output": [False, False, False, True]} 
+{"input": ["<>"], "output": [True]} 
+{"input": ["<<>><><>>>, >", "output": [False, False]}

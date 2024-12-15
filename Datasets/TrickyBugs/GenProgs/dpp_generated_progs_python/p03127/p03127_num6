@@ -1,0 +1,20 @@
+```python
+import random
+
+def find_last_monster_health(N, monsters):
+    while N > 1:
+        attacker = random.randint(0, N - 1)
+        defender = random.randint(0, N - 1)
+        if attacker != defender:
+            monsters[defender] -= monsters[attacker]
+            if monsters[defender] <= 0:
+                monsters[defender] = monsters[N - 1]
+                N -= 1
+    return monsters[0]
+
+N = int(input())
+monsters = list(map(int, input().split()))
+
+min_health = find_last_monster_health(N, monsters)
+print(min_health)
+```

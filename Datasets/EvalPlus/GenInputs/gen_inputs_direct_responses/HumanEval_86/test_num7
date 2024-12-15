@@ -1,0 +1,10 @@
+- Case 1: Empty string
+- Case 2: Single word, all lowercase characters
+- Case 3: Single word, mixed case characters
+- Case 4: Single word with special characters
+- Case 5: Multiple words, all lowercase characters, no special characters
+- Case 6: Multiple words, mixed case characters, no special characters
+- Case 7: Multiple words with special characters
+- Case 8: Single word, single character
+- Case 9: Multiple words, single character
+- Case 10: Multiple words, mixed case characters, with special characters

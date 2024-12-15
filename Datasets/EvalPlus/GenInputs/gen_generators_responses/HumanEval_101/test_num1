@@ -1,0 +1,14 @@
+```python
+from random import choice
+from cyaron import *
+
+def sample_one():
+    elements = ["One", "two", "three", "four", "five", "six", "Hi", "my", "name", "is", "John", "Hello", "world"]
+    separators = [", ", " "]
+    words_count = randint(5, 10)
+    generated_string = ""
+    for _ in range(words_count):
+        generated_string += choice(elements) + choice(separators)
+    generated_input = [generated_string.strip(", ")]
+    return generated_input
+```

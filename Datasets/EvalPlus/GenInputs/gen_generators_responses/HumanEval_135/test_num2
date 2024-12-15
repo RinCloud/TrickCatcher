@@ -1,0 +1,12 @@
+```python
+from random import *
+from cyaron import *
+
+def sample_one():
+    length_of_arr = randint(1, 10)  # Decide the length of the array between 1 and 10
+    arr = [randint(1, 100) for _ in range(length_of_arr)]  # Generate unique values array
+    arr = list(set(arr))  # Ensure no duplicates
+    shuffle(arr)  # Shuffle to randomize the order
+    generated_input = [arr]
+    return generated_input
+```

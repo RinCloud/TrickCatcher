@@ -1,0 +1,19 @@
+def maximum_gem_value(N, values, costs):
+    maximum_value = 0
+    for i in range(N):
+        difference = values[i] - costs[i]
+        if difference > 0:
+            maximum_value += difference
+    return maximum_value
+
+
+def main():
+    N = int(input())
+    values = list(map(int, input().split()))
+    costs = list(map(int, input().split()))
+    max_gem_value = maximum_gem_value(N, values, costs)
+    print(max_gem_value)
+
+
+if __name__ == "__main__":
+    main()

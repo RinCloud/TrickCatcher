@@ -1,0 +1,22 @@
+def count_combinations(N, K):
+    MOD = 998244353
+    dp = [[0] * (N * K + 1) for _ in range(N + 1)]
+    dp[0][0] = 1
+    for i in range(1, N + 1):
+        for j in range(K + 1):
+            for k in range(N * K - (i - 1) * K - j + 1):
+                dp[i][j + k] = (dp[i][j + k] + dp[i - 1][k]) % MOD
+     
+    result = []
+    for i in range(2, K * 2 + 1):
+        res = 0
+        for j in range(N + 1):
+            res = (res + dp[j][i - 1]) % MOD
+        result.append(res)
+    
+    return result
+
+
+K, N = map(int, input().split())
+for res in count_combinations(N, K):
+    print(res)

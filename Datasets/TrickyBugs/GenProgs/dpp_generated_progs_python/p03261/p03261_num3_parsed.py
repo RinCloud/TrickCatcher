@@ -1,0 +1,16 @@
+def shiritori(N, words):
+    used = set()
+    for i in range(N):
+        if i != 0 and words[i][0] != words[i-1][-1]:
+            return "No"
+        if words[i] in used:
+            return "No"
+        used.add(words[i])
+    return "Yes"
+
+N = int(input())
+words = []
+for _ in range(N):
+    words.append(input())
+    
+print(shiritori(N, words))

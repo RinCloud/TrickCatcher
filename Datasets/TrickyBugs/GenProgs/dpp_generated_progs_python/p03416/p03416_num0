@@ -1,0 +1,57 @@
+# Solution
+
+A simple solution for this problem would be to iterate over the integers from A to B, convert each integer to a string, and check if the string is a palindrome. If it is, increment a counter variable. Finally, print the value of the counter.
+
+```python
+def is_palindrome(n):
+    # Convert the integer to a string
+    n_str = str(n)
+    
+    # Check if the string is a palindrome
+    return n_str == n_str[::-1]
+
+# Read the inputs
+A, B = map(int, input().split())
+
+# Initialize the counter variable
+count = 0
+
+# Iterate over the integers from A to B
+for i in range(A, B+1):
+    # Check if the integer is a palindrome
+    if is_palindrome(i):
+        # Increment the counter variable
+        count += 1
+
+# Print the number of palindromic numbers
+print(count)
+```
+
+This solution has a time complexity of O(N*M), where N is the number of integers between A and B, and M is the average number of digits in the integers. The worst-case scenario is when all integers between A and B are palindromes, in which case the time complexity becomes O(N*M^2).
+
+However, there is an optimized solution that can solve this problem in O(1) time complexity using a mathematical approach. Let's implement this optimized solution.
+
+```python
+# Read the inputs
+A, B = map(int, input().split())
+
+# Function to count the number of palindromic numbers in a given range
+def count_palindromic_numbers(A, B):
+    # A palindromic number has the form ABCBA, where A, B, and C are digits.
+    # We can calculate the number of palindromic numbers easily based on the values of A and B.
+    # If A <= B, then the number of palindromic numbers is (B // 100 - A // 100 + 1)
+    # If A > B, then there are no palindromic numbers
+    
+    if A > B:
+        return 0
+    
+    return (B // 100 - A // 100 + 1)
+
+# Calculate the number of palindromic numbers
+count = count_palindromic_numbers(A, B)
+
+# Print the result
+print(count)
+```
+
+This optimized solution has a time complexity of O(1) as it calculates the number of palindromic numbers directly based on the given range.

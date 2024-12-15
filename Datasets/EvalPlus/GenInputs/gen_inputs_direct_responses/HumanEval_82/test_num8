@@ -1,0 +1,14 @@
+Here are 10 test inputs for the `prime_length` function:
+
+1. "Hello"
+2. "abcdcba"
+3. "kittens"
+4. "orange"
+5. "a"
+6. ""
+7. "python"
+8. "programming"
+9. "testing"
+10. "quality"
+
+Please note that the inputs should be in list format, with one input per line.

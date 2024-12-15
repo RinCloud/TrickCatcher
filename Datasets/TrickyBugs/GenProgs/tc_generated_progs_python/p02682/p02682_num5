@@ -1,0 +1,12 @@
+Here is the repaired code:
+
+```python
+a, b, c, k = map(int, input().split())
+
+if a >= k:
+    print(k)
+else:
+    print(a + min(0, a + b - k))
+```
+
+The previous implementation tried to calculate the maximum possible sum of the numbers written on the cards chosen but had logic flaws in the else condition. The new implementation fixes the logic flaw by using `min(0, a + b - k)` to consider the case where k is greater than a + b, making the sum negative.

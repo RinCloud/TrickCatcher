@@ -1,0 +1,37 @@
+def complexity_of_grid(H, W, grid):
+    # Count the number of black squares
+    num_black = 0
+    for row in grid:
+        num_black += row.count('#')
+    
+    # If all squares are black or all squares are white, complexity is 0
+    if num_black == H * W or num_black == 0:
+        return 0
+    
+    # Divide the grid into two subgrids horizontally and calculate complexity recursively
+    min_complexity = float('inf')
+    for i in range(1, H):
+        subgrid1 = grid[:i]
+        subgrid2 = grid[i:]
+        complexity1 = complexity_of_grid(len(subgrid1), W, subgrid1)
+        complexity2 = complexity_of_grid(len(subgrid2), W, subgrid2)
+        max_complexity = max(complexity1, complexity2)
+        min_complexity = min(min_complexity, max_complexity)
+    
+    # Divide the grid into two subgrids vertically and calculate complexity recursively
+    for j in range(1, W):
+        subgrid1 = [row[:j] for row in grid]
+        subgrid2 = [row[j:] for row in grid]
+        complexity1 = complexity_of_grid(H, len(subgrid1[0]), subgrid1)
+        complexity2 = complexity_of_grid(H, len(subgrid2[0]), subgrid2)
+        max_complexity = max(complexity1, complexity2)
+        min_complexity = min(min_complexity, max_complexity)
+    
+    return min_complexity + 1
+
+# Read input
+H, W = map(int, input().split())
+grid = [input() for _ in range(H)]
+
+# Calculate and print the complexity of the grid
+print(complexity_of_grid(H, W, grid))

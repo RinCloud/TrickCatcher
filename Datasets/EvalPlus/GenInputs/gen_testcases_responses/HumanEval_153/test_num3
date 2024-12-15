@@ -1,0 +1,10 @@
+{"input": ["my_class", ["AA", "Be", "CC"]], "output": "my_class.AA"}
+{"input": ["Slices", ["SErviNGSliCes", "Cheese", "StuFfed"]], "output": "Slices.SErviNGSliCes"}
+{"input": ["MyClass", ["MyExt", "YourExt", "ExtExt"]], "output": "MyClass.MyExt"}
+{"input": ["Example", ["cApSlOcKS", "uPpErCaSe", "lowercase"]], "output": "Example.cApSlOcKS"}
+{"input": ["ClassName", ["ABC", "abc", "DEF"]], "output": "ClassName.ABC"}
+{"input": ["Test", ["One", "two", "Three"]], "output": "Test.Two"}
+{"input": ["Hello", ["World", "Hello", "Extension"]], "output": "Hello.Hello"}
+{"input": ["Sample", ["SaMpLe", "sAmPlE1", "SAMPLE3"]], "output": "Sample.SaMpLe"}
+{"input": ["Foo", ["BAR", "foo", "BaZ"]], "output": "Foo.BAR"}
+{"input": ["Class", ["Aa", "Bb", "Cc"]], "output": "Class.Aa"}

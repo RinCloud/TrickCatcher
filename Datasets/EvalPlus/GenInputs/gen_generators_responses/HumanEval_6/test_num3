@@ -1,0 +1,8 @@
+```python
+from cyaron import *
+def sample_one():
+    group_count = randint(1, 10)  # Number of groups to generate
+    paren_string = ' '.join([String.random(randint(3, 10), charset='()') for _ in range(group_count)])
+    generated_input = [paren_string]
+    return generated_input
+```

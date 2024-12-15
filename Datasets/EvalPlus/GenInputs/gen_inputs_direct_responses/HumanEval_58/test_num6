@@ -1,0 +1,3 @@
+**Test Input Reasoning:**
+
+This is the minimum input allowed, where both lists are empty. It will check if the function can handle empty lists.

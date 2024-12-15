@@ -1,0 +1,69 @@
+#include<cstdio>
+#include<iostream>
+using namespace std;
+int n,a[105],minn=1e9,maxx,cnt[105];
+int main(){
+	scanf("%d",&n);
+	for(int i=1;i<=n;++i){
+		scanf("%d",&a[i]);
+		maxx=max(maxx,a[i]);
+		minn=min(minn,a[i]);
+	}
+
+	for(int i=1;i<=105;++i){
+		cnt[i] = 0;      //initializing counter array to zero 
+	}
+
+	//If value of distance from current vertex i and farthest vertex can't be N which is the number of vertices then 'Impossible' since maximum distance possible is N
+	for(int i=1;i<=n;++i)
+	{
+		
+		if(a[i]>=n){     
+			printf("Impossible\n");
+			return 0;
+		}
+	}
+	for(int i=1; i<=n; i++)
+	{
+		cnt[a[i]]++;    //counting the frequency of each distance
+	}
+	if(maxx%2 == 0)  //checking whether distance farthest is even
+	{
+		//For even number of max distance value(we can get number x <= maxx/2 +1 for this case else it is impossible), 
+        //there should not be more than one vertex as distance equals to the min distance value 
+        if(cnt[minn] > 1 ){
+			printf("Impossible\n");
+			return 0;
+		}
+		// since farthest is even , and if there is no split of 2 into equal distance
+		// then it is impossible
+        if(cnt[maxx/2 + 1] < 1){
+		    printf("Impossible\n");
+			return 0;
+	    }
+        printf("Possible\n");
+        
+	}
+ 	else            //checking whether distance farthest is odd
+	{
+		//when farthest is odd , we can get number (max+1)/2 and max both present
+        //if no occurance of this then Impossible
+		if(cnt[(maxx+1)/2] != 2){
+		    printf("Impossible\n");
+			return 0;
+	    }
+        for(int i = (maxx+1)/2 + 1; i < maxx; i++)
+		{
+			//check if any other distance is less than 2. In that case we can follow 
+			//largest to smallest rule
+			if(cnt[i] < 2){
+			    printf("Impossible\n");
+				return 0;
+			}
+		}
+        printf("Possible\n");
+		
+	}
+}
+
+

@@ -1,0 +1,10 @@
+{"input": ["my_class", ["AA", "Be", "CC"]], "output": "my_class.AA"}
+{"input": ["my_class", ["SErviNGSliCes", "Cheese", "StuFfed"]], "output": "my_class.SErviNGSliCes"}
+{"input": ["my_class", []], "output": "my_class."}
+{"input": ["Sunny", ["Rainy", "Stormy", "Cloudy"]], "output": "Sunny.Stormy"}
+{"input": ["my_class", ["MyExt", "myext"]], "output": "my_class.MyExt"}
+{"input": ["my_class", ["AA", "AA"]], "output": "my_class.AA"}
+{"input": ["my_class", ["AAA", "BBB"]], "output": "my_class.AAA"}
+{"input": ["my_class", ["EEE", "ddd"]], "output": "my_class.EEE"}
+{"input": ["ABC", ["XYZ", "ABC", "PQR"]], "output": "ABC.ABC"}
+{"input": ["ABC", ["pqr", "xyz", "abc"]], "output": "ABC.abc"}

@@ -1,0 +1,10 @@
+{"input": ["xyzXYZ"], "output": 3} 
+{"input": ["Jerry"], "output": 4} 
+{"input": [""], "output": 0} 
+{"input": ["AaBbCc"], "output": 3} 
+{"input": ["123456"], "output": 6}
+{"input": ["abcdabcd"], "output": 4}
+{"input": ["ABCDEF"], "output": 6}
+{"input": ["aaaAAA"], "output": 1}
+{"input": ["Hello, World!"], "output": 10}
+{"input": ["abbcccddddeeeeeffffff"], "output": 6}

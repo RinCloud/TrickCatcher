@@ -1,0 +1,33 @@
+**Repaired code**
+
+```cpp
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    char a[11],f[11];
+    int i=0;
+    cin>>f;
+    for(int j=0;f[j]!='\0';j++){ // replaced 0 with '\0'
+        if(f[j]=='1'){
+            a[i]='1';
+            i++;
+        }else if(f[j]=='0'){
+            a[i]='0';
+            i++;
+        }else{
+            if(i>0){ // added condition to check if i is greater than 0
+                i--;
+                a[i]=0;
+            }
+        }
+    }
+    a[i]='\0'; // added '\0' at the end of a
+    cout<<a;
+    return 0;
+}
+```
+
+Explanation: 
+1. Replaced `0` with `'\0'` to correctly check for the end of the string in the for loop condition.
+2. Added a condition to check if `i` is greater than `0` before decrementing `i` and setting `a[i]` to `0` in the else block.
+3. Added `a[i]='\0'` at the end of the code to correctly terminate the string `a`.

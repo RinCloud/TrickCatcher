@@ -1,0 +1,19 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main(){
+    long long n, a=0, sum=0;
+    cin>>n;
+    vector<long long> v(n);
+    for(long long i=0; i<n; i++){
+        cin>>v[i];
+    }
+    for(long long j=0; j<n-1; j++){
+        a += v[j];
+        a %= 1000000007;
+        
+        sum += (v[j+1] * a) % 1000000007;
+        sum %= 1000000007;
+    }
+    cout<<sum;
+    return 0;
+}

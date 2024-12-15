@@ -1,0 +1,46 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+using namespace std;
+
+string findSmallestString(string A) {
+    vector<vector<int>> dp(A.size() + 1, vector<int>(26, 0));
+    
+    for (int i = A.size() - 1; i >= 0; i--) {
+        for (int j = 0; j < 26; j++) {
+            dp[i][j] = dp[i + 1][j];
+        }
+        dp[i][A[i] - 'a'] = i + 1;
+    }
+    
+    string ans = "";
+    int curr = 0;
+    
+    while (curr <= A.size()) {
+        bool found = false;
+        for (int j = 0; j < 26; j++) {
+            if (dp[curr][j] == 0) {
+                ans += ('a' + j);
+                curr++;
+                found = true;
+                break;
+            }
+        }
+        if (!found) {
+            break;
+        }
+    }
+    
+    return ans;
+}
+
+int main() {
+    string A;
+    cin >> A;
+    
+    string answer = findSmallestString(A);
+    
+    cout << answer << endl;
+    
+    return 0;
+}

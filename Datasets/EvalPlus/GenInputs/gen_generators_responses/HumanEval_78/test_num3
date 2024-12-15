@@ -1,0 +1,10 @@
+```python
+from cyaron import *
+
+def sample_one():
+    num_length = randint(0, 16)  # generating length of hexadecimal number between 0 and 16
+    hex_digits = '0123456789ABCDEF'  # All possible hexadecimal digits
+    num = String.random(num_length, charset=hex_digits)  # Generating the hexadecimal number
+    generated_input = [str(num)]
+    return generated_input
+```

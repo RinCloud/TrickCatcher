@@ -1,0 +1,18 @@
+#include <iostream>
+
+int main() {
+    int A, B;
+    std::cin >> A >> B;
+
+    if (A == B) {
+        std::cout << "Draw";
+    } else if ((A == 1 && B != 13) || (A != 1 && B == 13)) {
+        std::cout << "Alice";
+    } else if (A > B) {
+        std::cout << "Alice";
+    } else {
+        std::cout << "Bob";
+    }
+
+    return 0;
+}

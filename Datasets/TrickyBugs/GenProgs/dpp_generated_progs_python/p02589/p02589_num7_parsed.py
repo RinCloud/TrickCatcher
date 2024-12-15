@@ -1,0 +1,30 @@
+from collections import Counter
+
+def get_prefix_count(s):
+    prefix_count = Counter()
+    for i in range(len(s)):
+        prefix_count[s[:i+1]] += 1
+    return prefix_count
+
+def get_num_pairs(strings):
+    num_pairs = 0
+    prefix_counts = []
+    for s in strings:
+        prefix_count = get_prefix_count(s)
+        prefix_counts.append(prefix_count)
+        
+    for i in range(len(strings)):
+        for j in range(i+1, len(strings)):
+            if prefix_counts[i] == prefix_counts[j]:
+                num_pairs += 1
+
+    return num_pairs
+
+N = int(input())
+strings = []
+for _ in range(N):
+    s = input()
+    strings.append(s)
+
+result = get_num_pairs(strings)
+print(result)

@@ -1,0 +1,38 @@
+```cpp
+#include <cstdio>
+#include <cstdlib>
+#include <cstring>
+#include <algorithm>
+#include <math.h>
+using namespace std;
+
+const int MAXN = 1e5 + 10;
+int N;
+struct Node {
+    int x, y, id;
+} A[MAXN], E[MAXN];
+int fa[MAXN];
+long long ans;
+
+inline int gf(int x) {
+    return x == fa[x] ? x : fa[x] = gf(fa[x]);
+}
+
+int main() {
+    register int i;
+    scanf("%d", &N);
+    for(i = 1; i <= N; ++i) scanf("%d%d", &A[i].x, &A[i].y), A[i].id = i;
+    sort(A + 1, A + N + 1, [&] (Node x, Node y) {return x.x < y.x;});
+    for(i = 1; i < N; ++i) E[i] = Node{A[i].id, A[i + 1].id, abs(A[i + 1].x - A[i].x)};
+    sort(A + 1, A + N + 1, [&] (Node x, Node y) {return x.y < y.y;});
+    for(i = 1; i < N; ++i) E[N + i - 1] = Node{A[i].id, A[i + 1].id, abs(A[i + 1].y - A[i].y)};
+    sort(E + 1, E + 2 * N - 1, [&] (Node x, Node y) {return x.id < y.id;});
+    for(i = 1; i <= N; ++i)
+        fa[i] = i;
+    for(i = 1; i <= 2 * N - 2; ++i)
+        if(gf(E[i].x) != gf(E[i].y))
+            fa[gf(E[i].x)] = gf(E[i].y), ans += E[i].id;
+    printf("%lld\n", ans);
+    return 0;
+}
+```

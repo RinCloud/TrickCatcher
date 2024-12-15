@@ -1,0 +1,30 @@
+#include<bits/stdc++.h>
+#define ci const int&	
+using namespace std;
+const int m=1e7;
+int n,a[110],p[210],sz,ip[m+10],pr[m+10],p1[210],p2[210],nw[210],n1,n2,pn;
+vector<int>t[210];
+bool Match(ci x){
+    for(int i=nw[x]+1;i<t[x].size();++i)if(!p2[t[x][i]]||Match(p2[t[x][i]]))return p2[t[x][i]]=x,nw[x]=i,true;
+    return false;
+}
+int main(){
+    ip[1]=1;
+    for(int i=2;i<=m;++i){
+        if(!ip[i])pr[++sz]=i;
+        for(int j=1;j<=sz&&i*pr[j]<=m;++j){
+            ip[i*pr[j]]=1;
+            if(i%pr[j]==0)break;
+        }
+    }
+    scanf("%d",&n),a[0]=-1,sz=0,ip[2]=1;
+    for(int i=1;i<=n;++i)scanf("%d",&a[i]);
+    for(int i=1;i<=n;++i){
+        if(a[i]-1!=a[i-1])p[++sz]=a[i],a[i]&1?++n1:++n2;
+        if(a[i]+1!=a[i+1])p[++sz]=a[i]+1,a[i]&1?++n2:++n1;
+    }
+    for(int i=1;i<=sz;++i)for(int j=i+1;j<=sz;++j)if(!ip[p[j]-p[i]])p[i]&1?t[i].push_back(j):t[j].push_back(i);
+    for(int i=1;i<=sz;++i)if(p[i]&1)nw[i]=-1,pn+=Match(i);
+    printf("%d",pn+2*(n1-pn>>1)+2*(n2-pn>>1)+3*(n1-pn&1));
+    return 0;
+}

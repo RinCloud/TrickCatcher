@@ -1,0 +1,11 @@
+```python
+from random import randint
+
+def sample_one():
+    interval1_start = randint(-10, 10)
+    interval1_end = randint(interval1_start, interval1_start + 10)  # Ensure start <= end
+    interval2_start = randint(-10, 10)
+    interval2_end = randint(interval2_start, interval2_start + 10)  # Ensure start <= end
+    generated_input = [(interval1_start, interval1_end), (interval2_start, interval2_end)]
+    return generated_input
+```

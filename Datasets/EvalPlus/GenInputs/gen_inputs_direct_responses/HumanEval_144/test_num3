@@ -1,0 +1,3 @@
+**Test Input Reasoning:**
+
+In this test case, I would test for when both fractions evaluate to a whole number. This is interesting because we would expect the function to return True as both fractions evaluate to whole numbers.

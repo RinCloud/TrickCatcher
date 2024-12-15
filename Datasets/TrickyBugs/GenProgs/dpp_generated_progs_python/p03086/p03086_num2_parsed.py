@@ -1,0 +1,8 @@
+import re
+
+S = input()
+
+matches = re.findall(r'[ACGT]+', S)
+longest_len = max(map(len, matches)) if matches else 0
+
+print(longest_len)

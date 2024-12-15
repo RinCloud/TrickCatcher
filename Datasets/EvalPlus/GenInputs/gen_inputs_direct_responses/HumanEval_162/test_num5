@@ -1,0 +1,19 @@
+[['Hello world']]
+
+[['']]
+
+[['Hello world', 'This is a test']]
+
+[['This test has a number 12345 ']]
+
+[['1','2','3','4','5']]
+
+[['!@#$%^&*()', '12345']]
+
+[['H','e','l','l','o', ' ', 'w','o','r','l','d']]
+
+[['Special characters: #$%^&*()']]
+
+[['      Hello world!         ']]
+
+[['']]

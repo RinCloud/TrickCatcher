@@ -1,0 +1,9 @@
+```python
+from cyaron import *
+
+def sample_one():
+    text_len = randint(0, 50)  # limit text length to 50 for simplicity
+    text = String.random(text_len, charset="a-zA-Z ")  # generate a random string which may include spaces
+    generated_input = [text]
+    return generated_input
+```

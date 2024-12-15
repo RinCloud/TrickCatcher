@@ -1,0 +1,17 @@
+# Solution
+```python
+def check_polygon(N, sides):
+    max_side = max(sides)
+    sides_sum = sum(sides) - max_side
+
+    if max_side < sides_sum:
+        return "Yes"
+    else:
+        return "No"
+
+N = int(input())
+sides = list(map(int, input().split()))
+
+result = check_polygon(N, sides)
+print(result)
+```

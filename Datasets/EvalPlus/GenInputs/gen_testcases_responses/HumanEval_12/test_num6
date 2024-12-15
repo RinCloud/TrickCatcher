@@ -1,0 +1,10 @@
+{"input": [["apple", "banana", "orange", "kiwi"], ["peach", "mango"]], "output": "banana"} 
+{"input": [["python", "java", "javascript"], ["c++", "go", "rust"]], "output": "javascript"} 
+{"input": [["", "hello", "world", "programming"], ["python", "java", "c++"]], "output": "programming"} 
+{"input": [["apple", "", "orange", "", "kiwi"], ["banana", "mango"]], "output": "kiwi"} 
+{"input": [[], []], "output": None} 
+{"input": [["stack", "overflow"], ["hello", "world"]], "output": "stack"} 
+{"input": [["earth", "planet", "universe"], ["galaxy", "star"]], "output": "universe"} 
+{"input": [["water", "fire", "earth"], ["air", "energy", "electricity"]], "output": "electricity"} 
+{"input": [["a", "aa", "aaa"], ["aaaa", "aaaaa"]], "output": "aaaaa"} 
+{"input": [["good", "better", "best"], ["excellent", "awesome"]], "output": "excellent"} 

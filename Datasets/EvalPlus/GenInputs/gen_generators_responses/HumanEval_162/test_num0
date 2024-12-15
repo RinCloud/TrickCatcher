@@ -1,0 +1,12 @@
+```python
+from random import *
+from cyaron import *
+def sample_one():
+    length_of_text = randint(0, 20) # Generate a length from 0 to 20 for testing empty and non-empty strings
+    if length_of_text == 0:
+        text = ""
+    else:
+        text = String.random(length_of_text)  # Generates a random string
+    generated_input = [text]
+    return generated_input
+```

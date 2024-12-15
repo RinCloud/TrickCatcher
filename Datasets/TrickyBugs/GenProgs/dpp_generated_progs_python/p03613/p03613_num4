@@ -1,0 +1,24 @@
+# Solution
+
+To maximize the count of `i` such that `a_i = X`, we need to find the most occurring value in the given sequence `a`.
+
+We can achieve this by counting the occurrences of each value in `a` and then finding the maximum count.
+
+Here's the code:
+
+```python
+from collections import Counter
+
+# Read the input
+N = int(input())
+a = list(map(int, input().split()))
+
+# Count the occurrences of each value in a
+counts = Counter(a)
+
+# Find the maximum count
+max_count = max(counts.values())
+
+# Print the maximum count
+print(max_count)
+```

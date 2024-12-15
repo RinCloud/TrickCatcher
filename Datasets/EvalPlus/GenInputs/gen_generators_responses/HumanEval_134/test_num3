@@ -1,0 +1,13 @@
+```python
+from random import randint
+from cyaron import *
+
+def sample_one():
+    length_of_txt = randint(0, 20)
+    txt = String.random(length_of_txt, charset='abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ')
+    # Randomly add a non-alpha character or space at the end
+    if randint(0, 1):
+        txt += String.random(1, charset=' !@#$%^&*()_+-=[]{};:\'",.<>/?\\|`~')
+    generated_input = [txt]
+    return generated_input
+```

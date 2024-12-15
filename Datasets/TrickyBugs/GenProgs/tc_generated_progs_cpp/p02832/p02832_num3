@@ -1,0 +1,24 @@
+The code is almost correct. The only issue is that the variable `z` is not initialized before using it to track the number of bricks that need to be broken. To fix this, we need to initialize `z` to 0 before the loop.
+
+Here is the corrected code:
+
+```cpp
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int a,z=0,s=1;
+    cin>>a;
+    int q[a];
+    for(int i=0;i<a;i++) cin>>q[i];
+    for(int i=0;i<a;i++)
+    {
+        if(q[i]==s){
+            z++;
+            s++;
+        }
+    }
+    if(z==0) cout<<"-1";
+    else cout<<a-z;
+}
+```

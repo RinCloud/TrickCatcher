@@ -1,0 +1,24 @@
+**REPAIRED CODE**:
+
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+#define REP(i,n) for(int(i)=0;i<(n);i++)
+
+int main(){
+  int n,f=0;cin>>n;
+  for (int i = 0; i <= n / 4 + 1; i++) {
+    for (int j = 0; j <= n / 7 + 1; j++) {
+      if (n == i * 4 + j * 7) {
+        f = 1;
+        break;
+      }
+    }
+    if (f)
+      break;
+  }
+  cout<<(f?"Yes":"No");
+}
+```
+
+The issue with the original code is that it wrongly assumes that at most 8 cakes and 5 doughnuts are needed to reach the target price `n`. However, this is not always the case. By using nested loops with the ranges `0` to `n / 4 + 1` for `i` and `0` to `n / 7 + 1` for `j`, it is guaranteed to cover all possible combinations of cakes and doughnuts, which will correctly determine if it is possible to reach the desired price `n`.

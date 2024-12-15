@@ -1,0 +1,25 @@
+**BUG FIXES + IMPROVEMENTS**:
+
+- Fixed bug where the wrong variables were being used for input and naming.
+- Fixed bug where `return cout<<cnt ,0;` should be `cout<<cnt; return 0;`.
+- Improved code formatting and removed unnecessary `#include` statement.
+
+**REPAIRED CODE**:
+
+```cpp
+#include <iostream>
+
+using namespace std;
+
+int main () {
+    long long n, m;
+    cin >> n >> m;
+
+    long long cnt = min(n, m / 2);
+    m -= cnt * 2;
+    cnt += m / 4;
+
+    cout << cnt;
+    return 0;
+}
+```

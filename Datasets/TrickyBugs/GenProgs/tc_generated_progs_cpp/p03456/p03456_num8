@@ -1,0 +1,20 @@
+**REPAIRED CODE**:
+
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+int main(){
+  int n, m;
+  cin >> n >> m;
+  string tmp = to_string(n) + to_string(m);
+  int q = stoi(tmp);
+  if(q == (int)(sqrt(q))*(int)(sqrt(q))) cout << "Yes" << endl;
+  else cout << "No" << endl;
+}
+```
+
+Explanation: 
+1. We change the variables `n` and `m` from `string` to `int` because we are given that the input values are positive integers.
+2. We modify the concatenation of `n` and `m` using `to_string()` function to convert `n` and `m` to strings and then concatenate them using `+` operator.
+3. We change the condition in the `if` statement to check if `q` is equal to the square of an integer, instead of checking if `q` is divisible by the square root of `q`.

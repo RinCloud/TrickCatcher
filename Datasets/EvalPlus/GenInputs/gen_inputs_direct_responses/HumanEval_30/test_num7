@@ -1,0 +1,3 @@
+**Test Input Reasoning:**
+
+One interesting case to consider is when the list is empty. We should test how the function handles this special case.

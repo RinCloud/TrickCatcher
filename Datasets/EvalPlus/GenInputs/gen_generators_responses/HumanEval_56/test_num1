@@ -1,0 +1,8 @@
+```python
+from cyaron import *
+def sample_one():
+    length_of_brackets = randint(1, 10)
+    brackets = String.random(length_of_brackets, charset='<>')
+    generated_input = [brackets]
+    return generated_input
+```

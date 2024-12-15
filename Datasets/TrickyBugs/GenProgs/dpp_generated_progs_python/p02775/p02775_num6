@@ -1,0 +1,30 @@
+# Approach:
+
+To find the minimum possible number of total banknotes used, we need to choose the optimal combination of banknotes for the payment.
+
+We can iterate through the banknotes in reverse order, starting from the largest banknote value. At each step, we check if the current banknote value is less than or equal to the remaining change amount. If it is, we subtract the banknote value from the change amount and increment the count of banknotes used. This process is repeated until the change amount becomes zero.
+
+Finally, we return the count of banknotes used.
+
+# Solution:
+
+```python
+def min_banknotes_needed(N):
+    banknotes = [10 ** 100] + [10 ** i for i in range(100)]
+    count = 0
+    i = len(banknotes) - 1
+
+    while N > 0:
+        if N >= banknotes[i]:
+            count += N // banknotes[i]
+            N %= banknotes[i]
+        i -= 1
+
+    return count
+
+# Read the input
+N = int(input())
+
+# Call the function and print the result
+print(min_banknotes_needed(N))
+```

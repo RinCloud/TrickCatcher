@@ -1,0 +1,38 @@
+```cpp
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
+using namespace std;
+
+bool isPossibleTree(int N, vector<int>& a) {
+    sort(a.begin(), a.end(), greater<int>());
+
+    int maxDistance = a[0];
+    int sumRest = 0;
+    for (int i = 1; i < N; i++) {
+        sumRest += a[i];
+    }
+
+    if (maxDistance > N - 2 || (N - 2) % 2 != sumRest % 2) {
+        return false;
+    }
+
+    return true;
+}
+
+int main() {
+    int N;
+    cin >> N;
+
+    vector<int> a(N);
+    for (int i = 0; i < N; i++) {
+        cin >> a[i];
+    }
+
+    string result = isPossibleTree(N, a) ? "Possible" : "Impossible";
+    cout << result << endl;
+
+    return 0;
+}
+```

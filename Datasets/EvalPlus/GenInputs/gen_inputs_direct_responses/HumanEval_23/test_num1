@@ -1,0 +1,10 @@
+- Case 1: Empty string
+- Case 2: String with one character
+- Case 3: String with all lowercase characters
+- Case 4: String with all uppercase characters
+- Case 5: String with a combination of lowercase and uppercase characters
+- Case 6: String with digits only
+- Case 7: String with special characters only
+- Case 8: String with a combination of letters, digits, and special characters
+- Case 9: String with a non-ASCII character
+- Case 10: String with a combination of ASCII and non-ASCII characters

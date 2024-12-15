@@ -1,0 +1,58 @@
+**PROBLEM DESCRIPTION**:
+In a flower bed, there are N flowers, numbered 1,2,......,N. Initially, the heights of all flowers are 0. You are given a sequence h=\\{h_1,h_2,h_3,......\\} as input. You would like to change the height of Flower k to h_k for all k (1 \leq k \leq N), by repeating the following "watering" operation:
+* Specify integers l and r. Increase the height of Flower x by 1 for all x such that l \leq x \leq r.
+Find the minimum number of watering operations required to satisfy the condition.
+
+CONSTRAINTS:
+* 1 \leq N \leq 100
+* 0 \leq h_i \leq 100
+* All values in input are integers.
+
+INPUT:
+Input is given from Standard Input in the following format:
+N
+h_1 h_2 h_3 ...... h_N
+
+OUTPUT:
+Print the minimum number of watering operations required to satisfy the condition.
+
+EXAMPLES:
+
+INPUT:
+4
+1 2 2 1
+
+OUTPUT:
+2
+
+INPUT:
+5
+3 1 2 3 1
+
+OUTPUT:
+5
+
+INPUT:
+8
+4 23 75 0 23 96 50 100
+
+OUTPUT:
+221
+
+**CODE**:
+```cpp
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+  int n,a,ans;
+  ans=0;
+  cin>>n;
+  for(int i=0;i<n;i++){
+    int h;
+    cin>>h;
+    if(h>a){ans+=h-a;}
+    a=h;
+  }
+  cout<<ans;
+}
+```

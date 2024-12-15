@@ -1,0 +1,32 @@
+```cpp
+#include<bits/stdc++.h>
+using namespace std;
+int n,m;
+int main()
+{
+    scanf("%d%d",&n,&m);
+    if(n==13&&m==1) printf("Bob");
+    else if(n>m||(n==1&&m==13)) printf("Alice");
+    else if(m!=n) printf("Bob");
+    else printf("Draw");
+}
+```
+
+There are two issues with the code:
+1. The conditions for Alice winning and Bob winning are incorrect. Alice should win if her card is stronger than Bob's, not if her card is greater than Bob's. Similarly, Bob should win if his card is stronger than Alice's, not if his card is greater than Alice's.
+2. The condition for a drawn game is incorrect. It should be when Alice and Bob have the same card, not when Alice and Bob have different cards.
+
+Here is the code with the issues fixed:
+
+```cpp
+#include<bits/stdc++.h>
+using namespace std;
+int n,m;
+int main()
+{
+    scanf("%d%d",&n,&m);
+    if((n==1&&m==13) || (n>m &&!(n==13&&m==1))) printf("Alice");
+    else if((n==13&&m==1) || (m>n && ! (n==1&&m==13))) printf("Bob");
+    else printf("Draw");
+}
+```

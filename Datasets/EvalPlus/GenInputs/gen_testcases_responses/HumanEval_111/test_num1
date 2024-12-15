@@ -1,0 +1,10 @@
+{"input": ['a b c'], "output": {'a': 1, 'b': 1, 'c': 1}}
+{"input": ['a b b a'], "output": {'a': 2, 'b': 2}}
+{"input": ['a b c a b'], "output": {'a': 2, 'b': 2}}
+{"input": ['b b b b a'], "output": {'b': 4}}
+{"input": [''], "output": {}}
+{"input": ['a a a a a a a'], "output": {'a': 7}}
+{"input": ['a b b b b c c c c'], "output": {'b': 4, 'c': 4}}
+{"input": ['d d d d d d e e e e'], "output": {'d': 6, 'e': 4}}
+{"input": ['x y z x y z x y z'], "output": {'x': 3, 'y': 3, 'z': 3}}
+{"input": ['a b b c c c d d d d'], "output": {'c': 3, 'd': 4}}

@@ -1,0 +1,32 @@
+**Repaired Code**:
+
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+
+int main() {
+    int N;
+    cin >> N;
+    vector<int> A(N);
+    for (int i = 0; i < N; i++) cin >> A[i];
+    int l = 0, r = N;
+    while (r - l > 1) {
+        int c = (l + r) / 2;
+        set<int> distinctChars;
+        for (int i = 1; i < N; i++) {
+            if (A[i] <= A[i - 1]) {
+                for (int j = A[i]; j <= A[i - 1]; j++) {
+                    distinctChars.insert(j);
+                    if (distinctChars.size() > c) break;
+                }
+            }
+            if (distinctChars.size() > c) break;
+        }
+        if (distinctChars.size() > c) l = c;
+        else r = c;
+    }
+    cout << r << endl;
+    return 0;
+}
+```

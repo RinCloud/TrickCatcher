@@ -1,0 +1,33 @@
+#include <bits/stdc++.h>
+using namespace std;
+using ivec = vector<int>;
+
+int main() {
+    int g, h, i, k, m, n, p, q, u, v;
+    ios::sync_with_stdio(false), cin.tie(nullptr);
+    for (cin >> n >> q, p = 1; p * p <= n; ++p)
+        ;
+    vector<int> c(n), count(n, 0), l(q), r(q), ans(q);
+    for (auto &color: c)
+        cin >> color;
+
+    // Modify priority_queue by reversing the order of elements
+    priority_queue<tuple<int, int, int>, vector<tuple<int, int, int>>, greater<tuple<int, int, int>>> s;
+
+    for (m = p - 1, i = 0; i < q; ++i)
+        cin >> l[i] >> r[i], s.emplace(--l[i] / m, --r[i] / m, i);
+    const auto dec = [](int x, int &k) { if (x == 1) --k; };
+    const auto inc = [](int x, int &k) { if (x == 0) ++k; };
+    for (++count[c[0]], g = h = 0, k = 1; not s.empty(); ans[i] = k, s.pop()) {
+        for (i = get<2>(s.top()), u = l[i], v = r[i]; h > v; --h)
+            dec(--count[c[h]], k);
+        for (; h < v; ++count[c[h]])
+            inc(count[c[++h]], k);
+        for (; g < u; ++g)
+            dec(--count[c[g]], k);
+        for (; g > u; ++count[c[g]])
+            inc(count[c[--g]], k);
+    }
+    for (auto a: ans)
+        cout << a << '\n';
+}

@@ -1,0 +1,3 @@
+**Test Input Reasoning:**
+
+One interesting case to consider is when the given number is 1. The function should return False because 1 is not the multiplication of 3 prime numbers.

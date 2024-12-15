@@ -1,0 +1,15 @@
+The given code has a bug in the calculation of the number of ways to choose a pair of an even number and an odd number.
+
+The correct formula to calculate the number of ways to choose a pair of an even number and an odd number is n_even * n_odd, where n_even is the number of even numbers between 1 and K (inclusive), and n_odd is the number of odd numbers between 1 and K (inclusive).
+
+To calculate n_even, we can use the formula (K // 2), and to calculate n_odd, we can use the formula (K + 1) // 2.
+
+Here is the corrected code:
+
+```python
+K = int(input())
+n_even = K // 2
+n_odd = (K + 1) // 2
+result = n_even * n_odd
+print(result)
+```

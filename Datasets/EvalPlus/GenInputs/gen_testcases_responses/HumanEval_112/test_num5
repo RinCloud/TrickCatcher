@@ -1,0 +1,10 @@
+{"input": ["abcde", "ae"], "output": ["bcd", False]}
+{"input": ["abcdef", "b"], "output": ["acdef", False]}
+{"input": ["abcdedcba", "ab"], "output": ["cdedc", True]}
+{"input": ["racecar", "ae"], "output": ["rcr", True]}
+{"input": ["palindrome", "lmn"], "output": ["padie", False]}
+{"input": ["abc", "a"], "output": ["bc", False]}
+{"input": ["abcdefg", "abcdefg"], "output": ["", True]}
+{"input": ["abcdedcba", "aaa"], "output": ["bcdcb", False]}
+{"input": ["racecar", "racecar"], "output": ["", True]}
+{"input": ["abcdeedcba", "a"], "output": ["bcdeedcb", False]}

@@ -1,0 +1,15 @@
+```python
+from random import randint, choice
+from cyaron import String
+
+def sample_one():
+    start_char = choice(list("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"))
+    middle_part_length = randint(0, 5)
+    middle_part = String.random(middle_part_length, charset="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789")
+    extension = choice(["txt", "exe", "dll"])
+    digits_count = randint(0, 3)  # ensuring not more than three digits
+    digits = ''.join([str(randint(0, 9)) for _ in range(digits_count)])
+    file_name = start_char + middle_part + digits + '.' + extension
+    generated_input = [file_name]
+    return generated_input
+```

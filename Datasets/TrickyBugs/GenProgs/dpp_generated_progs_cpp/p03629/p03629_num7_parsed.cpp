@@ -1,0 +1,34 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+using namespace std;
+
+int main() {
+    string A;
+    cin >> A;
+
+    vector<vector<int>> dp(A.length() + 1, vector<int>(26, 0));
+
+    for (int i = A.length() - 1; i >= 0; i--) {
+        for (int c = 0; c < 26; c++) {
+            if (A[i] == (char)('a' + c)) {
+                dp[i][c] = i + 1;
+            } else {
+                dp[i][c] = dp[i+1][c];
+            }
+        }
+    }
+
+    string ans = "";
+    int j = 0;
+    for (int k = 0; k < 26; k++) {
+        if (dp[0][k] == 0) {
+            ans.push_back((char)('a' + k));
+            j++;
+        }
+    }
+
+    cout << ans << endl;
+
+    return 0;
+}

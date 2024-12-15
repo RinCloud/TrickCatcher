@@ -1,0 +1,32 @@
+# Function to calculate the minimum distance between two seats
+def min_distance(seat1, seat2, n):
+    row1, col1 = (seat1 - 1) // n, (seat1 - 1) % n
+    row2, col2 = (seat2 - 1) // n, (seat2 - 1) % n
+    return abs(row1 - row2) + abs(col1 - col2)
+
+# Function to calculate the number of pairs of viewers who will hate each other forever
+def calculate_hate_pairs(n, seats):
+    # Initialize the hate pairs counter
+    hate_pairs = 0
+
+    # Iterate over each viewer
+    for i in range(n ** 2):
+        current_seat = seats[i]
+        
+        # Check if there are any viewers who have already left and are closer to the exit than the current viewer
+        for j in range(i + 1, n ** 2):
+            next_seat = seats[j]
+            if min_distance(current_seat, next_seat, n) < min_distance(current_seat, current_seat, n):
+                hate_pairs += 1
+
+    return hate_pairs
+
+# Read the input values
+n = int(input())
+seats = list(map(int, input().split()))
+
+# Calculate the number of pairs of viewers who will hate each other forever
+hate_pairs = calculate_hate_pairs(n, seats)
+
+# Print the result
+print(hate_pairs)

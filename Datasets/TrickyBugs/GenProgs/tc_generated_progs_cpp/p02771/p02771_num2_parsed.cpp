@@ -1,0 +1,12 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+    int a[10] = {0}, x, c = 0; // Initialize c to zero
+    for (int i = 0; i < 3; i++) {
+        cin >> x; 
+        c += a[x]; // Increment c with the value of a[x]
+        a[x]++; // Increment a[x]
+    }
+    cout << (c == 1 ? "Yes" : "No");
+}

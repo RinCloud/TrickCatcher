@@ -1,0 +1,49 @@
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    int N, X;
+    cin >> N >> X;
+
+    vector<int> B(N);
+    vector<int> L(N);
+    vector<int> U(N);
+    for(int i=0; i<N; i++) {
+        cin >> B[i] >> L[i] >> U[i];
+    }
+
+    int hours = 0;
+    long long TakahashiScore = 0;
+    long long AokiScore = 0;
+
+    // Calculate initial Takahashi score
+    for(int i=0; i<N; i++) {
+        TakahashiScore += B[i] * L[i];
+        AokiScore += B[i] * U[i];
+    }
+
+    // Calculate hours required for Takahashi to win
+    while(TakahashiScore < AokiScore) {
+        // Find the exam with the highest upper bound
+        int highestUpperBound = 0;
+        for(int i=1; i<N; i++) {
+            if(U[i] > U[highestUpperBound] || (U[i] == U[highestUpperBound] && L[i] > L[highestUpperBound])) {
+                highestUpperBound = i;
+            }
+        }
+
+        // Increment the score of the exam with the highest upper bound
+        if(L[highestUpperBound] < X) {
+            L[highestUpperBound]++;
+            TakahashiScore += B[highestUpperBound];
+            hours++;
+        } else {
+            break;
+        }
+    }
+
+    cout << hours << endl;
+    return 0;
+}
+```

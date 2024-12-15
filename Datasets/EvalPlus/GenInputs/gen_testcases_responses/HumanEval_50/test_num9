@@ -1,0 +1,10 @@
+{"input": ["abcde"], "output": "fghij"}
+{"input": ["vwxyz"], "output": "stuvwx"}
+{"input": ["hello world"], "output": "mjqqt btwqi"}
+{"input": ["programming"], "output": "uwtsqtktmzp"}
+{"input": ["abcdefghijklmnopqrstuvwxyz"], "output": "fghijklmnopqrstuvwxyzabcde"}
+{"input": ["12345"], "output": "12345"}
+{"input": ["#@$%&*"], "output": "#@$%&*"}
+{"input": ["Hello World!"], "output": "Mjqqt Btwqi!"}
+{"input": ["Encode and Decode"], "output": "Jshnlj fsit Htijij"}
+{"input": ["Test CASES"], "output": "Yjxy HFXJX"}

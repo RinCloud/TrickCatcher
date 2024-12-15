@@ -1,0 +1,10 @@
+```python
+from random import *
+from cyaron import *
+
+def sample_one():
+    sentence_length = randint(1, 100)  # Length of the sentence between 1 and 100
+    sentence = String.random(sentence_length, charset="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ ")  # Generate random string with letters and spaces
+    generated_input = [sentence]
+    return generated_input
+```

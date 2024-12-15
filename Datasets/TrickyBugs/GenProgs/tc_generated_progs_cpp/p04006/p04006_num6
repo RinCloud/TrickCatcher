@@ -1,0 +1,44 @@
+**BUG FIX:**
+
+1. The current code creates an array `b` to store the updated values of `a` after each spell. However, there is no need to create a separate array. We can directly update the values of `a` without using additional space.
+
+2. The code initializes `int b[2000];` as an array of size 2000. However, the problem states that `2≤N≤2,000`. Therefore, the size of the array `b` should be `N`.
+
+3. The code uses `ull` as the data type for `res` to accumulate the total time. However, there is no need to use `ull` data type for the `res` variable. It can be a regular integer type.
+
+4. The loop `for(int m=1; m<N; m++)` runs for `N-1` iterations. However, the problem states that Snuke can perform a spell which changes the color of all the slimes. Therefore, the loop should run for `N` iterations.
+
+**FIXED CODE:**
+```cpp
+#include <iostream>
+using namespace std;
+
+int main(){
+	cin.tie(0);
+	ios::sync_with_stdio(false);
+
+	int N, x;
+	int a[2000];
+
+	cin >> N >> x;
+	for(int i=0; i<N; i++) cin >> a[i];
+
+	int res = 0;
+	for(int i=0; i<N; i++){
+		res += a[i];
+	}
+
+	for(int m=0; m<N; m++){
+		int tot = m * x;
+		for(int i=0; i<N; i++){
+			int b = min(a[i], a[(i-1+N) % N]);
+			tot += b;
+			a[i] -= b;
+			a[(i-1+N)%N] -= b;
+		}
+		res = min(res, tot);
+	}
+	cout << res << endl;
+	return 0;
+}
+```

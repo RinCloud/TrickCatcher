@@ -1,0 +1,22 @@
+# Approach
+To satisfy the condition of having adjacent tiles with different colors, we need to count the number of consecutive tiles with the same color. We can then repaint one of the tiles in each consecutive group to have a different color.
+
+# Steps
+1. Read the string `S` from input.
+2. Initialize a variable `count` to 0 to keep track of the number of tiles that need to be repainted.
+3. Iterate over the characters in `S` from the second character to the last.
+4. If the current character is the same as the previous character, increment `count` by 1.
+5. Finally, print the value of `count`.
+
+# Program
+
+```python
+S = input()
+
+count = 0
+for i in range(1, len(S)):
+    if S[i] == S[i-1]:
+        count += 1
+
+print(count)
+```

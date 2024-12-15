@@ -1,0 +1,7 @@
+**Repaired Code:**
+
+```python
+a=int(input())
+print((a//2) * ((a + 1)//2))
+```
+In this code, the number of even numbers between 1 and K (inclusive) is `a//2`, and the number of odd numbers between 1 and K (inclusive) is `(a + 1)//2` because `a` is included in the range. Therefore, the number of ways to choose a pair of an even number and an odd number is `(a//2) * ((a + 1)//2)`.

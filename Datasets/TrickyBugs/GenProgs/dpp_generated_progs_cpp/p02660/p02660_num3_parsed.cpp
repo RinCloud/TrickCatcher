@@ -1,0 +1,47 @@
+#include <iostream>
+#include <cmath>
+#include <vector>
+
+using namespace std;
+
+bool isPrime(int num) {
+    if (num <= 1) return false;
+    if (num == 2) return true;
+    if (num % 2 == 0) return false;
+    
+    int sqrtNum = sqrt(num);
+    for (int i = 3; i <= sqrtNum; i += 2) {
+        if (num % i == 0) {
+            return false;
+        }
+    }
+    
+    return true;
+}
+
+int main() {
+    long long N;
+    cin >> N;
+    
+    vector<int> primeFactors;
+    
+    int i = 2;
+    while (N > 1 && i*i <= N) {
+        if (N % i == 0) {
+            primeFactors.push_back(i);
+            N /= i;
+            while (N % i == 0) {
+                N /= i;
+            }
+        }
+        i++;
+    }
+    
+    if (N > 1) {
+        primeFactors.push_back(N);
+    }
+    
+    cout << primeFactors.size() << endl;
+    
+    return 0;
+}

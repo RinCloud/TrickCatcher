@@ -1,0 +1,14 @@
+\[
+\begin{align*}
+&[['three', 'one', 'five']] \\
+&[['two', 'four', 'eight']] \\
+&[['zero', 'nine', 'seven', 'six'], ' +\text{' and them randomly put'.' into at least one word'}] \\
+&[[], '+\text{' this is an empty string'}] \\
+&[['zero', 'nine', 'seven', 'six']] \\
+&[['five', 'four', 'two']] \\
+&[['seven', 'six', 'five']] \\
+&[['zero', 'six']] \\
+&[['five', 'four', 'two']] \\
+&[['seven', 'nine', 'five']] \\
+\end{align*}
+\]

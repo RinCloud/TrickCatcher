@@ -1,0 +1,19 @@
+S = input()
+T = input()
+
+n = len(S)
+m = len(T)
+
+ans = ['?'] * n
+for i in range(n-m+1):
+    for j in range(m):
+        if S[i+j] != '?' and S[i+j] != T[j]:
+            break
+    else:
+        ans[i:i+m] = T
+
+result = ''.join(ans).replace('?', 'a')
+if '?' in result:
+    result = 'UNRESTORABLE'
+
+print(result)

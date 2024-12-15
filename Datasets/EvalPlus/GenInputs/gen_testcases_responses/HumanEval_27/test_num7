@@ -1,0 +1,7 @@
+{"input": ["Hello"], "output": "hELLO"}
+{"input": ["Python"], "output": "pYTHON"}
+{"input": ["HELLO"], "output": "hello"}
+{"input": ["pYTHON"], "output": "Python"}
+{"input": [""], "output": ""}
+{"input": ["1aA"], "output": "1Aa"}
+{"input": ["@@@@@"], "output": "@@@@@@")

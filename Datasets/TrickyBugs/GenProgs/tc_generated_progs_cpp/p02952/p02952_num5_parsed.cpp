@@ -1,0 +1,21 @@
+#include <iostream>
+using namespace std;
+
+int main() 
+{
+	int a, ss = 0;
+	cin >> a;
+	for (int i = 1; i <= a; i++)
+	{
+		int digits = 0;
+		int n = i;
+		while (n > 0)
+		{
+			digits++;
+			n /= 10;
+		}
+		if (digits % 2 == 1) ss++;
+	}
+	cout << ss;
+	return 0;
+}

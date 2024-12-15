@@ -1,0 +1,62 @@
+Here is a solution to calculate the complexity of the given grid:
+
+```cpp
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int complexity(int h, int w, vector<string>& grid) {
+    // Initialize variables
+    int maxComplexity = 0;
+    bool allWhite = true;
+    bool allBlack = true;
+
+    // Check if all squares are white or black
+    for (int i = 0; i < h; i++) {
+        for (int j = 0; j < w; j++) {
+            if (grid[i][j] == '#')
+                allWhite = false;
+            else
+                allBlack = false;
+        }
+    }
+
+    if (allWhite || allBlack)
+        return 0;
+
+    // Divide the grid and calculate complexity recursively
+    for (int i = 1; i < h; i++) {
+        // Divide horizontally
+        vector<string> subgrid1(grid.begin(), grid.begin() + i);
+        vector<string> subgrid2(grid.begin() + i, grid.end());
+        int c1 = complexity(i, w, subgrid1);
+        int c2 = complexity(h - i, w, subgrid2);
+        maxComplexity = max(maxComplexity, max(c1, c2));
+    }
+
+    for (int j = 1; j < w; j++) {
+        // Divide vertically
+        vector<string> subgrid1(grid.begin(), grid.begin() + h);
+        vector<string> subgrid2(grid.begin() + h, grid.end());
+        int c1 = complexity(h, j, subgrid1);
+        int c2 = complexity(h, w - j, subgrid2);
+        maxComplexity = max(maxComplexity, max(c1, c2));
+    }
+
+    return maxComplexity + 1;
+}
+
+int main() {
+    // Read input
+    int h, w;
+    cin >> h >> w;
+    vector<string> grid(h);
+    for (int i = 0; i < h; i++)
+        cin >> grid[i];
+
+    // Calculate and print the complexity
+    cout << complexity(h, w, grid) << endl;
+
+    return 0;
+}
+```

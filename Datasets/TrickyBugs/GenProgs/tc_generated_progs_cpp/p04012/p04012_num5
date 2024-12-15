@@ -1,0 +1,18 @@
+**UPDATED CODE:**
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+int main() {
+  string w; cin >> w;
+  unordered_map<char, int> count;
+  for (char c : w) count[c]++;
+  bool isBeautiful = true;
+  for (auto it : count) {
+    if (it.second % 2 != 0) {
+      isBeautiful = false;
+      break;
+    }
+  }
+  cout << (isBeautiful ? "Yes" : "No") << endl;
+}
+```

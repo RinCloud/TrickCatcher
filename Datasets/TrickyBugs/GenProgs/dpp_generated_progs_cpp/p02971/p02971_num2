@@ -1,0 +1,25 @@
+```cpp
+#include <iostream>
+#include <vector>
+#include <algorithm>
+using namespace std;
+
+int main() {
+    int N;
+    cin >> N;
+
+    vector<int> A(N);
+    for (int i = 0; i < N; i++) {
+        cin >> A[i];
+    }
+
+    int max_val = *max_element(A.begin(), A.end());
+
+    for (int i = 0; i < N; i++) {
+        int max_other = (A[i] == max_val) ? *max_element(A.begin(), A.begin() + i) : *max_element(A.begin() + i + 1, A.end());
+        cout << max_other << endl;
+    }
+
+    return 0;
+}
+```

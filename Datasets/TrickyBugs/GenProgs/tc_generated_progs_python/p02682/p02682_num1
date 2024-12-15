@@ -1,0 +1,11 @@
+The issue with the code is that the condition in the `else` block is incorrect. Instead of subtracting `(k-a-b)` from `a`, it should subtract `(k-a)`.
+
+Here is the corrected code:
+
+```python
+a,b,c,k=map(int,input().split())
+if a >= k:
+    print(k)
+else:
+    print(a-(k-a))
+```

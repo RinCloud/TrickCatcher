@@ -1,0 +1,38 @@
+**Repaired Code:**
+
+```
+#include<bits/stdc++.h>
+using namespace std;
+
+int main(){
+  int n,m;
+  string a[50],b[50];
+  cin>>n>>m;
+  for(int i=0;i<n;i++) cin>>a[i];
+  for(int i=0;i<m;i++) cin>>b[i];
+  int cnt=0;
+  for(int x=0;x<=n-m;x++){
+    for(int y=0;y<=n-m;y++){
+      cnt = 0;
+      for(int i=0;i<m;i++){
+        for(int j=0;j<m;j++){
+          if(a[x+i][y+j]==b[i][j]) cnt++;
+          else break;
+        }
+      }
+      if(cnt==m*m){ cout<<"Yes"; return 0; }
+    }
+  }
+  cout<<"No";
+}
+```
+
+**Explanation:**
+
+1. Changed the size of string arrays `a` and `b` from `string a[100], b[100]` to `string a[50], b[50]` in order to satisfy the given constraints.
+2. Added two for loops to iterate over possible positions for template image B within image A. Iteration ranges are from `0` to `n-m` for both `x` and `y` to ensure that the template doesn't exceed the boundaries of image A.
+3. Added a statement `cnt = 0` inside the loop to reset the counter `cnt` for each trial.
+4. Added a `break` statement when the corresponding pixels between image A and template image B don't match, in order to stop checking further and move to the next position.
+5. Moved the check for `cnt == m*m` outside the inner-most loops to ensure that it is checked for all positions.
+6. Removed the `else cnt=0` statement, as it is no longer needed due to the added `break` statement.
+7. Indented the code for better readability.

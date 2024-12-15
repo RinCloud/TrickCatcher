@@ -1,0 +1,10 @@
+{"input": [['a', 'b', 'c', 'd', 'e']], "output": "a"}
+{"input": [['a', 'ab', 'abc', 'abcd', 'abcde']], "output": "abcde"}
+{"input": [['abcde', 'abcd', 'abc', 'ab', 'a']], "output": "abcde"}
+{"input": [['aa', 'a', 'aaa', 'aaaaa', 'aaaa']], "output": "aaaaa"}
+{"input": [['', 'a', 'b', 'c']], "output": "a"}
+{"input": [['hello', 'world', '!', 'this', 'is', 'a', 'test']], "output": "hello"}
+{"input": [['longest', 'secondlongest', 'short', 'small', 'tiny']], "output": "secondlongest"}
+{"input": [['a', 'bb', 'ccc', 'dddd', 'eeeee']], "output": "eeeee"}
+{"input": [['1', '22', '333', '4444', '55555']], "output": "55555"}
+{"input": [['python', 'is', 'awesome']], "output": "awesome"}

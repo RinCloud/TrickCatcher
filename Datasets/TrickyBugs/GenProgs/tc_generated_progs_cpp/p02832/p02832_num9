@@ -1,0 +1,31 @@
+**ALGORITHM**:
+1. Read the value of N from input.
+2. Read the array a from input.
+3. Initialize variables z and s to 0 and 1 respectively.
+4. Loop through each element in array a.
+5. If the current element is equal to s, increment z by 1 and increment s by 1.
+6. If z is still 0, print -1.
+7. Otherwise, print the value of N - z.
+
+**REPAIRED CODE**:
+
+```cpp
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+	int a,z=0,s=1;     // Initialized z to 0 
+	cin>>a;
+	int q[a];
+	for(int i=0;i<a;i++) cin>>q[i];
+	for(int i=0;i<a;i++)
+	{
+		if(q[i]==s){
+			z++;
+			s++;
+		}
+	}
+	if(z==0) cout<<"-1";
+	else cout<<a-z;
+}
+```

@@ -1,0 +1,46 @@
+```cpp
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+const int MOD = 998244353;
+
+long long powMod(long long a, long long b, int mod) {
+    long long res = 1;
+    while (b > 0) {
+        if (b & 1) {
+            res = (res * a) % mod;
+        }
+        a = (a * a) % mod;
+        b >>= 1;
+    }
+    return res;
+}
+
+int main() {
+    int N, K, P;
+    cin >> N >> K >> P;
+
+    vector<vector<int>> dp(N + 1, vector<int>(K + 1, 0));
+    for (int i = 0; i <= K; i++) {
+        dp[1][i] = powMod(i + 1, N - 1, P);
+    }
+
+    for (int i = 2; i <= N; i++) {
+        for (int j = 0; j <= K; j++) {
+            long long val = dp[i - 1][j];
+            for (int k = 1; k <= j; k++) {
+                val -= dp[i - 1][k - 1];
+                val += P;
+                val %= P;
+            }
+            dp[i][j] = (dp[i][j - 1] + val) % P;
+        }
+    }
+
+    cout << dp[N][K] << endl;
+
+    return 0;
+}
+```

@@ -1,0 +1,13 @@
+Generated Inputs:
+```
+['a', 'a', 'a', 'a'], 'a'
+['aaaa', 'aaaa', 'aaaa', 'aaaa'], 'aa'
+['', '', '', ''], ''
+['abcde', 'abcde', 'abcde', 'abcde'], ''
+[], 'a'
+['abcde', 'abcde', 'abcde', 'abcde'], 'f'
+['abcdefg', 'abcdefg', 'abcdefg', 'abcdefg'], 'abc'
+['aaaa', 'aaaa', 'aaaa', 'aaaa'], 'aaaa'
+['aabaabaa', 'aabaabaa', 'aabaabaa', 'aabaabaa'], 'aab'
+['abcdefghijklmnopqrstuvwxyz', 'abcdefghijklmnopqrstuvwxyz', 'abcdefghijklmnopqrstuvwxyz', 'abcdefghijklmnopqrstuvwxyz'], 'x'
+```

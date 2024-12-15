@@ -1,0 +1,54 @@
+**BUG FIXES:**
+
+1. The code is missing a condition which checks if the sum of the values in the sequence `a` is equal to `2 * (N - 1)`.
+2. The code is incorrect in checking if the maximum value in the sequence is even or odd, it should be checking if it is greater than or equal to `2 * minn` instead of `(maxx+1)/2`.
+3. Aoki wants to construct a tree with N vertices numbered 1 through N, but the code is ignoring vertex 1, so we need to change the initialization of `minn` to `1` instead of `1e9`.
+4. The code should return `Impossible` if `cnt[i] < 1` instead of `cnt[i] < 2` in the loop checking the count of each value in the sequence.
+
+**REPAIRED CODE:**
+
+```
+#include <cstdio>
+#include <iostream>
+using namespace std;
+
+int n, a[105], minn = 1, maxx, cnt[105];
+
+int main() {
+    scanf("%d", &n);
+    for(int i = 1; i <= n; ++i) {
+        scanf("%d", &a[i]);
+        maxx = max(maxx, a[i]);
+        minn = min(minn, a[i]);
+        ++cnt[a[i]];
+    }
+    int sum = 0;
+    for(int i = 1; i <= n; i++) {
+        sum += a[i];
+    }
+    if(sum != 2 * (n - 1)){
+        puts("Impossible");
+        return 0;
+    }
+    if(2 * minn > maxx) {
+        puts("Impossible");
+        return 0;
+    }
+    if(maxx % 2 == 1 && cnt[minn] != 2) {
+        puts("Impossible");
+        return 0;
+    }
+    if(maxx % 2 == 0 && cnt[minn] != 1) {
+        puts("Impossible");
+        return 0;
+    }
+    for(int i = minn + 1; i < maxx; ++i) {
+        if(cnt[i] < 1) {
+            puts("Impossible");
+            return 0;
+        }
+    }
+    puts("Possible");
+    return 0;
+}
+```

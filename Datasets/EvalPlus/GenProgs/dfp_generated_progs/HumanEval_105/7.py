@@ -1,0 +1,29 @@
+def by_length(arr):
+    if not arr:
+        return []
+    
+    filtered_arr = [x for x in arr if 1 <= x <= 9]
+    sorted_arr = sorted(filtered_arr)
+    reversed_arr = sorted_arr[::-1]
+    result = []
+    for num in reversed_arr:
+        if num == 1:
+            result.append("One")
+        elif num == 2:
+            result.append("Two")
+        elif num == 3:
+            result.append("Three")
+        elif num == 4:
+            result.append("Four")
+        elif num == 5:
+            result.append("Five")
+        elif num == 6:
+            result.append("Six")
+        elif num == 7:
+            result.append("Seven")
+        elif num == 8:
+            result.append("Eight")
+        elif num == 9:
+            result.append("Nine")
+    
+    return result

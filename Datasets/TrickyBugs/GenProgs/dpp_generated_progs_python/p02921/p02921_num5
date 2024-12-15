@@ -1,0 +1,20 @@
+# Given code
+
+```python
+# Read the weather forecast for three days in the past
+S = input().strip()
+
+# Read the actual weather on those three days
+T = input().strip()
+
+# Initialize a variable to store the number of correct forecasts
+correct_forecasts = 0
+
+# Check if the forecast was correct for each day
+for i in range(3):
+    if S[i] == T[i]:
+        correct_forecasts += 1
+
+# Print the number of correct forecasts
+print(correct_forecasts)
+```

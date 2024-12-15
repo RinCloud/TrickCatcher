@@ -1,0 +1,51 @@
+```cpp
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <string>
+
+using namespace std;
+
+string findShortestNonSubsequence(string A) {
+    // Helper function to check if string B is a subsequence of string A
+    auto isSubsequence = [](string A, string B) {
+        int i = 0, j = 0;
+        while (i < A.length() && j < B.length()) {
+            if (A[i] == B[j]) {
+                j++;
+            }
+            i++;
+        }
+        return j == B.length();
+    };
+
+    string result = "";
+    vector<string> candidates;
+
+    // Generate all possible strings consisting of lowercase English letters
+    for (char c = 'a'; c <= 'z'; c++) {
+        candidates.push_back(string(1, c));
+    }
+
+    // Find the shortest string among the candidates that is not a subsequence of A
+    for (string candidate : candidates) {
+        if (!isSubsequence(A, candidate)) {
+            if (result == "" || candidate.length() < result.length()) {
+                result = candidate;
+            }
+        }
+    }
+
+    return result;
+}
+
+int main() {
+    string A;
+    cin >> A;
+
+    string shortestNonSubsequence = findShortestNonSubsequence(A);
+    cout << shortestNonSubsequence << endl;
+
+    return 0;
+}
+```

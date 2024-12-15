@@ -1,0 +1,9 @@
+```python
+from random import *
+
+def sample_one():
+    grades_length = randint(1, 20)  # Generate a random number of students between 1 to 20
+    grades = [round(uniform(0.0, 4.0), 1) for _ in range(grades_length)]  # Generate grades between 0.0 and 4.0
+    generated_input = [grades]
+    return generated_input
+```

@@ -1,0 +1,11 @@
+```
+['']
+['abcdef\nghijklm']
+['abcdef']
+['aaaaa']
+['aaBAA']
+['zbcd']
+['aeiouAEIOU']
+['zbcd', 'aeiouAEIOU']
+['aeiouAEIOUzbcd']
+['']

@@ -1,0 +1,10 @@
+S = input().strip()
+T = input().strip()
+
+min_changes = float('inf')
+
+for i in range(len(S) - len(T) + 1):
+    changes = sum(S[i + j] != T[j] for j in range(len(T)))
+    min_changes = min(min_changes, changes)
+
+print(min_changes)

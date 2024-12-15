@@ -1,0 +1,28 @@
+# Read input from standard input
+A, B, C = map(int, input().split())
+
+# Number of times the action is performed
+count = 0
+
+# Repeat the action until there is a person with odd number of cookies
+while A % 2 == 0 and B % 2 == 0 and C % 2 == 0:
+    # Calculate the half of cookies for each person
+    half_A = A // 2
+    half_B = B // 2
+    half_C = C // 2
+    
+    # Exchange cookies
+    A = half_B + half_C
+    B = half_A + half_C
+    C = half_A + half_B
+    
+    # Increase the count
+    count += 1
+    
+    # Check if the action is repeating infinitely
+    if A == B == C:
+        count = -1
+        break
+
+# Print the result
+print(count)

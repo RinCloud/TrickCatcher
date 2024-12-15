@@ -1,0 +1,10 @@
+{"input": ["Hello world"], "output": "3e25960a79dbc69b674cd4ec67a72c62"}
+{"input": [""], "output": None}
+{"input": ["   Hello world   "], "output": "3e25960a79dbc69b674cd4ec67a72c62"}
+{"input": ["helloworld"], "output": "fc3ff98e8c6a0d3087d515c0473f8677"}
+{"input": ["  "], "output": None}
+{"input": ["md5hash"], "output": "e372f905bbc2a1908fe712ee06d4761b"}
+{"input": ["Md5hash"], "output": "c98d565ef9c7a08084c3264a7ecf9b8e"}
+{"input": ["1"], "output": "c4ca4238a0b923820dcc509a6f75849b"}
+{"input": ["   1   "], "output": "c4ca4238a0b923820dcc509a6f75849b"}
+{"input": ["!@%^&*()_"], "output": "c5753b248f02f39e37e17f8b49e19a13"}

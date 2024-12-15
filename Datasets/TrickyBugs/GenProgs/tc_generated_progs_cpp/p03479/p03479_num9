@@ -1,0 +1,42 @@
+**INCORRECT CODE**
+```
+#include <iostream>
+using namespace std;
+int main()
+{
+	long long int x,y,cnt;
+	cin>>x>>y;
+	while(x<=y)
+	{
+		x=x*2;
+		cnt++;
+	}
+	cout<<cnt<<endl;
+}
+```
+
+**ERRORS / BUGS**
+- The variable `cnt` is uninitialized. Its initial value should be set to 0 before the loop.
+- The loop condition should be `x < y`, not `x <= y`. Otherwise, if `x == y`, the loop will iterate one extra time.
+- The loop increments `x` by multiplying it by 2 on each iteration. This means `x` will continue to increase until it becomes greater than `y`. However, the sequence `A` must be between `x` and `y` (inclusive), so the while loop condition should be `x*2 <= y`.
+- The loop should break as soon as `x` becomes greater than `y`.
+
+**CORRECTED CODE**
+
+```cpp
+#include <iostream>
+using namespace std;
+int main()
+{
+	long long int x, y, cnt = 0;
+	cin >> x >> y;
+	while (x <= y*2)
+	{
+		x = x * 2;
+		cnt++;
+		if (x > y)
+			break;
+	}
+	cout << cnt << endl;
+}
+```

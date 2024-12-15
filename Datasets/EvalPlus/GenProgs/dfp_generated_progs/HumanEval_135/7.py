@@ -1,0 +1,20 @@
+def can_arrange(arr):
+    """
+    Returns the largest index of an element which is not greater than or equal to the element immediately preceding it.
+    If no such element exists, then return -1.
+    Parameters:
+    arr (list): A list of integers.
+    Returns:
+    int: The largest index of an element which is not greater than or equal to the element immediately preceding it,
+    or -1 if no such element exists.
+    Examples:
+    >>> can_arrange([1,2,4,3,5])
+    3
+    >>> can_arrange([1,2,3])
+    -1
+    """
+    for i in range(len(arr)-1, 0, -1):
+        if arr[i] < arr[i-1]:
+            return i-1
+            
+    return -1

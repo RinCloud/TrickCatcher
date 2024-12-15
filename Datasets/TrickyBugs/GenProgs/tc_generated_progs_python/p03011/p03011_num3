@@ -1,0 +1,20 @@
+The code is incorrect because it does not consider all possible routes. It only considers the minimum times for two flights, but does not account for different routes that can be taken.
+
+Here is the corrected code:
+
+```python
+P, Q, R = map(int, input().split())
+total_time = P + Q + R
+
+# Consider all possible routes and update the minimum total time
+if P + R < total_time:
+    total_time = P + R
+if P + Q < total_time:
+    total_time = P + Q
+if Q + R < total_time:
+    total_time = Q + R
+
+print(total_time)
+```
+
+In the corrected code, we consider all three possible routes (A to B to C, B to C to A, and C to A to B) and update the `total_time` variable if a shorter route is found. Finally, we print the minimum total time.

@@ -1,0 +1,74 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    string A, B;
+    cin >> A >> B;
+
+    int n = A.length();
+    int ans = n;
+
+    for (int i = 0; i < n; i++) {
+        if (A == B) {
+            cout << ans << endl;
+            return 0;
+        }
+
+        if (A[i] == '1' && A != B) {
+            string temp = A;
+            int count = 0;
+
+            // Shift A to the left
+            while (temp != B && count < n) {
+                char first = temp[0];
+                temp.erase(0, 1);
+                temp += first;
+                count++;
+            }
+
+            if (temp == B) {
+                ans = min(ans, count);
+            }
+
+            // Shift A to the right
+            temp = A;
+            count = 0;
+
+            while (temp != B && count < n) {
+                char last = temp[temp.length() - 1];
+                temp.erase(temp.length() - 1, 1);
+                temp = last + temp;
+                count++;
+            }
+
+            if (temp == B) {
+                ans = min(ans, count);
+            }
+
+            // Flip A_i
+            temp = A;
+            temp[i] = (temp[i] == '0') ? '1' : '0';
+            count = 1;
+
+            while (temp != B && count < n) {
+                char first = temp[0];
+                temp.erase(0, 1);
+                temp += first;
+                count++;
+            }
+
+            if (temp == B) {
+                ans = min(ans, count);
+            }
+        }
+    }
+
+    if (ans == n) {
+        cout << -1 << endl;
+    } else {
+        cout << ans << endl;
+    }
+
+    return 0;
+}

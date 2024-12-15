@@ -1,0 +1,9 @@
+```python
+from random import *
+from cyaron import *
+def sample_one():
+    str_length = randint(0, 20)  # Assuming a reasonable max length for testing
+    random_str = String.random(str_length, charset="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ")
+    generated_input = [str(random_str)]
+    return generated_input
+```

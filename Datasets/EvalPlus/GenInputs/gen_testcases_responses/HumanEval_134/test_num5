@@ -1,0 +1,10 @@
+{"input": "apple pie", "output": False}
+{"input": "apple pi e", "output": True}
+{"input": "apple pi e ", "output": False}
+{"input": "", "output": False}
+{"input": "word ", "output": True}
+{"input": " last ", "output": True}
+{"input": " last", "output": False}
+{"input": "to be continued...", "output": False}
+{"input": "1234 ", "output": False}
+{"input": "1", "output": True}

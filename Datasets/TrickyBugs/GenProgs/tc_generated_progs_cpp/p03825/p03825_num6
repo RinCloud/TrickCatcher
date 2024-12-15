@@ -1,0 +1,43 @@
+**Repaired Code**:
+
+```cpp
+#include<iostream>
+#include<vector>
+#include<cmath>
+#define mmod 1000000007
+
+using namespace std;
+
+int main()
+{
+    int n,m,k;
+    cin>>n>>m>>k;
+    int ans=0;
+    bool isPossible;
+    for(int i=0;i<=min(n,k-1);i++){
+        isPossible= false;
+        int zeros_selected = i;
+        int ones_selected = k-1-i;
+        if(zeros_selected<=n && ones_selected<=m)
+        {
+            if(zeros_selected>0)
+                isPossible= true;
+            int tmp = n/zeros_selected;
+            if(tmp*(zeros_selected)>n) tmp--;
+            if(m/(k-1-ones_selected)<=(tmp))
+            {
+                if(m%(k-1-ones_selected)==0) isPossible=true;
+            }
+        }
+        if(isPossible)
+        {
+            if(ans==0)
+                ans++;
+            else
+                ans=(ans<<1)%mmod;
+        }
+    }
+    cout<<ans<<endl;
+    return 0;
+}
+```

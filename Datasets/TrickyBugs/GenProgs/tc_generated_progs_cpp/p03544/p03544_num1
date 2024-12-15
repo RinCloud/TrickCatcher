@@ -1,0 +1,23 @@
+**REPAIRED CODE**:
+```cpp
+#include <iostream>
+#include <vector>
+using namespace std;
+
+long long find_lucas_number(int n) {
+    vector<long long> l(n + 1);
+    l[0] = 2;
+    l[1] = 1;
+    for (int i = 2; i <= n; i++) {
+        l[i] = l[i - 1] + l[i - 2];
+    }
+    return l[n];
+}
+
+int main() {
+    int n;
+    cin >> n;
+    cout << find_lucas_number(n);
+    return 0;
+}
+```

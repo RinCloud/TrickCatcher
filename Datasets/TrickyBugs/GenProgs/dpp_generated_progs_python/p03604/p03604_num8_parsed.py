@@ -1,0 +1,56 @@
+import heapq
+import math
+
+MOD = 10**9 + 7
+
+# Read input
+N = int(input())
+balls = []
+for _ in range(2*N):
+    x, y = map(int, input().split())
+    balls.append((x, y))
+
+# Sort balls by y-coordinate for A robots and x-coordinate for B robots
+balls_A = sorted(balls, key=lambda ball: ball[1])
+balls_B = sorted(balls, key=lambda ball: ball[0])
+
+# Initialize priority queues for A and B robots
+pq_A = []
+pq_B = []
+for i in range(1, N+1):
+    heapq.heappush(pq_A, (balls_A[i-1][0], i))
+    heapq.heappush(pq_B, (balls_B[i-1][1], i))
+
+# Activate robots and count active A and B robots
+cnt_A = 0
+cnt_B = 0
+ans = 1
+
+for _ in range(2*N):
+    if pq_A and pq_B:
+        next_A = pq_A[0]
+        next_B = pq_B[0]
+        if next_A[1] < next_B[1]:
+            heapq.heappop(pq_A)
+            cnt_A += 1
+            ans = (ans * cnt_A) % MOD
+            heapq.heappop(pq_B)
+        else:
+            heapq.heappop(pq_B)
+            cnt_B += 1
+            ans = (ans * cnt_B) % MOD
+            heapq.heappop(pq_A)
+    elif pq_A:
+        heapq.heappop(pq_A)
+        cnt_A += 1
+        ans = (ans * cnt_A) % MOD
+    elif pq_B:
+        heapq.heappop(pq_B)
+        cnt_B += 1
+        ans = (ans * cnt_B) % MOD
+
+# Calculate the number of possible orderings
+ans = (ans * math.factorial(N)) % MOD
+
+# Print the result
+print(ans)

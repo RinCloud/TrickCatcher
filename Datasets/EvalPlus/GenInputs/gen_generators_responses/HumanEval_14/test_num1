@@ -1,0 +1,10 @@
+```python
+from random import *
+from cyaron import *
+
+def sample_one():
+    random_str_len = randint(1, 10)
+    input_string = String.random(random_str_len)
+    generated_input = [input_string]
+    return generated_input
+```

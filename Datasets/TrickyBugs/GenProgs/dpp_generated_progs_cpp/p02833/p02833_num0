@@ -1,0 +1,36 @@
+```cpp
+#include <iostream>
+
+// Function to calculate the number of trailing zeros in a factorial
+int trailingZeros(int n) {
+    int count = 0;
+    for (int i = 5; n / i >= 1; i *= 5) {
+        count += n / i;
+    }
+    return count;
+}
+
+int main() {
+    long long N;
+    std::cin >> N;
+
+    // Compute the value of f(N)
+    long long result;
+    if (N < 2) {
+        result = 1;
+    } else {
+        result = N * trailingZeros(N - 2);
+    }
+
+    // Count the number of trailing zeros in the decimal notation of f(N)
+    int zeros = 0;
+    while (result % 10 == 0) {
+        zeros++;
+        result /= 10;
+    }
+
+    std::cout << zeros << std::endl;
+
+    return 0;
+}
+```

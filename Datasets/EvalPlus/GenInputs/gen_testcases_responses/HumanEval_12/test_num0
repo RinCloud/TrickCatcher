@@ -1,0 +1,10 @@
+{"input": [[""], ["", "", "", ""], [], ["a", "bb", "ccc"], ["x", "y", "zz", "zzz", "x"], ["abc", "def", "ghi", "jkl"], ["1234", "56789", "10", "11", "12", "13"], ["a", "B", "C", "D", "e", "F"], ["This", "is", "a", "test"], ["testing", "one", "two", "three", "four", "five"]], "output": null}
+{"input": [[], ["", "", ""], [], [], [], [], [], [], [], []], "output": null}
+{"input": ["", "", "", ""], "output": null}
+{"input": ["a", "bb", "ccc"], "output": "ccc"}
+{"input": ["x", "y", "zz", "zzz", "x"], "output": "zzz"}
+{"input": ["abc", "def", "ghi", "jkl"], "output": "abc"}
+{"input": ["1234", "56789", "10", "11", "12", "13"], "output": "56789"}
+{"input": ["a", "B", "C", "D", "e", "F"], "output": "C"}
+{"input": ["This", "is", "a", "test"], "output": "This"}
+{"input": ["testing", "one", "two", "three", "four", "five"], "output": "testing"}

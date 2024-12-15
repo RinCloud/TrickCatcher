@@ -1,0 +1,8 @@
+```python
+from random import *
+def sample_one():
+    length_of_numbers = randint(2, 10)  # Ensuring at least two elements
+    numbers = [uniform(-10.0, 10.0) for _ in range(length_of_numbers)]
+    generated_input = [numbers]
+    return generated_input
+```

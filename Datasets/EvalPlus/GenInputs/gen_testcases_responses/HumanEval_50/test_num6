@@ -1,0 +1,10 @@
+{"input": ["abcxyz"], "output": "fghcde"}
+{"input": ["hello"], "output": "mjqqt"}
+{"input": ["python"], "output": "udymts"}
+{"input": ["xyzabc"], "output": "bcdmno"}
+{"input": ["abcdefghijklmnopqrstuvwxyz"], "output": "fghijklmnopqrstuvwxyzabcde"}
+{"input": ["ABCDEFGHIJKLMNOPQRSTUVWXYZ"], "output": "FGHIJKLMNOPQRSTUVWXYZABCDE"}
+{"input": ["12345"], "output": "12345"}
+{"input": ["!@#$%^&*()"], "output": "!@#$%^&*()"}
+{"input": ["hello, world!"], "output": "mjqqt, btwqi!"}
+{"input": ["To encode or to decode, that is the question."], "output": "Yt jshijd tw yt ijhiij, ymjw nx ymj uxffkjsy."}

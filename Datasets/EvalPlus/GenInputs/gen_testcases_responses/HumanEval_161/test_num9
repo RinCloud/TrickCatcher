@@ -1,0 +1,10 @@
+{"input": ["1234"], "output": "4321"}
+{"input": ["ab"], "output": "AB"}
+{"input": ["#a@C"], "output": "#A@c"}
+{"input": ["##$!@),1"], "output": "1)@!$,##"}
+{"input": [""], "output": ""}
+{"input": ["1234abcd"], "output": "DCBA4321"}
+{"input": ["AbCdEf"], "output": "aBcDeF"}
+{"input": ["1#2@3C4"], "output": "4#3@2c1"}
+{"input": ["hello world"], "output": "DLROw OLLEh"}
+{"input": ["###"], "output": "###"}

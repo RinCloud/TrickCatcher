@@ -1,0 +1,19 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+  int n, S = 0;
+  cin >> n;
+  vector<int> v(n);
+  for(int i = 0;i < n;i++) cin >> v[i];
+  sort(v.begin(), v.end()); // sort the vector in non-decreasing order
+  for(int i = 0;i < n-2;i++) { // iterate from 0 to n-3
+    for(int j = i+1;j < n-1;j++) { // iterate from i+1 to n-2
+      for(int k = j+1;k < n;k++) { // iterate from j+1 to n-1
+        if(v[i]+v[j]>v[k]) S++;
+        else break; // if the condition is failed once, then it will not be successful for subsequent lengths, so break the loop
+      }
+    }
+  }
+  cout << S << endl;
+}

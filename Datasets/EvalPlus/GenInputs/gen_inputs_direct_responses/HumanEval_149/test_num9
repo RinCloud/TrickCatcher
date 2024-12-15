@@ -1,0 +1,10 @@
+[[],
+ ['a', 'ab', 'cd'],
+ ['a', 'ab', 'cd', 'ef'],
+ ['a', 'ab', 'cd', 'ef', 'gh'],
+ ['a', 'ab', 'cd', 'ef', 'gh', 'ij'],
+ ['ab', 'cd', 'ef', 'gh', 'ij', 'kl'],
+ ['ab', 'cd', 'ef', 'gh', 'ij', 'kl', 'mn'],
+ ['ab', 'cd', 'ef', 'gh', 'ij', 'kl', 'mn', 'op'],
+ ['ab', 'cd', 'ef', 'gh', 'ij', 'kl', 'mn', 'op', 'qr'],
+ ['ab', 'cd', 'ef', 'gh', 'ij', 'kl', 'mn', 'op', 'qr', 'st']]

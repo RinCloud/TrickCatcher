@@ -1,0 +1,11 @@
+{"input": [''], "output": ''}
+{"input": ['abcdef\nghijklm'], "output": 'bcdf\nghjklm'}
+{"input": ['abcdef'], "output": 'bcdf'}
+{"input": ['aaaaa'], "output": ''}
+{"input": ['aaBAA'], "output": 'B'}
+{"input": ['zbcd'], "output": 'zbcd'}
+{"input": ['hello world'], "output": 'hllwrld'}
+{"input": ['HELLO WORLD'], "output": 'HLLWRLD'}
+{"input": ['abcde'], "output": 'bcd'}
+{"input": ['ABCDE'], "output": 'BCD'}
+{"input": [''], "output": ''}

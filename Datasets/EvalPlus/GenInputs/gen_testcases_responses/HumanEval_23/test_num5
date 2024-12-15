@@ -1,0 +1,10 @@
+{"input": [""], "output": 0}
+{"input": ["abc"], "output": 3}
+{"input": ["Hello, World!"], "output": 13}
+{"input": ["12345"], "output": 5}
+{"input": ["1.23"], "output": 4}
+{"input": ["abcdefghijklmnopqrstuvwxyz"], "output": 26}
+{"input": ["This is a sentence."], "output": 19}
+{"input": ["!@#$%^&*()_+"], "output": 10}
+{"input": [" "], "output": 1}
+{"input": ["\t\t"], "output": 2}

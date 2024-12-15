@@ -1,0 +1,45 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
+using namespace std;
+
+const int MOD = 998244353;
+
+int main() {
+    string S;
+    int K;
+    cin >> S >> K;
+    int N = S.length();
+
+    vector<int> ones_after(N, 0);
+    int curr_ones = 0;
+    for (int i = N - 1; i >= 0; i--) {
+        if (S[i] == '1') {
+            curr_ones++;
+        }
+        ones_after[i] = curr_ones;
+    }
+
+    long long int dp[N + 1][K + 1];
+    for (int i = 0; i <= N; i++) {
+        for (int j = 0; j <= K; j++) {
+            dp[i][j] = 0;
+        }
+    }
+
+    dp[N][0] = 1;
+
+    for (int i = N - 1; i >= 0; i--) {
+        for (int j = 0; j <= K; j++) {
+            dp[i][j] = (dp[i + 1][j] + (ones_after[i] * 1ll * dp[i + 1][j - 1]) % MOD) % MOD;
+        }
+        for (int j = 1; j <= K; j++) {
+            dp[i][j] = (dp[i][j] + dp[i + 1][j - 1]) % MOD;
+        }
+    }
+
+    cout << dp[0][K] << endl;
+
+    return 0;
+}

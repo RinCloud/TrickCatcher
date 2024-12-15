@@ -1,0 +1,21 @@
+**Repaired code**:
+```python
+from collections import Counter
+
+n = int(input())
+a = list(map(int, input().split()))
+a.sort()
+I, A = min(a), max(a)
+c = Counter(a)
+p = print
+e = exit
+if c[A] == 1 or c[I] > A % 2 + 1 or I * 2 > A:
+    e(p("Impossible"))
+for i in range(I + 1, A + 1):
+    if i not in c or c[i] < 2:
+        e(p("Impossible"))
+p("Possible")
+```
+The repaired code has the following changes:
+* Added a check to see if the number of occurrences of the minimum and maximum values (`c[I]` and `c[A]`) are incorrect. If either has only one occurrence, then it is impossible to construct the tree. To fix this, we check if `c[A] == 1` and if `c[I] > A % 2 + 1`, we print "Impossible" and exit.
+* Added a check to see if the values between the minimum (`I`) and maximum (`A`) are present in the counter `c` and if their count is less than 2. If any value is missing or has less than 2 occurrences, then it is impossible to construct the tree. To fix this, we loop through the range `I + 1` to `A + 1` and check if each value is present in `c` using the `in` operator, and also check if its count is greater than or equal to 2 using `c[i] >= 2`. If these conditions are not met for any value, we print "Impossible" and exit.

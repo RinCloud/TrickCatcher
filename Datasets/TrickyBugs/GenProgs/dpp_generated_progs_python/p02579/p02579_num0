@@ -1,0 +1,77 @@
+```
+import queue
+
+def bfs(grid, start_x, start_y, goal_x, goal_y):
+    h = len(grid)
+    w = len(grid[0])
+    
+    INF = 10 ** 9
+    dist = [[INF] * w for _ in range(h)]
+    
+    q = queue.Queue()
+    q.put((start_x, start_y))
+    dist[start_x][start_y] = 0
+    
+    dx = [1, 0, -1, 0]
+    dy = [0, 1, 0, -1]
+    
+    while not q.empty():
+        x, y = q.get()
+        
+        for i in range(4):
+            nx = x + dx[i]
+            ny = y + dy[i]
+            
+            if nx < 0 or nx >= h or ny < 0 or ny >= w:
+                continue
+            
+            if grid[nx][ny] == "#":
+                continue
+            
+            if dist[nx][ny] > dist[x][y]:
+                dist[nx][ny] = dist[x][y]
+                q.put((nx, ny))
+        
+        for i in range(-2, 3):
+            for j in range(-2, 3):
+                nx = x + i
+                ny = y + j
+                
+                if nx < 0 or nx >= h or ny < 0 or ny >= w:
+                    continue
+                
+                if grid[nx][ny] == "#":
+                    continue
+                
+                if dist[nx][ny] > dist[x][y] + 1:
+                    dist[nx][ny] = dist[x][y] + 1
+                    q.put((nx, ny))
+    
+    return dist[goal_x][goal_y]
+
+def main():
+    h, w = map(int, input().split())
+    c_h, c_w = map(int, input().split())
+    d_h, d_w = map(int, input().split())
+    
+    c_h -= 1
+    c_w -= 1
+    d_h -= 1
+    d_w -= 1
+    
+    grid = []
+    
+    for _ in range(h):
+        row = input()
+        grid.append(row)
+    
+    ans = bfs(grid, c_h, c_w, d_h, d_w)
+    
+    if ans == 10 ** 9:
+        print(-1)
+    else:
+        print(ans)
+
+if __name__ == "__main__":
+    main()
+```

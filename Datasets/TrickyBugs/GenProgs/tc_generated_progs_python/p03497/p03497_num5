@@ -1,0 +1,14 @@
+**Repaired code**:
+
+```python
+n, k = map(int, input().split())
+d = defaultdict(int)
+for key in input().split():
+    d[key] += 1
+
+l = len(d)
+print(sum(sorted(d.values())[:l-k]) if l > k else 0)
+```
+**Explanation**: 
+
+The code has logic errors. It doesn't distinguish how many integers are there and how many unique integers given by a unique key. The `l` variable is not actually the number of different strings. The variable `l` is number of different counts of each strings. When deleting the lowest numbers, the variable `l` is referenced again, instead trying to change the number of key. The code would work the best if there were given huge amount of maximum of K integers. However, since the code is set up only smaller than N are picked, leading to false solution. I freed the code from using set which would just occupy large amount of extra space. Instead, I check directly it there is such case. 

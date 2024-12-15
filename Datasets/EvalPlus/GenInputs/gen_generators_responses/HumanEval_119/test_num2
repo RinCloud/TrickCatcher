@@ -1,0 +1,14 @@
+```python
+from random import *
+from cyaron import *
+
+def sample_one():
+    # Generating two random strings consisting of '(' and ')'
+    str1_size = randint(1, 10)
+    str2_size = randint(1, 10)
+    str1 = String.random(str1_size, charset='()')
+    str2 = String.random(str2_size, charset='()')
+    
+    generated_input = [[str1, str2]]
+    return generated_input
+```

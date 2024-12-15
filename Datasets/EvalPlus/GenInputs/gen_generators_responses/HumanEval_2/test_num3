@@ -1,0 +1,8 @@
+```python
+from random import uniform
+
+def sample_one():
+    number = uniform(0, 1000)  # generate a positive floating point number
+    generated_input = [number]
+    return generated_input
+```

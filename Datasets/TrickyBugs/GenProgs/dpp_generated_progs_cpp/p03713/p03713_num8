@@ -1,0 +1,35 @@
+```cpp
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    int H, W;
+    cin >> H >> W;
+
+    int ans = 1e9;
+    for (int i = 1; i <= W; i++) {
+        int S1 = i * H;
+        int remaining_width = W - i;
+        int S2 = remaining_width / 2 * H;
+        int S3 = (remaining_width - remaining_width / 2) * H;
+        int max_area = max({S1, S2, S3});
+        int min_area = min({S1, S2, S3});
+        ans = min(ans, max_area - min_area);
+    }
+
+    for (int i = 1; i <= H; i++) {
+        int S1 = i * W;
+        int remaining_height = H - i;
+        int S2 = remaining_height / 2 * W;
+        int S3 = (remaining_height - remaining_height / 2) * W;
+        int max_area = max({S1, S2, S3});
+        int min_area = min({S1, S2, S3});
+        ans = min(ans, max_area - min_area);
+    }
+
+    cout << ans << endl;
+
+    return 0;
+}
+```

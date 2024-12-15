@@ -1,0 +1,18 @@
+**REPAIRED CODE**:
+
+```cpp
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main()
+{
+  int a[10] = {0}, x, c = 0; // Initialize c to 0
+  for (int i = 0; i < 3; i++) {
+    cin >> x; // Read input one by one
+    c += a[x]; 
+    a[x] = 1;
+  }
+  cout << (c == 1 ? "Yes" : "No");
+}
+```

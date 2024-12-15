@@ -1,0 +1,39 @@
+S = input()
+T = input()
+
+n = len(S)
+m = len(T)
+
+# Initialize the answer as a list of '?' of the same length as S
+ans = ['?'] * n
+
+# Iterate over all possible starting indices i for T in S
+for i in range(n - m + 1):
+    match = True
+    # Try to match T starting from index i in S
+    for j in range(m):
+        # If a character in T doesn't match the corresponding character in S
+        # and S[i+j] is not '?', we have an invalid substring
+        if S[i + j] != T[j] and S[i + j] != '?':
+            match = False
+            break
+    
+    # If T matches the substring starting from index i in S, update ans
+    if match:
+        for j in range(m):
+            if ans[i + j] == '?':
+                ans[i + j] = T[j]
+
+# Replace any remaining '?' characters in ans with 'a'
+for i in range(n):
+    if ans[i] == '?':
+        ans[i] = 'a'
+
+# Convert ans from a list of characters to a string
+ans = ''.join(ans)
+
+# Check if ans is the lexicographically smallest string satisfying Condition 1
+if ans.replace('?', 'a') != S:
+    ans = "UNRESTORABLE"
+
+print(ans)

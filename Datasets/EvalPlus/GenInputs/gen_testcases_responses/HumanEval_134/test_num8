@@ -1,0 +1,10 @@
+{"input": ["apple pie"], "output": False}
+{"input": ["apple pi e"], "output": True}
+{"input": ["apple pi e "], "output": False}
+{"input": [""], "output": False}
+{"input": ["applepied"], "output": True}
+{"input": ["applepi ed"], "output": False}
+{"input": [" this bone "], "output": True}
+{"input": ["word "], "output": True}
+{"input": ["te."], "output": True}
+{"input": ["word. "], "output": False}

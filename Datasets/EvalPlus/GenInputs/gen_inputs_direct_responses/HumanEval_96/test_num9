@@ -1,0 +1,3 @@
+**Test Input Reasoning:**
+
+We test for count_up_to(0) since the smallest number we have to count up to is 0.

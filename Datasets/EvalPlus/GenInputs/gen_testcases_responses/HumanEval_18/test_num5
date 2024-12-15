@@ -1,0 +1,10 @@
+{"input": ["", "a"], "output": 0}
+{"input": ["aaa", "a"], "output": 3}
+{"input": ["aaaa", "aa"], "output": 3}
+{"input": ["Hello World", "o"], "output": 2}
+{"input": ["banana", "na"], "output": 2}
+{"input": ["Mississippi", "ss"], "output": 2}
+{"input": ["programming", "mm"], "output": 1}
+{"input": ["racecar", "race"], "output": 1}
+{"input": ["tomorrow", "morrow"], "output": 1}
+{"input": ["abcdefg", "xyz"], "output": 0}

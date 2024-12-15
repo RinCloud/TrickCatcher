@@ -1,0 +1,3 @@
+**Test Input Reasoning:**
+
+I will start with the smallest possible input where the brackets string contains only one opening bracket '<'. This will help me verify if the function correctly handles the case of having only one bracket.

@@ -1,0 +1,10 @@
+{"input": [['1234567']], "output": ["the number of odd elements 4n the str4ng 4 of the 4nput."]}
+{"input": [['3', '11111111']], "output": ["the number of odd elements 1n the str1ng 1 of the 1nput.", "the number of odd elements 8n the str8ng 8 of the 8nput."]}
+{"input": [['1234567890']], "output": ["the number of odd elements 5n the str5ng 5 of the 5nput."]}
+{"input": [['246810']], "output": ["the number of odd elements 0n the str0ng 0 of the 0nput."]}
+{"input": [['1111', '3333', '5555', '7777']], "output": ["the number of odd elements 4n the str4ng 4 of the 4nput.", "the number of odd elements 4n the str4ng 4 of the 4nput.", "the number of odd elements 4n the str4ng 4 of the 4nput.", "the number of odd elements 4n the str4ng 4 of the 4nput."]}
+{"input": [['013579']], "output": ["the number of odd elements 6n the str6ng 6 of the 6nput."]}
+{"input": [['24681012']], "output": ["the number of odd elements 0n the str0ng 0 of the 0nput."]}
+{"input": [['123', '456', '789']], "output": ["the number of odd elements 2n the str2ng 2 of the 2nput.", "the number of odd elements 0n the str0ng 0 of the 0nput.", "the number of odd elements 2n the str2ng 2 of the 2nput."]}
+{"input": [['979797', '88888888', '33', '19', '00000000']], "output": ["the number of odd elements 6n the str6ng 6 of the 6nput.", "the number of odd elements 0n the str0ng 0 of the 0nput.", "the number of odd elements 0n the str0ng 0 of the 0nput.", "the number of odd elements 2n the str2ng 2 of the 2nput.", "the number of odd elements 0n the str0ng 0 of the 0nput."]}
+{"input": [['13579', '24680', '1234567890']], "output": ["the number of odd elements 5n the str5ng 5 of the 5nput.", "the number of odd elements 0n the str0ng 0 of the 0nput.", "the number of odd elements 9n the str9ng 9 of the 9nput."]}

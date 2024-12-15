@@ -1,0 +1,24 @@
+def is_equal_to_sum_even(n):
+    """Evaluate whether the given number n can be written as the sum of exactly 4 positive even numbers
+    
+    Args:
+    n(int): The number to be evaluated.
+    
+    Returns:
+    bool: True if the number can be written as the sum of exactly 4 positive even numbers, False otherwise.
+    Example:
+    is_equal_to_sum_even(4)
+    Output: False
+    is_equal_to_sum_even(6)
+    Output: False
+    is_equal_to_sum_even(8)
+    Output: True
+    """
+    
+    if n >= 8: # Check if n is greater than or equal to 8
+        if n % 2 == 0: # Check if n is an even number
+            return True
+        else:
+            return False
+    else:
+        return False

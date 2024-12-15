@@ -1,0 +1,40 @@
+// C++ program to find the minimum number of operations
+// to remove white stone placed to the left of a red stone
+
+#include <iostream>
+using namespace std;
+
+// function to find the minimum number of operations
+int minOperations(int N, string stones) {
+    int count = 0;
+    int redCount = 0;
+    
+    for (int i = 0; i < N; i++) {
+        if (stones[i] == 'R')
+            redCount++;
+        else if (stones[i] == 'W' && stones[i + 1] == 'R') {
+            count++;
+            stones[i] = 'R';
+            stones[i + 1] = 'W';
+        }
+    }
+    
+    return count;
+}
+
+// main function
+int main() {
+    int N;
+    string stones;
+    
+    // input the number of stones and their colors
+    cin >> N >> stones;
+    
+    // find the minimum number of operations
+    int minOps = minOperations(N, stones);
+    
+    // print the result
+    cout << minOps << endl;
+    
+    return 0;
+}

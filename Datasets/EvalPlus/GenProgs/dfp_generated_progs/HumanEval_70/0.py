@@ -1,0 +1,14 @@
+def strange_sort_list(lst):
+    # Sort the list in ascending order
+    lst.sort()
+    # Initialize an empty result list
+    result = []
+    # Iterate over the sorted list
+    while len(lst) > 0:
+        # Append the minimum value to the result list
+        result.append(lst.pop(0))
+        # Check if there are still elements in the list
+        if len(lst) > 0:
+            # Append the maximum value to the result list
+            result.append(lst.pop())
+    return result

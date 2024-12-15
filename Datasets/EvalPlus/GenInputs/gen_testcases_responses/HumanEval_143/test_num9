@@ -1,0 +1,10 @@
+{"input": ["This is a test"], "output": "is"}
+{"input": ["lets go for swimming"], "output": "go for"}
+{"input": ["Hello, how are you?"], "output": "how are"}
+{"input": ["Python is awesome"], "output": "is"}
+{"input": ["I love coding"], "output": "I"} 
+{"input": ["This is a sentence with long words such as antidisestablishmentarianism"], "output": ""} 
+{"input": ["Finding prime words is not easy"], "output": "is not easy"} 
+{"input": ["The quick brown fox jumps over the lazy dog"], "output": "The fox over dog"}
+{"input": ["I am happy"], "output": "am"}
+{"input": ["I am"], "output": ""}

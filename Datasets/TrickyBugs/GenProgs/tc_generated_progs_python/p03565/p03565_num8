@@ -1,0 +1,27 @@
+**FIXED CODE**:
+
+```python
+import re
+
+def restore_string(S_, T):
+    Tr = T[::-1]
+    Sr = S_[::-1]
+    reg = "".join(map(lambda x: "[{}{}]".format(x, '?'), Tr))
+    ans = re.sub(reg, Tr, Sr, count=1)
+    if ans.count(Tr)==1:
+        return ans.replace("?", "a")[::-1]
+    else:
+        return "UNRESTORABLE"
+
+S_ = input()
+T = input()
+print(restore_string(S_, T))
+```
+
+Explaination:
+
+- I defined a function called `restore_string` that takes `S_` and `T` as parameters and returns the string `S`.
+- I updated the regular expression to also include the `'?'` character, since it was missing in the original code.
+- Instead of printing the result directly, I returned it from the `restore_string` function and printed it outside the function call.
+- I also replaced the last print statement with `return "UNRESTORABLE"` since it is a function now.
+- Lastly, I moved the input reading code outside the function so that the function call `restore_string(S_, T)` only contains the logic to solve the problem.

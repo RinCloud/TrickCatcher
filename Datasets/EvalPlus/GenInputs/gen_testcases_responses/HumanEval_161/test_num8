@@ -1,0 +1,10 @@
+{"input": ["1234"], "output": "4321"}
+{"input": ["ab"], "output": "AB"}
+{"input": ["#a@C"], "output": "#A@c"}
+{"input": ["abc123"], "output": "321CBA"}
+{"input": ["ab#cd"], "output": "AB#CD"}
+{"input": ["*@#$$"], "output": "$$#@*"}
+{"input": ["AaBbCcDd"], "output": "aAbBcCdD"}
+{"input": [" "], "output": " "}
+{"input": [""], "output": ""}
+{"input": ["!@#$%^"], "output": "%^$#@!"}

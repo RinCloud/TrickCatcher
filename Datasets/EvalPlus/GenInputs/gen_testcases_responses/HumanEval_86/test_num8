@@ -1,0 +1,10 @@
+{"input": ['Hi'], "output": 'Hi'}
+{"input": ['hello'], "output": 'ehllo'}
+{"input": ['Hello World!!!'], "output": 'Hello !!!Wdlor'}
+{"input": ['Python is Awesome'], "output": 'Phnotuy is Aeemoss'}
+{"input": ['abc def ghi'], "output": 'abc def ghi'}
+{"input": ['This is a Pen'], "output": 'HisT is a enP'}
+{"input": ['A B C D'], "output": 'A B C D'}
+{"input": ['111 222 333'], "output": '111 222 333'}
+{"input": ['The quick brown fox'], "output": 'ehT cikqu bnoorw fox'}
+{"input": [''], "output": ''}

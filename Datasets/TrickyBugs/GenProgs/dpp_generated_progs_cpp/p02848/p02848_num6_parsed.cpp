@@ -1,0 +1,26 @@
+#include <iostream>
+#include <string>
+
+std::string shiftString(const std::string& s, int n) {
+    std::string shiftedString = s;
+    for (int i = 0; i < s.length(); i++) {
+        char c = s[i];
+        if (c >= 'A' && c <= 'Z') {
+            c = (c - 'A' + n) % 26 + 'A';
+        }
+        shiftedString[i] = c;
+    }
+    return shiftedString;
+}
+
+int main() {
+    int N;
+    std::cin >> N;
+    std::string S;
+    std::cin >> S;
+
+    std::string shiftedString = shiftString(S, N);
+    std::cout << shiftedString << std::endl;
+
+    return 0;
+}

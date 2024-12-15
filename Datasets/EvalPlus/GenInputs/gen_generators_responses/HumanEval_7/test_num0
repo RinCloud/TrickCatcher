@@ -1,0 +1,13 @@
+```python
+from random import *
+from cyaron import *
+
+def sample_one():
+    strings = []
+    length_of_strings = randint(1, 10)
+    for _ in range(length_of_strings):
+        strings.append(String.random(randint(1, 10), charset="abcdefghijklmnopqrstuvwxyz"))
+    substring = String.random(randint(1, 5), charset="abcdefghijklmnopqrstuvwxyz")
+    generated_input = [strings, substring]
+    return generated_input
+```

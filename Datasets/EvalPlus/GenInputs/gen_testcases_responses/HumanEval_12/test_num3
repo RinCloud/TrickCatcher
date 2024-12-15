@@ -1,0 +1,10 @@
+{"input": [["a", "bb", "ccc", "dddd", "eeeee"], ["f", "gg", "hhh", "iiii", "jjjjj"], [], ["k"], ["lll"]], "output": "eeeee"}
+{"input": [["a", "bb", "ccc", "dddd", "eeeee"], ["f", "gg", "hhh", "iiii", "jjjjj"], [], ["k"], ["lll"], ["m", "nn", "ooo", "pppp", "qqqqq", "rrrrrr"]], "output": "rrrrrr"}
+{"input": [["a", "bb", "ccc", "dddd", "eeeee"], ["f", "gg", "hhh", "iiii", "jjjjj"], [], ["k"], ["lll"], ["m", "nn", "ooo", "pppp", "qqqqq", "rrrrrr"], ["s"]], "output": "rrrrrr"}
+{"input": [[], [], [], [], [], []], "output": None}
+{"input": [[""], [], [], [], [], []], "output": None}
+{"input": [[""], ["a"], ["bb"], ["ccc"], ["dddd"], ["eeeee"]], "output": ""}
+{"input": [["a"], ["bb"], ["ccc"], ["dddd"], ["eeeee"]], "output": "eeeee"}
+{"input": [["a"], ["bb"], [], [], [], []], "output": "a"}
+{"input": [[], [], [], [], [], []], "output": None}
+{"input": [[""], ["a"], ["bb"], ["ccc"], ["dddd"], ["eeeee"], ["e"]], "output": "eeeee"}

@@ -1,0 +1,24 @@
+# Solution
+
+The input consists of the height `H` and width `W` of the original image, followed by the `H` rows of `W` characters which represent the pixels.
+
+To extend the image vertically, we can simply print each row of the original image twice.
+
+Here's the Python code to achieve this:
+
+```python
+# Read the height and width of the original image
+H, W = map(int, input().split())
+
+# Read the original image
+image = [input() for _ in range(H)]
+
+# Print the extended image
+for row in image:
+    print(row)
+    print(row)
+```
+
+This solution reads the input, stores the original image in a list, and then prints each row of the original image twice.
+
+Note that the newline character is automatically added when printing, so there is no need to explicitly include it in the output.

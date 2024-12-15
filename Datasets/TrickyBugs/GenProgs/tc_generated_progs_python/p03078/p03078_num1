@@ -1,0 +1,44 @@
+```python
+import sys
+input = sys.stdin.readline
+
+x, y, z, k = map(int, input().split())
+a = list(map(int, input().split()))
+b = list(map(int, input().split()))
+c=sorted(int(i) for i in input().split())
+
+a.sort(reverse=True)
+b.sort(reverse=True)
+#c.sort(reverse=True)
+
+ab = sorted(i+j for i in a for j in b)[:-k-1:-1]
+c = c[:k]
+abc = sorted(i+j for i in ab for j in c)[:-k-1:-1]
+
+print(*abc[:k], sep="\n")
+```
+
+The code is almost correct. However, it fails to give the correct output for the EXAMPLES given.
+The code calculates the sum of the first k sums of the deliciousness of the cakes and prints them on new lines. The code does this by following these steps:
+1. Read X, Y, Z, and K from input
+2. Read A_1, A_2, ..., A_X from input and store them in a list called `a`
+3. Read B_1, B_2, ..., B_Y from input and store them in a list called `b`
+4. Read C_1, C_2, ..., C_Z from input, Sort them in ascending order and store them in a list called `c`
+5. Sort `a` and `b` in descending order
+6. Calculate a list `ab` that contains sums of each combination of elements in `a` and `b`. The highest sums are kept.
+7. Take the first K elements from `c` and store them in an updated `c`
+8. Calculate a list `abc` that contains sums of each combination of elements in `ab` and `c`. The highest sums are kept.
+9. Print the first K elements of `abc` each on a new line
+
+The issue in the code is that it sorts `c` in ascending order, but the problem statement requires it to be sorted in descending order. 
+
+Hence, the following line:
+```python
+c=sorted(int(i) for i in input().split())
+```
+should be updated to:
+```python
+c=sorted(int(i) for i in input().split(), reverse=True)
+```
+
+The updated code is as follows:

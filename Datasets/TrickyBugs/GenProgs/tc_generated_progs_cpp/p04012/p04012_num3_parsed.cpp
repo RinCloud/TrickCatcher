@@ -1,0 +1,15 @@
+#include <iostream>
+using namespace std;
+int main() {
+  string w; cin >> w;
+  int freq[26] = {};
+  for (char c : w) freq[c - 'a']++;
+  bool beautiful = true;
+  for (int count : freq) {
+    if (count % 2 != 0) {
+      beautiful = false;
+      break;
+    }
+  }
+  cout << (beautiful ? "Yes" : "No") << endl;
+}

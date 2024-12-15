@@ -1,0 +1,10 @@
+{"input": ["abcde", "a"], "output": 1}
+{"input": ["abcdabcd", "abcd"], "output": 2}
+{"input": ["abcdabcd", "abc"], "output": 3}
+{"input": ["", "a"], "output": 0}
+{"input": ["abcde", "f"], "output": 0}
+{"input": ["", ""], "output": 0}
+{"input": ["aaaa", "aa"], "output": 3}
+{"input": ["aaaaaabbbbbb", "aaa"], "output": 5}
+{"input": ["abcdefg", "ef"], "output": 1}
+{"input": ["abcdefg", "g"], "output": 1}

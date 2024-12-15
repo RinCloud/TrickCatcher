@@ -1,0 +1,10 @@
+{"input": ['Hello world'], "output": '3e25960a79dbc69b674cd4ec67a72c62'}
+{"input": [''], "output": None}
+{"input": ['    Hello world    '], "output": '3e25960a79dbc69b674cd4ec67a72c62'}
+{"input": ['H'], "output": '1b3776dca5150d5e82d08f4b9138ee3f'}
+{"input": ['aaabbbccc'], "output": '3acd1e075d12978b3c6f5f3c63c71d32'}
+{"input": ['2e3d1r4wd'], "output": 'd82b7b8dc02c708504d38e4690d2523d'}
+{"input": ['aAaBbBcCc'], "output": '6e52c6a9812272a048328635fdd83301'}
+{"input": ['abcdefg123'], "output": 'e1668a921a6ae6af6b861a7d48a49ee8'}
+{"input": ['abcdefgh@#$%'], "output": '5794e7175cada50505cb8df2e4b25302'}
+{"input": ['The quick brown fox jumps over the lazy dog.'], "output": '9e107d9d372bb6826bd81d3542a419d6'}

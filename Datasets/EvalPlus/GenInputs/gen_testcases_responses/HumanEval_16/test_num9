@@ -1,0 +1,10 @@
+{"input": ['hello'], "output": 4}
+{"input": [''], "output": 0}
+{"input": ['1234567890'], "output": 10}
+{"input": ['aaaAAABBBccc'], "output": 6}
+{"input": ['abcdABCD'], "output": 8}
+{"input": ['ABABABAB'], "output": 2}
+{"input": ['abcdeABCDE'], "output": 10}
+{"input": ['!@#$%^&*()'], "output": 11}
+{"input": ['Hello World'], "output": 8}
+{"input": ['abcdefghijklmnopqrstuvwxyz'], "output": 26}

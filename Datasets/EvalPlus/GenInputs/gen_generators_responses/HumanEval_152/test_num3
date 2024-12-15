@@ -1,0 +1,9 @@
+```python
+from random import *
+def sample_one():
+    length_of_arrays = randint(1, 10)
+    game = [randint(0, 5) for _ in range(length_of_arrays)]
+    guess = [randint(-2, 5) for _ in range(length_of_arrays)]
+    generated_input = [game, guess]
+    return generated_input
+```

@@ -1,0 +1,23 @@
+**CORRECTED CODE**:
+
+```
+#include <bits/stdc++.h>
+using namespace std;
+
+int main(){
+  string s;
+  long long n;
+  cin >> s >> n;
+  for(int i=0; i<n; ++i){
+    long long si = s[i] - '0';
+    if(si>1){
+      cout << si << endl;
+      return 0;
+    }
+  }
+  cout << 1 << endl;
+}
+```
+Explanation: 
+
+The given code is almost correct, but the variable `n`, which represents the number of characters to be checked, should be of type `long long` to accommodate the upper constraint of `K` being `10^18`.

@@ -1,0 +1,10 @@
+{"input": ['Hi'], "output": 'Hi'}
+{"input": ['hello'], "output": 'ehllo'}
+{"input": ['Hello World!!!'], "output": 'Hello !!!Wdlor'}
+{"input": ['You are awesome'], "output": 'You aer aeemosw'}
+{"input": ['Testing is important'], "output": 'eginstT is aimnoprtt'}
+{"input": ['Python is fun'], "output": 'Phnoty is fnu'}
+{"input": ['Good luck'], "output": 'Dego cklU'}
+{"input": ['Keep going'], "output": 'Keep ginog'}
+{"input": ['Helloooooooooo'], "output": 'Helo'}
+{"input": ['12345'], "output": '12345'}
