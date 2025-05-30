@@ -70,7 +70,7 @@ For more details about  `EvalPlus`, please refer to the link below:
 You can use the following bib for citing this work:
 
 ```
-@inproceedings{zhang-etal-2024-quantized,
+@inproceedings{liu2025trickCatcher,
     title = "LLM-Powered Test Case Generation for Detecting Bugs in Plausible Programs",
     author = "Liu, Kaibo  and
       Chen, Zhenpeng  and
