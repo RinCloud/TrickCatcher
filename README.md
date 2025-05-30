@@ -85,6 +85,6 @@ You can use the following bib for citing this work:
     booktitle = "Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",  
     year = "2025",
     publisher = "Association for Computational Linguistics"
-
+}
 ```
 
