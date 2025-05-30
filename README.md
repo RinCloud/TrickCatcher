@@ -1,7 +1,7 @@
 
 
 # Introduction
-This is the replication package of the paper *LLM-Powered Test Case Generation for Detecting Bugs in Plausible Programs*.
+This is the replication package of the paper *LLM-Powered Test Case Generation for Detecting Bugs in Plausible Programs*. This work has been published in the Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics (ACL2025).
 
 Here we introduce the file structure of this repo:
 - **/Datasets/**: Basic data of the two dataset TrickyBugs and EvalPlus.
@@ -64,4 +64,27 @@ For more details about  `TrickyBugs`, please refer to the link below:
 
 For more details about  `EvalPlus`, please refer to the link below:
 - [EvalPlus Github](https://github.com/evalplus/evalplus/tree/master)
+
+# Citation
+
+You can use the following bib for citing this work:
+
+```
+@inproceedings{zhang-etal-2024-quantized,
+    title = "LLM-Powered Test Case Generation for Detecting Bugs in Plausible Programs",
+    author = "Liu, Kaibo  and
+      Chen, Zhenpeng  and
+      Liu, Yiyang  and
+      Zhang, M. Jie  and
+      Harman, Mark  and
+      Han, Yudong  and
+      Ma, Yun  and
+      Dong, Yihong  and
+      Li, Ge  and
+      Huang, Gang",
+    booktitle = "Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",  
+    year = "2025",
+    publisher = "Association for Computational Linguistics"
+
+```
 
